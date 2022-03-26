@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="title: SQL查询语言date: 2022-03-07 20:43:20category:password:tags: SQL语言简单，易学。 定义模式、表 建立关系模式 修改关系模式 删除关系模式  查询12345SELECT [ALL|DISTINCT] &lt;目标列表达式&gt;FROM &lt;表名&gt;[WHERE &lt;条件表达式&gt;][GROUP BY &lt;列名1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://luqingbys.github.io/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="title: SQL查询语言date: 2022-03-07 20:43:20category:password:tags: SQL语言简单，易学。 定义模式、表 建立关系模式 修改关系模式 删除关系模式  查询12345SELECT [ALL|DISTINCT] &lt;目标列表达式&gt;FROM &lt;表名&gt;[WHERE &lt;条件表达式&gt;][GROUP BY &lt;列名1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-26T03:30:51.752Z">
+<meta property="article:modified_time" content="2022-03-19T03:02:39.492Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/mid-lake-pavilion.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/mid-lake-pavilion.github.io/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/mid-lake-pavilion.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/mid-lake-pavilion.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luqingbys.github.io/mid-lake-pavilion.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-SQL查询语言" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/" class="article-date">
+  <time class="dt-published" datetime="2022-03-26T03:30:51.752Z" itemprop="datePublished">2022-03-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>title: SQL查询语言<br>date: 2022-03-07 20:43:20<br>category:<br>password:<br>tags:</p>
+<h2 id="SQL语言"><a href="#SQL语言" class="headerlink" title="SQL语言"></a>SQL语言</h2><p>简单，易学。</p>
+<h2 id="定义模式、表"><a href="#定义模式、表" class="headerlink" title="定义模式、表"></a>定义模式、表</h2><ul>
+<li>建立关系模式</li>
+<li>修改关系模式</li>
+<li>删除关系模式</li>
+</ul>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> [<span class="keyword">ALL</span><span class="operator">|</span><span class="keyword">DISTINCT</span>] <span class="operator">&lt;</span>目标列表达式<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">FROM</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span></span><br><span class="line">[<span class="keyword">WHERE</span> <span class="operator">&lt;</span>条件表达式<span class="operator">&gt;</span>]</span><br><span class="line">[<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="operator">&lt;</span>列名<span class="number">1</span><span class="operator">&gt;</span> [<span class="keyword">HAVING</span> <span class="operator">&lt;</span>条件表达式<span class="operator">&gt;</span>]]</span><br><span class="line">[<span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&lt;</span>列名<span class="number">2</span><span class="operator">&gt;</span> [<span class="keyword">ASC</span><span class="operator">|</span><span class="keyword">DESC</span>]]</span><br></pre></td></tr></table></figure>
+
+<h3 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h3><p>查询仅涉及一个表，是一种最简单的查询操作。</p>
+<h4 id="选择列"><a href="#选择列" class="headerlink" title="选择列"></a>选择列</h4><p>即不用WHERE子句，仅使用SELECT，FROM子句。</p>
+<ul>
+<li><p>一般情况下，用于查询指定列</p>
+</li>
+<li><p>还可以查询全部的列</p>
+</li>
+<li><p>可以查询经过计算的指</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname, <span class="number">2022</span><span class="operator">-</span>Sage</span><br><span class="line"><span class="keyword">FROM</span> Student;</span><br></pre></td></tr></table></figure>
+
+<p>即可查询出姓名属性、以及2022减去年龄属性的值</p>
+</li>
+<li><p>可以通过DISTINCT或者ALL来选择是否去除相同的列</p>
+</li>
+<li><p>可以实现列的重命名（列别名）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname NAME, <span class="number">2022</span><span class="operator">-</span>Sage BIRTHDAY, <span class="built_in">LOWER</span>(Sdept)</span><br><span class="line"><span class="keyword">FROM</span> Student;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="WHERE：查询元组"><a href="#WHERE：查询元组" class="headerlink" title="WHERE：查询元组"></a>WHERE：查询元组</h4><p>WHERE子句常用的是条件表达式，涉及的谓词很多，常见的是比较、确定集合等。</p>
+<ul>
+<li>比较：&#x3D;，&gt;, &lt;, &gt;&#x3D;, &lt;&#x3D;, &lt;&gt;</li>
+<li>确定集合：IN, NOT IN</li>
+<li>多重条件：AND, OR</li>
+<li>字符匹配：LIKE, NOT LIKE</li>
+</ul>
+<p>下面给出几个实例对where子句的基本使用进行说明：</p>
+<ul>
+<li><p>DISTINCT短语的作用范围是所有目标列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Cno, Grade </span><br><span class="line"><span class="keyword">FROM</span> SC;</span><br></pre></td></tr></table></figure>
+
+<p>而下面的写法是错误的:</p>
+<p><code>SELECT DISTINCT Cno, DISTINCT Grade FROM SC;</code></p>
+</li>
+<li><p>between的使用</p>
+<p>筛选出Student关系中年龄在19到21之间的同学的姓名和性别</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname, Ssex</span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">Where</span> sage <span class="keyword">between</span> <span class="number">19</span> <span class="keyword">and</span> <span class="number">21</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>like的使用</p>
+<p>查询姓“东方”的学生：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">WHERE</span> Sname <span class="keyword">like</span> <span class="string">&#x27;东方%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>通配符：</p>
+<ul>
+<li>%：代替零个或者多个字符</li>
+<li>_：仅代替一个字符</li>
+</ul>
+<p>当要查询的字符串本身就含有%或者_时，需要使用ESCAPE短语进行转义。</p>
+</li>
+<li><p>in的使用</p>
+<p>查询数学系和计算机系的学生：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">WHERE</span> Sdept <span class="keyword">in</span> (<span class="string">&#x27;MA&#x27;</span>, <span class="string">&#x27;CS&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="ORDER-BY：对查询结果进行排序"><a href="#ORDER-BY：对查询结果进行排序" class="headerlink" title="ORDER BY：对查询结果进行排序"></a>ORDER BY：对查询结果进行排序</h4><p>ASC：升序，排序列为空值的元组最后显示</p>
+<p>DESC：降序（默认），排序列为空值的元组最先显示</p>
+<h4 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h4><ul>
+<li>COUNT(*) 统计元组个数</li>
+<li>SUM([DISTINCT | ALL] &lt; 列名 &gt;) 计算一列值的总和</li>
+<li>AVG… 计算平均值</li>
+</ul>
+<h4 id="GROUP-BY：对结果进行分组"><a href="#GROUP-BY：对结果进行分组" class="headerlink" title="GROUP BY：对结果进行分组"></a>GROUP BY：对结果进行分组</h4><p>按指定的一列或者多列值分组，值相等的分为一组。</p>
+<p>注意，使用了GROUP BY子句之后，SELECT子句的列名列表中只能出现分组属性和聚集函数。</p>
+<p>当然，有时还会使用HAVING短语筛选最终输出结果，如</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dept_name, <span class="built_in">Max</span>(salary)</span><br><span class="line"><span class="keyword">FROM</span> Employee</span><br><span class="line"><span class="keyword">WHERE</span> age<span class="operator">&gt;=</span><span class="number">23</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> dept_name</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">Max</span>(salary)<span class="operator">&gt;=</span><span class="number">80000</span>;</span><br></pre></td></tr></table></figure>
+
+<p>HAVING短语和WHERE子句都有筛选功能，但是两者有很大的区别——在作用对象上。</p>
+<ul>
+<li>HAVING短语筛选的作用对象是分组后的中间表，从中选择满足条件的<strong>分组</strong>；</li>
+<li>WHERE子句筛选的作用对象是基表，从中选择满足条件的<strong>元组</strong>。</li>
+</ul>
+<h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><p>连接查询，即多表查询情况，待查询的表不只一张。</p>
+<p>用来连接两个表的条件称为连接条件或者连接谓词。</p>
+<ul>
+<li><p>θ-连接</p>
+<p>使用SELECT-FROM-WHERE表示，WHERE子句中包括连接多个表的条件，即连接条件：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student, SC</span><br><span class="line"><span class="keyword">WHERE</span> Student.Sno <span class="operator">=</span> SC.Sno;</span><br></pre></td></tr></table></figure>
+
+<p>使用JOIN ON表示方法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">JOIN</span> SC</span><br><span class="line"><span class="keyword">ON</span> Student.Sno <span class="operator">=</span> SC.Sno</span><br><span class="line"><span class="keyword">WHERE</span> Sage <span class="operator">&lt;</span> <span class="number">21</span>;</span><br></pre></td></tr></table></figure>
+
+<p>自然连接，使用natural join关键字：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Student.Sno, Sname, Sage, Sdept, Cno, Grade</span><br><span class="line"><span class="keyword">FROM</span> Student <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> SC;</span><br></pre></td></tr></table></figure>
+
+<p>自连接，一般需要给表起别名，以示区别。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> FIRST1.Cno, SECOND1.Cpno</span><br><span class="line"><span class="keyword">FROM</span> Course FIRSE1, Course SECOND1</span><br><span class="line"><span class="keyword">WHERE</span> FIRST1.Cpno <span class="operator">=</span> SECOND1.Cno</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="集合查询"><a href="#集合查询" class="headerlink" title="集合查询"></a>集合查询</h3><p>利用集合操作，对查询结果进行集合运算：</p>
+<ul>
+<li>并 UNION</li>
+<li>交 INTERSECT</li>
+<li>差 EXCEPT</li>
+</ul>
+<p>对于并、交集合查询，其思想与集合运算一致：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="string">&#x27;CS&#x27;</span> <span class="keyword">OR</span> Sage<span class="operator">&lt;=</span><span class="number">19</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="string">&#x27;CS&#x27;</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">WHERE</span> Sage<span class="operator">&lt;=</span><span class="number">19</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数据插入"><a href="#数据插入" class="headerlink" title="数据插入"></a>数据插入</h2><p>格式：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span></span><br><span class="line"><span class="keyword">INTO</span> 表名(属性<span class="number">1</span>, 属性<span class="number">2</span>, ...)</span><br><span class="line"><span class="keyword">VALUES</span> 元组</span><br></pre></td></tr></table></figure>
+
+<p>将元组插入表中，如果列名列表省略不写，则默认是插入全部属性，否则按照声明的列名属性插入元组，其他没有在INTO属性中出现的属性列，取空值。</p>
+<p>Student表如下：</p>
+<table>
+<thead>
+<tr>
+<th>学号 Sno</th>
+<th>姓名 Sname</th>
+<th>性别 Ssex</th>
+<th>年龄 Sage</th>
+<th>所在系 Sdept</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>20220900112</td>
+<td>孙承宗</td>
+<td>男</td>
+<td>29</td>
+<td>翰林</td>
+</tr>
+<tr>
+<td>20229180938</td>
+<td>徐阶</td>
+<td>男</td>
+<td>49</td>
+<td>内阁</td>
+</tr>
+<tr>
+<td>20221920709</td>
+<td>袁崇焕</td>
+<td>男</td>
+<td>39</td>
+<td>兵部</td>
+</tr>
+<tr>
+<td>20221102123</td>
+<td>张居正</td>
+<td>男</td>
+<td>48</td>
+<td>内阁</td>
+</tr>
+</tbody></table>
+<p>SC表如下：</p>
+<table>
+<thead>
+<tr>
+<th>学号Sno</th>
+<th>课程号Cno</th>
+<th>成绩Grade</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>20220900112</td>
+<td>1</td>
+<td>98</td>
+</tr>
+<tr>
+<td>20220900112</td>
+<td>2</td>
+<td>92</td>
+</tr>
+<tr>
+<td>20221102123</td>
+<td>1</td>
+<td>90</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span></span><br><span class="line"><span class="keyword">INTO</span> Student</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">&#x27;20201110227&#x27;</span>, <span class="string">&#x27;张江陵&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">19</span>, <span class="string">&#x27;内阁&#x27;</span>);</span><br><span class="line"><span class="comment">-- 向Student表格中添加一行数据</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span></span><br><span class="line"><span class="keyword">INTO</span> Student(Sno, Sname, Sdept)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="string">&#x27;20222900767&#x27;</span>, <span class="string">&#x27;徐文长&#x27;</span>, <span class="string">&#x27;师爷&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="DBMS会检查所插入元组是否破坏已定义的完整性约束"><a href="#DBMS会检查所插入元组是否破坏已定义的完整性约束" class="headerlink" title="DBMS会检查所插入元组是否破坏已定义的完整性约束"></a>DBMS会检查所插入元组是否破坏已定义的完整性约束</h3><ul>
+<li>实体完整性：是否插入了主键相同的元组</li>
+<li>参照完整性（关联完整性）：外键表插入新元组时，新元组的外键值是否在主键表中存在</li>
+<li>用户定义的完整性：<ul>
+<li>对于有NOT NULL约束的属性列，是否提供了非空值</li>
+<li>对于有UNIQUE约束的属性列，是否提供了非重复值</li>
+<li>对于有值域约束的属性列，所提供的属性值是否在值域范围内</li>
+</ul>
+</li>
+</ul>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> 表名</span><br><span class="line"><span class="keyword">SET</span> <span class="operator">&lt;</span>列名<span class="operator">&gt;</span> <span class="operator">=</span> <span class="operator">&lt;</span>表达式<span class="operator">&gt;</span>...</span><br><span class="line">[<span class="keyword">WHERE</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span>];</span><br></pre></td></tr></table></figure>
+
+<p>功能：修改指定表中满足where子句条件的元组</p>
+<p>SET子句：指定修改方式</p>
+<p>WHERE子句：指定要修改的元组</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 将上面的Student表中袁崇焕的所在系改为‘督师蓟辽’</span></span><br><span class="line"><span class="keyword">UPDATE</span> Student</span><br><span class="line"><span class="keyword">SET</span> Sdept<span class="operator">=</span><span class="string">&#x27;督师蓟辽&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> Sname<span class="operator">=</span><span class="string">&#x27;袁崇焕&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>注意：<strong>修改数据的同时DBMS会做完整性检查（比如涉及外键表时的参照完整性）</strong>。</p>
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span></span><br><span class="line"><span class="keyword">FROM</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span></span><br><span class="line">[<span class="keyword">WHERE</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>同样的，DBMS在执行删除语句时，也会检查所删除的元组是否破坏表上已定义的完整性规则。</p>
+<ul>
+<li>删除单个元组的值</li>
+<li>删除多个元组的值</li>
+<li>带子查询的删除语句</li>
+</ul>
+<p>比如，删除上面的Student表格中“内阁”所有成员的选课记录（SC表格）。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span></span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">WHERE</span> Sno <span class="keyword">IN</span></span><br><span class="line">   (<span class="keyword">SELECT</span> Sno</span><br><span class="line">    <span class="keyword">FROM</span> Student</span><br><span class="line">    <span class="keyword">WHERE</span> Student.Sdept <span class="operator">=</span> <span class="string">&#x27;内阁&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><h3 id="何为视图"><a href="#何为视图" class="headerlink" title="何为视图"></a>何为视图</h3><p>视图与基本表在形式上几乎没有区别，同样支持各种SQL操作。</p>
+<p>视图可以理解为数据库的“窗口”。通过视图，不同的人可以观察到自己感兴趣的数据项，而不需要观察整个数据库表。</p>
+<h3 id="基本语法格式"><a href="#基本语法格式" class="headerlink" title="基本语法格式"></a>基本语法格式</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> <span class="operator">&lt;</span>视图名<span class="operator">&gt;</span> [(<span class="operator">&lt;</span>列名<span class="operator">&gt;</span>...)]</span><br><span class="line"><span class="keyword">AS</span> <span class="operator">&lt;</span>子查询<span class="operator">&gt;</span></span><br><span class="line">[<span class="keyword">WITH</span> <span class="keyword">CHECK</span> OPTION];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>每一个视图都有名称，放在VIEW后面声明，还可以声明视图的属性列；</li>
+<li>AS后面跟任意SELECT查询语句，表示视图中的数据来源；</li>
+<li>WITH CHECK OPTION表示，通过视图进行各种操作时，不得违反视图定义中子查询的谓词条件（条件表达式）。</li>
+</ul>
+<h3 id="视图消解"><a href="#视图消解" class="headerlink" title="视图消解"></a>视图消解</h3><p>从数据字典中取出视图定义，把定义中的子查询和用户查询结合起来，转换成等价的对基表的查询，然后在基表上执行修改之后的查询，称为视图消解。</p>
+<h3 id="更新视图"><a href="#更新视图" class="headerlink" title="更新视图"></a>更新视图</h3><p>由于视图本身并不具有数据存储功能，只是给用户提供展示数据，因此，对视图数据的更新，都是通过视图消解转为对基本表的更新。</p>
+<p>但是，并不是所有的视图都可以被更新。</p>
+<h3 id="删除视图"><a href="#删除视图" class="headerlink" title="删除视图"></a>删除视图</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> <span class="operator">&lt;</span>视图名<span class="operator">&gt;</span> [CASCADE];</span><br></pre></td></tr></table></figure>
+
+<p>如果要删除的视图还导出了其他视图，就需要指定CASCADE选项，表示级联删除。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/" data-id="cl17apw1u000uicudauwx2iq0" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hello</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">Web前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">前端之路</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/">多一点冥想</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/">数字逻辑设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%8A%B1%E9%97%B4%E4%B8%80%E5%A3%B6%E9%85%92/">花间一壶酒</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" style="font-size: 20px;">大学课程</a> <a href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/10/">October 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">概念结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/24/JavaScript%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">JavaScript的正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/mid-lake-pavilion.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/mid-lake-pavilion.github.io/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/mid-lake-pavilion.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

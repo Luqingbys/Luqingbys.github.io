@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Swing组件 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="按钮普通按钮构造方法：public JButton();public JButton(String text); 切换按钮 切换按钮有两种状态，即选中状态和未选中状态。 通过isSelected()方法可以获知当前按钮状态。构造方法：JToggleButton(String text, boolean selected);  单选按钮与多选按钮单选按钮JRadioButton多选按钮JCheckB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swing组件">
+<meta property="og:url" content="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/14/Swing%E7%BB%84%E4%BB%B6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="按钮普通按钮构造方法：public JButton();public JButton(String text); 切换按钮 切换按钮有两种状态，即选中状态和未选中状态。 通过isSelected()方法可以获知当前按钮状态。构造方法：JToggleButton(String text, boolean selected);  单选按钮与多选按钮单选按钮JRadioButton多选按钮JCheckB">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-14T15:59:31.000Z">
+<meta property="article:modified_time" content="2021-11-14T22:55:47.604Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/mid-lake-pavilion.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/mid-lake-pavilion.github.io/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/mid-lake-pavilion.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/mid-lake-pavilion.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luqingbys.github.io/mid-lake-pavilion.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Swing组件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/14/Swing%E7%BB%84%E4%BB%B6/" class="article-date">
+  <time class="dt-published" datetime="2021-11-14T15:59:31.000Z" itemprop="datePublished">2021-11-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Swing组件
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h2><h3 id="普通按钮"><a href="#普通按钮" class="headerlink" title="普通按钮"></a>普通按钮</h3><p>构造方法：<br><code>public JButton();</code><br><code>public JButton(String text);</code></p>
+<h3 id="切换按钮"><a href="#切换按钮" class="headerlink" title="切换按钮"></a>切换按钮</h3><ul>
+<li>切换按钮有两种状态，即选中状态和未选中状态。</li>
+<li>通过isSelected()方法可以获知当前按钮状态。<br>构造方法：<br>JToggleButton(String text, boolean selected);</li>
+</ul>
+<h3 id="单选按钮与多选按钮"><a href="#单选按钮与多选按钮" class="headerlink" title="单选按钮与多选按钮"></a>单选按钮与多选按钮</h3><p>单选按钮JRadioButton<br>多选按钮JCheckButton</p>
+<h2 id="组合框"><a href="#组合框" class="headerlink" title="组合框"></a>组合框</h2><p>组合框是一个下拉式菜单，有两种形式：不可编辑与可编辑式。常见方法有：<br>JComboBox();<br>JComboBox(object[] items);<br>public void addItem(Object anObject);<br>public void removeItem(Object anObject);</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>可供用户进行一系列的选择。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String listData[] = &#123;<span class="string">&quot;one&quot;</span>, <span class="string">&quot;two&quot;</span>, <span class="string">&quot;three&quot;</span>, <span class="string">&quot;four&quot;</span>&#125;</span><br><span class="line"><span class="type">JList</span> <span class="variable">j1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JList</span>(listData</span><br><span class="line"><span class="type">Vector</span> <span class="variable">listData</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Vector</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MenuDemo</span> <span class="keyword">extends</span> <span class="title class_">JFrame</span> <span class="keyword">implements</span> <span class="title class_">ActionListener</span> &#123;</span><br><span class="line">    JMenuBar menuBar;   <span class="comment">// 菜单栏组件</span></span><br><span class="line">    JMenu menu, submenu;    <span class="comment">// 一级菜单组件</span></span><br><span class="line">    JMenuItem menuItem;     <span class="comment">// 菜单子项组件</span></span><br><span class="line">    <span class="type">JTextField</span> <span class="variable">tf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MenuDemo</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(<span class="string">&quot;Menu Demo&quot;</span>);</span><br><span class="line">        menuBar = <span class="keyword">new</span> <span class="title class_">JMenuBar</span>();</span><br><span class="line">        setJMenuBar(menuBar);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        建立File菜单</span></span><br><span class="line">        menu = <span class="keyword">new</span> <span class="title class_">JMenu</span>(<span class="string">&quot;File&quot;</span>);</span><br><span class="line">        menu.setMnemonic(KeyEvent.VK_F);    <span class="comment">// 设置快捷键</span></span><br><span class="line">        menuBar.add(menu);  <span class="comment">// 将File菜单放到菜单栏上</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        设置File中的菜单子项</span></span><br><span class="line">        menuItem = <span class="keyword">new</span> <span class="title class_">JMenuItem</span>(<span class="string">&quot;Open&quot;</span>);</span><br><span class="line">        menuItem.setMnemonic(KeyEvent.VK_O);</span><br><span class="line">        menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.ALT_MASK));</span><br><span class="line">        menuItem.addActionListener(<span class="built_in">this</span>);   <span class="comment">// 注册事件监听器</span></span><br><span class="line">        menu.add(menuItem);</span><br><span class="line"></span><br><span class="line">        menuItem = <span class="keyword">new</span> <span class="title class_">JMenuItem</span>(<span class="string">&quot;Save&quot;</span>, KeyEvent.VK_S);</span><br><span class="line">        menuItem.addActionListener(<span class="built_in">this</span>);   <span class="comment">// 注册事件监听器</span></span><br><span class="line">        menu.add(menuItem);</span><br><span class="line"></span><br><span class="line">        menuItem = <span class="keyword">new</span> <span class="title class_">JMenuItem</span>(<span class="string">&quot;Close&quot;</span>, KeyEvent.VK_C);</span><br><span class="line">        menuItem.addActionListener(<span class="built_in">this</span>);   <span class="comment">// 注册事件监听器</span></span><br><span class="line">        menu.add(menuItem);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.getContentPane().add(tf, BorderLayout.SOUTH);</span><br><span class="line">        <span class="built_in">this</span>.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">        <span class="built_in">this</span>.setSize(<span class="number">300</span>, <span class="number">200</span>);</span><br><span class="line">        <span class="built_in">this</span>.setVisible(<span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent e)</span> &#123;</span><br><span class="line">        <span class="type">JMenuItem</span> <span class="variable">item</span> <span class="operator">=</span> (JMenuItem)e.getSource();</span><br><span class="line">        tf.setText(item.getActionCommand());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MenuDemo</span> <span class="variable">menuDemo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MenuDemo</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/14/Swing%E7%BB%84%E4%BB%B6/" data-id="cl17apw1o000nicud2t3j5ax9" data-title="Swing组件" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/2021/11/17/Dominant-Character/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Dominant Character
+        
+      </div>
+    </a>
+  
+  
+    <a href="/mid-lake-pavilion.github.io/2021/11/14/Java%E7%9A%84%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java的图形用户界面设计</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">Web前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">前端之路</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/">多一点冥想</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/">数字逻辑设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%8A%B1%E9%97%B4%E4%B8%80%E5%A3%B6%E9%85%92/">花间一壶酒</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" style="font-size: 20px;">大学课程</a> <a href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/10/">October 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">概念结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/24/JavaScript%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">JavaScript的正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/mid-lake-pavilion.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/mid-lake-pavilion.github.io/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/mid-lake-pavilion.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

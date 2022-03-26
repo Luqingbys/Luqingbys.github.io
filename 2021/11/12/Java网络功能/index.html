@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Java网络功能 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="概述网络ISO&#x2F;OSI网络参考模型分为7层。 TCP&#x2F;IP网络模型模型分为五个层次：  应用层 传输层 传输层协议包括TCP和UDP 网络层 数据链路层 物理层  一些基本概念：  IP地址 端口号 套接字  使用InetAddress类InetAddress是Java的IP地址封装类，通常用它提供的静态方法来获取。public static InetAddress getLo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java网络功能">
+<meta property="og:url" content="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/12/Java%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概述网络ISO&#x2F;OSI网络参考模型分为7层。 TCP&#x2F;IP网络模型模型分为五个层次：  应用层 传输层 传输层协议包括TCP和UDP 网络层 数据链路层 物理层  一些基本概念：  IP地址 端口号 套接字  使用InetAddress类InetAddress是Java的IP地址封装类，通常用它提供的静态方法来获取。public static InetAddress getLo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-12T07:55:53.000Z">
+<meta property="article:modified_time" content="2021-11-14T23:53:43.035Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/mid-lake-pavilion.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/mid-lake-pavilion.github.io/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/mid-lake-pavilion.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/mid-lake-pavilion.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luqingbys.github.io/mid-lake-pavilion.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Java网络功能" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/12/Java%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD/" class="article-date">
+  <time class="dt-published" datetime="2021-11-12T07:55:53.000Z" itemprop="datePublished">2021-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Java网络功能
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="概述网络"><a href="#概述网络" class="headerlink" title="概述网络"></a>概述网络</h2><h3 id="ISO-x2F-OSI网络参考模型"><a href="#ISO-x2F-OSI网络参考模型" class="headerlink" title="ISO&#x2F;OSI网络参考模型"></a>ISO&#x2F;OSI网络参考模型</h3><p>分为7层。</p>
+<h3 id="TCP-x2F-IP网络模型"><a href="#TCP-x2F-IP网络模型" class="headerlink" title="TCP&#x2F;IP网络模型"></a>TCP&#x2F;IP网络模型</h3><p>模型分为五个层次：</p>
+<ul>
+<li>应用层</li>
+<li>传输层 传输层协议包括TCP和UDP</li>
+<li>网络层</li>
+<li>数据链路层</li>
+<li>物理层</li>
+</ul>
+<p>一些基本概念：</p>
+<ul>
+<li>IP地址</li>
+<li>端口号</li>
+<li>套接字</li>
+</ul>
+<h2 id="使用InetAddress"><a href="#使用InetAddress" class="headerlink" title="使用InetAddress"></a>使用InetAddress</h2><p>类InetAddress是Java的IP地址封装类，通常用它提供的静态方法来获取。<br><code>public static InetAddress getLocalHost();</code></p>
+<h2 id="统一资源定位器"><a href="#统一资源定位器" class="headerlink" title="统一资源定位器"></a>统一资源定位器</h2><h2 id="Socket接口"><a href="#Socket接口" class="headerlink" title="Socket接口"></a>Socket接口</h2><p>Socket类是基于TCP协议实现网络通信的类，有客户端Socket类和服务端ServerSocket类</p>
+<p>通信的一般步骤为：</p>
+<ul>
+<li>先在服务端生成一个ServerSocket实例对象，通过accept方法随时监听客户端的连接请求；</li>
+<li>客户端在需要连接时，相应地生成一个Socket实例对象，并发出连接请求；</li>
+<li>服务端通过accept方法接收客户端请求后，开启一个接口与之连接，并生成I&#x2F;O数据流；</li>
+<li>客户端和服务端的通信通过一对InputStream和OutputStream进行。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">ServerSocket</span><span class="params">(<span class="type">int</span> port)</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Socket</span><span class="params">(String address, <span class="type">int</span> port)</span>;</span><br><span class="line">Socket <span class="title function_">accept</span><span class="params">()</span>;<span class="comment">// 接收并返回该连接的Socket对象</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/12/Java%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD/" data-id="cl17apw1m000iicudgbbe678l" data-title="Java网络功能" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/2021/11/14/Java%E7%9A%84%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java的图形用户界面设计
+        
+      </div>
+    </a>
+  
+  
+    <a href="/mid-lake-pavilion.github.io/2021/11/12/%E7%BA%BF%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">线程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">Web前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">前端之路</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/">多一点冥想</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/">数字逻辑设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%8A%B1%E9%97%B4%E4%B8%80%E5%A3%B6%E9%85%92/">花间一壶酒</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" style="font-size: 20px;">大学课程</a> <a href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/10/">October 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">概念结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/24/JavaScript%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">JavaScript的正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/mid-lake-pavilion.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/mid-lake-pavilion.github.io/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/mid-lake-pavilion.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

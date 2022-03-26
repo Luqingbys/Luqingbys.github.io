@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>图 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="图的定义 有向图  无向图  邻接点（边的两个顶点互为邻接点）  关联边（一条边的两个顶点关联这条边）  路径  回路  简单路径  简单回路  连通图（任意两个顶点之间都存在路径）  强连通图（对有向图，任意两个顶点之间都存在路径）  子图  连通分量（无向图中的极大联通子图）  强连通分量（有向图中的极大强连通子图）  网络（边带权图）  生成树（连通图的一个包含其所有顶点的子图是一棵树，这棵">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图">
+<meta property="og:url" content="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/23/%E5%9B%BE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="图的定义 有向图  无向图  邻接点（边的两个顶点互为邻接点）  关联边（一条边的两个顶点关联这条边）  路径  回路  简单路径  简单回路  连通图（任意两个顶点之间都存在路径）  强连通图（对有向图，任意两个顶点之间都存在路径）  子图  连通分量（无向图中的极大联通子图）  强连通分量（有向图中的极大强连通子图）  网络（边带权图）  生成树（连通图的一个包含其所有顶点的子图是一棵树，这棵">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-22T23:10:42.000Z">
+<meta property="article:modified_time" content="2022-01-12T04:16:08.956Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/mid-lake-pavilion.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/mid-lake-pavilion.github.io/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/mid-lake-pavilion.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/mid-lake-pavilion.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luqingbys.github.io/mid-lake-pavilion.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-图" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/23/%E5%9B%BE/" class="article-date">
+  <time class="dt-published" datetime="2021-11-22T23:10:42.000Z" itemprop="datePublished">2021-11-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      图
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h2><ul>
+<li><p>有向图</p>
+</li>
+<li><p>无向图</p>
+</li>
+<li><p>邻接点（边的两个顶点互为邻接点）</p>
+</li>
+<li><p>关联边（一条边的两个顶点关联这条边）</p>
+</li>
+<li><p>路径</p>
+</li>
+<li><p>回路</p>
+</li>
+<li><p>简单路径</p>
+</li>
+<li><p>简单回路</p>
+</li>
+<li><p>连通图（任意两个顶点之间都存在路径）</p>
+</li>
+<li><p>强连通图（对有向图，任意两个顶点之间都存在路径）</p>
+</li>
+<li><p>子图</p>
+</li>
+<li><p>连通分量（无向图中的极大联通子图）</p>
+</li>
+<li><p>强连通分量（有向图中的极大强连通子图）</p>
+</li>
+<li><p>网络（边带权图）</p>
+</li>
+<li><p>生成树（连通图的一个包含其所有顶点的子图是一棵树，这棵树就是生成树）</p>
+</li>
+</ul>
+<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><p>一张图，要存储的信息至少有两方面：</p>
+<ul>
+<li>顶点的数据信息</li>
+<li>顶点间的关系信息</li>
+</ul>
+<h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><p>图的邻接矩阵是一个n阶矩阵，物理上是一个二维数组。<br>对无向图而言，</p>
+<ul>
+<li>其邻接矩阵是一个对称矩阵，且对角线元素均为零；</li>
+<li>图的总度数就是矩阵中非零元素个数</li>
+<li>图的边数就是非零元素个数的一半</li>
+</ul>
+<p>对有向图而言：</p>
+<ul>
+<li>第i个顶点的入度就是第i列非零元素个数</li>
+<li>第i个顶点的出度就是第i行非零元素个数</li>
+</ul>
+<h4 id="类型实现"><a href="#类型实现" class="headerlink" title="类型实现"></a>类型实现</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ArcCell</span> &#123;</span><br><span class="line">    VRType agj;</span><br><span class="line">    Info *info; <span class="comment">// 存放相关信息的指针</span></span><br><span class="line">&#125; ArcCell, AdjMatrix[M][N];</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;</span><br><span class="line">    VertexType vexs[MAX];   <span class="comment">// 顶点信息</span></span><br><span class="line">    AdjMatrix arcs; <span class="comment">// 存储弧的信息</span></span><br><span class="line">    <span class="type">int</span> vexnum, arcnum; <span class="comment">// 存储顶点数，弧数</span></span><br><span class="line">    GraphKind kind; <span class="comment">// 存储图的种类</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>空间复杂度比较高，为O(n^2)<br>插入边或弧都比较容易，但是插入顶点不容易</p>
+<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><p>邻接表定义分为两部分：边链表和顶点表</p>
+<ul>
+<li>边链表：与顶点V关联的所有边组成一个链表，称为顶点V的边链表</li>
+<li>顶点表：用顺序存储方式存储图的顶点表V1，V2，…，Vn，表示每一个顶点的结构。</li>
+</ul>
+<h4 id="邻接表的类型实现"><a href="#邻接表的类型实现" class="headerlink" title="邻接表的类型实现"></a>邻接表的类型实现</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ArcNode</span> &#123;    <span class="comment">// 边表的存储类型</span></span><br><span class="line">    <span class="type">int</span> adjvex; <span class="comment">// 该弧所指向的顶点的位置</span></span><br><span class="line">    VRType adj;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">ArcNode</span> *nextarc;    <span class="comment">// 指向下一条弧的指针</span></span><br><span class="line">    InfoType *info; <span class="comment">// 该弧相关信息的指针</span></span><br><span class="line">&#125; ArcNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">vnode</span> &#123;  <span class="comment">// 顶点表的存储类型</span></span><br><span class="line">    vertexxtype data;   <span class="comment">// 存储该顶点的信息</span></span><br><span class="line">    ArcNode *firstArc;  <span class="comment">// 指向第一条依附于该顶点的弧，其实是一段边链表</span></span><br><span class="line">&#125; vNode, adjList[M];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;    <span class="comment">// 图的邻接表存储类型</span></span><br><span class="line">    adjList vertices;   <span class="comment">// 邻接表的顶点表</span></span><br><span class="line">    <span class="type">int</span> vexNum, arcNum;</span><br><span class="line">    <span class="type">int</span> kind;   <span class="comment">// 存储图的种类标志</span></span><br><span class="line">&#125; ALGraph;</span><br></pre></td></tr></table></figure>
+
+<h3 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h3><h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><blockquote>
+<blockquote>
+<blockquote>
+<p>概念————从图的某一个顶点出发，访问图中的所有顶点，且每一个顶点仅访问一次。一般可分为两种方法：广度优先搜索、深度优先搜索。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h3><h4 id="算法基本思想"><a href="#算法基本思想" class="headerlink" title="算法基本思想"></a>算法基本思想</h4><ol>
+<li>首先访问图中某一个顶点Vi，以该顶点为出发点；</li>
+<li>任选一个与该顶点Vi【邻接】的【未被访问】的顶点Vj，访问之；</li>
+<li>以Vj为新的出发点继续进行深度优先搜索，直到图中所有和Vi有路径的顶点均被访问到。</li>
+</ol>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><h4 id="对非连通图进行深度优先遍历"><a href="#对非连通图进行深度优先遍历" class="headerlink" title="对非连通图进行深度优先遍历"></a>对非连通图进行深度优先遍历</h4><p>首先将图中每一个顶点的访问标志设为FAlSE，之后搜索图中每一个顶点，如果未被访问，就以之为起始点进行深度优先搜索；否则继续检查下一顶点。</p>
+<h4 id="深度优先搜索的应用"><a href="#深度优先搜索的应用" class="headerlink" title="深度优先搜索的应用"></a>深度优先搜索的应用</h4><ul>
+<li>求深度优先生成树</li>
+<li>判断图是否连通</li>
+<li>求图的连通分量</li>
+</ul>
+<h3 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h3><h4 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
+<li>首先访问图中某一个指定的出发点Vi</li>
+<li>然后依次访问Vi中的所有邻接点Vi1，Vi2，…，Vit；</li>
+<li>再依次以这些邻接点为顶点，访问各个顶点未被访问的邻接点，以此类推，直到图中所有顶点均被访问为止。</li>
+</ol>
+<h4 id="广度优先代码实现"><a href="#广度优先代码实现" class="headerlink" title="广度优先代码实现"></a>广度优先代码实现</h4><h4 id="广度优先搜索的应用"><a href="#广度优先搜索的应用" class="headerlink" title="广度优先搜索的应用"></a>广度优先搜索的应用</h4><ul>
+<li>求广度优先生成树</li>
+<li>判断图是否连通</li>
+<li>求图的连通分量</li>
+</ul>
+<h2 id="图的连通性问题"><a href="#图的连通性问题" class="headerlink" title="图的连通性问题"></a>图的连通性问题</h2><h3 id="无向图和有向图的连通性"><a href="#无向图和有向图的连通性" class="headerlink" title="无向图和有向图的连通性"></a>无向图和有向图的连通性</h3><p>通过广度优先搜索和深度优先搜索，都可以求出一张无向图的所有连通分量</p>
+<h3 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h3><p>对于网而言，各边权值（边长）总和最小的生成树称作最小生成树。<br>下面介绍几个求最小生成树的算法。</p>
+<h4 id="普里姆算法"><a href="#普里姆算法" class="headerlink" title="普里姆算法"></a>普里姆算法</h4><p>从边入手，算法思路：</p>
+<ol>
+<li>算法开始时，设置U，T，U中存放初始顶点s，T为空集；</li>
+<li>找到与初始顶点s邻接的顶点，且连通它们的边是最短的，将该顶点入集合U，边入集合T；</li>
+<li>反复执行2，直到U&#x3D;V时，算法终止。</li>
+</ol>
+<h4 id="克鲁斯卡尔算法"><a href="#克鲁斯卡尔算法" class="headerlink" title="克鲁斯卡尔算法"></a>克鲁斯卡尔算法</h4><ol>
+<li>从图中取最短边e，如果e所关联的两个顶点不在T的同一个连通分量中，则将该边加入T；</li>
+<li>从图中删除边e；</li>
+<li>重复1和2，直到T中有n-1条边。</li>
+</ol>
+<h2 id="有向无环图的应用"><a href="#有向无环图的应用" class="headerlink" title="有向无环图的应用"></a>有向无环图的应用</h2><p>无环有向图被称作无环图，简称DAG图。<br>某些子工程必须在另外的一些子工程完成之后才能开始，对于整个工程与系统，人们主要关心的两方面问题：</p>
+<ul>
+<li>工程能否顺利进行 ———— &gt; 拓扑排序</li>
+<li>完成整个工程所必须的最短时间 ———— &gt; 关键路径</li>
+</ul>
+<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><ul>
+<li>顶点活动网（AOV网）：将顶点表示活动，边表示活动之间的关系的网称为顶点活动网。</li>
+<li>拓扑序列</li>
+</ul>
+<h4 id="拓扑排序特点"><a href="#拓扑排序特点" class="headerlink" title="拓扑排序特点"></a>拓扑排序特点</h4><ul>
+<li>一个有向图的拓扑序列不一定唯一</li>
+<li>通过构造拓扑序列，可判断AOV网是否存在环</li>
+<li>有向无环图一定存在拓扑序列</li>
+</ul>
+<h4 id="拓扑排序基本思想"><a href="#拓扑排序基本思想" class="headerlink" title="拓扑排序基本思想"></a>拓扑排序基本思想</h4><ol>
+<li>从有向图中选择一个入度为零的顶点输出</li>
+<li>从图中删除该顶点及其所有出边</li>
+<li>重复执行1和2，直到全部顶点均已输出，或者图中剩余顶点的入度均不为零（此时说明图中有回路）</li>
+</ol>
+<h4 id="拓扑排序算法概要"><a href="#拓扑排序算法概要" class="headerlink" title="拓扑排序算法概要"></a>拓扑排序算法概要</h4><h2 id="关键路径"><a href="#关键路径" class="headerlink" title="关键路径"></a>关键路径</h2><h3 id="关键路径相关概念"><a href="#关键路径相关概念" class="headerlink" title="关键路径相关概念"></a>关键路径相关概念</h3><ol>
+<li>事件vi的最早发生时间<br>从源点v1到vi的最长路径长度，记作ve(i);</li>
+<li>事件vk的最迟发生时间<br>即vn的最早发生时间ve(n)减去vk到vn的最长路径长度，记作vl(k)</li>
+<li>活动&lt;vi, vj&gt;的最早开始时间，是vi的最早开始时间,<br>最晚开始时间，是vj的最迟开始时间减去&lt;vi, vj&gt;的持续时间，记作el(i)。</li>
+</ol>
+<h2 id="最短路径问题"><a href="#最短路径问题" class="headerlink" title="最短路径问题"></a>最短路径问题</h2><h3 id="迪杰斯特拉算法"><a href="#迪杰斯特拉算法" class="headerlink" title="迪杰斯特拉算法"></a>迪杰斯特拉算法</h3><h4 id="Dijkstra算法思想"><a href="#Dijkstra算法思想" class="headerlink" title="Dijkstra算法思想"></a>Dijkstra算法思想</h4><ul>
+<li>按路径长度的递增次序，逐步产生最短路径</li>
+<li>首先求出离源点路径长度最短的点，再参照它求出离源点次短的点，以此类推</li>
+<li>注意：权值不能为负，否则该算法失效</li>
+</ul>
+<h4 id="Dijkstra算法概要"><a href="#Dijkstra算法概要" class="headerlink" title="Dijkstra算法概要"></a>Dijkstra算法概要</h4><ol>
+<li>引入辅助数组D[]，D[i]表示当前找到的源点到每一个终点i的最短路径长度，<br>引入辅助数组final[]，final[i]&#x3D;1表示顶点i的最短路径已求<br>出，初始状态下final[v0]置为1，其他置为0;</li>
+<li>选择D[]中路径最小值的顶点v（final[v]必须为0），v就是当前求得的一条从v出发的最短路径的终点，并修改final[v]&#x3D;1;</li>
+<li>修改未求出最短路径的顶点的最短路径长度，对于顶点w，若<br>D[v]+G.arcs[v][w] &lt; D[w],<br>则修改 D[w]&#x3D;D[v]+G.arcs[v][w],<br>同时修改P[w]&#x3D;v;</li>
+<li>重复操作2、3 n-1次，求得递增序列。</li>
+</ol>
+<h4 id="Dijkstra算法分析"><a href="#Dijkstra算法分析" class="headerlink" title="Dijkstra算法分析"></a>Dijkstra算法分析</h4><p>时间复杂度体现在修改距离值和最小值，为O(n^2),<br>空间复杂度体现在两个辅助数组，为O(n)。</p>
+<h3 id="弗洛伊德算法"><a href="#弗洛伊德算法" class="headerlink" title="弗洛伊德算法"></a>弗洛伊德算法</h3><p>时间复杂度体现在三重循环，为O(n^3),<br>空间复杂度体现在使用了二维数组，为O(n^2)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/23/%E5%9B%BE/" data-id="cl17apw2b001xicudbo62de5x" data-title="图" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/2021/11/24/%E6%9F%A5%E6%89%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          查找
+        
+      </div>
+    </a>
+  
+  
+    <a href="/mid-lake-pavilion.github.io/2021/11/22/%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">树</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">Web前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">前端之路</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/">多一点冥想</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/">数字逻辑设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%8A%B1%E9%97%B4%E4%B8%80%E5%A3%B6%E9%85%92/">花间一壶酒</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" style="font-size: 20px;">大学课程</a> <a href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/10/">October 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">概念结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/24/JavaScript%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">JavaScript的正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/mid-lake-pavilion.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/mid-lake-pavilion.github.io/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/mid-lake-pavilion.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

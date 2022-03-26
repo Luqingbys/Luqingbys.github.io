@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Unusual Minesweeper | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="问题传送门https:&#x2F;&#x2F;codeforces.com&#x2F;problemset&#x2F;problem&#x2F;1619&#x2F;G  题目大意另类的“扫雷”游戏，给出若干个地雷的信息（横坐标、纵坐标、自动爆炸时间），另外规定，每一分钟，可以人为地指定任意一颗地雷爆炸，并且地雷爆炸会引发同行、同列所有距离k以内的地雷爆炸，从而产生连锁反应。试问引爆地图上所有地雷所需要的最少时间是多少。 题目分析首先我们知道的是，每一颗地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unusual Minesweeper">
+<meta property="og:url" content="https://luqingbys.github.io/mid-lake-pavilion.github.io/2022/01/08/Unusual-Minesweeper/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="问题传送门https:&#x2F;&#x2F;codeforces.com&#x2F;problemset&#x2F;problem&#x2F;1619&#x2F;G  题目大意另类的“扫雷”游戏，给出若干个地雷的信息（横坐标、纵坐标、自动爆炸时间），另外规定，每一分钟，可以人为地指定任意一颗地雷爆炸，并且地雷爆炸会引发同行、同列所有距离k以内的地雷爆炸，从而产生连锁反应。试问引爆地图上所有地雷所需要的最少时间是多少。 题目分析首先我们知道的是，每一颗地">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-08T02:49:48.000Z">
+<meta property="article:modified_time" content="2022-01-08T03:15:09.702Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/mid-lake-pavilion.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/mid-lake-pavilion.github.io/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/mid-lake-pavilion.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/mid-lake-pavilion.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luqingbys.github.io/mid-lake-pavilion.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Unusual-Minesweeper" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2022/01/08/Unusual-Minesweeper/" class="article-date">
+  <time class="dt-published" datetime="2022-01-08T02:49:48.000Z" itemprop="datePublished">2022-01-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Unusual Minesweeper
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>问题传送门<br><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1619/G">https://codeforces.com/problemset/problem/1619/G</a></p>
+</blockquote>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>另类的“扫雷”游戏，给出若干个地雷的信息（横坐标、纵坐标、自动爆炸时间），另外规定，每一分钟，可以人为地指定任意一颗地雷爆炸，并且地雷爆炸会引发同行、同列所有距离k以内的地雷爆炸，从而产生连锁反应。试问引爆地图上所有地雷所需要的最少时间是多少。</p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>首先我们知道的是，每一颗地雷爆炸的形式有三种：</p>
+<ul>
+<li>到达一定时间自动爆炸</li>
+<li>被其他的地雷引爆</li>
+<li>人为引爆</li>
+</ul>
+<p>如果单纯一个一个考虑三个条件，将会使本题变得十分复杂。那么，我们可不可以将三个条件作出一定的简化，或者合并一下，从而使得问题处理起来更加简便而清晰呢？</p>
+<p>当然是可以的。</p>
+<ol>
+<li>根据题意，地雷的连锁引爆无疑是本题的关键之处；这一部分的处理，需要用到深度优先搜索DFS；</li>
+<li>任何一颗地雷的爆炸都不是单纯它一个的爆炸，还需要考虑它引发的所有地雷的爆炸；这样一来，这些被同一颗地雷引爆的所有地雷的爆炸时间全部都是一样的，可以将它们看作一个整体。</li>
+<li>那么怎么找到这样的整体呢？事实上，这样的地雷群体，只要其中任意一个爆炸，整个群体都会爆炸，也就是说，对任何一颗地雷进行DFS，都可以牵扯出整个地雷群；</li>
+<li>还需要另设一个标记，记录哪些地雷已经爆炸过。</li>
+</ol>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>由于地雷坐标实在太大，不方便直接使用二维数组存储相关信息，我们可以换一种方式存储：使用map容器，存储每一横行和每一纵列的地雷的坐标，这样也方便后续的DFS处理。<br>另外，设置容器记录每一颗地雷的爆炸时间以及是否爆炸；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 存储指定坐标下，一整行（列）的地雷坐标</span></span><br><span class="line">map&lt;ll, vector&lt;ll&gt;&gt;mapX;</span><br><span class="line">map&lt;ll, vector&lt;ll&gt;&gt;mapY;</span><br><span class="line">map&lt;pair&lt;ll, ll&gt;, <span class="type">bool</span>&gt;isBoo;</span><br><span class="line">map&lt;pair&lt;ll, ll&gt;, ll&gt;times;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">while</span> (i&lt;n)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld&quot;</span>, &amp;x, &amp;y, &amp;t);</span><br><span class="line">   alls[i++]=<span class="built_in">make_pair</span>(x, y);</span><br><span class="line">   mapX[x].<span class="built_in">push_back</span>(y);</span><br><span class="line">   mapY[y].<span class="built_in">push_back</span>(x);</span><br><span class="line">   times[&#123;x, y&#125;] = t;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>对所有地雷遍历，也就是上面说过的，任意一个地雷爆炸可以牵扯出整个地雷群，只需要求出这个地雷群的最短爆炸时间即可，用到DFS：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">dfs</span><span class="params">(ll x, ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 让&#123;x,y&#125;处地雷爆炸</span></span><br><span class="line">    ll minT = times[&#123;x, y&#125;];</span><br><span class="line">    isBoo[&#123;x, y&#125;] = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 连锁反应爆炸开始</span></span><br><span class="line">    <span class="keyword">auto</span> i = <span class="built_in">lower_bound</span>(mapX[x].<span class="built_in">begin</span>(), mapX[x].<span class="built_in">end</span>(), y);</span><br><span class="line">    <span class="keyword">auto</span> j = <span class="built_in">lower_bound</span>(mapY[y].<span class="built_in">begin</span>(), mapY[y].<span class="built_in">end</span>(), x);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 四个方向</span></span><br><span class="line">    <span class="keyword">if</span> (++i != mapX[x].<span class="built_in">end</span>() &amp;&amp; !isBoo[&#123;x, * i&#125;] &amp;&amp; <span class="built_in">abs</span>(*i - y) &lt;= k)</span><br><span class="line">    &#123;</span><br><span class="line">        ll tm = <span class="built_in">dfs</span>(x, *i);</span><br><span class="line">        minT = minT &gt; tm ? tm : minT;</span><br><span class="line">    &#125;</span><br><span class="line">    i--;</span><br><span class="line">    <span class="keyword">if</span> (i != mapX[x].<span class="built_in">begin</span>() &amp;&amp; !isBoo[&#123;x, * (--i)&#125;] &amp;&amp; <span class="built_in">abs</span>(*i - y) &lt;= k)</span><br><span class="line">    &#123;</span><br><span class="line">        ll tm = <span class="built_in">dfs</span>(x, *i);</span><br><span class="line">        minT = minT &gt; tm ? tm : minT;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (++j != mapY[y].<span class="built_in">end</span>() &amp;&amp; !isBoo[&#123;*j, y&#125;] &amp;&amp; <span class="built_in">abs</span>(*j - x) &lt;= k)</span><br><span class="line">    &#123;</span><br><span class="line">        ll tm = <span class="built_in">dfs</span>(*j, y);</span><br><span class="line">        minT = minT &gt; tm ? tm : minT;</span><br><span class="line">    &#125;</span><br><span class="line">    j--;</span><br><span class="line">    <span class="keyword">if</span> (j != mapY[y].<span class="built_in">begin</span>() &amp;&amp; !isBoo[&#123;*(--j), y&#125;] &amp;&amp; <span class="built_in">abs</span>(*j - x) &lt;= k)</span><br><span class="line">    &#123;</span><br><span class="line">        ll tm = <span class="built_in">dfs</span>(*j, y);</span><br><span class="line">        minT = minT &gt; tm ? tm : minT;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> minT;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样一来，所有的地雷所需爆炸时间就会被分开，在数组中的每一个值都代表一个不同的地雷群的爆炸时间，也就是说，它们互不影响（地雷群之间不会因为爆炸而相互引爆了，否则两个地雷群会合成一个）。采用双指针对这个时间数组进行遍历，以时间为循环变量，直到双指针相遇即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;ll&gt; pres;<span class="comment">// 存储dfs的结果，得到的就是所有地雷群的爆炸时间</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;alls.<span class="built_in">size</span>()<span class="number">-1</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">auto</span> e = alls[i];</span><br><span class="line">   <span class="keyword">if</span>(!isBoo[e])</span><br><span class="line">       pres.<span class="built_in">push_back</span>(<span class="built_in">dfs</span>(e.first, e.second));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要对pres进行升序排序，最后面的地雷当然需要每一次的人为引爆</span></span><br><span class="line"><span class="built_in">sort</span>(pres.<span class="built_in">begin</span>(), pres.<span class="built_in">end</span>());</span><br><span class="line"><span class="comment">// 设置头指针sp，尾指针ep，ans就是最后的答案————爆炸完的最短时间</span></span><br><span class="line">ll ep = pres.<span class="built_in">size</span>() - <span class="number">1</span>, sp = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (;; ans++)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">while</span> (pres[sp] == ans)   sp++;</span><br><span class="line">   <span class="keyword">if</span> (ep &lt;= sp)  <span class="keyword">break</span>;</span><br><span class="line">   ep--;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; ans &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// unusualmineSweeper.cpp : 此文件包含 &quot;main&quot; 函数。程序执行将在此处开始并结束。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// 存储指定坐标下，一整行（列）的地雷坐标</span></span><br><span class="line">map&lt;ll, vector&lt;ll&gt;&gt;mapX;</span><br><span class="line">map&lt;ll, vector&lt;ll&gt;&gt;mapY;</span><br><span class="line"></span><br><span class="line">map&lt;pair&lt;ll, ll&gt;, <span class="type">bool</span>&gt;isBoo;</span><br><span class="line">map&lt;pair&lt;ll, ll&gt;, ll&gt;times;</span><br><span class="line">ll x, y, k, t;</span><br><span class="line"><span class="type">int</span> q, n;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">dfs</span><span class="params">(ll x, ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 让&#123;x,y&#125;处地雷爆炸</span></span><br><span class="line">    ll minT = times[&#123;x, y&#125;];</span><br><span class="line">    isBoo[&#123;x, y&#125;] = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 连锁反应爆炸开始</span></span><br><span class="line">    <span class="keyword">auto</span> i = <span class="built_in">lower_bound</span>(mapX[x].<span class="built_in">begin</span>(), mapX[x].<span class="built_in">end</span>(), y);</span><br><span class="line">    <span class="keyword">auto</span> j = <span class="built_in">lower_bound</span>(mapY[y].<span class="built_in">begin</span>(), mapY[y].<span class="built_in">end</span>(), x);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 四个方向</span></span><br><span class="line">    <span class="keyword">if</span> (++i != mapX[x].<span class="built_in">end</span>() &amp;&amp; !isBoo[&#123;x, * i&#125;] &amp;&amp; <span class="built_in">abs</span>(*i - y) &lt;= k)</span><br><span class="line">    &#123;</span><br><span class="line">        ll tm = <span class="built_in">dfs</span>(x, *i);</span><br><span class="line">        minT = minT &gt; tm ? tm : minT;</span><br><span class="line">    &#125;</span><br><span class="line">    i--;</span><br><span class="line">    <span class="keyword">if</span> (i != mapX[x].<span class="built_in">begin</span>() &amp;&amp; !isBoo[&#123;x, * (--i)&#125;] &amp;&amp; <span class="built_in">abs</span>(*i - y) &lt;= k)</span><br><span class="line">    &#123;</span><br><span class="line">        ll tm = <span class="built_in">dfs</span>(x, *i);</span><br><span class="line">        minT = minT &gt; tm ? tm : minT;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (++j != mapY[y].<span class="built_in">end</span>() &amp;&amp; !isBoo[&#123;*j, y&#125;] &amp;&amp; <span class="built_in">abs</span>(*j - x) &lt;= k)</span><br><span class="line">    &#123;</span><br><span class="line">        ll tm = <span class="built_in">dfs</span>(*j, y);</span><br><span class="line">        minT = minT &gt; tm ? tm : minT;</span><br><span class="line">    &#125;</span><br><span class="line">    j--;</span><br><span class="line">    <span class="keyword">if</span> (j != mapY[y].<span class="built_in">begin</span>() &amp;&amp; !isBoo[&#123;*(--j), y&#125;] &amp;&amp; <span class="built_in">abs</span>(*j - x) &lt;= k)</span><br><span class="line">    &#123;</span><br><span class="line">        ll tm = <span class="built_in">dfs</span>(*j, y);</span><br><span class="line">        minT = minT &gt; tm ? tm : minT;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> minT;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;q);</span><br><span class="line">    <span class="keyword">while</span> (q--)</span><br><span class="line">    &#123;</span><br><span class="line">        mapX.<span class="built_in">clear</span>();</span><br><span class="line">        mapY.<span class="built_in">clear</span>();</span><br><span class="line">        isBoo.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%lld&quot;</span>, &amp;n, &amp;k);</span><br><span class="line">        vector&lt;pair&lt;ll, ll&gt;&gt; <span class="built_in">alls</span>(n+<span class="number">1</span>);  <span class="comment">// 存放全部地雷的坐标对</span></span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i&lt;n)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld&quot;</span>, &amp;x, &amp;y, &amp;t);</span><br><span class="line">            alls[i++]=<span class="built_in">make_pair</span>(x, y);</span><br><span class="line">            mapX[x].<span class="built_in">push_back</span>(y);</span><br><span class="line">            mapY[y].<span class="built_in">push_back</span>(x);</span><br><span class="line">            times[&#123;x, y&#125;] = t;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> item : mapX)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">sort</span>(mapX[item.first].<span class="built_in">begin</span>(), mapX[item.first].<span class="built_in">end</span>());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> item : mapY)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">sort</span>(mapY[item.first].<span class="built_in">begin</span>(), mapY[item.first].<span class="built_in">end</span>());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        vector&lt;ll&gt; pres;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;alls.<span class="built_in">size</span>()<span class="number">-1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> e = alls[i];</span><br><span class="line">            <span class="keyword">if</span>(!isBoo[e])</span><br><span class="line">                pres.<span class="built_in">push_back</span>(<span class="built_in">dfs</span>(e.first, e.second));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">sort</span>(pres.<span class="built_in">begin</span>(), pres.<span class="built_in">end</span>());</span><br><span class="line">        ll ep = pres.<span class="built_in">size</span>() - <span class="number">1</span>, sp = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (;; ans++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span> (pres[sp] == ans)   sp++;</span><br><span class="line">            <span class="keyword">if</span> (ep &lt;= sp)  <span class="keyword">break</span>;</span><br><span class="line">            ep--;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2022/01/08/Unusual-Minesweeper/" data-id="cl17apw21001aicudasi50obw" data-title="Unusual Minesweeper" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/2022/01/08/%E8%BF%9F%E5%88%B0%E7%9A%84%E6%AD%A3%E4%B9%89-%E8%BF%99%E4%B9%9F%E8%AE%B8%E6%98%AF%E8%BF%99%E5%9C%BA%E9%A3%8E%E6%9A%B4%E6%9C%80%E5%A5%BD%E7%9A%84%E7%BB%93%E5%B1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          迟到的正义:这也许是这场风暴最好的结局
+        
+      </div>
+    </a>
+  
+  
+    <a href="/mid-lake-pavilion.github.io/2022/01/07/Web%E5%B8%83%E5%B1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Web布局</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">Web前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">前端之路</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/">多一点冥想</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/">数字逻辑设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%8A%B1%E9%97%B4%E4%B8%80%E5%A3%B6%E9%85%92/">花间一壶酒</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" style="font-size: 20px;">大学课程</a> <a href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/10/">October 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">概念结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/24/JavaScript%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">JavaScript的正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/mid-lake-pavilion.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/mid-lake-pavilion.github.io/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/mid-lake-pavilion.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

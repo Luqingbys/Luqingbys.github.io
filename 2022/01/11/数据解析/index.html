@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>数据解析 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="数据解析概述数据解析往往是爬取页面后重要的一步,用来提取有效的、我们想要的数据信息。常用的数据解析方式包括  re解析 bs4解析  re解析re解析是一种速度较快的数据解析方式，主要涉及正则表达式的使用。正则表达式，是一种使用表达式的方式，对字符串进行匹配的语法规则。 正则表达式 正则表达式的语法：能使用元字符（具有固定含义的特殊符号）进行排列组合用来匹配字符串。.        匹配任意一个字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据解析">
+<meta property="og:url" content="https://luqingbys.github.io/mid-lake-pavilion.github.io/2022/01/11/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数据解析概述数据解析往往是爬取页面后重要的一步,用来提取有效的、我们想要的数据信息。常用的数据解析方式包括  re解析 bs4解析  re解析re解析是一种速度较快的数据解析方式，主要涉及正则表达式的使用。正则表达式，是一种使用表达式的方式，对字符串进行匹配的语法规则。 正则表达式 正则表达式的语法：能使用元字符（具有固定含义的特殊符号）进行排列组合用来匹配字符串。.        匹配任意一个字">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-11T06:02:27.000Z">
+<meta property="article:modified_time" content="2022-01-14T01:32:08.262Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/mid-lake-pavilion.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/mid-lake-pavilion.github.io/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/mid-lake-pavilion.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/mid-lake-pavilion.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luqingbys.github.io/mid-lake-pavilion.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-数据解析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2022/01/11/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2022-01-11T06:02:27.000Z" itemprop="datePublished">2022-01-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      数据解析
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="数据解析概述"><a href="#数据解析概述" class="headerlink" title="数据解析概述"></a>数据解析概述</h2><p>数据解析往往是爬取页面后重要的一步,用来提取有效的、我们想要的数据信息。常用的数据解析方式包括</p>
+<ul>
+<li>re解析</li>
+<li>bs4解析</li>
+</ul>
+<h2 id="re解析"><a href="#re解析" class="headerlink" title="re解析"></a>re解析</h2><p>re解析是一种速度较快的数据解析方式，主要涉及正则表达式的使用。正则表达式，是一种使用表达式的方式，对字符串进行匹配的语法规则。</p>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><blockquote>
+<p>正则表达式的语法：能使用元字符（具有固定含义的特殊符号）进行排列组合用来匹配字符串。<br>.        匹配任意一个字符<br>\w    匹配一个字母、数字、下划线<br>\s    匹配任意一个的空白符<br>\d    匹配一个数字<br>|n    匹配一个换行符<br>\t    匹配一个制表符<br>^        匹配字符串的开始<br>$        匹配字符串的结尾<br>下面的大写元字符是之前小写元字符的取反<br>\W    匹配一个非字母、非数字、非下划线<br>\D    匹配一个非数字<br>\S    匹配一个非空白符<br>a|b    匹配字符a或者字符b<br>()    匹配括号内的表达式，也表示一个组<br>[…]        匹配字符组中的字符</p>
+</blockquote>
+<blockquote>
+<p>下面的是控制前面元字符出现次数的量词<br>*    重复零次或者多次<br>+    重复一次或者更多次<br>?    重复零次或者一次<br>{n}    重复n次<br>{n,}    重复n次或者更多次<br>{n, m}    重复n到m次</p>
+</blockquote>
+<p>如前所说，正则表达式语法需要掌握元字符的写法。灵活运用上述元字符，可以实现各种匹配要求。<br>[a-zA-Z0-9]：表示匹配字符串中所有的字母和数字</p>
+<p>正则表达式中的贪婪匹配与惰性匹配：</p>
+<ul>
+<li>.*    贪婪匹配</li>
+<li>.*?    惰性匹配</li>
+</ul>
+<p>之前我们已经知道，？是量词，重复一次或者两次的量词，也就是说，惰性匹配中，？限制了前面的元字符*的出现次数（尽可能地少），因此惰性匹配尽可能的匹配到较短的匹配内容。</p>
+<blockquote>
+<p>例如，待检测字符串“玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏啊！<br>如果匹配字符串为 玩儿.*?游戏，匹配结果为：玩儿吃鸡游戏<br>而如果匹配字符串为 玩儿.*游戏，匹配结果为：玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏</p>
+</blockquote>
+<h3 id="实战案例"><a href="#实战案例" class="headerlink" title="实战案例"></a>实战案例</h3><p>爬取网页内容，拿到源码之后，通常在要提取的内容附近找到标识字符串，通过(?P&lt; name &gt;)写法，由”name”标记拿到数据。<br>比如，在爬取电影天堂网页数据时，要提取出电影名，现在找到其源码片段如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--&#123;start:最新--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;co_area2&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;title_all&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>最新电影更新:<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;co_content2&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/jddy/20160320/50523.html&#x27;</span>&gt;</span>IMDB评分8分左右影片500余部<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/dyzz/20220114/62205.html&#x27;</span>&gt;</span>2021年剧情喜剧《腿》BD国语<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/jddy/20220113/62204.html&#x27;</span>&gt;</span>2021年惊悚动作《僵局救援/反<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/jddy/20220112/62203.html&#x27;</span>&gt;</span>2021年动作奇幻《东京复仇者<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/dyzz/20220112/62202.html&#x27;</span>&gt;</span>2021年科幻动作《永恒族/永恒<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/dyzz/20220112/62201.html&#x27;</span>&gt;</span>2021年喜剧悬疑《不速来客》H<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/jddy/20220109/62196.html&#x27;</span>&gt;</span>2022年动作《特种兵/特攻队员<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/jddy/20220111/62200.html&#x27;</span>&gt;</span>2021年喜剧《大红狗克里弗》B<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/dyzz/20220111/62199.html&#x27;</span>&gt;</span>2021年喜剧《亚当斯一家2》BD<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/jddy/20220111/62198.html&#x27;</span>&gt;</span>2021年悬疑《角色》BD日语中<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/dyzz/20220111/62197.html&#x27;</span>&gt;</span>2022年纪录片《哈利·波特20<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;/html/gndy/jddy/20220109/62195.html&#x27;</span>&gt;</span>2022年悬疑《新洗冤录》HD国<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们发现，片名都在“《》”中，因此可以定义如下正则字符串：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 上述源码已经爬取保存到page中，re.S表示忽略换行符</span></span><br><span class="line"><span class="built_in">str</span> = re.<span class="built_in">compile</span>(<span class="string">r&quot;&lt;ul&gt;.*?《(?P&lt;name&gt;.*?)》&quot;</span>, re.S)</span><br><span class="line"><span class="comment"># 通过懒匹配可以拿到对应的数据，注意写法，且返回迭代器给names</span></span><br><span class="line">names = <span class="built_in">str</span>.finditer(page)</span><br><span class="line"><span class="keyword">for</span> it <span class="keyword">in</span> names:</span><br><span class="line">	<span class="built_in">print</span>(it.group(<span class="string">&quot;name&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="bs4解析"><a href="#bs4解析" class="headerlink" title="bs4解析"></a>bs4解析</h2><p>bs4是Python中的第三方库，其中的BeautifulSoup可以用来进行数据解析。<br>基本用法：</p>
+<ol>
+<li>将页面源代码交给BeautifulSoup进行处理，生成bs对象；</li>
+<li>从bs对象中查找数据，要掌握两个方法；</li>
+</ol>
+<ul>
+<li>find(标签, 属性&#x3D;值)    返回符合条件的一个html标签</li>
+<li>find_all(标签, 属性&#x3D;值)    返回符合条件的全部html标签</li>
+</ul>
+<ol start="3">
+<li>可以使用text属性拿到被标签标记的内容，也可以通过get(属性)拿到标签的属性。</li>
+</ol>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用bs4筛选数据，爬取优美图库</span></span><br><span class="line"><span class="comment"># 步骤</span></span><br><span class="line"><span class="comment"># 1. 拿到主页面的源代码，拿到链接地址href</span></span><br><span class="line"><span class="comment"># 2. 通过href拿到子页面内容，从子页面中找到图片下载地址</span></span><br><span class="line"><span class="comment"># 3. 下载图片</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">domain = <span class="string">&quot;https://www.umei.cc/bizhitupian/diannaobizhi/&quot;</span></span><br><span class="line">img_urls = []</span><br><span class="line">header = &#123;</span><br><span class="line">    <span class="string">&quot;User-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">resp = requests.get(domain)</span><br><span class="line">resp.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line"><span class="comment"># 生成bs对象</span></span><br><span class="line">page_content = BeautifulSoup(resp.text, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line"></span><br><span class="line">div = page_content.find(<span class="string">&#x27;div&#x27;</span>, attrs=&#123;<span class="string">&quot;class&quot;</span>: <span class="string">&quot;TypeList&quot;</span>&#125;)</span><br><span class="line">links = div.find_all(<span class="string">&#x27;a&#x27;</span>, class_=<span class="string">&quot;TypeBigPics&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">    <span class="comment"># links列表中的每一个元素都是一个a标签</span></span><br><span class="line">    <span class="comment"># print(link)</span></span><br><span class="line">    <span class="comment"># 直接通过get就可以拿到属性的值</span></span><br><span class="line">    img_url = domain+link.get(<span class="string">&#x27;href&#x27;</span>)[-<span class="number">10</span>:]</span><br><span class="line">    <span class="comment"># 1. 拿到子页面源代码</span></span><br><span class="line">    resp_img = requests.get(img_url, headers=header)</span><br><span class="line">    resp_img.encoding = <span class="string">&#x27;utf-8&#x27;</span></span><br><span class="line">    img_subcontent = BeautifulSoup(resp_img.text, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">    <span class="comment"># 2. 从子页面中拿到图片地址</span></span><br><span class="line">    p = img_subcontent.find(<span class="string">&#x27;p&#x27;</span>, attrs=&#123;</span><br><span class="line">        <span class="string">&quot;align&quot;</span>: <span class="string">&quot;center&quot;</span></span><br><span class="line">    &#125;)</span><br><span class="line">    download = p.find(<span class="string">&#x27;img&#x27;</span>).get(<span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(download)</span><br><span class="line">    resp_img.close()</span><br><span class="line">    <span class="comment"># 3. 下载图片</span></span><br><span class="line">    resp_download = requests.get(download)</span><br><span class="line">    img_name = download.split(<span class="string">&#x27;/&#x27;</span>)[-<span class="number">1</span>]  <span class="comment"># 将最后一个/后的内容作为图片名</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;D:/programming_exercises/2022寒假javascript/资源存放文件夹/网络爬虫图片/&quot;</span>+img_name, mode=<span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(resp_download.content)  <span class="comment"># 将字节内容写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;图片下载完成&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 追加到links数组中</span></span><br><span class="line">    img_urls.append(link.get(<span class="string">&#x27;href&#x27;</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> img_urls:</span><br><span class="line">    url = domain+item.strip(<span class="string">&#x27;/&#x27;</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2022/01/11/%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/" data-id="cl17apw2l002micud45wi1xn5" data-title="数据解析" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/2022/01/12/Vue%E6%BA%90%E7%A0%81%E4%B8%8EJavaScript%E7%9F%A5%E8%AF%86%E7%82%B9%E5%9B%9E%E9%A1%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vue源码与JavaScript知识点回顾
+        
+      </div>
+    </a>
+  
+  
+    <a href="/mid-lake-pavilion.github.io/2022/01/09/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">网络爬虫</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">Web前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">前端之路</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/">多一点冥想</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/">数字逻辑设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%8A%B1%E9%97%B4%E4%B8%80%E5%A3%B6%E9%85%92/">花间一壶酒</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" style="font-size: 20px;">大学课程</a> <a href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/10/">October 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">概念结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/24/JavaScript%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">JavaScript的正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/mid-lake-pavilion.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/mid-lake-pavilion.github.io/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/mid-lake-pavilion.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

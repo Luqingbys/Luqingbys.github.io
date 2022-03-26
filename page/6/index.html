@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://luqingbys.github.io/mid-lake-pavilion.github.io/page/6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/mid-lake-pavilion.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/mid-lake-pavilion.github.io/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/mid-lake-pavilion.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/mid-lake-pavilion.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luqingbys.github.io/mid-lake-pavilion.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-UML结构图" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/12/08/UML%E7%BB%93%E6%9E%84%E5%9B%BE/" class="article-date">
+  <time class="dt-published" datetime="2021-12-07T23:30:39.000Z" itemprop="datePublished">2021-12-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/12/08/UML%E7%BB%93%E6%9E%84%E5%9B%BE/">UML结构图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>UML，即统一建模语言，是软件行业主要的建模语言，用于分析、明确说明、设计软件系统。<br>UML12.0支持13种图，可以分为两类：结构图和行为图。</p>
+<p>而UML结构图用于表示系统中元素的静态结构，结构图包括：包图、类图、构件图、部署图、对象图、组合结构图。</p>
+<h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p>类图用来描述系统的静态结构，用来描述不同的类以及它们之间的关系。<br>在UML类图中一共包含三种模型元素，分别是：</p>
+<ul>
+<li>类</li>
+<li>接口</li>
+<li>类之间的关系</li>
+</ul>
+<h3 id="单个类的UML表示方法"><a href="#单个类的UML表示方法" class="headerlink" title="单个类的UML表示方法"></a>单个类的UML表示方法</h3><p>通俗地讲，每一个类的UML分为三个由横线分隔的区域。</p>
+<ol>
+<li>标出类名，类名就是一个字符串</li>
+<li>标出类中的属性，即类的成员变量，格式大体如下：<br>可见性 名称 :类型[&#x3D; 默认值]</li>
+<li>标出类中的操作，即类的成员方法，格式大体如下：<br>可见性 名称(参数列表) :返回类型</li>
+</ol>
+<blockquote>
+<p>属性与操作的可见性：<br>+表示public<br>#表示protected<br>-表示private<br>~表示默认，或者包内可见</p>
+</blockquote>
+<h3 id="类之间的六种关系"><a href="#类之间的六种关系" class="headerlink" title="类之间的六种关系"></a>类之间的六种关系</h3><p>类之间的关系大体可以分类如下：</p>
+<ul>
+<li>横向关系<ul>
+<li>依赖</li>
+<li>关联<ul>
+<li>聚合</li>
+<li>组合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>纵向关系<ul>
+<li>泛化</li>
+<li>实现</li>
+</ul>
+</li>
+</ul>
+<h4 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h4><p>表示类与类之间&#x2F;接口与接口之间的一种继承关系，指定了子类如何特化父类的所有特征和行为。</p>
+<ul>
+<li>对于抽象方法和抽象类名，用斜体表示</li>
+<li>使用带空心的三角箭头的实线表示，箭头指向父类</li>
+<li>简记，箭头指向谁，就继承谁（宾语）</li>
+</ul>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>实现也是一种继承，表示类是接口所有特征和行为的实现。</p>
+<ul>
+<li>使用带三角箭头的虚线表示，箭头指向接口类。</li>
+<li>简记，箭头指向谁，就实现谁（宾语）</li>
+</ul>
+<h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>对于两个相对独立的对象，当一个对象构造另一个对象的实例时，这两个对象之间主要体现为依赖关系。</p>
+<blockquote>
+<p>依赖关系可以通过三种方式实现：<br>某一个类的方法使用另一个类的对象作为参数<br>在一个类的方法中将另一个类的对象作为其局部变量<br>在一个类的方法中调用另一个类的静态方法</p>
+</blockquote>
+<ul>
+<li>使用带箭头的虚线，指向被使用者或者被创建者</li>
+<li>可以将依赖关系理解为一种使用的关系，即“use-a”关系</li>
+<li>这种使用的关系是一种具有偶然性、临时性的弱关系</li>
+<li>简记，箭头指向谁，就依赖谁（宾语）</li>
+</ul>
+<h4 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h4><p>两个相对独立的对象之间存在固定的对应关系时，它们之间为关联关系。<br>关联关系是两个类之间一种强的依赖关系，是长期性的，可以理解为“has-a”的关系。</p>
+<ul>
+<li>单向关联：类B作为了类A的成员变量<ul>
+<li>使用带普通箭头的实心线表示，箭头指向被拥有者</li>
+<li>简记，箭头指向谁，就拥有谁（宾语）</li>
+</ul>
+</li>
+<li>双向关联：B中有A，A中有B<ul>
+<li>使用带有两个箭头或者没有箭头的实心线表示</li>
+</ul>
+</li>
+<li>自关联：自己包含自己</li>
+</ul>
+<p>每一种关联关系的连线表示，需要标注出关联名、关联端点名和关联重数</p>
+<h4 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h4><p>聚合属于关联，耦合度强于关联，仅仅在语义上有所区别。简单点说，聚合关系强调的是“整体”包含“部分”，但是“部分”可以脱离“整体”而单独存在。</p>
+<ul>
+<li>表示方式是带空心菱形的实线，菱形紧靠整体，另一端指向被拥有者。</li>
+</ul>
+<h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h4><p>一种比聚合还强的关系，要求代表整体的对象负责代表部分的对象的生命周期。</p>
+<ul>
+<li>表示方式是带实心菱形的实线，菱形紧靠整体。</li>
+</ul>
+<h3 id="UML中的注释"><a href="#UML中的注释" class="headerlink" title="UML中的注释"></a>UML中的注释</h3><h3 id="UML中的限制"><a href="#UML中的限制" class="headerlink" title="UML中的限制"></a>UML中的限制</h3><h2 id="对象图"><a href="#对象图" class="headerlink" title="对象图"></a>对象图</h2><p>对象图用于呈现系统在特定时刻的对象（Object），以及对象之间的链接。</p>
+<ul>
+<li>对象图中仅仅声明类名也没有对象名，则称之为匿名对象；</li>
+<li>对象图不显示操作，因为所有对象都有着相同的操作。</li>
+</ul>
+<h2 id="包图"><a href="#包图" class="headerlink" title="包图"></a>包图</h2><p>将相关的、欲放置在一起的东西打包成箱。<br>包的内部可以放置：包、用例图、类图、组件图等等。</p>
+<ul>
+<li>元素的导入：可以将包内的任意元素导入到另一个包中，需用到import关键字。</li>
+</ul>
+<h2 id="组件图"><a href="#组件图" class="headerlink" title="组件图"></a>组件图</h2><p>显示一组组件以及它们之间的相互关系。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/12/08/UML%E7%BB%93%E6%9E%84%E5%9B%BE/" data-id="cl17apw1y0015icud0m24glv8" data-title="UML结构图" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-计算机中信息的表示与运算" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/12/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97/" class="article-date">
+  <time class="dt-published" datetime="2021-12-03T09:37:40.000Z" itemprop="datePublished">2021-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/12/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97/">计算机中信息的表示与运算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>计算机存储数值采取编码形式，常见的编码有四种：</p>
+<ul>
+<li>原码</li>
+<li>补码</li>
+<li>反码</li>
+<li>移码</li>
+</ul>
+<h2 id="先导概念"><a href="#先导概念" class="headerlink" title="先导概念"></a>先导概念</h2><ul>
+<li>真值：即真正的数值，是带有正负号的一种数，人类可以识别。</li>
+<li>机器数：将符号数值化之后的结果，计算机可以识别。</li>
+<li>定点数<ul>
+<li>定点整数：默认小数点在数值最低位之后</li>
+<li>定点小数：默认小数点在符号位与数值最高位之间</li>
+<li>有符号数：最高位为符号位，次高位为数值位</li>
+<li>无符号数：最高位就为数值位</li>
+</ul>
+</li>
+</ul>
+<h2 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h2><p>最简单的一种码，即真值符号化的最简单的结果，极似真值。<br>求数的原码很简单：</p>
+<ul>
+<li>得到数的二进制表示形式</li>
+<li>确定符号位，整数为0，负数为1</li>
+<li>注意机器字长（寄存器位数），补零</li>
+</ul>
+<p>在书写上，若逗号，放在了符号位和数值最高位之间，则是一个定点整数；<br>若小数点.放在了符号位和数值最高位之间，则是一个定点小数。</p>
+<h3 id="原码表示范围"><a href="#原码表示范围" class="headerlink" title="原码表示范围"></a>原码表示范围</h3><p>注意原码的表示范围。原码表示无符号数时，表示区间与有符号数有差异。</p>
+<h3 id="0的原码"><a href="#0的原码" class="headerlink" title="0的原码"></a>0的原码</h3><p>另注意：<br>0的原码有俩，因为从真值上看，+0和-0都是0，但是其机器码（原码）却有差别：<br>+0 — 0,0000000B<br>-0 — 1,0000000B</p>
+<h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><p>补码的出现，首先就是为了找到一个等价于某一个数，以方便运算。</p>
+<blockquote>
+<p>补码计算公式<br>关于补码公式，教材上有完整的表述，此外注意二进制数的两种特殊形式：<br>2^n - 1 &#x3D; 11…1<br>2^n &#x3D; 100…0</p>
+</blockquote>
+<h3 id="补码的二义性"><a href="#补码的二义性" class="headerlink" title="补码的二义性"></a>补码的二义性</h3><p>由于补码对定点整数和定点小数的公式不同，因此，以-1为例，-1作为定点整数和定点小数时，会得到两种不同的结果！具体按公式来。</p>
+<h3 id="补码和原码的对比现象"><a href="#补码和原码的对比现象" class="headerlink" title="补码和原码的对比现象"></a>补码和原码的对比现象</h3><p>一个负数的原码从它的低位算起，<br>    ①遇到第一个“1”时，原码与补码是相同的。<br>    ②超过这个“1”直至符号位之间的那段数位，原码与补码是相反的。</p>
+<h3 id="求补码快捷方式"><a href="#求补码快捷方式" class="headerlink" title="求补码快捷方式"></a>求补码快捷方式</h3><ul>
+<li>对于正数，其补码和原码一致</li>
+<li>对于负数，其补码由原码除符号位外，各位取反，然后末尾加一，得到</li>
+<li>已知某真值的补码，求其相反数的补码，则将包括符号位在内的补码，各位取反，末尾加一，得到</li>
+</ul>
+<h2 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h2><h2 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h2><h3 id="移码公式"><a href="#移码公式" class="headerlink" title="移码公式"></a>移码公式</h3><p>移码公式说白了，就是将真值往高位方向移动一定的数值，主要用于需要对数据进行大小比较的场合。<br>如果真值有n位，就在真值基础上加上100…0（n个0）即可。</p>
+<h2 id="定点数与浮点数的表示"><a href="#定点数与浮点数的表示" class="headerlink" title="定点数与浮点数的表示"></a>定点数与浮点数的表示</h2><h2 id="定点数"><a href="#定点数" class="headerlink" title="定点数"></a>定点数</h2><h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>借助数学中的科学记数法，将浮点数转化为定点数。<br>一个浮点数可以表示为： N &#x3D; M × R^E<br>其中，</p>
+<ul>
+<li>M称为尾数，一般取一个定点小数</li>
+<li>R称为基值</li>
+<li>E称为阶码</li>
+</ul>
+<h3 id="规格化表示"><a href="#规格化表示" class="headerlink" title="规格化表示"></a>规格化表示</h3><p>为了利用尾数所占的二进制数位来表示最多的有效数字，浮点数一般采用“规格化形式”：<br>也即尾数绝对值的最高位必须为1，即尾数绝对值必须大于或者等于1&#x2F;R。</p>
+<p>当规格化过程中，浮点数阶码小于最小阶码时，称发生“下溢”。</p>
+<h3 id="浮点数的表示范围"><a href="#浮点数的表示范围" class="headerlink" title="浮点数的表示范围"></a>浮点数的表示范围</h3><p>以原码表示，分析即可。<br>最大正数<br>最小正数<br>最大负数<br>最小负数</p>
+<h3 id="长实数与实数"><a href="#长实数与实数" class="headerlink" title="长实数与实数"></a>长实数与实数</h3><p>长实数：64位浮点数<br>实数：32位浮点数</p>
+<h2 id="定点数的运算"><a href="#定点数的运算" class="headerlink" title="定点数的运算"></a>定点数的运算</h2><h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><h3 id="移位运算"><a href="#移位运算" class="headerlink" title="移位运算"></a>移位运算</h3><blockquote>
+<p>明确两个概念：<br>算术移位：有符号数的移位<br>逻辑移位：无符号数的移位</p>
+</blockquote>
+<h4 id="算术移位规则"><a href="#算术移位规则" class="headerlink" title="算术移位规则"></a>算术移位规则</h4><h5 id="算术移位"><a href="#算术移位" class="headerlink" title="算术移位"></a>算术移位</h5><p>最首要的规则，就是符号位不变。</p>
+<ul>
+<li>对于正数，原码、补码、反码的移位只需补0即可</li>
+<li>对于负数<ul>
+<li>原码，左移右移均补0</li>
+<li>补码，左移补0，右移补1</li>
+<li>反码，左移右移均补1</li>
+</ul>
+</li>
+</ul>
+<h5 id="逻辑移位"><a href="#逻辑移位" class="headerlink" title="逻辑移位"></a>逻辑移位</h5><p>由于逻辑移位处理的是无符号数，所以相对而言比较简单，规则就是：<br>移出的空位均补0</p>
+<h3 id="加法与减法运算"><a href="#加法与减法运算" class="headerlink" title="加法与减法运算"></a>加法与减法运算</h3><p>补码的引入，使得定点数的加、减运算都被统一成了加法运算，所以对于加减运算，我们都采取补码形式。<br>此外，补码运算也不需要单独处理符号位，它在运算过程中自然形成，这样一来大大简化了硬件设计。</p>
+<h4 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h4><p>[X + Y]补 &#x3D; [ X ]补 + [ Y ]补<br>[X - Y]补 &#x3D; [ X ]补 + [ -Y ]补<br>对于整数，结果需要对2^(n+1)取模；<br>对于小数，结果需要对2取模。<br>也即对超出字长的数位丢弃。</p>
+<blockquote>
+<p>公式的证明<br>分四种情况来证明即可，分类讨论，注意运用补码公式（含取模）！</p>
+</blockquote>
+<h3 id="溢出"><a href="#溢出" class="headerlink" title="溢出"></a>溢出</h3><p>导致溢出的原因，就是计算机字长是固定的，数值位最高位产生的进位1被字长最高位吸收，而这个“1”属性本来是数值，而现在却被当做了符号。</p>
+<p>同号操作数相加时，可能“溢出”；<br>异号操作数相加时，绝对不会“溢出”。</p>
+<h4 id="溢出的判断"><a href="#溢出的判断" class="headerlink" title="溢出的判断"></a>溢出的判断</h4><p>两个数符号相同，而结果的符号不同，这时一定发生了溢出。</p>
+<blockquote>
+<p>硬件实现：最高有效位的进位 和 符号位的进位作异或操作，若结果为1，则溢出了。</p>
+</blockquote>
+<p>双符号位判断法：符号位由原来的一位变成了两位，操作之后，若双符号位取值不同，表示发生了“溢出”。</p>
+<h3 id="乘法操作"><a href="#乘法操作" class="headerlink" title="乘法操作"></a>乘法操作</h3><h4 id="笔算乘法的改进过程"><a href="#笔算乘法的改进过程" class="headerlink" title="笔算乘法的改进过程"></a>笔算乘法的改进过程</h4><p>首先，对于乘积式A×B，约定A为被乘数，B为乘数。<br>定义两种说法：部分积与单次乘数。<br>部分积：是指每一次乘法得到的结果，最后的积由每一个部分积累加而成。<br>单次乘数：每一次取B的一个数位，这个数位上的数就是单次乘数。</p>
+<p>过程大致如下：</p>
+<ol>
+<li>初始状态，部分积为0；</li>
+<li>取B的最低位作为乘数，与A相乘后的结果（要么是0要么是A）与部分积相加，更新部分积；</li>
+<li>部分积连同B一起右移一位（即部分积的最低位移到乘数的最高位，乘数的最低位丢失），重复第2~3步即可。</li>
+</ol>
+<p>从硬件实现角度看，完成整个乘法需要三个寄存器（分别存放被乘数、乘积的高位、以及乘数和乘积的低位），一个全加器和其他相应的电路。</p>
+<h5 id="原码的一位乘法"><a href="#原码的一位乘法" class="headerlink" title="原码的一位乘法"></a>原码的一位乘法</h5><p>符号位：被乘数和乘数的符号位作异或操作；<br>数值位：按照上述笔算乘法的改进过程即可。</p>
+<h5 id="原码的二位乘法"><a href="#原码的二位乘法" class="headerlink" title="原码的二位乘法"></a>原码的二位乘法</h5><h5 id="补码的一位乘法"><a href="#补码的一位乘法" class="headerlink" title="补码的一位乘法"></a>补码的一位乘法</h5><p>乘数为正数时，两数积的补码等于补码的积。<br>这里的加、移位操作都必须按照补码的规则来！<br>乘数为负数时，公式有些许不同。<br>运算过程大体与之前的一致。</p>
+<h3 id="除法"><a href="#除法" class="headerlink" title="除法"></a>除法</h3><h4 id="原码的除法"><a href="#原码的除法" class="headerlink" title="原码的除法"></a>原码的除法</h4><ul>
+<li>商的符号位单独处理（异或）</li>
+<li>商的数值部分为绝对值相除</li>
+</ul>
+<p>对于A÷B，我们以下的被除数，除数都是在原题基础上不考虑符号位的无符号数。<br>不恢复余数法：</p>
+<ol>
+<li>初始状态商为0，被除数为A；</li>
+<li>用被除数减去除数，也就是加上除数的相反数的补码，如果结果（即余数）为正，上商1，否则上商0（均在当前商的最低位）；</li>
+<li>如果上一步得到的余数为负数，那么需要加上除数，以将余数恢复为一个正数，如果为正数直接进行下一步了；</li>
+<li>将得到的余数逻辑左移，同时当前的商也左移，重复第2~4步。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/12/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97/" data-id="cl17apw2t003cicud1xec1ngt" data-title="计算机中信息的表示与运算" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-UML行为图" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/12/03/UML%E8%A1%8C%E4%B8%BA%E5%9B%BE/" class="article-date">
+  <time class="dt-published" datetime="2021-12-03T04:39:11.000Z" itemprop="datePublished">2021-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/12/03/UML%E8%A1%8C%E4%B8%BA%E5%9B%BE/">UML行为图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>UML行为图，是用来描述系统中元素的动态行为。例如对象的创建与销毁之类的。</p>
+<h2 id="用例图"><a href="#用例图" class="headerlink" title="用例图"></a>用例图</h2><p>是用户与系统交互的最简表示形式。便于理解，问问自己对于任何一个系统这三个问题：</p>
+<ol>
+<li>系统给谁用的？</li>
+<li>系统有什么功能？</li>
+<li>不同的用户分别用到什么功能？</li>
+</ol>
+<p>针对这样的基本问题，用例图给出了一定的描述，对应的用例图中元素为</p>
+<ol>
+<li>小人+名称（表示角色）</li>
+<li>椭圆及内部文字表示用例</li>
+<li>小人与椭圆之间的连线</li>
+</ol>
+<h3 id="用例描述"><a href="#用例描述" class="headerlink" title="用例描述"></a>用例描述</h3><p>用例是一个比较抽象的概念，用例图仅仅是较为直观的粗略反映了系统的功能。但是，这并不完整。因此，还需要对每一个用例进行文字描述，称之为用例描述。有以下注意点：</p>
+<ul>
+<li>做用例描述时，不必涉及系统内部的结构，而只是涉及到人与系统的交互细节。</li>
+<li>大致按照人-系统交互，即人操作、系统反应的流程来进行用例描述。</li>
+</ul>
+<p>大致可分为：</p>
+<ul>
+<li>乐观流（正常流，一切顺利）</li>
+<li>实际流（有异常出现）</li>
+</ul>
+<p>用例之间的关系：</p>
+<ul>
+<li>泛化关系（即子用例继承父用例）</li>
+<li>包含关系（基础用例相当于调用者，内含用例相当于子程序）</li>
+<li>扩展关系（用例功能的延伸，相当于添加一个附加功能）</li>
+</ul>
+<p>包含关系include和扩展关系extend都需要使用带箭头的直线来表示，前者的箭头指向内含用例，后者的箭头指向被延伸的用例。</p>
+<h4 id="角色分离"><a href="#角色分离" class="headerlink" title="角色分离"></a>角色分离</h4><p>当一个人充当多个角色时，需要将角色从这个人身上分离<br>角色和用例之间，如果导航明确，可以绘制方向，箭头指向消息接收方。也可能箭头指向自己（此时角色接收用例执行的结果和数据）。</p>
+<h2 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h2><p>大体来说，有点类似流程图，但是流程图几乎都是一个流，而活动图可以方便表示多个流的任务一起进行。<br>包括的节点类型：行动节点和控制节点。</p>
+<ul>
+<li>必须有初始节点、最终节点。</li>
+<li>决策节点：类似于流程图中的判断框，在该节点会生出至少两个分支。具有一个内向流和几个外向流（通常带有保护条件），然后只选择其中一个外向流。</li>
+<li>合并节点：多个事件不等待，不同步，先到达合并节点者先进入下一步。</li>
+<li>分叉节点：分叉出不同的分支，然后并行。</li>
+<li>汇合节点：当两个流的任务都完成后，才可以向下流。</li>
+</ul>
+<h2 id="状态机图"><a href="#状态机图" class="headerlink" title="状态机图"></a>状态机图</h2><p>状态机图表示的是，某一个对象在不同状态下的行为。</p>
+<p>注意状态机图的图例：初始状态、最终状态等。</p>
+<h3 id="完整的状态转换描述表示法"><a href="#完整的状态转换描述表示法" class="headerlink" title="完整的状态转换描述表示法"></a>完整的状态转换描述表示法</h3><p>触发器[监护条件]&#x2F;转换行为<br>其中，每一个元素都是可选的。</p>
+<ul>
+<li>触发器 指能够引起转换的事件。</li>
+<li>监护条件 允许或封锁转换的一个Boolean条件，若条件为真，则接受转换，否则封锁转换。</li>
+<li>转换行为 转换发生时所执行的连续活动。</li>
+</ul>
+<h2 id="顺序图（时序图）"><a href="#顺序图（时序图）" class="headerlink" title="顺序图（时序图）"></a>顺序图（时序图）</h2><p>使用时序图最大的作用就是，可以清楚地表示按照时间顺序的消息传递。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/12/03/UML%E8%A1%8C%E4%B8%BA%E5%9B%BE/" data-id="cl17apw200017icud8awh9q7d" data-title="UML行为图" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git的基本使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/28/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2021-11-28T02:24:16.000Z" itemprop="datePublished">2021-11-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/11/28/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">git的基本使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Git基本理念"><a href="#Git基本理念" class="headerlink" title="Git基本理念"></a>Git基本理念</h2><p>首先，我们需要知道的是Git是一个版本管理工具，它为我们提供了大量实用的命令，帮助我们实现有效的多人协作开发。</p>
+<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><p>Git的工作流程一般大体如下：</p>
+<ol>
+<li>克隆Git资源作为我们自己的工作目录；</li>
+<li>在克隆的资源上添加或修改文件；</li>
+<li>如果其他人修改了克隆的资源，我们可以及时更新资源；</li>
+<li>在提交之前查看修改；</li>
+<li>提交修改；</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并且再次修改并提交。</li>
+</ol>
+<h3 id="几个基本概念"><a href="#几个基本概念" class="headerlink" title="几个基本概念"></a>几个基本概念</h3><ul>
+<li>工作区：就是我们电脑里面能看到的目录。</li>
+<li>暂存区（stage，index），一般存放在.git目录下的index文件，有时候也把暂存区称作索引（index）。</li>
+<li>版本库（仓库，repository）：工作区有一个隐藏目录.git，它就是Git版本库。</li>
+</ul>
+<h2 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h2><p><code>git init   创建本地仓库</code><br><code>git add .  将文件添加到暂存区</code><br><code>git commit     将暂存区的内容添加到仓库中</code></p>
+<p><code>git log    查看版本更改的历史记录</code><br><code>git reset  版本回退</code></p>
+<h2 id="Git提交文件操作"><a href="#Git提交文件操作" class="headerlink" title="Git提交文件操作"></a>Git提交文件操作</h2><blockquote>
+<p>如何提交提定文件更改到暂存区，如何提交特定文件夹更改到暂存区，如何提交全部文件更改到暂存区?</p>
+</blockquote>
+<p>git add readme.md   提交文件到暂存区<br>git add readme.md test.txt  提交多个文件到暂存区</p>
+<h2 id="Git状态的掌握"><a href="#Git状态的掌握" class="headerlink" title="Git状态的掌握"></a>Git状态的掌握</h2><p>使用git status可以时刻掌握仓库当前的状态，<br>使用git diff可以查看difference，即两者的区别</p>
+<h2 id="Git版本的回退与恢复"><a href="#Git版本的回退与恢复" class="headerlink" title="Git版本的回退与恢复"></a>Git版本的回退与恢复</h2><p>我们在开发项目时，少不了多次提交代码，这样也就有了许多个不同的版本了。但是我们有时候就需要回到特定的版本中处理一些代码。对此，我们首先要用到命令<br><code>git log</code><br>显示所有的版本信息，可以看见此时git显示了最近至远的各种版本，里面都包含了每一个版本的具体信息。在Git中，HEAD表示当前版本，上一个版本就是HEAD^，上上个就是HEAD^^，类推，往上50个就写作HEAD~50。<br>例如，回退到上一个版本，可使用如下命令：<br><code>git reset --hard HEAD^</code></p>
+<p>那如果回退了之后，又想回到原来的新版本呢？别急，有如下命令：<br><code>git reflog</code><br>它将显示我们的每一次命令，然后我们就可以看到原来版本的commit id（假设就是14331a），再使用命令<br><code>git reset --hard 14331a</code><br>就可以回来辣。</p>
+<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><p>对文件的撤销修改，需用到命令：<br><code>git checkout -- 文件名</code><br>将文件在工作区的修改全部撤销（丢弃工作区的修改），即让该文件回到最近一次git commit或者git add时的状态。<br>这种情况有两种：</p>
+<ul>
+<li>文件修改后，还没有提交到暂存区；</li>
+<li>文件提交到了暂存区，但是又作了修改，现在撤销修改就是回到添加到暂存区后的状态。</li>
+</ul>
+<p>若文件已经提交到暂存区了呢？那就需要这个命令了：<br><code>git reset HEAD &lt;file&gt;</code><br>它可以把暂存区的修改撤销掉，重新放回工作区<br>也就是说，git reset命令既可以将暂存区的修改回退到工作区，也可以回退版本。</p>
+<h2 id="文件的删除"><a href="#文件的删除" class="headerlink" title="文件的删除"></a>文件的删除</h2><p>只从工作区删除了文件，工作区就会和版本库不太一致了。如果要彻底删除文件（以test.txt为例），执行如下命令：<br><code>git rm test.txt</code><br><code>git commit -m&quot;remove test.txt&quot;</code><br>即可实现test.txt的完全删除</p>
+<p>如果只是删除错了文件，就使用<br><code>git checkout -- test.txt</code><br>这是因为版本库里面还存在这个文件，用版本库中的版本替换工作区中的版本即可（丢弃工作区的删除）。</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>在本地仓库下运行命令，可以将本地仓库与远程仓库关联起来：<br><code>git remote add origin git@github.com:账户名...</code></p>
+<p>在创建了远程仓库，并与本地仓库关联之后，就可以将本地仓库的所有内容全部推送到全程仓库中：<br><code>git push -u origin master</code><br>第一次推送时，加上了-u参数，本地的master分支还会和远程的master分支关联起来，简化以后的推送或者拉取命令。</p>
+<h2 id="从远程仓库克隆"><a href="#从远程仓库克隆" class="headerlink" title="从远程仓库克隆"></a>从远程仓库克隆</h2><p>准备好远程库后，使用git clone可以克隆一个本地</p>
+<h2 id="Git分支管理"><a href="#Git分支管理" class="headerlink" title="Git分支管理"></a>Git分支管理</h2><h3 id="本地分支管理"><a href="#本地分支管理" class="headerlink" title="本地分支管理"></a>本地分支管理</h3><p><code>git branch     创建分支命令</code><br><code>git branch -X  创建分支，-X为分支名</code><br><code>git checkout -X  切换分支命令，切换到-X分支</code><br><code>git checkout -b branchname     创建分支并立即切换过去</code><br><code>git switch branchname      切换至已有的分支</code><br><code>git switch -c dev      创建并切换至已有分支</code><br><code>git branch -d branchname       删除本地分支</code></p>
+<h4 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h4><p>将任何分支合并到当前分支中：<br><code>git merge      分支合并</code></p>
+<ul>
+<li>一种简单的情况，是将master分支与dev分支直接合并，假设我们已经在master分支上了：<br><code>git merge dev</code><br>便可直接将master和dev合并了</li>
+</ul>
+<h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><p><code>git branch -d &lt;branchname&gt;</code></p>
+<p>如果要丢弃一个没有被合并过的分支，可以通过<br><code>git branch -D &lt;branchname&gt;</code><br>来强行删除。</p>
+<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><p>当合并的两个分支产生冲突（一般是文件内容不同）时，必须首先解决冲突。只有解决完冲突后，才可以再提交，此时合并完成。<br>而解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。</p>
+<h2 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h2><p>有时候我们在开发中遇见了bug，就需要另开一个分支去修复bug，但是这时候，可能我们手边正在开发的工作还没有提交，因此，就需要先将当前的工作存储下来。<br><code>git stash</code><br>该命令可以将当前工作现场“存储”起来，等以后恢复现场后继续工作。<br>接下来，就可以继续新建分支修复bug了…<br>修复bug完成后，也需要合并分支，当整个工作结束后，我们需要将工作现场还原。用到如下命令：<br><code>git stash list</code><br>恢复工作现场有两种命令：<br><code>git stash apply    恢复工作现场，同时不删除stash</code><br><code>git stash pop  恢复工作现场，同时删除stash</code></p>
+<blockquote>
+<p>此时master分支已经修复了bug，但是其他的开发分支，比如dev中bug仍然存在。能不能直接将本次针对修复bug的提交拿到开发分支dev上呢？</p>
+</blockquote>
+<p>命令<br><code>git cherry-pick 提交id</code><br>可以实现复制一个特定的提交到当前分支。</p>
+<h2 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h2><h3 id="远程库"><a href="#远程库" class="headerlink" title="远程库"></a>远程库</h3><p>当我们从远程库克隆时，实际上Git就自动把本地的master分支和远程的master分支对应起来了，且远程仓库的默认名称是origin。</p>
+<p>查看远程库信息：<br><code>git remote</code><br><code>git remote -v</code></p>
+<p>在默认情况下，origin指向的就是用户在github上的远程仓库repository。</p>
+<h3 id="与远程库建立关联"><a href="#与远程库建立关联" class="headerlink" title="与远程库建立关联"></a>与远程库建立关联</h3><p>与github上的仓库关联：<br><code>git remote add origin 地址</code><br>与gitee上的仓库关联：<br><code>git remote set-url --add origin 地址</code><br>进行如上的操作之后，本地的.git\config文件下就会显示关联的远程仓库的信息。</p>
+<h3 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h3><p>即将该分支上的所有本地提交推送到远程库。推送时，需要指定本地分支，这样Git就会把该分支推送到远程库对应的远程分支上。<br><code>git push origin &lt;branchname&gt;</code><br>将本地分支branchname推送到远程仓库origin对应的远程分支上。</p>
+<p>常见的四种分支：</p>
+<ul>
+<li>master分支是主分支，因此要时刻与远程同步；</li>
+<li>dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</li>
+<li>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</li>
+<li>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</li>
+</ul>
+<h3 id="多人抓取分支"><a href="#多人抓取分支" class="headerlink" title="多人抓取分支"></a>多人抓取分支</h3><p>当我们提交分支到远程分支时，首先需要确保自己的代码是最新状态。因此需要git pull拉取远程代码。<br>常见的情况是，首先git pull把最新的提交从origin&#x2F;dev抓下来，然后再本地合并，并解决冲突，再推送。</p>
+<p>而为了顺利git pull，首先需要指定本地dev分支和远程origin&#x2F;dev分支的链接：<br><code>git branch --set-upstream-to=origin/dev dev</code><br>接着再pull：<br><code>git pull</code><br>接下来就是手动解决冲突的时间了。</p>
+<p>解决完冲突后，就需要推送了，使用命令<br><code>git pull origin &lt;branchname&gt;</code><br>即可推送成功。</p>
+<h2 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h2><p>即常说的克隆。在github上随便逛的时候，瞧中了一个项目，拿到它的地址在本地git clone一下，它就被扒取到了。</p>
+<h2 id="Codereview"><a href="#Codereview" class="headerlink" title="Codereview"></a>Codereview</h2><p>中文可以理解为代码评审，旨在保证代码的规范性，更好地促进团队的开发工作。</p>
+<ul>
+<li>When？每一次代码合并（Pull Request）的时候，就是codereview的最佳时机。另外，每一次提交合并请求都需要确保代码的粒度，也就是说，不要一次性提交大量的代码，而是要修改一次提交一次、实现了一个功能模块提交一次。</li>
+<li>How？选用一些代码托管平台，比如github、gitlab等等，借助上面的代码codereview工具也可以进行评审。</li>
+<li>What？对代码的规范性、完整性、正确性、健壮性、可扩展性等方面进行评审。</li>
+</ul>
+<h2 id="PR"><a href="#PR" class="headerlink" title="PR"></a>PR</h2><p>即pull request。请求合并代码。<br>我们在fork一个项目，并在本地做好修改、commit之后，想要将自己的这部分贡献推送给原项目，怎么办？<br>首先需要做一下同步，git rebase或者git merge拉取其他人做出的最新改动，然后在github上创建pull request合并请求，等待维护人管理通过即可。</p>
+<h2 id="http模式与ssh模式"><a href="#http模式与ssh模式" class="headerlink" title="http模式与ssh模式"></a>http模式与ssh模式</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/28/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" data-id="cl17apw26001licudhee8gva0" data-title="git的基本使用" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-教材典型算法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/27/%E6%95%99%E6%9D%90%E5%85%B8%E5%9E%8B%E7%AE%97%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-11-27T01:32:47.000Z" itemprop="datePublished">2021-11-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/11/27/%E6%95%99%E6%9D%90%E5%85%B8%E5%9E%8B%E7%AE%97%E6%B3%95/">教材典型算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><h3 id="树的遍历算法"><a href="#树的遍历算法" class="headerlink" title="树的遍历算法"></a>树的遍历算法</h3><ol>
+<li>先序遍历</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Preorder</span><span class="params">(BiTree T, <span class="type">void</span> (*visit)(TElemType&amp; e))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">visit</span>(T-&gt;data); <span class="comment">// 先访问根结点</span></span><br><span class="line">        <span class="comment">// 再递归访问左子树和柚子树</span></span><br><span class="line">        <span class="built_in">Preorder</span>(T-&gt;lchild, visit);</span><br><span class="line">        <span class="built_in">Preorder</span>(T-&gt;rchild, visit);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>先序、中序、后序遍历算法思路几乎完全一致，不再赘述。<br>2. 中序遍历的非递归描述</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对于中序遍历一棵二叉树，第一个要访问的根结点一定是最左边的结点</span></span><br><span class="line"><span class="comment">// 因此，GoFarLeft函数的功能就是对二叉树T，寻找最左边的结点</span></span><br><span class="line"><span class="comment">// 同时，用一个栈S保存每一次的根结点，它是中序遍历的中间访问者</span></span><br><span class="line"><span class="function">BiTNode *<span class="title">GoFarLeft</span><span class="params">(BiTree T, Stack *S)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 代表当前根结点不存在了，返回空</span></span><br><span class="line">    <span class="keyword">if</span>(!T)  <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    <span class="comment">// 当前根结点有左子树，往左继续寻找</span></span><br><span class="line">    <span class="keyword">while</span>(T-&gt;lchild)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">Push</span>(S, T);</span><br><span class="line">        T = T-&gt;lchild;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 非递归的中序遍历算法</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Inorder_I</span><span class="params">(BiTree T, <span class="type">void</span> (*visit)(TelemType&amp; e))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Stack *S;</span><br><span class="line">    t = <span class="built_in">GoFarLeft</span>(T, S);    <span class="comment">// 寻找最左下边的结点</span></span><br><span class="line">    <span class="comment">// 每一次循环，访问一个结点</span></span><br><span class="line">    <span class="keyword">while</span>(t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">visit</span>(t-&gt;data);</span><br><span class="line">        <span class="comment">// 如果t有柚子树，就得继续遍历柚子树，用相同的方式</span></span><br><span class="line">        <span class="keyword">if</span>(t-&gt;rchild)</span><br><span class="line">            t = <span class="built_in">GoFarLeft</span>(t-&gt;rchild, S);</span><br><span class="line">        <span class="comment">// t没有柚子树，t本来就没有左子树，则应该访问其父结点了，S中存放了结点路径</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">StackEmpty</span>(S))</span><br><span class="line">            t = <span class="built_in">Pop</span>(S);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            t = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>非递归。<br>3. 求二叉树的深度</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">Depth</span><span class="params">(BiTree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!T)  depthval = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">    &#123;</span><br><span class="line">        depthLeft = <span class="built_in">Depth</span>(T-&gt;lchild);</span><br><span class="line">        depthRight = <span class="built_in">Depth</span>(T-&gt;lchild);</span><br><span class="line">        depthval = (depthLeft &gt; depthRight ? depthLeft : depthRight) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> depthval;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>求深度。<br>4. 建树<br>已知一棵二叉树的先序遍历和中序遍历，还原这棵二叉树。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CrtBT</span><span class="params">(BiTree&amp; T, <span class="type">char</span> pre[], <span class="type">char</span> ino[], <span class="type">int</span> ps, <span class="type">int</span> is, <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">0</span>)  T = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">    &#123;</span><br><span class="line">        k = <span class="built_in">Search</span>(ino, pre[ps]);</span><br><span class="line">        <span class="keyword">if</span>(k == <span class="number">-1</span>) T = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            T = (BiTNode*)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(BiTNode));</span><br><span class="line">            T-&gt;data = pre[ps];</span><br><span class="line">            <span class="keyword">if</span>(k == is) T-&gt;Lchild = <span class="literal">NULL</span>;</span><br><span class="line">            <span class="keyword">else</span>    <span class="built_in">CrtBT</span>(T-&gt;Lchild, pre[], ino[], ps+<span class="number">1</span>, is, k - is);</span><br><span class="line">            <span class="keyword">if</span>(k == is+n<span class="number">-1</span>) T-&gt;Rchild = <span class="literal">NULL</span>;</span><br><span class="line">            <span class="keyword">else</span>    <span class="built_in">CrtBT</span>(T-&gt;Rchild, pre[], ino[], ps+<span class="number">1</span>+(k-is), k+<span class="number">1</span>, n-(k-is)<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>555<br>5. 二叉树按层次遍历</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">LevelOrderTravel</span><span class="params">(BiTree T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Queue Q;</span><br><span class="line">    <span class="built_in">InitQueue</span>(Q);</span><br><span class="line">    <span class="keyword">if</span>(T)   <span class="built_in">Enqueue</span>(Q, T);</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">QueueEmpty</span>(Q))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">Dequeue</span>(Q, &amp;E);</span><br><span class="line">        <span class="built_in">visit</span>(E);</span><br><span class="line">        <span class="keyword">if</span>(E-&gt;lchild)   <span class="built_in">EnQueue</span>(Q, E-&gt;lchild);</span><br><span class="line">        <span class="keyword">if</span>(E-&gt;rchild)   <span class="built_in">EnQueue</span>(Q, E-&gt;rchild);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFSTravel</span><span class="params">(Graph G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(v=<span class="number">0</span>; v &lt; G.Vexnum; ++v)</span><br><span class="line">    &#123;</span><br><span class="line">        visited[v] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(v=<span class="number">0</span>; v &lt; G.Vexnum; ++v)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!visited[v]) <span class="built_in">DFS</span>(G, v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(Graph G, <span class="type">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    visited[v] = <span class="literal">true</span>;</span><br><span class="line">    <span class="built_in">printf</span>();</span><br><span class="line">    <span class="keyword">for</span>(w=<span class="number">0</span>; w &lt; G.vexnum; w++)</span><br><span class="line">        <span class="keyword">if</span>(G.arcs[v][w].adj != <span class="number">0</span> &amp;&amp; !visited[w])</span><br><span class="line">            <span class="built_in">DFS</span>(G, w);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 求各顶点入度</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">FindInDegree</span><span class="params">(ALGraph G, <span class="type">int</span> indegree[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    ArcNode *p;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i &lt; G.vexnum; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(p)</span><br><span class="line">        &#123;</span><br><span class="line">            indegree[p-&gt;adjvex]++;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="迪杰斯特拉算法"><a href="#迪杰斯特拉算法" class="headerlink" title="迪杰斯特拉算法"></a>迪杰斯特拉算法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// final[]记录当前结点是否已经求出最短路径</span></span><br><span class="line"><span class="comment">// D[]记录当前所找的源点到每一个终点的最短路径长度</span></span><br><span class="line"><span class="comment">// P[]记录路径</span></span><br><span class="line"><span class="comment">// v0表示初始单源点起点</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ShortestPath_DIJ</span><span class="params">(MGraph G, <span class="type">int</span> v0, <span class="type">int</span> &amp;P, <span class="type">float</span> &amp;D)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>,j,v,w,min,<span class="keyword">final</span>[N];</span><br><span class="line">    <span class="keyword">for</span>(v=<span class="number">0</span>; v &lt; G.vexnum; ++v)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">final</span>[v] = FALSE;</span><br><span class="line">        D[v] = G.arcs[v0][v];</span><br><span class="line">        P[v] = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span>(D[v] &lt; INFINITY) P[v] = v0;</span><br><span class="line">        <span class="keyword">final</span>[v0] = TRUE;</span><br><span class="line">        P[v0] = <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 确定下一次的出发点</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>; i &lt; G.vexnum; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 要找到当前还未确定最小路径长度的最小值</span></span><br><span class="line">        min = INFINITY;</span><br><span class="line">        <span class="keyword">for</span>(w=<span class="number">0</span>; w &lt; G.vexnum; ++w)</span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">final</span>[w])</span><br><span class="line">            <span class="keyword">if</span>(D[w] &lt; min)</span><br><span class="line">            &#123;</span><br><span class="line">                v = w;</span><br><span class="line">                min = D[w];</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span>[v] = TRUE;    <span class="comment">// 一旦确定了最小值，那么源点到它的最短路径也就确定了</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 以这次的顶点v为起始点，进行最短路径的更新</span></span><br><span class="line">    <span class="keyword">for</span>(w=<span class="number">0</span>; w &lt; G.vexnum; ++w)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">final</span>[w] &amp;&amp; (min+G.arcs[v][w] &lt; D[w]))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 对满足条件的顶点，更新需要更新最短路径和最短路径长</span></span><br><span class="line">            D[w] = min + G.arcs[v][w].adj;</span><br><span class="line">            P[w] = v;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">InsertionSort</span><span class="params">(SqList &amp;L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i,j;</span><br><span class="line">    <span class="comment">// 从第二项开始排序</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">2</span>; i &lt;= L.length; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 每一次排序前面的都已经排序好了</span></span><br><span class="line">        <span class="keyword">if</span>(L.r[i].key &lt; L.r[i<span class="number">-1</span>].key)</span><br><span class="line">        &#123;</span><br><span class="line">            L.r[<span class="number">0</span>] = L.r[i];    <span class="comment">// 复制为监视哨</span></span><br><span class="line">            <span class="keyword">for</span>(j = i<span class="number">-1</span>; L.r[<span class="number">0</span>].key &lt; L.r[j].key; --j)</span><br><span class="line">            &#123;</span><br><span class="line">                L.r[j+<span class="number">1</span>] = L.r[j];  <span class="comment">// 记录后移</span></span><br><span class="line">            &#125;</span><br><span class="line">            L.r[j+<span class="number">1</span>] = L.r[<span class="number">0</span>];  <span class="comment">// 插入到正确的位置</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">Partition</span><span class="params">(SqList &amp;L, <span class="type">int</span> low, <span class="type">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    KeyType pivotkey;</span><br><span class="line">    L.r[<span class="number">0</span>] = L.r[low];</span><br><span class="line">    pivotkey = L.r[low].key;</span><br><span class="line">    <span class="keyword">while</span>(low &lt; high)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 从高位开始遍历，确保元素都大于枢轴</span></span><br><span class="line">        <span class="keyword">while</span>(low &lt; high &amp;&amp; L.r[high].key &gt;= pivotkey)</span><br><span class="line">            --high;</span><br><span class="line">        L.r[low] = L.r[high];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 从地位开始遍历，确保元素都小于枢轴</span></span><br><span class="line">        <span class="keyword">while</span>(low &lt; high &amp;&amp; L.r[low].key &lt;= povotkey)</span><br><span class="line">            ++low;</span><br><span class="line">        L.r[high] = L.r[low];</span><br><span class="line">    &#125;</span><br><span class="line">    L.r[low] = L.r[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">return</span> low; <span class="comment">// 返回枢轴最后的位置</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">QSort</span><span class="params">(SqList &amp;L, <span class="type">int</span> low, <span class="type">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> pivotloc;</span><br><span class="line">    <span class="keyword">if</span>(low &lt; high)</span><br><span class="line">    &#123;</span><br><span class="line">        pivotloc = <span class="built_in">Partition</span>(L, low, high);</span><br><span class="line">        <span class="built_in">QSort</span>(L, low, pivotloc<span class="number">-1</span>);</span><br><span class="line">        <span class="built_in">QSort</span>(L, pivotloc+<span class="number">1</span>, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>筛选算法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调整堆结构</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">HeapAdjust</span><span class="params">(HeapType &amp;H, <span class="type">int</span> s, <span class="type">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    RedType rc;</span><br><span class="line">    rc = H.r[s];    <span class="comment">// 将堆顶元素暂存下来到rc</span></span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">2</span>*s; j &lt;= m; j*=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 横比，j初始值指向左孩子</span></span><br><span class="line">        <span class="keyword">if</span>(j &lt; m &amp;&amp; H.r[j].key &lt; H.r[j+<span class="number">1</span>].key)</span><br><span class="line">            j++;</span><br><span class="line">        <span class="comment">// 纵比，如果右孩子比父节点小，表示该堆不需要调整</span></span><br><span class="line">        <span class="keyword">if</span>(rc.key &gt;= H.r[j].key)    <span class="keyword">break</span>;</span><br><span class="line">        H.r[s] = H.r[j];</span><br><span class="line">        s = j;</span><br><span class="line">        <span class="comment">// j*=2,表示进入下一个堆结构</span></span><br><span class="line">    &#125;</span><br><span class="line">    H.r[s] = rc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Merge</span><span class="params">(RcdType SR[], RcdType &amp;TR[], <span class="type">int</span> i, <span class="type">int</span> m, in t n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(j = m+<span class="number">1</span>, k=i; i &lt;= m &amp;&amp; j &lt;= n; ++k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(SR[i].key &lt; SR[i].key)</span><br><span class="line">            TR[k] = SR[i++];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            TR[k] = SR[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= m)   TR[k++] = SR[i++];</span><br><span class="line">    <span class="keyword">while</span>(j &lt;= n)   TR[k++] = SR[j++];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MSort</span><span class="params">(RcdType SR[], RcdType &amp;TR[], <span class="type">int</span> s, <span class="type">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s==t)    TR[s] = SR[s];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        m = (s+t)/<span class="number">2</span>;</span><br><span class="line">        <span class="built_in">MSort</span>(SR, TR2, s, m);</span><br><span class="line">        <span class="built_in">MSort</span>(SR, TR2, m+<span class="number">1</span>, t);</span><br><span class="line">        <span class="built_in">Merge</span>(TR2, TR, s, m, t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/27/%E6%95%99%E6%9D%90%E5%85%B8%E5%9E%8B%E7%AE%97%E6%B3%95/" data-id="cl17apw2f0027icud5bn1d3q5" data-title="教材典型算法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-线性表" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="article-date">
+  <time class="dt-published" datetime="2021-11-25T09:29:19.000Z" itemprop="datePublished">2021-11-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/11/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/">线性表</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><h3 id="线性表的概念"><a href="#线性表的概念" class="headerlink" title="线性表的概念"></a>线性表的概念</h3><p>线性表是n个类型相同数据元素的有限序列，通常记作（a1, a2, a3,…, an）。</p>
+<p>特点：</p>
+<ul>
+<li>必存在一个唯一的“第一元素”</li>
+<li>必存在一个唯一的“最后元素”</li>
+<li>除最后一个元素外，均有唯一的后继</li>
+<li>除第一个元素外，均有唯一的前驱</li>
+</ul>
+<h2 id="线性表的顺序表示和实现"><a href="#线性表的顺序表示和实现" class="headerlink" title="线性表的顺序表示和实现"></a>线性表的顺序表示和实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;</span><br><span class="line">    ElementType *elem;  <span class="comment">// 存储空间基地址</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">// 当前长度</span></span><br><span class="line">    <span class="type">int</span> listSize;   <span class="comment">// 当前分配的存储容量</span></span><br><span class="line">&#125; SqList;   <span class="comment">// 顺序表</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>线性表的销毁：每一个结点都释放掉，该链表完全不可以再次使用；</li>
+<li>线性表的清空：除头结点外的所有结点释放掉，该链表还可以继续使用。</li>
+</ul>
+<h2 id="线性表的链式表示和实现"><a href="#线性表的链式表示和实现" class="headerlink" title="线性表的链式表示和实现"></a>线性表的链式表示和实现</h2><h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>结构特点：单链表的逻辑次序和物理次序不一定相同<br>在链式存储结构中以第一个结点的存储地址作为线性表的基地址，通常称它为头指针。</p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：插入和删除操作不需要移动数据了<br>缺点：指针占用了存储空间，增加了内存负担；另外只能顺序查找。</p>
+<h2 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h2><p>单链表的最后一个结点的指针域（尾指针）指向了头指针，构成循环，称作循环链表。<br>为了方便地在循环链表中进行头插、尾插，设置一个指向表尾的尾指针。</p>
+<h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><p>单链表的每一个结点再增设一个指针域，用于指向该结点的前驱，即每一个结点有一个数据域和俩指针域。</p>
+<h2 id="一元多项式的表示"><a href="#一元多项式的表示" class="headerlink" title="一元多项式的表示"></a>一元多项式的表示</h2><h3 id="用顺序表存储"><a href="#用顺序表存储" class="headerlink" title="用顺序表存储"></a>用顺序表存储</h3><p>可能造成大量空间浪费</p>
+<h3 id="用链式表存储"><a href="#用链式表存储" class="headerlink" title="用链式表存储"></a>用链式表存储</h3><p>一般选用链式表存储，更加节省内存</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/" data-id="cl17apw2q0034icuderir02s4" data-title="线性表" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-查找" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/24/%E6%9F%A5%E6%89%BE/" class="article-date">
+  <time class="dt-published" datetime="2021-11-24T07:19:05.000Z" itemprop="datePublished">2021-11-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/11/24/%E6%9F%A5%E6%89%BE/">查找</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><ul>
+<li>查找表：由同一类型的数据元素（或记录）构成的集合。</li>
+<li>静态查找表：仅作查询和检索操作的查找表。</li>
+<li>动态查找表：在查找时也可以进行插入、删除、修改操作。</li>
+<li>主关键字：可以唯一的识别一个记录的数据项（字段）。</li>
+<li>次关键字：关联若干项记录的数据项（字段）。</li>
+<li>查找：根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（记录）的过程。</li>
+</ul>
+<h3 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h3><p>教材中，约定如下宏定义：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> EQ(a, b)((a) == (b))</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LT(a, b)((a) &lt; (b))</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LQ(a, b)((a) &lt;= (b))</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/24/%E6%9F%A5%E6%89%BE/" data-id="cl17apw2m002qicud6imaglhn" data-title="查找" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-图" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/23/%E5%9B%BE/" class="article-date">
+  <time class="dt-published" datetime="2021-11-22T23:10:42.000Z" itemprop="datePublished">2021-11-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/11/23/%E5%9B%BE/">图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h2><ul>
+<li><p>有向图</p>
+</li>
+<li><p>无向图</p>
+</li>
+<li><p>邻接点（边的两个顶点互为邻接点）</p>
+</li>
+<li><p>关联边（一条边的两个顶点关联这条边）</p>
+</li>
+<li><p>路径</p>
+</li>
+<li><p>回路</p>
+</li>
+<li><p>简单路径</p>
+</li>
+<li><p>简单回路</p>
+</li>
+<li><p>连通图（任意两个顶点之间都存在路径）</p>
+</li>
+<li><p>强连通图（对有向图，任意两个顶点之间都存在路径）</p>
+</li>
+<li><p>子图</p>
+</li>
+<li><p>连通分量（无向图中的极大联通子图）</p>
+</li>
+<li><p>强连通分量（有向图中的极大强连通子图）</p>
+</li>
+<li><p>网络（边带权图）</p>
+</li>
+<li><p>生成树（连通图的一个包含其所有顶点的子图是一棵树，这棵树就是生成树）</p>
+</li>
+</ul>
+<h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><p>一张图，要存储的信息至少有两方面：</p>
+<ul>
+<li>顶点的数据信息</li>
+<li>顶点间的关系信息</li>
+</ul>
+<h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><p>图的邻接矩阵是一个n阶矩阵，物理上是一个二维数组。<br>对无向图而言，</p>
+<ul>
+<li>其邻接矩阵是一个对称矩阵，且对角线元素均为零；</li>
+<li>图的总度数就是矩阵中非零元素个数</li>
+<li>图的边数就是非零元素个数的一半</li>
+</ul>
+<p>对有向图而言：</p>
+<ul>
+<li>第i个顶点的入度就是第i列非零元素个数</li>
+<li>第i个顶点的出度就是第i行非零元素个数</li>
+</ul>
+<h4 id="类型实现"><a href="#类型实现" class="headerlink" title="类型实现"></a>类型实现</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ArcCell</span> &#123;</span><br><span class="line">    VRType agj;</span><br><span class="line">    Info *info; <span class="comment">// 存放相关信息的指针</span></span><br><span class="line">&#125; ArcCell, AdjMatrix[M][N];</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;</span><br><span class="line">    VertexType vexs[MAX];   <span class="comment">// 顶点信息</span></span><br><span class="line">    AdjMatrix arcs; <span class="comment">// 存储弧的信息</span></span><br><span class="line">    <span class="type">int</span> vexnum, arcnum; <span class="comment">// 存储顶点数，弧数</span></span><br><span class="line">    GraphKind kind; <span class="comment">// 存储图的种类</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>空间复杂度比较高，为O(n^2)<br>插入边或弧都比较容易，但是插入顶点不容易</p>
+<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><p>邻接表定义分为两部分：边链表和顶点表</p>
+<ul>
+<li>边链表：与顶点V关联的所有边组成一个链表，称为顶点V的边链表</li>
+<li>顶点表：用顺序存储方式存储图的顶点表V1，V2，…，Vn，表示每一个顶点的结构。</li>
+</ul>
+<h4 id="邻接表的类型实现"><a href="#邻接表的类型实现" class="headerlink" title="邻接表的类型实现"></a>邻接表的类型实现</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ArcNode</span> &#123;    <span class="comment">// 边表的存储类型</span></span><br><span class="line">    <span class="type">int</span> adjvex; <span class="comment">// 该弧所指向的顶点的位置</span></span><br><span class="line">    VRType adj;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">ArcNode</span> *nextarc;    <span class="comment">// 指向下一条弧的指针</span></span><br><span class="line">    InfoType *info; <span class="comment">// 该弧相关信息的指针</span></span><br><span class="line">&#125; ArcNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">vnode</span> &#123;  <span class="comment">// 顶点表的存储类型</span></span><br><span class="line">    vertexxtype data;   <span class="comment">// 存储该顶点的信息</span></span><br><span class="line">    ArcNode *firstArc;  <span class="comment">// 指向第一条依附于该顶点的弧，其实是一段边链表</span></span><br><span class="line">&#125; vNode, adjList[M];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;    <span class="comment">// 图的邻接表存储类型</span></span><br><span class="line">    adjList vertices;   <span class="comment">// 邻接表的顶点表</span></span><br><span class="line">    <span class="type">int</span> vexNum, arcNum;</span><br><span class="line">    <span class="type">int</span> kind;   <span class="comment">// 存储图的种类标志</span></span><br><span class="line">&#125; ALGraph;</span><br></pre></td></tr></table></figure>
+
+<h3 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h3><h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><blockquote>
+<blockquote>
+<blockquote>
+<p>概念————从图的某一个顶点出发，访问图中的所有顶点，且每一个顶点仅访问一次。一般可分为两种方法：广度优先搜索、深度优先搜索。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h3><h4 id="算法基本思想"><a href="#算法基本思想" class="headerlink" title="算法基本思想"></a>算法基本思想</h4><ol>
+<li>首先访问图中某一个顶点Vi，以该顶点为出发点；</li>
+<li>任选一个与该顶点Vi【邻接】的【未被访问】的顶点Vj，访问之；</li>
+<li>以Vj为新的出发点继续进行深度优先搜索，直到图中所有和Vi有路径的顶点均被访问到。</li>
+</ol>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><h4 id="对非连通图进行深度优先遍历"><a href="#对非连通图进行深度优先遍历" class="headerlink" title="对非连通图进行深度优先遍历"></a>对非连通图进行深度优先遍历</h4><p>首先将图中每一个顶点的访问标志设为FAlSE，之后搜索图中每一个顶点，如果未被访问，就以之为起始点进行深度优先搜索；否则继续检查下一顶点。</p>
+<h4 id="深度优先搜索的应用"><a href="#深度优先搜索的应用" class="headerlink" title="深度优先搜索的应用"></a>深度优先搜索的应用</h4><ul>
+<li>求深度优先生成树</li>
+<li>判断图是否连通</li>
+<li>求图的连通分量</li>
+</ul>
+<h3 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h3><h4 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
+<li>首先访问图中某一个指定的出发点Vi</li>
+<li>然后依次访问Vi中的所有邻接点Vi1，Vi2，…，Vit；</li>
+<li>再依次以这些邻接点为顶点，访问各个顶点未被访问的邻接点，以此类推，直到图中所有顶点均被访问为止。</li>
+</ol>
+<h4 id="广度优先代码实现"><a href="#广度优先代码实现" class="headerlink" title="广度优先代码实现"></a>广度优先代码实现</h4><h4 id="广度优先搜索的应用"><a href="#广度优先搜索的应用" class="headerlink" title="广度优先搜索的应用"></a>广度优先搜索的应用</h4><ul>
+<li>求广度优先生成树</li>
+<li>判断图是否连通</li>
+<li>求图的连通分量</li>
+</ul>
+<h2 id="图的连通性问题"><a href="#图的连通性问题" class="headerlink" title="图的连通性问题"></a>图的连通性问题</h2><h3 id="无向图和有向图的连通性"><a href="#无向图和有向图的连通性" class="headerlink" title="无向图和有向图的连通性"></a>无向图和有向图的连通性</h3><p>通过广度优先搜索和深度优先搜索，都可以求出一张无向图的所有连通分量</p>
+<h3 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h3><p>对于网而言，各边权值（边长）总和最小的生成树称作最小生成树。<br>下面介绍几个求最小生成树的算法。</p>
+<h4 id="普里姆算法"><a href="#普里姆算法" class="headerlink" title="普里姆算法"></a>普里姆算法</h4><p>从边入手，算法思路：</p>
+<ol>
+<li>算法开始时，设置U，T，U中存放初始顶点s，T为空集；</li>
+<li>找到与初始顶点s邻接的顶点，且连通它们的边是最短的，将该顶点入集合U，边入集合T；</li>
+<li>反复执行2，直到U&#x3D;V时，算法终止。</li>
+</ol>
+<h4 id="克鲁斯卡尔算法"><a href="#克鲁斯卡尔算法" class="headerlink" title="克鲁斯卡尔算法"></a>克鲁斯卡尔算法</h4><ol>
+<li>从图中取最短边e，如果e所关联的两个顶点不在T的同一个连通分量中，则将该边加入T；</li>
+<li>从图中删除边e；</li>
+<li>重复1和2，直到T中有n-1条边。</li>
+</ol>
+<h2 id="有向无环图的应用"><a href="#有向无环图的应用" class="headerlink" title="有向无环图的应用"></a>有向无环图的应用</h2><p>无环有向图被称作无环图，简称DAG图。<br>某些子工程必须在另外的一些子工程完成之后才能开始，对于整个工程与系统，人们主要关心的两方面问题：</p>
+<ul>
+<li>工程能否顺利进行 ———— &gt; 拓扑排序</li>
+<li>完成整个工程所必须的最短时间 ———— &gt; 关键路径</li>
+</ul>
+<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><ul>
+<li>顶点活动网（AOV网）：将顶点表示活动，边表示活动之间的关系的网称为顶点活动网。</li>
+<li>拓扑序列</li>
+</ul>
+<h4 id="拓扑排序特点"><a href="#拓扑排序特点" class="headerlink" title="拓扑排序特点"></a>拓扑排序特点</h4><ul>
+<li>一个有向图的拓扑序列不一定唯一</li>
+<li>通过构造拓扑序列，可判断AOV网是否存在环</li>
+<li>有向无环图一定存在拓扑序列</li>
+</ul>
+<h4 id="拓扑排序基本思想"><a href="#拓扑排序基本思想" class="headerlink" title="拓扑排序基本思想"></a>拓扑排序基本思想</h4><ol>
+<li>从有向图中选择一个入度为零的顶点输出</li>
+<li>从图中删除该顶点及其所有出边</li>
+<li>重复执行1和2，直到全部顶点均已输出，或者图中剩余顶点的入度均不为零（此时说明图中有回路）</li>
+</ol>
+<h4 id="拓扑排序算法概要"><a href="#拓扑排序算法概要" class="headerlink" title="拓扑排序算法概要"></a>拓扑排序算法概要</h4><h2 id="关键路径"><a href="#关键路径" class="headerlink" title="关键路径"></a>关键路径</h2><h3 id="关键路径相关概念"><a href="#关键路径相关概念" class="headerlink" title="关键路径相关概念"></a>关键路径相关概念</h3><ol>
+<li>事件vi的最早发生时间<br>从源点v1到vi的最长路径长度，记作ve(i);</li>
+<li>事件vk的最迟发生时间<br>即vn的最早发生时间ve(n)减去vk到vn的最长路径长度，记作vl(k)</li>
+<li>活动&lt;vi, vj&gt;的最早开始时间，是vi的最早开始时间,<br>最晚开始时间，是vj的最迟开始时间减去&lt;vi, vj&gt;的持续时间，记作el(i)。</li>
+</ol>
+<h2 id="最短路径问题"><a href="#最短路径问题" class="headerlink" title="最短路径问题"></a>最短路径问题</h2><h3 id="迪杰斯特拉算法"><a href="#迪杰斯特拉算法" class="headerlink" title="迪杰斯特拉算法"></a>迪杰斯特拉算法</h3><h4 id="Dijkstra算法思想"><a href="#Dijkstra算法思想" class="headerlink" title="Dijkstra算法思想"></a>Dijkstra算法思想</h4><ul>
+<li>按路径长度的递增次序，逐步产生最短路径</li>
+<li>首先求出离源点路径长度最短的点，再参照它求出离源点次短的点，以此类推</li>
+<li>注意：权值不能为负，否则该算法失效</li>
+</ul>
+<h4 id="Dijkstra算法概要"><a href="#Dijkstra算法概要" class="headerlink" title="Dijkstra算法概要"></a>Dijkstra算法概要</h4><ol>
+<li>引入辅助数组D[]，D[i]表示当前找到的源点到每一个终点i的最短路径长度，<br>引入辅助数组final[]，final[i]&#x3D;1表示顶点i的最短路径已求<br>出，初始状态下final[v0]置为1，其他置为0;</li>
+<li>选择D[]中路径最小值的顶点v（final[v]必须为0），v就是当前求得的一条从v出发的最短路径的终点，并修改final[v]&#x3D;1;</li>
+<li>修改未求出最短路径的顶点的最短路径长度，对于顶点w，若<br>D[v]+G.arcs[v][w] &lt; D[w],<br>则修改 D[w]&#x3D;D[v]+G.arcs[v][w],<br>同时修改P[w]&#x3D;v;</li>
+<li>重复操作2、3 n-1次，求得递增序列。</li>
+</ol>
+<h4 id="Dijkstra算法分析"><a href="#Dijkstra算法分析" class="headerlink" title="Dijkstra算法分析"></a>Dijkstra算法分析</h4><p>时间复杂度体现在修改距离值和最小值，为O(n^2),<br>空间复杂度体现在两个辅助数组，为O(n)。</p>
+<h3 id="弗洛伊德算法"><a href="#弗洛伊德算法" class="headerlink" title="弗洛伊德算法"></a>弗洛伊德算法</h3><p>时间复杂度体现在三重循环，为O(n^3),<br>空间复杂度体现在使用了二维数组，为O(n^2)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/23/%E5%9B%BE/" data-id="cl17apw2b001xicudbo62de5x" data-title="图" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-树" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/22/%E6%A0%91/" class="article-date">
+  <time class="dt-published" datetime="2021-11-22T07:26:22.000Z" itemprop="datePublished">2021-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/11/22/%E6%A0%91/">树</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="树的概述"><a href="#树的概述" class="headerlink" title="树的概述"></a>树的概述</h2><p>树是一种递归定义的数据结构</p>
+<h2 id="树的相关术语"><a href="#树的相关术语" class="headerlink" title="树的相关术语"></a>树的相关术语</h2><ul>
+<li>节点的度：某一个节点的分支个数</li>
+<li>树的度：树中所有节点的度的最大值</li>
+<li>叶子结点：度为零的结点</li>
+<li>分支结点：度大于零的结点</li>
+</ul>
+<h2 id="树的重要性质"><a href="#树的重要性质" class="headerlink" title="树的重要性质"></a>树的重要性质</h2><ul>
+<li>性质1：二叉树的第i层上至多有2^i-1个节点</li>
+<li>性质2：深度为k的二叉树上至多含2^i-1个节点</li>
+<li>性质3：具有n个结点的完全二叉树的深度为[log2n]+1</li>
+<li>性质4：对完全二叉树而言，2i &gt; n，则该结点没有左孩子；若2i &lt; n,则该结点没有右孩子。</li>
+</ul>
+<p>两类特殊的二叉树：</p>
+<ul>
+<li>满二叉树，每一层都满了</li>
+<li>完全二叉树，树中所含的n个结点和满二叉树中编号为1至n的结点一一对应</li>
+</ul>
+<h2 id="树的存储"><a href="#树的存储" class="headerlink" title="树的存储"></a>树的存储</h2><h3 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h3><p>即用数组存储，虽然线性结构简单，但是很容易造成大量空间浪费</p>
+<h3 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h3><h4 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h4><p>在基础链表的基础上，增加了一个指针域，即两个指针域，一个指向左孩子（左子树的根结点），另一个指向右孩子（柚子树的根结点）</p>
+<h4 id="三叉链表"><a href="#三叉链表" class="headerlink" title="三叉链表"></a>三叉链表</h4><p>在二叉链表基础上，增加了一个指针域（指向其父结点parent）</p>
+<h4 id="双亲链表"><a href="#双亲链表" class="headerlink" title="双亲链表"></a>双亲链表</h4><p>每一个结点由三部分组成，data（存放数据）、parent（指向父节点）、LRTag（表示该结点是左孩子还是右孩子）</p>
+<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>就二叉树而言，可以有三条搜索路径：</p>
+<ul>
+<li>先序遍历</li>
+<li>中序遍历</li>
+<li>后序遍历</li>
+<li>按层次遍历</li>
+</ul>
+<p>二叉树的遍历算法的应用：</p>
+<ul>
+<li>统计二叉树中叶子节点的个数<br>每一次遍历一个结点时，判断其是否为叶子即可，另设一个计数器变量，存储当前叶子数量。</li>
+<li>求二叉树的深度<br>某个根结点的二叉树的深度等于左子树和柚子树深度较大者加一，以此递归即可。需要用到后序遍历。</li>
+<li>复制二叉树<br>基本操作就是不断生成新的结点，但是结点数据和原来一样。需要用到后序遍历（先生成两个分支结点，最后生成根结点）。</li>
+<li>建立二叉树的存储结构<br>需要用到先序遍历。先创建根结点，然后在根结点的两边不断地添加分支结点（即构建左子树和柚子树）。</li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>由二叉树的先序序列和中序序列建树<br>先序序列得到根结点，代入中序序列得到左子树和柚子树，不断重复这个过程（递归）可以还原整个二叉树。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li>二叉树的层次遍历<br>即自上而下依次遍历结点；<br>用到【队列】，使用队列存储每一次将要访问的结点，如果其有左孩子，就让其左孩子入队；如有右孩子，就让右孩子入队。<br>本质上，这就是图的深度优先算法（BFS）。</li>
+</ul>
+<h2 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>在原二叉树的基础上，给结点增加指向某种遍历下的前驱和后续指针作为线索，行成一棵新的二叉树。</p>
+<p>当左子树为空时，就存储某种遍历下的前驱；<br>当柚子树为空时，就存储某种遍历下的后继。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiThrNode</span> &#123;</span></span><br><span class="line">    TElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiThrNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    PointerThr LTag, RTag;</span><br><span class="line">&#125; BiThrNode, *BiThrTree;</span><br></pre></td></tr></table></figure>
+
+<p>当当前结点没有孩子时，对应的Tag设为1，并将指针域设为前驱（左孩子）或后继（右孩子）；<br>有孩子时，对应的Tag设为0，存储的就是正常的左右孩子。</p>
+<h2 id="树的表示方法"><a href="#树的表示方法" class="headerlink" title="树的表示方法"></a>树的表示方法</h2><h3 id="双亲表示法"><a href="#双亲表示法" class="headerlink" title="双亲表示法"></a>双亲表示法</h3><p>每一个结点存储的不仅有数据data，还有其父节点parent的位置</p>
+<h3 id="孩子链表表示法"><a href="#孩子链表表示法" class="headerlink" title="孩子链表表示法"></a>孩子链表表示法</h3><p>每一个结点存放数据data，父节点下标，和一条由其孩子组成的链表</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">CTNode</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> child;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">CTNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; *ChildPtr;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    Elem data;</span><br><span class="line">    ChildPtr firstChild;</span><br><span class="line">&#125; CTBox;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    CTBox nodes[MAX_TREE_SIZE];</span><br><span class="line">    <span class="type">int</span> n,r;</span><br><span class="line">&#125; CTree;</span><br></pre></td></tr></table></figure>
+
+<h3 id="左孩子右兄弟表示法"><a href="#左孩子右兄弟表示法" class="headerlink" title="左孩子右兄弟表示法"></a>左孩子右兄弟表示法</h3><p>对每一个结点，左结点存放原树形结构的左孩子结点，右结点存放原树形结构的同一层的兄弟结点。</p>
+<h2 id="森林的遍历"><a href="#森林的遍历" class="headerlink" title="森林的遍历"></a>森林的遍历</h2><p>森林的遍历有两种：</p>
+<ul>
+<li>先序遍历（从左向右依次对森林中的每一棵树进行先序遍历）</li>
+<li>中序遍历（从左向右依次对森林中的每一棵树进行后序遍历）</li>
+</ul>
+<h2 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h2><h3 id="最优树"><a href="#最优树" class="headerlink" title="最优树"></a>最优树</h3><ul>
+<li>结点的路径长度：从根结点到该结点的路径上分支的数目</li>
+<li>树的路径长度：树中每一个结点的路径长度之和</li>
+<li>树的帶权路径长度：树中所有叶子结点的帶权路径长度之和</li>
+</ul>
+<h3 id="最优树的构造————哈夫曼算法"><a href="#最优树的构造————哈夫曼算法" class="headerlink" title="最优树的构造————哈夫曼算法"></a>最优树的构造————哈夫曼算法</h3><p>算法思想：</p>
+<ol>
+<li>根据给定的n个权值，构造n棵二叉树的集合，其中每一棵二叉树左右子树均为空树；</li>
+<li>在F中选取其根结点的权值为最小的两棵二叉树，分别作为左右子树构造一棵新的二叉树，并将根结点的权值置为左右子树根结点权值之和；</li>
+<li>从集合F中删去这两棵树，加入新树；</li>
+<li>重复2、3两步，直至F中只含有一棵树。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/22/%E6%A0%91/" data-id="cl17apw2m002ricud8cr65vtz" data-title="树" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/21/%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2021-11-21T04:32:13.000Z" itemprop="datePublished">2021-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/mid-lake-pavilion.github.io/2021/11/21/%E6%8E%92%E5%BA%8F/">排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本节对排序的介绍、复习，均以升序排序为例进行说明。</p>
+<h3 id="排序的稳定性"><a href="#排序的稳定性" class="headerlink" title="排序的稳定性"></a>排序的稳定性</h3><p>稳定的排序：排序前后含相同关键字的记录相对位置保持不变<br>不稳定的排序：排序前后含相同关键字的记录相对位置变化</p>
+<h3 id="内部排序和外部排序"><a href="#内部排序和外部排序" class="headerlink" title="内部排序和外部排序"></a>内部排序和外部排序</h3><p>内部排序，只使用计算机内存存放待排序记录。<br>外部排序，排序记录不能同时存放在计算机内存中，需要借助计算机外存。</p>
+<h3 id="排序方法效率分析"><a href="#排序方法效率分析" class="headerlink" title="排序方法效率分析"></a>排序方法效率分析</h3><p>三个指标：</p>
+<ol>
+<li>时间复杂度（比较次数和移动次数）</li>
+<li>空间复杂度（附加存储空间）</li>
+<li>稳定性</li>
+</ol>
+<h2 id="插入排序法"><a href="#插入排序法" class="headerlink" title="插入排序法"></a>插入排序法</h2><p>以直接插入排序为例进行说明。</p>
+<h3 id="排序思想"><a href="#排序思想" class="headerlink" title="排序思想"></a>排序思想</h3><ul>
+<li>第一个记录看作有序</li>
+<li>从第二个记录开始，按关键字大小将每一个记录插入到已排好序的序列中</li>
+<li>一直进行到第n个记录</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>每次排序从第二个记录开始</li>
+<li>直接插入排序第i趟后，前i+1个记录一定有序</li>
+</ul>
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><ul>
+<li><p>当原序列呈正序排列时，最省时间</p>
+</li>
+<li><p>当原序列呈反序排列时，最费时间</p>
+</li>
+<li><p>最好情况下，比较次数为 n-1，无需移动；</p>
+</li>
+<li><p>最坏情况下，比较次数、移动次数均为 o(n^2)</p>
+</li>
+<li><p>直接插入排序是稳定的排序方法</p>
+</li>
+</ul>
+<h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><p>思想与直接插入排序类似，只不过，在查找插入位置时，使用了二分思想。</p>
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>本质上也是一种插入排序，只不过需要多次进行插入排序。</p>
+<ul>
+<li>需要确定增量d，然后每一次以不同的增量进行插入排序，直至最后一次排序的增量减为1，此时就是插入排序。</li>
+<li>完成增量为d的排序后，序列以d为步长呈现有序特征。</li>
+</ul>
+<h2 id="起泡排序"><a href="#起泡排序" class="headerlink" title="起泡排序"></a>起泡排序</h2><p>冒泡排序一趟后，最大元素将位于它最终的位置上，即沉底（位于最后），以此类推。</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序是对冒泡排序的改进。每次会找一个记录的关键字作为“枢轴”，比它小的位于其左侧，比它大的位于其右侧，使得排序一趟后，无序序列将被分为两个部分。</p>
+<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>分治思想，在一段序列上快速排序时，首先选定枢轴量，然后设置左右双指针，分别依次从最右、从最左开始，找出右边小于枢轴量的数，与枢轴量互换；找出左边大于枢轴量的数，与枢轴量互换；如此循环直至左指针不小于右指针。</p>
+<h3 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h3><p>快速排序是一种不稳定的排序方法。<br>最好情况下时间复杂度为O(nlogn)，最坏情况下退化为冒泡排序，为O(n^2)<br>从空间复杂度看，快速排序是一个递归过程，因此需要一个栈的附加空间，其平均深度为O(logn)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/21/%E6%8E%92%E5%BA%8F/" data-id="cl17apw2e0025icud8e8x1qil" data-title="排序" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/mid-lake-pavilion.github.io/page/5/">&laquo; Prev</a><a class="page-number" href="/mid-lake-pavilion.github.io/">1</a><span class="space">&hellip;</span><a class="page-number" href="/mid-lake-pavilion.github.io/page/4/">4</a><a class="page-number" href="/mid-lake-pavilion.github.io/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/mid-lake-pavilion.github.io/page/7/">7</a><a class="page-number" href="/mid-lake-pavilion.github.io/page/8/">8</a><a class="extend next" rel="next" href="/mid-lake-pavilion.github.io/page/7/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">Web前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">前端之路</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/">多一点冥想</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/">数字逻辑设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%8A%B1%E9%97%B4%E4%B8%80%E5%A3%B6%E9%85%92/">花间一壶酒</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" style="font-size: 20px;">大学课程</a> <a href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/10/">October 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">概念结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/24/JavaScript%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">JavaScript的正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/mid-lake-pavilion.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/mid-lake-pavilion.github.io/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/mid-lake-pavilion.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

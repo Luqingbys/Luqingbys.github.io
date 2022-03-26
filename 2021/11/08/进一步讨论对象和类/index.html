@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>进一步讨论对象和类（1） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="抽象数据类型定义方法为抽象数据类型的对象定义相应的操作，即方法。定义语法格式：[访问符][修饰符列表]&lt;返回类型&gt; 方法名 ([参数列表]) {    方法体} 修饰符列表：  static 表示该方法是一个静态方法，不需要创建实例对象来使用，可以直接通过类来访问。 final 表示该方法是一个终极方法，不可以在子类中被重写。 abstract 表示该方法是一个抽象方法，不可以用来创建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进一步讨论对象和类（1）">
+<meta property="og:url" content="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/08/%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="抽象数据类型定义方法为抽象数据类型的对象定义相应的操作，即方法。定义语法格式：[访问符][修饰符列表]&lt;返回类型&gt; 方法名 ([参数列表]) {    方法体} 修饰符列表：  static 表示该方法是一个静态方法，不需要创建实例对象来使用，可以直接通过类来访问。 final 表示该方法是一个终极方法，不可以在子类中被重写。 abstract 表示该方法是一个抽象方法，不可以用来创建">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-08T10:13:39.000Z">
+<meta property="article:modified_time" content="2021-11-13T08:34:29.263Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/mid-lake-pavilion.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/mid-lake-pavilion.github.io/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/mid-lake-pavilion.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/mid-lake-pavilion.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luqingbys.github.io/mid-lake-pavilion.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-进一步讨论对象和类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/11/08/%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/" class="article-date">
+  <time class="dt-published" datetime="2021-11-08T10:13:39.000Z" itemprop="datePublished">2021-11-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      进一步讨论对象和类（1）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h2><h3 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h3><p>为抽象数据类型的对象定义相应的操作，即方法。<br>定义语法格式：<br>[访问符][修饰符列表]&lt;返回类型&gt; 方法名 ([参数列表]) {<br>    方法体<br>}</p>
+<p>修饰符列表：</p>
+<ul>
+<li>static 表示该方法是一个静态方法，不需要创建实例对象来使用，可以直接通过类来访问。</li>
+<li>final 表示该方法是一个终极方法，不可以在子类中被重写。</li>
+<li>abstract 表示该方法是一个抽象方法，不可以用来创建实例对象。</li>
+</ul>
+<h3 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h3><p>在函数中，如果传入的参数是基本数据类型，那么函数体对形参的修改不会影响到实参；<br>而如果传入的参数是引用类型（对象、数组等），那么函数体对形参的修改会影响到实参。</p>
+<h3 id="重载方法名"><a href="#重载方法名" class="headerlink" title="重载方法名"></a>重载方法名</h3><p>在一个类中写多个方法，对不同的参数进行同样的操作，此时需要重载方法名。<br>重载方法的方法名必须相同，参数列表必须不同（参数个数或者参数类型不同）。</p>
+<h2 id="对象的构造与初始化"><a href="#对象的构造与初始化" class="headerlink" title="对象的构造与初始化"></a>对象的构造与初始化</h2><p>此处需要提到一个很重要的概念————构造方法。<br>Java中的构造方法，与C++中的构造函数几乎完全对应。</p>
+<h2 id="子类与继承"><a href="#子类与继承" class="headerlink" title="子类与继承"></a>子类与继承</h2><h3 id="子类"><a href="#子类" class="headerlink" title="子类"></a>子类</h3><p>当两个类A，B满足“A is a B”关系时，我们可以将A声明为B的一个子类。</p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>与C++类似，Java中也有继承概念。需要用到extends关键字：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">A</span> <span class="keyword">extends</span> <span class="title class_">B</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>表示类A继承自B，此时，A是子类，B是父类。<br>一旦继承完成，子类将默认具有父类中的所有属性和方法。</p>
+<p>Java只允许单重继承。Object类是Java程序中所有类的直接或者间接父类。</p>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>多态性是指同一个名字的若干个方法，有着不同的实现。<br>通过重载、重写完成多态性。</p>
+<h4 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        func(<span class="keyword">new</span> <span class="title class_">Person</span>());</span><br><span class="line">        func(<span class="keyword">new</span> <span class="title class_">Student</span>());</span><br><span class="line">        func(<span class="keyword">new</span> <span class="title class_">Graduate</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">func</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">        System.out.println(o.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Person!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">extends</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Student!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Graduate</span> <span class="keyword">extends</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>体会上述例子。Person、Student、Graduate均继承了Object的toString方法，却也都对其进行了重写。<br>而func()方法接收一个对象，动态调用对象本身的toString方法。我们称这种由Java虚拟机在运行时动态决定调用哪一个toString方法的能力为动态绑定。</p>
+<h4 id="转换对象"><a href="#转换对象" class="headerlink" title="转换对象"></a>转换对象</h4><p>Java允许使用对象的父类类型的一个变量指示该对象，称为转换对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// notice that: Manager is an Employee.</span></span><br><span class="line"><span class="type">Employee</span> <span class="variable">e</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Manager</span>();</span><br><span class="line"></span><br><span class="line">Employee e;</span><br><span class="line"><span class="type">Manager</span> <span class="variable">m</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Manager</span>();</span><br><span class="line">e = m;</span><br></pre></td></tr></table></figure>
+
+<p>我们称e是m的转换对象。相较于原对象m，转换对象e会丢失原对象相对于父类的新增方法、属性。实际应用中，我们可以判断该对象是否是子类的实例。如果是，就强制类型转换该对象（引用），使其恢复全部功能。</p>
+<h4 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h4><p>子类重写父类方法的情况：</p>
+<ul>
+<li>子类的方法内容与父类不同；</li>
+<li>子类需要取消某个方法；</li>
+<li>子类需要实现更复杂的方法</li>
+</ul>
+<p>关于方法重写的注意事项：</p>
+<ul>
+<li>当子类中重写了父类方法后，如果还想使用父类中被隐藏的方法，可以使用super关键字。</li>
+<li>重写方法的允许访问范围不能小于原方法。</li>
+<li>父类与子类的构造方法问题：Java要求一个父类的对象要在子类运行前完全初始化。</li>
+</ul>
+<h3 id="类成员"><a href="#类成员" class="headerlink" title="类成员"></a>类成员</h3><h4 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h4><p>让一个类的多个实例对象共享，实现多个对象之间的通信，或者用于记录所创建的对象的个数。这样的变量被称为静态变量或者类变量。</p>
+<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>如果需要在尚未创建类的实例对象时，就去引用该类的程序代码，就可以给相应的程序方法标记关键字static。这样的方法称为静态方法或者类方法。</p>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><h4 id="什么是抽象类"><a href="#什么是抽象类" class="headerlink" title="什么是抽象类"></a>什么是抽象类</h4><p>抽象类是指不能用来创建实例对象的类。通常可以通过关键字abstract将一个类定义为抽象类。<br>在抽象类中，每一个未被定义具体实现的方法也标记为abstract，称为抽象方法。<br>抽象类可以包含抽象方法和非抽象方法。</p>
+<p>抽象类的存在，是强迫程序员必须在抽象类的子类中实现相应的抽象方法，以创建实例对象，否则子类仍然是抽象类，不能用来创建实例对象。</p>
+<h4 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h4><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>接口的最大特点：接口中所有的方法都是抽象方法体，可以将接口看成特殊的抽象类。</p>
+<h4 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Storage</span> &#123;</span><br><span class="line">    Object storage[] = <span class="keyword">new</span> <span class="title class_">Object</span>[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">put</span><span class="params">(Object o)</span>;</span><br><span class="line">    Object <span class="title function_">get</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接口也具有数据成员和方法，但是数据成员都必须赋初值，并且方法必须是抽象方法。</p>
+<h4 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StackStorage</span> <span class="keyword">implements</span> <span class="title class_">Storage</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">point</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">objectNum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">put</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">        storage[point++] = o;</span><br><span class="line">        objectNum++;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一般，可以通过接口实现“多重继承”，接口的实现，实际上是实现类对接口中抽象方法的重写。</p>
+<h4 id="接口回调"><a href="#接口回调" class="headerlink" title="接口回调"></a>接口回调</h4><p>接口变量，是用接口声明的变量，可以用来调用被类实现的接口方法。</p>
+<h4 id="接口的多样性"><a href="#接口的多样性" class="headerlink" title="接口的多样性"></a>接口的多样性</h4><p>由接口产生的多态性是指不同的类在实现同一个接口时可能具有不同的实现方式，那么接口变量在回调接口方法时就可能具有多种形态。类似之前抽象类中的动态绑定。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/11/08/%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/" data-id="cl17apw2x003nicud0y9i7k2o" data-title="进一步讨论对象和类（1）" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/2021/11/09/%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          进一步讨论对象和类（2）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/mid-lake-pavilion.github.io/2021/11/08/%E6%95%B0%E7%BB%84%E3%80%81%E6%9E%9A%E4%B8%BE%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%AE%B9%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数组、枚举、字符串和容器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">Web前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">前端之路</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/">多一点冥想</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/">数字逻辑设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%8A%B1%E9%97%B4%E4%B8%80%E5%A3%B6%E9%85%92/">花间一壶酒</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" style="font-size: 20px;">大学课程</a> <a href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/10/">October 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">概念结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/24/JavaScript%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">JavaScript的正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/mid-lake-pavilion.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/mid-lake-pavilion.github.io/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/mid-lake-pavilion.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>指令系统 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="机器指令指令的一般格式指令由两个部分组成：  操作码字段 地址码字段  操作码前者反映机器做什么操作。其长度可固定，也可变化。  长度固定：大中型计算机 长度不固定：微型机   扩展操作码技术操作码的位数随地址数的减少而增加。  地址码地址码用来指出操作数的地址，包括  源操作数的地址 结果目的操作数的地址 下一条指令的地址  按照操作数地址的数目可以分为：  四地址指令 三地址指令 二地址指令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指令系统">
+<meta property="og:url" content="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/12/17/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="机器指令指令的一般格式指令由两个部分组成：  操作码字段 地址码字段  操作码前者反映机器做什么操作。其长度可固定，也可变化。  长度固定：大中型计算机 长度不固定：微型机   扩展操作码技术操作码的位数随地址数的减少而增加。  地址码地址码用来指出操作数的地址，包括  源操作数的地址 结果目的操作数的地址 下一条指令的地址  按照操作数地址的数目可以分为：  四地址指令 三地址指令 二地址指令">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-17T15:59:54.000Z">
+<meta property="article:modified_time" content="2021-12-25T02:34:07.701Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/mid-lake-pavilion.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/mid-lake-pavilion.github.io/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/mid-lake-pavilion.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/mid-lake-pavilion.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/mid-lake-pavilion.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://luqingbys.github.io/mid-lake-pavilion.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-指令系统" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/mid-lake-pavilion.github.io/2021/12/17/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time class="dt-published" datetime="2021-12-17T15:59:54.000Z" itemprop="datePublished">2021-12-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      指令系统
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="机器指令"><a href="#机器指令" class="headerlink" title="机器指令"></a>机器指令</h2><h3 id="指令的一般格式"><a href="#指令的一般格式" class="headerlink" title="指令的一般格式"></a>指令的一般格式</h3><p>指令由两个部分组成：</p>
+<ul>
+<li>操作码字段</li>
+<li>地址码字段</li>
+</ul>
+<h4 id="操作码"><a href="#操作码" class="headerlink" title="操作码"></a>操作码</h4><p>前者反映机器做什么操作。其长度可固定，也可变化。</p>
+<ul>
+<li>长度固定：大中型计算机</li>
+<li>长度不固定：微型机</li>
+</ul>
+<blockquote>
+<p>扩展操作码技术<br>操作码的位数随地址数的减少而增加。</p>
+</blockquote>
+<h4 id="地址码"><a href="#地址码" class="headerlink" title="地址码"></a>地址码</h4><p>地址码用来指出操作数的地址，包括</p>
+<ul>
+<li>源操作数的地址</li>
+<li>结果目的操作数的地址</li>
+<li>下一条指令的地址</li>
+</ul>
+<p>按照操作数地址的数目可以分为：</p>
+<ul>
+<li>四地址指令</li>
+<li>三地址指令</li>
+<li>二地址指令</li>
+<li>一地址指令</li>
+<li>零地址指令</li>
+</ul>
+<p>下面分别介绍不同类型的地址指令：</p>
+<h5 id="四地址指令"><a href="#四地址指令" class="headerlink" title="四地址指令"></a>四地址指令</h5><table>
+<thead>
+<tr>
+<th>OP</th>
+<th>A1</th>
+<th>A2</th>
+<th>A3</th>
+<th>A4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OP是操作码，A1为第一操作数地址，A2为第二操作数地址，A3为结果数地址，A4为下一条指令地址。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>需要访问存储器4次：取操作码，取操作数两次，存放结果</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id="三地址指令"><a href="#三地址指令" class="headerlink" title="三地址指令"></a>三地址指令</h5><p>由于PC可以记录下一条指令的地址，故在四地址指令基础上可以省略A4，得到三地址指令。<br>仍然需要访问存储器4次。</p>
+<h5 id="二地址指令"><a href="#二地址指令" class="headerlink" title="二地址指令"></a>二地址指令</h5><p>运算的结果不存入存储器，而是存入CPU中的ACC，那么就可以节省一个地址字段A3。</p>
+<h5 id="一地址指令"><a href="#一地址指令" class="headerlink" title="一地址指令"></a>一地址指令</h5><p>一个操作数也存放在ACC中，那么整个地址码只有一个字段，表示另一个操作数所在内存地址。</p>
+<h5 id="零地址指令"><a href="#零地址指令" class="headerlink" title="零地址指令"></a>零地址指令</h5><p>有些操作不需要操作数，如停机、中断返回、空操作等。</p>
+<h3 id="指令字长"><a href="#指令字长" class="headerlink" title="指令字长"></a>指令字长</h3><blockquote>
+<p>机器字长：计算机一次能够处理的最长的二进制位数<br>存储字长：一个存储单元可存储的二进制代码的位数<br>指令字长：指令中包含的二进制代码的位数，等于操作码长度加上地址码长度</p>
+</blockquote>
+<h2 id="操作数类型和操作类型"><a href="#操作数类型和操作类型" class="headerlink" title="操作数类型和操作类型"></a>操作数类型和操作类型</h2><h3 id="操作数类型"><a href="#操作数类型" class="headerlink" title="操作数类型"></a>操作数类型</h3><p>包括地址、数字、字符、逻辑数等。</p>
+<h3 id="存储器中数据的存放"><a href="#存储器中数据的存放" class="headerlink" title="存储器中数据的存放"></a>存储器中数据的存放</h3><p>边界对准。</p>
+<h3 id="操作类型"><a href="#操作类型" class="headerlink" title="操作类型"></a>操作类型</h3><p>不同的机器操作类型不同，但是有以下几类通用操作。</p>
+<ul>
+<li>数据传送</li>
+<li>算术逻辑操作</li>
+<li>移位操作</li>
+<li>转移<ul>
+<li>无条件转移</li>
+<li>条件转移</li>
+<li>调用和返回</li>
+<li>陷阱指令</li>
+</ul>
+</li>
+<li>输入输出指令</li>
+</ul>
+<h2 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h2><p>目的：用以确定本条指令的操作数地址和下一条欲执行指令的指令地址。<br>可分为：</p>
+<ul>
+<li>指令寻址</li>
+<li>数据寻址</li>
+</ul>
+<h3 id="指令寻址"><a href="#指令寻址" class="headerlink" title="指令寻址"></a>指令寻址</h3><p>分为</p>
+<ul>
+<li>顺序寻址<br>依靠程序计数器PC形成下一条指令的地址，顺序寻址</li>
+<li>跳跃寻址<br>通过转移类指令实现，如JMP 7</li>
+</ul>
+<h3 id="数据寻址"><a href="#数据寻址" class="headerlink" title="数据寻址"></a>数据寻址</h3><p>通常，指令中的地址码不给出数据的有效地址（记作EA），而是给出一个形式地址（A）。</p>
+<ol>
+<li>立即寻址<br>形式地址A就是操作数，称为立即数；<br>但是形式地址A的位数限制了立即数的范围。</li>
+<li>直接寻址<br>有效地址由形式地址直接给出；<br>但是，A的位数限制了指令操作数的寻址范围，且操作数的地址不易修改。</li>
+<li>隐含寻址<br>操作数地址隐含在操作码中。</li>
+<li>间接寻址<br>数据的有效地址由形式地址间接提供；<br>这样一来，可以扩大寻址范围，也便于编制程序。</li>
+<li>寄存器直接寻址<br>有效地址即为寄存器编号。</li>
+<li>寄存器间接寻址<br>有效地址在寄存器中，而操作数在存储器中。也就是说，与寄存器直接寻址相比，间接寻址还需要访问主存。</li>
+<li>基址寻址<br>OP 寻址特征 基址寄存器 操作数地址<br>基址寄存器中的内容由操作系统确定，<br>在程序执行过程中，基址寄存器中的内容不变，而形式地址改变。<blockquote>
+<p>基址寄存器有隐式和显式两种。<br>隐式无需用户指出，显式相当于在一组通用寄存器中，由用户明确指出哪一个作为基址寄存器。</p>
+</blockquote>
+</li>
+<li>变址寻址<br>特点：EA &#x3D; (IX) + A<br>其中，IX为变址寄存器，其内容由用户给定<br>在程序执行过程中，IX内容可变，形式地址A不变</li>
+<li>相对寻址<br>公式：EA &#x3D; (PC) + A<br>A是相对于当前指令的位移量（可正可负，补码形式）</li>
+</ol>
+<h2 id="RISC与CISC"><a href="#RISC与CISC" class="headerlink" title="RISC与CISC"></a>RISC与CISC</h2><p>RISC，采用组合逻辑控制器<br>CISC，采用微程序控制器</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://luqingbys.github.io/mid-lake-pavilion.github.io/2021/12/17/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" data-id="cl17apw2d0023icudam43309a" data-title="指令系统" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/2021/12/24/%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA%E6%8E%A5%E5%8F%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          输入/输出接口
+        
+      </div>
+    </a>
+  
+  
+    <a href="/mid-lake-pavilion.github.io/2021/12/17/%E5%AD%98%E5%82%A8%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">存储器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/CF/">CF</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">Java程序设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">Web前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%B7%AF/">前端之路</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/">多一点冥想</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/">数字逻辑设计</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">数据库系统</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%8A%B1%E9%97%B4%E4%B8%80%E5%A3%B6%E9%85%92/">花间一壶酒</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></li><li class="category-list-item"><a class="category-list-link" href="/mid-lake-pavilion.github.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">面向对象建模技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" rel="tag">大学课程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" style="font-size: 20px;">大学课程</a> <a href="/mid-lake-pavilion.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/mid-lake-pavilion.github.io/archives/2021/10/">October 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">hello</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%A6%82%E5%BF%B5%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/">概念结构设计</a>
+          </li>
+        
+          <li>
+            <a href="/mid-lake-pavilion.github.io/2022/03/24/JavaScript%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">JavaScript的正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/mid-lake-pavilion.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/mid-lake-pavilion.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/mid-lake-pavilion.github.io/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/mid-lake-pavilion.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/mid-lake-pavilion.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
