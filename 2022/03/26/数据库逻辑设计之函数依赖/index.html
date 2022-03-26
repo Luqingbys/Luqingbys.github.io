@@ -4,11 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Unusual Minesweeper, 湖心亭">
-    <meta name="description" content="
-问题传送门https://codeforces.com/problemset/problem/1619/G
+    <meta name="keywords" content="数据库逻辑设计之函数依赖, 湖心亭">
+    <meta name="description" content="以下均默认R为具有属性集合U的一个关系模式。
+关系的码与键这一部分概念很杂，稍有不慎容易混淆，特此记录。
 
-题目大意另类的“扫雷”游戏，给出若干个地雷的信息（横坐标、纵坐标、自动爆炸时间），另外规定，每一分钟，可以人为地指定任意一颗地雷">
+超码：$K\subseteq U, 若K \to U, 则称K是R的一个超码——超码可以唯一地识别关系的元组。$
+
+候选码：$已知K">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Unusual Minesweeper | 湖心亭</title>
+    <title>数据库逻辑设计之函数依赖 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -325,12 +327,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Unusual Minesweeper</h1>
+                    <h1 class="description center-align post-title">数据库逻辑设计之函数依赖</h1>
                 </div>
             </div>
         </div>
@@ -454,8 +456,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/mid-lake-pavilion.github.io/categories/CF/" class="post-category">
-                                CF
+                            <a href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                数据库系统
                             </a>
                         
                     </div>
@@ -467,7 +469,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-01-08
+                    2022-03-26
                 </div>
                 
 
@@ -476,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.6k
+                    955
                 </div>
                 
 
@@ -493,199 +495,108 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>问题传送门<br><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1619/G">https://codeforces.com/problemset/problem/1619/G</a></p>
-</blockquote>
-<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>另类的“扫雷”游戏，给出若干个地雷的信息（横坐标、纵坐标、自动爆炸时间），另外规定，每一分钟，可以人为地指定任意一颗地雷爆炸，并且地雷爆炸会引发同行、同列所有距离k以内的地雷爆炸，从而产生连锁反应。试问引爆地图上所有地雷所需要的最少时间是多少。</p>
-<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>首先我们知道的是，每一颗地雷爆炸的形式有三种：</p>
+                <p><strong>以下均默认R为具有属性集合U的一个关系模式。</strong></p>
+<h2 id="关系的码与键"><a href="#关系的码与键" class="headerlink" title="关系的码与键"></a>关系的码与键</h2><p>这一部分概念很杂，稍有不慎容易混淆，特此记录。</p>
 <ul>
-<li>到达一定时间自动爆炸</li>
-<li>被其他的地雷引爆</li>
-<li>人为引爆</li>
+<li><p>超码：$K\subseteq U, 若K \to U, 则称K是R的一个超码——超码可以唯一地识别关系的元组。$</p>
+</li>
+<li><p>候选码：$已知K是R的一个超码, 且不存在K的真子集Z, 使得Z \to U, 我们称K是R的一个候选码。$</p>
+<p>如此看来，同一个关系模式下，候选码可能有多个。</p>
+</li>
+<li><p>主码：在同一个关系模式下的诸多候选码中，指定其中的一个，它就是识别关系的元组的主码（取代表）。</p>
+</li>
+<li><p>键属性：包含在<strong>任意候选码</strong>中的属性，称为键属性。</p>
+</li>
+<li><p>非键属性：与键属性相对，不包含在任意候选码中的属性，称为非键属性。</p>
+<p>最简单的情况下，候选码只包含一个属性；</p>
+<p>最复杂的情况下，候选码包含全部属性。</p>
+</li>
 </ul>
-<p>如果单纯一个一个考虑三个条件，将会使本题变得十分复杂。那么，我们可不可以将三个条件作出一定的简化，或者合并一下，从而使得问题处理起来更加简便而清晰呢？</p>
-<p>当然是可以的。</p>
-<ol>
-<li>根据题意，地雷的连锁引爆无疑是本题的关键之处；这一部分的处理，需要用到深度优先搜索DFS；</li>
-<li>任何一颗地雷的爆炸都不是单纯它一个的爆炸，还需要考虑它引发的所有地雷的爆炸；这样一来，这些被同一颗地雷引爆的所有地雷的爆炸时间全部都是一样的，可以将它们看作一个整体。</li>
-<li>那么怎么找到这样的整体呢？事实上，这样的地雷群体，只要其中任意一个爆炸，整个群体都会爆炸，也就是说，对任何一颗地雷进行DFS，都可以牵扯出整个地雷群；</li>
-<li>还需要另设一个标记，记录哪些地雷已经爆炸过。</li>
-</ol>
-<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>由于地雷坐标实在太大，不方便直接使用二维数组存储相关信息，我们可以换一种方式存储：使用map容器，存储每一横行和每一纵列的地雷的坐标，这样也方便后续的DFS处理。<br>另外，设置容器记录每一颗地雷的爆炸时间以及是否爆炸；</p>
-<pre><code class="C++">// 存储指定坐标下，一整行（列）的地雷坐标
-map&lt;ll, vector&lt;ll&gt;&gt;mapX;
-map&lt;ll, vector&lt;ll&gt;&gt;mapY;
-map&lt;pair&lt;ll, ll&gt;, bool&gt;isBoo;
-map&lt;pair&lt;ll, ll&gt;, ll&gt;times;
-...
-while (i&lt;n)
-&#123;
-   scanf(&quot;%lld%lld%lld&quot;, &amp;x, &amp;y, &amp;t);
-   alls[i++]=make_pair(x, y);
-   mapX[x].push_back(y);
-   mapY[y].push_back(x);
-   times[&#123;x, y&#125;] = t;
-&#125;
-...
-</code></pre>
-<p>对所有地雷遍历，也就是上面说过的，任意一个地雷爆炸可以牵扯出整个地雷群，只需要求出这个地雷群的最短爆炸时间即可，用到DFS：</p>
-<pre><code class="C++">ll dfs(ll x, ll y)
-&#123;
-    // 让&#123;x,y&#125;处地雷爆炸
-    ll minT = times[&#123;x, y&#125;];
-    isBoo[&#123;x, y&#125;] = true;
-    // 连锁反应爆炸开始
-    auto i = lower_bound(mapX[x].begin(), mapX[x].end(), y);
-    auto j = lower_bound(mapY[y].begin(), mapY[y].end(), x);
-
-    // 四个方向
-    if (++i != mapX[x].end() &amp;&amp; !isBoo[&#123;x, * i&#125;] &amp;&amp; abs(*i - y) &lt;= k)
-    &#123;
-        ll tm = dfs(x, *i);
-        minT = minT &gt; tm ? tm : minT;
-    &#125;
-    i--;
-    if (i != mapX[x].begin() &amp;&amp; !isBoo[&#123;x, * (--i)&#125;] &amp;&amp; abs(*i - y) &lt;= k)
-    &#123;
-        ll tm = dfs(x, *i);
-        minT = minT &gt; tm ? tm : minT;
-    &#125;
-    if (++j != mapY[y].end() &amp;&amp; !isBoo[&#123;*j, y&#125;] &amp;&amp; abs(*j - x) &lt;= k)
-    &#123;
-        ll tm = dfs(*j, y);
-        minT = minT &gt; tm ? tm : minT;
-    &#125;
-    j--;
-    if (j != mapY[y].begin() &amp;&amp; !isBoo[&#123;*(--j), y&#125;] &amp;&amp; abs(*j - x) &lt;= k)
-    &#123;
-        ll tm = dfs(*j, y);
-        minT = minT &gt; tm ? tm : minT;
-    &#125;
-    return minT;
-&#125;
-</code></pre>
-<p>这样一来，所有的地雷所需爆炸时间就会被分开，在数组中的每一个值都代表一个不同的地雷群的爆炸时间，也就是说，它们互不影响（地雷群之间不会因为爆炸而相互引爆了，否则两个地雷群会合成一个）。采用双指针对这个时间数组进行遍历，以时间为循环变量，直到双指针相遇即可。</p>
-<pre><code class="C++">vector&lt;ll&gt; pres;// 存储dfs的结果，得到的就是所有地雷群的爆炸时间
-for (int i=0;i&lt;alls.size()-1;i++)
-&#123;
-   auto e = alls[i];
-   if(!isBoo[e])
-       pres.push_back(dfs(e.first, e.second));
-&#125;
-
-// 需要对pres进行升序排序，最后面的地雷当然需要每一次的人为引爆
-sort(pres.begin(), pres.end());
-// 设置头指针sp，尾指针ep，ans就是最后的答案————爆炸完的最短时间
-ll ep = pres.size() - 1, sp = 0, ans = 0;
-for (;; ans++)
-&#123;
-   while (pres[sp] == ans)   sp++;
-   if (ep &lt;= sp)  break;
-   ep--;
-&#125;
-cout &lt;&lt; ans &lt;&lt; endl;
-</code></pre>
-<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre><code class="C++">// unusualmineSweeper.cpp : 此文件包含 &quot;main&quot; 函数。程序执行将在此处开始并结束。
-//
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
-#include &lt;cmath&gt;
-#include &lt;map&gt;
-typedef long long ll;
-using namespace std;
-// 存储指定坐标下，一整行（列）的地雷坐标
-map&lt;ll, vector&lt;ll&gt;&gt;mapX;
-map&lt;ll, vector&lt;ll&gt;&gt;mapY;
-
-map&lt;pair&lt;ll, ll&gt;, bool&gt;isBoo;
-map&lt;pair&lt;ll, ll&gt;, ll&gt;times;
-ll x, y, k, t;
-int q, n;
-
-ll dfs(ll x, ll y)
-&#123;
-    // 让&#123;x,y&#125;处地雷爆炸
-    ll minT = times[&#123;x, y&#125;];
-    isBoo[&#123;x, y&#125;] = true;
-    // 连锁反应爆炸开始
-    auto i = lower_bound(mapX[x].begin(), mapX[x].end(), y);
-    auto j = lower_bound(mapY[y].begin(), mapY[y].end(), x);
-
-    // 四个方向
-    if (++i != mapX[x].end() &amp;&amp; !isBoo[&#123;x, * i&#125;] &amp;&amp; abs(*i - y) &lt;= k)
-    &#123;
-        ll tm = dfs(x, *i);
-        minT = minT &gt; tm ? tm : minT;
-    &#125;
-    i--;
-    if (i != mapX[x].begin() &amp;&amp; !isBoo[&#123;x, * (--i)&#125;] &amp;&amp; abs(*i - y) &lt;= k)
-    &#123;
-        ll tm = dfs(x, *i);
-        minT = minT &gt; tm ? tm : minT;
-    &#125;
-    if (++j != mapY[y].end() &amp;&amp; !isBoo[&#123;*j, y&#125;] &amp;&amp; abs(*j - x) &lt;= k)
-    &#123;
-        ll tm = dfs(*j, y);
-        minT = minT &gt; tm ? tm : minT;
-    &#125;
-    j--;
-    if (j != mapY[y].begin() &amp;&amp; !isBoo[&#123;*(--j), y&#125;] &amp;&amp; abs(*j - x) &lt;= k)
-    &#123;
-        ll tm = dfs(*j, y);
-        minT = minT &gt; tm ? tm : minT;
-    &#125;
-    return minT;
-&#125;
-
-int main()
-&#123;
-    scanf(&quot;%d&quot;, &amp;q);
-    while (q--)
-    &#123;
-        mapX.clear();
-        mapY.clear();
-        isBoo.clear();
-        scanf(&quot;%d%lld&quot;, &amp;n, &amp;k);
-        vector&lt;pair&lt;ll, ll&gt;&gt; alls(n+1);  // 存放全部地雷的坐标对
-        int i = 0;
-        while (i&lt;n)
-        &#123;
-            scanf(&quot;%lld%lld%lld&quot;, &amp;x, &amp;y, &amp;t);
-            alls[i++]=make_pair(x, y);
-            mapX[x].push_back(y);
-            mapY[y].push_back(x);
-            times[&#123;x, y&#125;] = t;
-        &#125;
-        for (auto item : mapX)
-        &#123;
-            sort(mapX[item.first].begin(), mapX[item.first].end());
-        &#125;
-        for (auto item : mapY)
-        &#123;
-            sort(mapY[item.first].begin(), mapY[item.first].end());
-        &#125;
-
-        vector&lt;ll&gt; pres;
-        for (int i=0;i&lt;alls.size()-1;i++)
-        &#123;
-            auto e = alls[i];
-            if(!isBoo[e])
-                pres.push_back(dfs(e.first, e.second));
-        &#125;
-
-        sort(pres.begin(), pres.end());
-        ll ep = pres.size() - 1, sp = 0, ans = 0;
-        for (;; ans++)
-        &#123;
-            while (pres[sp] == ans)   sp++;
-            if (ep &lt;= sp)  break;
-            ep--;
-        &#125;
-        cout &lt;&lt; ans &lt;&lt; endl;
-    &#125;
-&#125;
-</code></pre>
+<p>举出一个小栗子：</p>
+<p>下面是某一个政务系统管理数据表。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>姓名</th>
+<th>年龄</th>
+<th>性别</th>
+<th>户籍号</th>
+<th>部门</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>小明</td>
+<td>32</td>
+<td>男</td>
+<td>011</td>
+<td>内阁</td>
+</tr>
+<tr>
+<td>02</td>
+<td>小红</td>
+<td>24</td>
+<td>女</td>
+<td>022</td>
+<td>工部</td>
+</tr>
+<tr>
+<td>03</td>
+<td>小勇</td>
+<td>33</td>
+<td>男</td>
+<td>021</td>
+<td>吏部</td>
+</tr>
+<tr>
+<td>04</td>
+<td>小南</td>
+<td>32</td>
+<td>女</td>
+<td>092</td>
+<td>礼部</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>对于超码，注意到超码是属性的<strong>集合</strong>，因此对超码的选取很任意：{学号，姓名}，{学号，姓名，年龄}…它们都是。</li>
+<li>对于候选码，首先它的实质是属性的<strong>集合</strong>；其次它比较有“临界”意义，因为它可以说是唯一识别关系的元组的<strong>最小阶数</strong>的属性集合，比如上表中，“编号”“户籍号”都可以唯一地识别一个元组，它们都是候选码。</li>
+<li>包含在所有的候选码之中的属性，即“编号”“户籍号”，它们都是键属性，其他的都是非键属性。</li>
+</ul>
+<h2 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h2><p>$$<br>\begin{flalign}<br>&amp;设关系模式R，U为R的所有属性集合, P为模式下所有元组组成的集合,X、Y也为属性集合, 且X\subseteq U, Y\subseteq U;\<br>&amp;若\forall s, t \in P, s[X]&#x3D;t[X], 有s[Y]&#x3D;t[Y], 那么我们就称Y函数依赖于X, 或者X函数地确定Y, 即X\to Y.<br>\end{flalign}<br>$$</p>
+<p>一般来说，X是某种具有“唯一”语义性的属性（集），此时任何属性集都是函数依赖于X的。比如，X&#x3D;“身份证号”（当然这里集合X仅有一个元素，就直接简化了），对于一个实体——公民的关系模式，几乎可以函数地确定其他所有属性了。</p>
+<p>再比如，我们考虑“姓名”$\to$“年龄”这样一个待确定的函数依赖，发现对于同名的两个公民，他们的年龄很有可能不同（事实上这种情况很常见），因此这个函数依赖不成立。<br>$$<br>\begin{flalign}<br>&amp;如果X\to Y, 并且Y\nsubseteq X, 我们就称这种依赖是非平凡函数依赖。\<br>&amp;否则，若Y\subseteq X,我们就称这种函数依赖是平凡函数依赖。<br>\end{flalign}<br>$$<br>很显然，非平凡函数依赖更值得我们研究：平凡函数依赖是很显然的，它是一种父集合到子集合的函数依赖。</p>
+<p>还需要介绍几个概念：</p>
+<ul>
+<li><p>完全函数依赖</p>
+</li>
+<li><p>传递地函数依赖<br>$$<br>\begin{flalign}<br>&amp;设X\subseteq U, Y\subseteq U, Z\subseteq U, Y\to X不成立, 且Z-X, Z-Y与Y-X不空;\<br>&amp;如果X \to Y, Y\to Z, 则称Z传递地函数依赖于X.<br>\end{flalign}<br>$$<br>要注意传递地函数依赖满足的条件。集合之差不空，也就是说集合之间没有父子包含关系（否则就成了平凡函数依赖）。</p>
+</li>
+</ul>
 
                 
             </div>
@@ -712,7 +623,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2022/01/08/Unusual-Minesweeper/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2022/01/08/Unusual-Minesweeper/</a>
+                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2022/03/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2022/03/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -921,58 +832,18 @@ int main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2022/01/08/%E8%BF%9F%E5%88%B0%E7%9A%84%E6%AD%A3%E4%B9%89-%E8%BF%99%E4%B9%9F%E8%AE%B8%E6%98%AF%E8%BF%99%E5%9C%BA%E9%A3%8E%E6%9A%B4%E6%9C%80%E5%A5%BD%E7%9A%84%E7%BB%93%E5%B1%80/">
+                <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="迟到的正义:这也许是这场风暴最好的结局">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="数据库逻辑设计之函数依赖">
                         
-                        <span class="card-title">迟到的正义:这也许是这场风暴最好的结局</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-08
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/mid-lake-pavilion.github.io/categories/%E5%A4%9A%E4%B8%80%E7%82%B9%E5%86%A5%E6%83%B3/" class="post-category">
-                                    多一点冥想
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2022/01/07/Web%E5%B8%83%E5%B1%80/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="Web布局">
-                        
-                        <span class="card-title">Web布局</span>
+                        <span class="card-title">数据库逻辑设计之函数依赖</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -983,16 +854,54 @@ int main()
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/mid-lake-pavilion.github.io/categories/Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Web前端基础
+                            <a href="/mid-lake-pavilion.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                    数据库系统
                                 </a>
                             
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/mid-lake-pavilion.github.io/2022/03/26/SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            鹿卿
                             
                         </span>
                     </div>
