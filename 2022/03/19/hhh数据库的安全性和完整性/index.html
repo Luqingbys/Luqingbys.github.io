@@ -686,7 +686,7 @@ FROM Employee, Works
 WHERE street=&#39;Wenhua West Road&#39; AND city=&#39;威海市&#39;;
 
 2.6
-SELECT Manages, Employee1, Employee2
+SELECT person_name
 FROM Manages, Employee Employee1, Employee Employee2
 WHERE Manages.person_name=Employee1.person_name AND
     Manages.manager_name=Employee2.person_name AND

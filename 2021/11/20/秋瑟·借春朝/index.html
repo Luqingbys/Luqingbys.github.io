@@ -309,7 +309,7 @@
 <script src="/mid-lake-pavilion.github.io/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = 'bfae15f906a856ae22bc20fda4c15c7470aba8ad59b8ba69c3853e5b2bd472a2';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');

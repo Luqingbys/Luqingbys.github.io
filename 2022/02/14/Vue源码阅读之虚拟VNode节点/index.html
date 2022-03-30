@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Vue源码阅读之虚拟VNode节点, 湖心亭">
-    <meta name="description" content="JavaScript的正则表达式元字符与Python中的元字符类似，JavaScript也有元字符，它们是正则表达式中最基础的部分，理解、掌握了它们，就相当于掌握了正则表达式的一半。
-重要匹配方法exec()在设置了 global 或 st">
+    <meta name="description" content="写在前面由于虚拟VNode节点部分某些关键地方涉及到了JavaScript正则表达式，在此再度简单记录正则表达式的JavaScript版本。
+JavaScript的正则表达式元字符与Python中的元字符类似，JavaScript也有元字符">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -465,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.8k
+                    2.9k
                 </div>
                 
 
@@ -482,7 +482,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="JavaScript的正则表达式"><a href="#JavaScript的正则表达式" class="headerlink" title="JavaScript的正则表达式"></a>JavaScript的正则表达式</h2><h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>与Python中的元字符类似，JavaScript也有元字符，它们是正则表达式中最基础的部分，理解、掌握了它们，就相当于掌握了正则表达式的一半。</p>
+                <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>由于虚拟VNode节点部分某些关键地方涉及到了JavaScript正则表达式，在此再度简单记录正则表达式的JavaScript版本。</p>
+<h2 id="JavaScript的正则表达式"><a href="#JavaScript的正则表达式" class="headerlink" title="JavaScript的正则表达式"></a>JavaScript的正则表达式</h2><h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>与Python中的元字符类似，JavaScript也有元字符，它们是正则表达式中最基础的部分，理解、掌握了它们，就相当于掌握了正则表达式的一半。</p>
 <h3 id="重要匹配方法"><a href="#重要匹配方法" class="headerlink" title="重要匹配方法"></a>重要匹配方法</h3><h4 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h4><p>在设置了 global 或 sticky 标志位的情况下（如 &#x2F;foo&#x2F;g or &#x2F;foo&#x2F;y），JavaScript RegExp 对象是有状态的。他们会将上次成功匹配后的位置记录在 lastIndex 属性中。使用此特性，exec() 可用来对单个字符串中的多次匹配结果进行逐条的遍历（包括捕获到的匹配）。</p>
 <p>正则表达式的lastIndex属性：记录了匹配成功的第一个元素下标。</p>
 <pre><code class="html">&lt;!DOCTYPE html&gt;
@@ -538,7 +539,7 @@
 (2) [&#39;&#123;&#123; author &#125;&#125;&#39;, &#39; author &#39;, index: 39, input: &#39;&lt;div id=&quot;main&quot;&gt;&lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt;&lt;span&gt;&#123;&#123; author &#125;&#125;&lt;/span&gt;&lt;/div&gt;&#39;, groups: undefined]
 &#123;&#123; author &#125;&#125;
 </code></pre>
-<h2 id="AST语法树"><a href="#AST语法树" class="headerlink" title="AST语法树"></a>AST语法树</h2><p>AST树，即abstract syntax tree树，意为抽象语法树。经过generage过程，得到render函数，将返回Vue的虚拟DOM节点（包含标签名、子节点、文本信息等）。<br>比如下面这一句html语言，定义了一个input标签，是一个html表单元素：<br><code>&lt;input class=&quot;warn&quot; value=&quot;default text&quot; :style=&quot;innerStyle&quot;&gt;</code><br>解析后的AST节点：</p>
+<h1 id="从HTML到真实DOM的大体流程"><a href="#从HTML到真实DOM的大体流程" class="headerlink" title="从HTML到真实DOM的大体流程"></a>从HTML到真实DOM的大体流程</h1><h2 id="AST语法树"><a href="#AST语法树" class="headerlink" title="AST语法树"></a>AST语法树</h2><p>AST树，即abstract syntax tree树，意为抽象语法树。经过generage过程，得到render函数，将返回Vue的虚拟DOM节点（包含标签名、子节点、文本信息等）。<br>比如下面这一句html语言，定义了一个input标签，是一个html表单元素：<br><code>&lt;input class=&quot;warn&quot; value=&quot;default text&quot; :style=&quot;innerStyle&quot;&gt;</code><br>解析后的AST节点：</p>
 <pre><code class="json">inputAstElm = &#123;
   type: 1,
   tag: &#39;input&#39;,
@@ -620,7 +621,7 @@ tokens: = [
 ]
 </code></pre>
 <p>StartToken表示开始标签<br>EndToken表示结束标签<br>CharsToken表示文本节点</p>
-<p>其中的解析过程就是一个类似括号匹配问题的栈的实际应用：</p>
+<p>其中的解析（parse）过程就是一个类似括号匹配问题的栈的实际应用：</p>
 <p>设置一个栈，用于管理字符串，当标签匹配的时候就把栈顶元素弹出，否则入栈；同时将解析出来的标签转化为Token计入Tokens流。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/1.2/str2tokens.png">https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/1.2/str2tokens.png</a></p>
 <h3 id="从HTMLElement-Token流到AST树"><a href="#从HTMLElement-Token流到AST树" class="headerlink" title="从HTMLElement Token流到AST树"></a>从HTMLElement Token流到AST树</h3><p>拿到tokens序列后，我们可以构建AST树节点。AST树节点形状大致如下：</p>
@@ -753,6 +754,7 @@ _k(eventKeyCode, key, builtInAlias) 判定当前事件的按键是否为预期�
 </li>
 </ul>
 <p>_c()方法可以生成一个VNode，从而实现AST到VNode的过程。</p>
+<h3 id="从VNode树到DOM树"><a href="#从VNode树到DOM树" class="headerlink" title="从VNode树到DOM树"></a>从VNode树到DOM树</h3><p>经历了patch(vnode)函数，此时在真实的DOM上处理UI渲染、事件监听等。</p>
 <h2 id="用一个栗子做个总结"><a href="#用一个栗子做个总结" class="headerlink" title="用一个栗子做个总结"></a>用一个栗子做个总结</h2><ol>
 <li><p>原始字符串如下：</p>
 <pre><code class="html">&lt;input class=&quot;warn&quot; value=&quot;default text&quot; :style=&quot;innerStyle&quot;&gt;
@@ -787,13 +789,13 @@ _k(eventKeyCode, key, builtInAlias) 判定当前事件的按键是否为预期�
 &#125;
 </code></pre>
 </li>
-<li><p>最后一步，将虚拟VNode渲染到真是DOM</p>
+<li><p>最后一步，将虚拟VNode渲染到真实DOM</p>
 <pre><code class="JavaScript">inputDom.setAttribute(&#39;class&#39;, &#39;warn&#39;)
 inputDom.setAttribute(&#39;style&#39;, &#39;vm.innerStyle运行后的值&#39;)
 </code></pre>
 </li>
 </ol>
-<p>“They are here because of you.”<br>“…What if everyone forgot who I was? They are coming here because of me, right? Becase I’m Peter Parker? But this time, make everyone forget who Peter Parker is. Make every one forget …me.”<br>“But you got to understand, that would mean everyone, who knows and loves you…We…we’d have no memory of you. It will be as though you never existed.”</p>
+<p>“They are here because of you.”<br>“…What if everyone forgot who I was? They are coming here <strong>because</strong> of me, right? Becase I’m Peter Parker? But this time, make everyone forget who Peter Parker is. Make every one forget …me.”<br>“But you got to understand, that would mean everyone, who knows and loves you…We…we’d have no memory of you. It will be as though you never existed.”</p>
 
                 
             </div>
