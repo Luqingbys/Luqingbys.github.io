@@ -482,7 +482,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    955
+                    1.1k
                 </div>
                 
 
@@ -600,6 +600,13 @@
 </li>
 <li><p>传递地函数依赖<br>$$<br>\begin{flalign}<br>&amp;设X\subseteq U, Y\subseteq U, Z\subseteq U, Y\to X不成立, 且Z-X, Z-Y与Y-X不空;\<br>&amp;如果X \to Y, Y\to Z, 则称Z传递地函数依赖于X.<br>\end{flalign}<br>$$<br>要注意传递地函数依赖满足的条件。集合之差不空，也就是说集合之间没有父子包含关系（否则就成了平凡函数依赖）。</p>
 </li>
+</ul>
+<h2 id="快速求候选码"><a href="#快速求候选码" class="headerlink" title="快速求候选码"></a>快速求候选码</h2><p>我们给出如下有用的定理，在此之前，我们约定R为给定的关系模式，F是其函数依赖集。</p>
+<ul>
+<li><strong>定理1</strong> 对于R、F，若X是L类属性，那么X必为R的任一候选键的成员。</li>
+<li><strong>定理2</strong> 如果X是R类属性，那么X不在任何候选键中。</li>
+<li><strong>定理3</strong> 如果X是R的N类属性，那么X必包含在R的任一候选键中。</li>
+<li>推论：如果X是R的N类和L类组成的属性集，且$X_F^+$包含了R的全部属性，那么X是R的唯一候选键。</li>
 </ul>
 
                 
@@ -1040,7 +1047,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2019-2023</span>
             
             <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

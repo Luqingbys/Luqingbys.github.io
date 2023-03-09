@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2k
+                    1.9k
                 </div>
                 
 
@@ -634,8 +634,7 @@ FOR EACH &#123;ROW | STATEMENT&#125;
 </code></pre>
 <p>$$<br>\begin{flalign}<br>&amp;Partition(begin, end, nums[], standard):\<br>&amp;If\ begin &gt;&#x3D; end \quad Then\ Return\ begin;\<br>&amp;i \gets begin;\<br>&amp;for\ j \gets end \ to \ begin\<br>&amp;\qquad do\ If\ nums[j] &lt;&#x3D; nums[standard]\<br>&amp;\qquad \qquad i \gets i+1;\<br>&amp;\qquad \qquad nums[i] \leftrightarrow nums[j];\<br>&amp;nums[i+1] \leftrightarrow nums[standard]\<br>&amp; Return\ i+1<br>\end{flalign}<br>$$</p>
 <p>$$<br>\begin{flalign}<br>&amp;Solution(cups[], covers[], begin, end):\<br>&amp;If\ begin &gt;&#x3D; end \quad Then \quad Return;\<br>&amp;std \gets Partition(begin, end, cups, end);\<br>&amp;Partition(begin, end, covers, std);\<br>&amp;Solution(cups, covers, begin, std-1);\<br>&amp;Solution(cups, covers, std+1, end);<br>\end{flalign}<br>$$</p>
-<p>$$<br>\begin{flalign}<br>&amp;Input: X[x_0, x_1, …, x_{x-1}],\ Y[y_0, y_1, …, y_{n-1}]\<br>&amp;Output: The\ median\ of\ numbers\ from\ Array\ X\ merge\ Y, namely\ [x_0, x_1, …, x_{n-1}, y_0, y_1, …, y_{n-1}]\<br>&amp;Algorithm:\<br>&amp;search(t_1, s_1, t_2, s_2):\<br>&amp;If\ t_1&#x3D;s_1\ or\ t_2&#x3D;s_2 \quad Then \quad Return (X[t_1]+Y[t_2])&#x2F;2;\<br>&amp;i_1 \gets (t_1+s_1)&#x2F;2;\<br>&amp;i_2 \gets (t_2+s_2)&#x2F;2;\<br>&amp;If\ X[i_1] &#x3D; Y[i_2] \quad Then \quad Return X[i_1];\<br>&amp;Else\ If\ X[i_1] &lt; Y[i_2] \quad Then \quad Return\ Search(i_1, s_1, t_2, i_2)\<br>&amp;Else \quad Return\ Search(t_1, i_1, i_2, s_2);</p>
-<p>\end{flalign}<br>$$</p>
+<p>$$<br>5<br>$$</p>
 <pre><code class="sql">1. 
 CREATE TABLE Student
 (Sno CHAR(10) PRIMARY KEY,
@@ -1151,7 +1150,7 @@ GROUP BY Sno
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2019-2023</span>
             
             <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
