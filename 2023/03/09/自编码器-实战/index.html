@@ -510,7 +510,7 @@ paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythm
 <li>编码器（Encoder），表示为一个函数，将输入层$\mathbf{x}$映射到隐藏层$\mathbf{h}$：$\mathbf{h}&#x3D;f(\mathbf{x})$</li>
 <li>解码器（Decoder），表示为一个函数，将隐藏层$\mathbf{h}$映射到输出层$\mathbf{y}$：$\mathbf{y}&#x3D;g(\mathbf{h})$</li>
 </ul>
-<p>那么，自编码器模型整体可以描述为<br>$$<br>\mathbf{y}&#x3D;g(f(\mathbf{x}))<br>$$<br><img src="/mid-lake-pavilion.github.io/assets%5C%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98.assets%5C%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="自编码器"></p>
+<p>那么，自编码器模型整体可以描述为<br>$$<br>\mathbf{y}&#x3D;g(f(\mathbf{x}))<br>$$<br><img src="/mid-lake-pavilion.github.io/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98%5C%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="自编码器"></p>
 <p>如果只是一味地让自编码器的输出$\mathbf{y}$和输入$\mathbf{x}$完全相同，这毫无疑问舍近求远失去了意义。一般地，**自编码器中更加关注编码器的输出结果，即隐藏层$\mathbf{h}$**。比如，如果$\mathbf{h}$的维度比$\mathbf{x}$小，编码器就相当于学习到了原始输入的更加显著的特征。这种想法，与诸如主成分分析一般的降维算法有些相似。</p>
 <h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p>自编码器也是前馈神经网络，它的训练和一般的前馈神经网络很类似，即定义损失函数、然后梯度下降，只不过，这是一种<strong>无监督的学习方式</strong>，无需额外的标注工作，因为它的学习目标就是原始的输入数据。更一般地，可以采取小批量的随机梯度下降，不断地逼近要学习的原始数据。</p>
 <p>损失函数用数学语言描述为<br>$$<br>\mathbf{Loss}&#x3D;\mathcal{L}(\mathbf{x},g(f(\mathbf{x})))<br>$$<br>其中具体的损失函数$\mathcal{L}$因情况而定，比如可以是均方差$MSE$。</p>
@@ -544,7 +544,7 @@ train_filenames <span class="token operator">=</span> filenames<span class="toke
 valid_filenames <span class="token operator">=</span> filenames<span class="token punctuation">[</span>train_count<span class="token punctuation">:</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="搭建自编码器"><a href="#搭建自编码器" class="headerlink" title="搭建自编码器"></a>搭建自编码器</h3><p>关于自编码器的模型的代码主要在<code>model.py</code>中的<code>class Autoencoder</code>，这里限于篇幅不贴出来，而是尝试绘制了自编码器的结构示意图。</p>
-<p><img src="/mid-lake-pavilion.github.io/assets%5C%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98.assets%5Cecg%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="ecg自编码器"></p>
+<p><img src="/mid-lake-pavilion.github.io/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98%5Cecg%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8.png" alt="ecg自编码器"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># model.py/Autoencoder</span>
 <span class="token keyword">def</span> <span class="token function">encode</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> input_flat<span class="token punctuation">)</span><span class="token punctuation">:</span>
     encoding_1 <span class="token operator">=</span> self<span class="token punctuation">.</span>frame_bn<span class="token punctuation">(</span>self<span class="token punctuation">.</span>autoencode_1<span class="token punctuation">.</span>encode<span class="token punctuation">(</span>input_flat<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -566,7 +566,7 @@ valid_filenames <span class="token operator">=</span> filenames<span class="toke
 
 <p>代码中的自编码器结构还是很简单的，其实这里的编码器和解码器都只是一个类似残差块的结构（代码中的<code>ResidualEncoder</code>、<code>ResidualDecoder</code>），但是注意，实际上<code>Autoencoder</code>中的二级结构为<code>ConvAutoencoder</code>，只不过<code>ConvAutoencoder</code>这里仅由一个<code>ResidualEncoder</code>和一个<code>ResidualDecoder</code>构成。总的来说，编码器、解码器结构十分明显，它们结构上呈现出对称感，共同完成将原始输入映射到隐藏层编码，然后再映射回去的任务。</p>
 <p>将程序运行的结果截图如下。</p>
-<p><img src="/mid-lake-pavilion.github.io/assets%5C%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98.assets%5Cimage-20230309211023886.png" alt="image-20230309211023886"></p>
+<p><img src="/mid-lake-pavilion.github.io/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98%5Cimage-20230309211023886.png" alt="image-20230309211023886"></p>
 <p>另外，<code>loss = torch.sqrt(torch.mean((output - input)**2))</code>可以看出，这里的损失函数选用的是均方根误差；学习的对象也正是原始的输入数据<code>input</code>，正是自编码器的初衷。</p>
 <h3 id="开启训练"><a href="#开启训练" class="headerlink" title="开启训练"></a>开启训练</h3><p>再次回到<code>train_autoencoder.py</code>。在正式开启训练之前，创建模型，定义好优化器、参数等等准备工作。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># train</span>
