@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -59,7 +59,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -70,7 +70,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -81,7 +81,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -92,7 +92,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -103,7 +103,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -114,7 +114,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -125,14 +125,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -160,7 +160,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -171,7 +171,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -182,7 +182,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -193,7 +193,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -204,7 +204,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -215,7 +215,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -226,7 +226,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -468,7 +468,7 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-03-28
                 </div>
                 
@@ -477,8 +477,8 @@
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.2k
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.5k
                 </div>
                 
 
@@ -490,73 +490,76 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h1><p>之前的代码解读中，为了简化代码，同时更加抓住主要内容——VNode，我们忽略了属性、条件渲染（v-if）、列表渲染（v-for）等。对属性的处理，其实在之前的笔记中有所提及；下面首先简单记录一下条件渲染。</p>
-<h2 id="带着条件渲染看Vue渲染全过程"><a href="#带着条件渲染看Vue渲染全过程" class="headerlink" title="带着条件渲染看Vue渲染全过程"></a>带着条件渲染看Vue渲染全过程</h2><pre><code class="html">&lt;div&gt;
-  &lt;div&gt;Item 0&lt;/div&gt;
-  &lt;div v-if=&quot;a &gt; 0&quot;&gt;Item 1&lt;/div&gt;
-  &lt;div v-else-if=&quot;b &gt; 0&quot;&gt;Item 2&lt;/div&gt;
-  &lt;div v-else&gt;Item 3&lt;/div&gt;
-  &lt;div&gt;Item 4&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+<h2 id="带着条件渲染看Vue渲染全过程"><a href="#带着条件渲染看Vue渲染全过程" class="headerlink" title="带着条件渲染看Vue渲染全过程"></a>带着条件渲染看Vue渲染全过程</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Item 0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>a > 0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-else-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b > 0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-else</span><span class="token punctuation">></span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><a target="_blank" rel="noopener" href="https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/2.2.1/ifelse.png">https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/2.2.1/ifelse.png</a></p>
 <h2 id="从parse-template-看带条件渲染的AST树的生成"><a href="#从parse-template-看带条件渲染的AST树的生成" class="headerlink" title="从parse(template)看带条件渲染的AST树的生成"></a>从parse(template)看带条件渲染的AST树的生成</h2><p><strong>在AST树中， if 、else-if 、else的多个token节点会合成一个节点</strong>——if节点里边包含 </p>
-<pre><code class="json">[&#123;
-    exp:&#39;if判断条件&#39;, 
-    block:&lt;if的ast节点&gt;
-&#125;, 
-&#123;
-    exp:&#39;else-if判断条件&#39;, 
-    block:&lt;else-if的ast节点&gt;,
-&#125;，
-&#123;
-    exp: null,
-    block:&lt;else的ast节点&gt;
-&#125;]
-</code></pre>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+	exp<span class="token operator">:</span>'if判断条件'<span class="token punctuation">,</span> 
+	block<span class="token operator">:</span>&lt;if的ast节点>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> 
+<span class="token punctuation">&#123;</span>
+	exp<span class="token operator">:</span>'else-if判断条件'<span class="token punctuation">,</span> 
+	block<span class="token operator">:</span>&lt;else-if的ast节点><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>，
+<span class="token punctuation">&#123;</span>
+	exp<span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+	block<span class="token operator">:</span>&lt;else的ast节点>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>而在parse(template)函数中，有一个processIf(element)函数：</p>
 <p><code>processIf(element)</code>，它用于处理element上的v-if指令（包含在属性键值对中，有待分离）；该函数体内部的getAndRemoveAttr()用于获取并移除指定的属性键值对。</p>
-<pre><code class="JavaScript">function processIf (el) &#123;
-  /**exp接收移除的v-if后面的值 */
-  const exp = getAndRemoveAttr(el, &#39;v-if&#39;)
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function processIf (el) &#123;
+  &#x2F;**exp接收移除的v-if后面的值 *&#x2F;
+  const exp &#x3D; getAndRemoveAttr(el, &#39;v-if&#39;)
   if (exp) &#123;
-    el.if = exp
-    // 为当前节点添加if条件
+    el.if &#x3D; exp
+    &#x2F;&#x2F; 为当前节点添加if条件
     addIfCondition(el, &#123;
       exp: exp,
       block: el
     &#125;)
   &#125; else &#123;
-    // 表示exp为空，处理v-else
-    if (getAndRemoveAttr(el, &#39;v-else&#39;) != null) &#123;
-      el.else = true
+    &#x2F;&#x2F; 表示exp为空，处理v-else
+    if (getAndRemoveAttr(el, &#39;v-else&#39;) !&#x3D; null) &#123;
+      el.else &#x3D; true
     &#125;
-    // 继续处理v-else-if
-    const elseif = getAndRemoveAttr(el, &#39;v-else-if&#39;)
+    &#x2F;&#x2F; 继续处理v-else-if
+    const elseif &#x3D; getAndRemoveAttr(el, &#39;v-else-if&#39;)
     if (elseif) &#123;
-      el.elseif = elseif
+      el.elseif &#x3D; elseif
     &#125;
   &#125;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>注意到，<strong>上述处理v-if条件渲染的代码中，还有一个addIfCondition()函数</strong>，它主要用于给element（即要生成的AST节点）添加ifConditions属性：</p>
-<pre><code class="JavaScript">ifAstElm.ifConditions = [
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">ifAstElm.ifConditions &#x3D; [
   &#123;exp: &#39;a &gt; 0&#39;, block: item1AstEl &#125;,
   &#123;exp: &#39;b &gt; 0&#39;, block: item2AstEl &#125;,
   &#123;exp: null,    block: item3AstEl &#125;,
-]
-</code></pre>
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>这也再次印证，AST树中将多个v-if、v-else、v-else-if节点整合在了一起。</p>
 <h2 id="生成VNode-render时对ifASTElement的处理"><a href="#生成VNode-render时对ifASTElement的处理" class="headerlink" title="生成VNode render时对ifASTElement的处理"></a>生成VNode render时对ifASTElement的处理</h2><p>ifAstElm中的条件控制语句会变成连续的三元运算操作，运算结果产生一个VNode——v-if、v-else-if、v-else结构只会产生一个VNode。</p>
 <p>我们知道，生成AST结构的下一步，是生成VNode-render（渲染VNode树的代码），因此我们把目光转移到compiler&#x2F;codegen&#x2F;index.js中，在生成VNode-render的次外层函数genElement(el)中，就有对ifAstElm的处理——genIf(el)：</p>
-<pre><code class="JavaScript">function genIf(el) &#123;
-  el.ifProcessed = true // 标记已经处理过当前这个if节点了，避免递归死循环
-    // 将el.ifConditions的浅拷贝传递给函数
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function genIf(el) &#123;
+  el.ifProcessed &#x3D; true &#x2F;&#x2F; 标记已经处理过当前这个if节点了，避免递归死循环
+    &#x2F;&#x2F; 将el.ifConditions的浅拷贝传递给函数
   return genIfConditions(el.ifConditions.slice())
 &#125;
 
@@ -565,65 +568,210 @@ function genIfConditions(conditions) &#123;
     return &#39;_e()&#39;
   &#125;
 
-  const condition = conditions.shift() // 因为我们并没有去真正删除 el.ifConditions 队列的元素，所以需要有el.ifProcessed = true来结束递归
+  const condition &#x3D; conditions.shift() &#x2F;&#x2F; 因为我们并没有去真正删除 el.ifConditions 队列的元素，所以需要有el.ifProcessed &#x3D; true来结束递归
   if (condition.exp) &#123;
-    return `($&#123;condition.exp&#125;)?$&#123;genTernaryExp(condition.block)&#125;:$&#123;genIfConditions(conditions)&#125;`
+    return &#96;($&#123;condition.exp&#125;)?$&#123;genTernaryExp(condition.block)&#125;:$&#123;genIfConditions(conditions)&#125;&#96;
   &#125; else &#123;
-    return `$&#123;genTernaryExp(condition.block)&#125;`
+    return &#96;$&#123;genTernaryExp(condition.block)&#125;&#96;
   &#125;
 
   function genTernaryExp(el) &#123;
     return genElement(el)
   &#125;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>代码段中，我们看到生成VNode-render的三元表达式：</p>
-<pre><code class="JavaScript">if (condition.exp) &#123;
-    return `($&#123;condition.exp&#125;)?$&#123;genTernaryExp(condition.block)&#125;:$&#123;genIfConditions(conditions)&#125;`
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">if (condition.exp) &#123;
+    return &#96;($&#123;condition.exp&#125;)?$&#123;genTernaryExp(condition.block)&#125;:$&#123;genIfConditions(conditions)&#125;&#96;
   &#125; else &#123;
-    return `$&#123;genTernaryExp(condition.block)&#125;`
-  &#125;
-</code></pre>
+    return &#96;$&#123;genTernaryExp(condition.block)&#125;&#96;
+  &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>第一个分支，condition.exp是分支条件，condition.block是分支对应的AST节点（准确来说，condition对象来自前一步生成的AST树节点），采取递归方式，可以得到一个嵌套的三元表达式结构：</p>
-<pre><code class="JavaScript">_c(&#39;div&#39;, &#123;&#125;, [ /* 留意children数组只有3个元素 */
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">_c(&#39;div&#39;, &#123;&#125;, [ &#x2F;* 留意children数组只有3个元素 *&#x2F;
   _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 0&quot;) ]),
 
-  /* 下边这个表达式只会产生一个 VNode 节点 */
-  (a &gt; 0) ?  // if
+  &#x2F;* 下边这个表达式只会产生一个 VNode 节点 *&#x2F;
+  (a &gt; 0) ?  &#x2F;&#x2F; if
     _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 1&quot;) ]) :
-  (b &gt; 0) ?  // elseif
+  (b &gt; 0) ?  &#x2F;&#x2F; elseif
     _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 2&quot;) ]) :
-         // else
+         &#x2F;&#x2F; else
     _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 3&quot;) ]),
-  /* 上边这个表达式只会产生一个 VNode 节点 */
+  &#x2F;* 上边这个表达式只会产生一个 VNode 节点 *&#x2F;
 
   _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 4&quot;) ])
-])
-</code></pre>
+])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>第二个分支，表示当前condition.exp为null，即无条件了，对应v-else，为v-if系列中的最后一个分支。</p>
 <h2 id="后续步骤"><a href="#后续步骤" class="headerlink" title="后续步骤"></a>后续步骤</h2><p>上面已经得到了带有v-if的VNode-render表达式，后续就需要保证其运行正确，即可生成VNode树了。由VNode树到真实DOM树的过程与v-if无关了。</p>
-<pre><code class="JavaScript">// 得到的VNode render代码示例：（renderCode）
-var render = function () &#123;
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; 得到的VNode render代码示例：（renderCode）
+var render &#x3D; function () &#123;
     with (this) &#123;
         _c(&#39;div&#39;, &#123;&#125;, [
           _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 0&quot;) ]),
 
-          (a &gt; 0) ?  // if
+          (a &gt; 0) ?  &#x2F;&#x2F; if
             _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 1&quot;) ]) :
-          (b &gt; 0) ?  // elseif
+          (b &gt; 0) ?  &#x2F;&#x2F; elseif
             _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 2&quot;) ]) :
-                 // else
+                 &#x2F;&#x2F; else
             _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 3&quot;) ]),
 
           _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 4&quot;) ])
         ])
     &#125;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h1 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h1><h2 id="流程总览"><a href="#流程总览" class="headerlink" title="流程总览"></a>流程总览</h2><p>以如下代码为例，简单看看整体流程示意图：</p>
-<p>~~~ html</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(item, index) in items<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; item &#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/2.2.2/for.png">https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/2.2.2/for.png</a></p>
+<h2 id="HTML到AST的列表渲染处理"><a href="#HTML到AST的列表渲染处理" class="headerlink" title="HTML到AST的列表渲染处理"></a>HTML到AST的列表渲染处理</h2><p>在生成AST节点时，需要提取出HTML模板中的v-for属性值。</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function processFor (el) &#123;
+  let exp
+  if ((exp &#x3D; getAndRemoveAttr(el, &#39;v-for&#39;))) &#123;
+    &#x2F;&#x2F; 此时，exp已经保存到了v-for的值，下面需要提取出指定的内容
+    const inMatch &#x3D; exp.match(forAliasRE)
+    &#x2F;&#x2F; v-for&#x3D;&quot;item in list&quot;             &#x3D;&gt;     [&quot;item in list&quot;, &quot;item&quot;, &quot;list&quot;]
+    &#x2F;&#x2F; v-for&#x3D;&quot;(item, index) in list&quot;    &#x3D;&gt;     [&quot;(item, index) in list&quot;, &quot;(item, index)&quot;, &quot;list&quot;]
+    &#x2F;&#x2F; v-for&#x3D;&quot;(value, key, index) in object&quot;    &#x3D;&gt;     [&quot;(value, key, index) in object&quot;, &quot;(value, key, index)&quot;, &quot;object&quot;]
+
+    if (!inMatch) &#123; &#x2F;&#x2F; v-for语法有错误的时候，提示编译错误
+      warn(
+        &#96;Invalid v-for expression: $&#123;exp&#125;&#96;
+      )
+      return
+    &#125;
+    &#x2F;&#x2F; 注意，string.trim()将会从字符串两端删除空白字符
+    &#x2F;**el.for：string，保存的是v-for命令值中，in后面的内容（可迭代对象） *&#x2F;
+    el.for &#x3D; inMatch[2].trim()
+    const alias &#x3D; inMatch[1].trim()
+    const iteratorMatch &#x3D; alias.match(forIteratorRE)
+    if (iteratorMatch) &#123; &#x2F;&#x2F; v-for&#x3D;&quot;(item, index) in list&quot;  或者 &#x2F;&#x2F; v-for&#x3D;&quot;(value, key, index) in object&quot;
+      el.alias &#x3D; iteratorMatch[1].trim()
+      el.iterator1 &#x3D; iteratorMatch[2].trim()
+      if (iteratorMatch[3]) &#123;
+        el.iterator2 &#x3D; iteratorMatch[3].trim()
+      &#125;
+    &#125; else &#123;
+      el.alias &#x3D; alias &#x2F;&#x2F; alias &#x3D; &quot;item&quot;
+    &#125;
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>看懂这段代码的关键之一是明白JavaScript的正则表达式。比如，forAliasRE、forIteratorRE都是匹配模式串。以上面的html模板字符串为例，inMatch、iteratorMatch的内容如下：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token comment">// inMatch: Array</span>
+<span class="token punctuation">[</span>
+  '(item<span class="token punctuation">,</span> index) in list'<span class="token punctuation">,</span>
+  '(item<span class="token punctuation">,</span> index)'<span class="token punctuation">,</span>
+  'list'<span class="token punctuation">,</span>
+  index<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  input<span class="token operator">:</span> '(item<span class="token punctuation">,</span> index) in list'<span class="token punctuation">,</span>
+  groups<span class="token operator">:</span> undefined
+<span class="token punctuation">]</span>
+<span class="token comment">// iteratorMatch: Array</span>
+<span class="token punctuation">[</span>
+  '(item<span class="token punctuation">,</span> index)'<span class="token punctuation">,</span>
+  'item'<span class="token punctuation">,</span>
+  ' index'<span class="token punctuation">,</span>
+  undefined<span class="token punctuation">,</span>
+  index<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  input<span class="token operator">:</span> '(item<span class="token punctuation">,</span> index)'<span class="token punctuation">,</span>
+  groups<span class="token operator">:</span> undefined
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>由此，我们给出创建出来的AST节点el信息：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; v-for&#x3D;&quot;(item, index) in list&quot;
+el.for &#x3D; &#39;list&#39;	&#x2F;&#x2F; inMatch[2]
+const alias &#x3D; &#39;(item, index)&#39;	&#x2F;&#x2F; inMatch[1]
+el.alias &#x3D; &#39;item&#39;	&#x2F;&#x2F; iterator[1]
+el.iterator1 &#x3D; &#39;index&#39;	&#x2F;&#x2F; iterator[2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>alias，别名，此处用以表示在v-for循环中给可迭代对象的当前遍历项，即它的别名。</p>
+</blockquote>
+<h2 id="从AST到Vnode-render"><a href="#从AST到Vnode-render" class="headerlink" title="从AST到Vnode render"></a>从AST到Vnode render</h2><p>在次外层函数genElement()中，genFor()用以生成列表渲染部分的renderCode：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function genFor(el) &#123;
+  const exp &#x3D; el.for
+  const alias &#x3D; el.alias
+  const iterator1 &#x3D; el.iterator1 ? &#96;,$&#123;el.iterator1&#125;&#96; : &#39;&#39;
+  const iterator2 &#x3D; el.iterator2 ? &#96;,$&#123;el.iterator2&#125;&#96; : &#39;&#39;
+
+  if (!el.key) &#123; &#x2F;&#x2F; v-for 最好声明key属性
+    warn(
+      &#96;&lt;$&#123;el.tag&#125; v-for&#x3D;&quot;$&#123;alias&#125; in $&#123;exp&#125;&quot;&gt;: component lists rendered with &#96; +
+      &#96;v-for should have explicit keys. &#96; +
+      &#96;See https:&#x2F;&#x2F;vuejs.org&#x2F;guide&#x2F;list.html#key for more info.&#96;,
+      true &#x2F;* tip *&#x2F;
+    )
+  &#125;
+
+  &#x2F;&#x2F; v-for&#x3D;&quot;(item, index) in list&quot;
+  &#x2F;&#x2F; alias &#x3D; item, iterator1 &#x3D; index
+
+  &#x2F;&#x2F; v-for&#x3D;&quot;(value, key, index) in object&quot;
+  &#x2F;&#x2F; alias &#x3D; value, iterator1 &#x3D; key, iterator2 &#x3D; index
+
+
+  &#x2F;&#x2F; _l(val, render)
+  &#x2F;&#x2F; val &#x3D; list
+  &#x2F;&#x2F; render &#x3D; function (alias, iterator1, iterator2) &#123; return genElement(el) &#125;
+  el.forProcessed &#x3D; true &#x2F;&#x2F; avoid recursion
+  return &#96;_l(($&#123;exp&#125;),&#96; +
+    &#96;function($&#123;alias&#125;$&#123;iterator1&#125;$&#123;iterator2&#125;)&#123;&#96; +
+    &#96;return $&#123;genElement(el)&#125;&#96; +
+    &#39;&#125;)&#39;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>生成的renderCode即为：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">_l((items),function(item, index)&#123;
+    return _c(&#39;li&#39;, &#123;&#125;, [_v,( _s(item) )])
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="运行时的renderHelpersFunc中的渲染列表函数-l"><a href="#运行时的renderHelpersFunc中的渲染列表函数-l" class="headerlink" title="运行时的renderHelpersFunc中的渲染列表函数_l()"></a>运行时的renderHelpersFunc中的渲染列表函数_l()</h2><p>上面已经得到了带有列表渲染的renderCode，接下来就需要分析renderCode中的渲染函数_l()了——它是渲染出一个完整VNode列表的关键。</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; core&#x2F;instance&#x2F;render-helpers&#x2F;render-list.js
+export function renderList (val, render) &#123;
+  let ret, i, l, keys, key
+  if (Array.isArray(val) || typeof val &#x3D;&#x3D;&#x3D; &#39;string&#39;) &#123;
+    ret &#x3D; new Array(val.length)
+    for (i &#x3D; 0, l &#x3D; val.length; i &lt; l; i++) &#123;
+      ret[i] &#x3D; render(val[i], i)
+    &#125;
+  &#125; else if (typeof val &#x3D;&#x3D;&#x3D; &#39;number&#39;) &#123; &#x2F;&#x2F; 支持 v-for&#x3D;&quot;n in 10&quot;
+    ret &#x3D; new Array(val)
+    for (i &#x3D; 0; i &lt; val; i++) &#123;
+      ret[i] &#x3D; render(i + 1, i)
+    &#125;
+  &#125; else if (isObject(val)) &#123;
+    keys &#x3D; Object.keys(val)
+    ret &#x3D; new Array(keys.length)
+    for (i &#x3D; 0, l &#x3D; keys.length; i &lt; l; i++) &#123;
+      key &#x3D; keys[i]
+      ret[i] &#x3D; render(val[key], key, i)
+    &#125;
+  &#125;
+  return ret
+&#125;
+
+&#x2F;&#x2F; core&#x2F;instance&#x2F;render.js
+Vue.prototype._l &#x3D; renderList<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们先看看最熟悉的renderCode情况：items是一个可迭代数组，那么函数内部将会创建一个ret数组，ret数组中的每一个元素都是可迭代数组中对应元素被渲染后的结果（单个VNode节点）：</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">_l((items),function(item, index)&#123;
+    return _c(&#39;li&#39;, &#123;&#125;, [_v,( _s(item) )])
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <ul>
-  <li v-for="(item, index) in items">
+<li>items就是renderList(val, render)函数的第一个参数；</li>
+<li>function(item, index){…}是第二个参数render，注意它返回_c(…)的结果，而_c()用于创建VNode并返回之，因此此时的render返回值为单个VNode。</li>
+</ul>
+<p>另外，除了可迭代数组，数字、字符串和对象均可以作为v-for的迭代对象。这里说明一下对象作为迭代对象时，首先取出对象的所有键组成的数组keys，建立与之对应的ret[]，ret数组中的每一个元素都是keys中每一个键、对应的值的渲染（render）结果。</p>
+
                 
             </div>
             <hr/>
@@ -635,7 +783,7 @@ var render = function () &#123;
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -645,7 +793,7 @@ var render = function () &#123;
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -655,13 +803,13 @@ var render = function () &#123;
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -671,7 +819,7 @@ var render = function () &#123;
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -864,7 +1012,7 @@ var render = function () &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/03/29/GNU-Octave%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
@@ -904,7 +1052,7 @@ var render = function () &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/03/28/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
@@ -966,7 +1114,7 @@ var render = function () &#123;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1072,13 +1220,13 @@ var render = function () &#123;
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1131,8 +1279,8 @@ var render = function () &#123;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

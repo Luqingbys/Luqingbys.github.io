@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -61,7 +61,7 @@ import &amp;#123; createRoute">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -72,7 +72,7 @@ import &amp;#123; createRoute">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -83,7 +83,7 @@ import &amp;#123; createRoute">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -94,7 +94,7 @@ import &amp;#123; createRoute">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -105,7 +105,7 @@ import &amp;#123; createRoute">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -116,7 +116,7 @@ import &amp;#123; createRoute">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -127,14 +127,14 @@ import &amp;#123; createRoute">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -162,7 +162,7 @@ import &amp;#123; createRoute">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -173,7 +173,7 @@ import &amp;#123; createRoute">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -184,7 +184,7 @@ import &amp;#123; createRoute">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -195,7 +195,7 @@ import &amp;#123; createRoute">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -206,7 +206,7 @@ import &amp;#123; createRoute">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -217,7 +217,7 @@ import &amp;#123; createRoute">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -228,7 +228,7 @@ import &amp;#123; createRoute">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -445,7 +445,7 @@ import &amp;#123; createRoute">
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -457,7 +457,7 @@ import &amp;#123; createRoute">
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-03-01
                 </div>
                 
@@ -466,8 +466,8 @@ import &amp;#123; createRoute">
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.2k
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.3k
                 </div>
                 
 
@@ -479,6 +479,9 @@ import &amp;#123; createRoute">
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
+        
 
         
 
@@ -487,25 +490,27 @@ import &amp;#123; createRoute">
                 <h2 id="项目开启"><a href="#项目开启" class="headerlink" title="项目开启"></a>项目开启</h2><p>技术栈：Vite，Vue，TypeScript，Element UI Plus</p>
 <p>开发工具：VScode</p>
 <p>在项目中新建router文件夹，其下新建目录index.ts文件，内容如下：</p>
-<pre><code class="TypeScript">import &#123; createRouter, createWebHistory, RouteRecordRaw &#125; from &quot;vue-router&quot;
-import Layout from &#39;@/components/HelloWorld.vue&#39;
-const routes: Array&lt;RouteRecordRaw&gt; = [
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">import &#123; createRouter, createWebHistory, RouteRecordRaw &#125; from &quot;vue-router&quot;
+import Layout from &#39;@&#x2F;components&#x2F;HelloWorld.vue&#39;
+const routes: Array&lt;RouteRecordRaw&gt; &#x3D; [
     &#123;
-        path: &#39;/&#39;,
+        path: &#39;&#x2F;&#39;,
         name: &#39;home&#39;,
         component: Layout,
     &#125;
 ]
-// 创建
-const router = createRouter(&#123;
+&#x2F;&#x2F; 创建
+const router &#x3D; createRouter(&#123;
     history: createWebHistory(),
     routes
 &#125;)
 
-export default router
-</code></pre>
+export default router<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="整合store"><a href="#整合store" class="headerlink" title="整合store"></a>整合store</h2><p>npm安装好vuex后，我们新建store文件夹，在该目录下新建index.ts文件，放入官网代码，进行测试。</p>
-<pre><code class="TypeScript">// store.ts
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; store.ts
 import &#123; InjectionKey &#125; from &#39;vue&#39;
 import &#123; createStore, useStore as baseUseStore, Store &#125; from &#39;vuex&#39;
 
@@ -513,15 +518,15 @@ export interface State &#123;
   count: number
 &#125;
 
-export const key: InjectionKey&lt;Store&lt;State&gt;&gt; = Symbol()
+export const key: InjectionKey&lt;Store&lt;State&gt;&gt; &#x3D; Symbol()
 
-export const store = createStore&lt;State&gt;(&#123;
+export const store &#x3D; createStore&lt;State&gt;(&#123;
   state: &#123;
     count: 0
   &#125;,
   mutations: &#123;
       setCount(state: State, count: number) &#123;
-          state.count = count
+          state.count &#x3D; count
       &#125;
   &#125;,
   getters: &#123;
@@ -531,34 +536,34 @@ export const store = createStore&lt;State&gt;(&#123;
   &#125;
 &#125;)
 
-// 定义自己的 `useStore` 组合式函数
+&#x2F;&#x2F; 定义自己的 &#96;useStore&#96; 组合式函数
 export function useStore () &#123;
   return baseUseStore(key)
-&#125;
-</code></pre>
-<p>为了检验vuex的导入情况，我们在HelloWorld.vue中进行测试：</p>
-<pre><code class="vue">&lt;script setup lang=&quot;ts&quot;&gt;
-import &#123; ref, computed &#125; from &#39;vue&#39;
-import &#123; useStore &#125; from &#39;../store&#39;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-// 接收store
-const store = useStore()
-// 通过计算属性得到store中的count属性
-const showCount = computed(() =&gt; &#123;
+<p>为了检验vuex的导入情况，我们在HelloWorld.vue中进行测试：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
+import &#123; ref, computed &#125; from &#39;vue&#39;
+import &#123; useStore &#125; from &#39;..&#x2F;store&#39;
+
+&#x2F;&#x2F; 接收store
+const store &#x3D; useStore()
+&#x2F;&#x2F; 通过计算属性得到store中的count属性
+const showCount &#x3D; computed(() &#x3D;&gt; &#123;
   return store.getters[&#39;getCount&#39;]
 &#125;)
-const addBtn = () =&gt; &#123;
+const addBtn &#x3D; () &#x3D;&gt; &#123;
   store.commit(&#39;setCount&#39;, ++count.value)
 &#125;
 
-const count = ref(0)
-&lt;/script&gt;
+const count &#x3D; ref(0)
+&lt;&#x2F;script&gt;
 
 &lt;template&gt;
-  &lt;h1&gt;&#123;&#123; showCount &#125;&#125;&lt;/h1&gt;
-  &lt;button type=&quot;button&quot; @click=&quot;addBtn&quot;&gt;新增&lt;/button&gt;
-&lt;/template&gt;
-</code></pre>
+  &lt;h1&gt;&#123;&#123; showCount &#125;&#125;&lt;&#x2F;h1&gt;
+  &lt;button type&#x3D;&quot;button&quot; @click&#x3D;&quot;addBtn&quot;&gt;新增&lt;&#x2F;button&gt;
+&lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="导入Element-Plus第三方组件库"><a href="#导入Element-Plus第三方组件库" class="headerlink" title="导入Element Plus第三方组件库"></a>导入Element Plus第三方组件库</h2><p>进入Element UI Plus官网，按照要求将其导入到项目中。</p>
 <h2 id="页面总布局"><a href="#页面总布局" class="headerlink" title="页面总布局"></a>页面总布局</h2><p>在正式开始编写代码之前，首先点出一个setup语法糖：</p>
 <p><code>&lt;script setup lang=&#39;ts&#39;&gt;</code></p>
@@ -567,104 +572,107 @@ const count = ref(0)
 <li>不需要再return模板中所需要的数据项（数据、方法）了</li>
 <li>引入的组件可以直接使用，无需再通过components进行注册了</li>
 </ul>
-<pre><code class="vue">&lt;script lang=&#39;ts&#39;&gt;
-const n: number = ref(0)
-let name: string = ref(&#39;张九龄&#39;)
-const sayHello = () =&gt; &#123;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script lang&#x3D;&#39;ts&#39;&gt;
+const n: number &#x3D; ref(0)
+let name: string &#x3D; ref(&#39;张九龄&#39;)
+const sayHello &#x3D; () &#x3D;&gt; &#123;
     console.log(&#39;Hello Vue!&#39;)
 &#125;
 ...
-// 需要将模板中用到的数据项暴露出来（return）
+&#x2F;&#x2F; 需要将模板中用到的数据项暴露出来（return）
 return &#123;
     n,
     name,
     ...,
     sayHello,
 &#125;
-&lt;/script&gt;
+&lt;&#x2F;script&gt;
 
-&lt;script setup lang=&#39;ts&#39;&gt;
-// 这个script标签中的写法和上面的等价
-const n: number = ref(0)
-let name: string = ref(&#39;张九龄&#39;)
-const sayHello = () =&gt; &#123;
+&lt;script setup lang&#x3D;&#39;ts&#39;&gt;
+&#x2F;&#x2F; 这个script标签中的写法和上面的等价
+const n: number &#x3D; ref(0)
+let name: string &#x3D; ref(&#39;张九龄&#39;)
+const sayHello &#x3D; () &#x3D;&gt; &#123;
     console.log(&#39;Hello Vue!&#39;)
 &#125;
 ...
-&lt;/script&gt;
-</code></pre>
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们新建立一个layout文件夹，用于存放布局组件，在其下建立Index.vue文件，选好的布局包括头部、主体、边栏三部分，在ElementPlus官网将相关的代码段直接复用过来：</p>
-<pre><code class="vue">&lt;!-- layou --&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- layou --&gt;
 &lt;el-container&gt;
-  &lt;el-aside width=&quot;200px&quot;&gt;Aside&lt;/el-aside&gt;
+  &lt;el-aside width&#x3D;&quot;200px&quot;&gt;Aside&lt;&#x2F;el-aside&gt;
   &lt;el-container&gt;
-    &lt;el-header&gt;Header&lt;/el-header&gt;
-    &lt;el-main&gt;Main&lt;/el-main&gt;
-  &lt;/el-container&gt;
-&lt;/el-container&gt;
-</code></pre>
+    &lt;el-header&gt;Header&lt;&#x2F;el-header&gt;
+    &lt;el-main&gt;Main&lt;&#x2F;el-main&gt;
+  &lt;&#x2F;el-container&gt;
+&lt;&#x2F;el-container&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="头部栏、导航栏的抽离"><a href="#头部栏、导航栏的抽离" class="headerlink" title="头部栏、导航栏的抽离"></a>头部栏、导航栏的抽离</h2><p>我们对已有的layout文件夹进行重构。目前该目录下仅有Index.vue文件，我们再新建一个header和一个menu文件夹，其中分别新建Header.vue和MenuBar.vue文件，用于分离该页面布局。</p>
 <p>以MenuBar.vue文件为例，我们实现左侧的导航栏：</p>
-<pre><code class="vue">&lt;template&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;el-menu
-    active-text-color=&quot;#ffd04b&quot;
-    background-color=&quot;#545c64&quot;
-    class=&quot;el-menu-vertical-demo&quot;
-    default-active=&quot;2&quot;
-    text-color=&quot;#fff&quot;
-    @open=&quot;handleOpen&quot;
-    @close=&quot;handleClose&quot;
+    active-text-color&#x3D;&quot;#ffd04b&quot;
+    background-color&#x3D;&quot;#545c64&quot;
+    class&#x3D;&quot;el-menu-vertical-demo&quot;
+    default-active&#x3D;&quot;2&quot;
+    text-color&#x3D;&quot;#fff&quot;
+    @open&#x3D;&quot;handleOpen&quot;
+    @close&#x3D;&quot;handleClose&quot;
   &gt;
-    &lt;el-sub-menu index=&quot;1&quot;&gt;
+    &lt;el-sub-menu index&#x3D;&quot;1&quot;&gt;
       &lt;template #title&gt;
-        &lt;el-icon&gt;&lt;location /&gt;&lt;/el-icon&gt;
-        &lt;span&gt;Navigator One&lt;/span&gt;
-      &lt;/template&gt;
-      &lt;el-menu-item-group title=&quot;Group One&quot;&gt;
-        &lt;el-menu-item index=&quot;1-1&quot;&gt;item one&lt;/el-menu-item&gt;
-        &lt;el-menu-item index=&quot;1-2&quot;&gt;item one&lt;/el-menu-item&gt;
-      &lt;/el-menu-item-group&gt;
-      &lt;el-menu-item-group title=&quot;Group Two&quot;&gt;
-        &lt;el-menu-item index=&quot;1-3&quot;&gt;item three&lt;/el-menu-item&gt;
-      &lt;/el-menu-item-group&gt;
-      &lt;el-sub-menu index=&quot;1-4&quot;&gt;
-        &lt;template #title&gt;item four&lt;/template&gt;
-        &lt;el-menu-item index=&quot;1-4-1&quot;&gt;item one&lt;/el-menu-item&gt;
-      &lt;/el-sub-menu&gt;
-    &lt;/el-sub-menu&gt;
-    &lt;el-menu-item index=&quot;2&quot;&gt;
-      &lt;el-icon&gt;&lt;icon-menu /&gt;&lt;/el-icon&gt;
-      &lt;span&gt;Navigator Two&lt;/span&gt;
-    &lt;/el-menu-item&gt;
-    &lt;el-menu-item index=&quot;3&quot; disabled&gt;
-      &lt;el-icon&gt;&lt;document /&gt;&lt;/el-icon&gt;
-      &lt;span&gt;Navigator Three&lt;/span&gt;
-    &lt;/el-menu-item&gt;
-    &lt;el-menu-item index=&quot;4&quot;&gt;
-      &lt;el-icon&gt;&lt;setting /&gt;&lt;/el-icon&gt;
-      &lt;span&gt;Navigator Four&lt;/span&gt;
-    &lt;/el-menu-item&gt;
-  &lt;/el-menu&gt;
-&lt;/template&gt;
+        &lt;el-icon&gt;&lt;location &#x2F;&gt;&lt;&#x2F;el-icon&gt;
+        &lt;span&gt;Navigator One&lt;&#x2F;span&gt;
+      &lt;&#x2F;template&gt;
+      &lt;el-menu-item-group title&#x3D;&quot;Group One&quot;&gt;
+        &lt;el-menu-item index&#x3D;&quot;1-1&quot;&gt;item one&lt;&#x2F;el-menu-item&gt;
+        &lt;el-menu-item index&#x3D;&quot;1-2&quot;&gt;item one&lt;&#x2F;el-menu-item&gt;
+      &lt;&#x2F;el-menu-item-group&gt;
+      &lt;el-menu-item-group title&#x3D;&quot;Group Two&quot;&gt;
+        &lt;el-menu-item index&#x3D;&quot;1-3&quot;&gt;item three&lt;&#x2F;el-menu-item&gt;
+      &lt;&#x2F;el-menu-item-group&gt;
+      &lt;el-sub-menu index&#x3D;&quot;1-4&quot;&gt;
+        &lt;template #title&gt;item four&lt;&#x2F;template&gt;
+        &lt;el-menu-item index&#x3D;&quot;1-4-1&quot;&gt;item one&lt;&#x2F;el-menu-item&gt;
+      &lt;&#x2F;el-sub-menu&gt;
+    &lt;&#x2F;el-sub-menu&gt;
+    &lt;el-menu-item index&#x3D;&quot;2&quot;&gt;
+      &lt;el-icon&gt;&lt;icon-menu &#x2F;&gt;&lt;&#x2F;el-icon&gt;
+      &lt;span&gt;Navigator Two&lt;&#x2F;span&gt;
+    &lt;&#x2F;el-menu-item&gt;
+    &lt;el-menu-item index&#x3D;&quot;3&quot; disabled&gt;
+      &lt;el-icon&gt;&lt;document &#x2F;&gt;&lt;&#x2F;el-icon&gt;
+      &lt;span&gt;Navigator Three&lt;&#x2F;span&gt;
+    &lt;&#x2F;el-menu-item&gt;
+    &lt;el-menu-item index&#x3D;&quot;4&quot;&gt;
+      &lt;el-icon&gt;&lt;setting &#x2F;&gt;&lt;&#x2F;el-icon&gt;
+      &lt;span&gt;Navigator Four&lt;&#x2F;span&gt;
+    &lt;&#x2F;el-menu-item&gt;
+  &lt;&#x2F;el-menu&gt;
+&lt;&#x2F;template&gt;
 
-&lt;script setup lang=&quot;ts&quot;&gt;
+&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
 import &#123;
   Location,
   Document,
   Menu as IconMenu,
   Setting,
-&#125; from &#39;@element-plus/icons-vue&#39;
-const handleOpen = (key: string, keyPath: string[]) =&gt; &#123;
+&#125; from &#39;@element-plus&#x2F;icons-vue&#39;
+const handleOpen &#x3D; (key: string, keyPath: string[]) &#x3D;&gt; &#123;
   console.log(key, keyPath)
 &#125;
-const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
+const handleClose &#x3D; (key: string, keyPath: string[]) &#x3D;&gt; &#123;
   console.log(key, keyPath)
 &#125;
-&lt;/script&gt;
+&lt;&#x2F;script&gt;
 
 &lt;style&gt;
-&lt;/style&gt;
-</code></pre>
+&lt;&#x2F;style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -677,7 +685,7 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -687,7 +695,7 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -697,13 +705,13 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -713,7 +721,7 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -728,7 +736,7 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -902,7 +910,7 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/03/04/Vue3%E7%A7%BB%E5%8A%A8%E5%9B%BE%E4%B9%A6%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
                     <div class="card-image">
@@ -938,7 +946,7 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/02/14/Vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B9%8B%E8%99%9A%E6%8B%9FVNode%E8%8A%82%E7%82%B9/">
@@ -1000,7 +1008,7 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1106,13 +1114,13 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1165,8 +1173,8 @@ const handleClose = (key: string, keyPath: string[]) =&gt; &#123;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -59,7 +59,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -70,7 +70,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -81,7 +81,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -92,7 +92,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -103,7 +103,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -114,7 +114,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -125,14 +125,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -160,7 +160,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -171,7 +171,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -182,7 +182,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -193,7 +193,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -204,7 +204,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -215,7 +215,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -226,7 +226,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -443,7 +443,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -464,7 +464,7 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2021-11-12
                 </div>
                 
@@ -473,8 +473,8 @@
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.9k
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
                 </div>
                 
 
@@ -485,6 +485,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
         
 
         
@@ -506,227 +509,229 @@
 <li>继承Thread方法</li>
 <li>实现Runnable接口</li>
 </ul>
-<pre><code class="java">class ThreadInterfaceImpl implements Runnable &#123;
-    public void run() &#123;
-        // 线程实现体
-    &#125;
-&#125;
-// 创建接口实现类的实例对象
-Runnable target = new ThreadInterfaceImpl();
-// 创建一个Thread类的对象，并将上步中创建的对象作为参数传递给Thread类的构造函数
-Thread threadObject = new Thread(target);
-/*
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">ThreadInterfaceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 线程实现体</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 创建接口实现类的实例对象</span>
+<span class="token class-name">Runnable</span> target <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadInterfaceImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 创建一个Thread类的对象，并将上步中创建的对象作为参数传递给Thread类的构造函数</span>
+<span class="token class-name">Thread</span> threadObject <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/*
 或者简写为：
 Thread threadObject = new Thread(new ThreadInterfaceImpl())
-*/
-// 用start()方法启动线程
-threadObject.start();
-</code></pre>
+*/</span>
+<span class="token comment">// 用start()方法启动线程</span>
+threadObject<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="线程调度策略"><a href="#线程调度策略" class="headerlink" title="线程调度策略"></a>线程调度策略</h3><p>Java采用抢占式策略，高优先级的线程抢占CPU。</p>
-<pre><code class="java">void setPriority(int newPriority);  // 重置线程优先级
-int getPriority();
-static void yield();    // 给其他同等优先级的线程一个运行机会
-void sleep();   // 使线程休眠一段时间
-void join();    // 等待某个线程结束后再开始执行另一个线程
-</code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">setPriority</span><span class="token punctuation">(</span><span class="token keyword">int</span> newPriority<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 重置线程优先级</span>
+<span class="token keyword">int</span> <span class="token function">getPriority</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token keyword">yield</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 给其他同等优先级的线程一个运行机会</span>
+<span class="token keyword">void</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 使线程休眠一段时间</span>
+<span class="token keyword">void</span> <span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 等待某个线程结束后再开始执行另一个线程</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="线程的基本控制"><a href="#线程的基本控制" class="headerlink" title="线程的基本控制"></a>线程的基本控制</h3><h4 id="join-方法"><a href="#join-方法" class="headerlink" title="join()方法"></a>join()方法</h4><p>关于join()方法，它的使用举一个栗子：<br>设置三个线程，线程1用于生成一群随机数，线程2用于计算随机数之和，线程3用于输出这个和，要求线程1、线程2、线程3依次运行。</p>
-<pre><code class="java">package hitwh.hitwh.myThread;
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">hitwh<span class="token punctuation">.</span>hitwh<span class="token punctuation">.</span>myThread</span><span class="token punctuation">;</span>
 
-//线程三，输出结果
-public class PrintTask implements Runnable&#123;
-    Thread thread;
-    public PrintTask(Thread thread) &#123;
-        this.thread = thread;
-    &#125;
-    public void run() &#123;
-        try &#123;
-//            让接收的线程对象执行完，本线程才运行
-            thread.join();
-        &#125; catch (InterruptedException e) &#123;
-            e.printStackTrace();
-        &#125;
-        System.out.println(&quot;sum=&quot;+JoinDemo.sum);
-    &#125;
-&#125;
+<span class="token comment">//线程三，输出结果</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PrintTask</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">Thread</span> thread<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">PrintTask</span><span class="token punctuation">(</span><span class="token class-name">Thread</span> thread<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>thread <span class="token operator">=</span> thread<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">//            让接收的线程对象执行完，本线程才运行</span>
+            thread<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"sum="</span><span class="token operator">+</span><span class="token class-name">JoinDemo</span><span class="token punctuation">.</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-package hitwh.hitwh.myThread;
+<span class="token keyword">package</span> <span class="token namespace">hitwh<span class="token punctuation">.</span>hitwh<span class="token punctuation">.</span>myThread</span><span class="token punctuation">;</span>
 
-//线程1，用于产生随机数
-public class Producer implements Runnable&#123;
-    int[] arr;
-    public Producer(int []arr) &#123;
-        this.arr = arr;
-    &#125;
-    //    线程体
-    public void run() &#123;
-        System.out.println(&quot;初始化...&quot;);
-        for(int i=0; i&lt;arr.length;i++) &#123;
-            arr[i]=(int)(Math.random()*100);
-            System.out.print(arr[i]+&quot;,&quot;);
-            if((i+1)%10==0)
-                System.out.println();
-        &#125;
-    &#125;
-&#125;
-package hitwh.hitwh.myThread;
+<span class="token comment">//线程1，用于产生随机数</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Producer</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">Producer</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>arr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>arr <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">//    线程体</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"初始化..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">10</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">package</span> <span class="token namespace">hitwh<span class="token punctuation">.</span>hitwh<span class="token punctuation">.</span>myThread</span><span class="token punctuation">;</span>
 
-//线程2,计算线程一产生的随机数的和
-public class Worker implements Runnable&#123;
-    int[] arr;
-    Thread thread;
-//    构造方法，接收一个数组和一个线程对象
-    public Worker(int[] arr, Thread thread) &#123;
-        this.arr = arr;
-        this.thread = thread;
-    &#125;
-//    线程体
-    public void run() &#123;
-        try &#123;
-//            让接收的线程执行完，本线程才会执行
-            thread.join();
-        &#125; catch (InterruptedException e) &#123;
-            e.printStackTrace();
-        &#125;
-        System.out.println(&quot;开始计算...&quot;);
-//        计算数组中所有元素之和
-        int sum = 0;
-        for(int i=0; i&lt;arr.length; i++) &#123;
-            sum+=arr[i];
-        &#125;
-        JoinDemo.sum=sum;
-    &#125;
-&#125;
+<span class="token comment">//线程2,计算线程一产生的随机数的和</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Worker</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">;</span>
+    <span class="token class-name">Thread</span> thread<span class="token punctuation">;</span>
+<span class="token comment">//    构造方法，接收一个数组和一个线程对象</span>
+    <span class="token keyword">public</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token class-name">Thread</span> thread<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>arr <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>thread <span class="token operator">=</span> thread<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token comment">//    线程体</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">//            让接收的线程执行完，本线程才会执行</span>
+            thread<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"开始计算..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        计算数组中所有元素之和</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            sum<span class="token operator">+=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">JoinDemo</span><span class="token punctuation">.</span>sum<span class="token operator">=</span>sum<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-package hitwh.hitwh.myThread;
+<span class="token keyword">package</span> <span class="token namespace">hitwh<span class="token punctuation">.</span>hitwh<span class="token punctuation">.</span>myThread</span><span class="token punctuation">;</span>
 
-public class JoinDemo &#123;
-    static int sum = 0;
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JoinDemo</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-    public static void main(String[] args) throws InterruptedException &#123;
-        int[] arr = new int[10];
-//        先启动线程一，生成一群随机数
-        Thread producer = new Thread(new Producer(arr));
-        producer.start();
-//        后启动线程二，计算线程一生成的随机数之和
-        Thread worker = new Thread(new Worker(arr, producer));
-        worker.start();
-//        最后启动线程三，输出结果
-        Thread printTask = new Thread(new PrintTask(worker));
-        printTask.start();
-//        等待printTask线程对象执行完，程序才继续运行
-        printTask.join();
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">//        先启动线程一，生成一群随机数</span>
+        <span class="token class-name">Thread</span> producer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Producer</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        producer<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        后启动线程二，计算线程一生成的随机数之和</span>
+        <span class="token class-name">Thread</span> worker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> producer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        worker<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        最后启动线程三，输出结果</span>
+        <span class="token class-name">Thread</span> printTask <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">PrintTask</span><span class="token punctuation">(</span>worker<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        printTask<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        等待printTask线程对象执行完，程序才继续运行</span>
+        printTask<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        int sum1 = 0;
-        for(int i=0; i&lt;arr.length; i++) &#123;
-            sum1+=arr[i];
-        &#125;
-        if(sum == sum1) &#123;
-            System.out.println(&quot;验证通过！&quot;);
-        &#125; else &#123;
-            System.out.println(&quot;验证失败！&quot;+&quot; sum=&quot;+sum+&quot;, sum1=&quot;+sum1);
-        &#125;
-    &#125;
-&#125;
-</code></pre>
+        <span class="token keyword">int</span> sum1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            sum1<span class="token operator">+=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>sum <span class="token operator">==</span> sum1<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"验证通过！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"验证失败！"</span><span class="token operator">+</span><span class="token string">" sum="</span><span class="token operator">+</span>sum<span class="token operator">+</span><span class="token string">", sum1="</span><span class="token operator">+</span>sum1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="结束线程与中断线程"><a href="#结束线程与中断线程" class="headerlink" title="结束线程与中断线程"></a>结束线程与中断线程</h3><p>run()线程体运行结束时，该线程自然死亡；<br>stop()方法可以强制停止线程执行（不推荐使用）</p>
 <p>使用interrupt()方法可以使线程中断执行。<br>一般地，在程序中调用interrupt()方法后，通常需要在run()方法中使用isInterrupt()进行判断，根据判断结果执行相应操作。</p>
 <h3 id="线程间的通信"><a href="#线程间的通信" class="headerlink" title="线程间的通信"></a>线程间的通信</h3><p>设置三个线程类，通信的双方线程作为辅类线程，都将数据流连接到主类中的管道流中。</p>
-<pre><code class="java">package hitwh.hitwh.commuThread;
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">hitwh<span class="token punctuation">.</span>hitwh<span class="token punctuation">.</span>commuThread</span><span class="token punctuation">;</span>
 
-import java.io.DataInput;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.PipedInputStream;
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">DataInput</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">DataInputStream</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">PipedInputStream</span><span class="token punctuation">;</span>
 
-public class MyReader1 extends Thread&#123;
-//    创建管道输入流
-    private PipedInputStream pis;
-//    创建数据输入流
-    private DataInputStream dis;
-//    接收数据
-    private String messages[];
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyReader1</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">&#123;</span>
+<span class="token comment">//    创建管道输入流</span>
+    <span class="token keyword">private</span> <span class="token class-name">PipedInputStream</span> pis<span class="token punctuation">;</span>
+<span class="token comment">//    创建数据输入流</span>
+    <span class="token keyword">private</span> <span class="token class-name">DataInputStream</span> dis<span class="token punctuation">;</span>
+<span class="token comment">//    接收数据</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> messages<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-    public MyReader1(PipedInputStream pis) &#123;
-        this.pis = pis;
-    &#125;
-    public void run() &#123;
-//        将数据输入流与管道输入流联系起来
-        dis = new DataInputStream(pis);
-        try &#123;
-            int size = dis.read();
-            messages = new String[size];
-            // 读数据
-            for(int i=0; i&lt;messages.length; i++) &#123;
-                messages[i] = dis.readUTF();
-                System.out.println(&quot;Read:&quot;+messages[i]);
-                try &#123;
-                    sleep(400);
-                &#125; catch (InterruptedException e) &#123;&#125;
-            &#125;
-        &#125; catch (IOException e) &#123;&#125;
-    &#125;
-&#125;
+    <span class="token keyword">public</span> <span class="token class-name">MyReader1</span><span class="token punctuation">(</span><span class="token class-name">PipedInputStream</span> pis<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>pis <span class="token operator">=</span> pis<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">//        将数据输入流与管道输入流联系起来</span>
+        dis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataInputStream</span><span class="token punctuation">(</span>pis<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> size <span class="token operator">=</span> dis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            messages <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token comment">// 读数据</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>messages<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                messages<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> dis<span class="token punctuation">.</span><span class="token function">readUTF</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Read:"</span><span class="token operator">+</span>messages<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+                    <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-package hitwh.hitwh.commuThread;
+<span class="token keyword">package</span> <span class="token namespace">hitwh<span class="token punctuation">.</span>hitwh<span class="token punctuation">.</span>commuThread</span><span class="token punctuation">;</span>
 
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.PipedOutputStream;
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">DataOutputStream</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">PipedOutputStream</span><span class="token punctuation">;</span>
 
-//写线程
-public class MyWriter1 extends Thread&#123;
-//    创建管道输出流
-    private PipedOutputStream pos;
-    // 创建数据输出流
-    private DataOutputStream dos;
-    private int size = 7;
-//    要写的数据源
-    private String messages[] = &#123;&quot;Mon&quot;, &quot;Tues&quot;, &quot;Wednes&quot;, &quot;Thur&quot;, &quot;Fri&quot;, &quot;Satur&quot;, &quot;Sun&quot;&#125;;
-    public MyWriter1(PipedOutputStream pos) &#123;
-        this.pos = pos;
-    &#125;
-    public void run() &#123;
-//        用 管道输出流 和 写线程的数据输出流 联系起来
-        dos = new DataOutputStream(pos);
-        try &#123;
-            dos.write(size);
-            for(int i=0; i&lt;messages.length; i++) &#123;
-                dos.writeUTF(messages[i]);
-                System.out.println(&quot;Writte:&quot;+messages[i]);
-                try &#123;
-                    sleep(300);
-                &#125; catch (InterruptedException e) &#123;&#125;
-            &#125;
-            dos.close();
-        &#125; catch (IOException e) &#123;&#125;
-    &#125;
-&#125;
+<span class="token comment">//写线程</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyWriter1</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">&#123;</span>
+<span class="token comment">//    创建管道输出流</span>
+    <span class="token keyword">private</span> <span class="token class-name">PipedOutputStream</span> pos<span class="token punctuation">;</span>
+    <span class="token comment">// 创建数据输出流</span>
+    <span class="token keyword">private</span> <span class="token class-name">DataOutputStream</span> dos<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> size <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
+<span class="token comment">//    要写的数据源</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> messages<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"Mon"</span><span class="token punctuation">,</span> <span class="token string">"Tues"</span><span class="token punctuation">,</span> <span class="token string">"Wednes"</span><span class="token punctuation">,</span> <span class="token string">"Thur"</span><span class="token punctuation">,</span> <span class="token string">"Fri"</span><span class="token punctuation">,</span> <span class="token string">"Satur"</span><span class="token punctuation">,</span> <span class="token string">"Sun"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">MyWriter1</span><span class="token punctuation">(</span><span class="token class-name">PipedOutputStream</span> pos<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>pos <span class="token operator">=</span> pos<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">//        用 管道输出流 和 写线程的数据输出流 联系起来</span>
+        dos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataOutputStream</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            dos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>messages<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                dos<span class="token punctuation">.</span><span class="token function">writeUTF</span><span class="token punctuation">(</span>messages<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Writte:"</span><span class="token operator">+</span>messages<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+                    <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+            dos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-package hitwh.hitwh.commuThread;
+<span class="token keyword">package</span> <span class="token namespace">hitwh<span class="token punctuation">.</span>hitwh<span class="token punctuation">.</span>commuThread</span><span class="token punctuation">;</span>
 
-import java.io.IOException;
-import java.io.PipedInputStream;
-import java.io.PipedOutputStream;
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">PipedInputStream</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">PipedOutputStream</span><span class="token punctuation">;</span>
 
-public class PipeThread &#123;
-    public static void main(String[] args) &#123;
-        PipeThread thisPipe = new PipeThread();
-        thisPipe.process();
-    &#125;
-    public void process() &#123;
-        PipedInputStream inputStream;
-        PipedOutputStream outputStream;
-        try &#123;
-//            建立管道输入流与管道输出流之间的连接
-            outputStream = new PipedOutputStream();
-            inputStream = new PipedInputStream(outputStream);
-//            读线程与写线程一起运行
-            new MyWriter1(outputStream).start();
-            new MyReader1(inputStream).start();
-        &#125; catch (IOException e) &#123;&#125;
-    &#125;
-&#125;
-</code></pre>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PipeThread</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">PipeThread</span> thisPipe <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PipeThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        thisPipe<span class="token punctuation">.</span><span class="token function">process</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">process</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">PipedInputStream</span> inputStream<span class="token punctuation">;</span>
+        <span class="token class-name">PipedOutputStream</span> outputStream<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">//            建立管道输入流与管道输出流之间的连接</span>
+            outputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PipedOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            inputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PipedInputStream</span><span class="token punctuation">(</span>outputStream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//            读线程与写线程一起运行</span>
+            <span class="token keyword">new</span> <span class="token class-name">MyWriter1</span><span class="token punctuation">(</span>outputStream<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">new</span> <span class="token class-name">MyReader1</span><span class="token punctuation">(</span>inputStream<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="线程的同步"><a href="#线程的同步" class="headerlink" title="线程的同步"></a>线程的同步</h3><h4 id="线程间的资源互斥"><a href="#线程间的资源互斥" class="headerlink" title="线程间的资源互斥"></a>线程间的资源互斥</h4><p>在多个线程共享同一资源的情况下，如果不加以任何控制，就有可能产生访问冲突和数据不一致。<br>为了解决这样的问题，就需要给多个线程共享的资源加锁。当一个线程访问共享资源时，就会被共享资源加锁，其他线程就不能访问被加了锁的资源，直到共享资源的锁被释放。这就是线程同步。<br>在Java中，用关键字synchronize来保证线程同步。当它作用于方法时，称方法同步；作用于语句块时，称为语句块同步。</p>
 <h3 id="线程交互"><a href="#线程交互" class="headerlink" title="线程交互"></a>线程交互</h3><h4 id="等待集合"><a href="#等待集合" class="headerlink" title="等待集合"></a>等待集合</h4><p>每一个类的对象实例都有一个等待集合，当在实例上调用方法wait后，线程都会进入到该实例的等待集合中，除非发生下列情况：</p>
 <ul>
@@ -751,7 +756,7 @@ public class PipeThread &#123;
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -761,7 +766,7 @@ public class PipeThread &#123;
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -771,13 +776,13 @@ public class PipeThread &#123;
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -787,7 +792,7 @@ public class PipeThread &#123;
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -802,7 +807,7 @@ public class PipeThread &#123;
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -976,7 +981,7 @@ public class PipeThread &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2021/11/12/Java%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD/">
                     <div class="card-image">
@@ -1016,7 +1021,7 @@ public class PipeThread &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2021/11/11/Java%E6%95%B0%E6%8D%AE%E6%B5%81/">
@@ -1082,7 +1087,7 @@ public class PipeThread &#123;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1188,13 +1193,13 @@ public class PipeThread &#123;
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1247,8 +1252,8 @@ public class PipeThread &#123;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -65,7 +65,7 @@ SQL语言简单，易学。
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -76,7 +76,7 @@ SQL语言简单，易学。
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -87,7 +87,7 @@ SQL语言简单，易学。
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -98,7 +98,7 @@ SQL语言简单，易学。
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -109,7 +109,7 @@ SQL语言简单，易学。
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -120,7 +120,7 @@ SQL语言简单，易学。
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -131,14 +131,14 @@ SQL语言简单，易学。
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -166,7 +166,7 @@ SQL语言简单，易学。
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -177,7 +177,7 @@ SQL语言简单，易学。
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -188,7 +188,7 @@ SQL语言简单，易学。
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -199,7 +199,7 @@ SQL语言简单，易学。
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -210,7 +210,7 @@ SQL语言简单，易学。
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -221,7 +221,7 @@ SQL语言简单，易学。
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -232,7 +232,7 @@ SQL语言简单，易学。
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -449,7 +449,7 @@ SQL语言简单，易学。
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -461,7 +461,7 @@ SQL语言简单，易学。
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-03-26
                 </div>
                 
@@ -470,8 +470,8 @@ SQL语言简单，易学。
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2k
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
                 </div>
                 
 
@@ -482,6 +482,9 @@ SQL语言简单，易学。
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
         
 
         
@@ -495,12 +498,12 @@ SQL语言简单，易学。
 <li>修改关系模式</li>
 <li>删除关系模式</li>
 </ul>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><pre><code class="sql">SELECT [ALL|DISTINCT] &lt;目标列表达式&gt;
-FROM &lt;表名&gt;
-[WHERE &lt;条件表达式&gt;]
-[GROUP BY &lt;列名1&gt; [HAVING &lt;条件表达式&gt;]]
-[ORDER BY &lt;列名2&gt; [ASC|DESC]]
-</code></pre>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token punctuation">[</span><span class="token keyword">ALL</span><span class="token operator">|</span><span class="token keyword">DISTINCT</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>目标列表达式<span class="token operator">></span>
+<span class="token keyword">FROM</span> <span class="token operator">&lt;</span>表名<span class="token operator">></span>
+<span class="token punctuation">[</span><span class="token keyword">WHERE</span> <span class="token operator">&lt;</span>条件表达式<span class="token operator">></span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token operator">&lt;</span>列名<span class="token number">1</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token keyword">HAVING</span> <span class="token operator">&lt;</span>条件表达式<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token operator">&lt;</span>列名<span class="token number">2</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token keyword">ASC</span><span class="token operator">|</span><span class="token keyword">DESC</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h3><p>查询仅涉及一个表，是一种最简单的查询操作。</p>
 <h4 id="选择列"><a href="#选择列" class="headerlink" title="选择列"></a>选择列</h4><p>即不用WHERE子句，仅使用SELECT，FROM子句。</p>
 <ul>
@@ -509,18 +512,16 @@ FROM &lt;表名&gt;
 <li><p>还可以查询全部的列</p>
 </li>
 <li><p>可以查询经过计算的指</p>
-<pre><code class="sql">SELECT Sname, 2022-Sage
-FROM Student;
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> Sname<span class="token punctuation">,</span> <span class="token number">2022</span><span class="token operator">-</span>Sage
+<span class="token keyword">FROM</span> Student<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>即可查询出姓名属性、以及2022减去年龄属性的值</p>
 </li>
 <li><p>可以通过DISTINCT或者ALL来选择是否去除相同的列</p>
 </li>
 <li><p>可以实现列的重命名（列别名）</p>
-<pre><code class="sql">SELECT Sname NAME, 2022-Sage BIRTHDAY, LOWER(Sdept)
-FROM Student;
-</code></pre>
-</li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> Sname NAME<span class="token punctuation">,</span> <span class="token number">2022</span><span class="token operator">-</span>Sage BIRTHDAY<span class="token punctuation">,</span> LOWER<span class="token punctuation">(</span>Sdept<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Student<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="WHERE：查询元组"><a href="#WHERE：查询元组" class="headerlink" title="WHERE：查询元组"></a>WHERE：查询元组</h4><p>WHERE子句常用的是条件表达式，涉及的谓词很多，常见的是比较、确定集合等。</p>
 <ul>
@@ -532,25 +533,24 @@ FROM Student;
 <p>下面给出几个实例对where子句的基本使用进行说明：</p>
 <ul>
 <li><p>DISTINCT短语的作用范围是所有目标列</p>
-<pre><code class="sql">SELECT DISTINCT Cno, Grade 
-FROM SC;
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> Cno<span class="token punctuation">,</span> Grade 
+<span class="token keyword">FROM</span> SC<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>而下面的写法是错误的:</p>
 <p><code>SELECT DISTINCT Cno, DISTINCT Grade FROM SC;</code></p>
 </li>
 <li><p>between的使用</p>
 <p>筛选出Student关系中年龄在19到21之间的同学的姓名和性别</p>
-<pre><code class="sql">SELECT Sname, Ssex
-FROM Student
-Where sage between 19 and 21;
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> Sname<span class="token punctuation">,</span> Ssex
+<span class="token keyword">FROM</span> Student
+<span class="token keyword">Where</span> sage <span class="token operator">between</span> <span class="token number">19</span> <span class="token operator">and</span> <span class="token number">21</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>like的使用</p>
 <p>查询姓“东方”的学生：</p>
-<pre><code class="sql">SELECT *
-FROM Student
-WHERE Sname like &#39;东方%&#39;;
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Student
+<span class="token keyword">WHERE</span> Sname <span class="token operator">like</span> <span class="token string">'东方%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>通配符：</p>
 <ul>
 <li>%：代替零个或者多个字符</li>
@@ -560,11 +560,9 @@ WHERE Sname like &#39;东方%&#39;;
 </li>
 <li><p>in的使用</p>
 <p>查询数学系和计算机系的学生：</p>
-<pre><code class="sql">SELECT *
-FROM Student
-WHERE Sdept in (&#39;MA&#39;, &#39;CS&#39;);
-</code></pre>
-</li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Student
+<span class="token keyword">WHERE</span> Sdept <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token string">'MA'</span><span class="token punctuation">,</span> <span class="token string">'CS'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="ORDER-BY：对查询结果进行排序"><a href="#ORDER-BY：对查询结果进行排序" class="headerlink" title="ORDER BY：对查询结果进行排序"></a>ORDER BY：对查询结果进行排序</h4><p>ASC：升序，排序列为空值的元组最后显示</p>
 <p>DESC：降序（默认），排序列为空值的元组最先显示</p>
@@ -576,12 +574,12 @@ WHERE Sdept in (&#39;MA&#39;, &#39;CS&#39;);
 <h4 id="GROUP-BY：对结果进行分组"><a href="#GROUP-BY：对结果进行分组" class="headerlink" title="GROUP BY：对结果进行分组"></a>GROUP BY：对结果进行分组</h4><p>按指定的一列或者多列值分组，值相等的分为一组。</p>
 <p>注意，使用了GROUP BY子句之后，SELECT子句的列名列表中只能出现分组属性和聚集函数。</p>
 <p>当然，有时还会使用HAVING短语筛选最终输出结果，如</p>
-<pre><code class="sql">SELECT dept_name, Max(salary)
-FROM Employee
-WHERE age&gt;=23
-GROUP BY dept_name
-HAVING Max(salary)&gt;=80000;
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> dept_name<span class="token punctuation">,</span> <span class="token function">Max</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Employee
+<span class="token keyword">WHERE</span> age<span class="token operator">>=</span><span class="token number">23</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> dept_name
+<span class="token keyword">HAVING</span> <span class="token function">Max</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span><span class="token operator">>=</span><span class="token number">80000</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>HAVING短语和WHERE子句都有筛选功能，但是两者有很大的区别——在作用对象上。</p>
 <ul>
 <li>HAVING短语筛选的作用对象是分组后的中间表，从中选择满足条件的<strong>分组</strong>；</li>
@@ -592,26 +590,24 @@ HAVING Max(salary)&gt;=80000;
 <ul>
 <li><p>θ-连接</p>
 <p>使用SELECT-FROM-WHERE表示，WHERE子句中包括连接多个表的条件，即连接条件：</p>
-<pre><code class="sql">SELECT *
-FROM Student, SC
-WHERE Student.Sno = SC.Sno;
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Student<span class="token punctuation">,</span> SC
+<span class="token keyword">WHERE</span> Student<span class="token punctuation">.</span>Sno <span class="token operator">=</span> SC<span class="token punctuation">.</span>Sno<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>使用JOIN ON表示方法：</p>
-<pre><code class="sql">SELECT *
-FROM Student JOIN SC
-ON Student.Sno = SC.Sno
-WHERE Sage &lt; 21;
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Student <span class="token keyword">JOIN</span> SC
+<span class="token keyword">ON</span> Student<span class="token punctuation">.</span>Sno <span class="token operator">=</span> SC<span class="token punctuation">.</span>Sno
+<span class="token keyword">WHERE</span> Sage <span class="token operator">&lt;</span> <span class="token number">21</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>自然连接，使用natural join关键字：</p>
-<pre><code class="sql">SELECT Student.Sno, Sname, Sage, Sdept, Cno, Grade
-FROM Student NATURAL JOIN SC;
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> Student<span class="token punctuation">.</span>Sno<span class="token punctuation">,</span> Sname<span class="token punctuation">,</span> Sage<span class="token punctuation">,</span> Sdept<span class="token punctuation">,</span> Cno<span class="token punctuation">,</span> Grade
+<span class="token keyword">FROM</span> Student <span class="token keyword">NATURAL</span> <span class="token keyword">JOIN</span> SC<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>自连接，一般需要给表起别名，以示区别。</p>
-<pre><code class="sql">SELECT FIRST1.Cno, SECOND1.Cpno
-FROM Course FIRSE1, Course SECOND1
-WHERE FIRST1.Cpno = SECOND1.Cno
-</code></pre>
-</li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> FIRST1<span class="token punctuation">.</span>Cno<span class="token punctuation">,</span> SECOND1<span class="token punctuation">.</span>Cpno
+<span class="token keyword">FROM</span> Course FIRSE1<span class="token punctuation">,</span> Course SECOND1
+<span class="token keyword">WHERE</span> FIRST1<span class="token punctuation">.</span>Cpno <span class="token operator">=</span> SECOND1<span class="token punctuation">.</span>Cno<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h3 id="集合查询"><a href="#集合查询" class="headerlink" title="集合查询"></a>集合查询</h3><p>利用集合操作，对查询结果进行集合运算：</p>
 <ul>
@@ -620,23 +616,25 @@ WHERE FIRST1.Cpno = SECOND1.Cno
 <li>差 EXCEPT</li>
 </ul>
 <p>对于并、交集合查询，其思想与集合运算一致：</p>
-<pre><code class="sql">SELECT DISTINCT *
-FROM Student
-WHERE Sdept=&#39;CS&#39; OR Sage&lt;=19;
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Student
+<span class="token keyword">WHERE</span> Sdept<span class="token operator">=</span><span class="token string">'CS'</span> <span class="token operator">OR</span> Sage<span class="token operator">&lt;=</span><span class="token number">19</span><span class="token punctuation">;</span>
 
-SELECT *
-FROM Student
-WHERE Sdept=&#39;CS&#39;
-UNION
-SELECT *
-FROM Student
-WHERE Sage&lt;=19;
-</code></pre>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Student
+<span class="token keyword">WHERE</span> Sdept<span class="token operator">=</span><span class="token string">'CS'</span>
+<span class="token keyword">UNION</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Student
+<span class="token keyword">WHERE</span> Sage<span class="token operator">&lt;=</span><span class="token number">19</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="数据插入"><a href="#数据插入" class="headerlink" title="数据插入"></a>数据插入</h2><p>格式：</p>
-<pre><code class="sql">INSERT
-INTO 表名(属性1, 属性2, ...)
-VALUES 元组
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span>
+<span class="token keyword">INTO</span> 表名<span class="token punctuation">(</span>属性<span class="token number">1</span><span class="token punctuation">,</span> 属性<span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span> 元组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>将元组插入表中，如果列名列表省略不写，则默认是插入全部属性，否则按照声明的列名属性插入元组，其他没有在INTO属性中出现的属性列，取空值。</p>
 <p>Student表如下：</p>
 <table>
@@ -703,15 +701,15 @@ VALUES 元组
 <td>90</td>
 </tr>
 </tbody></table>
-<pre><code class="sql">INSERT
-INTO Student
-VALUES(&#39;20201110227&#39;, &#39;张江陵&#39;, &#39;男&#39;, 19, &#39;内阁&#39;);
--- 向Student表格中添加一行数据
-</code></pre>
-<pre><code class="sql">INSERT
-INTO Student(Sno, Sname, Sdept)
-VALUES(&#39;20222900767&#39;, &#39;徐文长&#39;, &#39;师爷&#39;);
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span>
+<span class="token keyword">INTO</span> Student
+<span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'20201110227'</span><span class="token punctuation">,</span> <span class="token string">'张江陵'</span><span class="token punctuation">,</span> <span class="token string">'男'</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token string">'内阁'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 向Student表格中添加一行数据</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">INSERT</span>
+<span class="token keyword">INTO</span> Student<span class="token punctuation">(</span>Sno<span class="token punctuation">,</span> Sname<span class="token punctuation">,</span> Sdept<span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'20222900767'</span><span class="token punctuation">,</span> <span class="token string">'徐文长'</span><span class="token punctuation">,</span> <span class="token string">'师爷'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="DBMS会检查所插入元组是否破坏已定义的完整性约束"><a href="#DBMS会检查所插入元组是否破坏已定义的完整性约束" class="headerlink" title="DBMS会检查所插入元组是否破坏已定义的完整性约束"></a>DBMS会检查所插入元组是否破坏已定义的完整性约束</h3><ul>
 <li>实体完整性：是否插入了主键相同的元组</li>
 <li>参照完整性（关联完整性）：外键表插入新元组时，新元组的外键值是否在主键表中存在</li>
@@ -722,23 +720,23 @@ VALUES(&#39;20222900767&#39;, &#39;徐文长&#39;, &#39;师爷&#39;);
 </ul>
 </li>
 </ul>
-<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><pre><code class="sql">UPDATE 表名
-SET &lt;列名&gt; = &lt;表达式&gt;...
-[WHERE &lt;条件&gt;];
-</code></pre>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">UPDATE</span> 表名
+<span class="token keyword">SET</span> <span class="token operator">&lt;</span>列名<span class="token operator">></span> <span class="token operator">=</span> <span class="token operator">&lt;</span>表达式<span class="token operator">></span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">[</span><span class="token keyword">WHERE</span> <span class="token operator">&lt;</span>条件<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>功能：修改指定表中满足where子句条件的元组</p>
 <p>SET子句：指定修改方式</p>
 <p>WHERE子句：指定要修改的元组</p>
-<pre><code class="sql">-- 将上面的Student表中袁崇焕的所在系改为‘督师蓟辽’
-UPDATE Student
-SET Sdept=&#39;督师蓟辽&#39;
-WHERE Sname=&#39;袁崇焕&#39;;
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 将上面的Student表中袁崇焕的所在系改为‘督师蓟辽’</span>
+<span class="token keyword">UPDATE</span> Student
+<span class="token keyword">SET</span> Sdept<span class="token operator">=</span><span class="token string">'督师蓟辽'</span>
+<span class="token keyword">WHERE</span> Sname<span class="token operator">=</span><span class="token string">'袁崇焕'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>注意：<strong>修改数据的同时DBMS会做完整性检查（比如涉及外键表时的参照完整性）</strong>。</p>
-<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><pre><code class="sql">DELETE
-FROM &lt;表名&gt;
-[WHERE &lt;条件&gt;]
-</code></pre>
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DELETE</span>
+<span class="token keyword">FROM</span> <span class="token operator">&lt;</span>表名<span class="token operator">></span>
+<span class="token punctuation">[</span><span class="token keyword">WHERE</span> <span class="token operator">&lt;</span>条件<span class="token operator">></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>同样的，DBMS在执行删除语句时，也会检查所删除的元组是否破坏表上已定义的完整性规则。</p>
 <ul>
 <li>删除单个元组的值</li>
@@ -746,19 +744,21 @@ FROM &lt;表名&gt;
 <li>带子查询的删除语句</li>
 </ul>
 <p>比如，删除上面的Student表格中“内阁”所有成员的选课记录（SC表格）。</p>
-<pre><code class="sql">DELETE
-FROM Student
-WHERE Sno IN
-   (SELECT Sno
-    FROM Student
-    WHERE Student.Sdept = &#39;内阁&#39;);
-</code></pre>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DELETE</span>
+<span class="token keyword">FROM</span> Student
+<span class="token keyword">WHERE</span> Sno <span class="token operator">IN</span>
+   <span class="token punctuation">(</span><span class="token keyword">SELECT</span> Sno
+    <span class="token keyword">FROM</span> Student
+    <span class="token keyword">WHERE</span> Student<span class="token punctuation">.</span>Sdept <span class="token operator">=</span> <span class="token string">'内阁'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><h3 id="何为视图"><a href="#何为视图" class="headerlink" title="何为视图"></a>何为视图</h3><p>视图与基本表在形式上几乎没有区别，同样支持各种SQL操作。</p>
 <p>视图可以理解为数据库的“窗口”。通过视图，不同的人可以观察到自己感兴趣的数据项，而不需要观察整个数据库表。</p>
-<h3 id="基本语法格式"><a href="#基本语法格式" class="headerlink" title="基本语法格式"></a>基本语法格式</h3><pre><code class="sql">CREATE VIEW &lt;视图名&gt; [(&lt;列名&gt;...)]
-AS &lt;子查询&gt;
-[WITH CHECK OPTION];
-</code></pre>
+<h3 id="基本语法格式"><a href="#基本语法格式" class="headerlink" title="基本语法格式"></a>基本语法格式</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> <span class="token operator">&lt;</span>视图名<span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>列名<span class="token operator">></span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">AS</span> <span class="token operator">&lt;</span>子查询<span class="token operator">></span>
+<span class="token punctuation">[</span><span class="token keyword">WITH</span> <span class="token keyword">CHECK</span> <span class="token keyword">OPTION</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>每一个视图都有名称，放在VIEW后面声明，还可以声明视图的属性列；</li>
 <li>AS后面跟任意SELECT查询语句，表示视图中的数据来源；</li>
@@ -767,8 +767,8 @@ AS &lt;子查询&gt;
 <h3 id="视图消解"><a href="#视图消解" class="headerlink" title="视图消解"></a>视图消解</h3><p>从数据字典中取出视图定义，把定义中的子查询和用户查询结合起来，转换成等价的对基表的查询，然后在基表上执行修改之后的查询，称为视图消解。</p>
 <h3 id="更新视图"><a href="#更新视图" class="headerlink" title="更新视图"></a>更新视图</h3><p>由于视图本身并不具有数据存储功能，只是给用户提供展示数据，因此，对视图数据的更新，都是通过视图消解转为对基本表的更新。</p>
 <p>但是，并不是所有的视图都可以被更新。</p>
-<h3 id="删除视图"><a href="#删除视图" class="headerlink" title="删除视图"></a>删除视图</h3><pre><code class="SQL">DROP VIEW &lt;视图名&gt; [CASCADE];
-</code></pre>
+<h3 id="删除视图"><a href="#删除视图" class="headerlink" title="删除视图"></a>删除视图</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">DROP VIEW &lt;视图名&gt; [CASCADE];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>如果要删除的视图还导出了其他视图，就需要指定CASCADE选项，表示级联删除。</p>
 
                 
@@ -782,7 +782,7 @@ AS &lt;子查询&gt;
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -792,7 +792,7 @@ AS &lt;子查询&gt;
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -802,13 +802,13 @@ AS &lt;子查询&gt;
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -818,7 +818,7 @@ AS &lt;子查询&gt;
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -833,7 +833,7 @@ AS &lt;子查询&gt;
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1007,7 +1007,7 @@ AS &lt;子查询&gt;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/03/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96/">
                     <div class="card-image">
@@ -1055,7 +1055,7 @@ AS &lt;子查询&gt;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/03/26/hello/">
@@ -1117,7 +1117,7 @@ AS &lt;子查询&gt;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1223,13 +1223,13 @@ AS &lt;子查询&gt;
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1282,8 +1282,8 @@ AS &lt;子查询&gt;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

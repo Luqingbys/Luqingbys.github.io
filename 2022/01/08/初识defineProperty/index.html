@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -59,7 +59,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -70,7 +70,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -81,7 +81,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -92,7 +92,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -103,7 +103,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -114,7 +114,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -125,14 +125,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -160,7 +160,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -171,7 +171,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -182,7 +182,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -193,7 +193,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -204,7 +204,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -215,7 +215,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -226,7 +226,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -443,7 +443,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -455,7 +455,7 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-01-08
                 </div>
                 
@@ -464,7 +464,7 @@
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
                     2k
                 </div>
                 
@@ -477,6 +477,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
+        
 
         
 
@@ -484,76 +487,76 @@
             <div id="articleContent">
                 <h2 id="初识defineProperty"><a href="#初识defineProperty" class="headerlink" title="初识defineProperty"></a>初识defineProperty</h2><p>Object.defineProperty()，是一个Object对象上的方法，用于创建对象上的属性。</p>
 <h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p>Object.defineProperty(object, prop, desp);<br>其中，object指明要添加属性的对象名，prop指出属性名，而desp则是一些属性描述符。</p>
-<pre><code class="javascript">var phone = &#123;name: &#39;nava7&#39;&#125;;
-Object.defineProperty(car, &#39;price&#39;, &#123;
-    value: 7000,
-    configurable: false,
-    writable: true,
-    enumerable: true,
-&#125;)
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> phone <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'nava7'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>car<span class="token punctuation">,</span> <span class="token string">'price'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">7000</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">configurable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">writable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>下面对属性描述符做一番简单介绍。</p>
 <h4 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h4><p>指定属性是否可以在第一次设置后被修改、是否可以被删除。<br>比如，如下代码在严格模式下，会报错；在一般模式下，修改、删除无效。</p>
-<pre><code class="javascript">var person = &#123;name: &#39;Yank&#39;&#125;;
-Object.defineProperty(person, &#39;age&#39;, &#123;
-    value: 20,
-    configurable: false,
-    writable: true,
-    enumerable: false,
-&#125;)
-console.log(person);
-delete person.age
-console.log(person);
-//删除无效，结果仍为 &#123;name: &#39;Yank&#39;, age: 20&#125;
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Yank'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">configurable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">writable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">delete</span> person<span class="token punctuation">.</span>age
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//删除无效，结果仍为 &#123;name: 'Yank', age: 20&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h4><p>enumerable配置项用于描述属性是否可以被for in 或者Object.keys()的遍历（枚举）中。<br>当enumerable为false时，它不可以被上述两个语句遍历到。</p>
-<pre><code class="javascript">var school = &#123;name: &#39;XiWang Primary School&#39;&#125;;
-Object.defineProperty(school, &#39;age&#39;, &#123;
-    value: 55,
-    configurable: true,
-    enumerable: false,
-&#125;)
-Object.defineProperty(school, &#39;address&#39;, &#123;
-    value: &#39;Hubei Province&#39;,
-    configurable: true,
-    enumerable: true,
-&#125;)
-// 打印结果，只有address属性，而没有age属性
-console.log(Object.keys(school));
-//  [&#39;name&#39;, &#39;address&#39;]
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> school <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'XiWang Primary School'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>school<span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">55</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">configurable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>school<span class="token punctuation">,</span> <span class="token string">'address'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Hubei Province'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">configurable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token comment">// 打印结果，只有address属性，而没有age属性</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>school<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//  ['name', 'address']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h4><p>比较好理解，writable为false时，表示该属性是只读的，不可以被写，且在严格模式下，写操作会报错；一般模式下，写操作失效。</p>
 <h4 id="get-x2F-set"><a href="#get-x2F-set" class="headerlink" title="get&#x2F;set"></a>get&#x2F;set</h4><p>get方法用于获取属性，而set方法用于设置属性。注意，设置了getter和setter之后，不可以再设置value和writable了，否则会报错。</p>
 <p>一般地，使用第三方变量避免getter和setter反复无限调用：</p>
-<pre><code class="javascript">// 错误写法
-    var province = &#123;name: &#39;Hubei&#39;&#125;;
-    Object.defineProperty(province, &#39;centerCity&#39;, &#123;
-        get: function() &#123;
-            console.log(&#39;调用了getter&#39;);
-            return province.centerCity
-        &#125;,
-        set: function(val) &#123;
-            console.log(&#39;调用了setter&#39;);
-            province.centerCity = val
-        &#125;
-    &#125;)
-    province.centerCity = &#39;Wuhan&#39;
-// 正确写法，另设了一个变量str
-var province = &#123;name: &#39;Hubei&#39;&#125;;
-var str = &#39;&#39;;
-Object.defineProperty(province, &#39;centerCity&#39;, &#123;
-    get: function() &#123;
-        console.log(&#39;调用了getter&#39;);
-        return str
-    &#125;,
-    set: function(val) &#123;
-        console.log(&#39;调用了setter&#39;);
-        console.log(val);   // Wuhan
-        str = val
-    &#125;
-&#125;)
-province.centerCity = &#39;Wuhan&#39;
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 错误写法</span>
+    <span class="token keyword">var</span> province <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Hubei'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>province<span class="token punctuation">,</span> <span class="token string">'centerCity'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+        <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'调用了getter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> province<span class="token punctuation">.</span>centerCity
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'调用了setter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            province<span class="token punctuation">.</span>centerCity <span class="token operator">=</span> val
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    province<span class="token punctuation">.</span>centerCity <span class="token operator">=</span> <span class="token string">'Wuhan'</span>
+<span class="token comment">// 正确写法，另设了一个变量str</span>
+<span class="token keyword">var</span> province <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Hubei'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>province<span class="token punctuation">,</span> <span class="token string">'centerCity'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'调用了getter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> str
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'调用了setter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Wuhan</span>
+        str <span class="token operator">=</span> val
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+province<span class="token punctuation">.</span>centerCity <span class="token operator">=</span> <span class="token string">'Wuhan'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <blockquote>
 <p>使用Object.defineProperty()可以为对象新增属性，并且还可以细化地指定属性描述符，默认三个属性描述符（configurable、writable、enumerable）均为false；<br>而另一种直接的方式Object.prop即点运算符新增属性，则是默认三个属性描述符均为true。</p>
 </blockquote>
@@ -563,160 +566,156 @@ province.centerCity = &#39;Wuhan&#39;
 </ul>
 <p>注意，两种描述符不可以同时使用。</p>
 <h3 id="与Vue中的数据代理"><a href="#与Vue中的数据代理" class="headerlink" title="与Vue中的数据代理"></a>与Vue中的数据代理</h3><p>通过一个对象代理对另一个对象中属性的操作（读&#x2F;写），叫做数据代理。<br>下面举一个很简单的栗子：</p>
-<pre><code class="javascript">var obj1 = &#123;
-    x: 1,
-&#125;
-var obj2 = &#123;
-    y: 2,
-&#125;
-Object.defineProperty(obj2, &#39;x&#39;, &#123;
-    configurable: true,
-    enumerable: true,
-    get() &#123;
-        console.log(&quot;getter of obj2 is working!&quot;);
-        return obj1.x;
-    &#125;,
-    set(val) &#123;
-        console.log(&quot;setter of obj2 is working!&quot;);
-        obj1.x = val;
-    &#125;
-&#125;)
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj2<span class="token punctuation">,</span> <span class="token string">'x'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">configurable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"getter of obj2 is working!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> obj1<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"setter of obj2 is working!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        obj1<span class="token punctuation">.</span>x <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在这个栗子中，我们就实现了obj1和obj2之间的数据代理。我们要想读取&#x2F;修改obj1.x，只需要读取&#x2F;修改obj2.x就好，因为会触发其getter&#x2F;setter。</p>
 <p>下面进入正题：Vue中的数据代理究竟是什么？</p>
 <p>在vue2中，我们在构建vue实例对象时传入各项配置参数：</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id=&quot;root&quot;&gt;
-        &lt;h2&gt;姓名：&#123;&#123; name &#125;&#125;&lt;/h2&gt;
-        &lt;h2&gt;住址：&#123;&#123; address &#125;&#125;&lt;/h2&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;script&gt;
-    Vue.config.productionTip = false
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>root<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>姓名：&#123;&#123; name &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>住址：&#123;&#123; address &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
 
-    const vm = new Vue(&#123;
-        el: &#39;#root&#39;,
-        data: &#123;
-            name: &#39;胡图图&#39;,
-            address: &#39;翻斗花园&#39;
-        &#125;
-    &#125;)
-&lt;/script&gt;
-&lt;/html&gt;
-</code></pre>
+    <span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        	<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'胡图图'</span><span class="token punctuation">,</span>
+        	<span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'翻斗花园'</span>
+    	<span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在浏览器中查看执行结果，在控制台输出vm，可以发现name、address都已经变成了vm实例自身的属性了，并且都有自己的getter&#x2F;setter。<br>但是数据代理在vue中是如何体现的呢？首先我们需要知道的是，vm在拿到我们配置的属性name、address后，一定会将其保留下来。事实上，它们存在于vm的 _ data属性中了。也就是说，接下来，对 _ data中属性的修改，就相当于是对vm上属性的修改了（数据代理）。</p>
 <p>为了能够验证这一点，我们需要想方法拿到原始的配置对象（options）上的data参数，故作出如下修改：</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id=&quot;root&quot;&gt;
-        &lt;h2&gt;姓名：&#123;&#123; name &#125;&#125;&lt;/h2&gt;
-        &lt;h2&gt;住址：&#123;&#123; address &#125;&#125;&lt;/h2&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;script&gt;
-    Vue.config.productionTip = false
-    // 小技巧，将data配置项单独全局声明，方便在控制台直接获取
-    var myData = &#123;
-        name: &#39;胡图图&#39;,
-        address: &#39;翻斗花园&#39;
-    &#125;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>root<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>姓名：&#123;&#123; name &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>住址：&#123;&#123; address &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token comment">// 小技巧，将data配置项单独全局声明，方便在控制台直接获取</span>
+    <span class="token keyword">var</span> myData <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'胡图图'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'翻斗花园'</span>
+    <span class="token punctuation">&#125;</span>
 
-    const vm = new Vue(&#123;
-        el: &#39;#root&#39;,
-        data: myData,
-    &#125;)
-    console.log(vm);
-    console.log(myData);
-    console.log(vm._data === myData);    // 验证data配置项就是vm的_data属性，故下文中不对两者（配置项data属性与vm上的_data属性）作刻意区分
-&lt;/script&gt;
-&lt;/html&gt;
-</code></pre>
+    <span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span> myData<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>_data <span class="token operator">===</span> myData<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 验证data配置项就是vm的_data属性，故下文中不对两者（配置项data属性与vm上的_data属性）作刻意区分</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>现在在浏览器控制台作出如下操作：<br><code>vm.name = &#39;hututu&#39;</code><br>我们就会发现姓名变成了‘hututu’。从数据代理角度来说，我们修改的是vm上的name属性，也就调用了其setter，从而改变了与之关联的data（ _ data）上的name。</p>
 <p>现在对整个数据代理过程梳理一下：</p>
 <ol>
-<li>首先，我们书写了如下代码：<pre><code class="javascript">const vm = new Vue(&#123;
- el: &#39;#root&#39;,
- data: &#123;
-     name: &#39;胡图图&#39;,
-     address: &#39;翻斗花园&#39;
- &#125;
-&#125;)
-</code></pre>
-</li>
-<li>在创建好的vm实例对象上，就会有一个准备好的 _ data属性，里面存放了options配置项中的data，大致如下：<pre><code class="javascript">// vm
-&#123;
- ...
- _data: &#123;
-     name: &#39;胡图图&#39;,
-     address: &#39;翻斗花园&#39;,
- &#125;,
- ...
-&#125;
-</code></pre>
-</li>
-<li>到这里，还没有出现数据代理。但是，如果Vue仅仅到此为止的话，模板中的语法就应该这样书写了：<br>~~~ html<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Document</title>
- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-</head>
-<body>
- <div id="root">
-     <h2>姓名：</h2>
-     <h2>住址：</h2>
- </div>
-</body>
-<script>
- Vue.config.productionTip = false
- var myData = {
-     name: '胡图图',
-     address: '翻斗花园'
- }
+<li>首先，我们书写了如下代码：<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+	<span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+		<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'胡图图'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'翻斗花园'</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>在创建好的vm实例对象上，就会有一个准备好的 _ data属性，里面存放了options配置项中的data，大致如下：<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// vm</span>
+<span class="token punctuation">&#123;</span>
+	<span class="token operator">...</span>
+	<span class="token literal-property property">_data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+		<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'胡图图'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'翻斗花园'</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token operator">...</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>到这里，还没有出现数据代理。但是，如果Vue仅仅到此为止的话，模板中的语法就应该这样书写了：<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>root<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>姓名：&#123;&#123; _data.name &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>住址：&#123;&#123; _data.address &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token keyword">var</span> myData <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'胡图图'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'翻斗花园'</span>
+    <span class="token punctuation">&#125;</span>
 
- const vm &#x3D; new Vue({<br> el: ‘#root’,<br> data: myData,<br> })<br> console.log(vm);<br> console.log(myData);<br> console.log(vm._data &#x3D;&#x3D;&#x3D; myData);</li>
+    <span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">'#root'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span> myData<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>_data <span class="token operator">===</span> myData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+原因很简单，此时vm实例对象上还没有name、address属性，只有 _ data属性，通过它获取到数据。</li>
+<li>数据代理，也就是再vm身上添加了相应的属性：<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// vm</span>
+<span class="token punctuation">&#123;</span>
+	<span class="token operator">...</span>
+	<span class="token literal-property property">_data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+		<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'胡图图'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token string">'翻斗花园'</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token operator">...</span>
+	<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token operator">...</span>
+	<span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token operator">...</span>
+	<span class="token operator">...</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+而这里两者之间就是通过Object.defineProperty()建立的数据代理关系：<br>通过这个方法，将data对象中的所有属性添加到vm上，同时为每一个属性指定一个getter&#x2F;setter，在getter&#x2F;setter内部去操作data对象中对应的属性。</li>
 </ol>
-<p></script></p>
-</html>
-~~~
-原因很简单，此时vm实例对象上还没有name、address属性，只有 _ data属性，通过它获取到数据。
-4. 数据代理，也就是再vm身上添加了相应的属性：
-~~~ javascript
-// vm
-{
-    ...
-    _data: {
-        name: '胡图图',
-        address: '翻斗花园',
-    },
-    ...
-    name: ...
-    address: ...
-    ...
-}
-~~~
-而这里两者之间就是通过Object.defineProperty()建立的数据代理关系：
-通过这个方法，将data对象中的所有属性添加到vm上，同时为每一个属性指定一个getter/setter，在getter/setter内部去操作data对象中对应的属性。
-
 <p>可见，数据代理，大大地简化了代码书写，也使得更加方便地操作data中的数据了。</p>
 <h3 id="与数据劫持"><a href="#与数据劫持" class="headerlink" title="与数据劫持"></a>与数据劫持</h3><blockquote>
 <p>数据劫持，就是对某一项数据进行访问、设置时，会触发相应的函数，并返回最后想要的结果（或返回属性值getter，或修改属性值setter）。当然，我们就可以在函数中另外做一些我们自己想要的操作了，这就是数据劫持。</p>
@@ -734,7 +733,7 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -744,7 +743,7 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -754,13 +753,13 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -770,7 +769,7 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -785,7 +784,7 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -959,7 +958,7 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/01/08/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92%E4%B8%8E%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">
                     <div class="card-image">
@@ -999,7 +998,7 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/01/08/%E8%BF%9F%E5%88%B0%E7%9A%84%E6%AD%A3%E4%B9%89-%E8%BF%99%E4%B9%9F%E8%AE%B8%E6%98%AF%E8%BF%99%E5%9C%BA%E9%A3%8E%E6%9A%B4%E6%9C%80%E5%A5%BD%E7%9A%84%E7%BB%93%E5%B1%80/">
@@ -1065,7 +1064,7 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1171,13 +1170,13 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1230,8 +1229,8 @@ Object.defineProperty(obj2, &#39;x&#39;, &#123;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

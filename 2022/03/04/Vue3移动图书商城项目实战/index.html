@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -62,7 +62,7 @@ network：封装网络请求的文件夹，前端项">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -73,7 +73,7 @@ network：封装网络请求的文件夹，前端项">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -84,7 +84,7 @@ network：封装网络请求的文件夹，前端项">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -95,7 +95,7 @@ network：封装网络请求的文件夹，前端项">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -106,7 +106,7 @@ network：封装网络请求的文件夹，前端项">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -117,7 +117,7 @@ network：封装网络请求的文件夹，前端项">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -128,14 +128,14 @@ network：封装网络请求的文件夹，前端项">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -163,7 +163,7 @@ network：封装网络请求的文件夹，前端项">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -174,7 +174,7 @@ network：封装网络请求的文件夹，前端项">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -185,7 +185,7 @@ network：封装网络请求的文件夹，前端项">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -196,7 +196,7 @@ network：封装网络请求的文件夹，前端项">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -207,7 +207,7 @@ network：封装网络请求的文件夹，前端项">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -218,7 +218,7 @@ network：封装网络请求的文件夹，前端项">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -229,7 +229,7 @@ network：封装网络请求的文件夹，前端项">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -446,7 +446,7 @@ network：封装网络请求的文件夹，前端项">
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -458,7 +458,7 @@ network：封装网络请求的文件夹，前端项">
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-03-04
                 </div>
                 
@@ -467,8 +467,8 @@ network：封装网络请求的文件夹，前端项">
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3.6k
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.9k
                 </div>
                 
 
@@ -479,6 +479,9 @@ network：封装网络请求的文件夹，前端项">
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
         
 
         
@@ -501,62 +504,64 @@ network：封装网络请求的文件夹，前端项">
 <li>home.js：包含获取首页所有数据的接口调用</li>
 <li>request.js：管理所有的接口调用，比如请求拦截、响应拦截等</li>
 </ul>
-<pre><code class="JavaScript">// request.js
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; request.js
 import axios from &#39;axios&#39;
 
 export function request(config) &#123;
-    const instance = axios.create(&#123;
-        baseURL: &#39;http://api.shop.eduwork.cn&#39;,
+    const instance &#x3D; axios.create(&#123;
+        baseURL: &#39;http:&#x2F;&#x2F;api.shop.eduwork.cn&#39;,
         timeout: 5000,
     &#125;)
 
-    // 请求拦截
-    instance.interceptors.request.use(config =&gt; &#123;
-        // 如果有一个接口需要认证才可以访问，就在这里统一设置
+    &#x2F;&#x2F; 请求拦截
+    instance.interceptors.request.use(config &#x3D;&gt; &#123;
+        &#x2F;&#x2F; 如果有一个接口需要认证才可以访问，就在这里统一设置
 
         return config
-    &#125;, err =&gt; &#123;
+    &#125;, err &#x3D;&gt; &#123;
 
     &#125;)
 
-    // 响应拦截
-    instance.interceptors.response.use(res =&gt; &#123;
+    &#x2F;&#x2F; 响应拦截
+    instance.interceptors.response.use(res &#x3D;&gt; &#123;
         return res
-    &#125;, err =&gt; &#123;
-        // 如果有需要授权才可以访问的接口，统一去login授权
+    &#125;, err &#x3D;&gt; &#123;
+        &#x2F;&#x2F; 如果有需要授权才可以访问的接口，统一去login授权
 
-        // 如果有错误，这里会进行处理
+        &#x2F;&#x2F; 如果有错误，这里会进行处理
 
     &#125;)
 
     return instance(config)
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>由于我们接下来第一个要实现的就是首页功能，因此，我们需要先配置好首页中接口调用函数，放在home.js文件中：</p>
-<pre><code class="JavaScript">// home.js
-import &#123; request &#125; from &quot;./request&quot;;
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; home.js
+import &#123; request &#125; from &quot;.&#x2F;request&quot;;
 
 function getHomeAllData() &#123;
     return request(&#123;
-        // 拿到首页所有数据，无需任何参数，所以只提供url就可以
-        url: &#39;/api/index&#39;
+        &#x2F;&#x2F; 拿到首页所有数据，无需任何参数，所以只提供url就可以
+        url: &#39;&#x2F;api&#x2F;index&#39;
     &#125;)
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="小试牛刀：获取首页所有数据"><a href="#小试牛刀：获取首页所有数据" class="headerlink" title="小试牛刀：获取首页所有数据"></a>小试牛刀：获取首页所有数据</h2><p>我们在Home.vue组件中获取数据，在setup函数中调用onMounted生命周期钩子，希望在页面加载时就将拿到的数据显示到页面，故在该钩子中发起axios请求获取数据：</p>
-<pre><code class="JavaScript">setup() &#123;
-    const banner = ref([])
-    onMounted(() =&gt; &#123;
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">setup() &#123;
+    const banner &#x3D; ref([])
+    onMounted(() &#x3D;&gt; &#123;
       getHomeAllData()
-        .then((res) =&gt; &#123;&#125;)
-        .catch((err) =&gt; &#123;&#125;)
+        .then((res) &#x3D;&gt; &#123;&#125;)
+        .catch((err) &#x3D;&gt; &#123;&#125;)
     &#125;)
 
     return &#123;
       banner,
     &#125;
-  &#125;
-</code></pre>
+  &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><p>我们在views目录下创建所有页面级的文件夹，用于存放各个页面功能的组件：</p>
 <ul>
 <li>category：商品分类页面</li>
@@ -566,64 +571,66 @@ function getHomeAllData() &#123;
 <li>shopcart：购物车页面</li>
 </ul>
 <p>在配置路由之前，为了使得路由跳转效果明显，我们需要建立以上各个页面的组件文件，比如category文件夹下建立Category.vue文件，其中简单写几句：</p>
-<pre><code class="vue">&lt;template&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
-      &lt;h1&gt;商品分类&lt;/h1&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+      &lt;h1&gt;商品分类&lt;&#x2F;h1&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
 
 &lt;script&gt;
 export default &#123;
 
 &#125;
-&lt;/script&gt;
+&lt;&#x2F;script&gt;
 
 &lt;style&gt;
 
-&lt;/style&gt;
-</code></pre>
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>接下来我们在router文件夹下的index.js文件中设置路由。</p>
 <p>首先，为了实现懒加载，我们先导入各个组件文件：</p>
-<pre><code class="JavaScript">const Home = () =&gt; import(&#39;../views/home/Home.vue&#39;)
-const Category = () =&gt; import(&#39;../views/category/Category.vue&#39;)
-const Detail = () =&gt; import(&#39;../views/detail/Detail.vue&#39;)
-const Profile = () =&gt; import(&#39;../views/profile/Profile.vue&#39;)
-const ShopCart = () =&gt; import(&#39;../views/shopcart/ShopCart.vue&#39;)
-</code></pre>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const Home &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;home&#x2F;Home.vue&#39;)
+const Category &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;category&#x2F;Category.vue&#39;)
+const Detail &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;detail&#x2F;Detail.vue&#39;)
+const Profile &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;profile&#x2F;Profile.vue&#39;)
+const ShopCart &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;shopcart&#x2F;ShopCart.vue&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>其次，在routes数组中补充路由配置：</p>
-<pre><code class="JavaScript">const routes = [
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const routes &#x3D; [
   &#123;
     path: &#39;&#39;,
     name: &#39;DefaultHome&#39;,
     component: Home
   &#125;,
   &#123;
-    path: &#39;/home&#39;,
+    path: &#39;&#x2F;home&#39;,
     name: &#39;Home&#39;,
     component: Home
   &#125;,
   &#123;
-    path: &#39;/category&#39;,
+    path: &#39;&#x2F;category&#39;,
     name: &#39;Category&#39;,
     component: Category
   &#125;,
   &#123;
-    path: &#39;/detail&#39;,
+    path: &#39;&#x2F;detail&#39;,
     name: &#39;Detail&#39;,
     component: Detail
   &#125;,
   &#123;
-    path: &#39;/shopcart&#39;,
+    path: &#39;&#x2F;shopcart&#39;,
     name: &#39;ShopCart&#39;,
     component: ShopCart
   &#125;,
   &#123;
-    path: &#39;/profile&#39;,
+    path: &#39;&#x2F;profile&#39;,
     name: &#39;Profile&#39;,
     component: Profile
   &#125;,
-]
-</code></pre>
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="制作导航栏"><a href="#制作导航栏" class="headerlink" title="制作导航栏"></a>制作导航栏</h2><p>该移动端移动图书商城的导航栏在最底层，分为四个选项“首页-分类-购物车-我的”，因此，我们直接在App.vue组件中实现。</p>
 <p>在阿里下载好图标后，导入到页面中，由于路由跳转在上面已经实现，故接下来关键只剩两步了：</p>
 <ul>
@@ -631,33 +638,33 @@ const ShopCart = () =&gt; import(&#39;../views/shopcart/ShopCart.vue&#39;)
 <li>使用fixed定位，将导航栏置于页面最底部。</li>
 </ul>
 <p>App.vue组件内容如下：</p>
-<pre><code class="vue">&lt;template&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
-    &lt;router-view /&gt;
-    &lt;div id=&quot;nav&quot;&gt;
-      &lt;router-link class=&quot;tab-bar-item&quot; to=&quot;/&quot;&gt;
-        &lt;div class=&quot;icon&quot;&gt;&lt;i class=&quot;iconfont icon-shouye&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-        &lt;div&gt;首页&lt;/div&gt;
-      &lt;/router-link&gt;
-      &lt;router-link class=&quot;tab-bar-item&quot; to=&quot;/category&quot;&gt;
-        &lt;div class=&quot;icon&quot;&gt;&lt;i class=&quot;iconfont icon-fenlei&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-        &lt;div&gt;分类&lt;/div&gt;
-      &lt;/router-link&gt;
-      &lt;router-link class=&quot;tab-bar-item&quot; to=&quot;/shopcart&quot;&gt;
-        &lt;div class=&quot;icon&quot;&gt;&lt;i class=&quot;iconfont icon-gouwuche&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-        &lt;div&gt;购物车&lt;/div&gt;
-      &lt;/router-link&gt;
-      &lt;router-link class=&quot;tab-bar-item&quot; to=&quot;/profile&quot;&gt;
-        &lt;div class=&quot;icon&quot;&gt;&lt;i class=&quot;iconfont icon-xiazai&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-        &lt;div&gt;我的&lt;/div&gt;
-      &lt;/router-link&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+    &lt;router-view &#x2F;&gt;
+    &lt;div id&#x3D;&quot;nav&quot;&gt;
+      &lt;router-link class&#x3D;&quot;tab-bar-item&quot; to&#x3D;&quot;&#x2F;&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;iconfont icon-shouye&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;div&gt;
+        &lt;div&gt;首页&lt;&#x2F;div&gt;
+      &lt;&#x2F;router-link&gt;
+      &lt;router-link class&#x3D;&quot;tab-bar-item&quot; to&#x3D;&quot;&#x2F;category&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;iconfont icon-fenlei&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;div&gt;
+        &lt;div&gt;分类&lt;&#x2F;div&gt;
+      &lt;&#x2F;router-link&gt;
+      &lt;router-link class&#x3D;&quot;tab-bar-item&quot; to&#x3D;&quot;&#x2F;shopcart&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;iconfont icon-gouwuche&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;div&gt;
+        &lt;div&gt;购物车&lt;&#x2F;div&gt;
+      &lt;&#x2F;router-link&gt;
+      &lt;router-link class&#x3D;&quot;tab-bar-item&quot; to&#x3D;&quot;&#x2F;profile&quot;&gt;
+        &lt;div class&#x3D;&quot;icon&quot;&gt;&lt;i class&#x3D;&quot;iconfont icon-xiazai&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;div&gt;
+        &lt;div&gt;我的&lt;&#x2F;div&gt;
+      &lt;&#x2F;router-link&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
 
-&lt;style lang=&quot;scss&quot;&gt;
-@import &#39;assets/css/base.css&#39;;
-@import &#39;assets/css/iconfont.css&#39;;
+&lt;style lang&#x3D;&quot;scss&quot;&gt;
+@import &#39;assets&#x2F;css&#x2F;base.css&#39;;
+@import &#39;assets&#x2F;css&#x2F;iconfont.css&#39;;
 #app &#123;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -696,22 +703,23 @@ const ShopCart = () =&gt; import(&#39;../views/shopcart/ShopCart.vue&#39;)
     vertical-align: middle;
   &#125;
 &#125;
-&lt;/style&gt;
-</code></pre>
+&lt;&#x2F;style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="首页推荐商品组件的实现"><a href="#首页推荐商品组件的实现" class="headerlink" title="首页推荐商品组件的实现"></a>首页推荐商品组件的实现</h2><p>首页推荐商品组件，即四本横向排列的书籍，我们单独把这一部分作为一个组件（.vue）来实现。</p>
 <p>在view文件夹的home&#x2F;ChildComps文件夹下新建Recommend.vue文件，视图部分肯定要用到flex布局：</p>
-<pre><code class="vue">&lt;!--Recommend.vue--&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!--Recommend.vue--&gt;
 &lt;template&gt;
-  &lt;div class=&quot;recommend&quot;&gt;
-      &lt;div class=&quot;recommend-item&quot; v-for=&quot;item in recommends.slice(0, 4)&quot; :key=&quot;item.id&quot;&gt;
-          &lt;a href=&quot;&quot; @click.prevent=&quot;goD(item.id)&quot;&gt;
-              &lt;img src=&quot;~assets/images/youshi1.png&quot; alt=&quot;&quot;&gt;
-              &lt;div&gt;&#123;&#123; item.title &#125;&#125;&lt;/div&gt;
-          &lt;/a&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-&lt;style lang=&quot;scss&quot; scoped&gt;
+  &lt;div class&#x3D;&quot;recommend&quot;&gt;
+      &lt;div class&#x3D;&quot;recommend-item&quot; v-for&#x3D;&quot;item in recommends.slice(0, 4)&quot; :key&#x3D;&quot;item.id&quot;&gt;
+          &lt;a href&#x3D;&quot;&quot; @click.prevent&#x3D;&quot;goD(item.id)&quot;&gt;
+              &lt;img src&#x3D;&quot;~assets&#x2F;images&#x2F;youshi1.png&quot; alt&#x3D;&quot;&quot;&gt;
+              &lt;div&gt;&#123;&#123; item.title &#125;&#125;&lt;&#x2F;div&gt;
+          &lt;&#x2F;a&gt;
+      &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+&lt;style lang&#x3D;&quot;scss&quot; scoped&gt;
 .recommend &#123;
     display: flex;
     width: 100%;
@@ -728,25 +736,25 @@ const ShopCart = () =&gt; import(&#39;../views/shopcart/ShopCart.vue&#39;)
         margin-bottom: 10px;
     &#125;
 &#125;
-&lt;/style&gt;
-</code></pre>
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>数据来自网络请求，也即获取首页数据，这网络请求的相关代码已经封装在了network&#x2F;home.js中了；我们在Home组件中发起请求，获取首页中需要的全部信息，然后<strong>将推荐的书籍信息传递给Recommend子组件</strong>——使用props属性。</p>
 <h3 id="props用法"><a href="#props用法" class="headerlink" title="props用法"></a>props用法</h3><p>在vue3中，父组件传递数据给子组件，需要用到props。而父组件传过来的数据，子组件的模板、setup函数中的引入方式略有不同。</p>
 <h4 id="模板使用props"><a href="#模板使用props" class="headerlink" title="模板使用props"></a>模板使用props</h4><p>与setup同级使用props配置项即可。此时，也有两种常见的用法：</p>
 <ul>
 <li><p>字符串数组写法</p>
-<pre><code class="vue">&lt;script&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script&gt;
 export default &#123;
     props: [&#39;title&#39;, &#39;author&#39;],
     setup() &#123;...&#125;
 &#125;
-&lt;/script&gt;
-</code></pre>
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>上面的props配置项数组中，每一个字符串中的内容都是父组件传来的数据变量名（title，author）。</p>
 </li>
 <li><p>对象写法</p>
 <p>对象写法允许我们在指定传来的属性名同时，指定它需要传递的类型，以及是否必需，默认值等等。</p>
-<pre><code class="vue">&lt;script&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script&gt;
 export default &#123;
     props: &#123;
         title: &#123;
@@ -761,33 +769,33 @@ export default &#123;
         &#125;
     &#125;
 &#125;
-&lt;/script&gt;
-</code></pre>
-</li>
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="setup函数使用props"><a href="#setup函数使用props" class="headerlink" title="setup函数使用props"></a>setup函数使用props</h4><p>setup函数接收两个参数props，context，其中第一个参数就可以接收到父组件传来的数据，以供在setup函数中使用。</p>
-<pre><code class="vue">&lt;script&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script&gt;
 export default &#123;
     setup(props, context) &#123;
         ...
     &#125;
 &#125;
-&lt;/script&gt;
-</code></pre>
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="首页选项卡的实现"><a href="#首页选项卡的实现" class="headerlink" title="首页选项卡的实现"></a>首页选项卡的实现</h2><p>注意到首页的选项卡并不是首页独有的，而是出现在多个组件中的，因此可以作为公用组件出现在components目录下：在components&#x2F;common下新建tabControl文件夹，在其中新建tabControl.vue文件，用于制作选项卡。</p>
-<pre><code class="vue">&lt;template&gt;
-  &lt;div class=&quot;tab-control&quot;&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div class&#x3D;&quot;tab-control&quot;&gt;
     &lt;div
-      class=&quot;tab-control-item&quot;
-      v-for=&quot;(item, index) in titles&quot;
-      :key=&quot;index&quot;
-      @click=&quot;itemClick(index)&quot;
-      :class=&quot;&#123; active: index==currentIndex &#125;&quot;
+      class&#x3D;&quot;tab-control-item&quot;
+      v-for&#x3D;&quot;(item, index) in titles&quot;
+      :key&#x3D;&quot;index&quot;
+      @click&#x3D;&quot;itemClick(index)&quot;
+      :class&#x3D;&quot;&#123; active: index&#x3D;&#x3D;currentIndex &#125;&quot;
     &gt;
-      &lt;span&gt;&#123;&#123; item &#125;&#125;&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+      &lt;span&gt;&#123;&#123; item &#125;&#125;&lt;&#x2F;span&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
 
 &lt;script&gt;
 import &#123; ref &#125; from &#39;vue&#39;
@@ -802,10 +810,10 @@ export default &#123;
     &#125;,
   &#125;,
   setup() &#123;
-    let currentIndex = ref(0)
-    // 当点击某一个选项卡时，把active类赋给它
-    const itemClick = (index) =&gt; &#123;
-        currentIndex.value = index
+    let currentIndex &#x3D; ref(0)
+    &#x2F;&#x2F; 当点击某一个选项卡时，把active类赋给它
+    const itemClick &#x3D; (index) &#x3D;&gt; &#123;
+        currentIndex.value &#x3D; index
     &#125;
     return &#123;
       currentIndex,
@@ -813,9 +821,9 @@ export default &#123;
     &#125;
   &#125;,
 &#125;
-&lt;/script&gt;
+&lt;&#x2F;script&gt;
 
-&lt;style scoped lang=&quot;scss&quot;&gt;
+&lt;style scoped lang&#x3D;&quot;scss&quot;&gt;
 .tab-control &#123;
   display: flex;
   height: 40px;
@@ -836,36 +844,37 @@ export default &#123;
     &#125;
   &#125;
 &#125;
-&lt;/style&gt;
-</code></pre>
+&lt;&#x2F;style&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>虽然首页中的选项卡只有三项，但是其他组件中的选项卡跟首页并不相同，因此使用组件传值的方式，用变量接收选项卡数据，同时使用v-for指令动态生成若干选项卡。</p>
 <p>样式方面，对选项卡进行flex布局设置，另外，由于点击某一个选项卡会触发特殊样式，因此对样式使用属性绑定写法：</p>
 <p><code>:class=&quot;&#123; active: index==currentIndex &#125;&quot;</code></p>
 <p>而currentIndex是设置的标记变量，用于记录当前被点击的选项卡序号，index是每一个选项卡固有的序号属性，两者比对即可实现对样式是否触发的检验。</p>
 <p>接下来，我们需要实现点击某一个选项卡后，显示该项下的内容。由于选项卡是子组件TabControl.vue实现的，但是该选项卡要展示的内容却是在Home组件中显示的，因此涉及了子组件向父组件传递数据。</p>
 <h3 id="emit"><a href="#emit" class="headerlink" title="emit"></a>emit</h3><p>emit可以实现子组件与父组件的通信。emit（触发），当子组件中完成某个操作时，调用回调函数，触发（emit）一个自定义事件，该API可以携带多个需要传给父组件的参数：</p>
-<pre><code class="JavaScript">// 子组件中的JavaScript代码片段
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; 子组件中的JavaScript代码片段
 setup(props, &#123; emit &#125;) &#123;
-    let currentIndex = ref(0)
-    // 当点击某一个选项卡时，把active类赋给它，并触发tabClick事件
-    const itemClick = (index) =&gt; &#123;
-        currentIndex.value = index
+    let currentIndex &#x3D; ref(0)
+    &#x2F;&#x2F; 当点击某一个选项卡时，把active类赋给它，并触发tabClick事件
+    const itemClick &#x3D; (index) &#x3D;&gt; &#123;
+        currentIndex.value &#x3D; index
         emit(&#39;tabClick&#39;, index)
     &#125;
     return &#123;
       currentIndex,
       itemClick,
     &#125;
-  &#125;,
-</code></pre>
+  &#125;,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>接下来把目光转移到父组件：</p>
 <p>在父组件中，我们需要自定义上述事件（即自定义事件），并给该自定义事件绑定一个回调函数，它可以以参数形式接收子组件传来的数据：</p>
-<pre><code class="vue">&lt;template&gt;
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
       ...
-      &lt;TabControl @tabClick=&quot;tabClick&quot; :titles=&quot;[&#39;畅销&#39;, &#39;新书&#39;, &#39;精选&#39;]&quot;&gt;&lt;/TabControl&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+      &lt;TabControl @tabClick&#x3D;&quot;tabClick&quot; :titles&#x3D;&quot;[&#39;畅销&#39;, &#39;新书&#39;, &#39;精选&#39;]&quot;&gt;&lt;&#x2F;TabControl&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
 
 &lt;script&gt;
 ...
@@ -878,7 +887,7 @@ export default &#123;
     &#125;,
     setup() &#123;
         ...
-        const tabClick = (index) =&gt; &#123;
+        const tabClick &#x3D; (index) &#x3D;&gt; &#123;
             console.log(index);
         &#125;
         return &#123;
@@ -887,7 +896,7 @@ export default &#123;
         &#125;
     &#125;
 &#125;
-&lt;/script&gt;
+&lt;&#x2F;script&gt;
 
 &lt;style scoped&gt;
 .banners img &#123;
@@ -895,33 +904,35 @@ export default &#123;
     height: auto;
     margin-top: 45px;
 &#125;
-&lt;/style&gt;
-</code></pre>
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="首页选项卡数据切换"><a href="#首页选项卡数据切换" class="headerlink" title="首页选项卡数据切换"></a>首页选项卡数据切换</h2><p>首页组件（Home.vue）中获取后台数据涉及了三个接口，于是在首页组件中定义一个goods对象，用它保存首页选项卡三个选项各自对应的数据（畅销、新书、精选），而上面已经实现了子组件将被点击的选项序号传递给父组件，故在父组件中，只需要实现将对应的数据再传给子组件即可。</p>
 <p>分析父组件的JavaScript代码块：</p>
 <p>首先，有一个变量保存当前点击的选项卡内容；</p>
 <p><code>let currentType = ref(&#39;sales&#39;)</code></p>
 <p>我们把目光再次回到之前定义过的tabClick回调函数（点击选项卡时触发）：</p>
-<pre><code class="JavaScript">const tabClick = (index) =&gt; &#123;
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const tabClick &#x3D; (index) &#x3D;&gt; &#123;
   console.log(index)
-  let types = [&#39;sales&#39;, &#39;new&#39;, &#39;recommend&#39;]
-  currentType.value = types[index]
-&#125;
-</code></pre>
+  let types &#x3D; [&#39;sales&#39;, &#39;new&#39;, &#39;recommend&#39;]
+  currentType.value &#x3D; types[index]
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>注意，这个tabClick函数就是Home父组件中自定义事件tabClick绑定的回调函数。</p>
 <p>获取三个选项卡需要的后台数据，也即发送三个网络请求，并保存结果，当然在此之前，需要在network文件夹下的home.js文件中封装好相关的网络请求函数。</p>
-<pre><code class="JavaScript">// network/home.js
-// 获取首页三个选项卡涉及的所有商品数据
-export function getHomeGoods(type=&#39;sales&#39;, page=1) &#123;
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; network&#x2F;home.js
+&#x2F;&#x2F; 获取首页三个选项卡涉及的所有商品数据
+export function getHomeGoods(type&#x3D;&#39;sales&#39;, page&#x3D;1) &#123;
     return request(&#123;
-        url: &#39;/api/index?&#39;+type+&#39;=1&amp;page=&#39;+page
+        url: &#39;&#x2F;api&#x2F;index?&#39;+type+&#39;&#x3D;1&amp;page&#x3D;&#39;+page
     &#125;)
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>接下来就可以在Home组件中使用了。</p>
-<pre><code class="JavaScript">// Home.vue中的JavaScript代码
-// 商品列表数据模型
-const goods = reactive(&#123;
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; Home.vue中的JavaScript代码
+&#x2F;&#x2F; 商品列表数据模型
+const goods &#x3D; reactive(&#123;
   sales: &#123;
     page: 0,
     list: [],
@@ -935,55 +946,57 @@ const goods = reactive(&#123;
     list: [],
   &#125;,
 &#125;)
-// 用于记录当前点击的选项卡内容
-let currentType = ref(&#39;sales&#39;)
-// 展示当前点击的选项卡的数据，发送给子组件
-const showGoods = computed(() =&gt; &#123;
+&#x2F;&#x2F; 用于记录当前点击的选项卡内容
+let currentType &#x3D; ref(&#39;sales&#39;)
+&#x2F;&#x2F; 展示当前点击的选项卡的数据，发送给子组件
+const showGoods &#x3D; computed(() &#x3D;&gt; &#123;
   return goods[currentType.value].list
 &#125;)
-onMounted(() =&gt; &#123;
-  getHomeAllData().then((res) =&gt; &#123;
-    recommends.value = res.goods.data
+onMounted(() &#x3D;&gt; &#123;
+  getHomeAllData().then((res) &#x3D;&gt; &#123;
+    recommends.value &#x3D; res.goods.data
   &#125;)
-  // 按销量排行
-  getHomeGoods(&#39;sales&#39;).then((res) =&gt; &#123;
-    goods.sales.list = res.goods.data
+  &#x2F;&#x2F; 按销量排行
+  getHomeGoods(&#39;sales&#39;).then((res) &#x3D;&gt; &#123;
+    goods.sales.list &#x3D; res.goods.data
   &#125;)
-  // 按推荐排行
-  getHomeGoods(&#39;recommend&#39;).then((res) =&gt; &#123;
-    goods.recommend.list = res.goods.data
+  &#x2F;&#x2F; 按推荐排行
+  getHomeGoods(&#39;recommend&#39;).then((res) &#x3D;&gt; &#123;
+    goods.recommend.list &#x3D; res.goods.data
   &#125;)
-  // 按新品排行
-  getHomeGoods(&#39;new&#39;).then((res) =&gt; &#123;
-    goods.new.list = res.goods.data
+  &#x2F;&#x2F; 按新品排行
+  getHomeGoods(&#39;new&#39;).then((res) &#x3D;&gt; &#123;
+    goods.new.list &#x3D; res.goods.data
   &#125;)
-&#125;)
-</code></pre>
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="上拉加载更多数据"><a href="#上拉加载更多数据" class="headerlink" title="上拉加载更多数据"></a>上拉加载更多数据</h2><p>需要用到移动端滚动条的第三方库——BetterScroll。</p>
 <p>在首页的选项卡中，由于是移动端，不可能像PC端点击分页器获取更多数据，而是通过往上滑动，加载更多数据，因此，需要对滑动事件进行优化、处理（绑定网络请求）。Home组件的JavaScript代码如下：</p>
-<pre><code class="JavaScript">  //   创建BetterScroll对象
-  bscroll = new BScroll(document.querySelector(&#39;.wrapper&#39;), &#123;
-    probeType: 3, // 只要在运动，就触发scroll事件
-    click: true, // 是否允许点击
-    pullUpLoad: true, // 是否上拉加载更多，true为是
-  &#125;)
-  //   绑定滚动的回调函数
-  bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;&#125;)
-  //   上拉加载数据，触发pullingUp
-  bscroll.on(&#39;pullingUp&#39;, () =&gt; &#123;
-    console.log(&#39;加载更多&#39;)
-    bscroll.refresh()
-  &#125;)
-</code></pre>
-<h2 id="上拉情况下的导航条固定"><a href="#上拉情况下的导航条固定" class="headerlink" title="上拉情况下的导航条固定"></a>上拉情况下的导航条固定</h2><p>由于首页的选项卡组件使用了固定定位，但是这是当往下滑动时候的布局样式（一直往下滑动获取新的书籍信息时，此时选项卡固定在页面最上方），对此，我们单独再复制一份选项卡组件，使用v-show指定控制它的显示与否；而显示条件需要我们获取到临界高度，一旦大于这个高度时，就让组件固定展示。</p>
-<pre><code class="JavaScript">// Home.vue中的JavaScript代码片段
-// 控制选项卡是否被固定
-let isTabFixed = ref(false)
-//   绑定滚动的回调函数
-bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
-  isTabFixed.value = -position.y&gt;banref.value.offsetHeight
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F;   创建BetterScroll对象
+bscroll &#x3D; new BScroll(document.querySelector(&#39;.wrapper&#39;), &#123;
+  probeType: 3, &#x2F;&#x2F; 只要在运动，就触发scroll事件
+  click: true, &#x2F;&#x2F; 是否允许点击
+  pullUpLoad: true, &#x2F;&#x2F; 是否上拉加载更多，true为是
 &#125;)
-</code></pre>
+&#x2F;&#x2F;   绑定滚动的回调函数
+bscroll.on(&#39;scroll&#39;, (position) &#x3D;&gt; &#123;&#125;)
+&#x2F;&#x2F;   上拉加载数据，触发pullingUp
+bscroll.on(&#39;pullingUp&#39;, () &#x3D;&gt; &#123;
+  console.log(&#39;加载更多&#39;)
+  bscroll.refresh()
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="上拉情况下的导航条固定"><a href="#上拉情况下的导航条固定" class="headerlink" title="上拉情况下的导航条固定"></a>上拉情况下的导航条固定</h2><p>由于首页的选项卡组件使用了固定定位，但是这是当往下滑动时候的布局样式（一直往下滑动获取新的书籍信息时，此时选项卡固定在页面最上方），对此，我们单独再复制一份选项卡组件，使用v-show指定控制它的显示与否；而显示条件需要我们获取到临界高度，一旦大于这个高度时，就让组件固定展示。</p>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; Home.vue中的JavaScript代码片段
+&#x2F;&#x2F; 控制选项卡是否被固定
+let isTabFixed &#x3D; ref(false)
+&#x2F;&#x2F;   绑定滚动的回调函数
+bscroll.on(&#39;scroll&#39;, (position) &#x3D;&gt; &#123;
+  isTabFixed.value &#x3D; -position.y&gt;banref.value.offsetHeight
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -996,7 +1009,7 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -1006,7 +1019,7 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -1016,13 +1029,13 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -1032,7 +1045,7 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -1047,7 +1060,7 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1221,7 +1234,7 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/03/07/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/">
                     <div class="card-image">
@@ -1257,7 +1270,7 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/03/01/Vue3-TypeScript%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E8%87%AA%E7%BB%83/">
@@ -1319,7 +1332,7 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1425,13 +1438,13 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1484,8 +1497,8 @@ bscroll.on(&#39;scroll&#39;, (position) =&gt; &#123;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

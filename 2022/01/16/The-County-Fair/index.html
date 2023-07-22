@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -58,7 +58,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -69,7 +69,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -80,7 +80,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -91,7 +91,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -102,7 +102,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -113,7 +113,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -124,14 +124,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -159,7 +159,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -170,7 +170,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -181,7 +181,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -192,7 +192,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -203,7 +203,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -214,7 +214,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -225,7 +225,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -442,7 +442,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -454,7 +454,7 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-01-16
                 </div>
                 
@@ -463,8 +463,8 @@
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    627
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    660
                 </div>
                 
 
@@ -476,6 +476,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
+        
 
         
 
@@ -483,25 +486,25 @@
             <div id="articleContent">
                 <h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>首先需要明确的是，我们要尽可能地按照礼品发放时间先后顺序考虑来拿取礼品，这样才会拿到数量更多的礼品。<br>这里提供一种动态规划的思路做法。我们需要用数组存储每一个集市以及它发放礼品的时间。在按照时间从小到大顺序排序（sort）之后，考虑第i个礼品拿到的情况下，前i个礼品中拿到礼品的数量，记作dp[i]。此时，需要遍历i号元素之前的所有元素。一旦时间上可以满足“从j号集市赶到i号集市，拿到i号集市的礼品”，就考虑是否更新dp[i]（考虑原来的dp[i]和dp[j]+1哪个更大）。不满足dp[i]保持不变。状态转移方程即为：</p>
 <p><code>dp[i] = max(dp[i], dp[j]+1)    // j小于i，</code></p>
-<h2 id="关键代码实现"><a href="#关键代码实现" class="headerlink" title="关键代码实现"></a>关键代码实现</h2><pre><code class="C++">typedef pair&lt;int, int&gt; P;    // &lt;集市号，分发时间&gt;
+<h2 id="关键代码实现"><a href="#关键代码实现" class="headerlink" title="关键代码实现"></a>关键代码实现</h2><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef pair&lt;int, int&gt; P;	&#x2F;&#x2F; &lt;集市号，分发时间&gt;
 
-int mapt[405][405];    // t_i,j
+int mapt[405][405];	&#x2F;&#x2F; t_i,j
 P mak[405];
 
-for (int i = 1; i &lt;= n; i++)
+for (int i &#x3D; 1; i &lt;&#x3D; n; i++)
 &#123;
-    for (int j = 0; j &lt; i; j++)
+    for (int j &#x3D; 0; j &lt; i; j++)
     &#123;
-        // 表示可以赶上第i个礼品发放时间
-        if (mapt[mak[j].first][mak[i].first] + mak[j].second &lt;= mak[i].second)
+        &#x2F;&#x2F; 表示可以赶上第i个礼品发放时间
+        if (mapt[mak[j].first][mak[i].first] + mak[j].second &lt;&#x3D; mak[i].second)
         &#123;
-            dp[i] = (dp[j] + 1) &gt; dp[i] ? (dp[j] + 1) : dp[i];
+            dp[i] &#x3D; (dp[j] + 1) &gt; dp[i] ? (dp[j] + 1) : dp[i];
         &#125;
-        // 如果赶不上，默认dp[i]保持不变，不作处理
+        &#x2F;&#x2F; 如果赶不上，默认dp[i]保持不变，不作处理
     &#125;
-&#125;
-</code></pre>
-<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre><code class="C++">#include &lt;iostream&gt;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 using namespace std;
 typedef long long ll;
@@ -521,40 +524,38 @@ bool com(P a, P b)
 int main()
 &#123;
     cin &gt;&gt; n;
-    for (int i = 1; i &lt;= n; i++)
+    for (int i &#x3D; 1; i &lt;&#x3D; n; i++)
     &#123;
         int t;
         cin &gt;&gt; t;
-        mak[i] = &#123; i,t &#125;;
+        mak[i] &#x3D; &#123; i,t &#125;;
     &#125;
-    mak[0] = &#123; 1,0 &#125;;   // 记录初始情况，t=0，从1号集市开始
-    for (int i = 1; i &lt;= n; i++)
+    mak[0] &#x3D; &#123; 1,0 &#125;;   &#x2F;&#x2F; 记录初始情况，t&#x3D;0，从1号集市开始
+    for (int i &#x3D; 1; i &lt;&#x3D; n; i++)
     &#123;
-        for (int j = 1; j &lt;= n; j++)
+        for (int j &#x3D; 1; j &lt;&#x3D; n; j++)
         &#123;
             cin &gt;&gt; mapt[i][j];
         &#125;
     &#125;
     sort(mak + 1, mak + 1 + n, com);
    
-    for (int i = 1; i &lt;= n; i++)
+    for (int i &#x3D; 1; i &lt;&#x3D; n; i++)
     &#123;
-        for (int j = 0; j &lt; i; j++)
+        for (int j &#x3D; 0; j &lt; i; j++)
         &#123;
-            //表示可以赶上第i个礼品发放时间
-            if (mapt[mak[j].first][mak[i].first] + mak[j].second &lt;= mak[i].second)
+            &#x2F;&#x2F;表示可以赶上第i个礼品发放时间
+            if (mapt[mak[j].first][mak[i].first] + mak[j].second &lt;&#x3D; mak[i].second)
             &#123;
-                dp[i] = (dp[j] + 1) &gt; dp[i] ? (dp[j] + 1) : dp[i];
+                dp[i] &#x3D; (dp[j] + 1) &gt; dp[i] ? (dp[j] + 1) : dp[i];
             &#125;
         &#125;
     &#125;
     
-    // 注意，需要综合考虑所有的dp，取其中的最大值，因为之前的“dp[i]表示第i个礼品一定取到”只是一个假设，但是总会取到一个礼品，使得最后的礼品数量最多
+    &#x2F;&#x2F; 注意，需要综合考虑所有的dp，取其中的最大值，因为之前的“dp[i]表示第i个礼品一定取到”只是一个假设，但是总会取到一个礼品，使得最后的礼品数量最多
     sort(dp + 1, dp + 1 + n);
     cout &lt;&lt; dp[n] &lt;&lt; endl;
-&#125;
-</code></pre>
-
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -566,7 +567,7 @@ int main()
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -576,7 +577,7 @@ int main()
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -586,13 +587,13 @@ int main()
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -602,7 +603,7 @@ int main()
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -617,7 +618,7 @@ int main()
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -791,7 +792,7 @@ int main()
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/01/20/%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/">
                     <div class="card-image">
@@ -827,7 +828,7 @@ int main()
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/01/15/fs%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%A8%A1%E5%9D%97/">
@@ -889,7 +890,7 @@ int main()
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -995,13 +996,13 @@ int main()
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1054,8 +1055,8 @@ int main()
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

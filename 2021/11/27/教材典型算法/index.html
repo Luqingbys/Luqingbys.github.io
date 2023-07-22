@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -65,7 +65,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -76,7 +76,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -87,7 +87,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -98,7 +98,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -109,7 +109,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -120,7 +120,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -131,14 +131,14 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -166,7 +166,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -177,7 +177,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -188,7 +188,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -199,7 +199,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -210,7 +210,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -221,7 +221,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -232,7 +232,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -449,7 +449,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -470,7 +470,7 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2021-11-27
                 </div>
                 
@@ -479,8 +479,8 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.5k
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.7k
                 </div>
                 
 
@@ -492,6 +492,9 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
+        
 
         
 
@@ -500,89 +503,89 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
                 <h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><h3 id="树的遍历算法"><a href="#树的遍历算法" class="headerlink" title="树的遍历算法"></a>树的遍历算法</h3><ol>
 <li>先序遍历</li>
 </ol>
-<pre><code class="C++">void Preorder(BiTree T, void (*visit)(TElemType&amp; e))
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void Preorder(BiTree T, void (*visit)(TElemType&amp; e))
 &#123;
     if(T)
     &#123;
-        visit(T-&gt;data); // 先访问根结点
-        // 再递归访问左子树和柚子树
+        visit(T-&gt;data); &#x2F;&#x2F; 先访问根结点
+        &#x2F;&#x2F; 再递归访问左子树和柚子树
         Preorder(T-&gt;lchild, visit);
         Preorder(T-&gt;rchild, visit);
     &#125;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>先序、中序、后序遍历算法思路几乎完全一致，不再赘述。<br>2. 中序遍历的非递归描述</p>
-<pre><code class="C++">// 对于中序遍历一棵二叉树，第一个要访问的根结点一定是最左边的结点
-// 因此，GoFarLeft函数的功能就是对二叉树T，寻找最左边的结点
-// 同时，用一个栈S保存每一次的根结点，它是中序遍历的中间访问者
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F; 对于中序遍历一棵二叉树，第一个要访问的根结点一定是最左边的结点
+&#x2F;&#x2F; 因此，GoFarLeft函数的功能就是对二叉树T，寻找最左边的结点
+&#x2F;&#x2F; 同时，用一个栈S保存每一次的根结点，它是中序遍历的中间访问者
 BiTNode *GoFarLeft(BiTree T, Stack *S)
 &#123;
-    // 代表当前根结点不存在了，返回空
+    &#x2F;&#x2F; 代表当前根结点不存在了，返回空
     if(!T)  return NULL;
-    // 当前根结点有左子树，往左继续寻找
+    &#x2F;&#x2F; 当前根结点有左子树，往左继续寻找
     while(T-&gt;lchild)
     &#123;
         Push(S, T);
-        T = T-&gt;lchild;
+        T &#x3D; T-&gt;lchild;
     &#125;
     return T;
 &#125;
 
-// 非递归的中序遍历算法
+&#x2F;&#x2F; 非递归的中序遍历算法
 void Inorder_I(BiTree T, void (*visit)(TelemType&amp; e))
 &#123;
     Stack *S;
-    t = GoFarLeft(T, S);    // 寻找最左下边的结点
-    // 每一次循环，访问一个结点
+    t &#x3D; GoFarLeft(T, S);    &#x2F;&#x2F; 寻找最左下边的结点
+    &#x2F;&#x2F; 每一次循环，访问一个结点
     while(t)
     &#123;
         visit(t-&gt;data);
-        // 如果t有柚子树，就得继续遍历柚子树，用相同的方式
+        &#x2F;&#x2F; 如果t有柚子树，就得继续遍历柚子树，用相同的方式
         if(t-&gt;rchild)
-            t = GoFarLeft(t-&gt;rchild, S);
-        // t没有柚子树，t本来就没有左子树，则应该访问其父结点了，S中存放了结点路径
+            t &#x3D; GoFarLeft(t-&gt;rchild, S);
+        &#x2F;&#x2F; t没有柚子树，t本来就没有左子树，则应该访问其父结点了，S中存放了结点路径
         else if(!StackEmpty(S))
-            t = Pop(S);
+            t &#x3D; Pop(S);
         else
-            t = NULL;
+            t &#x3D; NULL;
     &#125;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>非递归。<br>3. 求二叉树的深度</p>
-<pre><code class="C++">int Depth(BiTree T)
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int Depth(BiTree T)
 &#123;
-    if(!T)  depthval = 0;
+    if(!T)  depthval &#x3D; 0;
     else 
     &#123;
-        depthLeft = Depth(T-&gt;lchild);
-        depthRight = Depth(T-&gt;lchild);
-        depthval = (depthLeft &gt; depthRight ? depthLeft : depthRight) + 1;
+        depthLeft &#x3D; Depth(T-&gt;lchild);
+        depthRight &#x3D; Depth(T-&gt;lchild);
+        depthval &#x3D; (depthLeft &gt; depthRight ? depthLeft : depthRight) + 1;
     &#125;
     return depthval;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>求深度。<br>4. 建树<br>已知一棵二叉树的先序遍历和中序遍历，还原这棵二叉树。</p>
-<pre><code class="C++">void CrtBT(BiTree&amp; T, char pre[], char ino[], int ps, int is, int n)
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void CrtBT(BiTree&amp; T, char pre[], char ino[], int ps, int is, int n)
 &#123;
-    if(n == 0)  T = NULL;
+    if(n &#x3D;&#x3D; 0)  T &#x3D; NULL;
     else 
     &#123;
-        k = Search(ino, pre[ps]);
-        if(k == -1) T = NULL;
+        k &#x3D; Search(ino, pre[ps]);
+        if(k &#x3D;&#x3D; -1) T &#x3D; NULL;
         else
         &#123;
-            T = (BiTNode*)malloc(sizeof(BiTNode));
-            T-&gt;data = pre[ps];
-            if(k == is) T-&gt;Lchild = NULL;
+            T &#x3D; (BiTNode*)malloc(sizeof(BiTNode));
+            T-&gt;data &#x3D; pre[ps];
+            if(k &#x3D;&#x3D; is) T-&gt;Lchild &#x3D; NULL;
             else    CrtBT(T-&gt;Lchild, pre[], ino[], ps+1, is, k - is);
-            if(k == is+n-1) T-&gt;Rchild = NULL;
+            if(k &#x3D;&#x3D; is+n-1) T-&gt;Rchild &#x3D; NULL;
             else    CrtBT(T-&gt;Rchild, pre[], ino[], ps+1+(k-is), k+1, n-(k-is)-1);
         &#125;
     &#125;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>555<br>5. 二叉树按层次遍历</p>
-<pre><code class="C++">Status LevelOrderTravel(BiTree T)
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status LevelOrderTravel(BiTree T)
 &#123;
     Queue Q;
     InitQueue(Q);
@@ -594,15 +597,15 @@ void Inorder_I(BiTree T, void (*visit)(TelemType&amp; e))
         if(E-&gt;lchild)   EnQueue(Q, E-&gt;lchild);
         if(E-&gt;rchild)   EnQueue(Q, E-&gt;rchild);
     &#125;
-&#125;
-</code></pre>
-<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><pre><code class="C++">void DFSTravel(Graph G)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void DFSTravel(Graph G)
 &#123;
-    for(v=0; v &lt; G.Vexnum; ++v)
+    for(v&#x3D;0; v &lt; G.Vexnum; ++v)
     &#123;
-        visited[v] = false;
+        visited[v] &#x3D; false;
     &#125;
-    for(v=0; v &lt; G.Vexnum; ++v)
+    for(v&#x3D;0; v &lt; G.Vexnum; ++v)
     &#123;
         if(!visited[v]) DFS(G, v);
     &#125;
@@ -610,111 +613,111 @@ void Inorder_I(BiTree T, void (*visit)(TelemType&amp; e))
 
 void DFS(Graph G, int v)
 &#123;
-    visited[v] = true;
+    visited[v] &#x3D; true;
     printf();
-    for(w=0; w &lt; G.vexnum; w++)
-        if(G.arcs[v][w].adj != 0 &amp;&amp; !visited[w])
+    for(w&#x3D;0; w &lt; G.vexnum; w++)
+        if(G.arcs[v][w].adj !&#x3D; 0 &amp;&amp; !visited[w])
             DFS(G, w);
-&#125;
-</code></pre>
-<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><pre><code class="C++">// 求各顶点入度
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F; 求各顶点入度
 void FindInDegree(ALGraph G, int indegree[])
 &#123;
     int i;
     ArcNode *p;
-    for(i=0; i &lt; G.vexnum; i++)
+    for(i&#x3D;0; i &lt; G.vexnum; i++)
     &#123;
         while(p)
         &#123;
             indegree[p-&gt;adjvex]++;
-            p = p-&gt;next;
+            p &#x3D; p-&gt;next;
         &#125;
     &#125;
-&#125;
-</code></pre>
-<h3 id="迪杰斯特拉算法"><a href="#迪杰斯特拉算法" class="headerlink" title="迪杰斯特拉算法"></a>迪杰斯特拉算法</h3><pre><code class="C++">// final[]记录当前结点是否已经求出最短路径
-// D[]记录当前所找的源点到每一个终点的最短路径长度
-// P[]记录路径
-// v0表示初始单源点起点
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="迪杰斯特拉算法"><a href="#迪杰斯特拉算法" class="headerlink" title="迪杰斯特拉算法"></a>迪杰斯特拉算法</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F; final[]记录当前结点是否已经求出最短路径
+&#x2F;&#x2F; D[]记录当前所找的源点到每一个终点的最短路径长度
+&#x2F;&#x2F; P[]记录路径
+&#x2F;&#x2F; v0表示初始单源点起点
 void ShortestPath_DIJ(MGraph G, int v0, int &amp;P, float &amp;D)
 &#123;
-    int i=0,j,v,w,min,final[N];
-    for(v=0; v &lt; G.vexnum; ++v)
+    int i&#x3D;0,j,v,w,min,final[N];
+    for(v&#x3D;0; v &lt; G.vexnum; ++v)
     &#123;
-        final[v] = FALSE;
-        D[v] = G.arcs[v0][v];
-        P[v] = -1;
-        if(D[v] &lt; INFINITY) P[v] = v0;
-        final[v0] = TRUE;
-        P[v0] = -1;
+        final[v] &#x3D; FALSE;
+        D[v] &#x3D; G.arcs[v0][v];
+        P[v] &#x3D; -1;
+        if(D[v] &lt; INFINITY) P[v] &#x3D; v0;
+        final[v0] &#x3D; TRUE;
+        P[v0] &#x3D; -1;
     &#125;
 
-    // 确定下一次的出发点
-    for(i=1; i &lt; G.vexnum; i++)
+    &#x2F;&#x2F; 确定下一次的出发点
+    for(i&#x3D;1; i &lt; G.vexnum; i++)
     &#123;
-        // 要找到当前还未确定最小路径长度的最小值
-        min = INFINITY;
-        for(w=0; w &lt; G.vexnum; ++w)
+        &#x2F;&#x2F; 要找到当前还未确定最小路径长度的最小值
+        min &#x3D; INFINITY;
+        for(w&#x3D;0; w &lt; G.vexnum; ++w)
         if(!final[w])
             if(D[w] &lt; min)
             &#123;
-                v = w;
-                min = D[w];
+                v &#x3D; w;
+                min &#x3D; D[w];
             &#125;
     &#125;
 
-    final[v] = TRUE;    // 一旦确定了最小值，那么源点到它的最短路径也就确定了
+    final[v] &#x3D; TRUE;    &#x2F;&#x2F; 一旦确定了最小值，那么源点到它的最短路径也就确定了
 
-    // 以这次的顶点v为起始点，进行最短路径的更新
-    for(w=0; w &lt; G.vexnum; ++w)
+    &#x2F;&#x2F; 以这次的顶点v为起始点，进行最短路径的更新
+    for(w&#x3D;0; w &lt; G.vexnum; ++w)
     &#123;
         if(!final[w] &amp;&amp; (min+G.arcs[v][w] &lt; D[w]))
         &#123;
-            // 对满足条件的顶点，更新需要更新最短路径和最短路径长
-            D[w] = min + G.arcs[v][w].adj;
-            P[w] = v;
+            &#x2F;&#x2F; 对满足条件的顶点，更新需要更新最短路径和最短路径长
+            D[w] &#x3D; min + G.arcs[v][w].adj;
+            P[w] &#x3D; v;
         &#125;
     &#125;
-&#125;
-</code></pre>
-<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><pre><code class="C++">void InsertionSort(SqList &amp;L)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void InsertionSort(SqList &amp;L)
 &#123;
     int i,j;
-    // 从第二项开始排序
-    for(i = 2; i &lt;= L.length; ++i)
+    &#x2F;&#x2F; 从第二项开始排序
+    for(i &#x3D; 2; i &lt;&#x3D; L.length; ++i)
     &#123;
-        // 每一次排序前面的都已经排序好了
+        &#x2F;&#x2F; 每一次排序前面的都已经排序好了
         if(L.r[i].key &lt; L.r[i-1].key)
         &#123;
-            L.r[0] = L.r[i];    // 复制为监视哨
-            for(j = i-1; L.r[0].key &lt; L.r[j].key; --j)
+            L.r[0] &#x3D; L.r[i];    &#x2F;&#x2F; 复制为监视哨
+            for(j &#x3D; i-1; L.r[0].key &lt; L.r[j].key; --j)
             &#123;
-                L.r[j+1] = L.r[j];  // 记录后移
+                L.r[j+1] &#x3D; L.r[j];  &#x2F;&#x2F; 记录后移
             &#125;
-            L.r[j+1] = L.r[0];  // 插入到正确的位置
+            L.r[j+1] &#x3D; L.r[0];  &#x2F;&#x2F; 插入到正确的位置
         &#125;
     &#125;
-&#125;
-</code></pre>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><pre><code class="C++">int Partition(SqList &amp;L, int low, int high)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int Partition(SqList &amp;L, int low, int high)
 &#123;
     KeyType pivotkey;
-    L.r[0] = L.r[low];
-    pivotkey = L.r[low].key;
+    L.r[0] &#x3D; L.r[low];
+    pivotkey &#x3D; L.r[low].key;
     while(low &lt; high)
     &#123;
-        // 从高位开始遍历，确保元素都大于枢轴
-        while(low &lt; high &amp;&amp; L.r[high].key &gt;= pivotkey)
+        &#x2F;&#x2F; 从高位开始遍历，确保元素都大于枢轴
+        while(low &lt; high &amp;&amp; L.r[high].key &gt;&#x3D; pivotkey)
             --high;
-        L.r[low] = L.r[high];
+        L.r[low] &#x3D; L.r[high];
 
-        // 从地位开始遍历，确保元素都小于枢轴
-        while(low &lt; high &amp;&amp; L.r[low].key &lt;= povotkey)
+        &#x2F;&#x2F; 从地位开始遍历，确保元素都小于枢轴
+        while(low &lt; high &amp;&amp; L.r[low].key &lt;&#x3D; povotkey)
             ++low;
-        L.r[high] = L.r[low];
+        L.r[high] &#x3D; L.r[low];
     &#125;
-    L.r[low] = L.r[0];
-    return low; // 返回枢轴最后的位置
+    L.r[low] &#x3D; L.r[0];
+    return low; &#x2F;&#x2F; 返回枢轴最后的位置
 &#125;
 
 void QSort(SqList &amp;L, int low, int high)
@@ -722,58 +725,57 @@ void QSort(SqList &amp;L, int low, int high)
     int pivotloc;
     if(low &lt; high)
     &#123;
-        pivotloc = Partition(L, low, high);
+        pivotloc &#x3D; Partition(L, low, high);
         QSort(L, low, pivotloc-1);
         QSort(L, pivotloc+1, high);
     &#125;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>筛选算法：</p>
-<pre><code class="C++">// 调整堆结构
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F; 调整堆结构
 void HeapAdjust(HeapType &amp;H, int s, int m)
 &#123;
     int j;
     RedType rc;
-    rc = H.r[s];    // 将堆顶元素暂存下来到rc
-    for(j=2*s; j &lt;= m; j*=2)
+    rc &#x3D; H.r[s];    &#x2F;&#x2F; 将堆顶元素暂存下来到rc
+    for(j&#x3D;2*s; j &lt;&#x3D; m; j*&#x3D;2)
     &#123;
-        // 横比，j初始值指向左孩子
+        &#x2F;&#x2F; 横比，j初始值指向左孩子
         if(j &lt; m &amp;&amp; H.r[j].key &lt; H.r[j+1].key)
             j++;
-        // 纵比，如果右孩子比父节点小，表示该堆不需要调整
-        if(rc.key &gt;= H.r[j].key)    break;
-        H.r[s] = H.r[j];
-        s = j;
-        // j*=2,表示进入下一个堆结构
+        &#x2F;&#x2F; 纵比，如果右孩子比父节点小，表示该堆不需要调整
+        if(rc.key &gt;&#x3D; H.r[j].key)    break;
+        H.r[s] &#x3D; H.r[j];
+        s &#x3D; j;
+        &#x2F;&#x2F; j*&#x3D;2,表示进入下一个堆结构
     &#125;
-    H.r[s] = rc;
-&#125;
-</code></pre>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><pre><code class="C++">void Merge(RcdType SR[], RcdType &amp;TR[], int i, int m, in t n)
+    H.r[s] &#x3D; rc;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void Merge(RcdType SR[], RcdType &amp;TR[], int i, int m, in t n)
 &#123;
-    for(j = m+1, k=i; i &lt;= m &amp;&amp; j &lt;= n; ++k)
+    for(j &#x3D; m+1, k&#x3D;i; i &lt;&#x3D; m &amp;&amp; j &lt;&#x3D; n; ++k)
     &#123;
         if(SR[i].key &lt; SR[i].key)
-            TR[k] = SR[i++];
+            TR[k] &#x3D; SR[i++];
         else
-            TR[k] = SR[j++];
+            TR[k] &#x3D; SR[j++];
     &#125;
-    while(i &lt;= m)   TR[k++] = SR[i++];
-    while(j &lt;= n)   TR[k++] = SR[j++];
+    while(i &lt;&#x3D; m)   TR[k++] &#x3D; SR[i++];
+    while(j &lt;&#x3D; n)   TR[k++] &#x3D; SR[j++];
 &#125;
 
 void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
 &#123;
-    if(s==t)    TR[s] = SR[s];
+    if(s&#x3D;&#x3D;t)    TR[s] &#x3D; SR[s];
     else
     &#123;
-        m = (s+t)/2;
+        m &#x3D; (s+t)&#x2F;2;
         MSort(SR, TR2, s, m);
         MSort(SR, TR2, m+1, t);
         Merge(TR2, TR, s, m, t);
     &#125;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -786,7 +788,7 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -796,7 +798,7 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -806,13 +808,13 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -822,7 +824,7 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -837,7 +839,7 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1011,7 +1013,7 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2021/11/28/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
                     <div class="card-image">
@@ -1051,7 +1053,7 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2021/11/25/%E7%BA%BF%E6%80%A7%E8%A1%A8/">
@@ -1117,7 +1119,7 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1223,13 +1225,13 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1282,8 +1284,8 @@ void MSort(RcdType SR[], RcdType &amp;TR[], int s, int t)
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

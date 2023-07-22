@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -61,7 +61,7 @@ static 表示该方法是一个静态方法，不需要创建">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -72,7 +72,7 @@ static 表示该方法是一个静态方法，不需要创建">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -83,7 +83,7 @@ static 表示该方法是一个静态方法，不需要创建">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -94,7 +94,7 @@ static 表示该方法是一个静态方法，不需要创建">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -105,7 +105,7 @@ static 表示该方法是一个静态方法，不需要创建">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -116,7 +116,7 @@ static 表示该方法是一个静态方法，不需要创建">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -127,14 +127,14 @@ static 表示该方法是一个静态方法，不需要创建">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -162,7 +162,7 @@ static 表示该方法是一个静态方法，不需要创建">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -173,7 +173,7 @@ static 表示该方法是一个静态方法，不需要创建">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -184,7 +184,7 @@ static 表示该方法是一个静态方法，不需要创建">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -195,7 +195,7 @@ static 表示该方法是一个静态方法，不需要创建">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -206,7 +206,7 @@ static 表示该方法是一个静态方法，不需要创建">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -217,7 +217,7 @@ static 表示该方法是一个静态方法，不需要创建">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -228,7 +228,7 @@ static 表示该方法是一个静态方法，不需要创建">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -445,7 +445,7 @@ static 表示该方法是一个静态方法，不需要创建">
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -466,7 +466,7 @@ static 表示该方法是一个静态方法，不需要创建">
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2021-11-08
                 </div>
                 
@@ -475,7 +475,7 @@ static 表示该方法是一个静态方法，不需要创建">
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
                     1.5k
                 </div>
                 
@@ -487,6 +487,9 @@ static 表示该方法是一个静态方法，不需要创建">
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
         
 
         
@@ -505,52 +508,52 @@ static 表示该方法是一个静态方法，不需要创建">
 <h2 id="对象的构造与初始化"><a href="#对象的构造与初始化" class="headerlink" title="对象的构造与初始化"></a>对象的构造与初始化</h2><p>此处需要提到一个很重要的概念————构造方法。<br>Java中的构造方法，与C++中的构造函数几乎完全对应。</p>
 <h2 id="子类与继承"><a href="#子类与继承" class="headerlink" title="子类与继承"></a>子类与继承</h2><h3 id="子类"><a href="#子类" class="headerlink" title="子类"></a>子类</h3><p>当两个类A，B满足“A is a B”关系时，我们可以将A声明为B的一个子类。</p>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>与C++类似，Java中也有继承概念。需要用到extends关键字：</p>
-<pre><code class="java">public class A extends B &#123;
-    ...
-&#125;
-</code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token keyword">extends</span> <span class="token class-name">B</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>表示类A继承自B，此时，A是子类，B是父类。<br>一旦继承完成，子类将默认具有父类中的所有属性和方法。</p>
 <p>Java只允许单重继承。Object类是Java程序中所有类的直接或者间接父类。</p>
 <h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>多态性是指同一个名字的若干个方法，有着不同的实现。<br>通过重载、重写完成多态性。</p>
-<h4 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h4><pre><code class="java">public class Test &#123;
-    public static void main(String[] args) &#123;
-        func(new Person());
-        func(new Student());
-        func(new Graduate());
-    &#125;
+<h4 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">func</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">func</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">func</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Graduate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    public static void func(Object o) &#123;
-        System.out.println(o.toString());
-    &#125;
-&#125;
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-class Person &#123;
-    public String toString() &#123;
-        return &quot;Person!&quot;;
-    &#125;
-&#125;
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"Person!"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-class Student extends Person &#123;
-    public String toString() &#123;
-        return &quot;Student!&quot;;
-    &#125;
-&#125;
+<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"Student!"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-class Graduate extends Student &#123;
-    public String toString() &#123;
-        return &quot;!&quot;;
-    &#125;
-&#125;
-</code></pre>
+<span class="token keyword">class</span> <span class="token class-name">Graduate</span> <span class="token keyword">extends</span> <span class="token class-name">Student</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"!"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>体会上述例子。Person、Student、Graduate均继承了Object的toString方法，却也都对其进行了重写。<br>而func()方法接收一个对象，动态调用对象本身的toString方法。我们称这种由Java虚拟机在运行时动态决定调用哪一个toString方法的能力为动态绑定。</p>
 <h4 id="转换对象"><a href="#转换对象" class="headerlink" title="转换对象"></a>转换对象</h4><p>Java允许使用对象的父类类型的一个变量指示该对象，称为转换对象。</p>
-<pre><code class="java">// notice that: Manager is an Employee.
-Employee e = new Manager();
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// notice that: Manager is an Employee.</span>
+<span class="token class-name">Employee</span> e <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Manager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-Employee e;
-Manager m = new Manager();
-e = m;
-</code></pre>
+<span class="token class-name">Employee</span> e<span class="token punctuation">;</span>
+<span class="token class-name">Manager</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Manager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+e <span class="token operator">=</span> m<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们称e是m的转换对象。相较于原对象m，转换对象e会丢失原对象相对于父类的新增方法、属性。实际应用中，我们可以判断该对象是否是子类的实例。如果是，就强制类型转换该对象（引用），使其恢复全部功能。</p>
 <h4 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h4><p>子类重写父类方法的情况：</p>
 <ul>
@@ -569,23 +572,23 @@ e = m;
 <h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><h4 id="什么是抽象类"><a href="#什么是抽象类" class="headerlink" title="什么是抽象类"></a>什么是抽象类</h4><p>抽象类是指不能用来创建实例对象的类。通常可以通过关键字abstract将一个类定义为抽象类。<br>在抽象类中，每一个未被定义具体实现的方法也标记为abstract，称为抽象方法。<br>抽象类可以包含抽象方法和非抽象方法。</p>
 <p>抽象类的存在，是强迫程序员必须在抽象类的子类中实现相应的抽象方法，以创建实例对象，否则子类仍然是抽象类，不能用来创建实例对象。</p>
 <h4 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h4><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>接口的最大特点：接口中所有的方法都是抽象方法体，可以将接口看成特殊的抽象类。</p>
-<h4 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h4><pre><code class="java">interface Storage &#123;
-    Object storage[] = new Object[100];
-    void put(Object o);
-    Object get();
-&#125;
-</code></pre>
+<h4 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">Storage</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Object</span> storage<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Object</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>接口也具有数据成员和方法，但是数据成员都必须赋初值，并且方法必须是抽象方法。</p>
-<h4 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h4><pre><code class="java">class StackStorage implements Storage &#123;
-    private int point = 0;
-    int objectNum = 0;
-    public void put(Object o) &#123;
-        storage[point++] = o;
-        objectNum++;
-    &#125;
-    ...
-&#125;
-</code></pre>
+<h4 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">StackStorage</span> <span class="token keyword">implements</span> <span class="token class-name">Storage</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> point <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> objectNum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        storage<span class="token punctuation">[</span>point<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> o<span class="token punctuation">;</span>
+        objectNum<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>一般，可以通过接口实现“多重继承”，接口的实现，实际上是实现类对接口中抽象方法的重写。</p>
 <h4 id="接口回调"><a href="#接口回调" class="headerlink" title="接口回调"></a>接口回调</h4><p>接口变量，是用接口声明的变量，可以用来调用被类实现的接口方法。</p>
 <h4 id="接口的多样性"><a href="#接口的多样性" class="headerlink" title="接口的多样性"></a>接口的多样性</h4><p>由接口产生的多态性是指不同的类在实现同一个接口时可能具有不同的实现方式，那么接口变量在回调接口方法时就可能具有多种形态。类似之前抽象类中的动态绑定。</p>
@@ -601,7 +604,7 @@ e = m;
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -611,7 +614,7 @@ e = m;
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -621,13 +624,13 @@ e = m;
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -637,7 +640,7 @@ e = m;
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -652,7 +655,7 @@ e = m;
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -826,7 +829,7 @@ e = m;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2021/11/09/%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB-1/">
                     <div class="card-image">
@@ -874,7 +877,7 @@ e = m;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2021/11/08/%E6%95%B0%E7%BB%84%E3%80%81%E6%9E%9A%E4%B8%BE%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%AE%B9%E5%99%A8/">
@@ -940,7 +943,7 @@ e = m;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1046,13 +1049,13 @@ e = m;
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1105,8 +1108,8 @@ e = m;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

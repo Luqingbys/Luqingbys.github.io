@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -65,7 +65,7 @@ Symb">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -76,7 +76,7 @@ Symb">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -87,7 +87,7 @@ Symb">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -98,7 +98,7 @@ Symb">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -109,7 +109,7 @@ Symb">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -120,7 +120,7 @@ Symb">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -131,14 +131,14 @@ Symb">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -166,7 +166,7 @@ Symb">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -177,7 +177,7 @@ Symb">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -188,7 +188,7 @@ Symb">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -199,7 +199,7 @@ Symb">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -210,7 +210,7 @@ Symb">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -221,7 +221,7 @@ Symb">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -232,7 +232,7 @@ Symb">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -449,7 +449,7 @@ Symb">
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -461,7 +461,7 @@ Symb">
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-01-26
                 </div>
                 
@@ -470,8 +470,8 @@ Symb">
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.4k
                 </div>
                 
 
@@ -482,6 +482,9 @@ Symb">
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
         
 
         
@@ -499,111 +502,115 @@ Symb">
 <li>BigInt（来自ES10）</li>
 </ul>
 <p>以上，前五种来自ES5，后面两种诞生较迟。</p>
-<pre><code class="TypeScript">let isDone: boolean = flase
-let num: number = 9
-let str: string = &#39;Tom&#39;
-let sentence: string = `My name is $&#123;str&#125;`
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">let isDone: boolean &#x3D; flase
+let num: number &#x3D; 9
+let str: string &#x3D; &#39;Tom&#39;
+let sentence: string &#x3D; &#96;My name is $&#123;str&#125;&#96;
 function sayHello(): void &#123;
-    console.log(&#39;Hello!&#39; + sentence)
+	console.log(&#39;Hello!&#39; + sentence)
 &#125;
-let un: undefined = undefined
-</code></pre>
-<p>在TypeScript中，还有一种重要的数据类型——元组（tuple）。</p>
-<pre><code class="TypeScript">// 如下即声明了一个元组：一对值为string、number的元组
-let mar: [string, number] = [&#39;Mar&#39;, 28]
+let un: undefined &#x3D; undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-// 访问元组的元素：索引下标访问即可
+<p>在TypeScript中，还有一种重要的数据类型——元组（tuple）。</p>
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 如下即声明了一个元组：一对值为string、number的元组
+let mar: [string, number] &#x3D; [&#39;Mar&#39;, 28]
+
+&#x2F;&#x2F; 访问元组的元素：索引下标访问即可
 console.log(mar[0]);
 console.log(mar[1]);
 
-// 此时，若向mar中再添加元素，添加的第一个只能是字符串，第二个只能是number
+&#x2F;&#x2F; 此时，若向mar中再添加元素，添加的第一个只能是字符串，第二个只能是number
 mar.push(&#39;Hah&#39;)
-mar.push(90)
-</code></pre>
+mar.push(90)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
 <h2 id="任意值"><a href="#任意值" class="headerlink" title="任意值"></a>任意值</h2><p>对于规定了数据类型的变量，在赋值过程中不允许被改变类型，否则报错。<br>但是规定为any类型，则是可以被赋值为任意类型的。</p>
-<pre><code class="TypeScript">let anything: any = &#39;Tom&#39;
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">let anything: any &#x3D; &#39;Tom&#39;
 console.log(anything.name);
-console.log(anything.age);  // 均输出 undefined
-</code></pre>
+console.log(anything.age);  &#x2F;&#x2F; 均输出 undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h2><p>类型推论规则：在变量赋值时，虽然有时候并没有指定类型，但是会根据赋值的结果自动推断其类型。</p>
-<pre><code class="TypeScript">let str = &#39;Hello&#39;    // 会根据&#39;Hello&#39;自动将str规定为string类型
-let anyone            // 若没有赋值，则自动为any类型
-</code></pre>
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">let str &#x3D; &#39;Hello&#39;	&#x2F;&#x2F; 会根据&#39;Hello&#39;自动将str规定为string类型
+let anyone			&#x2F;&#x2F; 若没有赋值，则自动为any类型<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h2 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h2><p>使用 | 将多个可能的数据类型分隔。</p>
-<pre><code class="TypeScript">let identity: string | number    // 允许identity变量是string或者number类型
-identity = &#39;872092&#39;
-identity = 872092
-</code></pre>
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">let identity: string | number	&#x2F;&#x2F; 允许identity变量是string或者number类型
+identity &#x3D; &#39;872092&#39;
+identity &#x3D; 872092<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>但是，即使是联合类型的变量，在赋值时也会根据类型推论的规则，推断出来一个类型。</p>
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是对行为的抽象，此外，在TypeScript中，它也常用于对对象的形状进行描述。</p>
-<pre><code class="TypeScript">// interface就是接口的关键字
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; interface就是接口的关键字
 interface Person &#123;
     name: string;
     age: number;
-    readonly indentity: string | number;    // readonly 表示成员只读
-    birthPlace?: string; // ?表示可选属性，允许变量与接口在该成员上的不完全匹配
-    [propName: string | number]: any    // 表示可选属性和确定属性都必须是string或者number类型
+    readonly indentity: string | number;	&#x2F;&#x2F; readonly 表示成员只读
+    birthPlace?: string; &#x2F;&#x2F; ?表示可选属性，允许变量与接口在该成员上的不完全匹配
+    [propName: string | number]: any	&#x2F;&#x2F; 表示可选属性和确定属性都必须是string或者number类型
 &#125;
-// 定义的变量中，必须严格按照接口来声明成员，多一个、少一个都不可以
-let tom: Person = &#123;
+&#x2F;&#x2F; 定义的变量中，必须严格按照接口来声明成员，多一个、少一个都不可以
+let tom: Person &#x3D; &#123;
     name: &#39;Tom&#39;
-&#125;;
-</code></pre>
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>readonly关键字，用于声明某一成员为只读属性，注意这个只读是针对第一次给对象赋值时候的约束，而不是第一次给该只读属性赋值时。</li>
 <li>[propName: string]，表示定义了任意属性取string类型的值</li>
 </ul>
-<h2 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h2><pre><code class="TypeScript">let fibonacci: number[] = [1, 1, 2, 3, 5]
-let fibonacci2: Array&lt;number&gt; = [1, 1, 2, 3, 5]
-</code></pre>
+<h2 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h2><pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">let fibonacci: number[] &#x3D; [1, 1, 2, 3, 5]
+let fibonacci2: Array&lt;number&gt; &#x3D; [1, 1, 2, 3, 5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>接口中也可以描述数组：</p>
-<pre><code class="TypeScript">interface NumberArray &#123;
-    // 表示：只要索引（下标）类型是数字，那么值的类型必须是数字
-    [index: number]: number
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">interface NumberArray &#123;
+	&#x2F;&#x2F; 表示：只要索引（下标）类型是数字，那么值的类型必须是数字
+	[index: number]: number
 &#125;
-let fibonacci: NumberArray = [1, 1, 2, 3, 5]
-</code></pre>
+let fibonacci: NumberArray &#x3D; [1, 1, 2, 3, 5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h2><p>函数的两种写法：函数声明和函数表达式，它们的TypeScript写法如下：</p>
-<pre><code class="TypeScript">// 定义两数相加的函数
-// 函数声明
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 定义两数相加的函数
+&#x2F;&#x2F; 函数声明
 function sum(x: number, y: number): number &#123;
     return x + y
 &#125;
-console.log(sum(1, 1));     // 2
+console.log(sum(1, 1));     &#x2F;&#x2F; 2
 
-// 函数表达式
-// TypeScript的完整写法
-let mySum: (x: number, y: number) =&gt; number = function(x: number, y: number): number &#123;
+&#x2F;&#x2F; 函数表达式
+&#x2F;&#x2F; TypeScript的完整写法
+let mySum: (x: number, y: number) &#x3D;&gt; number &#x3D; function(x: number, y: number): number &#123;
     return x + y
 &#125;
-console.log(mySum(1, 1));   // 2
-</code></pre>
+console.log(mySum(1, 1));   &#x2F;&#x2F; 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>当然，由于函数表达式的写法较为繁琐，有时也可以采用接口方式声明。</p>
-<pre><code class="TypeScript">// 用接口定义函数形状
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 用接口定义函数形状
 interface SearchFunc &#123;
     (source: string, subString: string): boolean
 &#125;
 let mySearch: SearchFunc
-// 函数：判断一个字符串是否为另一个字符串的子串
-mySearch = function(source: string, subString: string) &#123;
-    return source.search(subString) !== -1
+&#x2F;&#x2F; 函数：判断一个字符串是否为另一个字符串的子串
+mySearch &#x3D; function(source: string, subString: string) &#123;
+    return source.search(subString) !&#x3D;&#x3D; -1
 &#125;
-console.log(mySearch(&#39;Hello, JavaScript!&#39;, &#39;Hello&#39;))
-</code></pre>
+console.log(mySearch(&#39;Hello, JavaScript!&#39;, &#39;Hello&#39;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h3><p>函数重载是为了准确地声明函数的接收参数和返回类型。</p>
-<pre><code class="TypeScript">// 函数重载
-// 函数功能: 接收参数,若为数字123,则返回321,若为字符串&#39;123&#39;,则返回&#39;hello&#39;
+<pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 函数重载
+&#x2F;&#x2F; 函数功能: 接收参数,若为数字123,则返回321,若为字符串&#39;123&#39;,则返回&#39;hello&#39;
 function reverse(x: number): number
 function reverse(x: string): string
-// 定义函数
+&#x2F;&#x2F; 定义函数
 function reverse(x: number | string): number | string | void &#123;
-    if( typeof x === &#39;number&#39;) &#123;
+    if( typeof x &#x3D;&#x3D;&#x3D; &#39;number&#39;) &#123;
         return Number(x.toString().split(&#39;&#39;).reverse().join(&#39;&#39;))
-    &#125; else if ( typeof x === &#39;string&#39; ) &#123;
+    &#125; else if ( typeof x &#x3D;&#x3D;&#x3D; &#39;string&#39; ) &#123;
         return x.split(&#39;&#39;).reverse().join()
     &#125;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h2><p>类型断言，即Type Assertion，用于手动指定一个值的类型。语法如：<br><code>值 as 类型</code></p>
 <h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ol>
 <li>将一个联合类型断言为其中一个类型，因为有时候我们确实需要其中一个类型特有的方法或者属性。</li>
@@ -611,8 +618,8 @@ function reverse(x: number | string): number | string | void &#123;
 <li>任何类型都可以被断言为any</li>
 <li>any可以被断言为任何类型</li>
 </ol>
-<h3 id="类型断言的限制"><a href="#类型断言的限制" class="headerlink" title="类型断言的限制"></a>类型断言的限制</h3><pre><code class="TypeScript">// 只有在兼容情况下，才可以使用断言
-// 兼容：可以类比为面向对象里的继承，下面的栗子中，我们可以说，Animal兼容Cat
+<h3 id="类型断言的限制"><a href="#类型断言的限制" class="headerlink" title="类型断言的限制"></a>类型断言的限制</h3><pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 只有在兼容情况下，才可以使用断言
+&#x2F;&#x2F; 兼容：可以类比为面向对象里的继承，下面的栗子中，我们可以说，Animal兼容Cat
 interface Animal &#123;
     name: string
 &#125;
@@ -620,8 +627,8 @@ interface Cat &#123;
     name: string
     run(): void
 &#125;
-// Animal和Cat可以相互断言
-</code></pre>
+&#x2F;&#x2F; Animal和Cat可以相互断言<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><p>内置对象，是指根据标准，在全局作用域上存在的对象，这里的标准指ECMAScript和其他环境（如DOM）的标准。</p>
 <h3 id="ES的内置对象"><a href="#ES的内置对象" class="headerlink" title="ES的内置对象"></a>ES的内置对象</h3><p>包括：</p>
 <ul>
@@ -649,7 +656,7 @@ interface Cat &#123;
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -659,7 +666,7 @@ interface Cat &#123;
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -669,13 +676,13 @@ interface Cat &#123;
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -685,7 +692,7 @@ interface Cat &#123;
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -700,7 +707,7 @@ interface Cat &#123;
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -874,7 +881,7 @@ interface Cat &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/01/27/TypeScript%E8%BF%9B%E9%98%B6/">
                     <div class="card-image">
@@ -910,7 +917,7 @@ interface Cat &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/01/25/Typescript%E6%A6%82%E8%BF%B0/">
@@ -972,7 +979,7 @@ interface Cat &#123;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1078,13 +1085,13 @@ interface Cat &#123;
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1137,8 +1144,8 @@ interface Cat &#123;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

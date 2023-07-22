@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -8,10 +8,9 @@
     <meta name="description" content="第一个程序Flask是基于Python的web开发框架。
 从最基本的Flask代码开始吧：
 from flask import Flask
-app = Flask(__name__)
+app &amp;#x3D; Flask(__name__)
 
-@app.route(&amp;#39;/&amp;#39;)
-def">
+@app.route(&amp;#39;&amp;#x2F;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -64,7 +63,7 @@ def">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -75,7 +74,7 @@ def">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -86,7 +85,7 @@ def">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -97,7 +96,7 @@ def">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -108,7 +107,7 @@ def">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -119,7 +118,7 @@ def">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -130,14 +129,14 @@ def">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -165,7 +164,7 @@ def">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -176,7 +175,7 @@ def">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -187,7 +186,7 @@ def">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -198,7 +197,7 @@ def">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -209,7 +208,7 @@ def">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -220,7 +219,7 @@ def">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -231,7 +230,7 @@ def">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -448,7 +447,7 @@ def">
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -460,7 +459,7 @@ def">
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-02-06
                 </div>
                 
@@ -469,7 +468,7 @@ def">
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
                     3.4k
                 </div>
                 
@@ -482,6 +481,9 @@ def">
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
+        
 
         
 
@@ -489,16 +491,16 @@ def">
             <div id="articleContent">
                 <h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><p>Flask是基于Python的web开发框架。</p>
 <p>从最基本的Flask代码开始吧：</p>
-<pre><code class="Python">from flask import Flask
-app = Flask(__name__)
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask
+app &#x3D; Flask(__name__)
 
-@app.route(&#39;/&#39;)
+@app.route(&#39;&#x2F;&#39;)
 def hello_world():
    return &#39;Hello World&#39;
 
-if __name__ == &#39;__main__&#39;:
-   app.run(debug=True)
-</code></pre>
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+   app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>运行如上代码，就可以在浏览器中看到运行结果——Hello，Flask!</p>
 <ul>
 <li><p>第二行调用Flask()构造函数，返回的是一个application对象；</p>
@@ -515,31 +517,30 @@ if __name__ == &#39;__main__&#39;:
 </li>
 </ul>
 <h2 id="Flask路由"><a href="#Flask路由" class="headerlink" title="Flask路由"></a>Flask路由</h2><p>在Web应用中，不同的url对应不同的页面；Flask中的route()装饰器用于将URL绑定到函数：</p>
-<pre><code class="Python">from flask import Flask
-app = Flask(__name__)
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask
+app &#x3D; Flask(__name__)
 
-@app.route(&#39;/hello&#39;)
+@app.route(&#39;&#x2F;hello&#39;)
 def hello_flask():
     return &#39;hello Flask&#39;
 
-if __name__ == &#39;__main__&#39;:
-    app.run(debug=True)
-</code></pre>
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在上面的代码示例中，route()装饰器将URL‘&#x2F;hello’规则绑定到了hello_flask()函数，如果用户访问<br><a target="_blank" rel="noopener" href="http://localhost:5000/hello">http://localhost:5000/hello</a> ，hello_flask()函数的输出就将在浏览器中呈现。</p>
 <p>当然，也可以不使用装饰器写法，改用application对象的add_url_rule()函数也可以实现URL与函数的绑定：</p>
-<pre><code class="Python">def hello_flask():
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def hello_flask():
     return &#39;hello flask!&#39;
-app.add_url_rule(&#39;/&#39;, &#39;hello&#39;, hello_flask)
-</code></pre>
+app.add_url_rule(&#39;&#x2F;&#39;, &#39;hello&#39;, hello_flask)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="Flask变量规则——路由参数"><a href="#Flask变量规则——路由参数" class="headerlink" title="Flask变量规则——路由参数"></a>Flask变量规则——路由参数</h2><p>向规则参数添加变量部分，可以动态地构建URL。<br>此变量部分标记为 &lt; variable-name &gt;<br>示例：</p>
-<pre><code class="Python">@app.route(&#39;/blog/&lt;int:postId&gt;&#39;)
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">@app.route(&#39;&#x2F;blog&#x2F;&lt;int:postId&gt;&#39;)
 def show_blog(postId):
     return &#39;Blog Number %d&#39; % postId
 
-@app.route(&#39;/rev/&lt;float:revNo&gt;&#39;)
+@app.route(&#39;&#x2F;rev&#x2F;&lt;float:revNo&gt;&#39;)
 def revision(revNo):
-    return &#39;Revision Number %f&#39; % revNo
-</code></pre>
+    return &#39;Revision Number %f&#39; % revNo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>&lt; int:postId&gt;中，int是对变量类型postId的限制，我们在地址栏中输入&#x2F;blog&#x2F;9后，按下回车，屏幕上就会显示Blog Number 9。</p>
 <ul>
 <li>%d 整型</li>
@@ -547,72 +548,72 @@ def revision(revNo):
 <li>%s 字符串型</li>
 </ul>
 <h2 id="Flask-URL构建"><a href="#Flask-URL构建" class="headerlink" title="Flask URL构建"></a>Flask URL构建</h2><p>函数url_for()，用于动态构建特定函数的URL。</p>
-<pre><code class="Python">from flask import Flask, redirect, url_for
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, redirect, url_for
 
-app = Flask(__name__)
+app &#x3D; Flask(__name__)
 
-@app.route(&#39;/admin&#39;)
+@app.route(&#39;&#x2F;admin&#39;)
 def hello_admin():
     return &#39;Hello Admin&#39;
 
-@app.route(&#39;/guest/&lt;guest&gt;&#39;)
+@app.route(&#39;&#x2F;guest&#x2F;&lt;guest&gt;&#39;)
 def hello_guest(guest):
     return &#39;Hello %s as Guest&#39; % guest
 
-@app.route(&#39;/user/&lt;name&gt;&#39;)
+@app.route(&#39;&#x2F;user&#x2F;&lt;name&gt;&#39;)
 def hello_user(name):
-    if name == &#39;admin&#39;:
+    if name &#x3D;&#x3D; &#39;admin&#39;:
         return redirect(url_for(&#39;hello_adminn&#39;))
     else:
-        return redirect(url_for(&#39;hello_guest&#39;, guest=name))
+        return redirect(url_for(&#39;hello_guest&#39;, guest&#x3D;name))
 
-if __name__ == &#39;__main__&#39;:
-    app.run(debug=True)
-</code></pre>
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在&#x2F;user&#x2F;…对应的函数hello_user中，我们作出了处理：<br>如果接收参数为字符串admin，就重定向到hello_admin()函数否则重定向到hello_guest()函数。</p>
-<h2 id="Flask中的HTTP"><a href="#Flask中的HTTP" class="headerlink" title="Flask中的HTTP"></a>Flask中的HTTP</h2><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<h2 id="Flask中的HTTP"><a href="#Flask中的HTTP" class="headerlink" title="Flask中的HTTP"></a>Flask中的HTTP</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
-&lt;body&gt;
-    &lt;form action=&quot;http://localhost:5000/login&quot; method=&quot;post&quot;&gt;
-        &lt;p&gt;Enter Name:&lt;/p&gt;
-        &lt;p&gt;&lt;input type=&quot;text&quot; name=&quot;nm&quot; /&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;submit&quot; /&gt;&lt;/p&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://localhost:5000/login<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Enter Name:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nm<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-&lt;/html&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们创建一个html文件，在其中写一个表单，在下面的文件中接收表单提交到服务器的数据。</p>
-<pre><code class="Python"># 在Flask中使用HTTP方法
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># 在Flask中使用HTTP方法
 from flask import Flask, redirect, url_for, request
 
-app = Flask(__name__)
+app &#x3D; Flask(__name__)
 
-@app.route(&#39;/success/&lt;name&gt;&#39;)
+@app.route(&#39;&#x2F;success&#x2F;&lt;name&gt;&#39;)
 def success(name):
     return &#39;welcome %s&#39; % name
 
-@app.route(&#39;/login&#39;, methods=[&#39;POST&#39;, &#39;GET&#39;])
+@app.route(&#39;&#x2F;login&#39;, methods&#x3D;[&#39;POST&#39;, &#39;GET&#39;])
 def login():
-    if request.method == &#39;POST&#39;:
+    if request.method &#x3D;&#x3D; &#39;POST&#39;:
         # 通过表单拿到输入的名字，并给动态URL
-        user = request.form[&#39;nm&#39;]
-        return redirect(url_for(&#39;success&#39;, name=user))
+        user &#x3D; request.form[&#39;nm&#39;]
+        return redirect(url_for(&#39;success&#39;, name&#x3D;user))
     else:
-        user = request.args.get(&#39;nm&#39;)
-        return redirect(url_for(&#39;success&#39;, name=user))
+        user &#x3D; request.args.get(&#39;nm&#39;)
+        return redirect(url_for(&#39;success&#39;, name&#x3D;user))
 
-if __name__ == &#39;__main__&#39;:
-    app.run(debug=True)
-</code></pre>
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><h3 id="模板的来历"><a href="#模板的来历" class="headerlink" title="模板的来历"></a>模板的来历</h3><p>之前与URL绑定的函数，叫做视图函数，一般来说，视图函数有两个作用：</p>
 <ul>
 <li>处理业务逻辑（背后的业务代码，也即展示出来的数据是怎么来的）</li>
@@ -625,95 +626,96 @@ if __name__ == &#39;__main__&#39;:
 <li>模板只负责从视图函数中获取数据进行展示</li>
 </ul>
 <p>举例：<br>我们在项目中单独创建templates文件夹，并在该目录下创建一个模板文件hello.html;</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;05_Flask模板&lt;/title&gt;
-&lt;/head&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>05_Flask模板<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
-&lt;body&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
     我的模板html内容
-    &lt;!-- 注意，以下的双括号插值都是待加入的变量，从视图函数中得来 --&gt;
-    &lt;br /&gt;&#123;&#123; my_str &#125;&#125;
-    &lt;br /&gt;&#123;&#123; my_int &#125;&#125;
-    &lt;br /&gt;&#123;&#123; my_array &#125;&#125;
-    &lt;br /&gt;&#123;&#123; my_dict &#125;&#125;
-&lt;/body&gt;
+    <span class="token comment">&lt;!-- 注意，以下的双括号插值都是待加入的变量，从视图函数中得来 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>&#123;&#123; my_str &#125;&#125;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>&#123;&#123; my_int &#125;&#125;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>&#123;&#123; my_array &#125;&#125;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>&#123;&#123; my_dict &#125;&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-&lt;/html&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>可以发现，模板文件中，占位符处的值需要从视图函数中获取对应的数据，下面是视图函数所在文件：</p>
-<pre><code class="Python">from flask import Flask, render_template
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, render_template
 from sympy import deg
 
-app = Flask(__name__)
+app &#x3D; Flask(__name__)
 
 # 我们向模板中传入字符串、列表、字典
-@app.route(&#39;/&#39;)
+@app.route(&#39;&#x2F;&#39;)
 def index():
     # 定义要往模板中传递的数据
-    my_str = &#39;Hello World&#39;
-    my_int = 10
-    my_array = [3, 4, 2, 1, 7, 9]
-    my_dict = &#123;
+    my_str &#x3D; &#39;Hello World&#39;
+    my_int &#x3D; 10
+    my_array &#x3D; [3, 4, 2, 1, 7, 9]
+    my_dict &#x3D; &#123;
         &#39;name&#39;: &#39;xiaoming&#39;,
         &#39;age&#39;: 18,
     &#125;
     return render_template(&#39;hello.html&#39;,
-                           my_str=my_str,
-                           my_int=my_int,
-                           my_array=my_array,
-                           my_dict=my_dict
+                           my_str&#x3D;my_str,
+                           my_int&#x3D;my_int,
+                           my_array&#x3D;my_array,
+                           my_dict&#x3D;my_dict
                            )
 
-if __name__ == &#39;__main__&#39;:
-    app.run(debug=True)
-</code></pre>
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="控制代码块写法"><a href="#控制代码块写法" class="headerlink" title="控制代码块写法"></a>控制代码块写法</h2><p>包括if写法（选择）、for写法（循环）。<br>演示相关的模板语法：</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 模板语法，使用表示注释 --&gt;
-    
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- 模板语法，使用&#123;# #&#125;表示注释 --></span>
+    &#123;# 判断显示内容 #&#125;
     &#123;% if name %&#125;
-    <!-- janjo模板语法，双括号插值写法，|后面跟一个函数（首字母大写） -->
-    <h1>hello &#123;&#123; name|capitalize &#125;&#125;</h1>
+    <span class="token comment">&lt;!-- janjo模板语法，双括号插值写法，|后面跟一个函数（首字母大写） --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>hello &#123;&#123; name|capitalize &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
     &#123;% else %&#125;
-    <h1>请登录</h1>
-    <!-- 选择代码块的结束标识 -->
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>请登录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- 选择代码块的结束标识 --></span>
     &#123;% endif %&#125;
 
-    &lt;!-- for循环的使用 --&gt;
+    <span class="token comment">&lt;!-- for循环的使用 --></span>
     &#123;% for general in my_list %&#125;
-        &#123;&#123; general &#125;&#125; <br/>
-    <!-- 循环代码块的结束标识 -->
+        &#123;&#123; general &#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span>
+    <span class="token comment">&lt;!-- 循环代码块的结束标识 --></span>
     &#123;% endfor %&#125;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>视图函数如下：</p>
-<pre><code class="Python">from flask import Flask, render_template
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, render_template
 
-app = Flask(__name__)
+app &#x3D; Flask(__name__)
 
-@app.route(&#39;/control&#39;)
+@app.route(&#39;&#x2F;control&#39;)
 def control():
-    my_list = [&#39;徐达&#39;, &#39;常遇春&#39;, &#39;郭英&#39;, &#39;蓝玉&#39;, &#39;傅友德&#39;, &#39;耿炳文&#39;]
-    return render_template(&#39;control.html&#39;, name=&#39;xiaoming&#39;, my_list=my_list)
+    my_list &#x3D; [&#39;徐达&#39;, &#39;常遇春&#39;, &#39;郭英&#39;, &#39;蓝玉&#39;, &#39;傅友德&#39;, &#39;耿炳文&#39;]
+    return render_template(&#39;control.html&#39;, name&#x3D;&#39;xiaoming&#39;, my_list&#x3D;my_list)
 
-if __name__ == &#39;__main__&#39;:
-    app.run(debug=True)
-</code></pre>
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    app.run(debug&#x3D;True)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>过滤器的本质就是函数。它的作用在于“微调”，即有时候我们需要对模板中的数据做一定的修改，比如更改格式（首字母大写、日期格式等），在模板中自然不能直接调用Python方法，这样一来，就需要用到过滤器。<br>语法格式如下：</p>
 <p><code>&#123;&#123; variable | filter_name(*args) &#125;&#125;</code><br>variable即为变量，filter_name即为过滤器函数，*args 为过滤器接收的参数<br>常见的内置过滤器有</p>
 <ul>
@@ -728,34 +730,34 @@ if __name__ == &#39;__main__&#39;:
 <li>sort：列表排序</li>
 </ul>
 <p>等等。</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
     &#123;% for item in my_list %&#125;
-    <!-- upper为过滤器，表示将变量item全部大写 -->
+    <span class="token comment">&lt;!-- upper为过滤器，表示将变量item全部大写 --></span>
         &#123;&#123; item | upper &#125;&#125;
     &#123;% endfor %&#125;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="Python">from flask import Flask, render_template
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, render_template
 
-app = Flask(__name__)
+app &#x3D; Flask(__name__)
 
-@app.route(&#39;/&#39;)
+@app.route(&#39;&#x2F;&#39;)
 def show_filter():
-    my_list = [&#39;www&#39;, &#39;wanda&#39;, &#39;amazi&#39;]
-    return render_template(&#39;filter.html&#39;, my_list=my_list)
+    my_list &#x3D; [&#39;www&#39;, &#39;wanda&#39;, &#39;amazi&#39;]
+    return render_template(&#39;filter.html&#39;, my_list&#x3D;my_list)
 
-if __name__==&#39;__main__&#39;:
-    app.run(debug=True)
-</code></pre>
+if __name__&#x3D;&#x3D;&#39;__main__&#39;:
+    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 <h2 id="Flask-Request对象"><a href="#Flask-Request对象" class="headerlink" title="Flask Request对象"></a>Flask Request对象</h2><p>来自客户端网页的数据作为全局请求对象发送到服务器，为了处理请求数据，应该从Flask模块导入。</p>
 <p>Request对象的重要属性如下：</p>
 <ul>
@@ -766,113 +768,112 @@ if __name__==&#39;__main__&#39;:
 <li>method：当前的请求方法</li>
 </ul>
 <h2 id="Web表单"><a href="#Web表单" class="headerlink" title="Web表单"></a>Web表单</h2><p>web表单是web应用程序的基本功能。在Flask中，为了处理web表单，我们一般使用Flask-WTF扩展，它封装了WTForms，并且有验证表单数据的功能。</p>
-<pre><code class="Python">from curses import flash
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from curses import flash
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+app &#x3D; Flask(__name__)
 
-@app.route(&#39;/&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+@app.route(&#39;&#x2F;&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])
 def index():
     # request对象，里面包含请求的信息，包括请求方式
-    if request.method == &#39;POST&#39;:
+    if request.method &#x3D;&#x3D; &#39;POST&#39;:
         # 获取表单数据
-        form = request.form
-        username = form.get(&#39;username&#39;)
-        password = form.get(&#39;password&#39;)
+        form &#x3D; request.form
+        username &#x3D; form.get(&#39;username&#39;)
+        password &#x3D; form.get(&#39;password&#39;)
         print(password)
         if not all([username, password]):
             # print(&#39;参数不完整&#39;)
             # 使用消息闪现
             flash(&#39;参数不完整&#39;)
-        elif password != &#39;123&#39;:
+        elif password !&#x3D; &#39;123&#39;:
             # print(&#39;密码错误...&#39;)
             flash(&#39;密码错误!&#39;)
         else:
             return &#39;success&#39;
     return render_template(&#39;login.html&#39;)
 
-if __name__==&#39;__main__&#39;:
-    app.run()
-</code></pre>
+if __name__&#x3D;&#x3D;&#39;__main__&#39;:
+    app.run()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="消息闪现flash"><a href="#消息闪现flash" class="headerlink" title="消息闪现flash"></a>消息闪现flash</h3><p>在上面的栗子中，我们使用了flash，它代替了print语句，也可以传递消息。</p>
 <ul>
 <li>视图函数中，我们使用flash，其中参数就是消息内容字符串</li>
 <li>模板中，使用for循环遍历获取闪现消息</li>
 </ul>
 <h2 id="表单数据发送到模板"><a href="#表单数据发送到模板" class="headerlink" title="表单数据发送到模板"></a>表单数据发送到模板</h2><h3 id="原生写法"><a href="#原生写法" class="headerlink" title="原生写法"></a>原生写法</h3><p>有了前面的知识点，我们接下来研究如何将表单数据发送到模板。<br>我们的案例中，准备了两个模板文件student.html(收集表单数据)、result.html(展现收集到的表单数据，以表格形式)。</p>
-<pre><code class="html">&lt;!-- student.html --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- student.html --></span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
-&lt;body&gt;
-    &lt;form action=&quot;http://localhost:5000/result&quot; method=&quot;POST&quot;&gt;
-        &lt;p&gt;Name &lt;input type=&quot;text&quot; name=&quot;Name&quot; /&gt;&lt;/p&gt;
-        &lt;p&gt;Physics &lt;input type=&quot;text&quot; name=&quot;Physics&quot; /&gt;&lt;/p&gt;
-        &lt;p&gt;Chemistry &lt;input type=&quot;text&quot; name=&quot;chemistry&quot; /&gt;&lt;/p&gt;
-        &lt;p&gt;Maths &lt;input type=&quot;text&quot; name=&quot;Mathematics&quot; /&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;submit&quot; /&gt;&lt;/p&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://localhost:5000/result<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Name <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Name<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Physics <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Physics<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Chemistry <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>chemistry<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Maths <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Mathematics<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-&lt;/html&gt;
-</code></pre>
-<pre><code class="Python">from flask import Flask, render_template, request
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-app = Flask(__name__)
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, render_template, request
 
-# 首先进入/ URL页面，呈现具有表单的网页
-@app.route(&#39;/&#39;)
+app &#x3D; Flask(__name__)
+
+# 首先进入&#x2F; URL页面，呈现具有表单的网页
+@app.route(&#39;&#x2F;&#39;)
 def student():
     return render_template(&#39;student.html&#39;)
 
-@app.route(&#39;/result&#39;, methods=[&#39;POST&#39;, &#39;GET&#39;])
+@app.route(&#39;&#x2F;result&#39;, methods&#x3D;[&#39;POST&#39;, &#39;GET&#39;])
 def result():
-    if request.method == &#39;POST&#39;:
+    if request.method &#x3D;&#x3D; &#39;POST&#39;:
         # 收集字典对象中的request.form中的表单数据，并给result.html
-        result = request.form
-        return render_template(&#39;result.html&#39;, result=result)
+        result &#x3D; request.form
+        return render_template(&#39;result.html&#39;, result&#x3D;result)
 
-if __name__ == &#39;__main__&#39;:
-    app.run(debug=True)
-</code></pre>
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>由于student()绑定到URL &#x2F;页面下，因此首先展示的就是student()中渲染的student.html文件，即展示表单；<br>而一旦有提交表单的POST请求，就会将请求中的表单数据给模板result.html来渲染。<br>result.html文件如下：</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
-&lt;body&gt;
-    &lt;table border=1&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>1</span><span class="token punctuation">></span></span>
         &#123;% for key, value in result.items() %&#125;
-        <tr>
-            <th> &#123;&#123; key &#125;&#125; </th>
-            <td> &#123;&#123; value &#125;&#125;</td>
-        </tr>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span> &#123;&#123; key &#125;&#125; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span> &#123;&#123; value &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
         &#123;% endfor %&#125;
-    &lt;/table&gt;
-&lt;/body&gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-&lt;/html&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="WTF"><a href="#WTF" class="headerlink" title="WTF"></a>WTF</h3><h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><p>Flask的WTF表单，提供了更加方便的写法：</p>
-<pre><code class="Python">from flask import Flask, render_template, request, flash
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, render_template, request, flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 
-app = Flask(__name__)
-app.secret_key = &#39;itheima&#39;  # 设置加密密钥
+app &#x3D; Flask(__name__)
+app.secret_key &#x3D; &#39;itheima&#39;  # 设置加密密钥
 
 &#39;&#39;&#39;
 使用WTF实现表单
@@ -880,60 +881,61 @@ app.secret_key = &#39;itheima&#39;  # 设置加密密钥
 &#39;&#39;&#39;
 
 class LoginForm(FlaskForm):
-    username = StringField(u&#39;用户名:&#39;)
-    password = PasswordField(u&#39;密码:&#39;)
-    submit = SubmitField(u&#39;提交:&#39;)
+    username &#x3D; StringField(u&#39;用户名:&#39;)
+    password &#x3D; PasswordField(u&#39;密码:&#39;)
+    submit &#x3D; SubmitField(u&#39;提交:&#39;)
 
 
-@app.route(&#39;/&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+@app.route(&#39;&#x2F;&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])
 def login():
-    login_form = LoginForm()
-    return render_template(&#39;wtf.html&#39;, form=login_form)
+    login_form &#x3D; LoginForm()
+    return render_template(&#39;wtf.html&#39;, form&#x3D;login_form)
 
 
-if __name__ == &#39;__main__&#39;:
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     app.run()
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>模板文件wtf.html内容如下：</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
-&lt;body&gt;
-    &lt;form action=&quot;&quot;&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         &#123;&#123; form.username.label &#125;&#125; &#123;&#123; form.username &#125;&#125;
         &#123;&#123; form.password.label &#125;&#125; &#123;&#123; form.password &#125;&#125;
         &#123;&#123; form.submit.label &#125;&#125; &#123;&#123; form.submit &#125;&#125;
-    &lt;/form&gt;
-&lt;/body&gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-&lt;/html&gt;
-</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在视图函数所在的.py文件，导入所需要的库之后，需要单独定一个类，并定义出表单所有项，然后将该类的实例对象给渲染函数，便于模板文件中使用。<br>在模板文件中，我们用FlaskForm继承类的表单项来获取相应的组件，通过其label属性来获取文本标签。可见上面.html栗子。</p>
-<h4 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h4><pre><code class="Python"># 开启wtf验证
-@app.route(&#39;/&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+<h4 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h4><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># 开启wtf验证
+@app.route(&#39;&#x2F;&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])
 def login():
-    login_form = LoginForm()
+    login_form &#x3D; LoginForm()
     # 判断请求方式
-    if request.method == &#39;POST&#39;:
+    if request.method &#x3D;&#x3D; &#39;POST&#39;:
         # 获取请求参数
-        form = request.form
-        username = form.get(&#39;username&#39;)
-        password = form.get(&#39;password&#39;)
+        form &#x3D; request.form
+        username &#x3D; form.get(&#39;username&#39;)
+        password &#x3D; form.get(&#39;password&#39;)
         # 验证参数，WTF可以一句话实现所有的校验
         if login_form.validate_on_submit():
             return &#39;success!&#39;
         else:
             flash(&#39;参数有误!&#39;)
 
-    return render_template(&#39;wtf.html&#39;, form=login_form)
-</code></pre>
+    return render_template(&#39;wtf.html&#39;, form&#x3D;login_form)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="在Flask中使用数据库"><a href="#在Flask中使用数据库" class="headerlink" title="在Flask中使用数据库"></a>在Flask中使用数据库</h2><h2 id="Flask-Cookie"><a href="#Flask-Cookie" class="headerlink" title="Flask Cookie"></a>Flask Cookie</h2><p>Request对象包含Cookie的属性</p>
 <h2 id="Flask-Session"><a href="#Flask-Session" class="headerlink" title="Flask Session"></a>Flask Session</h2>
                 
@@ -947,7 +949,7 @@ def login():
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -957,7 +959,7 @@ def login():
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -967,13 +969,13 @@ def login():
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -983,7 +985,7 @@ def login():
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -998,7 +1000,7 @@ def login():
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1172,7 +1174,7 @@ def login():
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/02/10/%E6%B5%8F%E8%A7%88%E5%99%A8/">
                     <div class="card-image">
@@ -1220,7 +1222,7 @@ def login():
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/02/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
@@ -1282,7 +1284,7 @@ def login():
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1388,13 +1390,13 @@ def login():
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1447,8 +1449,8 @@ def login():
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

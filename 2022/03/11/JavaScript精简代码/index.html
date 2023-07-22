@@ -1,14 +1,12 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="JavaScript精简代码, 湖心亭">
-    <meta name="description" content="数组快速前缀和const accumulate = (...nums) =&amp;gt;
-  nums.reduce((acc, n) =&amp;gt; [...acc, n + (acc.slice(-1)[0] || 0)], [])
-
-reduc">
+    <meta name="description" content="数组快速前缀和const accumulate &amp;#x3D; (...nums) &amp;#x3D;&amp;gt;
+  nums.reduce((acc, n) &amp;#x3D;&amp;gt; [...acc, n + (acc.slice(-1)[0] || ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -61,7 +59,7 @@ reduc">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -72,7 +70,7 @@ reduc">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -83,7 +81,7 @@ reduc">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -94,7 +92,7 @@ reduc">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -105,7 +103,7 @@ reduc">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -116,7 +114,7 @@ reduc">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -127,14 +125,14 @@ reduc">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -162,7 +160,7 @@ reduc">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -173,7 +171,7 @@ reduc">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -184,7 +182,7 @@ reduc">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -195,7 +193,7 @@ reduc">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -206,7 +204,7 @@ reduc">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -217,7 +215,7 @@ reduc">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -228,7 +226,7 @@ reduc">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -445,7 +443,7 @@ reduc">
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -457,7 +455,7 @@ reduc">
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-03-11
                 </div>
                 
@@ -466,7 +464,7 @@ reduc">
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
                     4.2k
                 </div>
                 
@@ -479,14 +477,17 @@ reduc">
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数组快速前缀和"><a href="#数组快速前缀和" class="headerlink" title="数组快速前缀和"></a>数组快速前缀和</h2><pre><code class="JavaScript">const accumulate = (...nums) =&gt;
-  nums.reduce((acc, n) =&gt; [...acc, n + (acc.slice(-1)[0] || 0)], [])
-</code></pre>
+                <h2 id="数组快速前缀和"><a href="#数组快速前缀和" class="headerlink" title="数组快速前缀和"></a>数组快速前缀和</h2><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const accumulate &#x3D; (...nums) &#x3D;&gt;
+  nums.reduce((acc, n) &#x3D;&gt; [...acc, n + (acc.slice(-1)[0] || 0)], [])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a>reduce()</h3><p>reduce函数，这个函数作用于一个数组，最大的特点就是数组中的每一个元素都会被作为接收的函数的参数调用一次：</p>
 <p><code>reduce((accumulate, current) =&gt; &#123;...&#125;, initial)</code></p>
 <p>接收两个参数：</p>
@@ -499,132 +500,135 @@ reduc">
 <p>Pete likes to bake some cakes. He has some recipes and ingredients. Unfortunately he is not good in maths. Can you help him to find out, how many cakes he could bake considering his recipes?</p>
 <p>Write a function <code>cakes()</code>, which takes the recipe (object) and the available ingredients (also an object) and returns the maximum number of cakes Pete can bake (integer). For simplicity there are no units for the amounts (e.g. 1 lb of flour or 200 g of sugar are simply 1 or 200). Ingredients that are not present in the objects, can be considered as 0.</p>
 <p>Examples:</p>
-<pre><code class="javascript">// must return 2
-cakes(&#123;flour: 500, sugar: 200, eggs: 1&#125;, &#123;flour: 1200, sugar: 1200, eggs: 5, milk: 200&#125;); 
-// must return 0
-cakes(&#123;apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100&#125;, &#123;sugar: 500, flour: 2000, milk: 2000&#125;); 
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// must return 2</span>
+<span class="token function">cakes</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token literal-property property">flour</span><span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token literal-property property">sugar</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token literal-property property">eggs</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">flour</span><span class="token operator">:</span> <span class="token number">1200</span><span class="token punctuation">,</span> <span class="token literal-property property">sugar</span><span class="token operator">:</span> <span class="token number">1200</span><span class="token punctuation">,</span> <span class="token literal-property property">eggs</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token literal-property property">milk</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// must return 0</span>
+<span class="token function">cakes</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token literal-property property">apples</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token literal-property property">flour</span><span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token literal-property property">sugar</span><span class="token operator">:</span> <span class="token number">150</span><span class="token punctuation">,</span> <span class="token literal-property property">milk</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token literal-property property">oil</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">sugar</span><span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token literal-property property">flour</span><span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span> <span class="token literal-property property">milk</span><span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 <p>分享一个很简洁的代码思路：</p>
 <p>首先肯定要遍历配料对象的每一个属性，然后在原料对象中查询之，两者作整数除法，取出最小值即为答案了。这其实符合了reduce()函数的使用场景：每一个元素都需要被处理；还需要比较先前的处理结果（取最小值）。</p>
 <p>于是，对于reduce的接收的回调函数的累加器参数，我们设置为min{当前原料与配料量之比，之前的值}（也即回调函数的返回值），第二个参数设为Infinity，表示无穷大。</p>
-<pre><code class="JavaScript">function cakes(recipe, available) &#123;
-    return Object.keys(recipe).reduce((pre, ingre) =&gt; &#123;
-        return Math.min(Math.floor(available[ingre] / recipe[ingre]), pre)
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function cakes(recipe, available) &#123;
+    return Object.keys(recipe).reduce((pre, ingre) &#x3D;&gt; &#123;
+        return Math.min(Math.floor(available[ingre] &#x2F; recipe[ingre]), pre)
     &#125;, Infinity)
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><p>Array.slice()，用于JavaScript的数组切片操作。此处，acc.slice(-1)表示取出acc的最后一个元素（返回数组）。</p>
 <h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><ul>
 <li>审视这段代码，[]是初始值，也就是第一次调用回调函数时，acc累加器是[]，参数n是首元素，箭头函数返回值是一个数组，acc是数组类型，经扩展运算符，与当前值和累加器的最后一个元素相加组合成新数组。</li>
 <li>这样一来，数组就是前缀和形式。</li>
 </ul>
-<h2 id="快速修改ISO格式日期"><a href="#快速修改ISO格式日期" class="headerlink" title="快速修改ISO格式日期"></a>快速修改ISO格式日期</h2><pre><code class="JavaScript">const addDaysToDate = (date, n) =&gt; &#123;
-  const d = new Date(date);
+<h2 id="快速修改ISO格式日期"><a href="#快速修改ISO格式日期" class="headerlink" title="快速修改ISO格式日期"></a>快速修改ISO格式日期</h2><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const addDaysToDate &#x3D; (date, n) &#x3D;&gt; &#123;
+  const d &#x3D; new Date(date);
   d.setDate(d.getDate() + n);
   return d.toISOString().split(&#39;T&#39;)[0];
-&#125;;
-</code></pre>
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="toISOString"><a href="#toISOString" class="headerlink" title="toISOString()"></a>toISOString()</h3><p>Date.toISOString()，可以将一个Date类型的数据转化为ISO格式的字符串。ISO格式，形如<code>*2022-10-15T00:00:00.000Z*</code></p>
 <h3 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h3><p>调用Date类型数据d的setDate()方法，设置其天数，在当前天数（getDate()）基础上加n，重新转为ISO类型字符串。</p>
-<h2 id="数组快速分割"><a href="#数组快速分割" class="headerlink" title="数组快速分割"></a>数组快速分割</h2><pre><code class="JavaScript">const aperture = (n, arr) =&gt;
-// map((currentValue, currentIndex) =&gt; &#123;&#125;)
+<h2 id="数组快速分割"><a href="#数组快速分割" class="headerlink" title="数组快速分割"></a>数组快速分割</h2><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const aperture &#x3D; (n, arr) &#x3D;&gt;
+&#x2F;&#x2F; map((currentValue, currentIndex) &#x3D;&gt; &#123;&#125;)
   n &gt; arr.length
     ? []
-    : arr.slice(n - 1).map((v, i) =&gt; arr.slice(i, i + n));
-</code></pre>
+    : arr.slice(n - 1).map((v, i) &#x3D;&gt; arr.slice(i, i + n));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>Array.map((currentValue, currentIndex) &#x3D;&gt; {…})</p>
 <p>这个函数的特点也是会对数组中的每一个元素都使用一次回调函数参数。</p>
 <h3 id="解释-2"><a href="#解释-2" class="headerlink" title="解释"></a>解释</h3><p>对于最外层的aperture函数，参数n是步长，arr是原数组；先从原数组的第n个元素开始取，对取出的子数组的每一个元素都使用map()函数（共arr.length-n+1次），每一次调用map函数都会得到一个新的子数组。</p>
-<pre><code class="JavaScript">aperture(2, [1, 2, 3, 4]); // [[1, 2], [2, 3], [3, 4]]
-aperture(3, [1, 2, 3, 4]); // [[1, 2, 3], [2, 3, 4]]
-aperture(5, [1, 2, 3, 4]); // []
-</code></pre>
-<h2 id="算术迭代"><a href="#算术迭代" class="headerlink" title="算术迭代"></a>算术迭代</h2><pre><code class="JavaScript">const arithmeticProgression = (n, lim) =&gt;
-    Array.from(&#123;
-        length: Math.ceil(lim / n)
-    &#125;, (_, i) =&gt; (i + 1) * n)
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">aperture(2, [1, 2, 3, 4]); &#x2F;&#x2F; [[1, 2], [2, 3], [3, 4]]
+aperture(3, [1, 2, 3, 4]); &#x2F;&#x2F; [[1, 2, 3], [2, 3, 4]]
+aperture(5, [1, 2, 3, 4]); &#x2F;&#x2F; []<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-let re = arithmeticProgression(5, 25)
+
+
+<h2 id="算术迭代"><a href="#算术迭代" class="headerlink" title="算术迭代"></a>算术迭代</h2><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const arithmeticProgression &#x3D; (n, lim) &#x3D;&gt;
+    Array.from(&#123;
+        length: Math.ceil(lim &#x2F; n)
+    &#125;, (_, i) &#x3D;&gt; (i + 1) * n)
+
+let re &#x3D; arithmeticProgression(5, 25)
 console.log(re);
-// [ 5, 10, 15, 20, 25 ]
-</code></pre>
+&#x2F;&#x2F; [ 5, 10, 15, 20, 25 ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="from"><a href="#from" class="headerlink" title="from()"></a>from()</h3><p>Array.from(obj, mapFn(currentValue, currentIndex) &#x3D;&gt; {…}, thisArg)</p>
 <p>其中，obj是一个可迭代对象（具有length属性），它将被转化为一个数组；而mapFn相当于map函数，它会在obj转化时对其进一步转化（联系map函数特点，每一个元素都会被处理一次）。</p>
 <h3 id="解释-3"><a href="#解释-3" class="headerlink" title="解释"></a>解释</h3><p>此处的from函数，第一个参数是一个对象，length属性用于迭代生成数组，第二个参数是mapFn，它接收了两个参数，第一个是占位符，第二个是下标，表示数组中的每一个元素的得到方式：下标加1再乘以n。</p>
 <h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><blockquote>
 <p>The goal of this exercise is to convert a string to a new string where each character in the new string is <code>&quot;(&quot;</code> if that character appears only once in the original string, or <code>&quot;)&quot;</code> if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.</p>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><pre><code>&quot;din&quot;      =&gt;  &quot;(((&quot;
-&quot;recede&quot;   =&gt;  &quot;()()()&quot;
-&quot;Success&quot;  =&gt;  &quot;)())())&quot;
-&quot;(( @&quot;     =&gt;  &quot;))((&quot; 
-</code></pre>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><pre class="line-numbers language-none"><code class="language-none">&quot;din&quot;      &#x3D;&gt;  &quot;(((&quot;
+&quot;recede&quot;   &#x3D;&gt;  &quot;()()()&quot;
+&quot;Success&quot;  &#x3D;&gt;  &quot;)())())&quot;
+&quot;(( @&quot;     &#x3D;&gt;  &quot;))((&quot; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 <p>参考代码如下，思路是将字符串转化为数组，同时利用from函数的第二个参数——处理函数，对结果进行二次处理，最后重新拼接成满足条件的字符串。</p>
-<pre><code class="JavaScript">function duplicateEncode(word)&#123;
-    word = word.toUpperCase()
-    return Array.from(word, (v, i) =&gt; word.indexOf(v)===word.lastIndexOf(v) ? &#39;(&#39; : &#39;)&#39;).join(&#39;&#39;)
-&#125;
-</code></pre>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function duplicateEncode(word)&#123;
+    word &#x3D; word.toUpperCase()
+    return Array.from(word, (v, i) &#x3D;&gt; word.indexOf(v)&#x3D;&#x3D;&#x3D;word.lastIndexOf(v) ? &#39;(&#39; : &#39;)&#39;).join(&#39;&#39;)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <blockquote>
 <p>Write a function, <code>persistence</code>, that takes in a positive parameter <code>num</code> and returns its multiplicative persistence, which is the number of times you must multiply the digits in <code>num</code> until you reach a single digit.</p>
 <p>For example <strong>(Input –&gt; Output)</strong>:</p>
-<pre><code>39 --&gt; 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
-999 --&gt; 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
-4 --&gt; 0 (because 4 is already a one-digit number)
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">39 --&gt; 3 (because 3*9 &#x3D; 27, 2*7 &#x3D; 14, 1*4 &#x3D; 4 and 4 has only one digit)
+999 --&gt; 4 (because 9*9*9 &#x3D; 729, 7*2*9 &#x3D; 126, 1*2*6 &#x3D; 12, and finally 1*2 &#x3D; 2)
+4 --&gt; 0 (because 4 is already a one-digit number)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </blockquote>
-<pre><code class="javascript">function persistence(num, time=0) &#123;
-    return num &lt; 10 ? time : persistence((Array.from(num.toString()).reduce((acc, i) =&gt; acc * i, 1)), ++time)
-&#125;
-</code></pre>
-<h2 id="多维数组求最大值"><a href="#多维数组求最大值" class="headerlink" title="多维数组求最大值"></a>多维数组求最大值</h2><pre><code class="JavaScript">const ary = (fn, n) =&gt; (...args) =&gt; fn(...args.slice(0, n));
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">persistence</span><span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> time<span class="token operator">=</span><span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> num <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token operator">?</span> time <span class="token operator">:</span> <span class="token function">persistence</span><span class="token punctuation">(</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>num<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">acc<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=></span> acc <span class="token operator">*</span> i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">++</span>time<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-const firstTwoMax = ary(Math.max, 2);
+
+
+<h2 id="多维数组求最大值"><a href="#多维数组求最大值" class="headerlink" title="多维数组求最大值"></a>多维数组求最大值</h2><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const ary &#x3D; (fn, n) &#x3D;&gt; (...args) &#x3D;&gt; fn(...args.slice(0, n));
+
+const firstTwoMax &#x3D; ary(Math.max, 2);
 [
     [2, 6, &#39;a&#39;],
     [6, 4, 8],
     [10]
-].map(x =&gt; firstTwoMax(...x)); // [6, 6, 10]
-</code></pre>
+].map(x &#x3D;&gt; firstTwoMax(...x)); &#x2F;&#x2F; [6, 6, 10]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="解释-4"><a href="#解释-4" class="headerlink" title="解释"></a>解释</h3><p>此处的ary函数的写法有些奇怪。其实，这是箭头函数简略写法的嵌套，有点类似闭包——也就是说，ary的返回结果是一个函数对象，这个函数对象接收一个数组，并取其子数组作为参数调用fn函数。</p>
 <p>firstTwoMax()得到一个求前两个元素较大值的函数对象，经map函数作用于每一个子数组，得到新值。</p>
-<h2 id="对象是否包含指定键"><a href="#对象是否包含指定键" class="headerlink" title="对象是否包含指定键"></a>对象是否包含指定键</h2><pre><code class="JavaScript">const assertValidKeys = (obj, keys) =&gt;
-  Object.keys(obj).every(key =&gt; keys.includes(key));
-</code></pre>
+<h2 id="对象是否包含指定键"><a href="#对象是否包含指定键" class="headerlink" title="对象是否包含指定键"></a>对象是否包含指定键</h2><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const assertValidKeys &#x3D; (obj, keys) &#x3D;&gt;
+  Object.keys(obj).every(key &#x3D;&gt; keys.includes(key));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h3 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys()"></a>Object.keys()</h3><p>这个方法是Object对象上的，它接收一个object实例对象作为参数，返回其所有的键（数组形式）。</p>
 <h3 id="Array-every-callback"><a href="#Array-every-callback" class="headerlink" title="Array.every(callback)"></a>Array.every(callback)</h3><p>对数组的每一个元素检查，是否满足回调函数 callback 中提供的条件。</p>
-<h2 id="数组元素分组"><a href="#数组元素分组" class="headerlink" title="数组元素分组"></a>数组元素分组</h2><pre><code class="javascript">const bifurcate = (arr, filter) =&gt;
-  arr.reduce((acc, val, i) =&gt; (acc[filter[i] ? 0 : 1].push(val), acc), [[], []])
-</code></pre>
+<h2 id="数组元素分组"><a href="#数组元素分组" class="headerlink" title="数组元素分组"></a>数组元素分组</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">bifurcate</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> filter</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+  arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">acc<span class="token punctuation">,</span> val<span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>acc<span class="token punctuation">[</span>filter<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">,</span> acc<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>这里关键就是reduce函数的使用：对于arr中的每一个元素，都需要经过处理，累加器acc是一个二维数组，通过判断在filter数组中的值来确定加入acc中的哪一个子数组。</p>
-<h2 id="绑定对象的键"><a href="#绑定对象的键" class="headerlink" title="绑定对象的键"></a>绑定对象的键</h2><pre><code class="JavaScript">const bindKey = (context, fn, ...boundArgs) =&gt; (...args) =&gt;
+<h2 id="绑定对象的键"><a href="#绑定对象的键" class="headerlink" title="绑定对象的键"></a>绑定对象的键</h2><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const bindKey &#x3D; (context, fn, ...boundArgs) &#x3D;&gt; (...args) &#x3D;&gt;
   context[fn].apply(context, [...boundArgs, ...args]);
 
-const freddy = &#123;
+const freddy &#x3D; &#123;
   user: &#39;fred&#39;,
   greet: function(greeting, punctuation) &#123;
     return greeting + &#39; &#39; + this.user + punctuation;
   &#125;
 &#125;;
-const freddyBound = bindKey(freddy, &#39;greet&#39;);
-console.log(freddyBound(&#39;hi&#39;, &#39;!&#39;)); // &#39;hi fred!&#39;
-</code></pre>
+const freddyBound &#x3D; bindKey(freddy, &#39;greet&#39;);
+console.log(freddyBound(&#39;hi&#39;, &#39;!&#39;)); &#x2F;&#x2F; &#39;hi fred!&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h3><p><code>function.bind(thisArg[, arg1[, arg2[, ...]]])</code></p>
 <p>这个bind()函数将会创建一个新的函数，同时指定该函数的this参数thisArg，以及传递给function的参数arg1等。</p>
 <h3 id="解释-5"><a href="#解释-5" class="headerlink" title="解释"></a>解释</h3><p>此处的bindKey()将返回一个函数对象：</p>
-<pre><code class="javascript">// freddyBound变量的内容：
-function(...args) &#123;
-    return context[fn].apply(context, [...boundArgs, ...args])
-&#125;
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// freddyBound变量的内容：</span>
+<span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> context<span class="token punctuation">[</span>fn<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token operator">...</span>boundArgs<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>该函数中，context为freddy对象，fn为键名greet，freddyBound()再接收的参数（即…args），会被作为apply方法的第二个参数：</p>
 <p><code>freddyBound(&#39;hi&#39;, &#39;!&#39;)</code>，args即为’hi’, ‘!’，它们将作为greeting、punction出现在freddy.greet的参数中。</p>
-<h2 id="bottomVisible判定页面底部是否可见"><a href="#bottomVisible判定页面底部是否可见" class="headerlink" title="bottomVisible判定页面底部是否可见"></a>bottomVisible判定页面底部是否可见</h2><pre><code class="JavaScript">const bottomVisible = () =&gt;
-    document.documentElement.clientHeight + window.scrollY &gt;=
+<h2 id="bottomVisible判定页面底部是否可见"><a href="#bottomVisible判定页面底部是否可见" class="headerlink" title="bottomVisible判定页面底部是否可见"></a>bottomVisible判定页面底部是否可见</h2><pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const bottomVisible &#x3D; () &#x3D;&gt;
+    document.documentElement.clientHeight + window.scrollY &gt;&#x3D;
     (document.documentElement.scrollHeight ||
-        document.documentElement.clientHeight);
-</code></pre>
+        document.documentElement.clientHeight);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="三大易混属性"><a href="#三大易混属性" class="headerlink" title="三大易混属性"></a>三大易混属性</h3><ul>
 <li>element.clientHeight</li>
 <li>window.scrollX &#x2F; window.scrollY</li>
@@ -638,34 +642,34 @@ function(...args) &#123;
 <h4 id="scrollX-x2F-scrollY"><a href="#scrollX-x2F-scrollY" class="headerlink" title="scrollX&#x2F;scrollY"></a>scrollX&#x2F;scrollY</h4><p>返回<strong>文档&#x2F;页面水平方向滚动的像素值</strong>。</p>
 <p>使用语法一般就是</p>
 <p><code>var x = window.scrollX;</code></p>
-<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        .demo &#123;
-            background-color: rgb(207, 114, 114);
-            /* 宽度和高度都属于盒子的内容区，offset和client都包含 */
-            width: 400px;
-            height: 600px;
-            /* border属于边框，offset包含，client不包含 */
-            border: 10px #bfc solid;
-            /* margin属于外边距，offset、client都不包含 */
-            margin: 30px;
-            /* padding属于内边距，offset、client都包含 */
-            padding: 15px;
-            /* 滚动条的宽度，offset包含，client不包含 */
-            overflow: scroll;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">.demo</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>207<span class="token punctuation">,</span> 114<span class="token punctuation">,</span> 114<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">/* 宽度和高度都属于盒子的内容区，offset和client都包含 */</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+            <span class="token comment">/* border属于边框，offset包含，client不包含 */</span>
+            <span class="token property">border</span><span class="token punctuation">:</span> 10px #bfc solid<span class="token punctuation">;</span>
+            <span class="token comment">/* margin属于外边距，offset、client都不包含 */</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+            <span class="token comment">/* padding属于内边距，offset、client都包含 */</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+            <span class="token comment">/* 滚动条的宽度，offset包含，client不包含 */</span>
+            <span class="token property">overflow</span><span class="token punctuation">:</span> scroll<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
-&lt;body&gt;
-    &lt;div class=&quot;demo&quot;&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>demo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         中和癸卯春三月，洛阳城外花如雪。
         东西南北路人绝，绿杨悄悄香尘灭。
         路旁忽见如花人，独向绿杨阴下歇。
@@ -693,78 +697,82 @@ function(...args) &#123;
         阴云晕气若重围，宦者流星如血色。
         紫气潜随帝座移，妖光暗射台星拆。
         ...
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;script&gt;
-    const bottomVisible = () =&gt;
-        document.documentElement.clientHeight + window.scrollY &gt;=
-        (document.documentElement.scrollHeight ||
-            document.documentElement.clientHeight);
-    let el = document.querySelector(&#39;.demo&#39;)
-    console.log(&#39;clientHeight&#39;, el.clientHeight);
-    console.log(&#39;clientWidth&#39;, el.clientWidth);
-    console.log(&#39;offsetHeight&#39;, el.offsetHeight);
-    console.log(&#39;offsetWidth&#39;, el.offsetWidth);
-    console.log(window.scrollY);
-&lt;/script&gt;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">const</span> <span class="token function-variable function">bottomVisible</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+        document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight <span class="token operator">+</span> window<span class="token punctuation">.</span>scrollY <span class="token operator">>=</span>
+        <span class="token punctuation">(</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollHeight <span class="token operator">||</span>
+            document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> el <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.demo'</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'clientHeight'</span><span class="token punctuation">,</span> el<span class="token punctuation">.</span>clientHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'clientWidth'</span><span class="token punctuation">,</span> el<span class="token punctuation">.</span>clientWidth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'offsetHeight'</span><span class="token punctuation">,</span> el<span class="token punctuation">.</span>offsetHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'offsetWidth'</span><span class="token punctuation">,</span> el<span class="token punctuation">.</span>offsetWidth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>scrollY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-&lt;/html&gt;
-&lt;!--以下是浏览器控制台输出结果--&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!--以下是浏览器控制台输出结果--></span>
 clientHeight 613
 09-bottomVisible.html:206 clientWidth 414
 09-bottomVisible.html:207 offsetHeight 650
 09-bottomVisible.html:208 offsetWidth 450
-09-bottomVisible.html:209 0
-</code></pre>
+09-bottomVisible.html:209 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>下面是获取各种浏览器可见窗口大小的函数：</p>
-<pre><code class="javascript">function getInfo()
-  &#123;
-        var s = &quot;&quot;;
-        s += &quot; 网页可见区域宽：&quot;+ document.body.clientWidth;
-        s += &quot; 网页可见区域高：&quot;+ document.body.clientHeight;
-        s += &quot; 网页可见区域宽：&quot;+ document.body.offsetWidth + &quot; (包括边线和滚动条的宽)&quot;;
-        s += &quot; 网页可见区域高：&quot;+ document.body.offsetHeight + &quot; (包括边线的宽)&quot;;
-        s += &quot; 网页正文全文宽：&quot;+ document.body.scrollWidth;
-        s += &quot; 网页正文全文高：&quot;+ document.body.scrollHeight;
-        s += &quot; 网页被卷去的高(ff)：&quot;+ document.body.scrollTop;
-        s += &quot; 网页被卷去的高(ie)：&quot;+ document.documentElement.scrollTop;
-        s += &quot; 网页被卷去的左：&quot;+ document.body.scrollLeft;
-        s += &quot; 网页正文部分上：&quot;+ window.screenTop;
-        s += &quot; 网页正文部分左：&quot;+ window.screenLeft;
-        s += &quot; 屏幕分辨率的高：&quot;+ window.screen.height;
-        s += &quot; 屏幕分辨率的宽：&quot;+ window.screen.width;
-        s += &quot; 屏幕可用工作区高度：&quot;+ window.screen.availHeight;
-        s += &quot; 屏幕可用工作区宽度：&quot;+ window.screen.availWidth;
-        s += &quot; 你的屏幕设置是 &quot;+ window.screen.colorDepth +&quot; 位彩色&quot;;
-        s += &quot; 你的屏幕设置 &quot;+ window.screen.deviceXDPI +&quot; 像素/英寸&quot;;
-  &#125;
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#123;</span>
+        <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页可见区域宽："</span><span class="token operator">+</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页可见区域高："</span><span class="token operator">+</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>clientHeight<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页可见区域宽："</span><span class="token operator">+</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>offsetWidth <span class="token operator">+</span> <span class="token string">" (包括边线和滚动条的宽)"</span><span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页可见区域高："</span><span class="token operator">+</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>offsetHeight <span class="token operator">+</span> <span class="token string">" (包括边线的宽)"</span><span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页正文全文宽："</span><span class="token operator">+</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollWidth<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页正文全文高："</span><span class="token operator">+</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollHeight<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页被卷去的高(ff)："</span><span class="token operator">+</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollTop<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页被卷去的高(ie)："</span><span class="token operator">+</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollTop<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页被卷去的左："</span><span class="token operator">+</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollLeft<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页正文部分上："</span><span class="token operator">+</span> window<span class="token punctuation">.</span>screenTop<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 网页正文部分左："</span><span class="token operator">+</span> window<span class="token punctuation">.</span>screenLeft<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 屏幕分辨率的高："</span><span class="token operator">+</span> window<span class="token punctuation">.</span>screen<span class="token punctuation">.</span>height<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 屏幕分辨率的宽："</span><span class="token operator">+</span> window<span class="token punctuation">.</span>screen<span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 屏幕可用工作区高度："</span><span class="token operator">+</span> window<span class="token punctuation">.</span>screen<span class="token punctuation">.</span>availHeight<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 屏幕可用工作区宽度："</span><span class="token operator">+</span> window<span class="token punctuation">.</span>screen<span class="token punctuation">.</span>availWidth<span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 你的屏幕设置是 "</span><span class="token operator">+</span> window<span class="token punctuation">.</span>screen<span class="token punctuation">.</span>colorDepth <span class="token operator">+</span><span class="token string">" 位彩色"</span><span class="token punctuation">;</span>
+        s <span class="token operator">+=</span> <span class="token string">" 你的屏幕设置 "</span><span class="token operator">+</span> window<span class="token punctuation">.</span>screen<span class="token punctuation">.</span>deviceXDPI <span class="token operator">+</span><span class="token string">" 像素/英寸"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="数组元素判定相同"><a href="#数组元素判定相同" class="headerlink" title="数组元素判定相同"></a>数组元素判定相同</h2><blockquote>
 <p>Given two arrays <code>a</code> and <code>b</code> write a function <code>comp(a, b)</code> (or<code>compSame(a, b)</code>) that checks whether the two arrays have the “same” elements, with the same <em>multiplicities</em> (the multiplicity of a member is the number of times it appears). “Same” means, here, that the elements in <code>b</code> are the elements in <code>a</code> squared, regardless of the order.</p>
-<h4 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples</h4><h5 id="Valid-arrays"><a href="#Valid-arrays" class="headerlink" title="Valid arrays"></a>Valid arrays</h5><pre><code>a = [121, 144, 19, 161, 19, 144, 19, 11]  
-b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
-</code></pre>
+<h4 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples</h4><h5 id="Valid-arrays"><a href="#Valid-arrays" class="headerlink" title="Valid arrays"></a>Valid arrays</h5><pre class="line-numbers language-none"><code class="language-none">a &#x3D; [121, 144, 19, 161, 19, 144, 19, 11]  
+b &#x3D; [121, 14641, 20736, 361, 25921, 361, 20736, 361]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><code>comp(a, b)</code> returns true because in <code>b</code> 121 is the square of 11, 14641 is the square of 121, 20736 the square of 144, 361 the square of 19, 25921 the square of 161, and so on. It gets obvious if we write <code>b</code>‘s elements in terms of squares:</p>
-<pre><code>a = [121, 144, 19, 161, 19, 144, 19, 11] 
-b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">a &#x3D; [121, 144, 19, 161, 19, 144, 19, 11] 
+b &#x3D; [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </blockquote>
-<pre><code class="JavaScript">function comp(array1, array2) &#123;
-    return array1 != null &amp;&amp; array2 != null &amp;&amp; array1.sort((a, b) =&gt; b - a).map(v =&gt; v * v).join() == array2.sort((a, b) =&gt; b - a).join()
-&#125;
-</code></pre>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function comp(array1, array2) &#123;
+    return array1 !&#x3D; null &amp;&amp; array2 !&#x3D; null &amp;&amp; array1.sort((a, b) &#x3D;&gt; b - a).map(v &#x3D;&gt; v * v).join() &#x3D;&#x3D; array2.sort((a, b) &#x3D;&gt; b - a).join()
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="解释-6"><a href="#解释-6" class="headerlink" title="解释"></a>解释</h3><p>题目要求的是当a数组中元素的平方都在b数组中时（注意a、b元素个数相同），称a与b“相同”，正常的思路是对a数组使用<code>Array.every()</code>，every()函数中接收参数为对a中每一个元素，它的平方是否在b中出现：<code>b.indexOf(ele*ele) !== -1</code>。</p>
 <p>而新颖的思路是，既然两个数组元素数量一致，那么如果a、b相同，将a中元素均平方，得到的新数组和b就会完全一致，只是顺序可能有差异。既然顺序不同，我们可以sort排序将它们顺序转为一致，然后使用<code>Array.join()</code>方法转为字符串，进而直接进行<code>==</code>判定。</p>
 <h2 id="单词首字母大写"><a href="#单词首字母大写" class="headerlink" title="单词首字母大写"></a>单词首字母大写</h2><blockquote>
 <p>Complete the method&#x2F;function so that it converts dash&#x2F;underscore delimited words into camel casing. The first word within the output should be capitalized <strong>only</strong> if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).</p>
-<h3 id="Examples-2"><a href="#Examples-2" class="headerlink" title="Examples"></a>Examples</h3><pre><code>&quot;the-stealth-warrior&quot;` gets converted to `&quot;theStealthWarrior&quot;`
-`&quot;The_Stealth_Warrior&quot;` gets converted to `&quot;TheStealthWarrior&quot;
-</code></pre>
+<h3 id="Examples-2"><a href="#Examples-2" class="headerlink" title="Examples"></a>Examples</h3><pre class="line-numbers language-none"><code class="language-none">&quot;the-stealth-warrior&quot;&#96; gets converted to &#96;&quot;theStealthWarrior&quot;&#96;
+&#96;&quot;The_Stealth_Warrior&quot;&#96; gets converted to &#96;&quot;TheStealthWarrior&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </blockquote>
-<h3 id="resolution"><a href="#resolution" class="headerlink" title="resolution"></a>resolution</h3><pre><code class="javascript">function toCamelCase(str) &#123;
-    return str.replace(/[-_](.)/g, (_, c) =&gt; c.toUpperCase())
-&#125;
-</code></pre>
+<h3 id="resolution"><a href="#resolution" class="headerlink" title="resolution"></a>resolution</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">toCamelCase</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[-_](.)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">_<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token operator">=></span> c<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h3 id="String-replace-方法"><a href="#String-replace-方法" class="headerlink" title="String.replace()方法"></a>String.replace()方法</h3><p><code>str.replace(substr | regexp, newSubStr | function)</code></p>
 <ul>
 <li>subStr，是str的子串内容</li>
@@ -775,28 +783,30 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
 <h2 id="判断幂的个位数字"><a href="#判断幂的个位数字" class="headerlink" title="判断幂的个位数字"></a>判断幂的个位数字</h2><blockquote>
 <p>给定两个参数str1，str2，要求出str1^str2的个位数字。</p>
 </blockquote>
-<pre><code class="JavaScript">var lastDigit = function(str1, str2) &#123;
-    return +str2 === 0 ? 1 : (+str1.slice(-1))**(+str2.slice(-2) % 4 + 4) % 10
-&#125;
-</code></pre>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">var lastDigit &#x3D; function(str1, str2) &#123;
+    return +str2 &#x3D;&#x3D;&#x3D; 0 ? 1 : (+str1.slice(-1))**(+str2.slice(-2) % 4 + 4) % 10
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>在敲代码编程之前，我们先动笔算算0~9这十个数字的幂的情况，期望从中找出幂的个位数的规律。</p>
 <p>经过简单的计算之后，我们会发现其实0~9每一个数字的幂以4为周期（事实上，0、1、5、6以1为周期，4、8以2为周期），所以取最小公倍数统一处理。此处需要指出：string.slice()方法用于截取字符串，slice(-1)截取最后一个字符，slice(-2)截取最后两个字符，以此类推。</p>
 <h2 id="大数相加问题"><a href="#大数相加问题" class="headerlink" title="大数相加问题"></a>大数相加问题</h2><blockquote>
 <p>传统的a plus b问题，要求它们的和。其中，a、b以字符串给出，返回的结果亦为字符串类型。</p>
 </blockquote>
 <p>The code as below is like an art.</p>
-<pre><code class="javascript">function add(a, b) &#123;
-    let c = 0, res = &#39;&#39;    // res存储运算结果，以字符串形式；c存储每一位的进位
-    a = a.split(&#39;&#39;)
-    b = b.split(&#39;&#39;)    // 字符串分割，转为数组
-    while(a.length || b.length || c) &#123;
-        c += ~~a.pop() + ~~b.pop()    // 二次取反，专门用于处理数组长度为0时取值undefined，而~~undefined值为0
-        res = c % 10 + res    // 结果拼接
-        c = c &gt; 9    // 考虑进位
-    &#125;
-    return res
-&#125;
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> res <span class="token operator">=</span> <span class="token string">''</span>	<span class="token comment">// res存储运算结果，以字符串形式；c存储每一位的进位</span>
+    a <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+    b <span class="token operator">=</span> b<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>	<span class="token comment">// 字符串分割，转为数组</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>length <span class="token operator">||</span> b<span class="token punctuation">.</span>length <span class="token operator">||</span> c<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        c <span class="token operator">+=</span> <span class="token operator">~</span><span class="token operator">~</span>a<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token operator">~</span><span class="token operator">~</span>b<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">// 二次取反，专门用于处理数组长度为0时取值undefined，而~~undefined值为0</span>
+        res <span class="token operator">=</span> c <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">+</span> res	<span class="token comment">// 结果拼接</span>
+        c <span class="token operator">=</span> c <span class="token operator">></span> <span class="token number">9</span>	<span class="token comment">// 考虑进位</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> res
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="单词首字母大写-1"><a href="#单词首字母大写-1" class="headerlink" title="单词首字母大写"></a>单词首字母大写</h2><blockquote>
 <p>const capitalize &#x3D; ([first, …rest], lowerRest &#x3D; false) &#x3D;&gt; first.toUpperCase() + (lowerRest ? rest.join(‘’).toLowerCase() : rest.join(‘’))</p>
 </blockquote>
@@ -819,7 +829,7 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -829,7 +839,7 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -839,13 +849,13 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -855,7 +865,7 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -870,7 +880,7 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1044,7 +1054,7 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/03/14/JavaScript%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0%E9%A2%98/">
                     <div class="card-image">
@@ -1080,7 +1090,7 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2022/03/07/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/">
@@ -1142,7 +1152,7 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1248,13 +1258,13 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1307,8 +1317,8 @@ b = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

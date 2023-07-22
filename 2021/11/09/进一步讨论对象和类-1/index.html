@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -60,7 +60,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -71,7 +71,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -82,7 +82,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -93,7 +93,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -104,7 +104,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -115,7 +115,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -126,14 +126,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -161,7 +161,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -172,7 +172,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -183,7 +183,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -194,7 +194,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -205,7 +205,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -216,7 +216,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -227,7 +227,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -469,7 +469,7 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2021-11-09
                 </div>
                 
@@ -478,8 +478,8 @@
 
                 
                 <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    828
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    810
                 </div>
                 
 
@@ -490,6 +490,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/mid-lake-pavilion.github.io/libs/prism/prism.css">
         
 
         
@@ -505,89 +508,90 @@
 <li>访问与该成员类重名的封装类实例成员语法为：封装类类名.this.封装类实例成员名</li>
 </ul>
 <p>另外，在封装类之外创建非静态成员类实例时，需要先创建封装类的实例，然后使用如下语法：<br>封装类类名.非静态成员类类名 实例变量名 &#x3D; 封装类实例成员名.new 非静态成员类类名</p>
-<pre><code class="java">public class MemberClass &#123;
-    int id;
-    String name;
-    static int counter = 0;
-    public MemberClass(int id, String name) &#123;
-        this.id = id;
-        this.name = name;
-        counter++;  // 计数变量加一
-    &#125;
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MemberClass</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">MemberClass</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+        counter<span class="token operator">++</span><span class="token punctuation">;</span>  <span class="token comment">// 计数变量加一</span>
+    <span class="token punctuation">&#125;</span>
 
-    public void print() &#123;
-        InterClass mc = new InterClass();
-        mc.print();
-    &#125;
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">InterClass</span> mc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InterClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mc<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-//    非静态成员类
-    class InterClass &#123;
-        String name;
-        public void print() &#123;
-//            访问重名属性，需要特定的语法格式
-            System.out.println(&quot;id=&quot;+id+&quot;, name=&quot;+MemberClass.this.name);
-            System.out.println(&quot;counter=&quot;+counter);
-        &#125;
-&#125;
+<span class="token comment">//    非静态成员类</span>
+    <span class="token keyword">class</span> <span class="token class-name">InterClass</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">//            访问重名属性，需要特定的语法格式</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"id="</span><span class="token operator">+</span>id<span class="token operator">+</span><span class="token string">", name="</span><span class="token operator">+</span><span class="token class-name">MemberClass</span><span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"counter="</span><span class="token operator">+</span>counter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-//    静态成员类
-    static class NewInterClass &#123;
-        String name;
-        public void print() &#123;
-            // 访问封装类的静态成员变量
-            System.out.println(&quot;counter=&quot;+counter);
-        &#125;
-    &#125;
+<span class="token comment">//    静态成员类</span>
+    <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">NewInterClass</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 访问封装类的静态成员变量</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"counter="</span><span class="token operator">+</span>counter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
 
-    public static void main(String[] args) &#123;
-        MemberClass ec1 = new MemberClass(1, &quot;Tom&quot;);
-        ec1.print();
-        MemberClass ec2 = new MemberClass(2, &quot;John&quot;);
-        ec2.print();
-        MemberClass ec3 = new MemberClass(3, &quot;Dora&quot;);
-//        在封装类外部创建非静态成员类，需要创建实例对象
-        MemberClass.InterClass mc = ec3.new InterClass();
-        mc.print();
-//        在封装类外部创建静态成员类实例，只需通过类名调用
-        MemberClass.NewInterClass newMc = new MemberClass.NewInterClass();
-        newMc.print();
-    &#125;
-&#125;
-</code></pre>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">MemberClass</span> ec1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MemberClass</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Tom"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ec1<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MemberClass</span> ec2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MemberClass</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"John"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ec2<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MemberClass</span> ec3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MemberClass</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"Dora"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        在封装类外部创建非静态成员类，需要创建实例对象</span>
+        <span class="token class-name">MemberClass<span class="token punctuation">.</span>InterClass</span> mc <span class="token operator">=</span> ec3<span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token class-name">InterClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mc<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        在封装类外部创建静态成员类实例，只需通过类名调用</span>
+        <span class="token class-name">MemberClass<span class="token punctuation">.</span>NewInterClass</span> newMc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MemberClass<span class="token punctuation">.</span>NewInterClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        newMc<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="局部类"><a href="#局部类" class="headerlink" title="局部类"></a>局部类</h2><p>局部内部类是在封装类的方法中定义的内部类，典型用法是用局部类来实现接口，并在方法中返回接口类型。</p>
 <h2 id="匿名类"><a href="#匿名类" class="headerlink" title="匿名类"></a>匿名类</h2><p>指没有名称的类，一般当某个类仅在程序中使用一次，且功能简单时，就可以用匿名类的方式来创建这个类的实例。<br>new 匿名类类名() {<br>    类体;<br>}<br>匿名类必须是一个具体的对象，不能是抽象类（abstract）。</p>
-<pre><code class="java">public class MemberInterface &#123;
-    public void innerMethod() &#123;
-        System.out.println(&quot;从外部实现了公有内部接口&quot;);
-    &#125;
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MemberInterface</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">innerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"从外部实现了公有内部接口"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-    public static void main(String[] args) &#123;
-        OuterClassA o = new OuterClassA();
-//        obj是InnerInterface内部接口的内部实现类的实例对象，具有innerMethod方法
-        OuterClassA.InnerClass obj = o.outerMethod();
-        obj.innerMethod();
-        MemberInterface m = new MemberInterface();
-        m.innerMethod();
-    &#125;
-&#125;
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">OuterClassA</span> o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OuterClassA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        obj是InnerInterface内部接口的内部实现类的实例对象，具有innerMethod方法</span>
+        <span class="token class-name">OuterClassA<span class="token punctuation">.</span>InnerClass</span> obj <span class="token operator">=</span> o<span class="token punctuation">.</span><span class="token function">outerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        obj<span class="token punctuation">.</span><span class="token function">innerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MemberInterface</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MemberInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        m<span class="token punctuation">.</span><span class="token function">innerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
-class OuterClassA &#123;
-//    定义一个内部接口
-    public interface InnerInterface &#123;
-        void innerMethod();
-    &#125;
-//    定义内部类实现内部接口
-    public class InnerClass implements InnerInterface &#123;
-        public void innerMethod() &#123;
-            System.out.println(&quot;在内部实现了公有内部接口&quot;);
-        &#125;
-&#125;
-//    创建一个内部类实例对象
-    public InnerClass outerMethod() &#123;
-        return new InnerClass();
-    &#125;
-&#125;
-</code></pre>
+<span class="token keyword">class</span> <span class="token class-name">OuterClassA</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">//    定义一个内部接口</span>
+    <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">InnerInterface</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">void</span> <span class="token function">innerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token comment">//    定义内部类实现内部接口</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InnerClass</span> <span class="token keyword">implements</span> <span class="token class-name">InnerInterface</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">innerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"在内部实现了公有内部接口"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//    创建一个内部类实例对象</span>
+    <span class="token keyword">public</span> <span class="token class-name">InnerClass</span> <span class="token function">outerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">InnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="范型"><a href="#范型" class="headerlink" title="范型"></a>范型</h2><p>范型是对Java语言类型系统的一种扩展，支持创建可以按类型进行参数化的类、接口或方法。<br>将所操作的数据类型参数化，即该数据类型被声明为一个参数，声明的类型参数在使用时用具体地类型来替换。</p>
 
                 
@@ -601,7 +605,7 @@ class OuterClassA &#123;
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -611,7 +615,7 @@ class OuterClassA &#123;
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -621,13 +625,13 @@ class OuterClassA &#123;
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint policy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/mid-lake-pavilion.github.io/about" target="_blank">鹿卿</a>
                     !
                 </span>
@@ -637,7 +641,7 @@ class OuterClassA &#123;
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -830,7 +834,7 @@ class OuterClassA &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2021/11/10/Java%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8/">
                     <div class="card-image">
@@ -870,7 +874,7 @@ class OuterClassA &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2021/11/08/%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/">
@@ -936,7 +940,7 @@ class OuterClassA &#123;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1042,13 +1046,13 @@ class OuterClassA &#123;
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
@@ -1101,8 +1105,8 @@ class OuterClassA &#123;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>
