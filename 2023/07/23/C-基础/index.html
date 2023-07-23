@@ -4,9 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="自编码器-实战, 湖心亭">
+    <meta name="keywords" content="C++基础, 湖心亭">
     <meta name="description" content="
-paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythmia Subtype Discovery，https://arxiv.org/pd">
+做算法题时，往往需要一些最基础的“编程常识”，可以提高解题效率。本篇博客将常见的C++编程解题知识进行记录。
+
+数据范围
+int。记住一点：**int存储数据绝对值数量级不超过$10^9$，而long long存储数据绝对值数量级不超过$">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@ paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythm
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>自编码器-实战 | 湖心亭</title>
+    <title>C++基础 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -323,12 +326,12 @@ paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythm
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">自编码器-实战</h1>
+                    <h1 class="description center-align post-title">C++基础</h1>
                 </div>
             </div>
         </div>
@@ -456,8 +459,8 @@ paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythm
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/mid-lake-pavilion.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                深度学习
+                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" class="post-category">
+                                算法训练
                             </a>
                         
                     </div>
@@ -469,7 +472,7 @@ paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythm
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-09
+                    2023-07-23
                 </div>
                 
 
@@ -478,7 +481,7 @@ paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythm
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    554
                 </div>
                 
 
@@ -499,157 +502,55 @@ paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythm
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythmia Subtype Discovery，<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1910.09570">https://arxiv.org/pdf/1910.09570</a></p>
-<p>code： <a target="_blank" rel="noopener" href="https://github.com/shawntan/icentia-ecg">https://github.com/shawntan/icentia-ecg</a></p>
-<p>datasets： <a target="_blank" rel="noopener" href="https://academictorrents.com/details/af04abfe9a3c96b30e5dd029eb185e19a7055272">https://academictorrents.com/details/af04abfe9a3c96b30e5dd029eb185e19a7055272</a></p>
+<p>做算法题时，往往需要一些最基础的“编程常识”，可以提高解题效率。本篇博客将常见的C++编程解题知识进行记录。</p>
 </blockquote>
-<p>这篇论文指出了基于心电信号进行心率分类这个任务，作者采取了半监督学习的方式，对以往已经取得不错结果的监督学习方式发起了挑战。同时，作者还公开了一个数据集。代码部分主要是对各种机器学习方法进行分类效果的评估。</p>
-<p>这里着重看一看代码中关于自编码器的部分。</p>
-<h2 id="自编码器"><a href="#自编码器" class="headerlink" title="自编码器"></a>自编码器</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>自编码器其实是一类特殊的前馈神经网络。它所做的工作可以简单概括为：<strong>将输入复制到输出</strong>。除开常规的输入层$\mathbf{x}$和输出层$\mathbf{y}$，它往往还包含了隐藏层$\mathbf{h}$；其结构包括了两个部分：</p>
-<ul>
-<li>编码器（Encoder），表示为一个函数，将输入层$\mathbf{x}$映射到隐藏层$\mathbf{h}$：$\mathbf{h}&#x3D;f(\mathbf{x})$</li>
-<li>解码器（Decoder），表示为一个函数，将隐藏层$\mathbf{h}$映射到输出层$\mathbf{y}$：$\mathbf{y}&#x3D;g(\mathbf{h})$</li>
+<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><ul>
+<li><code>int</code>。记住一点：**<code>int</code>存储数据绝对值数量级不超过$10^9$，而<code>long long</code>存储数据绝对值数量级不超过$10^{18}$**。<ul>
+<li><code>INT_MAX</code>：最大的<code>int</code>类型整数。</li>
+<li><code>INT_MIN</code>：最小的<code>int</code>类型整数。</li>
 </ul>
-<p>那么，自编码器模型整体可以描述为<br>$$<br>\mathbf{y}&#x3D;g(f(\mathbf{x}))<br>$$<br><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-169007057373226.png" alt="自编码器"></p>
-<p>如果只是一味地让自编码器的输出$\mathbf{y}$和输入$\mathbf{x}$完全相同，这毫无疑问舍近求远失去了意义。一般地，**自编码器中更加关注编码器的输出结果，即隐藏层$\mathbf{h}$**。比如，如果$\mathbf{h}$的维度比$\mathbf{x}$小，编码器就相当于学习到了原始输入的更加显著的特征。这种想法，与诸如主成分分析一般的降维算法有些相似。</p>
-<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p>自编码器也是前馈神经网络，它的训练和一般的前馈神经网络很类似，即定义损失函数、然后梯度下降，只不过，这是一种<strong>无监督的学习方式</strong>，无需额外的标注工作，因为它的学习目标就是原始的输入数据。更一般地，可以采取小批量的随机梯度下降，不断地逼近要学习的原始数据。</p>
-<p>损失函数用数学语言描述为<br>$$<br>\mathbf{Loss}&#x3D;\mathcal{L}(\mathbf{x},g(f(\mathbf{x})))<br>$$<br>其中具体的损失函数$\mathcal{L}$因情况而定，比如可以是均方差$MSE$。</p>
-<h2 id="实战代码"><a href="#实战代码" class="headerlink" title="实战代码"></a>实战代码</h2><p>接下来，借助现有的代码，理解一下自编码器以及训练过程。其实，正如前面提到过的，这个过程和一般的前馈神经网络很像。</p>
-<h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><p>准备数据始终是第一步，这一部分的代码主要在<code>train_autoencoder.py</code>中。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># train_autoencoder.py</span>
-<span class="token keyword">def</span> <span class="token function">data_stream</span><span class="token punctuation">(</span>filenames<span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">''' 
-    用于读取文件，返回可以拿来训练的数据用
-    filenames: list，文件名列表
-    shuffle: 是否打乱
-    batch_size: 批量，默认为16
-    '''</span>
-    stream <span class="token operator">=</span> data_io<span class="token punctuation">.</span>stream_file_list<span class="token punctuation">(</span>
-        filenames<span class="token punctuation">,</span>
-        buffer_count<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span>
-        batch_size<span class="token operator">=</span>batch_size<span class="token punctuation">,</span>
-        chunk_size<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>
-        shuffle<span class="token operator">=</span>shuffle
-    <span class="token punctuation">)</span>
-    stream <span class="token operator">=</span> data_io<span class="token punctuation">.</span>threaded<span class="token punctuation">(</span>stream<span class="token punctuation">,</span> queue_size<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> stream<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><code>float, double</code>。记住一点：遇到浮点数，尽量使用<code>double</code>。</li>
+<li><code>string</code>。</li>
+</ul>
+<h2 id="符号常量"><a href="#符号常量" class="headerlink" title="符号常量"></a>符号常量</h2><ul>
+<li><p>宏</p>
+<p><code>#define PI 3.14159</code>，<code>#define P pair&lt;int, int&gt;</code></p>
+</li>
+<li><p>typedef关键字</p>
+<p><code>typedef pair&lt;int, int&gt; P; </code>，<code>typedef long long LL</code></p>
+</li>
+</ul>
+<h2 id="memset与fill"><a href="#memset与fill" class="headerlink" title="memset与fill"></a>memset与fill</h2><p><code>memset(array, element, buffer)</code>，位于头文件<code>&lt;stdio.h&gt;</code>中，将数组<code>array</code>中大小为<code>buffer</code>的区域全部置为同一个元素<code>element</code>（通常为0或者-1），常见用法为<code>memset(arr, 0, sizeof(arr))</code>，将数组<code>arr</code>初始化为全零。</p>
+<p><code>fill(array, element, buffer)</code>，<code>element</code>为1，但是执行速度没有<code>memset</code>快。</p>
+<h2 id="结构体初始化"><a href="#结构体初始化" class="headerlink" title="结构体初始化"></a>结构体初始化</h2><p>结构体也有自己的构造函数，请注意：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct s &#123;
+    string name;
+    int age;
+    s(string name, int age): name(name), age(age) &#123;&#125;
+&#125; Student;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>主函数中将数据集进行了划分，比例为9:1。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">directory <span class="token operator">=</span> <span class="token string">'icentia-ecg\datasets'</span> <span class="token comment"># 这里是自己定义的数据集存放位置（相对路径）</span>
-filenames <span class="token operator">=</span> <span class="token punctuation">[</span> directory <span class="token operator">+</span> <span class="token string">"\\%05d_batched.pkl.gz"</span> <span class="token operator">%</span> i
-              <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">21</span><span class="token punctuation">)</span> <span class="token punctuation">]</span> <span class="token comment"># 这里自己调整，不用全部的数据集，只使用编号00000到00020的数据集</span>
-train_count <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>filenames<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.9</span><span class="token punctuation">)</span>
-<span class="token comment"># 划分训练集和验证集</span>
-train_filenames <span class="token operator">=</span> filenames<span class="token punctuation">[</span><span class="token punctuation">:</span>train_count<span class="token punctuation">]</span>
-valid_filenames <span class="token operator">=</span> filenames<span class="token punctuation">[</span>train_count<span class="token punctuation">:</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果按照上述写法给结构体编写了显式的构造函数，那么就不能不经初始化定义一个结构体了，因为默认的构造函数<code>s() &#123;&#125;</code>被覆盖。因此，完整的、容错性最好的写法如下。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct s &#123;
+    string name;
+    int age;
+    s() &#123;&#125; &#x2F;&#x2F; 显式编写空的构造函数，防止被覆盖
+    s(string name, int age): name(name), age(age) &#123;&#125;
+&#125; Student;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="搭建自编码器"><a href="#搭建自编码器" class="headerlink" title="搭建自编码器"></a>搭建自编码器</h3><p>关于自编码器的模型的代码主要在<code>model.py</code>中的<code>class Autoencoder</code>，这里限于篇幅不贴出来，而是尝试绘制了自编码器的结构示意图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/ecg%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-169007073195927.png" alt="ecg自编码器"></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># model.py/Autoencoder</span>
-<span class="token keyword">def</span> <span class="token function">encode</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> input_flat<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    encoding_1 <span class="token operator">=</span> self<span class="token punctuation">.</span>frame_bn<span class="token punctuation">(</span>self<span class="token punctuation">.</span>autoencode_1<span class="token punctuation">.</span>encode<span class="token punctuation">(</span>input_flat<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> encoding_1
+<h2 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h2><p>常用C++中的输入输出操作符<code>cin</code>和<code>cout</code>。</p>
+<ul>
+<li><code>cin</code>读取缓冲区，直到遇到空白符</li>
+<li><code>getline(cin, str)</code>，其中<code>str</code>为<code>string</code>容器，<strong>它读取缓冲区，直到遇到换行符，因此很适合读取一整行的输入</strong></li>
+<li><code>cout</code>将缓冲区输出</li>
+</ul>
+<h2 id="行末空格符处理"><a href="#行末空格符处理" class="headerlink" title="行末空格符处理"></a>行末空格符处理</h2><p>有些算法题要求控制行末不允许出现空格符，比较坑，因为可能导致格式错误，处理方法也很简单，在循环内部加一个判断分支即可（比较繁琐）。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int i;
+for(i&#x3D;0; i&lt;arr.size(); i++) &#123;
+    if(i !&#x3D; arr.size()-1)	cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;
+    else	c
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token keyword">def</span> <span class="token function">decode</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> encoding<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    output <span class="token operator">=</span> self<span class="token punctuation">.</span>autoencode_1<span class="token punctuation">.</span>decode<span class="token punctuation">(</span>encoding<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> output
-
-<span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token builtin">input</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token builtin">input</span> <span class="token operator">-</span> self<span class="token punctuation">.</span>mean<span class="token punctuation">)</span> <span class="token operator">/</span> self<span class="token punctuation">.</span>std
-    input_flat <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    output <span class="token operator">=</span> self<span class="token punctuation">.</span>decode<span class="token punctuation">(</span>self<span class="token punctuation">.</span>encode<span class="token punctuation">(</span>input_flat<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    output <span class="token operator">=</span> output<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token comment"># input为原始输入，output为自编码器的输出，直接计算损失</span>
-    loss <span class="token operator">=</span> torch<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">(</span>output <span class="token operator">-</span> <span class="token builtin">input</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token comment"># loss = torch.mean(abs(output - input))</span>
-    <span class="token keyword">return</span> loss<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>代码中的自编码器结构还是很简单的，其实这里的编码器和解码器都只是一个类似残差块的结构（代码中的<code>ResidualEncoder</code>、<code>ResidualDecoder</code>），但是注意，实际上<code>Autoencoder</code>中的二级结构为<code>ConvAutoencoder</code>，只不过<code>ConvAutoencoder</code>这里仅由一个<code>ResidualEncoder</code>和一个<code>ResidualDecoder</code>构成。总的来说，编码器、解码器结构十分明显，它们结构上呈现出对称感，共同完成将原始输入映射到隐藏层编码，然后再映射回去的任务。</p>
-<p>将程序运行的结果截图如下。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="程序运行结果"></p>
-<p>另外，<code>loss = torch.sqrt(torch.mean((output - input)**2))</code>可以看出，这里的损失函数选用的是均方根误差；学习的对象也正是原始的输入数据<code>input</code>，正是自编码器的初衷。</p>
-<h3 id="开启训练"><a href="#开启训练" class="headerlink" title="开启训练"></a>开启训练</h3><p>再次回到<code>train_autoencoder.py</code>。在正式开启训练之前，创建模型，定义好优化器、参数等等准备工作。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># train</span>
-model <span class="token operator">=</span> Autoencoder<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token comment"># valid_data = torch.from_numpy(signal_data_valid).cuda()[:, None, :]</span>
-<span class="token keyword">for</span> p <span class="token keyword">in</span> model<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> p<span class="token punctuation">.</span>dim<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span>
-        torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>init<span class="token punctuation">.</span>xavier_uniform_<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
-<span class="token comment"># model = torch.load('model.pt')</span>
-model <span class="token operator">=</span> model<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-parameters <span class="token operator">=</span> model<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment"># 优化器</span>
-optimizer <span class="token operator">=</span> optim<span class="token punctuation">.</span>Adam<span class="token punctuation">(</span>parameters<span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">1e-3</span><span class="token punctuation">)</span> <span class="token comment"># , weight_decay=1e-6)</span>
-<span class="token comment"># optimizer = optim.SGD(parameters, lr=0.05, momentum=0.999)</span>
-scheduler <span class="token operator">=</span> optim<span class="token punctuation">.</span>lr_scheduler<span class="token punctuation">.</span>ReduceLROnPlateau<span class="token punctuation">(</span>
-    optimizer<span class="token punctuation">,</span> mode<span class="token operator">=</span><span class="token string">'min'</span><span class="token punctuation">,</span>
-    factor<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> patience<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> threshold<span class="token operator">=</span><span class="token number">0.0001</span><span class="token punctuation">,</span>
-    threshold_mode<span class="token operator">=</span><span class="token string">'rel'</span><span class="token punctuation">,</span> cooldown<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> min_lr<span class="token operator">=</span><span class="token number">1e-6</span><span class="token punctuation">,</span> eps<span class="token operator">=</span><span class="token number">1e-08</span>
-<span class="token punctuation">)</span>
-<span class="token comment"># 训练轮数</span>
-epochs <span class="token operator">=</span> <span class="token number">10</span>
-<span class="token comment"># batch_count = signal_data_batched.shape[0] // batch_size</span>
-best_loss <span class="token operator">=</span> np<span class="token punctuation">.</span>inf
-i <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token builtin">input</span> <span class="token operator">=</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>开启训练。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># train_autoencoder.py</span>
-<span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    running_loss <span class="token operator">=</span> <span class="token number">0.0</span>
-    time_step_count <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> data <span class="token keyword">in</span> data_stream<span class="token punctuation">(</span>train_filenames<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment"># get the inputs</span>
-        <span class="token builtin">input</span> <span class="token operator">=</span> torch<span class="token punctuation">.</span>from_numpy<span class="token punctuation">(</span>data<span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>float32<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment"># zero the parameter gradients</span>
-        <span class="token comment"># forward + backward + optimize，model(input)直接返回输出和原始输入之间的损失</span>
-        loss <span class="token operator">=</span> model<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>
-        <span class="token comment"># print(loss)</span>
-
-        <span class="token keyword">if</span> i <span class="token operator">%</span> <span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>clip_grad_norm_<span class="token punctuation">(</span>parameters<span class="token punctuation">,</span> <span class="token number">10.</span><span class="token punctuation">)</span>
-            optimizer<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            optimizer<span class="token punctuation">.</span>zero_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment"># print statistics</span>
-        total_samples <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">.</span>numel<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        running_loss <span class="token operator">+=</span> loss<span class="token punctuation">.</span>detach<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> total_samples
-        time_step_count <span class="token operator">+=</span> total_samples
-
-        i <span class="token operator">+=</span> <span class="token number">1</span>
-        <span class="token keyword">if</span> i <span class="token operator">%</span> report_every <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>    <span class="token comment"># print every 500 mini-batches</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'[%d, %5d] loss: %.3f'</span> <span class="token operator">%</span>
-                  <span class="token punctuation">(</span>epoch<span class="token punctuation">,</span> i<span class="token punctuation">,</span> running_loss <span class="token operator">/</span> time_step_count<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            running_loss <span class="token operator">=</span> <span class="token number">0.0</span>
-            time_step_count <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">if</span> i <span class="token operator">%</span> <span class="token punctuation">(</span>report_every <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token comment"># print()</span>
-            <span class="token comment"># print("REPORTING")</span>
-            <span class="token comment"># print()</span>
-            model<span class="token punctuation">.</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token keyword">with</span> torch<span class="token punctuation">.</span>no_grad<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                total_loss <span class="token operator">=</span> <span class="token number">0.</span>
-                count <span class="token operator">=</span> <span class="token number">0</span>
-                <span class="token keyword">for</span> data <span class="token keyword">in</span> data_stream<span class="token punctuation">(</span>valid_filenames<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
-                                        batch_size<span class="token operator">=</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                    <span class="token comment"># get the inputs</span>
-                    <span class="token builtin">input</span> <span class="token operator">=</span> torch<span class="token punctuation">.</span>from_numpy<span class="token punctuation">(</span>data<span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>float32<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span>
-                    loss <span class="token operator">=</span> model<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>
-                    <span class="token comment"># print(loss)</span>
-                    total_loss <span class="token operator">+=</span> loss<span class="token punctuation">.</span>data<span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span>
-                    count <span class="token operator">+=</span> <span class="token number">1</span>
-                valid_loss <span class="token operator">=</span> total_loss <span class="token operator">/</span> count
-                <span class="token keyword">if</span> valid_loss <span class="token operator">&lt;</span> best_loss<span class="token punctuation">:</span>
-                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Best valid loss:"</span><span class="token punctuation">,</span> valid_loss<span class="token punctuation">)</span>
-                    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'model.pt'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-                        torch<span class="token punctuation">.</span>save<span class="token punctuation">(</span>model<span class="token punctuation">,</span> f<span class="token punctuation">)</span>
-                    best_loss <span class="token operator">=</span> valid_loss
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Valid loss:"</span><span class="token punctuation">,</span> valid_loss<span class="token punctuation">)</span>
-            random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>valid_filenames<span class="token punctuation">)</span>
-            scheduler<span class="token punctuation">.</span>step<span class="token punctuation">(</span>valid_loss<span class="token punctuation">)</span>
-            model<span class="token punctuation">.</span>train<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -676,7 +577,7 @@ i <span class="token operator">=</span> <span class="token number">0</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/03/09/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/03/09/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98/</a>
+                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/07/23/C-%E5%9F%BA%E7%A1%80/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/07/23/C-%E5%9F%BA%E7%A1%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -893,13 +794,13 @@ i <span class="token operator">=</span> <span class="token number">0</span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/07/23/C-%E5%9F%BA%E7%A1%80/">
+                <a href="/mid-lake-pavilion.github.io/2023/07/23/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%97%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="C++基础">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="朴素贝叶斯算法">
                         
-                        <span class="card-title">C++基础</span>
+                        <span class="card-title">朴素贝叶斯算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -916,8 +817,8 @@ i <span class="token operator">=</span> <span class="token number">0</span>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" class="post-category">
-                                    算法训练
+                            <a href="/mid-lake-pavilion.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
@@ -942,13 +843,13 @@ i <span class="token operator">=</span> <span class="token number">0</span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2022/05/21/Python%E8%AF%BB%E5%86%99excel%E8%A1%A8%E6%A0%BC/">
+                <a href="/mid-lake-pavilion.github.io/2023/03/09/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="Python读写excel表格">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="自编码器-实战">
                         
-                        <span class="card-title">Python读写excel表格</span>
+                        <span class="card-title">自编码器-实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -959,14 +860,14 @@ i <span class="token operator">=</span> <span class="token number">0</span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/mid-lake-pavilion.github.io/categories/%E7%8E%A9%E8%BD%ACPython/" class="post-category">
-                                    玩转Python
+                            <a href="/mid-lake-pavilion.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    深度学习
                                 </a>
                             
                             
@@ -976,8 +877,8 @@ i <span class="token operator">=</span> <span class="token number">0</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/mid-lake-pavilion.github.io/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
