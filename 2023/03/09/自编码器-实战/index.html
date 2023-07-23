@@ -544,8 +544,7 @@ train_filenames <span class="token operator">=</span> filenames<span class="toke
 valid_filenames <span class="token operator">=</span> filenames<span class="token punctuation">[</span>train_count<span class="token punctuation">:</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="搭建自编码器"><a href="#搭建自编码器" class="headerlink" title="搭建自编码器"></a>搭建自编码器</h3><p>关于自编码器的模型的代码主要在<code>model.py</code>中的<code>class Autoencoder</code>，这里限于篇幅不贴出来，而是尝试绘制了自编码器的结构示意图。</p>
-<!-- ![ecg自编码器](../images/自编码器-实战/ecg自编码器.png) -->
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pCqrKeI"><img src="https://s1.ax1x.com/2023/07/23/pCqrKeI.png" alt="pCqrKeI.png"></a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/ecg%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-169007073195927.png" alt="ecg自编码器"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># model.py/Autoencoder</span>
 <span class="token keyword">def</span> <span class="token function">encode</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> input_flat<span class="token punctuation">)</span><span class="token punctuation">:</span>
     encoding_1 <span class="token operator">=</span> self<span class="token punctuation">.</span>frame_bn<span class="token punctuation">(</span>self<span class="token punctuation">.</span>autoencode_1<span class="token punctuation">.</span>encode<span class="token punctuation">(</span>input_flat<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -567,9 +566,7 @@ valid_filenames <span class="token operator">=</span> filenames<span class="toke
 
 <p>代码中的自编码器结构还是很简单的，其实这里的编码器和解码器都只是一个类似残差块的结构（代码中的<code>ResidualEncoder</code>、<code>ResidualDecoder</code>），但是注意，实际上<code>Autoencoder</code>中的二级结构为<code>ConvAutoencoder</code>，只不过<code>ConvAutoencoder</code>这里仅由一个<code>ResidualEncoder</code>和一个<code>ResidualDecoder</code>构成。总的来说，编码器、解码器结构十分明显，它们结构上呈现出对称感，共同完成将原始输入映射到隐藏层编码，然后再映射回去的任务。</p>
 <p>将程序运行的结果截图如下。</p>
-<p><a target="_blank" rel="noopener" href="https://s1.ax1x.com/2023/07/23/pCqrKeI.md.png">https://s1.ax1x.com/2023/07/23/pCqrKeI.md.png</a></p>
-<!-- ![image-20230309211023886](../images/自编码器-实战/image-20230309211023886.png) -->
-<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pCqrnOA"><img src="https://s1.ax1x.com/2023/07/23/pCqrnOA.png" alt="pCqrnOA.png"></a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="程序运行结果"></p>
 <p>另外，<code>loss = torch.sqrt(torch.mean((output - input)**2))</code>可以看出，这里的损失函数选用的是均方根误差；学习的对象也正是原始的输入数据<code>input</code>，正是自编码器的初衷。</p>
 <h3 id="开启训练"><a href="#开启训练" class="headerlink" title="开启训练"></a>开启训练</h3><p>再次回到<code>train_autoencoder.py</code>。在正式开启训练之前，创建模型，定义好优化器、参数等等准备工作。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># train</span>
