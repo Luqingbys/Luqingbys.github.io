@@ -4,12 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++基础, 湖心亭">
-    <meta name="description" content="
-做算法题时，往往需要一些最基础的“编程常识”，可以提高解题效率。本篇博客将常见的C++编程解题知识进行记录。
+    <meta name="keywords" content="分治, 湖心亭">
+    <meta name="description" content="分治分治，分而治之。将复杂的问题逐步划分为若干不相交的子问题，逐个击破后进行合并，得到最终的解。其步骤如下：
 
-数据范围
-int。记住一点：**int存储数据绝对值数量级不超过$10^9$，而long long存储数据绝对值数量级不超过$">
+划分（divide）
+解决（conquer）
+合并（merge）
+
+经典：棋盘覆盖问题给定一个大小为$2^k\times 2^k">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +23,7 @@ int。记住一点：**int存储数据绝对值数量级不超过$10^9$，而lon
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C++基础 | 湖心亭</title>
+    <title>分治 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -326,12 +328,12 @@ int。记住一点：**int存储数据绝对值数量级不超过$10^9$，而lon
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++基础</h1>
+                    <h1 class="description center-align post-title">分治</h1>
                 </div>
             </div>
         </div>
@@ -472,7 +474,7 @@ int。记住一点：**int存储数据绝对值数量级不超过$10^9$，而lon
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-23
+                    2023-07-24
                 </div>
                 
 
@@ -481,7 +483,7 @@ int。记住一点：**int存储数据绝对值数量级不超过$10^9$，而lon
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    554
+                    1.2k
                 </div>
                 
 
@@ -501,55 +503,104 @@ int。记住一点：**int存储数据绝对值数量级不超过$10^9$，而lon
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>做算法题时，往往需要一些最基础的“编程常识”，可以提高解题效率。本篇博客将常见的C++编程解题知识进行记录。</p>
-</blockquote>
-<h2 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h2><ul>
-<li><code>int</code>。记住一点：**<code>int</code>存储数据绝对值数量级不超过$10^9$，而<code>long long</code>存储数据绝对值数量级不超过$10^{18}$**。<ul>
-<li><code>INT_MAX</code>：最大的<code>int</code>类型整数。</li>
-<li><code>INT_MIN</code>：最小的<code>int</code>类型整数。</li>
-</ul>
-</li>
-<li><code>float, double</code>。记住一点：遇到浮点数，尽量使用<code>double</code>。</li>
-<li><code>string</code>。</li>
-</ul>
-<h2 id="符号常量"><a href="#符号常量" class="headerlink" title="符号常量"></a>符号常量</h2><ul>
-<li><p>宏</p>
-<p><code>#define PI 3.14159</code>，<code>#define P pair&lt;int, int&gt;</code></p>
-</li>
-<li><p>typedef关键字</p>
-<p><code>typedef pair&lt;int, int&gt; P; </code>，<code>typedef long long LL</code></p>
-</li>
-</ul>
-<h2 id="memset与fill"><a href="#memset与fill" class="headerlink" title="memset与fill"></a>memset与fill</h2><p><code>memset(array, element, buffer)</code>，位于头文件<code>&lt;stdio.h&gt;</code>中，将数组<code>array</code>中大小为<code>buffer</code>的区域全部置为同一个元素<code>element</code>（通常为0或者-1），常见用法为<code>memset(arr, 0, sizeof(arr))</code>，将数组<code>arr</code>初始化为全零。</p>
-<p><code>fill(array, element, buffer)</code>，<code>element</code>为1，但是执行速度没有<code>memset</code>快。</p>
-<h2 id="结构体初始化"><a href="#结构体初始化" class="headerlink" title="结构体初始化"></a>结构体初始化</h2><p>结构体也有自己的构造函数，请注意：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct s &#123;
-    string name;
-    int age;
-    s(string name, int age): name(name), age(age) &#123;&#125;
-&#125; Student;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>如果按照上述写法给结构体编写了显式的构造函数，那么就不能不经初始化定义一个结构体了，因为默认的构造函数<code>s() &#123;&#125;</code>被覆盖。因此，完整的、容错性最好的写法如下。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct s &#123;
-    string name;
-    int age;
-    s() &#123;&#125; &#x2F;&#x2F; 显式编写空的构造函数，防止被覆盖
-    s(string name, int age): name(name), age(age) &#123;&#125;
-&#125; Student;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h2><p>常用C++中的输入输出操作符<code>cin</code>和<code>cout</code>。</p>
+                <h2 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h2><p>分治，分而治之。将复杂的问题逐步划分为若干<strong>不相交</strong>的子问题，逐个击破后进行合并，得到最终的解。其步骤如下：</p>
 <ul>
-<li><code>cin</code>读取缓冲区，直到遇到空白符</li>
-<li><code>getline(cin, str)</code>，其中<code>str</code>为<code>string</code>容器，<strong>它读取缓冲区，直到遇到换行符，因此很适合读取一整行的输入</strong></li>
-<li><code>cout</code>将缓冲区输出</li>
+<li>划分（divide）</li>
+<li>解决（conquer）</li>
+<li>合并（merge）</li>
 </ul>
-<h2 id="行末空格符处理"><a href="#行末空格符处理" class="headerlink" title="行末空格符处理"></a>行末空格符处理</h2><p>有些算法题要求控制行末不允许出现空格符，比较坑，因为可能导致格式错误，处理方法也很简单，在循环内部加一个判断分支即可（比较繁琐）。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int i;
-for(i&#x3D;0; i&lt;arr.size(); i++) &#123;
-    if(i !&#x3D; arr.size()-1)	cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;
-    else	c
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="经典：棋盘覆盖问题"><a href="#经典：棋盘覆盖问题" class="headerlink" title="经典：棋盘覆盖问题"></a>经典：棋盘覆盖问题</h2><p>给定一个大小为$2^k\times 2^k$（$k\in N_+$）的白色棋盘，其中有一个格子是黑色的。下图为$k&#x3D;2$即4的棋盘示例。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/f76cd728-73c9-4a70-b90e-af0a6882461e.png" alt="棋盘示例图"></p>
+<p>现在想用一种大小占三个小方格的形骨牌来覆盖整个棋盘，这种L形骨牌可以通过旋转得到下面四种形态：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/58682a08-0683-4d35-8ab2-bb6f09a284d7.png" alt="四种L形骨牌"></p>
+<p>注意，在覆盖的时候，骨牌之间不能相互覆盖，也不能覆盖初始状态下已经是黑色的那个格子。</p>
+<p>请输出覆盖方案，下图是上面示例的覆盖方案（注：不同颜色只是用来区分不同的骨牌，与题意无关）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/24247e36-1277-4c3d-8bc8-0ee0d8d4bc8b.png" alt="示例解"></p>
+<h3 id="问题的解"><a href="#问题的解" class="headerlink" title="问题的解"></a>问题的解</h3><p>首先明确的是，该问题一定是有解的（不妨自己用数学归纳法证明一下）。而原问题其实是比较复杂的（很明显，棋盘较大，而仅给了一个特殊方格），因此考虑分治。</p>
+<ul>
+<li><p>divide</p>
+<p>如何将原问题划分为若干互不相交的子问题？很直观的想法是，将棋盘进行四等分。但是仅给出了一个特殊方格，因此这样四等分后并不能得到四个子问题。这时就需要用到给定的L形骨牌了：<strong>将L形骨牌放置于未出现特殊方格的三个等分区域中，这样使得其也出现了“特殊方格”，进而划分出四个互不相交的子问题。</strong>接下来考虑递归边界：极限情况为$2\times 2$的棋盘，再划分时，四个方格均为特殊方格了，于是，当棋盘为$1\times 1$时，递归终止。</p>
+</li>
+<li><p>conquer</p>
+</li>
+<li><p>merge</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E6%A3%8B%E7%9B%98%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98.jpg" alt="棋盘覆盖问题的划分"></p>
+<p>用区域的左下角坐标、右上角坐标和特殊点坐标表示该区域。以上图为例，则对于给定的区域$(&lt;x_1,y_1&gt;,&lt;x_2,y_2&gt;;&lt;x_0,y_0&gt;)$，令$x_m&#x3D;\frac{x_1+x_2}{2},y_m&#x3D;\frac{y_1+y_2}{2}$等分出四个子区域：</p>
+<ul>
+<li>$(&lt;x_1,y_1&gt;,&lt;x_m,y_m&gt;;&lt;x_m,y_m&gt;)$</li>
+<li>$(&lt;x_m+1,y_1&gt;,&lt;x_2,y_m&gt;;&lt;x_m+1,y_m&gt;)$</li>
+<li>$(&lt;x_1,y_m+1&gt;,&lt;x_m,y_2&gt;;&lt;x_m,y_m+1&gt;)$</li>
+<li>$(&lt;x_m+1,y_m+1&gt;,&lt;x_2,y_2&gt;;&lt;x_0,y_0&gt;)$</li>
+</ul>
+<p>当判断出给定的特殊点$&lt;x_0,y_0&gt;$在右上角区域后，即可判断出L形骨牌的拐点坐标（即左下角区域的右上角坐标，其余四种情况同理分析）。</p>
+<p>完整的解题代码如下。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+using namespace std;
+typedef pair&lt;int, int&gt; P;
+&#x2F;* run this program using the console pauser or add your own getch, system(&quot;pause&quot;) or input loop *&#x2F;
+vector&lt;P&gt; vs;
+
+bool comp(P p1, P p2) &#123;
+	if(p1.first &#x3D;&#x3D; p2.first)	return p1.second &lt; p2.second;
+	return p1.first &lt; p2.first;
+&#125;
+
+void cope(int x1, int y1, int x2, int y2, int x, int y) &#123;
+    &#x2F;*
+    * x1, y1为左下角坐标，x2, y2为右上角坐标
+    * x, y为特殊点坐标
+    *&#x2F;
+	if(x1 &#x3D;&#x3D; x2 &amp;&amp; y1 &#x3D;&#x3D; y2)	return;
+	int midx &#x3D; x1 + (x2 - x1) &#x2F; 2;
+	int midy &#x3D; y1 + (y2 - y1) &#x2F; 2;
+	if(x &gt;&#x3D; x1 &amp;&amp; x &lt;&#x3D; midx &amp;&amp; y &gt;&#x3D; y1 &amp;&amp; y &lt;&#x3D; midy) &#123;
+		&#x2F;&#x2F; 在左下方区域
+		vs.push_back(&#123;midx+1, midy+1&#125;);
+		cope(x1, y1, midx, midy, x, y);
+		cope(midx+1, y1, x2, midy, midx+1, midy);
+		cope(x1, midy+1, midx, y2, midx, midy+1);
+		cope(midx+1, midy+1, x2, y2, midx+1, midy+1);
+	&#125; else if(x &gt;&#x3D; midx+1 &amp;&amp; x &lt;&#x3D;x2 &amp;&amp; y &gt;&#x3D; y1 &amp;&amp; y &lt;&#x3D; midy) &#123;
+		&#x2F;&#x2F; 在右下方区域
+		vs.push_back(&#123;midx, midy+1&#125;);
+		cope(x1, y1, midx, midy, midx, midy);
+		cope(midx+1, y1, x2, midy, x, y);
+		cope(x1, midy+1, midx, y2, midx, midy+1);
+		cope(midx+1, midy+1, x2, y2, midx+1, midy+1);
+	&#125; else if(x &gt;&#x3D; x1 &amp;&amp; x &lt;&#x3D; midx &amp;&amp; y &gt;&#x3D; midy+1 &amp;&amp; y &lt;&#x3D; y2) &#123;
+		&#x2F;&#x2F; 在左上方区域
+		vs.push_back(&#123;midx+1, midy&#125;);
+		cope(x1, y1, midx, midy, midx, midy);
+		cope(midx+1, y1, x2, midy, midx+1, midy);
+		cope(x1, midy+1, midx, y2, x, y);
+		cope(midx+1, midy+1, x2, y2, midx+1, midy+1); 
+	&#125; else &#123;
+		&#x2F;&#x2F; 在右上方区域
+		vs.push_back(&#123;midx, midy&#125;);
+		cope(x1, y1, midx, midy, midx, midy);
+		cope(midx+1, y1, x2, midy, midx+1, midy);
+		cope(x1, midy+1, midx, y2, midx, midy+1);
+		cope(midx+1, midy+1, x2, y2, x, y); 
+	&#125;
+&#125;
+
+int main(int argc, char** argv) &#123;
+	int n, x0, y0;
+	cin&gt;&gt;n&gt;&gt;x0&gt;&gt;y0;
+	cope(1, 1, pow(2, n), pow(2, n), x0, y0);
+	sort(vs.begin(), vs.end(), comp);
+	for(vector&lt;P&gt;::iterator iter &#x3D; vs.begin(); iter !&#x3D; vs.end(); iter++) &#123;
+		cout&lt;&lt;iter-&gt;first&lt;&lt;&quot; &quot;&lt;&lt;iter-&gt;second&lt;&lt;endl;
+	&#125;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 
 
                 
@@ -577,7 +628,7 @@ for(i&#x3D;0; i&lt;arr.size(); i++) &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/07/23/C-%E5%9F%BA%E7%A1%80/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/07/23/C-%E5%9F%BA%E7%A1%80/</a>
+                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/07/24/%E5%88%86%E6%B2%BB/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/07/24/%E5%88%86%E6%B2%BB/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -794,6 +845,55 @@ for(i&#x3D;0; i&lt;arr.size(); i++) &#123;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/mid-lake-pavilion.github.io/2023/07/25/%E5%9F%BA%E4%BA%8EMNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%88%9B%E6%96%B0%E5%AE%9E%E8%B7%B5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="基于MNIST数据集的小样本创新实践">
+                        
+                        <span class="card-title">基于MNIST数据集的小样本创新实践</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/mid-lake-pavilion.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA/" class="post-category">
+                                    人工智能概论
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                        <span class="chip bg-color">大学课程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2023/07/23/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%97%E6%B3%95/">
                     <div class="card-image">
                         
@@ -810,64 +910,15 @@ for(i&#x3D;0; i&lt;arr.size(); i++) &#123;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
                             <a href="/mid-lake-pavilion.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
                                     机器学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/03/09/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-%E5%AE%9E%E6%88%98/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="自编码器-实战">
-                        
-                        <span class="card-title">自编码器-实战</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/mid-lake-pavilion.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    深度学习
                                 </a>
                             
                             
