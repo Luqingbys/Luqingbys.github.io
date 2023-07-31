@@ -538,7 +538,8 @@
 <li>零地址指令</li>
 </ul>
 <p>下面分别介绍不同类型的地址指令：</p>
-<h5 id="四地址指令"><a href="#四地址指令" class="headerlink" title="四地址指令"></a>四地址指令</h5><table>
+<h5 id="四地址指令"><a href="#四地址指令" class="headerlink" title="四地址指令"></a>四地址指令</h5><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>OP</th>
@@ -548,21 +549,14 @@
 <th>A4</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>OP是操作码，A1为第一操作数地址，A2为第二操作数地址，A3为结果数地址，A4为下一条指令地址。</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+<tbody>
 <tr>
-<td>需要访问存储器4次：取操作码，取操作数两次，存放结果</td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
+<p>OP是操作码，A1为第一操作数地址，A2为第二操作数地址，A3为结果数地址，A4为下一条指令地址。<br>需要访问存储器4次：取操作码，取操作数两次，存放结果</p>
 <h5 id="三地址指令"><a href="#三地址指令" class="headerlink" title="三地址指令"></a>三地址指令</h5><p>由于PC可以记录下一条指令的地址，故在四地址指令基础上可以省略A4，得到三地址指令。<br>仍然需要访问存储器4次。</p>
 <h5 id="二地址指令"><a href="#二地址指令" class="headerlink" title="二地址指令"></a>二地址指令</h5><p>运算的结果不存入存储器，而是存入CPU中的ACC，那么就可以节省一个地址字段A3。</p>
 <h5 id="一地址指令"><a href="#一地址指令" class="headerlink" title="一地址指令"></a>一地址指令</h5><p>一个操作数也存放在ACC中，那么整个地址码只有一个字段，表示另一个操作数所在内存地址。</p>
@@ -608,8 +602,8 @@
 <p>基址寄存器有隐式和显式两种。<br>隐式无需用户指出，显式相当于在一组通用寄存器中，由用户明确指出哪一个作为基址寄存器。</p>
 </blockquote>
 </li>
-<li>变址寻址<br>特点：EA &#x3D; (IX) + A<br>其中，IX为变址寄存器，其内容由用户给定<br>在程序执行过程中，IX内容可变，形式地址A不变</li>
-<li>相对寻址<br>公式：EA &#x3D; (PC) + A<br>A是相对于当前指令的位移量（可正可负，补码形式）</li>
+<li>变址寻址<br>特点：EA = (IX) + A<br>其中，IX为变址寄存器，其内容由用户给定<br>在程序执行过程中，IX内容可变，形式地址A不变</li>
+<li>相对寻址<br>公式：EA = (PC) + A<br>A是相对于当前指令的位移量（可正可负，补码形式）</li>
 </ol>
 <h2 id="RISC与CISC"><a href="#RISC与CISC" class="headerlink" title="RISC与CISC"></a>RISC与CISC</h2><p>RISC，采用组合逻辑控制器<br>CISC，采用微程序控制器</p>
 

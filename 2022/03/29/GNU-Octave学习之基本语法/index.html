@@ -500,6 +500,7 @@
             <div id="articleContent">
                 <h2 id="Octave简介"><a href="#Octave简介" class="headerlink" title="Octave简介"></a>Octave简介</h2><p>Octave是一门类似Matlab的轻量级高级程序语言，在数值计算、统计作图等领域也有着很强大的功能。鉴于某些不可忽视的客观因素，选择学习Octave作为数学建模的语言工具。</p>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="基本运算符"><a href="#基本运算符" class="headerlink" title="基本运算符"></a>基本运算符</h3><p>既然是用于数学领域的强大工具，首先就来了解了解这门语言对各种运算的支持。事实上，除了对数学中各种基本算术运算的支持（加减乘除，乘方，开方等），它还支持矩阵、数组运算。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -507,12 +508,13 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>+、-、*</td>
 <td>与数学中的运算无异，用于标量、矩阵</td>
 </tr>
 <tr>
-<td>&#x2F;</td>
+<td>/</td>
 <td>右除运算符，与数学中的除法运算无异，相当于“除以”</td>
 </tr>
 <tr>
@@ -528,7 +530,7 @@
 <td>矩阵转置</td>
 </tr>
 <tr>
-<td>.*  .&#x2F;  .\  .^  .’</td>
+<td>.*  ./  .\  .^  .’</td>
 <td>用于数组的乘法、右除、左除、求幂、转置</td>
 </tr>
 <tr>
@@ -543,7 +545,9 @@
 <td>%</td>
 <td>注释</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>同时，还有一些特殊的变量、常量：</p>
 <ul>
 <li>ans，表示最近的计算结果</li>
@@ -578,7 +582,7 @@
 <ul>
 <li>clc，清除命令窗口</li>
 <li>clear，从内存中删除变量</li>
-<li>who&#x2F;whos，列出当前所有存在的变量（详情）</li>
+<li>who/whos，列出当前所有存在的变量（详情）</li>
 <li><strong>disp，显示数组或者字符串内容</strong></li>
 <li>format，用于控制输出的数值格式</li>
 <li>input，显示提示并且等待输入</li>
@@ -587,7 +591,7 @@
 <ul>
 <li>cat，连接数组</li>
 <li>find，查找非零元素的索引</li>
-<li>max&#x2F;min，返回最大元素&#x2F;最小元素</li>
+<li>max/min，返回最大元素/最小元素</li>
 <li>sort，对每一列进行排序</li>
 <li>eye，创建一个单位矩阵</li>
 <li>rank，计算矩阵的秩</li>
@@ -628,9 +632,6 @@
 <h4 id="删除矩阵中的行、列"><a href="#删除矩阵中的行、列" class="headerlink" title="删除矩阵中的行、列"></a>删除矩阵中的行、列</h4><p>为矩阵中的行、列分配一组空的方括号，这样可以删除矩阵的整个行或者列。</p>
 <pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token number">5</span> <span class="token number">6</span> <span class="token number">7</span> <span class="token number">8</span><span class="token punctuation">;</span> <span class="token number">9</span> <span class="token number">10</span> <span class="token number">11</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token function">a</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token operator">:</span> <span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>	<span class="token comment">% 删除矩阵a第四行的全部元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>之前已经介绍过数组，这里再稍微详细地记录一下。数组在数学上表现为矩阵，一维数组就如同向量（1×n），二维数组就如同矩阵（m×n）。</p>
 <h4 id="特殊数组"><a href="#特殊数组" class="headerlink" title="特殊数组"></a>特殊数组</h4><p>特殊的矩阵当然需要生成API，常用的如下：</p>
 <ul>
@@ -642,15 +643,13 @@
 <h4 id="数组操作"><a href="#数组操作" class="headerlink" title="数组操作"></a>数组操作</h4><p>向已知的数组添加维度：</p>
 <pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span> <span class="token number">3</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">8</span> <span class="token number">9</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token number">8</span> <span class="token number">7</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token function">a</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span> <span class="token operator">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">;</span> <span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span><span class="token punctuation">]</span>	<span class="token comment">% 表示为二维数组a添加第3维度的内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><strong>需要注意的是，与其他高级语言不同，Octave中数组下标通常从1开始，表示向量&#x2F;矩阵的第一个分量。从数学角度来看，这似乎更加符合常理（通常不称第0个分量）。</strong></p>
+<p><strong>需要注意的是，与其他高级语言不同，Octave中数组下标通常从1开始，表示向量/矩阵的第一个分量。从数学角度来看，这似乎更加符合常理（通常不称第0个分量）。</strong></p>
 <p>数组函数类似其他高级语言中对数组的各种处理方法，比如数组排序、变形、判空等。</p>
 <h4 id="单元数组"><a href="#单元数组" class="headerlink" title="单元数组"></a>单元数组</h4><p>单元格数组是索引单元格的数组，每一个单元格都可以存储不同维度和数据类型的数组。</p>
 <p><code>C = cell(dim1, ..., dimN)</code></p>
 <p><code>C = cell(obj)</code></p>
 <pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">c <span class="token operator">=</span> <span class="token function">cell</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 c <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">'R'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'G'</span><span class="token punctuation">,</span> <span class="token string">'Y'</span><span class="token punctuation">,</span> <span class="token string">'W'</span><span class="token punctuation">;</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>对单元数组的元素的访问与矩阵元素的引用几乎一致。</p>
 <h4 id="冒号表示法"><a href="#冒号表示法" class="headerlink" title="冒号表示法"></a>冒号表示法</h4><p>冒号:，是Octave中最有用的运算符之一，常用于</p>
 <ul>
@@ -669,7 +668,6 @@ c <span class="token operator">=</span> <span class="token punctuation">&#123;</
 <span class="token comment">% funcName是函数名</span>
 <span class="token comment">% 函数以end作为结束符</span>
 <span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在Octave中，任何一个函数文件都包含一个首先出现的必需主函数，除此之外，还可以在主函数之后定义任意数量的可选子函数，这些子函数可以互相调用。可以类比为C++中的main函数和其他自定义函数的关系。</p>
 <p>另外，<strong>Octave支持函数的嵌套定义，即允许在一个函数体内部定义另一个函数。</strong></p>
 <p>如果某一个变量需要被全局共享（类似C++中的全局变量），需要在所有函数中将变量声明为全局变量——在变量名前面加上global关键字。</p>

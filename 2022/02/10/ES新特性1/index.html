@@ -552,7 +552,6 @@ console.log(&#39;for of循环&#39;);
 for(let fruit of fruits) &#123;
     console.log(fruit);
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="for…of循环"><a href="#for…of循环" class="headerlink" title="for…of循环"></a>for…of循环</h3><p>for…of循环在可迭代对象上创建迭代循环，其中可迭代对象包括：<br>Array、String、Map（键值对）、Set（集合）等。</p>
 <p>使用<br><code>for ele of obj.entries()</code>,<br>则ele是数组类型（类似map），第一个值为下标，第二个值为元素。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const celes &#x3D; [&#39;徐阶&#39;, &#39;陆炳&#39;, &#39;高拱&#39;]
@@ -574,12 +573,10 @@ for(let ele of celes.entries()) &#123;
 [ 1, &#39;陆炳&#39; ]
 [ 2, &#39;高拱&#39; ]
 *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在后一种写法中，我们甚至可以使用解构赋值获取元素和其下标：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">for(let [index, person] of celes.entries()) &#123;
     console.log(index, person);
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h2><p>常用：</p>
 <ul>
 <li>接收函数参数作为数组</li>

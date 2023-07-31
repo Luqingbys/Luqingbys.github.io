@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="MEX and Increments, 湖心亭">
-    <meta name="description" content="要知道，我们要想求出当前序列（i）的mex，需要有从0i-1的所有数字，同时，将所有数字i自增1即可。记录上得到0i-1每一个数至少一个所需要的操作数记作dp[i-1]，同时加上数字i出现的次数，就是答案了。而在已经有0~i-1的基础上，如">
+    <meta name="description" content="要知道，我们要想求出当前序列（i）的mex，需要有从0~i-1的所有数字，同时，将所有数字i自增1即可。记录上得到0~i-1每一个数至少一个所需要的操作数记作dp[i-1]，同时加上数字i出现的次数，就是答案了。而在已经有0~i-1的基础上">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    554
+                    558
                 </div>
                 
 
@@ -497,10 +497,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>要知道，我们要想求出当前序列（i）的mex，需要有从0<del>i-1的所有数字，同时，将所有数字i自增1即可。记录上得到0</del>i-1每一个数至少一个所需要的操作数记作dp[i-1]，同时加上数字i出现的次数，就是答案了。<br>而在已经有0~i-1的基础上，如何得到i呢？（这就是本题的关键，即所谓的动态转移方程）：</p>
+                <p>要知道，我们要想求出当前序列（i）的mex，需要有从0~i-1的所有数字，同时，将所有数字i自增1即可。记录上得到0~i-1每一个数至少一个所需要的操作数记作dp[i-1]，同时加上数字i出现的次数，就是答案了。<br>而在已经有0~i-1的基础上，如何得到i呢？（这就是本题的关键，即所谓的动态转移方程）：</p>
 <ol>
 <li>i本来就存在，这种情况最简单，此时dp[i]与dp[i-1]相等。</li>
-<li>i不存在，需要借助0<del>i-1中的数生成（注意，用来生成i的数至少出现过2次，否则0</del>i-1每一个数至少出现一次的条件被打破）。</li>
+<li>i不存在，需要借助0~i-1中的数生成（注意，用来生成i的数至少出现过2次，否则0~i-1每一个数至少出现一次的条件被打破）。</li>
 </ol>
 <p>为了节省时间，我们首先需要得到每一个数字出现次数的数组times[]，从times[1]开始分析，遇见大于2的数，需要将其入栈，同时记录下其出现次数（可以用pair记录，为了方便之后生成不存在的数，届时只需取出栈顶数，令其出现次数减一即可。）</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;

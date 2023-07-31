@@ -514,50 +514,60 @@
 <p>因此，我们从投影方差角度理解主成分分析：</p>
 <p><strong>要把m维数据降维至n维，就需要找到n个互相正交的方向轴，使得原m维数据每一个方向上的投影的方差达到最大。</strong>其中，$n&lt;m$。</p>
 <h2 id="数学推导"><a href="#数学推导" class="headerlink" title="数学推导"></a>数学推导</h2><blockquote>
-<p>给定k个样本点，每一个样本点$z^{(i)} \in \mathbb{R}^m$维度均为m，记作Z&#x3D;$(\mathbf{z}^{(1)},\mathbf{z}^{(2)} ,…,\mathbf{z}^{(k)} )$，下面进行数学推导。</p>
-<p>注意：此处的$\mathbf{z}^{(i)}$以及下文的$\mathbf{x}^{(i)}, \mathbf{u}<em>i, \xi</em>{i}$均为列向量。</p>
+<p>给定k个样本点，每一个样本点$z^{(i)} \in \mathbb{R}^m$维度均为m，记作Z=$(\mathbf{z}^{(1)},\mathbf{z}^{(2)} ,…,\mathbf{z}^{(k)} )$，下面进行数学推导。</p>
+<p>注意：此处的$\mathbf{z}^{(i)}$以及下文的$\mathbf{x}^{(i)}, \mathbf{u}_i, \xi_{i}$均为列向量。</p>
 </blockquote>
-<p>首先进行中心化，计算均值$\mu&#x3D;\frac{1}{n}\sum_{i&#x3D;1}^kz^{(i)}$，中心化之后的样本点即为</p>
-<p>$$<br>\mathbf{x}^{(i)} &#x3D; \mathbf{z}^{(i)} - \mu<br>$$<br>我们先找第一主轴$u_1$。考虑各个样本点$x_i$在第一主轴上的投影，当方差最大时，也即投影的绝对值最大：</p>
-<p>$$<br>\max_{\mathbf{u}<em>1}\frac{1}{n}\sum</em>{i&#x3D;1}^k|\mathbf{x}^{(i)}·\mathbf{u}_1|<br>$$<br>此处的·表示向量内积，而向量内积表示投影的大小。</p>
+<p>首先进行中心化，计算均值$\mu=\frac{1}{n}\sum_{i=1}^kz^{(i)}$，中心化之后的样本点即为</p>
+<script type="math/tex; mode=display">
+\mathbf{x}^{(i)} = \mathbf{z}^{(i)} - \mu</script><p>我们先找第一主轴$u_1$。考虑各个样本点$x_i$在第一主轴上的投影，当方差最大时，也即投影的绝对值最大：</p>
+<script type="math/tex; mode=display">
+\max_{\mathbf{u}_1}\frac{1}{n}\sum_{i=1}^k|\mathbf{x}^{(i)}·\mathbf{u}_1|</script><p>此处的·表示向量内积，而向量内积表示投影的大小。</p>
 <p>等价地，我们只需求如下式子的最大值：</p>
-<p>$$<br>\begin{aligned} \sum_{i&#x3D;1}^k(\mathbf{x}^{(i)}·\mathbf{u}<em>1)^2&amp;&#x3D;\sum</em>{i&#x3D;1}^k(\mathbf{x}^{(i)T}\mathbf{u}<em>1)^2\\ &amp;&#x3D;\sum</em>{i&#x3D;1}^k(\mathbf{x}^{(i)T}\mathbf{u}_1)^T(\mathbf{x}^{(i)T}\mathbf{u}<em>1)\\ &amp;&#x3D;\sum</em>{i&#x3D;1}^k\mathbf{u}_1^T\mathbf{x}^{(i)}\mathbf{x}^{(i)T}\mathbf{u}_1\\ &amp;&#x3D;\mathbf{u}<em>1^T(\sum</em>{i&#x3D;1}^k\mathbf{x}^{(i)}\mathbf{x}^{(i)T})\mathbf{u}_1 \end{aligned}<br>$$<br>记$X&#x3D;(\mathbf{x}^{(1)},\mathbf{x}^{(2)},…,\mathbf{x}^{(k)})$，则等价变换为</p>
-<p>$$<br>\mathbf{u}_1^TXX^T\mathbf{u}_1<br>$$<br>这是一个二次型。我们接下来求解这个目标式子的最大值，以及$\mathbf{u}_1$取何值时达到最大值。</p>
-<h3 id="求最大值"><a href="#求最大值" class="headerlink" title="求最大值"></a>求最大值</h3><p>$$<br>\begin{aligned} &amp;\max_{\mathbf{u}_1}\mathbf{u}_1^TXX^T\mathbf{u}<em>1\\  \Rightarrow &amp;\max</em>{\mathbf{u}_1}(X^T\mathbf{u}_1)^T(X^T\mathbf{u}<em>1)\\ \Rightarrow &amp;\max</em>{\mathbf{u}_1}||X^T\mathbf{u}_1||<em>2^2\\ \Rightarrow &amp;\max</em>{\mathbf{u}_1}\left(\frac{||X^T\mathbf{u}_1||_2}{||\mathbf{u}_1||_2}\right)^2 \end{aligned}<br>$$</p>
-<p><strong>对于矩阵X，它对一个向量$u_1$做变换，前后向量的模长之比的最大值，其实就是矩阵X的最大奇异值。</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned} \sum_{i=1}^k(\mathbf{x}^{(i)}·\mathbf{u}_1)^2&=\sum_{i=1}^k(\mathbf{x}^{(i)T}\mathbf{u}_1)^2\\\\ &=\sum_{i=1}^k(\mathbf{x}^{(i)T}\mathbf{u}_1)^T(\mathbf{x}^{(i)T}\mathbf{u}_1)\\\\ &=\sum_{i=1}^k\mathbf{u}_1^T\mathbf{x}^{(i)}\mathbf{x}^{(i)T}\mathbf{u}_1\\\\ &=\mathbf{u}_1^T(\sum_{i=1}^k\mathbf{x}^{(i)}\mathbf{x}^{(i)T})\mathbf{u}_1 \end{aligned}</script><p>记$X=(\mathbf{x}^{(1)},\mathbf{x}^{(2)},…,\mathbf{x}^{(k)})$，则等价变换为</p>
+<script type="math/tex; mode=display">
+\mathbf{u}_1^TXX^T\mathbf{u}_1</script><p>这是一个二次型。我们接下来求解这个目标式子的最大值，以及$\mathbf{u}_1$取何值时达到最大值。</p>
+<h3 id="求最大值"><a href="#求最大值" class="headerlink" title="求最大值"></a>求最大值</h3><script type="math/tex; mode=display">
+\begin{aligned} &\max_{\mathbf{u}_1}\mathbf{u}_1^TXX^T\mathbf{u}_1\\\\  \Rightarrow &\max_{\mathbf{u}_1}(X^T\mathbf{u}_1)^T(X^T\mathbf{u}_1)\\\\ \Rightarrow &\max_{\mathbf{u}_1}||X^T\mathbf{u}_1||_2^2\\\\ \Rightarrow &\max_{\mathbf{u}_1}\left(\frac{||X^T\mathbf{u}_1||_2}{||\mathbf{u}_1||_2}\right)^2 \end{aligned}</script><p><strong>对于矩阵X，它对一个向量$u_1$做变换，前后向量的模长之比的最大值，其实就是矩阵X的最大奇异值。</strong></p>
 <p>因此我们得到目标式子的最大值：</p>
-<p>$$<br>\mathbf{u}_1^TXX^T\mathbf{u}_1&#x3D;\left(\frac{||X^T\mathbf{u}_1||_2}{||\mathbf{u}_1||<em>2}\right)^2\leqslant \sigma</em>{max}(X)<br>$$</p>
-<h3 id="求第一主轴"><a href="#求第一主轴" class="headerlink" title="求第一主轴"></a>求第一主轴</h3><p>何时取等号呢？</p>
+<script type="math/tex; mode=display">
+\mathbf{u}_1^TXX^T\mathbf{u}_1=\left(\frac{||X^T\mathbf{u}_1||_2}{||\mathbf{u}_1||_2}\right)^2\leqslant \sigma_{max}(X)</script><h3 id="求第一主轴"><a href="#求第一主轴" class="headerlink" title="求第一主轴"></a>求第一主轴</h3><p>何时取等号呢？</p>
 <p>我们设对称矩阵$XX^T$有$k$个特征值</p>
-<p>$$<br>\lambda_1,\lambda_2,…,\lambda_k<br>$$<br>相应地，有$k$个特征向量</p>
-<p>$$<br>\xi_1,\xi_2,…,\xi_k<br>$$<br>$k$个特征向量两两正交，可以作为一组标准正交基。</p>
+<script type="math/tex; mode=display">
+\lambda_1,\lambda_2,...,\lambda_k</script><p>相应地，有$k$个特征向量</p>
+<script type="math/tex; mode=display">
+\xi_1,\xi_2,...,\xi_k</script><p>$k$个特征向量两两正交，可以作为一组标准正交基。</p>
 <p>对于任意一个向量$\mathbf{x}$，可以表示为</p>
-<p>$$<br>\mathbf{x}&#x3D;\sum_{i&#x3D;1}^k\alpha_i\xi_i<br>$$<br>故而有</p>
-<p>$$<br>||\mathbf{x}||<em>2^2&#x3D;(\alpha_1,\alpha_2,…,\alpha_k)·(\alpha_1,\alpha_2,…,\alpha_k)&#x3D;\sum</em>{i&#x3D;1}^k\alpha_i^2<br>$$</p>
-<p>$$<br>||A\mathbf{x}||<em>2^2&#x3D;(A\mathbf{x})^T(A\mathbf{x})&#x3D;\mathbf{x}^TA^TA\mathbf{x}&#x3D;\mathbf{x}·(A^TA\mathbf{x})&#x3D;\left(\sum</em>{i&#x3D;1}^k\alpha_i\xi_i\right)·\left(A^TA\sum_{i&#x3D;1}^k\alpha_i\xi_i\right)<br>$$</p>
-<p>注意到$A^TA\xi_i&#x3D;\lambda_i\xi_i$，进而得</p>
-<p>$$<br>\begin{aligned} ||A\mathbf{x}||<em>2^2 &amp;&#x3D;\left(\sum</em>{i&#x3D;1}^k\alpha_i\xi_i\right)·\left(\sum_{i&#x3D;1}^k\alpha_i\lambda_i\xi_i\right) \\ &amp;&#x3D;(\alpha_1,\alpha_2,…,\alpha_k)·(\alpha_1\lambda_1,\alpha_2\lambda_2,…,\alpha_k\lambda_k) \\ &amp;&#x3D;\sum_{i&#x3D;1}^k\alpha_i^2\lambda_i \end{aligned}<br>$$<br>假设特征值从大到小排列，即$\lambda_1\geqslant\lambda_2\geqslant\dots\geqslant\lambda_k$，得</p>
-<p>$$<br>||A\mathbf{x}||<em>2^2\leqslant\sum</em>{i&#x3D;1}^k\alpha_i^2\lambda_1&#x3D;\lambda_1||\mathbf{x}||_2^2<br>$$<br>同样得到：</p>
-<p>$$<br>\frac{||A\mathbf{x}||_2}{||\mathbf{x}||_2}\leqslant\sqrt{\lambda_1}&#x3D;\sigma_1<br>$$<br>具体地，此处**$\mathbf{u}_1$为最大特征值$\lambda_1$对应的特征向量方向**。</p>
+<script type="math/tex; mode=display">
+\mathbf{x}=\sum_{i=1}^k\alpha_i\xi_i</script><p>故而有</p>
+<script type="math/tex; mode=display">
+||\mathbf{x}||_2^2=(\alpha_1,\alpha_2,...,\alpha_k)·(\alpha_1,\alpha_2,...,\alpha_k)=\sum_{i=1}^k\alpha_i^2</script><script type="math/tex; mode=display">
+||A\mathbf{x}||_2^2=(A\mathbf{x})^T(A\mathbf{x})=\mathbf{x}^TA^TA\mathbf{x}=\mathbf{x}·(A^TA\mathbf{x})=\left(\sum_{i=1}^k\alpha_i\xi_i\right)·\left(A^TA\sum_{i=1}^k\alpha_i\xi_i\right)</script><p>注意到$A^TA\xi_i=\lambda_i\xi_i$，进而得</p>
+<script type="math/tex; mode=display">
+\begin{aligned} ||A\mathbf{x}||_2^2 &=\left(\sum_{i=1}^k\alpha_i\xi_i\right)·\left(\sum_{i=1}^k\alpha_i\lambda_i\xi_i\right) \\\\ &=(\alpha_1,\alpha_2,...,\alpha_k)·(\alpha_1\lambda_1,\alpha_2\lambda_2,...,\alpha_k\lambda_k) \\\\ &=\sum_{i=1}^k\alpha_i^2\lambda_i \end{aligned}</script><p>假设特征值从大到小排列，即$\lambda_1\geqslant\lambda_2\geqslant\dots\geqslant\lambda_k$，得</p>
+<script type="math/tex; mode=display">
+||A\mathbf{x}||_2^2\leqslant\sum_{i=1}^k\alpha_i^2\lambda_1=\lambda_1||\mathbf{x}||_2^2</script><p>同样得到：</p>
+<script type="math/tex; mode=display">
+\frac{||A\mathbf{x}||_2}{||\mathbf{x}||_2}\leqslant\sqrt{\lambda_1}=\sigma_1</script><p>具体地，此处<strong>$\mathbf{u}_1$为最大特征值$\lambda_1$对应的特征向量方向</strong>。</p>
 <h3 id="求其他主轴"><a href="#求其他主轴" class="headerlink" title="求其他主轴"></a>求其他主轴</h3><p>同理，其他的$\mathbf{u}_i$即为第i大的特征值$\lambda_i$对应的特征向量的方向。</p>
-<h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><p>对于k个m维样本$X_{m\times k}&#x3D;(x_1,x_2,…,x_k)$（即每一列均为一个样本），我们的目标是将其降到n维：</p>
+<h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><p>对于k个m维样本$X_{m\times k}=(x_1,x_2,…,x_k)$（即每一列均为一个样本），我们的目标是将其降到n维：</p>
 <ol>
 <li><p>将样本去中心化：</p>
-<p>$\forall x_i,x_i&#x3D;x_i-\frac{1}{k}\sum_{j&#x3D;1}^kx_j$</p>
-<p>$X’&#x3D;(x_1,x_2,…,x_k)$</p>
+<p>$\forall x_i,x_i=x_i-\frac{1}{k}\sum_{j=1}^kx_j$</p>
+<p>$X’=(x_1,x_2,…,x_k)$</p>
 </li>
 <li><p>计算样本的协方差矩阵</p>
-<p>$C_{m\times m}&#x3D;\frac{1}{k}X’X’^T$</p>
+<p>$C_{m\times m}=\frac{1}{k}X’X’^T$</p>
 </li>
 <li><p>求解出C的特征值和对应的特征向量</p>
 <p>$\lambda_1,\lambda_2,…,\lambda_k$($\lambda_1\geqslant\lambda_2\geqslant\dots\geqslant\lambda_k$)</p>
 <p>$\xi_1,\xi_2,…,\xi_k\in R^m$</p>
 </li>
 <li><p>将特征向量按照对应特征值大小从上到下按行排列成矩阵，前n行组成矩阵P</p>
-<p>$P&#x3D;(\xi_1,\xi_2,\dots,\xi_n)^T$</p>
+<p>$P=(\xi_1,\xi_2,\dots,\xi_n)^T$</p>
 </li>
 <li><p>降维</p>
-<p>$Y_{n\times k}&#x3D;P_{n \times m}X_{m\times k}$</p>
+<p>$Y_{n\times k}=P_{n \times m}X_{m\times k}$</p>
 </li>
 </ol>
 

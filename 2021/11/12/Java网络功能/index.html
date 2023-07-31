@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Java网络功能, 湖心亭">
-    <meta name="description" content="概述网络ISO&amp;#x2F;OSI网络参考模型分为7层。
-TCP&amp;#x2F;IP网络模型模型分为五个层次：
+    <meta name="description" content="概述网络ISO/OSI网络参考模型分为7层。
+TCP/IP网络模型模型分为五个层次：
 
 应用层
 传输层 传输层协议包括TCP和UDP
@@ -20,7 +20,7 @@ IP地址
 端口号
 套接字
 
-使用Ine">
+使用InetAddress类I">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -492,7 +492,7 @@ IP地址
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    280
+                    277
                 </div>
                 
 
@@ -512,8 +512,8 @@ IP地址
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概述网络"><a href="#概述网络" class="headerlink" title="概述网络"></a>概述网络</h2><h3 id="ISO-x2F-OSI网络参考模型"><a href="#ISO-x2F-OSI网络参考模型" class="headerlink" title="ISO&#x2F;OSI网络参考模型"></a>ISO&#x2F;OSI网络参考模型</h3><p>分为7层。</p>
-<h3 id="TCP-x2F-IP网络模型"><a href="#TCP-x2F-IP网络模型" class="headerlink" title="TCP&#x2F;IP网络模型"></a>TCP&#x2F;IP网络模型</h3><p>模型分为五个层次：</p>
+                <h2 id="概述网络"><a href="#概述网络" class="headerlink" title="概述网络"></a>概述网络</h2><h3 id="ISO-OSI网络参考模型"><a href="#ISO-OSI网络参考模型" class="headerlink" title="ISO/OSI网络参考模型"></a>ISO/OSI网络参考模型</h3><p>分为7层。</p>
+<h3 id="TCP-IP网络模型"><a href="#TCP-IP网络模型" class="headerlink" title="TCP/IP网络模型"></a>TCP/IP网络模型</h3><p>模型分为五个层次：</p>
 <ul>
 <li>应用层</li>
 <li>传输层 传输层协议包括TCP和UDP</li>
@@ -533,7 +533,7 @@ IP地址
 <ul>
 <li>先在服务端生成一个ServerSocket实例对象，通过accept方法随时监听客户端的连接请求；</li>
 <li>客户端在需要连接时，相应地生成一个Socket实例对象，并发出连接请求；</li>
-<li>服务端通过accept方法接收客户端请求后，开启一个接口与之连接，并生成I&#x2F;O数据流；</li>
+<li>服务端通过accept方法接收客户端请求后，开启一个接口与之连接，并生成I/O数据流；</li>
 <li>客户端和服务端的通信通过一对InputStream和OutputStream进行。</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span><span class="token keyword">int</span> port<span class="token punctuation">)</span><span class="token punctuation">;</span>

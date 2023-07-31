@@ -515,7 +515,6 @@ static 表示该方法是一个静态方法，不需要创建">
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token keyword">extends</span> <span class="token class-name">B</span> <span class="token punctuation">&#123;</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>表示类A继承自B，此时，A是子类，B是父类。<br>一旦继承完成，子类将默认具有父类中的所有属性和方法。</p>
 <p>Java只允许单重继承。Object类是Java程序中所有类的直接或者间接父类。</p>
 <h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>多态性是指同一个名字的若干个方法，有着不同的实现。<br>通过重载、重写完成多态性。</p>
@@ -548,7 +547,6 @@ static 表示该方法是一个静态方法，不需要创建">
         <span class="token keyword">return</span> <span class="token string">"!"</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>体会上述例子。Person、Student、Graduate均继承了Object的toString方法，却也都对其进行了重写。<br>而func()方法接收一个对象，动态调用对象本身的toString方法。我们称这种由Java虚拟机在运行时动态决定调用哪一个toString方法的能力为动态绑定。</p>
 <h4 id="转换对象"><a href="#转换对象" class="headerlink" title="转换对象"></a>转换对象</h4><p>Java允许使用对象的父类类型的一个变量指示该对象，称为转换对象。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// notice that: Manager is an Employee.</span>
@@ -557,7 +555,6 @@ static 表示该方法是一个静态方法，不需要创建">
 <span class="token class-name">Employee</span> e<span class="token punctuation">;</span>
 <span class="token class-name">Manager</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Manager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 e <span class="token operator">=</span> m<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>我们称e是m的转换对象。相较于原对象m，转换对象e会丢失原对象相对于父类的新增方法、属性。实际应用中，我们可以判断该对象是否是子类的实例。如果是，就强制类型转换该对象（引用），使其恢复全部功能。</p>
 <h4 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h4><p>子类重写父类方法的情况：</p>
 <ul>
@@ -581,7 +578,6 @@ e <span class="token operator">=</span> m<span class="token punctuation">;</span
     <span class="token keyword">void</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token class-name">Object</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>接口也具有数据成员和方法，但是数据成员都必须赋初值，并且方法必须是抽象方法。</p>
 <h4 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">StackStorage</span> <span class="token keyword">implements</span> <span class="token class-name">Storage</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> point <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -592,7 +588,6 @@ e <span class="token operator">=</span> m<span class="token punctuation">;</span
     <span class="token punctuation">&#125;</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>一般，可以通过接口实现“多重继承”，接口的实现，实际上是实现类对接口中抽象方法的重写。</p>
 <h4 id="接口回调"><a href="#接口回调" class="headerlink" title="接口回调"></a>接口回调</h4><p>接口变量，是用接口声明的变量，可以用来调用被类实现的接口方法。</p>
 <h4 id="接口的多样性"><a href="#接口的多样性" class="headerlink" title="接口的多样性"></a>接口的多样性</h4><p>由接口产生的多态性是指不同的类在实现同一个接口时可能具有不同的实现方式，那么接口变量在回调接口方法时就可能具有多种形态。类似之前抽象类中的动态绑定。</p>

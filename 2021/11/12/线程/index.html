@@ -500,7 +500,7 @@
             <div id="articleContent">
                 <h2 id="多线程与多进程"><a href="#多线程与多进程" class="headerlink" title="多线程与多进程"></a>多线程与多进程</h2><p>进程一般是对操作系统而言的；线程一般是对某程序而言的。<br>比如，打开word的同时打开outlook接收邮件，我们说这是两个进程；而打开outlook收取新邮件的同时查看已下载的邮件，我们就说这是两个进程。</p>
 <h2 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h2><h3 id="Thread类"><a href="#Thread类" class="headerlink" title="Thread类"></a>Thread类</h3><p>Java的线程是通过类Thread来实现的，生成一个Thread类的对象之后，就产生了一个线程；Thread类对象内部的run()方法会执行代码，被称为线程体。</p>
-<p>新建–就绪–运行–阻塞–死亡</p>
+<p>新建—就绪—运行—阻塞—死亡</p>
 <ul>
 <li>新建状态：使用new关键字创建一个Thread线程对象，此时线程已有自己的内存空间，但是并不是活着的。</li>
 <li>就绪状态：调用start()方法</li>
@@ -528,14 +528,12 @@ Thread threadObject = new Thread(new ThreadInterfaceImpl())
 */</span>
 <span class="token comment">// 用start()方法启动线程</span>
 threadObject<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="线程调度策略"><a href="#线程调度策略" class="headerlink" title="线程调度策略"></a>线程调度策略</h3><p>Java采用抢占式策略，高优先级的线程抢占CPU。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">setPriority</span><span class="token punctuation">(</span><span class="token keyword">int</span> newPriority<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 重置线程优先级</span>
 <span class="token keyword">int</span> <span class="token function">getPriority</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token keyword">yield</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 给其他同等优先级的线程一个运行机会</span>
 <span class="token keyword">void</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 使线程休眠一段时间</span>
 <span class="token keyword">void</span> <span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 等待某个线程结束后再开始执行另一个线程</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="线程的基本控制"><a href="#线程的基本控制" class="headerlink" title="线程的基本控制"></a>线程的基本控制</h3><h4 id="join-方法"><a href="#join-方法" class="headerlink" title="join()方法"></a>join()方法</h4><p>关于join()方法，它的使用举一个栗子：<br>设置三个线程，线程1用于生成一群随机数，线程2用于计算随机数之和，线程3用于输出这个和，要求线程1、线程2、线程3依次运行。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">hitwh<span class="token punctuation">.</span>hitwh<span class="token punctuation">.</span>myThread</span><span class="token punctuation">;</span>
 
@@ -635,7 +633,6 @@ threadObject<span class="token punctuation">.</span><span class="token function"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="结束线程与中断线程"><a href="#结束线程与中断线程" class="headerlink" title="结束线程与中断线程"></a>结束线程与中断线程</h3><p>run()线程体运行结束时，该线程自然死亡；<br>stop()方法可以强制停止线程执行（不推荐使用）</p>
 <p>使用interrupt()方法可以使线程中断执行。<br>一般地，在程序中调用interrupt()方法后，通常需要在run()方法中使用isInterrupt()进行判断，根据判断结果执行相应操作。</p>
 <h3 id="线程间的通信"><a href="#线程间的通信" class="headerlink" title="线程间的通信"></a>线程间的通信</h3><p>设置三个线程类，通信的双方线程作为辅类线程，都将数据流连接到主类中的管道流中。</p>
@@ -735,7 +732,6 @@ threadObject<span class="token punctuation">.</span><span class="token function"
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="线程的同步"><a href="#线程的同步" class="headerlink" title="线程的同步"></a>线程的同步</h3><h4 id="线程间的资源互斥"><a href="#线程间的资源互斥" class="headerlink" title="线程间的资源互斥"></a>线程间的资源互斥</h4><p>在多个线程共享同一资源的情况下，如果不加以任何控制，就有可能产生访问冲突和数据不一致。<br>为了解决这样的问题，就需要给多个线程共享的资源加锁。当一个线程访问共享资源时，就会被共享资源加锁，其他线程就不能访问被加了锁的资源，直到共享资源的锁被释放。这就是线程同步。<br>在Java中，用关键字synchronize来保证线程同步。当它作用于方法时，称方法同步；作用于语句块时，称为语句块同步。</p>
 <h3 id="线程交互"><a href="#线程交互" class="headerlink" title="线程交互"></a>线程交互</h3><h4 id="等待集合"><a href="#等待集合" class="headerlink" title="等待集合"></a>等待集合</h4><p>每一个类的对象实例都有一个等待集合，当在实例上调用方法wait后，线程都会进入到该实例的等待集合中，除非发生下列情况：</p>
 <ul>

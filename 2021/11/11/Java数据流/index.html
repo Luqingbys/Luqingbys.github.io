@@ -529,7 +529,6 @@
         <span class="token function">inputStream1</span><span class="token punctuation">(</span><span class="token string">"D:/test.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>相关方法有：</p>
 <ul>
 <li>int read();</li>
@@ -569,7 +568,6 @@
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="数据数据流"><a href="#数据数据流" class="headerlink" title="数据数据流"></a>数据数据流</h4><p>文件流和缓冲区流的处理对象是字节和字节数组，利用数据输入输出流则可以实现对文件的不同数据类型的读写。</p>
 <p>常见方法：<br>byte readByte();<br>int readInt();<br>long readLong();<br>double readDouble();<br>boolean readBoolean();<br>String readUTF();</p>
 <p>void writeByte();<br>void writeLong();<br>void writeDouble();<br>void writeBoolean();<br>void writeUTF();</p>
@@ -612,7 +610,6 @@
         <span class="token function">addBooks</span><span class="token punctuation">(</span><span class="token string">"D:/test.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="管道数据流"><a href="#管道数据流" class="headerlink" title="管道数据流"></a>管道数据流</h4><p>管道数据流主要用于线程间的通信，指一个线程的PipedInputStream对象从另一个线程中互补的PipedOutputStream对象中接收输入。<br>这两个类必须一起使用，来建立一个通信通道。</p>
 <h4 id="对象流"><a href="#对象流" class="headerlink" title="对象流"></a>对象流</h4><p>能够输入输出对象的流，称为对象流。它通过ObjectInputStream和ObjectOutputStream两个类实现对象流。</p>
 

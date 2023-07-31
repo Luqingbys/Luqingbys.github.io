@@ -513,21 +513,16 @@ def hello_world():
 
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
    app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>运行如上代码，就可以在浏览器中看到运行结果——Hello，Flask!</p>
 <ul>
-<li><p>第二行调用Flask()构造函数，返回的是一个application对象；</p>
-</li>
-<li><p>url ‘&#x2F;‘绑定到了hello_world()上面；</p>
-</li>
+<li>第二行调用Flask()构造函数，返回的是一个application对象；</li>
+<li>url ‘/‘绑定到了hello_world()上面；</li>
 <li><p>在上面的示例中，run()方法用于在本地服务器上运行应用程序，其函数原型为：<br>app.run(host, port, debug, options)</p>
 </li>
 <li><p>host，指定主机端口号</p>
 </li>
-<li><p>port，端口号</p>
-</li>
-<li><p>debug，是否启用调试模式</p>
-</li>
+<li>port，端口号</li>
+<li>debug，是否启用调试模式</li>
 </ul>
 <h2 id="Flask路由"><a href="#Flask路由" class="headerlink" title="Flask路由"></a>Flask路由</h2><p>在Web应用中，不同的url对应不同的页面；Flask中的route()装饰器用于将URL绑定到函数：</p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask
@@ -539,12 +534,11 @@ def hello_flask():
 
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在上面的代码示例中，route()装饰器将URL‘&#x2F;hello’规则绑定到了hello_flask()函数，如果用户访问<br><a target="_blank" rel="noopener" href="http://localhost:5000/hello">http://localhost:5000/hello</a> ，hello_flask()函数的输出就将在浏览器中呈现。</p>
+<p>在上面的代码示例中，route()装饰器将URL‘/hello’规则绑定到了hello_flask()函数，如果用户访问<br><a target="_blank" rel="noopener" href="http://localhost:5000/hello">http://localhost:5000/hello</a> ，hello_flask()函数的输出就将在浏览器中呈现。</p>
 <p>当然，也可以不使用装饰器写法，改用application对象的add_url_rule()函数也可以实现URL与函数的绑定：</p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def hello_flask():
     return &#39;hello flask!&#39;
 app.add_url_rule(&#39;&#x2F;&#39;, &#39;hello&#39;, hello_flask)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="Flask变量规则——路由参数"><a href="#Flask变量规则——路由参数" class="headerlink" title="Flask变量规则——路由参数"></a>Flask变量规则——路由参数</h2><p>向规则参数添加变量部分，可以动态地构建URL。<br>此变量部分标记为 &lt; variable-name &gt;<br>示例：</p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">@app.route(&#39;&#x2F;blog&#x2F;&lt;int:postId&gt;&#39;)
 def show_blog(postId):
@@ -553,8 +547,7 @@ def show_blog(postId):
 @app.route(&#39;&#x2F;rev&#x2F;&lt;float:revNo&gt;&#39;)
 def revision(revNo):
     return &#39;Revision Number %f&#39; % revNo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>&lt; int:postId&gt;中，int是对变量类型postId的限制，我们在地址栏中输入&#x2F;blog&#x2F;9后，按下回车，屏幕上就会显示Blog Number 9。</p>
+<p>&lt; int:postId&gt;中，int是对变量类型postId的限制，我们在地址栏中输入/blog/9后，按下回车，屏幕上就会显示Blog Number 9。</p>
 <ul>
 <li>%d 整型</li>
 <li>%f 浮点型</li>
@@ -582,8 +575,7 @@ def hello_user(name):
 
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在&#x2F;user&#x2F;…对应的函数hello_user中，我们作出了处理：<br>如果接收参数为字符串admin，就重定向到hello_admin()函数否则重定向到hello_guest()函数。</p>
+<p>在/user/…对应的函数hello_user中，我们作出了处理：<br>如果接收参数为字符串admin，就重定向到hello_admin()函数否则重定向到hello_guest()函数。</p>
 <h2 id="Flask中的HTTP"><a href="#Flask中的HTTP" class="headerlink" title="Flask中的HTTP"></a>Flask中的HTTP</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
@@ -603,7 +595,6 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>我们创建一个html文件，在其中写一个表单，在下面的文件中接收表单提交到服务器的数据。</p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># 在Flask中使用HTTP方法
 from flask import Flask, redirect, url_for, request
@@ -626,7 +617,6 @@ def login():
 
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><h3 id="模板的来历"><a href="#模板的来历" class="headerlink" title="模板的来历"></a>模板的来历</h3><p>之前与URL绑定的函数，叫做视图函数，一般来说，视图函数有两个作用：</p>
 <ul>
 <li>处理业务逻辑（背后的业务代码，也即展示出来的数据是怎么来的）</li>
@@ -638,8 +628,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 <li>视图函数只负责业务逻辑和数据处理</li>
 <li>模板只负责从视图函数中获取数据进行展示</li>
 </ul>
-<p>举例：<br>我们在项目中单独创建templates文件夹，并在该目录下创建一个模板文件hello.html;</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<p>举例：<br>我们在项目中单独创建templates文件夹，并在该目录下创建一个模板文件hello.html;<br><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -658,8 +647,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span>&#123;&#123; my_dict &#125;&#125;
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <p>可以发现，模板文件中，占位符处的值需要从视图函数中获取对应的数据，下面是视图函数所在文件：</p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, render_template
 from sympy import deg
@@ -686,7 +674,6 @@ def index():
 
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="控制代码块写法"><a href="#控制代码块写法" class="headerlink" title="控制代码块写法"></a>控制代码块写法</h2><p>包括if写法（选择）、for写法（循环）。<br>演示相关的模板语法：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -714,7 +701,6 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     &#123;% endfor %&#125;
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>视图函数如下：</p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, render_template
 
@@ -728,7 +714,6 @@ def control():
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     app.run(debug&#x3D;True)
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>过滤器的本质就是函数。它的作用在于“微调”，即有时候我们需要对模板中的数据做一定的修改，比如更改格式（首字母大写、日期格式等），在模板中自然不能直接调用Python方法，这样一来，就需要用到过滤器。<br>语法格式如下：</p>
 <p><code>&#123;&#123; variable | filter_name(*args) &#125;&#125;</code><br>variable即为变量，filter_name即为过滤器函数，*args 为过滤器接收的参数<br>常见的内置过滤器有</p>
 <ul>
@@ -769,8 +754,6 @@ def show_filter():
 
 if __name__&#x3D;&#x3D;&#39;__main__&#39;:
     app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
 <h2 id="Flask-Request对象"><a href="#Flask-Request对象" class="headerlink" title="Flask Request对象"></a>Flask Request对象</h2><p>来自客户端网页的数据作为全局请求对象发送到服务器，为了处理请求数据，应该从Flask模块导入。</p>
 <p>Request对象的重要属性如下：</p>
 <ul>
@@ -808,7 +791,6 @@ def index():
 
 if __name__&#x3D;&#x3D;&#39;__main__&#39;:
     app.run()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="消息闪现flash"><a href="#消息闪现flash" class="headerlink" title="消息闪现flash"></a>消息闪现flash</h3><p>在上面的栗子中，我们使用了flash，它代替了print语句，也可以传递消息。</p>
 <ul>
 <li>视图函数中，我们使用flash，其中参数就是消息内容字符串</li>
@@ -837,7 +819,6 @@ if __name__&#x3D;&#x3D;&#39;__main__&#39;:
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, render_template, request
 
 app &#x3D; Flask(__name__)
@@ -856,7 +837,7 @@ def result():
 
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     app.run(debug&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>由于student()绑定到URL &#x2F;页面下，因此首先展示的就是student()中渲染的student.html文件，即展示表单；<br>而一旦有提交表单的POST请求，就会将请求中的表单数据给模板result.html来渲染。<br>result.html文件如下：</p>
+<p>由于student()绑定到URL /页面下，因此首先展示的就是student()中渲染的student.html文件，即展示表单；<br>而一旦有提交表单的POST请求，就会将请求中的表单数据给模板result.html来渲染。<br>result.html文件如下：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
@@ -879,7 +860,6 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="WTF"><a href="#WTF" class="headerlink" title="WTF"></a>WTF</h3><h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><p>Flask的WTF表单，提供了更加方便的写法：</p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from flask import Flask, render_template, request, flash
 from flask_wtf import FlaskForm
@@ -908,7 +888,6 @@ def login():
 if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
     app.run()
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>模板文件wtf.html内容如下：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -929,7 +908,6 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在视图函数所在的.py文件，导入所需要的库之后，需要单独定一个类，并定义出表单所有项，然后将该类的实例对象给渲染函数，便于模板文件中使用。<br>在模板文件中，我们用FlaskForm继承类的表单项来获取相应的组件，通过其label属性来获取文本标签。可见上面.html栗子。</p>
 <h4 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h4><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># 开启wtf验证
 @app.route(&#39;&#x2F;&#39;, methods&#x3D;[&#39;GET&#39;, &#39;POST&#39;])
@@ -948,7 +926,6 @@ def login():
             flash(&#39;参数有误!&#39;)
 
     return render_template(&#39;wtf.html&#39;, form&#x3D;login_form)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="在Flask中使用数据库"><a href="#在Flask中使用数据库" class="headerlink" title="在Flask中使用数据库"></a>在Flask中使用数据库</h2><h2 id="Flask-Cookie"><a href="#Flask-Cookie" class="headerlink" title="Flask Cookie"></a>Flask Cookie</h2><p>Request对象包含Cookie的属性</p>
 <h2 id="Flask-Session"><a href="#Flask-Session" class="headerlink" title="Flask Session"></a>Flask Session</h2>
                 

@@ -562,8 +562,8 @@
 <li>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</li>
 <li>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</li>
 </ul>
-<h3 id="多人抓取分支"><a href="#多人抓取分支" class="headerlink" title="多人抓取分支"></a>多人抓取分支</h3><p>当我们提交分支到远程分支时，首先需要确保自己的代码是最新状态。因此需要git pull拉取远程代码。<br>常见的情况是，首先git pull把最新的提交从origin&#x2F;dev抓下来，然后再本地合并，并解决冲突，再推送。</p>
-<p>而为了顺利git pull，首先需要指定本地dev分支和远程origin&#x2F;dev分支的链接：<br><code>git branch --set-upstream-to=origin/dev dev</code><br>接着再pull：<br><code>git pull</code><br>接下来就是手动解决冲突的时间了。</p>
+<h3 id="多人抓取分支"><a href="#多人抓取分支" class="headerlink" title="多人抓取分支"></a>多人抓取分支</h3><p>当我们提交分支到远程分支时，首先需要确保自己的代码是最新状态。因此需要git pull拉取远程代码。<br>常见的情况是，首先git pull把最新的提交从origin/dev抓下来，然后再本地合并，并解决冲突，再推送。</p>
+<p>而为了顺利git pull，首先需要指定本地dev分支和远程origin/dev分支的链接：<br><code>git branch --set-upstream-to=origin/dev dev</code><br>接着再pull：<br><code>git pull</code><br>接下来就是手动解决冲突的时间了。</p>
 <p>解决完冲突后，就需要推送了，使用命令<br><code>git pull origin &lt;branchname&gt;</code><br>即可推送成功。</p>
 <h2 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h2><p>即常说的克隆。在github上随便逛的时候，瞧中了一个项目，拿到它的地址在本地git clone一下，它就被扒取到了。</p>
 <h2 id="Codereview"><a href="#Codereview" class="headerlink" title="Codereview"></a>Codereview</h2><p>中文可以理解为代码评审，旨在保证代码的规范性，更好地促进团队的开发工作。</p>

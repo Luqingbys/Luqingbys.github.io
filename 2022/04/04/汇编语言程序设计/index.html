@@ -9,9 +9,8 @@
 汇编语言基础程序返回在程序末尾添加返回程序段的代码为：
 mov ax, 4c00H
 int 21H
-
 这里的int 21H表示21号中断，并不是整型变量的意思。
-几个表示结">
+几个表示结束">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -507,7 +506,6 @@ int 21H
 <h1 id="汇编语言基础"><a href="#汇编语言基础" class="headerlink" title="汇编语言基础"></a>汇编语言基础</h1><h2 id="程序返回"><a href="#程序返回" class="headerlink" title="程序返回"></a>程序返回</h2><p>在程序末尾添加返回程序段的代码为：</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mov ax, 4c00H
 int 21H<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>这里的<code>int 21H</code>表示21号中断，并不是整型变量的意思。</p>
 <p>几个表示结束的（伪）指令：</p>
 <ul>
@@ -519,7 +517,7 @@ int 21H<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <h3 id="使用R命令查看各个寄存器的内容"><a href="#使用R命令查看各个寄存器的内容" class="headerlink" title="使用R命令查看各个寄存器的内容"></a>使用R命令查看各个寄存器的内容</h3><blockquote>
 <p>Debug命令可以将汇编程序装入内存，就R命令而言，它为我们查看指定内存中的内容提供了机会；但是，我们应该查看哪里的内容？要回答这个问题，我们需要明白程序究竟被装入了内存的哪个地方。</p>
 </blockquote>
-<p>使用-r命令后，我们会发现DS（数据段）与CS（代码段）指向的地址并不相同。更准确地说，CS总是比DS大了16（比如DS&#x3D;075C，CS&#x3D;076C），下面简单说一下原因：</p>
+<p>使用-r命令后，我们会发现DS（数据段）与CS（代码段）指向的地址并不相同。更准确地说，CS总是比DS大了16（比如DS=075C，CS=076C），下面简单说一下原因：</p>
 <ol>
 <li>程序被装入内存，内存中会有一段起始地址为SA:0000（起始地址的偏移地址为0）的容量足够的空闲内存区；</li>
 <li>在这段内存区的前256个字节中，会创建一个PSP的数据区，此处不需要深入理解；</li>
@@ -535,11 +533,9 @@ int 21H<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <p>比如，我们用[0]表示一个内存单元时，0表示单元的偏移地址，段地址默认在<strong>ds（数据段）</strong>中，单元长度可以由具体指令中的其他操作对象（如前面的寄存器）指出。</p>
 <pre class="line-numbers language-ass" data-language="ass"><code class="language-ass">mov ax, [2]; 将以DS为基地址，2为偏移地址中的内容移送给寄存器ax
 mov [2], ax; 将ax中的内容移送到以DS为基地址，2为偏移地址之中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>但是在指令<code>mov ax [0]</code>中，编译器并不是将0偏移地址单元传入ax，而是将0传入ax；如果要实现前者效果，应该先将偏移量传入bx，再将[bx]传入：</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">mov	bx, 0
 mov ax, [bx]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>上面的bx中存放的数据作为一个偏移地址EA，段地址SA默认在DS中，将SA: EA处存放的数据移送到寄存器ax中。</p>
 <p>在MASM编译器中，对比以下指令：</p>
 <ul>
@@ -560,8 +556,7 @@ mov ax, [bx]<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 s:	
 	循环执行的程序段
 	loop s; 循环执行程序段s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><em>例题</em> 计算ffff: 0006单元中的数，将其乘以3，结果存放在dx中，编程计算。</p>
+<p>_例题_ 计算ffff: 0006单元中的数，将其乘以3，结果存放在dx中，编程计算。</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume CS: code
 code SEGMENT
     start: 
@@ -580,7 +575,6 @@ code SEGMENT
     
 code ends
 end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>程序简析：ffff: 0006单元中，ffff为基地址，0006为偏移地址，前者送入数据段寄存器DS，后者送入BX；[bx]即表示以DS为基地址、bx为偏移地址处的内容。另外注意dx事先要清零。</p>
 <h2 id="相关debug命令"><a href="#相关debug命令" class="headerlink" title="相关debug命令"></a>相关debug命令</h2><p>之前我们已经学习过，使用r命令查看当前各个寄存器的内容、使用d命令查看指定内存中的内容（格式：<code>-d 段基址:偏移地址</code>），以及使用t命令单步执行汇编语句。</p>
 <p>那么，现在学过了循环指令loop之后，更多时候使用t命令似乎不太现实了，毕竟循环语句的单步执行意义不大。对此，我们需要掌握另外两个重要的debug命令：</p>
@@ -588,12 +582,11 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <li>-u命令：查看当前每一条代码的存放地址，以及其内容</li>
 <li>-g命令：跳转到指定的地址，执行代码，格式：<code>-g 段基址:偏移地址</code>，需要说明都是，<strong>往往先使用-u命令查看当前所有代码语句的所在地址，然后使用-g跳转到目标地址，直接执行那个地方存放的代码。</strong></li>
 </ul>
-<h2 id="两者结合使用的栗子"><a href="#两者结合使用的栗子" class="headerlink" title="两者结合使用的栗子"></a>两者结合使用的栗子</h2><p><em>例题</em> 计算ffff:0 ~ ffff:b单元中的数据之和，并将结果存储在dx中。</p>
+<h2 id="两者结合使用的栗子"><a href="#两者结合使用的栗子" class="headerlink" title="两者结合使用的栗子"></a>两者结合使用的栗子</h2><p>_例题_ 计算ffff:0 ~ ffff:b单元中的数据之和，并将结果存储在dx中。</p>
 <p>分析：将内存单元中的8位数据赋值到一个16位寄存器ax中，再将ax中的数据加到dx上，从而使两个运算对象的类型匹配并且结果不会超界。思路如下(X是偏移地址量)：</p>
 <pre class="line-numbers language-none"><code class="language-none">(al) &#x3D; ((ds)*16 + X)
 (ah) &#x3D; 0
 (dx) &#x3D; (dx) + (ax)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在实际编程中，经常会遇到，用同一种方法处理地址连续的内存单元中的数据的问题。此时，就需要用到循环来解决这类问题，同时，设置一些变量，以便于循环变化。</p>
 <h1 id="多个段的使用"><a href="#多个段的使用" class="headerlink" title="多个段的使用"></a>多个段的使用</h1><h2 id="使用代码段"><a href="#使用代码段" class="headerlink" title="使用代码段"></a>使用代码段</h2><p>求给定的一组数据的和，将结果存放在ax中。</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">assume cs: codesg
@@ -610,7 +603,6 @@ s:  add ax, cs: [bx]
     int 21H
 codesg ends
 end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="使用堆栈段"><a href="#使用堆栈段" class="headerlink" title="使用堆栈段"></a>使用堆栈段</h2><p>利用栈，将一组数据逆序存放（假设给定的数据已经按顺序存放在了代码段CS中）。首先我们需要大致明白堆栈段以及堆栈段寄存器。</p>
 <ul>
 <li>堆栈段位于内存中，在此处可以利用为栈结构；</li>
@@ -657,7 +649,6 @@ start:  mov ax, stacksg
         int 21H
 codesg ends
 end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h1 id="更灵活的定位内存地址"><a href="#更灵活的定位内存地址" class="headerlink" title="更灵活的定位内存地址"></a>更灵活的定位内存地址</h1><h2 id="and和or指令"><a href="#and和or指令" class="headerlink" title="and和or指令"></a>and和or指令</h2><ul>
 <li><p>and指令：逻辑与，按位与运算</p>
 <p><strong>通过and指令，可以将操作对象的相应位设为0，而其他位不变。</strong>比如，将al的第六位设为0，可以使用<code>and al, 10111111B</code>。</p>
@@ -672,7 +663,7 @@ end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <h2 id="进一步讨论内存的定位"><a href="#进一步讨论内存的定位" class="headerlink" title="进一步讨论内存的定位"></a>进一步讨论内存的定位</h2><h3 id="数组的寻址"><a href="#数组的寻址" class="headerlink" title="数组的寻址"></a>数组的寻址</h3><p>有如下命令：</p>
 <ul>
 <li><p><code>mov ax, [bx+200]</code>，表示将段基址（段地址）为（ds）、偏移地址为（bx）+200这个内存单元中的数据送入ax，即：</p>
-<p>（ax）&#x3D;（（ds）*16+（bx）+20）</p>
+<p>（ax）=（（ds）*16+（bx）+20）</p>
 </li>
 </ul>
 <p>这种内存定位方式给予了我们更多的思考。就形式[bx+offset]而言，如果offset是一个可以改变的变量，bx固定指向一个地址，那么我们就可以轻而易举地访问一段连续的地址了——这就是访问数组的有效方法。</p>
@@ -690,7 +681,6 @@ mov ax, [si]
 
 mov di, 0
 mov ax, [di]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="寄存器寻址总结"><a href="#寄存器寻址总结" class="headerlink" title="寄存器寻址总结"></a>寄存器寻址总结</h3><blockquote>
 <p>在8086CPU中，只有BX、BP、SI、DI这四个寄存器可以用在方括号[]中进行内存单元的寻址。</p>
 </blockquote>
@@ -716,20 +706,18 @@ start:
 ...
 codesg ends
 end start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这里的start就是一个标号。<code>offset start</code>即表示取出start这一行指令所在的偏移地址（比如后续可以将其存入基址寄存器BX等，配合代码段寄存器CS，定位内存）</p>
 <pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">datasg segment
 array	db 1, 2, 3, 4, 5
 		db 9, 8, 7, 6, 5
 datasg ends<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这其中的array也是一个标号。<code>offset array</code>即表示取出array这一行的第一个变量的偏移地址。</p>
 <h2 id="JMP-指令"><a href="#JMP-指令" class="headerlink" title="JMP 指令"></a>JMP 指令</h2><p>无条件转移指令。</p>
 <h3 id="段间转移"><a href="#段间转移" class="headerlink" title="段间转移"></a>段间转移</h3><p><code>jmp far ptr 标号</code></p>
 <h2 id="有条件跳转指令"><a href="#有条件跳转指令" class="headerlink" title="有条件跳转指令"></a>有条件跳转指令</h2><p>有条件转移指令都是短转移指令。</p>
 <ol>
 <li><p>jcxz指令</p>
-<p>格式：<code>jcxz 标号</code>    如果（CX）&#x3D;0，则转移到标号处执行。</p>
+<p>格式：<code>jcxz 标号</code>    如果（CX）=0，则转移到标号处执行。</p>
 </li>
 </ol>
 <h1 id="call-和ret指令"><a href="#call-和ret指令" class="headerlink" title="call 和ret指令"></a>call 和ret指令</h1><h2 id="CALL指令"><a href="#CALL指令" class="headerlink" title="CALL指令"></a>CALL指令</h2><p>必须有一个保存“断点”的操作，将CALL指令的下一条指令的段基址CS和偏移地址IP进栈保存（当然，若为段内调用，只需保存IP的值）</p>

@@ -546,14 +546,13 @@ console.log(personProxy);
 &#x2F;**&#123; name: &#39;Luqing&#39;, age: 999 &#125;
  * Luqing后面的空白符全部去除
  *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="再谈JavaScript原型特性"><a href="#再谈JavaScript原型特性" class="headerlink" title="再谈JavaScript原型特性"></a>再谈JavaScript原型特性</h2><p>这并不是ES的新特性，只不过，这个知识点很重要，关联了很多其他的知识和新特性，不得不再次学习。</p>
 <blockquote>
 <p>为了学好JavaScript的原型，我们首先还是从熟悉的传统OOP讲起。在C++、Java等传统OOP语言中，都是先定义class（类），再根据类创建出实例对象，此时，class中定义的所有属性、方法就会被复制到实例对象中。然而，JavaScript中却并不是这样做的。</p>
 </blockquote>
-<p>在JavaScript中，对象实例创建时，它会和其创造器之间建立一个链接（也就是对象实例的__proto__属性，派生于构造函数的prototype）<br>也就是说——</p>
+<p>在JavaScript中，对象实例创建时，它会和其创造器之间建立一个链接（也就是对象实例的<strong>proto</strong>属性，派生于构造函数的prototype）<br>也就是说——</p>
 <ul>
-<li>构造函数的prototype实际上就是对象实例的__proto__对象</li>
+<li>构造函数的prototype实际上就是对象实例的<strong>proto</strong>对象</li>
 <li>构造函数的prototype存储的所有属性、方法，都可以被继承者使用</li>
 <li>每一个实例对象都聪原型中继承了constructor属性，该属性指向了用于创建此实例对象的构造函数</li>
 </ul>

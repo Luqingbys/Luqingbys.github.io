@@ -5,8 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="JavaScript编程练习题, 湖心亭">
-    <meta name="description" content="1. 
-Once upon a time, on a way through the old wild mountainous west,…… a man was given directions to go from one point ">
+    <meta name="description" content="
+Once upon a time, on a way through the old wild mountainous west,…
+
+… a man was given directions to go from one point t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -478,7 +480,7 @@ Once upon a time, on a way through the old wild mountainous west,…… a man wa
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    310
+                    309
                 </div>
                 
 
@@ -498,8 +500,10 @@ Once upon a time, on a way through the old wild mountainous west,…… a man wa
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1. </p>
-<h4 id="Once-upon-a-time-on-a-way-through-the-old-wild-mountainous-west-…"><a href="#Once-upon-a-time-on-a-way-through-the-old-wild-mountainous-west-…" class="headerlink" title="Once upon a time, on a way through the old wild mountainous west,…"></a>Once upon a time, on a way through the old wild <em>mountainous</em> west,…</h4><p>… a man was given directions to go from one point to another. The directions were “NORTH”, “SOUTH”, “WEST”, “EAST”. Clearly “NORTH” and “SOUTH” are opposite, “WEST” and “EAST” too.</p>
+                <ol>
+<li><h4 id="Once-upon-a-time-on-a-way-through-the-old-wild-mountainous-west-…"><a href="#Once-upon-a-time-on-a-way-through-the-old-wild-mountainous-west-…" class="headerlink" title="Once upon a time, on a way through the old wild mountainous west,…"></a>Once upon a time, on a way through the old wild <em>mountainous</em> west,…</h4></li>
+</ol>
+<p>… a man was given directions to go from one point to another. The directions were “NORTH”, “SOUTH”, “WEST”, “EAST”. Clearly “NORTH” and “SOUTH” are opposite, “WEST” and “EAST” too.</p>
 <p>Going to one direction and coming back the opposite direction <em>right away</em> is a needless effort. Since this is the wild west, with dreadfull weather and not much water, it’s important to save yourself some energy, otherwise you might die of thirst!</p>
 <h4 id="How-I-crossed-a-mountainous-desert-the-smart-way"><a href="#How-I-crossed-a-mountainous-desert-the-smart-way" class="headerlink" title="How I crossed a mountainous desert the smart way."></a>How I crossed a <em>mountainous</em> desert the smart way.</h4><p>The directions given to the man are, for example, the following (depending on the language):</p>
 <pre class="line-numbers language-none"><code class="language-none">[&quot;NORTH&quot;, &quot;SOUTH&quot;, &quot;SOUTH&quot;, &quot;EAST&quot;, &quot;WEST&quot;, &quot;NORTH&quot;, &quot;WEST&quot;].
@@ -507,18 +511,16 @@ or
 &#123; &quot;NORTH&quot;, &quot;SOUTH&quot;, &quot;SOUTH&quot;, &quot;EAST&quot;, &quot;WEST&quot;, &quot;NORTH&quot;, &quot;WEST&quot; &#125;;
 or
 [North, South, South, East, West, North, West]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>You can immediatly see that going “NORTH” and <em>immediately</em> “SOUTH” is not reasonable, better stay to the same place! So the task is to give to the man a simplified version of the plan. A better plan in this case is simply:</p>
 <pre class="line-numbers language-none"><code class="language-none">[&quot;WEST&quot;]
 or
 &#123; &quot;WEST&quot; &#125;
 or
 [West]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="Other-examples"><a href="#Other-examples" class="headerlink" title="Other examples:"></a>Other examples:</h4><p>In <code>[&quot;NORTH&quot;, &quot;SOUTH&quot;, &quot;EAST&quot;, &quot;WEST&quot;]</code>, the direction <code>&quot;NORTH&quot; + &quot;SOUTH&quot;</code> is going north and coming back <em>right away</em>.</p>
 <p>The path becomes <code>[&quot;EAST&quot;, &quot;WEST&quot;]</code>, now <code>&quot;EAST&quot;</code> and <code>&quot;WEST&quot;</code> annihilate each other, therefore, the final result is <code>[]</code> (nil in Clojure).</p>
 <p>In [“NORTH”, “EAST”, “WEST”, “SOUTH”, “WEST”, “WEST”], “NORTH” and “SOUTH” are <em>not</em> directly opposite but they become directly opposite after the reduction of “EAST” and “WEST” so the whole path is reducible to [“WEST”, “WEST”].</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>
                 
             </div>
             <hr/>

@@ -500,7 +500,7 @@ JavaScript的正则表达式元字符与Python中的元字符类似，JavaScript
             <div id="articleContent">
                 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>由于虚拟VNode节点部分某些关键地方涉及到了JavaScript正则表达式，在此再度简单记录正则表达式的JavaScript版本。</p>
 <h2 id="JavaScript的正则表达式"><a href="#JavaScript的正则表达式" class="headerlink" title="JavaScript的正则表达式"></a>JavaScript的正则表达式</h2><h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>与Python中的元字符类似，JavaScript也有元字符，它们是正则表达式中最基础的部分，理解、掌握了它们，就相当于掌握了正则表达式的一半。</p>
-<h3 id="重要匹配方法"><a href="#重要匹配方法" class="headerlink" title="重要匹配方法"></a>重要匹配方法</h3><h4 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h4><p>在设置了 global 或 sticky 标志位的情况下（如 &#x2F;foo&#x2F;g or &#x2F;foo&#x2F;y），JavaScript RegExp 对象是有状态的。他们会将上次成功匹配后的位置记录在 lastIndex 属性中。使用此特性，exec() 可用来对单个字符串中的多次匹配结果进行逐条的遍历（包括捕获到的匹配）。</p>
+<h3 id="重要匹配方法"><a href="#重要匹配方法" class="headerlink" title="重要匹配方法"></a>重要匹配方法</h3><h4 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h4><p>在设置了 global 或 sticky 标志位的情况下（如 /foo/g or /foo/y），JavaScript RegExp 对象是有状态的。他们会将上次成功匹配后的位置记录在 lastIndex 属性中。使用此特性，exec() 可用来对单个字符串中的多次匹配结果进行逐条的遍历（包括捕获到的匹配）。</p>
 <p>正则表达式的lastIndex属性：记录了匹配成功的第一个元素下标。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -542,7 +542,6 @@ JavaScript的正则表达式元字符与Python中的元字符类似，JavaScript
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>使用while循环语句以及exec()，可以匹配出全部满足条件的字符串；</li>
 <li>defaultTagRE是正则表达式，它被设置为全局，具有状态，可以利用它的lastIndex属性，获取上一次匹配成功时的起始字符下标，比如这里第一个匹配成功的是“Vue源码阅读之虚拟VNode节点”，从原字符串text的第19个字符开始，故第一轮循环的打印结果就是19。</li>
@@ -554,7 +553,6 @@ JavaScript的正则表达式元字符与Python中的元字符类似，JavaScript
 <span class="token number">51</span>
 (<span class="token number">2</span>) <span class="token punctuation">[</span>'<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> author <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>'<span class="token punctuation">,</span> ' author '<span class="token punctuation">,</span> index<span class="token operator">:</span> <span class="token number">39</span><span class="token punctuation">,</span> input<span class="token operator">:</span> '&lt;div id=<span class="token string">"main"</span>>&lt;p><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> title <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>&lt;/p>&lt;span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> author <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>&lt;/span>&lt;/div>'<span class="token punctuation">,</span> groups<span class="token operator">:</span> undefined<span class="token punctuation">]</span>
 <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> author <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h1 id="从HTML到真实DOM的大体流程"><a href="#从HTML到真实DOM的大体流程" class="headerlink" title="从HTML到真实DOM的大体流程"></a>从HTML到真实DOM的大体流程</h1><h2 id="AST语法树"><a href="#AST语法树" class="headerlink" title="AST语法树"></a>AST语法树</h2><p>AST树，即abstract syntax tree树，意为抽象语法树。经过generage过程，得到render函数，将返回Vue的虚拟DOM节点（包含标签名、子节点、文本信息等）。<br>比如下面这一句html语言，定义了一个input标签，是一个html表单元素：<br><code>&lt;input class=&quot;warn&quot; value=&quot;default text&quot; :style=&quot;innerStyle&quot;&gt;</code><br>解析后的AST节点：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json">inputAstElm = <span class="token punctuation">&#123;</span>
   type<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
@@ -565,7 +563,6 @@ JavaScript的正则表达式元字符与Python中的元字符类似，JavaScript
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
   props<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">"value"</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token string">"\"default text\""</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="从手写函数开始建立节点"><a href="#从手写函数开始建立节点" class="headerlink" title="从手写函数开始建立节点"></a>从手写函数开始建立节点</h2><p>我们希望通过调用这样的函数就可以创建一棵虚拟节点树（VNode）。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">var ul &#x3D;
     c(&#39;ul&#39;, [
@@ -573,7 +570,6 @@ JavaScript的正则表达式元字符与Python中的元字符类似，JavaScript
       c(&#39;li&#39;, [ t(&quot;Item 2&quot;) ]),
       c(&#39;li&#39;, [ t(&quot;Item 3&quot;) ])
     ])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这其中需要用到JavaScript的正则表达式提取相关内容。细节参见源码注释。</p>
 <p>在建立虚拟节点VNode之后，我们就可以通过VNode来间接管理DOM了——要做到这一点，我们还需要在两者之间建立关联：</p>
 <ul>
@@ -600,7 +596,6 @@ JavaScript的正则表达式元字符与Python中的元字符类似，JavaScript
     &lt;&#x2F;ul&gt;&#96;
 
 var ul &#x3D; compile(html)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>我们以Token流的形式记录每一个html标签转换后的内容，它是一个列表：</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">interface Attr &#123;
 	name: string,
@@ -648,11 +643,9 @@ tokens: &#x3D; [
 	children,
 	parent,
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>我们构建一棵AST树，也需要一个栈stack，记录所有的父节点，同时定义一个指向栈顶的指针currentParent：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">let stack &#x3D; []
 let currentParent<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>在源码中，处理Tokens流，得到AST树的函数parse()中，在其中的parseHTML()参数中定义了三个函数：</p>
 <ul>
 <li>start，处理开始标签流</li>
@@ -665,12 +658,10 @@ let currentParent<span aria-hidden="true" class="line-numbers-rows"><span></span
     currentParent &#x3D; element
     stack.push(element)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在处理结束标签流时，同样的道理，需要弹栈：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; 标签闭合，栈顶元素弹出，长度减一，当前父节点指针currentParent指向最新的栈顶元素
 stack.length -&#x3D; 1
 currentParent &#x3D; stack[stack.length - 1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="从AST树到VNode树"><a href="#从AST树到VNode树" class="headerlink" title="从AST树到VNode树"></a>从AST树到VNode树</h3><p>将已经生成的AST节点转化为VNode的方法如下：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">_c (tag, data, children) 创建一个非文本 VNode 节点
 _v (text) 创建一个文本VNode节点
@@ -678,7 +669,6 @@ _s (exp) 把 exp 输出成字符串
 _e() 创建一个空的 VNode
 _l (list, render) 渲染一个 VNode 列表
 _k(eventKeyCode, key, builtInAlias) 判定当前事件的按键是否为预期按键值，builtInAlias &#x3D;&#x3D; eventKeyCode<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>VNode节点形状如下：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">VNode <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
 	<span class="token literal-property property">tag</span><span class="token operator">:</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span>	<span class="token comment">// 标签名</span>
@@ -687,8 +677,7 @@ _k(eventKeyCode, key, builtInAlias) 判定当前事件的按键是否为预期�
         <span class="token literal-property property">domProps</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token string-property property">"value"</span><span class="token operator">:</span> <span class="token string">"default text"</span> <span class="token punctuation">&#125;</span>
 	<span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在实际的源码中，实现了逐步封装（见&#x2F;compiler&#x2F;codegen&#x2F;index.js文件）</p>
+<p>在实际的源码中，实现了逐步封装（见/compiler/codegen/index.js文件）</p>
 <ul>
 <li><p><code>generate: (ast: any) =&gt; obj</code>，这个函数是最外层的函数，接收传入的ast树，并将其挂载到当前的vm实例对象，用于生成一棵VNode树。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">export function generate(ast) &#123;
@@ -718,7 +707,6 @@ _k(eventKeyCode, key, builtInAlias) 判定当前事件的按键是否为预期�
     return code
   &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>不难发现，这一层函数其实也没做多少事，关键还得看genFor、genIf、genChildren、genData这几个打工人（它们生成了模板字符串中的模板变量，也就是el上缺省的属性值el.tag, el.children, el.data）。</p>
 </li>
 <li><p><code>genData: (el: any) =&gt; string</code>, 我们先来看看分量最重的data子选项。genData用于得到data，而data包含了el的很多属性，如el.key, el.attrs, el.props, el.event等，其中，el.attrs、el.props、el.events相对较复杂，因此又套了一层函数。</p>
@@ -762,7 +750,8 @@ _k(eventKeyCode, key, builtInAlias) 判定当前事件的按键是否为预期�
     res +&#x3D; &#96;&quot;$&#123;prop.name&#125;&quot;:$&#123;prop.value&#125;,&#96;
   &#125;
   return res.slice(0, -1) &#x2F;&#x2F; 去掉尾巴的逗号
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 <p>_c()方法可以生成一个VNode，从而实现AST到VNode的过程。</p>
 <h3 id="从VNode树到DOM树"><a href="#从VNode树到DOM树" class="headerlink" title="从VNode树到DOM树"></a>从VNode树到DOM树</h3><p>经历了patch(vnode)函数，此时在真实的DOM上处理UI渲染、事件监听等。</p>
@@ -788,7 +777,6 @@ _k(eventKeyCode, key, builtInAlias) 判定当前事件的按键是否为预期�
     <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token string-property property">"class"</span><span class="token operator">:</span> <span class="token string">"warn"</span><span class="token punctuation">,</span> <span class="token string-property property">"style"</span><span class="token operator">:</span> innerStyle <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
     <span class="token literal-property property">domProps</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token string-property property">"value"</span><span class="token operator">:</span> <span class="token string">"default text"</span> <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">VNode <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
     <span class="token literal-property property">tag</span><span class="token operator">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
     <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
@@ -800,7 +788,8 @@ _k(eventKeyCode, key, builtInAlias) 判定当前事件的按键是否为预期�
 <li><p>最后一步，将虚拟VNode渲染到真实DOM</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">inputDom.setAttribute(&#39;class&#39;, &#39;warn&#39;)
 inputDom.setAttribute(&#39;style&#39;, &#39;vm.innerStyle运行后的值&#39;)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 </ol>
 
                 

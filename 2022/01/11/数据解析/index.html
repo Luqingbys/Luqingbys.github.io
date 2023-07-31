@@ -510,8 +510,6 @@ re解析re解析是一种速度较快的数据解析方式，主要涉及正则�
 <h2 id="re解析"><a href="#re解析" class="headerlink" title="re解析"></a>re解析</h2><p>re解析是一种速度较快的数据解析方式，主要涉及正则表达式的使用。正则表达式，是一种使用表达式的方式，对字符串进行匹配的语法规则。</p>
 <h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><blockquote>
 <p>正则表达式的语法：能使用元字符（具有固定含义的特殊符号）进行排列组合用来匹配字符串。<br>.        匹配任意一个字符<br>\w    匹配一个字母、数字、下划线<br>\s    匹配任意一个的空白符<br>\d    匹配一个数字<br>|n    匹配一个换行符<br>\t    匹配一个制表符<br>^        匹配字符串的开始<br>$        匹配字符串的结尾<br>下面的大写元字符是之前小写元字符的取反<br>\W    匹配一个非字母、非数字、非下划线<br>\D    匹配一个非数字<br>\S    匹配一个非空白符<br>a|b    匹配字符a或者字符b<br>()    匹配括号内的表达式，也表示一个组<br>[…]        匹配字符组中的字符</p>
-</blockquote>
-<blockquote>
 <p>下面的是控制前面元字符出现次数的量词<br>*    重复零次或者多次<br>+    重复一次或者更多次<br>?    重复零次或者一次<br>{n}    重复n次<br>{n,}    重复n次或者更多次<br>{n, m}    重复n到m次</p>
 </blockquote>
 <p>如前所说，正则表达式语法需要掌握元字符的写法。灵活运用上述元字符，可以实现各种匹配要求。<br>[a-zA-Z0-9]：表示匹配字符串中所有的字母和数字</p>
@@ -522,7 +520,7 @@ re解析re解析是一种速度较快的数据解析方式，主要涉及正则�
 </ul>
 <p>之前我们已经知道，？是量词，重复一次或者两次的量词，也就是说，惰性匹配中，？限制了前面的元字符*的出现次数（尽可能地少），因此惰性匹配尽可能的匹配到较短的匹配内容。</p>
 <blockquote>
-<p>例如，待检测字符串“玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏啊！<br>如果匹配字符串为 玩儿.*?游戏，匹配结果为：玩儿吃鸡游戏<br>而如果匹配字符串为 玩儿.*游戏，匹配结果为：玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏</p>
+<p>例如，待检测字符串“玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏啊！<br>如果匹配字符串为 玩儿.<em>?游戏，匹配结果为：玩儿吃鸡游戏<br>而如果匹配字符串为 玩儿.</em>游戏，匹配结果为：玩儿吃鸡游戏，晚上一起上游戏，干嘛呢？打游戏</p>
 </blockquote>
 <h3 id="实战案例"><a href="#实战案例" class="headerlink" title="实战案例"></a>实战案例</h3><p>爬取网页内容，拿到源码之后，通常在要提取的内容附近找到标识字符串，通过(?P&lt; name &gt;)写法，由”name”标记拿到数据。<br>比如，在爬取电影天堂网页数据时，要提取出电影名，现在找到其源码片段如下：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!--&#123;start:最新--></span>
@@ -543,7 +541,6 @@ re解析re解析是一种速度较快的数据解析方式，主要涉及正则�
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/html/gndy/dyzz/20220111/62197.html<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>2022年纪录片《哈利·波特20<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/html/gndy/jddy/20220109/62195.html<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>2022年悬疑《新洗冤录》HD国<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>我们发现，片名都在“《》”中，因此可以定义如下正则字符串：</p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># 上述源码已经爬取保存到page中，re.S表示忽略换行符
 str &#x3D; re.compile(r&quot;&lt;ul&gt;.*?《(?P&lt;name&gt;.*?)》&quot;, re.S)
@@ -551,17 +548,16 @@ str &#x3D; re.compile(r&quot;&lt;ul&gt;.*?《(?P&lt;name&gt;.*?)》&quot;, re.S)
 names &#x3D; str.finditer(page)
 for it in names:
 	print(it.group(&quot;name&quot;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="bs4解析"><a href="#bs4解析" class="headerlink" title="bs4解析"></a>bs4解析</h2><p>bs4是Python中的第三方库，其中的BeautifulSoup可以用来进行数据解析。<br>基本用法：</p>
 <ol>
 <li>将页面源代码交给BeautifulSoup进行处理，生成bs对象；</li>
 <li>从bs对象中查找数据，要掌握两个方法；</li>
 </ol>
 <ul>
-<li>find(标签, 属性&#x3D;值)    返回符合条件的一个html标签</li>
-<li>find_all(标签, 属性&#x3D;值)    返回符合条件的全部html标签</li>
+<li>find(标签, 属性=值)    返回符合条件的一个html标签</li>
+<li>find_all(标签, 属性=值)    返回符合条件的全部html标签</li>
 </ul>
-<ol start="3">
+<ol>
 <li>可以使用text属性拿到被标签标记的内容，也可以通过get(属性)拿到标签的属性。</li>
 </ol>
 <p>实例：</p>

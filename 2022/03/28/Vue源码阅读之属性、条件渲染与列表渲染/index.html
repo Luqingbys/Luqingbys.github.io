@@ -506,7 +506,6 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-else</span><span class="token punctuation">></span></span>Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Item 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><a target="_blank" rel="noopener" href="https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/2.2.1/ifelse.png">https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/2.2.1/ifelse.png</a></p>
 <h2 id="从parse-template-看带条件渲染的AST树的生成"><a href="#从parse-template-看带条件渲染的AST树的生成" class="headerlink" title="从parse(template)看带条件渲染的AST树的生成"></a>从parse(template)看带条件渲染的AST树的生成</h2><p><strong>在AST树中， if 、else-if 、else的多个token节点会合成一个节点</strong>——if节点里边包含 </p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
@@ -521,7 +520,6 @@
 	exp<span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
 	block<span class="token operator">:</span>&lt;else的ast节点>
 <span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>而在parse(template)函数中，有一个processIf(element)函数：</p>
 <p><code>processIf(element)</code>，它用于处理element上的v-if指令（包含在属性键值对中，有待分离）；该函数体内部的getAndRemoveAttr()用于获取并移除指定的属性键值对。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function processIf (el) &#123;
@@ -546,17 +544,15 @@
     &#125;
   &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>注意到，<strong>上述处理v-if条件渲染的代码中，还有一个addIfCondition()函数</strong>，它主要用于给element（即要生成的AST节点）添加ifConditions属性：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">ifAstElm.ifConditions &#x3D; [
   &#123;exp: &#39;a &gt; 0&#39;, block: item1AstEl &#125;,
   &#123;exp: &#39;b &gt; 0&#39;, block: item2AstEl &#125;,
   &#123;exp: null,    block: item3AstEl &#125;,
 ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这也再次印证，AST树中将多个v-if、v-else、v-else-if节点整合在了一起。</p>
 <h2 id="生成VNode-render时对ifASTElement的处理"><a href="#生成VNode-render时对ifASTElement的处理" class="headerlink" title="生成VNode render时对ifASTElement的处理"></a>生成VNode render时对ifASTElement的处理</h2><p>ifAstElm中的条件控制语句会变成连续的三元运算操作，运算结果产生一个VNode——v-if、v-else-if、v-else结构只会产生一个VNode。</p>
-<p>我们知道，生成AST结构的下一步，是生成VNode-render（渲染VNode树的代码），因此我们把目光转移到compiler&#x2F;codegen&#x2F;index.js中，在生成VNode-render的次外层函数genElement(el)中，就有对ifAstElm的处理——genIf(el)：</p>
+<p>我们知道，生成AST结构的下一步，是生成VNode-render（渲染VNode树的代码），因此我们把目光转移到compiler/codegen/index.js中，在生成VNode-render的次外层函数genElement(el)中，就有对ifAstElm的处理——genIf(el)：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function genIf(el) &#123;
   el.ifProcessed &#x3D; true &#x2F;&#x2F; 标记已经处理过当前这个if节点了，避免递归死循环
     &#x2F;&#x2F; 将el.ifConditions的浅拷贝传递给函数
@@ -579,14 +575,12 @@ function genIfConditions(conditions) &#123;
     return genElement(el)
   &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>代码段中，我们看到生成VNode-render的三元表达式：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">if (condition.exp) &#123;
     return &#96;($&#123;condition.exp&#125;)?$&#123;genTernaryExp(condition.block)&#125;:$&#123;genIfConditions(conditions)&#125;&#96;
   &#125; else &#123;
     return &#96;$&#123;genTernaryExp(condition.block)&#125;&#96;
   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>第一个分支，condition.exp是分支条件，condition.block是分支对应的AST节点（准确来说，condition对象来自前一步生成的AST树节点），采取递归方式，可以得到一个嵌套的三元表达式结构：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">_c(&#39;div&#39;, &#123;&#125;, [ &#x2F;* 留意children数组只有3个元素 *&#x2F;
   _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 0&quot;) ]),
@@ -602,7 +596,6 @@ function genIfConditions(conditions) &#123;
 
   _c(&#39;div&#39;, &#123;&#125;, [ _v(&quot;Item 4&quot;) ])
 ])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>第二个分支，表示当前condition.exp为null，即无条件了，对应v-else，为v-if系列中的最后一个分支。</p>
 <h2 id="后续步骤"><a href="#后续步骤" class="headerlink" title="后续步骤"></a>后续步骤</h2><p>上面已经得到了带有v-if的VNode-render表达式，后续就需要保证其运行正确，即可生成VNode树了。由VNode树到真实DOM树的过程与v-if无关了。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; 得到的VNode render代码示例：（renderCode）
@@ -622,14 +615,10 @@ var render &#x3D; function () &#123;
         ])
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h1 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h1><h2 id="流程总览"><a href="#流程总览" class="headerlink" title="流程总览"></a>流程总览</h2><p>以如下代码为例，简单看看整体流程示意图：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(item, index) in items<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; item &#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p><a target="_blank" rel="noopener" href="https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/2.2.2/for.png">https://github.com/raphealguo/how-to-learn-vue2-blob/raw/master/figure/2.2.2/for.png</a></p>
 <h2 id="HTML到AST的列表渲染处理"><a href="#HTML到AST的列表渲染处理" class="headerlink" title="HTML到AST的列表渲染处理"></a>HTML到AST的列表渲染处理</h2><p>在生成AST节点时，需要提取出HTML模板中的v-for属性值。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function processFor (el) &#123;
@@ -663,7 +652,6 @@ var render &#x3D; function () &#123;
     &#125;
   &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>看懂这段代码的关键之一是明白JavaScript的正则表达式。比如，forAliasRE、forIteratorRE都是匹配模式串。以上面的html模板字符串为例，inMatch、iteratorMatch的内容如下：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token comment">// inMatch: Array</span>
 <span class="token punctuation">[</span>
@@ -684,14 +672,12 @@ var render &#x3D; function () &#123;
   input<span class="token operator">:</span> '(item<span class="token punctuation">,</span> index)'<span class="token punctuation">,</span>
   groups<span class="token operator">:</span> undefined
 <span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>由此，我们给出创建出来的AST节点el信息：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; v-for&#x3D;&quot;(item, index) in list&quot;
 el.for &#x3D; &#39;list&#39;	&#x2F;&#x2F; inMatch[2]
 const alias &#x3D; &#39;(item, index)&#39;	&#x2F;&#x2F; inMatch[1]
 el.alias &#x3D; &#39;item&#39;	&#x2F;&#x2F; iterator[1]
 el.iterator1 &#x3D; &#39;index&#39;	&#x2F;&#x2F; iterator[2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>alias，别名，此处用以表示在v-for循环中给可迭代对象的当前遍历项，即它的别名。</p>
 </blockquote>
@@ -727,12 +713,10 @@ el.iterator1 &#x3D; &#39;index&#39;	&#x2F;&#x2F; iterator[2]<span aria-hidden="t
     &#96;return $&#123;genElement(el)&#125;&#96; +
     &#39;&#125;)&#39;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>生成的renderCode即为：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">_l((items),function(item, index)&#123;
     return _c(&#39;li&#39;, &#123;&#125;, [_v,( _s(item) )])
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="运行时的renderHelpersFunc中的渲染列表函数-l"><a href="#运行时的renderHelpersFunc中的渲染列表函数-l" class="headerlink" title="运行时的renderHelpersFunc中的渲染列表函数_l()"></a>运行时的renderHelpersFunc中的渲染列表函数_l()</h2><p>上面已经得到了带有列表渲染的renderCode，接下来就需要分析renderCode中的渲染函数_l()了——它是渲染出一个完整VNode列表的关键。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; core&#x2F;instance&#x2F;render-helpers&#x2F;render-list.js
 export function renderList (val, render) &#123;
@@ -760,12 +744,10 @@ export function renderList (val, render) &#123;
 
 &#x2F;&#x2F; core&#x2F;instance&#x2F;render.js
 Vue.prototype._l &#x3D; renderList<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>我们先看看最熟悉的renderCode情况：items是一个可迭代数组，那么函数内部将会创建一个ret数组，ret数组中的每一个元素都是可迭代数组中对应元素被渲染后的结果（单个VNode节点）：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">_l((items),function(item, index)&#123;
     return _c(&#39;li&#39;, &#123;&#125;, [_v,( _s(item) )])
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>items就是renderList(val, render)函数的第一个参数；</li>
 <li>function(item, index){…}是第二个参数render，注意它返回_c(…)的结果，而_c()用于创建VNode并返回之，因此此时的render返回值为单个VNode。</li>

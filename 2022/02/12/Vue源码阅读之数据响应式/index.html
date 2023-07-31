@@ -509,7 +509,7 @@ Watcher：订阅者
 <li>Dep：依赖，联系发布者与订阅者的纽带</li>
 <li>Watcher：订阅者</li>
 </ul>
-<p>其中，Observer是发布者，用于监视数据的读写对应的index.js文件中，实现了数据劫持。而数据劫持的关键，在于使用ES5的Object.defineProperty()重写属性的getter&#x2F;setter:</p>
+<p>其中，Observer是发布者，用于监视数据的读写对应的index.js文件中，实现了数据劫持。而数据劫持的关键，在于使用ES5的Object.defineProperty()重写属性的getter/setter:</p>
 <ol>
 <li>getter中实现依赖收集<br>所谓依赖，就是vue会在组件渲染的过程中把“接触”（也就是读取数据，触发其get函数）过的数据属性记录为依赖（此为依赖收集），方便后续组件的更新。</li>
 </ol>
@@ -555,8 +555,7 @@ get: function reactiveGetter() &#123;
       &#125;
     &#125;
   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol start="2">
+<ol>
 <li>setter中实现分发更新<br>当依赖项的setter触发时，会通知watcher，从而使它关联的组件重新渲染（此为分发更新）。</li>
 </ol>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">set: function reactiveSetter(newVal) &#123;
@@ -609,21 +608,18 @@ notify () &#123;
     &#125;
   &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>如下为Observer&#x2F;index.js中的代码，是Observer类的构造函数的一个代码片段：</p>
+<p>如下为Observer/index.js中的代码，是Observer类的构造函数的一个代码片段：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">this.value &#x3D; value
 this.dep &#x3D; new Dep()
 &#x2F;&#x2F; 把当前Observer对象 绑定在value.__ob__上，作为该数据对象已经被Observer观察的标识
 &#x2F;&#x2F; this代指Observer类
 def(value, &#39;__ob__&#39;, this)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>该Observer实例对象被绑定到了vue实例上，并作为属性‘<strong>ob</strong>‘，我们还可以发现，该Observer实例对象还有成员dep（依赖对象实例），因此我们再到dep.js文件中看看Dep类。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">constructor () &#123;
 this.id &#x3D; uid++
 &#x2F;**subs: Watcher[]，依赖列表，用于收集订阅者Watcher *&#x2F;
 this.subs &#x3D; []
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>上面是Dep类的构造函数，由于依赖项需要通知Watcher更新组件，那么就需要记录与其绑定的Watcher，这里的成员id是该dep的唯一区分标识，而subs用于记录与其相关的订阅者Watcher。</p>
 <p>我们自己简单地写一个数据响应式：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; 订阅者Watcher类
@@ -668,7 +664,6 @@ dep.addSub(w2)
 dep.addSub(w3)
 
 dep.notify(&#39;赵六&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>在上面这个简单的栗子中，我们定义了三个订阅者w1, w2, w3，一个发布者dep</li>
 <li>对于订阅者，我们订阅（监视）的是name属性</li>

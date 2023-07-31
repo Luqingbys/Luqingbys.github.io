@@ -509,6 +509,7 @@ JavaScript正则表达式简介与Python中的正则表达式类似，JavaS">
 <li>匹配方法（正则方法）</li>
 </ul>
 <h4 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h4><p>匹配模式串的核心部分。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -516,7 +517,8 @@ JavaScript正则表达式简介与Python中的正则表达式类似，JavaS">
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>.</td>
 <td>查找单个字符，除了换行和行结束符</td>
 </tr>
@@ -588,18 +590,18 @@ JavaScript正则表达式简介与Python中的正则表达式类似，JavaS">
 <td>\uxxxx</td>
 <td>查找以十六进制 xxxx规定的 Unicode 字符</td>
 </tr>
-</tbody></table>
-<h4 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>字符</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td></td>
-<td></td>
-</tr>
+<tbody>
 <tr>
 <td></td>
 <td></td>
@@ -608,8 +610,14 @@ JavaScript正则表达式简介与Python中的正则表达式类似，JavaS">
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 <h4 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h4><p>指定了重复匹配字符的确数或者约数。下面展示一些量词搭配元字符的使用：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -617,7 +625,8 @@ JavaScript正则表达式简介与Python中的正则表达式类似，JavaS">
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>n+</td>
 <td>匹配任何包含至少一个 n 的字符串</td>
 </tr>
@@ -641,50 +650,56 @@ JavaScript正则表达式简介与Python中的正则表达式类似，JavaS">
 <td>n{x,}</td>
 <td>匹配包含至少 x 个 n 的序列的字符串</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>n可以是前面的元字符。</p>
 <h4 id="匹配标志"><a href="#匹配标志" class="headerlink" title="匹配标志"></a>匹配标志</h4><p>在默认情况下，正则的匹配最多只会匹配到一个结果。但是可以在正则匹配模式串后面添加标记：</p>
 <ul>
-<li>&#x2F;g 表示该表达式将用来在输入字符串中查找所有可能的匹配，返回的结果可以是多个。</li>
-<li>&#x2F;i 表示匹配的时候不区分大小写。</li>
-<li>&#x2F;m 表示多行匹配——匹配换行符两端的潜在匹配。影响正则中的^$符号。</li>
+<li>/g 表示该表达式将用来在输入字符串中查找所有可能的匹配，返回的结果可以是多个。</li>
+<li>/i 表示匹配的时候不区分大小写。</li>
+<li>/m 表示多行匹配——匹配换行符两端的潜在匹配。影响正则中的^$符号。</li>
 </ul>
-<h4 id="正则方法"><a href="#正则方法" class="headerlink" title="正则方法"></a>正则方法</h4><table>
+<h4 id="正则方法"><a href="#正则方法" class="headerlink" title="正则方法"></a>正则方法</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec"><code>exec</code></a></td>
-<td align="left">一个在字符串中执行查找匹配的RegExp方法，它返回一个数组（未匹配到则返回 null）。</td>
+<tbody>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec"><code>exec</code></a></td>
+<td style="text-align:left">一个在字符串中执行查找匹配的RegExp方法，它返回一个数组（未匹配到则返回 null）。</td>
 </tr>
 <tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"><code>test</code></a></td>
-<td align="left">一个在字符串中测试是否匹配的RegExp方法，它返回 true 或 false。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"><code>test</code></a></td>
+<td style="text-align:left">一个在字符串中测试是否匹配的RegExp方法，它返回 true 或 false。</td>
 </tr>
 <tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match"><code>match</code></a></td>
-<td align="left">一个在字符串中执行查找匹配的String方法，它返回一个数组，在未匹配到时会返回 null。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match"><code>match</code></a></td>
+<td style="text-align:left">一个在字符串中执行查找匹配的String方法，它返回一个数组，在未匹配到时会返回 null。</td>
 </tr>
 <tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>matchAll</code></a></td>
-<td align="left">一个在字符串中执行查找所有匹配的String方法，它返回一个迭代器（iterator）。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll"><code>matchAll</code></a></td>
+<td style="text-align:left">一个在字符串中执行查找所有匹配的String方法，它返回一个迭代器（iterator）。</td>
 </tr>
 <tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/search"><code>search</code></a></td>
-<td align="left">一个在字符串中测试匹配的String方法，它返回匹配到的位置索引，或者在失败时返回-1。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/search"><code>search</code></a></td>
+<td style="text-align:left">一个在字符串中测试匹配的String方法，它返回匹配到的位置索引，或者在失败时返回-1。</td>
 </tr>
 <tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace"><code>replace</code></a></td>
-<td align="left">一个在字符串中执行查找匹配的String方法，并且使用替换字符串替换掉匹配到的子字符串。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace"><code>replace</code></a></td>
+<td style="text-align:left">一个在字符串中执行查找匹配的String方法，并且使用替换字符串替换掉匹配到的子字符串。</td>
 </tr>
 <tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split"><code>split</code></a></td>
-<td align="left">一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的 <code>String</code> 方法。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split"><code>split</code></a></td>
+<td style="text-align:left">一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的 <code>String</code> 方法。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>test方法仅仅返回一个布尔值，表示是否匹配成功；</li>
 <li>exec方法会返回关于匹配结果的详情，一般包括：<ol>
@@ -709,7 +724,6 @@ JavaScript正则表达式简介与Python中的正则表达式类似，JavaS">
   input: &#39;company_query -q 3 -p Static Department, 3000&#39;,
   groups: undefined
 ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

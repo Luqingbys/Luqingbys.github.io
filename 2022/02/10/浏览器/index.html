@@ -7,9 +7,10 @@
     <meta name="keywords" content="浏览器, 湖心亭">
     <meta name="description" content="宏观视角下的浏览器浏览器最开始是美国网景公司开发的，自诞生之日起，地位一直只增不减。
 
-C&amp;#x2F;S    client、server，即客户端、服务端B&amp;#x2F;S    browser、server，即浏览器、服务端
+C/S    client、server，即客户端、服务端B/S    browser、server，即浏览器、服务端
 
-浏览器工作">
+浏览器工作原理重要性
+了解浏览">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -503,7 +504,7 @@ C&amp;#x2F;S    client、server，即客户端、服务端B&amp;#x2F;S    browse
             <div id="articleContent">
                 <h2 id="宏观视角下的浏览器"><a href="#宏观视角下的浏览器" class="headerlink" title="宏观视角下的浏览器"></a>宏观视角下的浏览器</h2><p>浏览器最开始是美国网景公司开发的，自诞生之日起，地位一直只增不减。</p>
 <blockquote>
-<p>C&#x2F;S    client、server，即客户端、服务端<br>B&#x2F;S    browser、server，即浏览器、服务端</p>
+<p>C/S    client、server，即客户端、服务端<br>B/S    browser、server，即浏览器、服务端</p>
 </blockquote>
 <h3 id="浏览器工作原理重要性"><a href="#浏览器工作原理重要性" class="headerlink" title="浏览器工作原理重要性"></a>浏览器工作原理重要性</h3><ol>
 <li>了解浏览器如何工作，能够让我们更准确地决策是否可以采用Web来开发项目</li>
@@ -540,7 +541,7 @@ C&amp;#x2F;S    client、server，即客户端、服务端B&amp;#x2F;S    browse
 <li>物理层：使用一定的物理介质来进行计算机之间的连接，以电信号0、1进行传输；</li>
 <li>数据链路层：MAC地址，对物理层的0、1信号进行封装，封装成比特；</li>
 <li>网络层：IP地址</li>
-<li>传输层：涉及UDP（用户数据包协议）&#x2F;TCP（传输控制协议）</li>
+<li>传输层：涉及UDP（用户数据包协议）/TCP（传输控制协议）</li>
 <li>会话层：断点续传</li>
 <li>表示层：解决不同系统之间数据传输的问题</li>
 <li>应用层：HTTP</li>
@@ -642,7 +643,6 @@ function foo() &#123;
 var hello &#x3D; function () &#123;
 	console.log(&#39;hello!&#39;)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>那么，我们可以得到变量提升的定义：<br>所谓的变量提升，是指在 JavaScript 代码执行过程中，JavaScript 引擎把变量的声明部分和函数的声明部分提升到代码开头的“行为”。变量被提升后，会给变量设置默认值，这个默认值就是我们熟悉的 undefined。</p>
 <h4 id="何为执行上下文"><a href="#何为执行上下文" class="headerlink" title="何为执行上下文"></a>何为执行上下文</h4><p>我们从如下一段JavaScript代码分析起：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">showName()
@@ -651,7 +651,6 @@ var myName &#x3D; &#39;朱由榔&#39;
 function showName() &#123;
 	console.log(&#39;showName被调用!&#39;)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在经过浏览器的JavaScript引擎的编译后，会生成两部分内容：</p>
 <ul>
 <li>执行上下文（Execution context）</li>
@@ -673,7 +672,6 @@ function showName() &#123;
 showName()
 console.log(myName)
 myName &#x3D; &#39;朱由榔&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>另外，如果变量和函数名相同，那么在编译阶段，变量的声明会被忽略。换言之，函数提升优于变量提升，导致变量声明被忽略。</p>
 <h3 id="调用栈"><a href="#调用栈" class="headerlink" title="调用栈"></a>调用栈</h3><p>调用栈，就是用来管理函数调用关系的一种数据结构。<br>通俗地说，每一个函数都对应一个函数上下文，在整个代码片段中，调用栈中保存的都是执行上下文，故又称执行上下文栈。</p>
 <p>当然，调用栈也是有大小的，当入栈的执行上下文超过一定数目时，JavaScript引擎就会报错，这种错误就叫栈溢出。</p>
@@ -693,7 +691,6 @@ function showName()&#123;
   console.log(myname);
 &#125;
 showName()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>上面代码的运行结果都是undefined。和其他语言（如C）不同，它们都有块级作用域，在此处的打印结果为“ 极客时间 ”。<br>原因就是变量提升以及调用栈。showName函数提升后，会创建执行上下文，即showName的函数执行上下文，它入调用栈，压在全局执行上下文上面。当执行showName函数时，就会在调用栈顶的函数执行上下文中寻找myname变量，它的初始值为undefined，于是打印undefined。</p>
 <p>下面的一个栗子也可以说明问题：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function foo()&#123;
@@ -702,7 +699,6 @@ showName()<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
   console.log(i); 
 &#125;
 foo()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>上述代码的运行结果为7，原因很简单，是因为在创建执行上下文时，变量i会提升，而for循环虽然结束，但是函数并未结束，变量i仍然存在（或者更准确地说，for循环本应该形成一个单独的块级作用域，但是在此处JavaScript并不支持块级作用域）。</p>
 <h3 id="ES6的对块级作用域的优化"><a href="#ES6的对块级作用域的优化" class="headerlink" title="ES6的对块级作用域的优化"></a>ES6的对块级作用域的优化</h3><p>JavaScript通过执行上下文来创建作用域（函数执行上下文对应函数作用域、全局执行上下文对应全局作用域），为了进一步说明ES6对作用域的优化，我们进一步分析<strong>执行上下文的组成</strong>：</p>
 <ul>
@@ -754,7 +750,6 @@ var MyObj &#x3D; &#123;
     &#125;
 &#125;
 setTimeout(MyObj.showName, 1000); &#x2F;&#x2F; 输出undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在上面的栗子中，由于showName函数内部的this指向window，而window上并没有name属性，因此呢，控制台输出undefined。<br>对此，一般的解决方法有两种：</p>
 <ul>
 <li>将showName放到另一个匿名函数中执行（箭头或者ES5写法都行）</li>
@@ -772,7 +767,6 @@ setTimeout(() &#x3D;&gt; &#123;
 setTimeout( function() &#123;
     MyObj.showName()
 &#125;, 1000);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>使用bind方法，将showName绑定到MyObj对象上</li>
 </ul>
@@ -788,7 +782,6 @@ var MyObj &#x3D; &#123;
 &#125;
 &#x2F;&#x2F; 调用MyObj对象的showName方法的bind()，将该函数中的this设置为MyObj
 setTimeout(MyObj.showName.bind(MyObj), 1000);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="宏任务与微任务"><a href="#宏任务与微任务" class="headerlink" title="宏任务与微任务"></a>宏任务与微任务</h3><ul>
 <li>宏任务：页面中大部分任务（渲染事件、用户交互、网络请求完成等）都是在主线程上执行的，这些消息队列中的任务被称为宏任务。</li>
 <li>微任务：<br>其实JavaScript在执行一段脚本的时候，V8引擎在创建全局执行上下文的同时创建一个微任务队列，用于存放微任务，这样每一个宏任务都会关联一个微任务队列。</li>
@@ -828,7 +821,6 @@ setTimeout(MyObj.showName.bind(MyObj), 1000);<span aria-hidden="true" class="lin
       <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
           console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
       <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>上面的代码完成的大概是三次嵌套请求，混乱不堪，难以入目，总结起来问题有两个：</p>
 <ul>
 <li>嵌套调用，回调函数内部再次执行回调函数</li>
@@ -865,7 +857,6 @@ setTimeout(MyObj.showName.bind(MyObj), 1000);<span aria-hidden="true" class="lin
     &#125;
     return new Promise(executor)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>也就是说，调用XFetch()函数会返回一个Promise对象，然后就可以使用Promise.then()方法继续发起请求了：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">var x1 &#x3D; XFetch(makeRequest(&#39;https:&#x2F;&#x2F;time.geekbang.org&#x2F;?category&#39;))
 var x2 &#x3D; x1.then(value &#x3D;&gt; &#123;
@@ -879,7 +870,6 @@ var x3 &#x3D; x2.then(value &#x3D;&gt; &#123;
 x3.catch(error &#x3D;&gt; &#123;
     console.log(error)
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="深入Promise"><a href="#深入Promise" class="headerlink" title="深入Promise"></a>深入Promise</h4><p>Promise用法大致如下：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">let p &#x3D; new Promise((resolve, reject) &#x3D;&gt; &#123;
     ...
@@ -890,7 +880,6 @@ x3.catch(error &#x3D;&gt; &#123;
 p.then((value) &#x3D;&gt; &#123;
     ...
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>按照Promise的语法，resolve()函数的调用会触发p.then()方法，因此，可以推测<strong>resolve函数内部调用了p.then()设置的回调函数</strong>，但是，如果真的是我们所猜测的这样，resolve()执行的时候，p.then()还没有绑定回调函数，这又应当作何解释呢？</p>
 <p>答案就是<strong>Promise采用了回调函数延迟绑定技术</strong>，即在执行resolve函数时，由于回调函数还没有绑定到then()上，因此只能推迟回调函数的执行。</p>
 <p>下面我们简单自己实现一个支持延时回调的类Promise对象（Bromise）：</p>
@@ -919,7 +908,6 @@ function onResolve(value) &#123;
     console.log(value);
 &#125;
 demo.then(onResolve)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>实际上，由于定时器的效率不是很高，因此Promise将这个定时器改造成了微任务，进一步提升了代码执行效率。</p>
 <h3 id="async与await——同步代码书写异步操作"><a href="#async与await——同步代码书写异步操作" class="headerlink" title="async与await——同步代码书写异步操作"></a>async与await——同步代码书写异步操作</h3><p>先来看一段Promise异步操作代码：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">fetch(&#39;https:&#x2F;&#x2F;www.geekbang.org&#39;)
@@ -931,8 +919,7 @@ demo.then(onResolve)<span aria-hidden="true" class="line-numbers-rows"><span></s
       &#125;).catch((error) &#x3D;&gt; &#123;
           console.log(error)
       &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>虽然和回调地狱相比，Promise已然改进了不少了，但是promise.then()方法的链式调用也显得代码有一点凌乱。因此，我们引入ES7的新语法特性——async&#x2F;await——它支持我们在不阻塞主线程的情况下使用同步代码实现异步访问资源的能力：</p>
+<p>虽然和回调地狱相比，Promise已然改进了不少了，但是promise.then()方法的链式调用也显得代码有一点凌乱。因此，我们引入ES7的新语法特性——async/await——它支持我们在不阻塞主线程的情况下使用同步代码实现异步访问资源的能力：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">async function foo()&#123;
   try&#123;
     let response1 &#x3D; await fetch(&#39;https:&#x2F;&#x2F;www.geekbang.org&#39;)
@@ -946,10 +933,7 @@ demo.then(onResolve)<span aria-hidden="true" class="line-numbers-rows"><span></s
   &#125;
 &#125;
 foo()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h4><p>在进一步学习async&#x2F;await之前，我们需要先了解生成器函数。</p>
+<h4 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h4><p>在进一步学习async/await之前，我们需要先了解生成器函数。</p>
 <blockquote>
 <p>生成器函数：</p>
 <ol>
@@ -982,7 +966,6 @@ getGenPromise(gen).then((response) &#x3D;&gt; &#123;
     console.log(&#39;response2&#39;)
     console.log(response)
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>其实，async、await的底层原理就是生成器与Promise。</p>
 <h4 id="神奇的语法糖"><a href="#神奇的语法糖" class="headerlink" title="神奇的语法糖"></a>神奇的语法糖</h4><p>async、await两个关键字其实是语法糖，虽然看起来很简洁，实际上它们完成的工作量并不小。</p>
 <ul>
@@ -1006,8 +989,7 @@ console.log(3)
 100
 2
 *&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>主线程中，0首先被打印；程序进入foo()，打印1，let a &#x3D; await 100，则当前async函数被停止，程序继续往下执行，即打印3，同时由于100并不是Promise对象，故a就是100本身，只不过会经过Promise处理，故在3打印后，100被打印，接着再继续执行foo，打印2。</p>
+<p>主线程中，0首先被打印；程序进入foo()，打印1，let a = await 100，则当前async函数被停止，程序继续往下执行，即打印3，同时由于100并不是Promise对象，故a就是100本身，只不过会经过Promise处理，故在3打印后，100被打印，接着再继续执行foo，打印2。</p>
 <h2 id="浏览器中的页面"><a href="#浏览器中的页面" class="headerlink" title="浏览器中的页面"></a>浏览器中的页面</h2><h3 id="开发者工具——网络面板"><a href="#开发者工具——网络面板" class="headerlink" title="开发者工具——网络面板"></a>开发者工具——网络面板</h3><p>我们重点来了解一下网络面板的时间线面板（Timing）。</p>
 <p>打开网络面板（Network），在详细列表中点击某一个任务，可以发现该项的详细信息（Headers、Preview、Response、Timing），打开Timing，我们会发现如下选项：</p>
 <ul>
@@ -1018,7 +1000,7 @@ console.log(3)
 </ul>
 </li>
 <li>Stalled：等待排队完成后、发起连接之前，可能有一些原因导致连接过程被推迟，这就是Stalled，停滞</li>
-<li>Initial connection&#x2F;SSL：和服务器建立连接</li>
+<li>Initial connection/SSL：和服务器建立连接</li>
 <li>Request sent：网络进程发送请求，这个阶段很快</li>
 <li>Waiting（TTFB）：也称第一字节时间，是反映服务端响应速度的重要指标，指等待接收服务器第一个字节数据</li>
 <li>Content Download：陆续接收完整数据</li>
@@ -1045,7 +1027,6 @@ console.log(3)
     &lt;div&gt;test&lt;&#x2F;div&gt;
 &lt;&#x2F;body&gt;
 &lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>当HTML解析器解析到script标签时，会发现这是JavaScript代码，由于它有可能操作DOM，因此HTML解析器停止解析，转而由JavaScript引擎介入，在执行JavaScript代码（修改了文本节点的内容）后，HTML解析器恢复解析，继续工作。</p>
 <p>那如果拿到的JavaScript代码以文件形式被引入呢？</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
@@ -1055,7 +1036,6 @@ console.log(3)
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这里，JavaScript文件需要被下载，该下载过程会阻塞HTML的解析。Chrome对此做出的优化是，在渲染引擎收到字节流后，就会开启一个预解析线程，用于下载HTML中包含的JavaScript、CSS等相关文件。</p>
 <h4 id="CSS样式表文件会阻塞JavaScript的执行"><a href="#CSS样式表文件会阻塞JavaScript的执行" class="headerlink" title="CSS样式表文件会阻塞JavaScript的执行"></a>CSS样式表文件会阻塞JavaScript的执行</h4><p>那接下来我们再来分析另外一种情况。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
@@ -1072,7 +1052,6 @@ console.log(3)
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在script标签中，出现了操作css样式的JavaScript代码，也就是说在执行JavaScript之前，还需要解析所有的CSS样式。</p>
 <p>但是实际上，JavaScript引擎在解析JavaScript之前，并不知道JavaScript是否操作了CSSOM，因此渲染引擎在遇到JavaScript脚本时，不论其是否操作CSSOM，都会执行CSS文件下载、解析CSS，然后再执行JavaScript脚本。</p>
 <h4 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h4><p>如下代码，分析浏览器中的运行情况。</p>
@@ -1089,7 +1068,6 @@ console.log(3)
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>之前提到过，JavaScript会阻塞DOM树的生成，因此HTML解析器解析到script标签的时候，会停止解析，交给JavaScript引擎。而此时DOM树中仅有一个div节点，因此div1有值，div2并不会拿到值，进而拿不到它的innerText属性，会报错。</p>
 <p>JavaScript引擎将JavaScript代码执行完毕后，HTML解析器继续执行，将剩余的div解析出来，但是文本内容就是test，不会被改变。</p>
 <h3 id="CSS动画"><a href="#CSS动画" class="headerlink" title="CSS动画"></a>CSS动画</h3><h4 id="显示器显示图像"><a href="#显示器显示图像" class="headerlink" title="显示器显示图像"></a>显示器显示图像</h4><p>显示器每秒固定读取一定次数前缓冲区的图像到显示器上，而显卡的职责是合成新的图像，并将图像保存到后缓冲区中，之后系统会让后缓冲区和前缓冲区互换，保证显示器能够读取最新显卡合成的图像。这样一来，通常情况下，显卡的更新频率和显示器的刷新频率一致。</p>
@@ -1183,7 +1161,6 @@ console.log(3)
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>要使用Web Component，通常要实现下面三个步骤：</p>
 <ol>
 <li><p>使用template属性来创建模板。实际上，模板元素内容并不会被渲染到页面上，也就是说template节点不会出现在布局树中。</p>
@@ -1198,27 +1175,27 @@ console.log(3)
 <p>影子DOM，将模板中的内容与全局DOM和CSS进行隔离，实现元素和样式的私有化。</p>
 </blockquote>
 </li>
-<li><p>上面两步实现后，就可以像正常使用HTML元素一样使用该元素，如&lt;geek-bang&gt;&lt;&#x2F;geek-bang&gt;</p>
+<li><p>上面两步实现后，就可以像正常使用HTML元素一样使用该元素，如\<geek-bang>\&lt;/geek-bang&gt;</p>
 </li>
 </ol>
 <h2 id="浏览器中的网络"><a href="#浏览器中的网络" class="headerlink" title="浏览器中的网络"></a>浏览器中的网络</h2><h3 id="HTTP性能优化"><a href="#HTTP性能优化" class="headerlink" title="HTTP性能优化"></a>HTTP性能优化</h3><blockquote>
 <p>HTTP是浏览器最重要且使用最多的协议，是浏览器和服务器之间的通信语言。随着互联网的发展，HTTP也在持续进化。</p>
 </blockquote>
-<h4 id="HTTP-x2F-0-9"><a href="#HTTP-x2F-0-9" class="headerlink" title="HTTP&#x2F;0.9"></a>HTTP&#x2F;0.9</h4><p>用途较为简单，主要用于学术交流，需求也很简单，只需要在网络之间传递HTML超文本内容，故称“超文本传输协议”。</p>
+<h4 id="HTTP-0-9"><a href="#HTTP-0-9" class="headerlink" title="HTTP/0.9"></a>HTTP/0.9</h4><p>用途较为简单，主要用于学术交流，需求也很简单，只需要在网络之间传递HTML超文本内容，故称“超文本传输协议”。</p>
 <ul>
 <li>客户端根据IP地址、端口、服务器建立TCP连接，涉及TCP协议三次握手过程；</li>
 <li>TCP连接建立完成后，发送应该GET请求行信息，如<code>GET /index.html</code>用来获取index.html；</li>
 <li>服务器接收请求信息之后，读取对应的HTML文件，并将数据以ASCII字符流返回给客户端；</li>
 <li>传输完成，连接断开。</li>
 </ul>
-<h4 id="HTTP-x2F-1-0"><a href="#HTTP-x2F-1-0" class="headerlink" title="HTTP&#x2F;1.0"></a>HTTP&#x2F;1.0</h4><p>万维网的高速发展带来了很多新需求，HTTP&#x2F;0.9已经不再适用于新的网络发展了。新的需求包括：</p>
+<h4 id="HTTP-1-0"><a href="#HTTP-1-0" class="headerlink" title="HTTP/1.0"></a>HTTP/1.0</h4><p>万维网的高速发展带来了很多新需求，HTTP/0.9已经不再适用于新的网络发展了。新的需求包括：</p>
 <ul>
 <li>浏览器中展示的不单单是HTML文件了，还有JavaScript、CSS、图片、音视频等不同类型的文件。</li>
 <li>文件格式不仅仅局限于ASCII编码，还有很多其他类型编码的文件。</li>
 </ul>
-<p>为了<strong>支持对多种类型文件的下载</strong>，HTTP&#x2F;1.0引入了<strong>请求头和响应头</strong>，也就是说，在HTTP发送请求时，会带上请求头信息，服务器返回数据时，会先返回响应头信息。</p>
+<p>为了<strong>支持对多种类型文件的下载</strong>，HTTP/1.0引入了<strong>请求头和响应头</strong>，也就是说，在HTTP发送请求时，会带上请求头信息，服务器返回数据时，会先返回响应头信息。</p>
 <blockquote>
-<p>HTTP&#x2F;1.0通过请求头、响应头支持多种不同类型的数据的原理：</p>
+<p>HTTP/1.0通过请求头、响应头支持多种不同类型的数据的原理：</p>
 <p>HTTP在发起请求时候会通过HTTP<strong>请求头</strong>告诉服务器它期待服务器</p>
 <ul>
 <li>返回什么类型的文件</li>
@@ -1229,34 +1206,32 @@ console.log(3)
 accept-encoding: gzip, deflate, br	&#x2F;&#x2F; 期望浏览器采用gzip、deflate或者br压缩方式
 accept-Charset: ISO-8859-1,utf-8	&#x2F;&#x2F; 期望返回的文件编码是UTF-8或者ISO-8859-1
 accept-language: zh-CN,zh	&#x2F;&#x2F; 期望页面的优先语言是中文<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>服务器接收到浏览器发送过来的请求头信息之后，就会根据请求头的信息准备响应数据，并将相关信息以响应头形式反馈给客户端浏览器（按要求做事情，并给出反馈）。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">content-encoding: br	&#x2F;&#x2F; 服务器采用了br压缩方法
 content-type: text&#x2F;html; charset&#x3D;UTF-8	&#x2F;&#x2F; 服务器返回html文件，编码类型为UTF-8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>拿到如上的服务器响应头信息后，最终浏览器需要根据响应头的信息来处理数据。</p>
 </blockquote>
-<p>此外，HTTP&#x2F;1.0还引入了很多其他的特性，比如</p>
+<p>此外，HTTP/1.0还引入了很多其他的特性，比如</p>
 <ul>
 <li>状态码——通过响应行的方式通知浏览器，服务器最终处理情况</li>
 <li>Cache机制——缓存已经下载过的数据，减轻服务器压力</li>
 <li>用户代理字段——服务器需要统计客户端的基础信息</li>
 </ul>
-<h4 id="HTTP-x2F-1-1"><a href="#HTTP-x2F-1-1" class="headerlink" title="HTTP&#x2F;1.1"></a>HTTP&#x2F;1.1</h4><p>相比于HTTP&#x2F;1.0，1.1有如下方面的改进：</p>
+<h4 id="HTTP-1-1"><a href="#HTTP-1-1" class="headerlink" title="HTTP/1.1"></a>HTTP/1.1</h4><p>相比于HTTP/1.0，1.1有如下方面的改进：</p>
 <ul>
 <li>改进持久连接</li>
 </ul>
-<p>在HTTP&#x2F;1.0中，一次HTTP通信，需要经历<strong>建立TCP连接、传输HTTP数据和断开TCP连接</strong>三个阶段。但是随着单个页面中文件数量增多，每一次下载文件都需要重复这三个步骤，无疑会增加大量开销。</p>
-<p>对此，HTTP&#x2F;1.1中增加了持久连接，在应该TCP连接上可以传输多个HTTP请求，只要浏览器或者服务器没有断开连接，该TCP连接会一直保持。</p>
+<p>在HTTP/1.0中，一次HTTP通信，需要经历<strong>建立TCP连接、传输HTTP数据和断开TCP连接</strong>三个阶段。但是随着单个页面中文件数量增多，每一次下载文件都需要重复这三个步骤，无疑会增加大量开销。</p>
+<p>对此，HTTP/1.1中增加了持久连接，在应该TCP连接上可以传输多个HTTP请求，只要浏览器或者服务器没有断开连接，该TCP连接会一直保持。</p>
 <p>另外，浏览器为每个域名最多同时维护6个TCP持久连接。</p>
 <ul>
 <li>不成熟的HTTP管线化</li>
 </ul>
-<p>TCP通道中一旦某个请求因为某些原因没有及时返回，就会阻塞后面的所有请求——队头阻塞问题。对此，HTTP&#x2F;1.1中试图引入管线化技术来解决队头阻塞问题。</p>
+<p>TCP通道中一旦某个请求因为某些原因没有及时返回，就会阻塞后面的所有请求——队头阻塞问题。对此，HTTP/1.1中试图引入管线化技术来解决队头阻塞问题。</p>
 <ul>
 <li>引入客户端Cookie与安全机制</li>
 </ul>
-<p>但是，HTTP&#x2F;1.1仍然有很大的不足，核心问题在于<strong>对带宽的利用率并不理想</strong>。</p>
+<p>但是，HTTP/1.1仍然有很大的不足，核心问题在于<strong>对带宽的利用率并不理想</strong>。</p>
 <blockquote>
 <p>带宽，是指每秒最大能够发送或者接收的字节数。每秒能够发送的最大字节数称为上行带宽，每秒能够接收的最大字节数称为下行带宽。</p>
 </blockquote>
@@ -1264,13 +1239,13 @@ content-type: text&#x2F;html; charset&#x3D;UTF-8	&#x2F;&#x2F; 服务器返回htm
 <ol>
 <li>TCP慢启动。TCP连接建立之后，会进入发送数据状态，刚开始TCP协议会采用应该非常慢的速度去发送数据。</li>
 <li>同时开启多条TCP连接会竞争固定的带宽。</li>
-<li>HTTP&#x2F;1.1的队头阻塞问题。</li>
+<li>HTTP/1.1的队头阻塞问题。</li>
 </ol>
-<h4 id="HTTP-x2F-2"><a href="#HTTP-x2F-2" class="headerlink" title="HTTP&#x2F;2"></a>HTTP&#x2F;2</h4><p>那么如何解决HTTP&#x2F;1.1的问题呢？</p>
-<p>我们先分析上面的三点原因，会发现，第一条、第二条是TCP本身的机制引起的，第三条是HTTP&#x2F;1.1的机制导致的。</p>
-<p>因此，HTTP&#x2F;2的思路就是<strong>一个域名只使用一个TCP长连接来传输数据</strong>，这样整个页面资源的下载过程只需要一次慢启动，也不会有多个TCP连接竞争问题。</p>
-<p>此外，HTTP&#x2F;2最核心的功能是<strong>多路复用机制</strong>——引入二进制分帧层，实现了资源的并行传输。</p>
-<p>当然，HTTP&#x2F;2还有一些其他特性，比如</p>
+<h4 id="HTTP-2"><a href="#HTTP-2" class="headerlink" title="HTTP/2"></a>HTTP/2</h4><p>那么如何解决HTTP/1.1的问题呢？</p>
+<p>我们先分析上面的三点原因，会发现，第一条、第二条是TCP本身的机制引起的，第三条是HTTP/1.1的机制导致的。</p>
+<p>因此，HTTP/2的思路就是<strong>一个域名只使用一个TCP长连接来传输数据</strong>，这样整个页面资源的下载过程只需要一次慢启动，也不会有多个TCP连接竞争问题。</p>
+<p>此外，HTTP/2最核心的功能是<strong>多路复用机制</strong>——引入二进制分帧层，实现了资源的并行传输。</p>
+<p>当然，HTTP/2还有一些其他特性，比如</p>
 <ul>
 <li>可以设置请求的优先级：在发送请求时，可以标上该请求的优先级</li>
 <li>服务器推送：直接将数据提前推送到浏览器</li>
@@ -1281,7 +1256,6 @@ content-type: text&#x2F;html; charset&#x3D;UTF-8	&#x2F;&#x2F; 服务器返回htm
 <p>同源是针对URL而言的，<strong>如果两个 URL 的协议、域名和端口都相同，我们就称这两个 URL 同源</strong>。比如：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">https</span><span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>time<span class="token punctuation">.</span>geekbang<span class="token punctuation">.</span>org<span class="token operator">/</span><span class="token operator">?</span>category<span class="token operator">=</span><span class="token number">1</span>
 <span class="token literal-property property">https</span><span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>time<span class="token punctuation">.</span>geekbang<span class="token punctuation">.</span>org<span class="token operator">/</span><span class="token operator">?</span>category<span class="token operator">=</span><span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>而同源策略就是，两个不同的源之间如果想要互相访问资源或者操作DOM，就会有一套基础的安全策略的制约。</p>
 <p>同源策略会隔离不同源的DOM、页面数据和网络通信，进而实现Web页面的安全性。</p>
 <p>但是，安全性和便利性是相互对立的。对此浏览器出让一些安全性来满足灵活性，以方便Web开发。浏览器出让了同源策略的哪些安全性呢？</p>
@@ -1290,7 +1264,7 @@ content-type: text&#x2F;html; charset&#x3D;UTF-8	&#x2F;&#x2F; 服务器返回htm
 </ol>
 <p>最初的浏览器都是支持外部引用资源文件的，不过这也带来了很多问题。最多的问题是，浏览器的首页内容会被一些恶意程序劫持，其中，最常见的是恶意程序通过各种途径往HTML文件中插入恶意脚本。</p>
 <p>对此，我们引入了CSP策略来加以限制。</p>
-<ol start="2">
+<ol>
 <li>跨域资源共享和跨文档消息机制</li>
 </ol>
 <p>跨域资源共享，CORS，允许进行跨域访问控制；</p>

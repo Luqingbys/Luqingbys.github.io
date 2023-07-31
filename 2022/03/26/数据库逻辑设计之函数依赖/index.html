@@ -521,6 +521,7 @@
 </ul>
 <p>举出一个小栗子：</p>
 <p>下面是某一个政务系统管理数据表。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -532,7 +533,8 @@
 <th>部门</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>01</td>
 <td>小明</td>
 <td>32</td>
@@ -586,22 +588,36 @@
 <td></td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>对于超码，注意到超码是属性的<strong>集合</strong>，因此对超码的选取很任意：{学号，姓名}，{学号，姓名，年龄}…它们都是。</li>
 <li>对于候选码，首先它的实质是属性的<strong>集合</strong>；其次它比较有“临界”意义，因为它可以说是唯一识别关系的元组的<strong>最小阶数</strong>的属性集合，比如上表中，“编号”“户籍号”都可以唯一地识别一个元组，它们都是候选码。</li>
 <li>包含在所有的候选码之中的属性，即“编号”“户籍号”，它们都是键属性，其他的都是非键属性。</li>
 </ul>
-<h2 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h2><p>$$<br>\begin{flalign}<br>&amp;设关系模式R，U为R的所有属性集合, P为模式下所有元组组成的集合,X、Y也为属性集合, 且X\subseteq U, Y\subseteq U;\<br>&amp;若\forall s, t \in P, s[X]&#x3D;t[X], 有s[Y]&#x3D;t[Y], 那么我们就称Y函数依赖于X, 或者X函数地确定Y, 即X\to Y.<br>\end{flalign}<br>$$</p>
-<p>一般来说，X是某种具有“唯一”语义性的属性（集），此时任何属性集都是函数依赖于X的。比如，X&#x3D;“身份证号”（当然这里集合X仅有一个元素，就直接简化了），对于一个实体——公民的关系模式，几乎可以函数地确定其他所有属性了。</p>
-<p>再比如，我们考虑“姓名”$\to$“年龄”这样一个待确定的函数依赖，发现对于同名的两个公民，他们的年龄很有可能不同（事实上这种情况很常见），因此这个函数依赖不成立。<br>$$<br>\begin{flalign}<br>&amp;如果X\to Y, 并且Y\nsubseteq X, 我们就称这种依赖是非平凡函数依赖。\<br>&amp;否则，若Y\subseteq X,我们就称这种函数依赖是平凡函数依赖。<br>\end{flalign}<br>$$<br>很显然，非平凡函数依赖更值得我们研究：平凡函数依赖是很显然的，它是一种父集合到子集合的函数依赖。</p>
+<h2 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h2><script type="math/tex; mode=display">
+\begin{flalign}
+&设关系模式R，U为R的所有属性集合, P为模式下所有元组组成的集合,X、Y也为属性集合, 且X\subseteq U, Y\subseteq U;\\
+&若\forall s, t \in P, s[X]=t[X], 有s[Y]=t[Y], 那么我们就称Y函数依赖于X, 或者X函数地确定Y, 即X\to Y.
+\end{flalign}</script><p>一般来说，X是某种具有“唯一”语义性的属性（集），此时任何属性集都是函数依赖于X的。比如，X=“身份证号”（当然这里集合X仅有一个元素，就直接简化了），对于一个实体——公民的关系模式，几乎可以函数地确定其他所有属性了。</p>
+<p>再比如，我们考虑“姓名”$\to$“年龄”这样一个待确定的函数依赖，发现对于同名的两个公民，他们的年龄很有可能不同（事实上这种情况很常见），因此这个函数依赖不成立。</p>
+<script type="math/tex; mode=display">
+\begin{flalign}
+&如果X\to Y, 并且Y\nsubseteq X, 我们就称这种依赖是非平凡函数依赖。\\
+&否则，若Y\subseteq X,我们就称这种函数依赖是平凡函数依赖。
+\end{flalign}</script><p>很显然，非平凡函数依赖更值得我们研究：平凡函数依赖是很显然的，它是一种父集合到子集合的函数依赖。</p>
 <p>还需要介绍几个概念：</p>
 <ul>
 <li><p>完全函数依赖</p>
 </li>
-<li><p>传递地函数依赖<br>$$<br>\begin{flalign}<br>&amp;设X\subseteq U, Y\subseteq U, Z\subseteq U, Y\to X不成立, 且Z-X, Z-Y与Y-X不空;\<br>&amp;如果X \to Y, Y\to Z, 则称Z传递地函数依赖于X.<br>\end{flalign}<br>$$<br>要注意传递地函数依赖满足的条件。集合之差不空，也就是说集合之间没有父子包含关系（否则就成了平凡函数依赖）。</p>
+<li><p>传递地函数依赖</p>
+<script type="math/tex; mode=display">
+\begin{flalign}
+&设X\subseteq U, Y\subseteq U, Z\subseteq U, Y\to X不成立, 且Z-X, Z-Y与Y-X不空;\\
+&如果X \to Y, Y\to Z, 则称Z传递地函数依赖于X.
+\end{flalign}</script><p>要注意传递地函数依赖满足的条件。集合之差不空，也就是说集合之间没有父子包含关系（否则就成了平凡函数依赖）。</p>
 </li>
 </ul>
 <h2 id="快速求候选码"><a href="#快速求候选码" class="headerlink" title="快速求候选码"></a>快速求候选码</h2><p>我们给出如下有用的定理，在此之前，我们约定R为给定的关系模式，F是其函数依赖集。</p>

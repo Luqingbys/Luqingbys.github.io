@@ -509,7 +509,6 @@ fp <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 fp<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>values <span class="token comment"># 可以获取fp中第index行的数据，列表形式</span>
 writer <span class="token operator">=</span> fp<span class="token punctuation">.</span>ExcelWriter<span class="token punctuation">(</span><span class="token string">'...'</span><span class="token punctuation">)</span> <span class="token comment"># 方便读写一个Excel文件的多个Sheet</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>事先创建好一个字典（列表也可），键名为各个学院名，值为空列表；</p>
 <p>逐行读取汇总表，获取到每一行的学院，将当前行信息加入到学院所属的列表之中，待行遍历结束后，统一调用<code>pd.DataFrame(data, &#39;...&#39;)</code>创建新的Sheet表或者向已有的Sheet中追加数据。</p>
 <h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">import pandas as pd
@@ -551,7 +550,6 @@ for key in dicts.keys():
     write.to_excel(fdata, sheet_name&#x3D;key)
 
 fdata.save()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

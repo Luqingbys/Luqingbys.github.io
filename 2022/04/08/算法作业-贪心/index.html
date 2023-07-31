@@ -5,7 +5,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="算法训练之动态规划, 湖心亭">
-    <meta name="description" content="第一题$$\begin{flalign}&amp;amp; quicksort(F,p,r):\&amp;amp;If\ p &amp;lt; r\&amp;amp; \qquad q &amp;#x3D; partition(F,p,r);\&amp;amp; \qquad quick">
+    <meta name="description" content="第一题
+
+\begin{flalign}
+&amp; quicksort(F,p,r):\\
+&amp;If\ p &lt; r\\
+&amp; \qquad q = partition(F,p,r);\\
+&amp; \qquad quicksort(F,p,q-1);\\
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -477,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    623
+                    52
                 </div>
                 
 
@@ -497,13 +504,62 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>第一题<br>$$<br>\begin{flalign}<br>&amp; quicksort(F,p,r):\<br>&amp;If\ p &lt; r\<br>&amp; \qquad q &#x3D; partition(F,p,r);\<br>&amp; \qquad quicksort(F,p,q-1);\<br>&amp; \qquad quicksort(F,p+1,r);\<br>&amp; \<br>&amp; partition(F,p,r):\<br>&amp; x &#x3D; F[r].length\<br>&amp; i &#x3D; p-1\<br>&amp; for j &#x3D; p\ to\ r-1\<br>&amp; \qquad If\ F[j].length&lt;&#x3D; x\<br>&amp; \qquad \qquad i++;\<br>&amp; \qquad \qquad exchange(F[i],F[j]);\<br>&amp; exchange(F[i+1], F[r]);\<br>&amp; return\ i+1;<br>\end{flalign}<br>$$<br>第二题<br>$$<br>\begin{flalign}<br>&amp; 算法: W为原始任务序列，T为耗费时间序列，E为截止时间序列\<br>&amp; S为截止时间升序排列的优先队列;\<br>&amp; currentTime &#x3D; 0;\<br>&amp; While\ W !&#x3D; null\ Do \<br>&amp; \qquad item &#x3D; Min(T); \<br>&amp; \qquad currentTime &#x3D; t(item);\<br>&amp; \qquad S.push(i); \<br>&amp; \qquad For\ ele \ in \ W \<br>&amp; \qquad \qquad If\ E(ele) &lt; currentTime\<br>&amp; \qquad \qquad \qquad W.remove(w(item));\<br>&amp; \qquad \qquad Else \<br>&amp; \qquad \qquad \qquad currentTime &#x3D; currentTime + t(ele);\<br>&amp;Return \ S;<br>\end{flalign}<br>$$</p>
-<p>实验一</p>
+                <p>第一题</p>
+<script type="math/tex; mode=display">
+\begin{flalign}
+& quicksort(F,p,r):\\
+&If\ p < r\\
+& \qquad q = partition(F,p,r);\\
+& \qquad quicksort(F,p,q-1);\\
+& \qquad quicksort(F,p+1,r);\\
+& \\
+& partition(F,p,r):\\
+& x = F[r].length\\
+& i = p-1\\
+& for j = p\ to\ r-1\\
+& \qquad If\ F[j].length<= x\\
+& \qquad \qquad i++;\\
+& \qquad \qquad exchange(F[i],F[j]);\\
+& exchange(F[i+1], F[r]);\\
+& return\ i+1;
+\end{flalign}</script><p>第二题</p>
+<script type="math/tex; mode=display">
+\begin{flalign}
+& 算法: W为原始任务序列，T为耗费时间序列，E为截止时间序列\\
+& S为截止时间升序排列的优先队列;\\
+& currentTime = 0;\\
+& While\ W != null\ Do \\
+& \qquad item = Min(T); \\
+& \qquad currentTime = t(item);\\
+& \qquad S.push(i); \\
+& \qquad For\ ele \ in \ W \\
+& \qquad \qquad If\ E(ele) < currentTime\\
+& \qquad \qquad \qquad W.remove(w(item));\\
+& \qquad \qquad Else \\
+& \qquad \qquad \qquad currentTime = currentTime + t(ele);\\
+&Return \ S;
+\end{flalign}</script><p>实验一</p>
 <h2 id="Divide"><a href="#Divide" class="headerlink" title="Divide"></a>Divide</h2><p>每次将数组A[s:t]尽可能平均地分成两个子数组$A[s:\lfloor \frac{s+t}{2} \rfloor], A[\lfloor \frac{s+t}{2} \rfloor+1: t]$ 。</p>
 <h2 id="Conquer"><a href="#Conquer" class="headerlink" title="Conquer"></a>Conquer</h2><p>递归地在每一个子数组中计算反序的个数，如果当前数组长度小于等于2时，递归结束，如果左边的元素大于右边的元素，返回该最小长度数组中反序的个数1。</p>
-<h2 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h2><p>在两个数组已经计算出来各自反序个数的前提下，两个数组合并后的总反序数&#x3D;各自的反序数+两者合并新增的反序数。在待处理的两个子数组已经排好序的前提下，不需要按照普通的暴力比较算法逐个遍历了，只需将左边元素和右边排好序的数组进行比较，找到一个反序数，即可退出当前元素的处理了。</p>
-<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><p>$$<br>\begin{flalign}<br>&amp; MergeAndSort(begin,\ end):\<br>&amp; if\ begin &gt;&#x3D; end\<br>&amp; \qquad Return;\<br>&amp; len &#x3D; end - begin;\<br>&amp; nums &#x3D; [];\<br>&amp; mid &#x3D; (begin + end) &#x2F; 2;\<br>&amp; counter &#x3D; MergeAndSort(begin, \ mid) + MergeAndSort(mid+1, \ end);\<br>&amp; p_1 &#x3D; begin,\ p_2 &#x3D; mid+1;\<br>&amp; while \ p_1 &lt;&#x3D; mid\ and\ p_2 &lt;&#x3D; end\<br>&amp; \qquad 数组A[begin:mid]与数组A[mid+1:end]逐个排序,填入新数组nums, 指针p_1、p_2不断后移,在排序过程中记录反序数counter;\<br>&amp; while \ p_1 &lt;&#x3D; mid\<br>&amp; \qquad 将剩下的数组中的元素填充至nums[];\<br>&amp; while \ p_2 &lt;&#x3D; mid\<br>&amp; \qquad 将剩下的数组中的元素填充至nums[];\<br>&amp; 用新的排好序数组元素替换掉原数组对应部分的元素<br>\end{flalign}<br>$$</p>
-
+<h2 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h2><p>在两个数组已经计算出来各自反序个数的前提下，两个数组合并后的总反序数=各自的反序数+两者合并新增的反序数。在待处理的两个子数组已经排好序的前提下，不需要按照普通的暴力比较算法逐个遍历了，只需将左边元素和右边排好序的数组进行比较，找到一个反序数，即可退出当前元素的处理了。</p>
+<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><script type="math/tex; mode=display">
+\begin{flalign}
+& MergeAndSort(begin,\ end):\\
+& if\ begin >= end\\
+& \qquad Return;\\
+& len = end - begin;\\
+& nums = [];\\
+& mid = (begin + end) / 2;\\
+& counter = MergeAndSort(begin, \ mid) + MergeAndSort(mid+1, \ end);\\
+& p_1 = begin,\ p_2 = mid+1;\\ 
+& while \ p_1 <= mid\ and\ p_2 <= end\\
+& \qquad 数组A[begin:mid]与数组A[mid+1:end]逐个排序,填入新数组nums, 指针p_1、p_2不断后移,在排序过程中记录反序数counter;\\
+& while \ p_1 <= mid\\
+& \qquad 将剩下的数组中的元素填充至nums[];\\
+& while \ p_2 <= mid\\
+& \qquad 将剩下的数组中的元素填充至nums[];\\
+& 用新的排好序数组元素替换掉原数组对应部分的元素
+\end{flalign}</script>
                 
             </div>
             <hr/>

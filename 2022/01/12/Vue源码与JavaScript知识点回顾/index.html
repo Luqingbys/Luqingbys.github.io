@@ -507,8 +507,7 @@ plain javascript object，js简单对象简单对象就是通过“{}”或者�
 	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> obj <span class="token operator">!=</span> <span class="token string">'object'</span> <span class="token operator">||</span> obj <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
 		<span class="token keyword">return</span> <span class="token boolean">false</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol start="2">
+<ol>
 <li>&amp;&amp;运算符<br>特别地，当&amp;&amp;两边都是boolean类型表达式时，整个与运算结果为true当且仅当两边的表达式结果都为true。<br>一般地，&amp;&amp;运算符返回从左到右求值时遇到的第一个false操作数的值；当它们都是true时，返回最后一个操作数的值。<blockquote>
 <p>如果一个值可以转换为true，那么它就是真值，否则就是假值。<br>可以转化为false的假值包括：<br>false<br>null<br>NaN<br>0<br>空字符串<br>undefined</p>
 </blockquote>
@@ -516,13 +515,11 @@ plain javascript object，js简单对象简单对象就是通过“{}”或者�
 </ol>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">result <span class="token operator">=</span> <span class="token string">'foo'</span> <span class="token operator">&amp;&amp;</span> <span class="token number">4</span><span class="token punctuation">;</span>	<span class="token comment">// return 4, for 'foo' and 4 are both true value</span>
 result <span class="token operator">=</span> <span class="token string">''</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">undefined</span>	<span class="token comment">// return '', for '' and undefined are both false value while '' is the former</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h2><p>JavaScript中的in运算符，用于检测某一对象中是否存在某一属性<br><code>const isExist = key in obj</code><br>如果对象obj中具有属性key，isExist为true，否则为false。<br>如果一个属性是从原型链上继承而来，in运算符也会返回true：<br><code>const a = &quot;toString&quot; in &#123;&#125;</code><br>上面的栗子中，{}表示空对象实例，它其实继承了Object，toString在__proto__上，返回true。</p>
-<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><h3 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h3><p>根据现有的对象来作为新创建对象的原型__proto__。<br>我们来看看vue2.x源码中的一个细节：</p>
+<h2 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h2><p>JavaScript中的in运算符，用于检测某一对象中是否存在某一属性<br><code>const isExist = key in obj</code><br>如果对象obj中具有属性key，isExist为true，否则为false。<br>如果一个属性是从原型链上继承而来，in运算符也会返回true：<br><code>const a = &quot;toString&quot; in &#123;&#125;</code><br>上面的栗子中，{}表示空对象实例，它其实继承了Object，toString在<strong>proto</strong>上，返回true。</p>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><h3 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h3><p>根据现有的对象来作为新创建对象的原型<strong>proto</strong>。<br>我们来看看vue2.x源码中的一个细节：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const arrayProto &#x3D; Array.prototype
 &#x2F;**将数组原型链prototype上面的所有方法放到一个对象————arrayMethods里面 *&#x2F;
 export const arrayMethods &#x3D; Object.create(arrayProto)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Object-getOwnPropertyNames"><a href="#Object-getOwnPropertyNames" class="headerlink" title="Object.getOwnPropertyNames()"></a>Object.getOwnPropertyNames()</h3><h3 id="Function-call"><a href="#Function-call" class="headerlink" title="Function.call()"></a>Function.call()</h3><p>语法格式：<br><code>Function.call(thisArg, arg1, arg2, ...)</code><br>其中，thisArg是Function在运行时的this，可以使用该函数实现继承。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">function Product(name, price) &#123;
     this.name &#x3D; name
@@ -534,10 +531,8 @@ function Food(name, price) &#123;
     this.category &#x3D; &#39;food&#39;
 &#125;
 console.log(new Food(&#39;cheese&#39;, 5.9));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>上面栗子中，虽然调用了<code>Product.call(this, name, price)</code>，但是该函数参数中的this指向的是Food函数对象，而调用该函数之后的Food对象为：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json">Food <span class="token punctuation">&#123;</span>name<span class="token operator">:</span> 'cheese'<span class="token punctuation">,</span> price<span class="token operator">:</span> <span class="token number">5.9</span><span class="token punctuation">,</span> category<span class="token operator">:</span> 'food'<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <h2 id="With语句"><a href="#With语句" class="headerlink" title="With语句"></a>With语句</h2>
                 
             </div>

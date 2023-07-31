@@ -7,7 +7,6 @@
     <meta name="keywords" content="图, 湖心亭">
     <meta name="description" content="图的定义
 有向图
-
 无向图
 
 邻接点（边的两个顶点互为邻接点）
@@ -17,16 +16,14 @@
 路径
 
 回路
-
 简单路径
-
 简单回路
 
 连通图（任意两个顶点之间都存在路径）
 
 强连通图（对有向图，任意两个顶点之间都存在路径）
-
-子">
+子图
+连通">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -519,8 +516,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h2><ul>
-<li><p>有向图</p>
-</li>
+<li>有向图</li>
 <li><p>无向图</p>
 </li>
 <li><p>邻接点（边的两个顶点互为邻接点）</p>
@@ -529,26 +525,18 @@
 </li>
 <li><p>路径</p>
 </li>
-<li><p>回路</p>
-</li>
-<li><p>简单路径</p>
-</li>
+<li>回路</li>
+<li>简单路径</li>
 <li><p>简单回路</p>
 </li>
 <li><p>连通图（任意两个顶点之间都存在路径）</p>
 </li>
-<li><p>强连通图（对有向图，任意两个顶点之间都存在路径）</p>
-</li>
-<li><p>子图</p>
-</li>
-<li><p>连通分量（无向图中的极大联通子图）</p>
-</li>
-<li><p>强连通分量（有向图中的极大强连通子图）</p>
-</li>
-<li><p>网络（边带权图）</p>
-</li>
-<li><p>生成树（连通图的一个包含其所有顶点的子图是一棵树，这棵树就是生成树）</p>
-</li>
+<li>强连通图（对有向图，任意两个顶点之间都存在路径）</li>
+<li>子图</li>
+<li>连通分量（无向图中的极大联通子图）</li>
+<li>强连通分量（有向图中的极大强连通子图）</li>
+<li>网络（边带权图）</li>
+<li>生成树（连通图的一个包含其所有顶点的子图是一棵树，这棵树就是生成树）</li>
 </ul>
 <h2 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h2><p>一张图，要存储的信息至少有两方面：</p>
 <ul>
@@ -576,7 +564,6 @@ typedef struct &#123;
     int vexnum, arcnum; &#x2F;&#x2F; 存储顶点数，弧数
     GraphKind kind; &#x2F;&#x2F; 存储图的种类
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>空间复杂度比较高，为O(n^2)<br>插入边或弧都比较容易，但是插入顶点不容易</p>
 <h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><p>邻接表定义分为两部分：边链表和顶点表</p>
 <ul>
@@ -600,7 +587,6 @@ typedef struct &#123;    &#x2F;&#x2F; 图的邻接表存储类型
     int vexNum, arcNum;
     int kind;   &#x2F;&#x2F; 存储图的种类标志
 &#125; ALGraph;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h3><h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><blockquote>
 <blockquote>
 <blockquote>
@@ -635,7 +621,7 @@ typedef struct &#123;    &#x2F;&#x2F; 图的邻接表存储类型
 <ol>
 <li>算法开始时，设置U，T，U中存放初始顶点s，T为空集；</li>
 <li>找到与初始顶点s邻接的顶点，且连通它们的边是最短的，将该顶点入集合U，边入集合T；</li>
-<li>反复执行2，直到U&#x3D;V时，算法终止。</li>
+<li>反复执行2，直到U=V时，算法终止。</li>
 </ol>
 <h4 id="克鲁斯卡尔算法"><a href="#克鲁斯卡尔算法" class="headerlink" title="克鲁斯卡尔算法"></a>克鲁斯卡尔算法</h4><ol>
 <li>从图中取最短边e，如果e所关联的两个顶点不在T的同一个连通分量中，则将该边加入T；</li>
@@ -664,7 +650,7 @@ typedef struct &#123;    &#x2F;&#x2F; 图的邻接表存储类型
 <h4 id="拓扑排序算法概要"><a href="#拓扑排序算法概要" class="headerlink" title="拓扑排序算法概要"></a>拓扑排序算法概要</h4><h2 id="关键路径"><a href="#关键路径" class="headerlink" title="关键路径"></a>关键路径</h2><h3 id="关键路径相关概念"><a href="#关键路径相关概念" class="headerlink" title="关键路径相关概念"></a>关键路径相关概念</h3><ol>
 <li>事件vi的最早发生时间<br>从源点v1到vi的最长路径长度，记作ve(i);</li>
 <li>事件vk的最迟发生时间<br>即vn的最早发生时间ve(n)减去vk到vn的最长路径长度，记作vl(k)</li>
-<li>活动&lt;vi, vj&gt;的最早开始时间，是vi的最早开始时间,<br>最晚开始时间，是vj的最迟开始时间减去&lt;vi, vj&gt;的持续时间，记作el(i)。</li>
+<li>活动<vi, vj>的最早开始时间，是vi的最早开始时间,<br>最晚开始时间，是vj的最迟开始时间减去<vi, vj>的持续时间，记作el(i)。</li>
 </ol>
 <h2 id="最短路径问题"><a href="#最短路径问题" class="headerlink" title="最短路径问题"></a>最短路径问题</h2><h3 id="迪杰斯特拉算法"><a href="#迪杰斯特拉算法" class="headerlink" title="迪杰斯特拉算法"></a>迪杰斯特拉算法</h3><h4 id="Dijkstra算法思想"><a href="#Dijkstra算法思想" class="headerlink" title="Dijkstra算法思想"></a>Dijkstra算法思想</h4><ul>
 <li>按路径长度的递增次序，逐步产生最短路径</li>
@@ -672,9 +658,9 @@ typedef struct &#123;    &#x2F;&#x2F; 图的邻接表存储类型
 <li>注意：权值不能为负，否则该算法失效</li>
 </ul>
 <h4 id="Dijkstra算法概要"><a href="#Dijkstra算法概要" class="headerlink" title="Dijkstra算法概要"></a>Dijkstra算法概要</h4><ol>
-<li>引入辅助数组D[]，D[i]表示当前找到的源点到每一个终点i的最短路径长度，<br>引入辅助数组final[]，final[i]&#x3D;1表示顶点i的最短路径已求<br>出，初始状态下final[v0]置为1，其他置为0;</li>
-<li>选择D[]中路径最小值的顶点v（final[v]必须为0），v就是当前求得的一条从v出发的最短路径的终点，并修改final[v]&#x3D;1;</li>
-<li>修改未求出最短路径的顶点的最短路径长度，对于顶点w，若<br>D[v]+G.arcs[v][w] &lt; D[w],<br>则修改 D[w]&#x3D;D[v]+G.arcs[v][w],<br>同时修改P[w]&#x3D;v;</li>
+<li>引入辅助数组D[]，D[i]表示当前找到的源点到每一个终点i的最短路径长度，<br>引入辅助数组final[]，final[i]=1表示顶点i的最短路径已求<br>出，初始状态下final[v0]置为1，其他置为0;</li>
+<li>选择D[]中路径最小值的顶点v（final[v]必须为0），v就是当前求得的一条从v出发的最短路径的终点，并修改final[v]=1;</li>
+<li>修改未求出最短路径的顶点的最短路径长度，对于顶点w，若<br>D[v]+G.arcs[v][w] &lt; D[w],<br>则修改 D[w]=D[v]+G.arcs[v][w],<br>同时修改P[w]=v;</li>
 <li>重复操作2、3 n-1次，求得递增序列。</li>
 </ol>
 <h4 id="Dijkstra算法分析"><a href="#Dijkstra算法分析" class="headerlink" title="Dijkstra算法分析"></a>Dijkstra算法分析</h4><p>时间复杂度体现在修改距离值和最小值，为O(n^2),<br>空间复杂度体现在两个辅助数组，为O(n)。</p>

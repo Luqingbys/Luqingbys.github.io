@@ -7,7 +7,7 @@
     <meta name="keywords" content="Java的图形用户界面设计, 湖心亭">
     <meta name="description" content="AWT和SwingAWT重量级控件，实际上是在利用操作系统所提供的图形库。
 Swing轻量级控件，用纯粹的Java代码实现的。
-AWT与Swing的区别AWT是基于本地方法的C&amp;#x2F;C++程序，而Swing是基于AWT的Java程序；">
+AWT与Swing的区别AWT是基于本地方法的C/C++程序，而Swing是基于AWT的Java程序；Swing">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -501,7 +501,7 @@ AWT与Swing的区别AWT是基于本地方法的C&amp;#x2F;C++程序，而Swing�
             <div id="articleContent">
                 <h2 id="AWT和Swing"><a href="#AWT和Swing" class="headerlink" title="AWT和Swing"></a>AWT和Swing</h2><h3 id="AWT"><a href="#AWT" class="headerlink" title="AWT"></a>AWT</h3><p>重量级控件，实际上是在利用操作系统所提供的图形库。</p>
 <h3 id="Swing"><a href="#Swing" class="headerlink" title="Swing"></a>Swing</h3><p>轻量级控件，用纯粹的Java代码实现的。</p>
-<h3 id="AWT与Swing的区别"><a href="#AWT与Swing的区别" class="headerlink" title="AWT与Swing的区别"></a>AWT与Swing的区别</h3><p>AWT是基于本地方法的C&#x2F;C++程序，而Swing是基于AWT的Java程序；<br>Swing组件在实现时不包含任何本地代码。</p>
+<h3 id="AWT与Swing的区别"><a href="#AWT与Swing的区别" class="headerlink" title="AWT与Swing的区别"></a>AWT与Swing的区别</h3><p>AWT是基于本地方法的C/C++程序，而Swing是基于AWT的Java程序；<br>Swing组件在实现时不包含任何本地代码。</p>
 <h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>提到容器，首先就需要提到一个很重要的概念————组件。组件可以分为</p>
 <ul>
 <li>基本组件</li>
@@ -523,7 +523,6 @@ AWT与Swing的区别AWT是基于本地方法的C&amp;#x2F;C++程序，而Swing�
 <span class="token class-name">Container</span> contentPane <span class="token operator">=</span> frame<span class="token punctuation">.</span><span class="token function">getContentPane</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 为默认内容窗格设置FlowLayout布局管理器</span>
 contentPane<span class="token punctuation">.</span><span class="token function">setLayout</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FlowLayout</span><span class="token punctuation">(</span><span class="token class-name">FlowLayout</span><span class="token punctuation">.</span>LEFT<span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="FlowLayout布局管理器"><a href="#FlowLayout布局管理器" class="headerlink" title="FlowLayout布局管理器"></a>FlowLayout布局管理器</h4><p>组件逐个放置，一行放满另起一行。</p>
 <h4 id="BorderLayout布局管理器"><a href="#BorderLayout布局管理器" class="headerlink" title="BorderLayout布局管理器"></a>BorderLayout布局管理器</h4><p>容器被划分为North，South，West，East，Center五个区域，每一个区域都可以加入一个组件。</p>
 <p>构造方法：<br><code>public BorderLayout(int hgap, int vgap);</code></p>
@@ -535,7 +534,6 @@ contentPane<span class="token punctuation">.</span><span class="token function">
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token class-name">Container</span> parent<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">previous</span><span class="token punctuation">(</span><span class="token class-name">Container</span> parent<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">last</span><span class="token punctuation">(</span><span class="token class-name">Container</span> parent<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="BoxLayout布局管理器"><a href="#BoxLayout布局管理器" class="headerlink" title="BoxLayout布局管理器"></a>BoxLayout布局管理器</h4><p>构造方法：<br><code>public BoxLayout(Container target, int axis);</code></p>
 <p>axis指明组件的排列方向。BoxLayout.X_AXIS，BoxLayout.Y_AXIS分别表示水平方向排列和垂直方向排列。</p>
 <h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>每个事件发生时，该事件都用一个事件对象来表示，而事件对象都有对应的事件类。</p>
@@ -545,9 +543,10 @@ contentPane<span class="token punctuation">.</span><span class="token function">
 <p>事件监听器类必须包括一下两部分内容：</p>
 <ul>
 <li>类的声明中指定要实现的监听器接口名</li>
-<li>实现监听器接口中的事件处理方法</li>
+<li><p>实现监听器接口中的事件处理方法</p>
+<p>然后，在一个或者多个组件上可以进行监听器类实例的注册<br><code>组件对象.addXXXListener(MyListener对象);</code></p>
+</li>
 </ul>
-<p> 然后，在一个或者多个组件上可以进行监听器类实例的注册<br><code>组件对象.addXXXListener(MyListener对象);</code></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ActionEventDemo</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token class-name">JFrame</span> frame <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JFrame</span><span class="token punctuation">(</span><span class="token string">"ActionEvent Demo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -569,10 +568,11 @@ contentPane<span class="token punctuation">.</span><span class="token function">
         <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
-<li>单击鼠标事件监听器类（实现监听器类）<br>public class MouseClickHandler implements MouseListener {<br>  public void mouseClicked(MouseEvent e) {<br>  &#x2F;&#x2F;…<br>  }<br>  &#x2F;&#x2F; 其他方法，仍然需要给出实现<br>  public void mousePressed(MouseEvent e) {}<br>  &#x2F;&#x2F; …<br>}</li>
-<li>单击鼠标事件监听器类（继承适配器）<br>class MouseClickHandler1 extends MouseAdapter {<br>  public void mouseClicked(MouseEvent e) {<br>  &#x2F;&#x2F; 处理代码…<br>  }<br>}</li>
+<li>单击鼠标事件监听器类（实现监听器类）<br>public class MouseClickHandler implements MouseListener {<br>  public void mouseClicked(MouseEvent e) {<pre><code>  //...
+</code></pre>  }<br>  // 其他方法，仍然需要给出实现<br>  public void mousePressed(MouseEvent e) {}<br>  // …<br>}</li>
+<li>单击鼠标事件监听器类（继承适配器）<br>class MouseClickHandler1 extends MouseAdapter {<br>  public void mouseClicked(MouseEvent e) {<pre><code>  // 处理代码...
+</code></pre>  }<br>}</li>
 </ul>
 
                 

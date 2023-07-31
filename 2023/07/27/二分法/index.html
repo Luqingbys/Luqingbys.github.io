@@ -7,10 +7,10 @@
     <meta name="keywords" content="二分法, 湖心亭">
     <meta name="description" content="算法简介说到二分法，必须要提到的便是二分查找算法。
 
-Problem: Binary Search
+_Problem: Binary Search_
 在一个严格递增序列A中寻找一个指定元素x，如果能找到，那么输出它的下标；如果不能找到，那么输出-1。
 
-以在递增序列$[1,2,4,6,7,">
+以在递增序列$[1,2,4,6,">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -504,7 +504,7 @@ Problem: Binary Search
             <div id="articleContent">
                 <h2 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h2><p>说到二分法，必须要提到的便是<strong>二分查找算法</strong>。</p>
 <blockquote>
-<p><em>Problem: Binary Search</em></p>
+<p>_Problem: Binary Search_</p>
 <p>在一个严格递增序列A中寻找一个指定元素x，如果能找到，那么输出它的下标；如果不能找到，那么输出-1。</p>
 </blockquote>
 <p>以在递增序列$[1,2,4,6,7,9,10,11,15]$中查找元素11为例，演示二分查找法的步骤。</p>
@@ -523,7 +523,6 @@ Problem: Binary Search
     if(ns[left] !&#x3D; tgt)	return -1; &#x2F;&#x2F; 没找到
     return left;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>另外，二分法也可以使用递归写法：</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int BinarySearch(int left, int right, int tgt) &#123;
     if(left &#x3D;&#x3D; right) &#123;
@@ -537,13 +536,14 @@ Problem: Binary Search
     else if(ns[mid] &gt; tgt)	return BinarySearch(left, mid, tgt);
     else	return mid;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="经典例题：旋转数组"><a href="#经典例题：旋转数组" class="headerlink" title="经典例题：旋转数组"></a>经典例题：旋转数组</h2><h3 id="旋转数组中的元素查找"><a href="#旋转数组中的元素查找" class="headerlink" title="旋转数组中的元素查找"></a>旋转数组中的元素查找</h3><blockquote>
 <p>问题链接：<a target="_blank" rel="noopener" href="https://sunnywhy.com/sfbj/4/5/164">https://sunnywhy.com/sfbj/4/5/164</a></p>
 <p>旋转数组是指，对一个给定的位置，将数组中该位置右侧（含该位置）的所有元素移至数组最左侧后形成的数组。例如[1,2,3,4,5]将元素3所在位置右侧的部分移到数组最前面后可以形成[3,4,5,1,2]，而将元素4所在位置右侧的部分移到数组最前面后可以形成[4,5,1,2,3]。</p>
 <p>现在给定一个由<strong>严格递增序列</strong>形成的旋转数组A，在其中寻找一个元素x。如果存在，那么输出x所在的下标；否则输出-1。</p>
 </blockquote>
-<p>不妨记序列为<code>ns</code>，而二分法逃不开中间元素<code>ns[mid]</code>，因此先考虑序列中的中间元素<code>ns[mid]</code>与整个序列的关系。假设严格递增序列形成的旋转数组<code>ns</code>为<br>$$<br>\mathrm{ns} &#x3D; [5, 7, 8, 9, 1, 3]<br>$$<br>稍加思索便可发现，<code>ns</code>一定由两段严格递增的序列拼接而成。也就是说，<code>mid</code>划分出来的两段子序列必有至少一侧是严格递增的（如果运气好，<code>mid</code>恰好就是连接点，比如上面例子的下标3，那么其两侧的子序列均为严格递增）。而<strong>只需判断<code>ns[mid]</code>是否大于<code>ns[left]</code>，如果大于，则左侧为严格递增子序列；反之亦然</strong>。判断出哪一侧严格递增后，进一步判断目标元素<code>target</code>是否在整个范围内，进行二分即可。</p>
+<p>不妨记序列为<code>ns</code>，而二分法逃不开中间元素<code>ns[mid]</code>，因此先考虑序列中的中间元素<code>ns[mid]</code>与整个序列的关系。假设严格递增序列形成的旋转数组<code>ns</code>为</p>
+<script type="math/tex; mode=display">
+\mathrm{ns} = [5, 7, 8, 9, 1, 3]</script><p>稍加思索便可发现，<code>ns</code>一定由两段严格递增的序列拼接而成。也就是说，<code>mid</code>划分出来的两段子序列必有至少一侧是严格递增的（如果运气好，<code>mid</code>恰好就是连接点，比如上面例子的下标3，那么其两侧的子序列均为严格递增）。而<strong>只需判断<code>ns[mid]</code>是否大于<code>ns[left]</code>，如果大于，则左侧为严格递增子序列；反之亦然</strong>。判断出哪一侧严格递增后，进一步判断目标元素<code>target</code>是否在整个范围内，进行二分即可。</p>
 <p>具体地，以<code>ns[mid]&gt;ns[left]</code>即左侧为严格递增子序列为例有</p>
 <ul>
 <li>若<code>ns[left]&lt;target&lt;ns[mid]</code>，则搜索区间变为$[left, mid]$；</li>
@@ -566,7 +566,6 @@ Problem: Binary Search
 		return binarySearch(mid+1, right, tgt);
 	&#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="旋转数组求原序列中位数"><a href="#旋转数组求原序列中位数" class="headerlink" title="旋转数组求原序列中位数"></a>旋转数组求原序列中位数</h3><p>如何求出原严格递增序列的中位数？其实如果能够找出两个严格递增子序列的“拼接点”，问题便迎刃而解了：左侧子序列元素均大于右侧子序列元素，而两个子序列内部严格递增，此时只需要$\mathcal{O}(1)$时间便可求出中位数。于是关键在于求出拼接点。</p>
 <p>和前一部分类似地，要进行二分，就要判断拼接点到底在左侧区间还是右侧区间。而根据<strong>“只需判断<code>ns[mid]</code>是否大于<code>ns[left]</code>，如果大于，则左侧为严格递增子序列；反之亦然”</strong>，拼接点不可能出现在严格递增子序列中，只可能出现在另一侧，于是可以得到如下代码：</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int binarySearch(int left, int right) &#123;
@@ -585,7 +584,6 @@ Problem: Binary Search
     &#x2F;&#x2F; 此时必有left &#x3D;&#x3D; right，退化为一个点，由于拼接点必然存在，因此直接返回
     return left;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>得到拼接的下标后，根据序列长度奇偶性取出数组中中间元素便不难了。下面是完整的代码。</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #include &lt;vector&gt; 
@@ -621,9 +619,6 @@ int main(int argc, char** argv) &#123;
 
 	return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p>To be continued…</p>
 
                 

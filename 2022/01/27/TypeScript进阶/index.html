@@ -532,7 +532,6 @@ handleEvent(document.querySelector(&#39;a&#39;) as HTMLElement, &#39;scroll&#39;
 handleEvent(document.getElementById(&#39;hello&#39;), &#39;click&#39;)
 
 &#x2F;&#x2F; handleEvent(document.getElementById(&#39;div&#39;) as HTMLElement, &#39;mousemove&#39;)  报错，第二个参数不可以是mousemove<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>元组是合并了不同类型的对象的一种数据类型。与之类似的是数组，它合并了相同类型的对象。<br>它的声明方式与数组几乎无异，只不过在元组中，类型声明显得尤为重要。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 如下即声明了一个元组：一对值为string、number的元组
 let mar: [string, number] &#x3D; [&#39;Mar&#39;, 28]
@@ -540,19 +539,16 @@ let mar: [string, number] &#x3D; [&#39;Mar&#39;, 28]
 &#x2F;&#x2F; 访问元组的元素：索引下标访问即可
 console.log(mar[0]);
 console.log(mar[1]);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>元组并非只能有两个元素，当向其中添加越界元素时，会受到类型限制。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 此时，若向mar中再添加元素，添加的第一个只能是字符串，第二个只能是number
 mar.push(&#39;Hah&#39;)
 mar.push(90)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>Enum类型用于取值被限定在·一定范围内的场景。<br>与C语言中的枚举类型几乎一致，使用enum关键字，语法格式如：<br><code>enum Days &#123; Sun, Mon, Tue, Wed, Thu, Fri, Sat &#125;</code><br>枚举成员会被赋值为从0开始递增的数字，同时也会对枚举值到枚举名进行反向映射。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">enum Days &#123; Sun, Mon, Tue, Wed, Thu, Fri, Sat &#125;
 console.log(Days[&quot;Sun&quot;])
 console.log(Days[0])
 
 console.log(Days[&quot;Sat&quot;] &#x3D;&#x3D;&#x3D; 6)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>类是在ES6中引入的，此后，JavaScript也有了class关键字，用于声明一个类了。</p>
 <p>简单介绍ES6以来，类的一些用法：</p>
 <ul>
@@ -571,7 +567,6 @@ console.log(Days[&quot;Sat&quot;] &#x3D;&#x3D;&#x3D; 6)<span aria-hidden="true" 
         console.log(&#39;I can run.&#39;);
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>要想让它实现接口，如下书写即可：</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 类与接口
 &#x2F;&#x2F; 接口：可以警鸣
@@ -594,7 +589,6 @@ class Car implements Alarmable, Lightable &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="声明合并"><a href="#声明合并" class="headerlink" title="声明合并"></a>声明合并</h2><p>即：如果定义了两个相同名字的函数、接口或者类，那么它们会合并成一个类型。<br>下面演示接口的合并：</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 如下两个接口声明可以合并
 interface Foldable &#123;

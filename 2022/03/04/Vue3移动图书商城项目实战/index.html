@@ -547,7 +547,6 @@ export function request(config) &#123;
 
     return instance(config)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>由于我们接下来第一个要实现的就是首页功能，因此，我们需要先配置好首页中接口调用函数，放在home.js文件中：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; home.js
 import &#123; request &#125; from &quot;.&#x2F;request&quot;;
@@ -558,9 +557,6 @@ function getHomeAllData() &#123;
         url: &#39;&#x2F;api&#x2F;index&#39;
     &#125;)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h2 id="小试牛刀：获取首页所有数据"><a href="#小试牛刀：获取首页所有数据" class="headerlink" title="小试牛刀：获取首页所有数据"></a>小试牛刀：获取首页所有数据</h2><p>我们在Home.vue组件中获取数据，在setup函数中调用onMounted生命周期钩子，希望在页面加载时就将拿到的数据显示到页面，故在该钩子中发起axios请求获取数据：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">setup() &#123;
     const banner &#x3D; ref([])
@@ -574,7 +570,6 @@ function getHomeAllData() &#123;
       banner,
     &#125;
   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><p>我们在views目录下创建所有页面级的文件夹，用于存放各个页面功能的组件：</p>
 <ul>
 <li>category：商品分类页面</li>
@@ -599,7 +594,6 @@ export default &#123;
 &lt;style&gt;
 
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>接下来我们在router文件夹下的index.js文件中设置路由。</p>
 <p>首先，为了实现懒加载，我们先导入各个组件文件：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const Home &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;home&#x2F;Home.vue&#39;)
@@ -607,7 +601,6 @@ const Category &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;category&#x2F
 const Detail &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;detail&#x2F;Detail.vue&#39;)
 const Profile &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;profile&#x2F;Profile.vue&#39;)
 const ShopCart &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;shopcart&#x2F;ShopCart.vue&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>其次，在routes数组中补充路由配置：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">const routes &#x3D; [
   &#123;
@@ -641,9 +634,6 @@ const ShopCart &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;shopcart&#x2F
     component: Profile
   &#125;,
 ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h2 id="制作导航栏"><a href="#制作导航栏" class="headerlink" title="制作导航栏"></a>制作导航栏</h2><p>该移动端移动图书商城的导航栏在最底层，分为四个选项“首页-分类-购物车-我的”，因此，我们直接在App.vue组件中实现。</p>
 <p>在阿里下载好图标后，导入到页面中，由于路由跳转在上面已经实现，故接下来关键只剩两步了：</p>
 <ul>
@@ -718,9 +708,8 @@ const ShopCart &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;shopcart&#x2F
 &#125;
 &lt;&#x2F;style&gt;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="首页推荐商品组件的实现"><a href="#首页推荐商品组件的实现" class="headerlink" title="首页推荐商品组件的实现"></a>首页推荐商品组件的实现</h2><p>首页推荐商品组件，即四本横向排列的书籍，我们单独把这一部分作为一个组件（.vue）来实现。</p>
-<p>在view文件夹的home&#x2F;ChildComps文件夹下新建Recommend.vue文件，视图部分肯定要用到flex布局：</p>
+<p>在view文件夹的home/ChildComps文件夹下新建Recommend.vue文件，视图部分肯定要用到flex布局：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!--Recommend.vue--&gt;
 &lt;template&gt;
   &lt;div class&#x3D;&quot;recommend&quot;&gt;
@@ -750,8 +739,7 @@ const ShopCart &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;shopcart&#x2F
     &#125;
 &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>数据来自网络请求，也即获取首页数据，这网络请求的相关代码已经封装在了network&#x2F;home.js中了；我们在Home组件中发起请求，获取首页中需要的全部信息，然后<strong>将推荐的书籍信息传递给Recommend子组件</strong>——使用props属性。</p>
+<p>数据来自网络请求，也即获取首页数据，这网络请求的相关代码已经封装在了network/home.js中了；我们在Home组件中发起请求，获取首页中需要的全部信息，然后<strong>将推荐的书籍信息传递给Recommend子组件</strong>——使用props属性。</p>
 <h3 id="props用法"><a href="#props用法" class="headerlink" title="props用法"></a>props用法</h3><p>在vue3中，父组件传递数据给子组件，需要用到props。而父组件传过来的数据，子组件的模板、setup函数中的引入方式略有不同。</p>
 <h4 id="模板使用props"><a href="#模板使用props" class="headerlink" title="模板使用props"></a>模板使用props</h4><p>与setup同级使用props配置项即可。此时，也有两种常见的用法：</p>
 <ul>
@@ -762,7 +750,6 @@ export default &#123;
     setup() &#123;...&#125;
 &#125;
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>上面的props配置项数组中，每一个字符串中的内容都是父组件传来的数据变量名（title，author）。</p>
 </li>
 <li><p>对象写法</p>
@@ -782,7 +769,8 @@ export default &#123;
         &#125;
     &#125;
 &#125;
-&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
 <h4 id="setup函数使用props"><a href="#setup函数使用props" class="headerlink" title="setup函数使用props"></a>setup函数使用props</h4><p>setup函数接收两个参数props，context，其中第一个参数就可以接收到父组件传来的数据，以供在setup函数中使用。</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script&gt;
@@ -792,10 +780,7 @@ export default &#123;
     &#125;
 &#125;
 &lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="首页选项卡的实现"><a href="#首页选项卡的实现" class="headerlink" title="首页选项卡的实现"></a>首页选项卡的实现</h2><p>注意到首页的选项卡并不是首页独有的，而是出现在多个组件中的，因此可以作为公用组件出现在components目录下：在components&#x2F;common下新建tabControl文件夹，在其中新建tabControl.vue文件，用于制作选项卡。</p>
+<h2 id="首页选项卡的实现"><a href="#首页选项卡的实现" class="headerlink" title="首页选项卡的实现"></a>首页选项卡的实现</h2><p>注意到首页的选项卡并不是首页独有的，而是出现在多个组件中的，因此可以作为公用组件出现在components目录下：在components/common下新建tabControl文件夹，在其中新建tabControl.vue文件，用于制作选项卡。</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div class&#x3D;&quot;tab-control&quot;&gt;
     &lt;div
@@ -859,7 +844,6 @@ export default &#123;
 &#125;
 &lt;&#x2F;style&gt;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>虽然首页中的选项卡只有三项，但是其他组件中的选项卡跟首页并不相同，因此使用组件传值的方式，用变量接收选项卡数据，同时使用v-for指令动态生成若干选项卡。</p>
 <p>样式方面，对选项卡进行flex布局设置，另外，由于点击某一个选项卡会触发特殊样式，因此对样式使用属性绑定写法：</p>
 <p><code>:class=&quot;&#123; active: index==currentIndex &#125;&quot;</code></p>
@@ -879,7 +863,6 @@ setup(props, &#123; emit &#125;) &#123;
       itemClick,
     &#125;
   &#125;,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>接下来把目光转移到父组件：</p>
 <p>在父组件中，我们需要自定义上述事件（即自定义事件），并给该自定义事件绑定一个回调函数，它可以以参数形式接收子组件传来的数据：</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
@@ -918,9 +901,6 @@ export default &#123;
     margin-top: 45px;
 &#125;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h2 id="首页选项卡数据切换"><a href="#首页选项卡数据切换" class="headerlink" title="首页选项卡数据切换"></a>首页选项卡数据切换</h2><p>首页组件（Home.vue）中获取后台数据涉及了三个接口，于是在首页组件中定义一个goods对象，用它保存首页选项卡三个选项各自对应的数据（畅销、新书、精选），而上面已经实现了子组件将被点击的选项序号传递给父组件，故在父组件中，只需要实现将对应的数据再传给子组件即可。</p>
 <p>分析父组件的JavaScript代码块：</p>
 <p>首先，有一个变量保存当前点击的选项卡内容；</p>
@@ -931,7 +911,6 @@ export default &#123;
   let types &#x3D; [&#39;sales&#39;, &#39;new&#39;, &#39;recommend&#39;]
   currentType.value &#x3D; types[index]
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>注意，这个tabClick函数就是Home父组件中自定义事件tabClick绑定的回调函数。</p>
 <p>获取三个选项卡需要的后台数据，也即发送三个网络请求，并保存结果，当然在此之前，需要在network文件夹下的home.js文件中封装好相关的网络请求函数。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; network&#x2F;home.js
@@ -941,7 +920,6 @@ export function getHomeGoods(type&#x3D;&#39;sales&#39;, page&#x3D;1) &#123;
         url: &#39;&#x2F;api&#x2F;index?&#39;+type+&#39;&#x3D;1&amp;page&#x3D;&#39;+page
     &#125;)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>接下来就可以在Home组件中使用了。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; Home.vue中的JavaScript代码
 &#x2F;&#x2F; 商品列表数据模型
@@ -982,9 +960,6 @@ onMounted(() &#x3D;&gt; &#123;
     goods.new.list &#x3D; res.goods.data
   &#125;)
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h2 id="上拉加载更多数据"><a href="#上拉加载更多数据" class="headerlink" title="上拉加载更多数据"></a>上拉加载更多数据</h2><p>需要用到移动端滚动条的第三方库——BetterScroll。</p>
 <p>在首页的选项卡中，由于是移动端，不可能像PC端点击分页器获取更多数据，而是通过往上滑动，加载更多数据，因此，需要对滑动事件进行优化、处理（绑定网络请求）。Home组件的JavaScript代码如下：</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F;   创建BetterScroll对象
@@ -1000,7 +975,6 @@ bscroll.on(&#39;pullingUp&#39;, () &#x3D;&gt; &#123;
   console.log(&#39;加载更多&#39;)
   bscroll.refresh()
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="上拉情况下的导航条固定"><a href="#上拉情况下的导航条固定" class="headerlink" title="上拉情况下的导航条固定"></a>上拉情况下的导航条固定</h2><p>由于首页的选项卡组件使用了固定定位，但是这是当往下滑动时候的布局样式（一直往下滑动获取新的书籍信息时，此时选项卡固定在页面最上方），对此，我们单独再复制一份选项卡组件，使用v-show指定控制它的显示与否；而显示条件需要我们获取到临界高度，一旦大于这个高度时，就让组件固定展示。</p>
 <pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; Home.vue中的JavaScript代码片段
 &#x2F;&#x2F; 控制选项卡是否被固定
@@ -1009,7 +983,6 @@ let isTabFixed &#x3D; ref(false)
 bscroll.on(&#39;scroll&#39;, (position) &#x3D;&gt; &#123;
   isTabFixed.value &#x3D; -position.y&gt;banref.value.offsetHeight
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

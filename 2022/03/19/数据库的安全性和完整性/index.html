@@ -483,7 +483,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.7k
                 </div>
                 
 
@@ -527,7 +527,6 @@
 <span class="token keyword">ON</span> <span class="token operator">&lt;</span>对象类型<span class="token operator">></span><span class="token operator">&lt;</span>对象名<span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token operator">&lt;</span>对象类型<span class="token operator">></span><span class="token operator">&lt;</span>对象名<span class="token operator">></span><span class="token punctuation">]</span>
 <span class="token keyword">TO</span> <span class="token operator">&lt;</span>用户<span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">,</span> 用户<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">[</span><span class="token keyword">WITH</span> <span class="token keyword">GRANT</span> <span class="token keyword">OPTION</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>它表示向用户授予操纵数据库对象的权限；</li>
 <li>如果指定了WITH GRANT OPTION，表示被授权的用户还可以继续把这种权限授予他人，否则只能使用权限，不能传播权限。</li>
@@ -536,7 +535,6 @@
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">REVOKE</span> <span class="token operator">&lt;</span> 权限<span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">,</span> 权限<span class="token punctuation">]</span> …
 <span class="token keyword">ON</span> <span class="token operator">&lt;</span> 对象类型<span class="token operator">></span> <span class="token operator">&lt;</span> 对象名<span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token operator">&lt;</span> 对象类型<span class="token operator">></span> <span class="token operator">&lt;</span> 对象名<span class="token operator">></span><span class="token punctuation">]</span>
 <span class="token keyword">FROM</span> <span class="token operator">&lt;</span> 用户<span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">,</span> 用户<span class="token punctuation">]</span> … <span class="token punctuation">[</span><span class="token keyword">CASCADE</span> <span class="token operator">|</span> <span class="token keyword">RESTRICT</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li><p>CASCADE: 级联回收，该“被回收权限的用户”传播的权限也被回收</p>
 <p>注意级联的对象的权限可能来自多个用户。</p>
@@ -547,7 +545,6 @@
 <p>比如收回Bob修改Course表中课程号的权限：</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">REVOKE</span> <span class="token keyword">UPDATE</span><span class="token punctuation">(</span>Cno<span class="token punctuation">)</span> <span class="token keyword">ON</span> <span class="token keyword">TABLE</span> Course
 <span class="token keyword">FROM</span> Bob<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <h4 id="模式的授权"><a href="#模式的授权" class="headerlink" title="模式的授权"></a>模式的授权</h4><ul>
 <li><p>允许用户创建关系时声明外码</p>
 <p>GRANT    REFERENCES（被参照属性）</p>
@@ -557,7 +554,8 @@
 <li><p>创建数据库模式的权限</p>
 <p>对创建数据库模式一类的数据库对象的授权，由管理员创建用户时实现：</p>
 <p>CREATE    USER</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> <span class="token operator">&lt;</span>用户名<span class="token operator">></span> <span class="token punctuation">[</span><span class="token keyword">WITH</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>DBA<span class="token operator">|</span>RESOURCE<span class="token operator">|</span>CONNECCT<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> <span class="token operator">&lt;</span>用户名<span class="token operator">></span> <span class="token punctuation">[</span><span class="token keyword">WITH</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>DBA<span class="token operator">|</span>RESOURCE<span class="token operator">|</span>CONNECCT<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 </ul>
 <h4 id="数据库角色"><a href="#数据库角色" class="headerlink" title="数据库角色"></a>数据库角色</h4><p>分为角色的创建、授权、授予其他用户：</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> ROLE <span class="token operator">&lt;</span>角色名<span class="token operator">></span><span class="token punctuation">;</span>
@@ -569,7 +567,6 @@
 <span class="token keyword">GRANT</span> <span class="token operator">&lt;</span>角色<span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">,</span>角色<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token keyword">TO</span> <span class="token operator">&lt;</span>目标角色<span class="token operator">|</span>用户<span class="token operator">></span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token keyword">WITH</span> ADMIN <span class="token keyword">OPTION</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>类似地，也有角色权限的收回、角色的收回（均用到REVOKE）。</p>
 <h2 id="审计"><a href="#审计" class="headerlink" title="审计"></a>审计</h2><p>审计，启用一个专用的审计日志，系统自动将用户对数据库的所有操作记录在上面</p>
 <h2 id="数据加密"><a href="#数据加密" class="headerlink" title="数据加密"></a>数据加密</h2><h1 id="数据库完整性"><a href="#数据库完整性" class="headerlink" title="数据库完整性"></a>数据库完整性</h1><p>完整性约束通常包括：</p>
@@ -597,7 +594,6 @@
      Dname <span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span> <span class="token keyword">UNIQUE</span><span class="token punctuation">,</span>	<span class="token comment">/*要求Dname列值唯一*/</span>
      Location <span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token string">'哈尔滨'</span><span class="token punctuation">,</span>	<span class="token comment">/*设置了Location的默认值为“哈尔滨”*/</span>
      <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>Deptno<span class="token punctuation">)</span><span class="token punctuation">)</span>	<span class="token comment">/*部门编号Deptno列为主码*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h2><p><strong>指关系的主码不能重复也不能去空值</strong>。</p>
 <p>在CREATE TABLE中使用 PRIMARY KEY来定义主码。</p>
 <h2 id="参照完整性"><a href="#参照完整性" class="headerlink" title="参照完整性"></a>参照完整性</h2><p>与外键有紧密联系。</p>
@@ -615,19 +611,14 @@ Grade <span class="token keyword">SMALLINT</span><span class="token punctuation"
 <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>Cno<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> Course<span class="token punctuation">(</span>Cno<span class="token punctuation">)</span>
 <span class="token comment">/* 在表级定义参照完整性*/</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <h2 id="用户定义的完整性"><a href="#用户定义的完整性" class="headerlink" title="用户定义的完整性"></a>用户定义的完整性</h2><h3 id="属性上的约束条件"><a href="#属性上的约束条件" class="headerlink" title="属性上的约束条件"></a>属性上的约束条件</h3><h3 id="元组上的约束条件"><a href="#元组上的约束条件" class="headerlink" title="元组上的约束条件"></a>元组上的约束条件</h3><p>CHECK子句可以设置不同属性之间的取值的相互约束条件。</p>
 <h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> ASSERTION <span class="token operator">&lt;</span>断言名<span class="token operator">></span> <span class="token operator">&lt;</span><span class="token keyword">Check</span>子句<span class="token operator">></span>
 <span class="token keyword">DROP</span> ASSERTION <span class="token operator">&lt;</span>断言名<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>例如，声明一个断言，用于限制每一门课程最多选课学生数量为60：</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> ASSERTION ASSE_SC_CNUM1
 	<span class="token keyword">CHECK</span><span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">>=</span> <span class="token keyword">ALL</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span>
                    <span class="token keyword">FROM</span> SC
                    <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> cno<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h3><ul>
 <li>触发器是由用户定义在关系表上的一类由事件驱动的特殊过程。基本语法如下：</li>
 </ul>
@@ -636,22 +627,37 @@ Grade <span class="token keyword">SMALLINT</span><span class="token punctuation"
 REFERENCING NEW<span class="token operator">|</span>OLD <span class="token keyword">ROW</span><span class="token operator">|</span><span class="token keyword">TABLE</span> <span class="token keyword">AS</span> <span class="token operator">&lt;</span>变量<span class="token operator">></span>
 <span class="token keyword">FOR</span> EACH &#123;<span class="token keyword">ROW</span> <span class="token operator">|</span> STATEMENT&#125;
 <span class="token punctuation">[</span><span class="token keyword">WHEN</span> <span class="token operator">&lt;</span>触发条件<span class="token operator">></span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>触发动作体<span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>触发器又称“事件-条件-动作”规则。</p>
 <ul>
 <li>触发事件，包括INSERT, DELETE, UPDATE等</li>
 <li>BEFORE表示触发事件操作执行之前激活触发器，AFTER表示触发事件操作执行之后激活触发器</li>
 <li>FOR EACH后面的标识指定的是行级触发器还是语句级触发器</li>
 <li>WHEN 表示触发条件，当触发器被激活时，只有当触发条件为真时，触发动作体才执行，如果省略，触发器激活后触发动作体立即执行</li>
-<li>行级触发器中，可以使用NEW ROW和OLD ROW 来引用UPDATE &#x2F; INSERTION之后的新值和之前的旧值，语句级触发器则使用NEW TABLE和OLD TABLE引用包含所有被影响的行的临时表。</li>
+<li>行级触发器中，可以使用NEW ROW和OLD ROW 来引用UPDATE / INSERTION之后的新值和之前的旧值，语句级触发器则使用NEW TABLE和OLD TABLE引用包含所有被影响的行的临时表。</li>
 </ul>
 <pre class="line-numbers language-none"><code class="language-none">\begin&#123;flalign&#125;
 \end&#123;flalign&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>$$<br>\begin{flalign}<br>&amp;Partition(begin, end, nums[], standard):\<br>&amp;If\ begin &gt;&#x3D; end \quad Then\ Return\ begin;\<br>&amp;i \gets begin;\<br>&amp;for\ j \gets end \ to \ begin\<br>&amp;\qquad do\ If\ nums[j] &lt;&#x3D; nums[standard]\<br>&amp;\qquad \qquad i \gets i+1;\<br>&amp;\qquad \qquad nums[i] \leftrightarrow nums[j];\<br>&amp;nums[i+1] \leftrightarrow nums[standard]\<br>&amp; Return\ i+1<br>\end{flalign}<br>$$</p>
-<p>$$<br>\begin{flalign}<br>&amp;Solution(cups[], covers[], begin, end):\<br>&amp;If\ begin &gt;&#x3D; end \quad Then \quad Return;\<br>&amp;std \gets Partition(begin, end, cups, end);\<br>&amp;Partition(begin, end, covers, std);\<br>&amp;Solution(cups, covers, begin, std-1);\<br>&amp;Solution(cups, covers, std+1, end);<br>\end{flalign}<br>$$</p>
-<p>$$<br>5<br>$$</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token number">1.</span> 
+<script type="math/tex; mode=display">
+\begin{flalign}
+&Partition(begin, end, nums[], standard):\\
+&If\ begin >= end \quad Then\ Return\ begin;\\
+&i \gets begin;\\
+&for\ j \gets end \ to \ begin\\
+&\qquad do\ If\ nums[j] <= nums[standard]\\
+&\qquad \qquad i \gets i+1;\\
+&\qquad \qquad nums[i] \leftrightarrow nums[j];\\
+&nums[i+1] \leftrightarrow nums[standard]\\
+& Return\ i+1
+\end{flalign}</script><script type="math/tex; mode=display">
+\begin{flalign}
+&Solution(cups[], covers[], begin, end):\\
+&If\ begin >= end \quad Then \quad Return;\\
+&std \gets Partition(begin, end, cups, end);\\
+&Partition(begin, end, covers, std);\\
+&Solution(cups, covers, begin, std-1);\\
+&Solution(cups, covers, std+1, end);
+\end{flalign}</script><script type="math/tex; mode=display">
+5</script><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token number">1.</span> 
 <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Student
 <span class="token punctuation">(</span>Sno <span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
  Sname <span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">UNIQUE</span><span class="token punctuation">,</span>
@@ -737,7 +743,6 @@ Grade <span class="token keyword">SMALLINT</span><span class="token punctuation"
 <span class="token keyword">FROM</span> <span class="token keyword">Temp</span>
 <span class="token keyword">WHERE</span> Grade<span class="token operator">></span><span class="token number">90</span>
 <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Sno<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

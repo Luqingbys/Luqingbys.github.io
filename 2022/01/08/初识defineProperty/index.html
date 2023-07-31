@@ -507,7 +507,6 @@ Object<span class="token punctuation">.</span><span class="token function">defin
     <span class="token literal-property property">writable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>下面对属性描述符做一番简单介绍。</p>
 <h4 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h4><p>指定属性是否可以在第一次设置后被修改、是否可以被删除。<br>比如，如下代码在严格模式下，会报错；在一般模式下，修改、删除无效。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Yank'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
@@ -521,7 +520,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">delete</span> person<span class="token punctuation">.</span>age
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//删除无效，结果仍为 &#123;name: 'Yank', age: 20&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h4><p>enumerable配置项用于描述属性是否可以被for in 或者Object.keys()的遍历（枚举）中。<br>当enumerable为false时，它不可以被上述两个语句遍历到。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> school <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'XiWang Primary School'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>school<span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
@@ -537,9 +535,8 @@ Object<span class="token punctuation">.</span><span class="token function">defin
 <span class="token comment">// 打印结果，只有address属性，而没有age属性</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>school<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//  ['name', 'address']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h4 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h4><p>比较好理解，writable为false时，表示该属性是只读的，不可以被写，且在严格模式下，写操作会报错；一般模式下，写操作失效。</p>
-<h4 id="get-x2F-set"><a href="#get-x2F-set" class="headerlink" title="get&#x2F;set"></a>get&#x2F;set</h4><p>get方法用于获取属性，而set方法用于设置属性。注意，设置了getter和setter之后，不可以再设置value和writable了，否则会报错。</p>
+<h4 id="get-set"><a href="#get-set" class="headerlink" title="get/set"></a>get/set</h4><p>get方法用于获取属性，而set方法用于设置属性。注意，设置了getter和setter之后，不可以再设置value和writable了，否则会报错。</p>
 <p>一般地，使用第三方变量避免getter和setter反复无限调用：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 错误写法</span>
     <span class="token keyword">var</span> province <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Hubei'</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
@@ -569,7 +566,6 @@ Object<span class="token punctuation">.</span><span class="token function">defin
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 province<span class="token punctuation">.</span>centerCity <span class="token operator">=</span> <span class="token string">'Wuhan'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>使用Object.defineProperty()可以为对象新增属性，并且还可以细化地指定属性描述符，默认三个属性描述符（configurable、writable、enumerable）均为false；<br>而另一种直接的方式Object.prop即点运算符新增属性，则是默认三个属性描述符均为true。</p>
 </blockquote>
@@ -578,7 +574,7 @@ province<span class="token punctuation">.</span>centerCity <span class="token op
 <li>存取描述符：get和set</li>
 </ul>
 <p>注意，两种描述符不可以同时使用。</p>
-<h3 id="与Vue中的数据代理"><a href="#与Vue中的数据代理" class="headerlink" title="与Vue中的数据代理"></a>与Vue中的数据代理</h3><p>通过一个对象代理对另一个对象中属性的操作（读&#x2F;写），叫做数据代理。<br>下面举一个很简单的栗子：</p>
+<h3 id="与Vue中的数据代理"><a href="#与Vue中的数据代理" class="headerlink" title="与Vue中的数据代理"></a>与Vue中的数据代理</h3><p>通过一个对象代理对另一个对象中属性的操作（读/写），叫做数据代理。<br>下面举一个很简单的栗子：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
     <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span>
@@ -597,8 +593,7 @@ Object<span class="token punctuation">.</span><span class="token function">defin
         obj1<span class="token punctuation">.</span>x <span class="token operator">=</span> val<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在这个栗子中，我们就实现了obj1和obj2之间的数据代理。我们要想读取&#x2F;修改obj1.x，只需要读取&#x2F;修改obj2.x就好，因为会触发其getter&#x2F;setter。</p>
+<p>在这个栗子中，我们就实现了obj1和obj2之间的数据代理。我们要想读取/修改obj1.x，只需要读取/修改obj2.x就好，因为会触发其getter/setter。</p>
 <p>下面进入正题：Vue中的数据代理究竟是什么？</p>
 <p>在vue2中，我们在构建vue实例对象时传入各项配置参数：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
@@ -628,8 +623,7 @@ Object<span class="token punctuation">.</span><span class="token function">defin
     <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在浏览器中查看执行结果，在控制台输出vm，可以发现name、address都已经变成了vm实例自身的属性了，并且都有自己的getter&#x2F;setter。<br>但是数据代理在vue中是如何体现的呢？首先我们需要知道的是，vm在拿到我们配置的属性name、address后，一定会将其保留下来。事实上，它们存在于vm的 _ data属性中了。也就是说，接下来，对 _ data中属性的修改，就相当于是对vm上属性的修改了（数据代理）。</p>
+<p>在浏览器中查看执行结果，在控制台输出vm，可以发现name、address都已经变成了vm实例自身的属性了，并且都有自己的getter/setter。<br>但是数据代理在vue中是如何体现的呢？首先我们需要知道的是，vm在拿到我们配置的属性name、address后，一定会将其保留下来。事实上，它们存在于vm的 _ data属性中了。也就是说，接下来，对 _ data中属性的修改，就相当于是对vm上属性的修改了（数据代理）。</p>
 <p>为了能够验证这一点，我们需要想方法拿到原始的配置对象（options）上的data参数，故作出如下修改：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -663,7 +657,6 @@ Object<span class="token punctuation">.</span><span class="token function">defin
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>_data <span class="token operator">===</span> myData<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 验证data配置项就是vm的_data属性，故下文中不对两者（配置项data属性与vm上的_data属性）作刻意区分</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>现在在浏览器控制台作出如下操作：<br><code>vm.name = &#39;hututu&#39;</code><br>我们就会发现姓名变成了‘hututu’。从数据代理角度来说，我们修改的是vm上的name属性，也就调用了其setter，从而改变了与之关联的data（ _ data）上的name。</p>
 <p>现在对整个数据代理过程梳理一下：</p>
 <ol>
@@ -727,13 +720,13 @@ Object<span class="token punctuation">.</span><span class="token function">defin
 	<span class="token literal-property property">address</span><span class="token operator">:</span> <span class="token operator">...</span>
 	<span class="token operator">...</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-而这里两者之间就是通过Object.defineProperty()建立的数据代理关系：<br>通过这个方法，将data对象中的所有属性添加到vm上，同时为每一个属性指定一个getter&#x2F;setter，在getter&#x2F;setter内部去操作data对象中对应的属性。</li>
+而这里两者之间就是通过Object.defineProperty()建立的数据代理关系：<br>通过这个方法，将data对象中的所有属性添加到vm上，同时为每一个属性指定一个getter/setter，在getter/setter内部去操作data对象中对应的属性。</li>
 </ol>
 <p>可见，数据代理，大大地简化了代码书写，也使得更加方便地操作data中的数据了。</p>
 <h3 id="与数据劫持"><a href="#与数据劫持" class="headerlink" title="与数据劫持"></a>与数据劫持</h3><blockquote>
 <p>数据劫持，就是对某一项数据进行访问、设置时，会触发相应的函数，并返回最后想要的结果（或返回属性值getter，或修改属性值setter）。当然，我们就可以在函数中另外做一些我们自己想要的操作了，这就是数据劫持。</p>
 </blockquote>
-<p>在vue2中，就是使用defineProperty()实现的数据劫持，当数据被修改时，就会通知该数据被修改了。通俗地理解，就是通过defineProperty()修改了属性的getter&#x2F;setter，并且在其中增添了监视功能。</p>
+<p>在vue2中，就是使用defineProperty()实现的数据劫持，当数据被修改时，就会通知该数据被修改了。通俗地理解，就是通过defineProperty()修改了属性的getter/setter，并且在其中增添了监视功能。</p>
 
                 
             </div>

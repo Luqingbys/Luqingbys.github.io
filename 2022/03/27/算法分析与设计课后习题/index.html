@@ -5,7 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="算法分析与设计课后习题, 湖心亭">
-    <meta name="description" content="合并数字的最大代价$$\begin{flalign}&amp;amp;MAXMERGE():\&amp;amp;for\ i&amp;#x3D;1 \ to \ n-1\&amp;amp;\qquad C[i, i]  &amp;#x3D; 0\&amp;amp;for\ i&amp;#x3D;">
+    <meta name="description" content="合并数字的最大代价
+\begin{flalign}
+&amp;MAXMERGE():\\
+&amp;for\ i=1 \ to \ n-1\\
+&amp;\qquad C[i, i]  = 0\\
+&amp;for\ i=1 \ to \ n\\
+&amp;\qquad for\">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -477,7 +483,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    263
+                    132
                 </div>
                 
 
@@ -497,9 +503,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="合并数字的最大代价"><a href="#合并数字的最大代价" class="headerlink" title="合并数字的最大代价"></a>合并数字的最大代价</h2><p>$$<br>\begin{flalign}<br>&amp;MAXMERGE():\<br>&amp;for\ i&#x3D;1 \ to \ n-1\<br>&amp;\qquad C[i, i]  &#x3D; 0\<br>&amp;for\ i&#x3D;1 \ to \ n\<br>&amp;\qquad for\ j&#x3D;i+1 \ to \ n\<br>&amp;\qquad \qquad C[j, j+i] &#x3D; -\infty \<br>&amp;\qquad \qquad for\ r&#x3D;j \ to \ j+i-1\<br>&amp;\qquad \qquad \qquad t &#x3D; C[j, r]+C[r+1,j+i]+\Sigma_{k&#x3D;j}^{j+i}k\<br>&amp;\qquad \qquad \qquad if\ t&gt;C[j, j+i]\<br>&amp;\qquad \qquad \qquad \quad C[j, j+i]&#x3D;t<br>\end{flalign}<br>$$</p>
-<h2 id="最长增长子序列问题"><a href="#最长增长子序列问题" class="headerlink" title="最长增长子序列问题"></a>最长增长子序列问题</h2><p>$$<br>\begin{flalign}<br>&amp;MaxLengthSub():\<br>&amp;n &#x3D; S.length\<br>&amp;for\ i&#x3D;1\ to \ n\<br>&amp;\qquad dp[i]&#x3D;1\<br>&amp;for\ i&#x3D;1\ to \ n\<br>&amp;\qquad pre[i]&#x3D;\infty \<br>&amp;\qquad for \ k&#x3D;1 \ to \ i\<br>&amp;\qquad \qquad if\ a_k&lt;a_i\ &amp;&amp; \ dp[i]&lt;&#x3D;dp[k]+1 \<br>&amp;\qquad \qquad \qquad dp[i]&#x3D;dp[k]+1\<br>&amp;\qquad \qquad \qquad pre[i]&#x3D;k\<br>&amp;\qquad \qquad \qquad if\ pre[i]&gt;k   \<br>&amp;\qquad \qquad \qquad \qquad pre[i]&#x3D;k \<br>&amp;maxLength &#x3D; -\infty, lastIndex&#x3D;0\<br>&amp;for\ i&#x3D;1 \ to\ n\<br>&amp;\qquad if\ maxLength&lt;dp[i]\<br>&amp;\qquad \qquad maxLength&#x3D;dp[i], lastIndex&#x3D;i\<br>&amp; k&#x3D;lastIndex\<br>&amp;while\ pre[k]\<br>&amp;\qquad path.unshift(pre[a_k])\<br>&amp;Print(path)<br>\end{flalign}<br>$$</p>
-
+                <h2 id="合并数字的最大代价"><a href="#合并数字的最大代价" class="headerlink" title="合并数字的最大代价"></a>合并数字的最大代价</h2><script type="math/tex; mode=display">
+\begin{flalign}
+&MAXMERGE():\\
+&for\ i=1 \ to \ n-1\\
+&\qquad C[i, i]  = 0\\
+&for\ i=1 \ to \ n\\
+&\qquad for\ j=i+1 \ to \ n\\
+&\qquad \qquad C[j, j+i] = -\infty \\
+&\qquad \qquad for\ r=j \ to \ j+i-1\\
+&\qquad \qquad \qquad t = C[j, r]+C[r+1,j+i]+\Sigma_{k=j}^{j+i}k\\
+&\qquad \qquad \qquad if\ t>C[j, j+i]\\
+&\qquad \qquad \qquad \quad C[j, j+i]=t
+\end{flalign}</script><h2 id="最长增长子序列问题"><a href="#最长增长子序列问题" class="headerlink" title="最长增长子序列问题"></a>最长增长子序列问题</h2><script type="math/tex; mode=display">
+\begin{flalign}
+&MaxLengthSub():\\
+&n = S.length\\
+&for\ i=1\ to \ n\\
+&\qquad dp[i]=1\\
+&for\ i=1\ to \ n\\
+&\qquad pre[i]=\infty \\
+&\qquad for \ k=1 \ to \ i\\
+&\qquad \qquad if\ a_k<a_i\ \&\& \ dp[i]<=dp[k]+1 \\
+&\qquad \qquad \qquad dp[i]=dp[k]+1\\
+&\qquad \qquad \qquad pre[i]=k\\
+&\qquad \qquad \qquad if\ pre[i]>k   \\
+&\qquad \qquad \qquad \qquad pre[i]=k \\
+&maxLength = -\infty, lastIndex=0\\
+&for\ i=1 \ to\ n\\
+&\qquad if\ maxLength<dp[i]\\
+&\qquad \qquad maxLength=dp[i], lastIndex=i\\
+& k=lastIndex\\
+&while\ pre[k]\\
+&\qquad path.unshift(pre[a_k])\\
+&Print(path)
+\end{flalign}</script>
                 
             </div>
             <hr/>

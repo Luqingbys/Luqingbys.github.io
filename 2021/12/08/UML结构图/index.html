@@ -509,11 +509,12 @@
 <h3 id="单个类的UML表示方法"><a href="#单个类的UML表示方法" class="headerlink" title="单个类的UML表示方法"></a>单个类的UML表示方法</h3><p>通俗地讲，每一个类的UML分为三个由横线分隔的区域。</p>
 <ol>
 <li>标出类名，类名就是一个字符串</li>
-<li>标出类中的属性，即类的成员变量，格式大体如下：<br>可见性 名称 :类型[&#x3D; 默认值]</li>
+<li>标出类中的属性，即类的成员变量，格式大体如下：<br>可见性 名称 :类型[= 默认值]</li>
 <li>标出类中的操作，即类的成员方法，格式大体如下：<br>可见性 名称(参数列表) :返回类型</li>
 </ol>
 <blockquote>
-<p>属性与操作的可见性：<br>+表示public<br>#表示protected<br>-表示private<br>~表示默认，或者包内可见</p>
+<p>属性与操作的可见性：<br>+表示public</p>
+<h1 id="表示protected"><a href="#表示protected" class="headerlink" title="表示protected"></a>表示protected</h1><p>-表示private<br>~表示默认，或者包内可见</p>
 </blockquote>
 <h3 id="类之间的六种关系"><a href="#类之间的六种关系" class="headerlink" title="类之间的六种关系"></a>类之间的六种关系</h3><p>类之间的关系大体可以分类如下：</p>
 <ul>
@@ -532,7 +533,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h4><p>表示类与类之间&#x2F;接口与接口之间的一种继承关系，指定了子类如何特化父类的所有特征和行为。</p>
+<h4 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h4><p>表示类与类之间/接口与接口之间的一种继承关系，指定了子类如何特化父类的所有特征和行为。</p>
 <ul>
 <li>对于抽象方法和抽象类名，用斜体表示</li>
 <li>使用带空心的三角箭头的实线表示，箭头指向父类</li>

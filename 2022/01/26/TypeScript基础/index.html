@@ -523,7 +523,6 @@ function sayHello(): void &#123;
 	console.log(&#39;Hello!&#39; + sentence)
 &#125;
 let un: undefined &#x3D; undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在TypeScript中，还有一种重要的数据类型——元组（tuple）。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 如下即声明了一个元组：一对值为string、number的元组
 let mar: [string, number] &#x3D; [&#39;Mar&#39;, 28]
@@ -535,25 +534,17 @@ console.log(mar[1]);
 &#x2F;&#x2F; 此时，若向mar中再添加元素，添加的第一个只能是字符串，第二个只能是number
 mar.push(&#39;Hah&#39;)
 mar.push(90)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
 <h2 id="任意值"><a href="#任意值" class="headerlink" title="任意值"></a>任意值</h2><p>对于规定了数据类型的变量，在赋值过程中不允许被改变类型，否则报错。<br>但是规定为any类型，则是可以被赋值为任意类型的。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">let anything: any &#x3D; &#39;Tom&#39;
 console.log(anything.name);
 console.log(anything.age);  &#x2F;&#x2F; 均输出 undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h2><p>类型推论规则：在变量赋值时，虽然有时候并没有指定类型，但是会根据赋值的结果自动推断其类型。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">let str &#x3D; &#39;Hello&#39;	&#x2F;&#x2F; 会根据&#39;Hello&#39;自动将str规定为string类型
 let anyone			&#x2F;&#x2F; 若没有赋值，则自动为any类型<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <h2 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h2><p>使用 | 将多个可能的数据类型分隔。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">let identity: string | number	&#x2F;&#x2F; 允许identity变量是string或者number类型
 identity &#x3D; &#39;872092&#39;
 identity &#x3D; 872092<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>但是，即使是联合类型的变量，在赋值时也会根据类型推论的规则，推断出来一个类型。</p>
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是对行为的抽象，此外，在TypeScript中，它也常用于对对象的形状进行描述。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; interface就是接口的关键字
@@ -568,21 +559,18 @@ interface Person &#123;
 let tom: Person &#x3D; &#123;
     name: &#39;Tom&#39;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
 <li>readonly关键字，用于声明某一成员为只读属性，注意这个只读是针对第一次给对象赋值时候的约束，而不是第一次给该只读属性赋值时。</li>
 <li>[propName: string]，表示定义了任意属性取string类型的值</li>
 </ul>
 <h2 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h2><pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">let fibonacci: number[] &#x3D; [1, 1, 2, 3, 5]
 let fibonacci2: Array&lt;number&gt; &#x3D; [1, 1, 2, 3, 5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>接口中也可以描述数组：</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">interface NumberArray &#123;
 	&#x2F;&#x2F; 表示：只要索引（下标）类型是数字，那么值的类型必须是数字
 	[index: number]: number
 &#125;
 let fibonacci: NumberArray &#x3D; [1, 1, 2, 3, 5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h2><p>函数的两种写法：函数声明和函数表达式，它们的TypeScript写法如下：</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 定义两数相加的函数
 &#x2F;&#x2F; 函数声明
@@ -597,7 +585,6 @@ let mySum: (x: number, y: number) &#x3D;&gt; number &#x3D; function(x: number, y
     return x + y
 &#125;
 console.log(mySum(1, 1));   &#x2F;&#x2F; 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>当然，由于函数表达式的写法较为繁琐，有时也可以采用接口方式声明。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 用接口定义函数形状
 interface SearchFunc &#123;
@@ -609,7 +596,6 @@ mySearch &#x3D; function(source: string, subString: string) &#123;
     return source.search(subString) !&#x3D;&#x3D; -1
 &#125;
 console.log(mySearch(&#39;Hello, JavaScript!&#39;, &#39;Hello&#39;))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h3><p>函数重载是为了准确地声明函数的接收参数和返回类型。</p>
 <pre class="line-numbers language-TypeScript" data-language="TypeScript"><code class="language-TypeScript">&#x2F;&#x2F; 函数重载
 &#x2F;&#x2F; 函数功能: 接收参数,若为数字123,则返回321,若为字符串&#39;123&#39;,则返回&#39;hello&#39;
@@ -623,7 +609,6 @@ function reverse(x: number | string): number | string | void &#123;
         return x.split(&#39;&#39;).reverse().join()
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h2><p>类型断言，即Type Assertion，用于手动指定一个值的类型。语法如：<br><code>值 as 类型</code></p>
 <h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ol>
 <li>将一个联合类型断言为其中一个类型，因为有时候我们确实需要其中一个类型特有的方法或者属性。</li>
@@ -641,7 +626,6 @@ interface Cat &#123;
     run(): void
 &#125;
 &#x2F;&#x2F; Animal和Cat可以相互断言<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><p>内置对象，是指根据标准，在全局作用域上存在的对象，这里的标准指ECMAScript和其他环境（如DOM）的标准。</p>
 <h3 id="ES的内置对象"><a href="#ES的内置对象" class="headerlink" title="ES的内置对象"></a>ES的内置对象</h3><p>包括：</p>
 <ul>

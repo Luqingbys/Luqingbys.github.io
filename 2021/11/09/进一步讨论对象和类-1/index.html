@@ -6,8 +6,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="进一步讨论对象和类（2）, 湖心亭">
     <meta name="description" content="再介绍几个类的特殊用法。
-内部类&amp;#x2F;接口也称嵌套类&amp;#x2F;接口，是在一个类或接口内部声明的类&amp;#x2F;接口。内部类包括成员类，局部类，匿名类；而内部接口都是成员接口。
-成员类成员类分为静态成员类和非静态成员类。在非静态成员类中">
+内部类/接口也称嵌套类/接口，是在一个类或接口内部声明的类/接口。内部类包括成员类，局部类，匿名类；而内部接口都是成员接口。
+成员类成员类分为静态成员类和非静态成员类。在非静态成员类中，有如下特征需要注意：
+
+不能">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -479,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    810
+                    806
                 </div>
                 
 
@@ -500,14 +502,14 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>再介绍几个类的特殊用法。</p>
-<h2 id="内部类-x2F-接口"><a href="#内部类-x2F-接口" class="headerlink" title="内部类&#x2F;接口"></a>内部类&#x2F;接口</h2><p>也称嵌套类&#x2F;接口，是在一个类或接口内部声明的类&#x2F;接口。<br>内部类包括成员类，局部类，匿名类；而内部接口都是成员接口。</p>
+<h2 id="内部类-接口"><a href="#内部类-接口" class="headerlink" title="内部类/接口"></a>内部类/接口</h2><p>也称嵌套类/接口，是在一个类或接口内部声明的类/接口。<br>内部类包括成员类，局部类，匿名类；而内部接口都是成员接口。</p>
 <h2 id="成员类"><a href="#成员类" class="headerlink" title="成员类"></a>成员类</h2><p>成员类分为静态成员类和非静态成员类。<br>在非静态成员类中，有如下特征需要注意：</p>
 <ul>
 <li>不能定义静态变量和方法</li>
 <li>可以访问封装类的所有成员</li>
 <li>访问与该成员类重名的封装类实例成员语法为：封装类类名.this.封装类实例成员名</li>
 </ul>
-<p>另外，在封装类之外创建非静态成员类实例时，需要先创建封装类的实例，然后使用如下语法：<br>封装类类名.非静态成员类类名 实例变量名 &#x3D; 封装类实例成员名.new 非静态成员类类名</p>
+<p>另外，在封装类之外创建非静态成员类实例时，需要先创建封装类的实例，然后使用如下语法：<br>封装类类名.非静态成员类类名 实例变量名 = 封装类实例成员名.new 非静态成员类类名</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MemberClass</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">int</span> id<span class="token punctuation">;</span>
     <span class="token class-name">String</span> name<span class="token punctuation">;</span>
@@ -557,7 +559,6 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="局部类"><a href="#局部类" class="headerlink" title="局部类"></a>局部类</h2><p>局部内部类是在封装类的方法中定义的内部类，典型用法是用局部类来实现接口，并在方法中返回接口类型。</p>
 <h2 id="匿名类"><a href="#匿名类" class="headerlink" title="匿名类"></a>匿名类</h2><p>指没有名称的类，一般当某个类仅在程序中使用一次，且功能简单时，就可以用匿名类的方式来创建这个类的实例。<br>new 匿名类类名() {<br>    类体;<br>}<br>匿名类必须是一个具体的对象，不能是抽象类（abstract）。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MemberInterface</span> <span class="token punctuation">&#123;</span>
@@ -591,7 +592,6 @@
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">InnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="范型"><a href="#范型" class="headerlink" title="范型"></a>范型</h2><p>范型是对Java语言类型系统的一种扩展，支持创建可以按类型进行参数化的类、接口或方法。<br>将所操作的数据类型参数化，即该数据类型被声明为一个参数，声明的类型参数在使用时用具体地类型来替换。</p>
 
                 

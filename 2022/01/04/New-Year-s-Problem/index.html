@@ -526,7 +526,6 @@ while(lower&lt;&#x3D;upper)
         upper &#x3D; mid-1;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>因此，本题的关键就在于，如何确定选中的mid值是符合条件的呢？<br>根据题意，我们可以得知，其实要满足题意，需要两个条件：</p>
 <ol>
 <li>至多去n-1个商店，也就是至少存在一个商店，在其中购买的礼物至少有两个（因为一共买n个礼物）；</li>
@@ -559,7 +558,6 @@ bool isOk(long long x, vector&lt;vector&lt;int&gt;&gt; all)
         isAll &#x3D; isAll &amp;&amp; fri[i];
     return isAll &amp;&amp; flag;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>综上，问题得以解决。</p>
 
                 

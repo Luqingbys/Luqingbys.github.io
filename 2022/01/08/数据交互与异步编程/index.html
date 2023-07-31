@@ -555,13 +555,12 @@ $<span class="token punctuation">.</span><span class="token function">get</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>使用Ajax请求数据时，被请求的URL地址，就叫做数据接口（简称接口），同时，每一个接口必须有请求方式。</p>
 <h3 id="接口文档"><a href="#接口文档" class="headerlink" title="接口文档"></a>接口文档</h3><p>说明了每一个接口的用法，在前后端开发过程中是一个很重要的文档，包含：</p>
 <ul>
 <li>接口名称：标识各个接口的简单说明，如登录接口</li>
 <li>接口URL：接口的调用地址</li>
-<li>调用方式：GET&#x2F;POST</li>
+<li>调用方式：GET/POST</li>
 <li>参数格式：接口需要传递的参数，每一个参数都应该包含四项说明内容：<ul>
 <li>参数名称</li>
 <li>参数类型</li>
@@ -597,7 +596,6 @@ $<span class="token punctuation">.</span><span class="token function">get</span>
   b: 'World'
 &#125;
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>JS对象转化为JSON字符串，可以使用JSON.stringify()方法。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token string">'Hello'</span><span class="token punctuation">,</span>
@@ -611,8 +609,7 @@ $<span class="token punctuation">.</span><span class="token function">get</span>
   "b": "World"
 &#125;
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="同源策略与跨域"><a href="#同源策略与跨域" class="headerlink" title="同源策略与跨域"></a>同源策略与跨域</h2><h3 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h3><p>首先，需要了解什么是同源。<br>如果两个页面的协议、域名和端口都相同，则两个页面具有相同的源。<br>比如如下页面url：<br><a target="_blank" rel="noopener" href="http://www.test.com/index.html">http://www.test.com/index.html</a><br>协议是http，域名是<a target="_blank" rel="noopener" href="http://www.test.com,端口没有标出,默认是80,那么与之同源的页面url的协议、域名、端口均与之相同,即/">www.test.com，端口没有标出，默认是80，那么与之同源的页面url的协议、域名、端口均与之相同，即</a><br><a target="_blank" rel="noopener" href="http://www.test.com/...">http://www.test.com:80/...</a></p>
+<h2 id="同源策略与跨域"><a href="#同源策略与跨域" class="headerlink" title="同源策略与跨域"></a>同源策略与跨域</h2><h3 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h3><p>首先，需要了解什么是同源。<br>如果两个页面的协议、域名和端口都相同，则两个页面具有相同的源。<br>比如如下页面url：<br><a target="_blank" rel="noopener" href="http://www.test.com/index.html">http://www.test.com/index.html</a><br>协议是http，域名是www.test.com，端口没有标出，默认是80，那么与之同源的页面url的协议、域名、端口均与之相同，即<br><a target="_blank" rel="noopener" href="http://www.test.com:80/...">http://www.test.com:80/...</a></p>
 <h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><p>同源策略是浏览器提供的一个安全功能。<br>它限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互，这是一个用于隔离潜在恶意文件的重要安全机制。</p>
 <blockquote>
 <p>也就是说，浏览器规定：某一个网站的JavaScript不允许与非同源的网站之间进行资源交互。</p>
@@ -649,7 +646,6 @@ $<span class="token punctuation">.</span><span class="token function">get</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>注意，JSONP与Ajax没有关系。</p>
 <h4 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h4>
                 

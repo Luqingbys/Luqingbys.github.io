@@ -507,13 +507,17 @@ paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythm
 <p>这里着重看一看代码中关于自编码器的部分。</p>
 <h2 id="自编码器"><a href="#自编码器" class="headerlink" title="自编码器"></a>自编码器</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>自编码器其实是一类特殊的前馈神经网络。它所做的工作可以简单概括为：<strong>将输入复制到输出</strong>。除开常规的输入层$\mathbf{x}$和输出层$\mathbf{y}$，它往往还包含了隐藏层$\mathbf{h}$；其结构包括了两个部分：</p>
 <ul>
-<li>编码器（Encoder），表示为一个函数，将输入层$\mathbf{x}$映射到隐藏层$\mathbf{h}$：$\mathbf{h}&#x3D;f(\mathbf{x})$</li>
-<li>解码器（Decoder），表示为一个函数，将隐藏层$\mathbf{h}$映射到输出层$\mathbf{y}$：$\mathbf{y}&#x3D;g(\mathbf{h})$</li>
+<li>编码器（Encoder），表示为一个函数，将输入层$\mathbf{x}$映射到隐藏层$\mathbf{h}$：$\mathbf{h}=f(\mathbf{x})$</li>
+<li>解码器（Decoder），表示为一个函数，将隐藏层$\mathbf{h}$映射到输出层$\mathbf{y}$：$\mathbf{y}=g(\mathbf{h})$</li>
 </ul>
-<p>那么，自编码器模型整体可以描述为<br>$$<br>\mathbf{y}&#x3D;g(f(\mathbf{x}))<br>$$<br><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-169007057373226.png" alt="自编码器"></p>
-<p>如果只是一味地让自编码器的输出$\mathbf{y}$和输入$\mathbf{x}$完全相同，这毫无疑问舍近求远失去了意义。一般地，**自编码器中更加关注编码器的输出结果，即隐藏层$\mathbf{h}$**。比如，如果$\mathbf{h}$的维度比$\mathbf{x}$小，编码器就相当于学习到了原始输入的更加显著的特征。这种想法，与诸如主成分分析一般的降维算法有些相似。</p>
+<p>那么，自编码器模型整体可以描述为</p>
+<script type="math/tex; mode=display">
+\mathbf{y}=g(f(\mathbf{x}))</script><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-169007057373226.png" alt="自编码器"></p>
+<p>如果只是一味地让自编码器的输出$\mathbf{y}$和输入$\mathbf{x}$完全相同，这毫无疑问舍近求远失去了意义。一般地，<strong>自编码器中更加关注编码器的输出结果，即隐藏层$\mathbf{h}$</strong>。比如，如果$\mathbf{h}$的维度比$\mathbf{x}$小，编码器就相当于学习到了原始输入的更加显著的特征。这种想法，与诸如主成分分析一般的降维算法有些相似。</p>
 <h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p>自编码器也是前馈神经网络，它的训练和一般的前馈神经网络很类似，即定义损失函数、然后梯度下降，只不过，这是一种<strong>无监督的学习方式</strong>，无需额外的标注工作，因为它的学习目标就是原始的输入数据。更一般地，可以采取小批量的随机梯度下降，不断地逼近要学习的原始数据。</p>
-<p>损失函数用数学语言描述为<br>$$<br>\mathbf{Loss}&#x3D;\mathcal{L}(\mathbf{x},g(f(\mathbf{x})))<br>$$<br>其中具体的损失函数$\mathcal{L}$因情况而定，比如可以是均方差$MSE$。</p>
+<p>损失函数用数学语言描述为</p>
+<script type="math/tex; mode=display">
+\mathbf{Loss}=\mathcal{L}(\mathbf{x},g(f(\mathbf{x})))</script><p>其中具体的损失函数$\mathcal{L}$因情况而定，比如可以是均方差$MSE$。</p>
 <h2 id="实战代码"><a href="#实战代码" class="headerlink" title="实战代码"></a>实战代码</h2><p>接下来，借助现有的代码，理解一下自编码器以及训练过程。其实，正如前面提到过的，这个过程和一般的前馈神经网络很像。</p>
 <h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><p>准备数据始终是第一步，这一部分的代码主要在<code>train_autoencoder.py</code>中。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># train_autoencoder.py</span>
@@ -533,7 +537,6 @@ paper：Icentia11K: An Unsupervised Representation Learning Dataset for Arrhythm
     <span class="token punctuation">)</span>
     stream <span class="token operator">=</span> data_io<span class="token punctuation">.</span>threaded<span class="token punctuation">(</span>stream<span class="token punctuation">,</span> queue_size<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> stream<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>主函数中将数据集进行了划分，比例为9:1。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">directory <span class="token operator">=</span> <span class="token string">'icentia-ecg\datasets'</span> <span class="token comment"># 这里是自己定义的数据集存放位置（相对路径）</span>
 filenames <span class="token operator">=</span> <span class="token punctuation">[</span> directory <span class="token operator">+</span> <span class="token string">"\\%05d_batched.pkl.gz"</span> <span class="token operator">%</span> i
@@ -542,7 +545,6 @@ train_count <span class="token operator">=</span> <span class="token builtin">in
 <span class="token comment"># 划分训练集和验证集</span>
 train_filenames <span class="token operator">=</span> filenames<span class="token punctuation">[</span><span class="token punctuation">:</span>train_count<span class="token punctuation">]</span>
 valid_filenames <span class="token operator">=</span> filenames<span class="token punctuation">[</span>train_count<span class="token punctuation">:</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="搭建自编码器"><a href="#搭建自编码器" class="headerlink" title="搭建自编码器"></a>搭建自编码器</h3><p>关于自编码器的模型的代码主要在<code>model.py</code>中的<code>class Autoencoder</code>，这里限于篇幅不贴出来，而是尝试绘制了自编码器的结构示意图。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/ecg%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-169007073195927.png" alt="ecg自编码器"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># model.py/Autoencoder</span>
@@ -563,7 +565,6 @@ valid_filenames <span class="token operator">=</span> filenames<span class="toke
     loss <span class="token operator">=</span> torch<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">(</span>output <span class="token operator">-</span> <span class="token builtin">input</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token comment"># loss = torch.mean(abs(output - input))</span>
     <span class="token keyword">return</span> loss<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>代码中的自编码器结构还是很简单的，其实这里的编码器和解码器都只是一个类似残差块的结构（代码中的<code>ResidualEncoder</code>、<code>ResidualDecoder</code>），但是注意，实际上<code>Autoencoder</code>中的二级结构为<code>ConvAutoencoder</code>，只不过<code>ConvAutoencoder</code>这里仅由一个<code>ResidualEncoder</code>和一个<code>ResidualDecoder</code>构成。总的来说，编码器、解码器结构十分明显，它们结构上呈现出对称感，共同完成将原始输入映射到隐藏层编码，然后再映射回去的任务。</p>
 <p>将程序运行的结果截图如下。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="程序运行结果"></p>
@@ -593,7 +594,6 @@ epochs <span class="token operator">=</span> <span class="token number">10</span
 best_loss <span class="token operator">=</span> np<span class="token punctuation">.</span>inf
 i <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token builtin">input</span> <span class="token operator">=</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>开启训练。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># train_autoencoder.py</span>
 <span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>

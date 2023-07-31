@@ -517,8 +517,10 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp;amp; e))
         Preorder(T-&gt;rchild, visit);
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>先序、中序、后序遍历算法思路几乎完全一致，不再赘述。<br>2. 中序遍历的非递归描述</p>
+<p>先序、中序、后序遍历算法思路几乎完全一致，不再赘述。</p>
+<ol>
+<li>中序遍历的非递归描述</li>
+</ol>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F; 对于中序遍历一棵二叉树，第一个要访问的根结点一定是最左边的结点
 &#x2F;&#x2F; 因此，GoFarLeft函数的功能就是对二叉树T，寻找最左边的结点
 &#x2F;&#x2F; 同时，用一个栈S保存每一次的根结点，它是中序遍历的中间访问者
@@ -554,8 +556,10 @@ void Inorder_I(BiTree T, void (*visit)(TelemType&amp; e))
             t &#x3D; NULL;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>非递归。<br>3. 求二叉树的深度</p>
+<p>非递归。</p>
+<ol>
+<li>求二叉树的深度</li>
+</ol>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int Depth(BiTree T)
 &#123;
     if(!T)  depthval &#x3D; 0;
@@ -567,8 +571,10 @@ void Inorder_I(BiTree T, void (*visit)(TelemType&amp; e))
     &#125;
     return depthval;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>求深度。<br>4. 建树<br>已知一棵二叉树的先序遍历和中序遍历，还原这棵二叉树。</p>
+<p>求深度。</p>
+<ol>
+<li>建树<br>已知一棵二叉树的先序遍历和中序遍历，还原这棵二叉树。</li>
+</ol>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void CrtBT(BiTree&amp; T, char pre[], char ino[], int ps, int is, int n)
 &#123;
     if(n &#x3D;&#x3D; 0)  T &#x3D; NULL;
@@ -587,8 +593,10 @@ void Inorder_I(BiTree T, void (*visit)(TelemType&amp; e))
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>555<br>5. 二叉树按层次遍历</p>
+<p>555</p>
+<ol>
+<li>二叉树按层次遍历</li>
+</ol>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status LevelOrderTravel(BiTree T)
 &#123;
     Queue Q;
@@ -602,7 +610,6 @@ void Inorder_I(BiTree T, void (*visit)(TelemType&amp; e))
         if(E-&gt;rchild)   EnQueue(Q, E-&gt;rchild);
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void DFSTravel(Graph G)
 &#123;
     for(v&#x3D;0; v &lt; G.Vexnum; ++v)
@@ -623,7 +630,6 @@ void DFS(Graph G, int v)
         if(G.arcs[v][w].adj !&#x3D; 0 &amp;&amp; !visited[w])
             DFS(G, w);
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F; 求各顶点入度
 void FindInDegree(ALGraph G, int indegree[])
 &#123;
@@ -638,7 +644,6 @@ void FindInDegree(ALGraph G, int indegree[])
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="迪杰斯特拉算法"><a href="#迪杰斯特拉算法" class="headerlink" title="迪杰斯特拉算法"></a>迪杰斯特拉算法</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F; final[]记录当前结点是否已经求出最短路径
 &#x2F;&#x2F; D[]记录当前所找的源点到每一个终点的最短路径长度
 &#x2F;&#x2F; P[]记录路径
@@ -683,7 +688,6 @@ void ShortestPath_DIJ(MGraph G, int v0, int &amp;P, float &amp;D)
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void InsertionSort(SqList &amp;L)
 &#123;
     int i,j;
@@ -702,7 +706,6 @@ void ShortestPath_DIJ(MGraph G, int v0, int &amp;P, float &amp;D)
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int Partition(SqList &amp;L, int low, int high)
 &#123;
     KeyType pivotkey;
@@ -734,7 +737,6 @@ void QSort(SqList &amp;L, int low, int high)
         QSort(L, pivotloc+1, high);
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>筛选算法：</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F; 调整堆结构
 void HeapAdjust(HeapType &amp;H, int s, int m)
@@ -755,7 +757,6 @@ void HeapAdjust(HeapType &amp;H, int s, int m)
     &#125;
     H.r[s] &#x3D; rc;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">void Merge(RcdType SR[], RcdType &amp;TR[], int i, int m, in t n)
 &#123;
     for(j &#x3D; m+1, k&#x3D;i; i &lt;&#x3D; m &amp;&amp; j &lt;&#x3D; n; ++k)
