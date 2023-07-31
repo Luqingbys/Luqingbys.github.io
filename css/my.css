@@ -1,1 +1,9 @@
 /* Here is your custom css styles. */
+@font-face{
+    font-family: 'NotoSerifSC-SemiBold';
+    src: url('../font/NotoSerifSC-SemiBold.otf');
+}
+
+body{
+    font-family: 'NotoSerifSC-SemiBold';
+}
