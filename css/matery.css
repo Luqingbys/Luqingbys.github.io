@@ -33,6 +33,10 @@
     }
 }
 
+.MathJax_Display .MathJax_Preview {
+    font-size: 1.2em;
+}
+
 body {
     background-color: #eaeaea;
     margin: 0;
