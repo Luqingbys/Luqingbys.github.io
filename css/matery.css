@@ -33,7 +33,7 @@
     }
 }
 
-.MathJax_Display .MathJax_Preview .MathJax{
+.MathJax_Display .MathJax_Preview .MathJax .math{
     font-size: 1.3em;
 }
 
@@ -87,7 +87,7 @@ h6 {
 }
 
 p {
-    /* font-size: 1.3rem; */
+    font-size: 1.2rem;
     line-height: 1.5rem;
 }
 
@@ -108,6 +108,11 @@ pre {
     padding: 2rem 1rem 1rem 3rem !important;
     border-radius: 0.35rem;
     tab-size: 4;
+}
+
+/*目录*/
+#toc-content {
+    font-size: 1.3em;
 }
 
 .code-area::after {
@@ -351,7 +356,7 @@ header .side-nav .menu-list a {
 
 .mobile-menu-list a i {
     margin-left: 8px !important;
-    font-size: 1.16rem;
+    font-size: 1.2rem;
     color: #34495e !important;
 }
 
@@ -1162,7 +1167,7 @@ article .article-tags .chip {
 }
 
 #artDetail .reprint a {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: #42b983;
     font-weight: 500;
 }
