@@ -642,7 +642,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="模型简介"><a href="#模型简介" class="headerlink" title="模型简介"></a>模型简介</h2><p><strong>玻尔兹曼机是一种基于能量的概率模型</strong>。常见的玻尔兹曼机有两层：显层和隐层，示意图如下。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\玻尔兹曼机.assets\玻尔兹曼机-16908186893771.jpg" alt="玻尔兹曼机"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA-16908186893771.jpg" alt="玻尔兹曼机"></p>
 <p>其中，显层$\mathbf{v}\in \{0,1\}^D$，隐层$\mathbf{h}\in\{0,1\}^P$。即显层有D个结点，隐层有P个结点，每一个结点的状态用0或者1表示，整体服从伯努利分布：</p>
 <ul>
 <li>$\mathbf{v}=[v_1,v_2,…,v_D]^T$</li>
@@ -688,7 +688,7 @@ S=\log\prod\limits_\mathbf{v}P(\mathbf{v})=\sum\limits_\mathbf{v}\log P(\mathbf{
 \begin{aligned} W\gets W+\eta \frac{\partial S}{\partial W} \\ J \gets J+\eta \frac{\partial S}{\partial J} \\ L \gets L+\eta \frac{\partial S}{\partial L} \end{aligned}</script><p>其中$\eta \in \mathbb{R}$指步长。</p>
 <h2 id="基于MCMC的梯度上升"><a href="#基于MCMC的梯度上升" class="headerlink" title="基于MCMC的梯度上升"></a>基于MCMC的梯度上升</h2><p>我们已经建立了基于极大似然估计求出了梯度上升的数学模型。但是实际上对于普通的玻尔兹曼机（并非受限玻尔兹曼机），后验分布是无法求出的。基于MCMC的方法提供了一条解决思路，转化到受限玻尔兹曼机（简称RBM）中求解。</p>
 <p>相比于普通的玻尔兹曼机，RBM有更多特性，都是基于<strong>它的网络结构是一个偶图</strong>。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\玻尔兹曼机.assets\受限玻尔兹曼机-16908187093782.jpg" alt="受限玻尔兹曼机"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA-16908187093782.jpg" alt="受限玻尔兹曼机"></p>
 <p>显层$v$，隐层$h$，我们约定</p>
 <script type="math/tex; mode=display">
 v_{-i}=\{ v_1,v_2,\dots, v_D \} - \{v_i\},\quad i\in \{1,2,\dots,D\}</script><p>在<strong>普通的玻尔兹曼机</strong>中有条件概率：</p>
@@ -1144,6 +1144,13 @@ P(h_j=1|v)=P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i)</script><h2 id
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
