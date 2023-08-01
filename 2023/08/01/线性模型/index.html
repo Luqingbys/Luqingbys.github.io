@@ -4,10 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Boltzmann Machine，玻尔兹曼机, 湖心亭">
-    <meta name="description" content="模型简介玻尔兹曼机是一种基于能量的概率模型。常见的玻尔兹曼机有两层：显层和隐层，示意图如下。
+    <meta name="keywords" content="线性模型, 湖心亭">
+    <meta name="description" content="
+本博客不刻意区分$w$与$\mathbf{w}$，它们只是一个是否加粗的问题，不做特别说明是同一个参数。它们的共存是因为博主来不及给$w$加粗…
 
-其中，显层$\mathbf{v}\in \{0,1\}^D$，隐层$\mathbf{h}\in\{0,1\}^P$。即显层有D个结点，隐层有P个">
+给定$d$维样本点$\mathbf{x}=(x_1; x_2;…; x_d)$，线性模型要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Boltzmann Machine，玻尔兹曼机 | 湖心亭</title>
+    <title>线性模型 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -466,12 +467,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Boltzmann Machine，玻尔兹曼机</h1>
+                    <h1 class="description center-align post-title">线性模型</h1>
                 </div>
             </div>
         </div>
@@ -599,8 +600,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/mid-lake-pavilion.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                深度学习
+                            <a href="/mid-lake-pavilion.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -612,7 +613,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-31
+                    2023-08-01
                 </div>
                 
 
@@ -621,7 +622,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.8k
                 </div>
                 
 
@@ -641,63 +642,97 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="模型简介"><a href="#模型简介" class="headerlink" title="模型简介"></a>模型简介</h2><p><strong>玻尔兹曼机是一种基于能量的概率模型</strong>。常见的玻尔兹曼机有两层：显层和隐层，示意图如下。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA-16908186893771.jpg" alt="玻尔兹曼机"></p>
-<p>其中，显层$\mathbf{v}\in \{0,1\}^D$，隐层$\mathbf{h}\in\{0,1\}^P$。即显层有D个结点，隐层有P个结点，每一个结点的状态用0或者1表示，整体服从伯努利分布：</p>
+                <blockquote>
+<p>本博客不刻意区分$w$与$\mathbf{w}$，它们只是一个是否加粗的问题，不做特别说明是同一个参数。它们的共存是因为博主来不及给$w$加粗…</p>
+</blockquote>
+<p>给定$d$维样本点$\mathbf{x}=(x_1; x_2;…; x_d)$，线性模型要学习一个线性组合</p>
+<script type="math/tex; mode=display">
+f(\mathbf{x})=w_1x_1+w_2x_2+...+w_dx_d+b</script><p>用向量形式表示为</p>
+<script type="math/tex; mode=display">
+f(\mathbf{x})=\mathbf{w}^T\mathbf{x}+b\quad w,x\in R^d</script><h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>当然，回归问题总是要学习一个“对象”，在线性回归中，这个“对象”就是上面的线性组合；为了评价学习到的结果到底怎么样，通常采用均方误差，来量化学习结果和真实值之间的差距</p>
+<script type="math/tex; mode=display">
+\mathrm{MSE}=\sum_{i=1}^m(f(\mathbf{x}^{(i)})-y^{(i)})^2</script><p>在此，<strong>约定$(\mathbf{x}^{(i)}, y^{(i)})$表示第i个数据样本，$x^{(i)}_j$表示第i个数据样本的第j个特征分量，$y^{(i)}$表示第i个样本的标签</strong>。</p>
+<p>而根据数据集求解使得均方误差最小的模型参数$\mathbf{w},b$的过程，称为最小二乘参数估计。常用的方法是<strong>梯度下降</strong>，因此需要对参数求梯度</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \frac{\partial MSE}{\partial \mathbf{w}}&=\frac{\partial\displaystyle \sum_{i=1}^m\left(\mathbf{w}^T\mathbf{x}^{(i)}+b-y^{(i)}\right)^2}{\partial \mathbf{w}}\\\\&=2\left(\mathbf{w}\sum_{i=1}^m(\mathbf{x}^{(i)})^2-\sum_{i=1}^m(y^{(i)}-b)\mathbf{x}^{(i)}\right) \end{aligned}</script><p>类似地，有</p>
+<script type="math/tex; mode=display">
+\frac{\partial MSE}{\partial b}=2\left(mb-\sum_{i=1}^m(y^{(i)}-\mathbf{w}\mathbf{x}^{(i)})\right)</script><p>令梯度等于零，即可求解参数的最优解$w^<em>,b^</em>$。</p>
+<h2 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h2><p>更一般地，我们把刚才的数据集表示为矩阵</p>
+<script type="math/tex; mode=display">
+X = \begin{bmatrix} x_{11} & x_{12} & ... & x_{1d} & 1 \\ x_{21} & x_{22} & ... & x_{2d} & 1\\ ... & ... & ... & ... & ... \\ x_{m1} & x_{m2} & ... & x_{md} & 1 \end{bmatrix}=\begin{bmatrix} x_1^T & 1  \\ x_2^T & 1 \\ ... & ... \\ x_m^T & 1 \end{bmatrix}</script><p>标签记作</p>
+<script type="math/tex; mode=display">
+y=\begin{bmatrix} y_1 \\ y_2 \\...\\y_m \end{bmatrix}</script><p>同样地，我们对$\mathbf{w}$求梯度得到</p>
+<script type="math/tex; mode=display">
+\frac{\partial MSE}{\partial \mathbf{w}} = 2X^T(X\mathbf{w}-y)</script><p>令上式为零，得到参数最优解的解析解形式</p>
+<script type="math/tex; mode=display">
+\mathbf{w}_*=(X^TX)^{-1}X^Ty</script><h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><p>上面的问题是一般的回归问题，那些模型的输出可以是一定范围内的任意数；而有一些问题，比如分类问题，它要求模型的输出只能是几种类别中的一个。</p>
+<p>以最简单的二分类问题为例，我们基于上面已经建立起来的线性模型推导出符合解决二分类问题的模型——最简单的做法其实是直接给原来的输出加上一个“分段函数”；我们常用Sigmoid函数来达到这个效果</p>
+<script type="math/tex; mode=display">
+Sigmoid(z)=\frac{1}{1+e^{-z}}</script><p>将z代换为原先的线性组合，得到适用于二分类问题的逻辑回归模型</p>
+<script type="math/tex; mode=display">
+g(x)=\frac{1}{1+e^{-(w^Tx+b)}}</script><p>接下来使用极大似然估计法来使得概率最大化。</p>
+<h2 id="线性判别分析"><a href="#线性判别分析" class="headerlink" title="线性判别分析"></a>线性判别分析</h2><p>线性判别分析（Linear Discriminant Analysis，LDA），也称“Fisher判别分析”，主要思想是，给定训练数据集情况下，<strong>设法将样例投影到一条直线上，使得同类样例的投影点尽可能接近、异类样例的投影点尽可能远离</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/image-20230801080329164.png" alt="线性判别分析示意图，来自周志华《机器学习》"></p>
+<p>接下来，我们以简单的二分类问题，来逐步推导一下LDA的数学原理。</p>
+<h3 id="从二分类问题看数学原理"><a href="#从二分类问题看数学原理" class="headerlink" title="从二分类问题看数学原理"></a>从二分类问题看数学原理</h3><blockquote>
+<p>为了方便讨论，约定</p>
 <ul>
-<li>$\mathbf{v}=[v_1,v_2,…,v_D]^T$</li>
-<li>$\mathbf{h}=[h_1,h_2,…,h_P]^T$</li>
+<li>$X_i$表示第i类样本点的集合</li>
+<li>$\mu_i$表示第i类样本点的均值向量</li>
+<li>$\mathbf{w}$表示直线的方向向量</li>
 </ul>
-<p>下面约定权重系数：</p>
+<p>另外，向量内积可以表示为$<x,w>=w^Tx$，其中$w,x\in R^n$，而向量x在直线w上的投影则可以表示为$\frac{w^Tx}{||w||_2}$，也就是说，如果w模长为1，那么向量x在直线w上的投影就可以表示为$w^Tx$。为此，我们接下来都假设$||w||_2=1$。</p>
+</blockquote>
+<p>再回顾上面关于LDA的两条基本原则：</p>
+<ol>
+<li>同类样例的投影点尽可能接近</li>
+<li>异类样例的投影点尽可能远离</li>
+</ol>
+<p>为了衡量这两条原则，引入了量化指标<strong>散度矩阵</strong>。</p>
+<h4 id="散度矩阵"><a href="#散度矩阵" class="headerlink" title="散度矩阵"></a>散度矩阵</h4><p>先考虑类间散度矩阵。可以直接采用类的均值向量$\mu_i,i\in\{0,1\}$在直线上的投影距离$w^T\mu_i$，考虑如下量化标准</p>
+<script type="math/tex; mode=display">
+(w^T\mu_0-w^T\mu_1)^2=(w^T(\mu_0-\mu_1))^2=w^T(\mu_0-\mu_1)(\mu_0-\mu_1)^Tw</script><p>上式中，$(\mu_0-\mu_1)(\mu_0-\mu_1)^T$即为<strong>类间散度矩阵</strong>，记作$S_b$。</p>
+<p>再考虑类内散度矩阵。与方差类似，我们考虑</p>
+<script type="math/tex; mode=display">
+D(X_i)=\sum_{x\in X_i}(w^Tx-w^T\mu_i)^2,\ i\in \{0,1\}</script><p>进而有如下量化标准</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \sum_{i=0}^1D(X_i)&=\sum_{i=0}^1\sum_{x\in X_i}(w^Tx-w^T\mu_i)^2\\\\ &=w^T\sum_{i=0}^1\sum_{x\in X_i}(x-\mu_i)(x-\mu_i)^Tw \end{aligned}</script><p>上式中，$\displaystyle \sum_{i=0}^1\sum_{x\in X_i}(x-\mu_0)(x-\mu_0)^T$即为<strong>类内散度矩阵</strong>，记作$S_w$。</p>
+<p>综上，有定义</p>
 <ul>
-<li>$w_{ij}$表示连接显层结点$v_i$和隐层结点$h_j$的边权重</li>
-<li>$l_{ij}$表示连接两个显层结点$v_i$和$v_j$的边权重</li>
-<li>$j_{ij}$表示连接两个隐层结点$h_i$和$h_j$的边权重</li>
+<li>类间散度矩阵$S_b=(\mu_0-\mu_1)(\mu_0-\mu_1)^T$</li>
+<li>类内散度矩阵$S_w=\displaystyle \displaystyle \sum_{i=0}^1\sum_{x\in X_i}(x-\mu_0)(x-\mu_0)^T$</li>
 </ul>
-<p>基于能量定义玻尔兹曼机的概率密度函数</p>
+<h4 id="目标函数与优化解"><a href="#目标函数与优化解" class="headerlink" title="目标函数与优化解"></a>目标函数与优化解</h4><p>我们的目标函数被称为<strong>广义瑞利商</strong>，最大化之即可。</p>
 <script type="math/tex; mode=display">
-P(\mathbf{v},\mathbf{h})=\frac{e^{-E(\mathbf{v},\mathbf{h})}}{Z}</script><p>其中$Z$为配分函数</p>
+\begin{aligned} &\max J \\\\ &J=\frac{\mathbf{w}^TS_b\mathbf{w}}{\mathbf{w}^TS_w\mathbf{w}} \end{aligned}</script><p><strong>经过观察，$J$的取值与$\mathbf{w}$的模长无关。</strong>因此，令$w^TS_ww=1$，我们将原问题转化为如下的优化问题：</p>
 <script type="math/tex; mode=display">
-Z=\sum\limits_\mathbf{v}\sum\limits_\mathbf{h}e^{-E(\mathbf{v},\mathbf{h})}</script><p>其中$E(\mathbf{v},\mathbf{h})$即为模型的能量，定义为</p>
-<p>$E(\mathbf{v},\mathbf{h})=-(\mathbf{v}^TW\mathbf{h}+\frac{1}{2}\mathbf{v}^TL\mathbf{v}+\frac{1}{2}\mathbf{h}^TJ\mathbf{h})$</p>
-<blockquote>
-<p>上述公式上由三部分构成，可以看作隐层内部、显层内部和隐层显层之间的能量之和。不妨以隐层和显层之间进行分析：取任意两个结点$v_i,h_j$和之间的边$w_{ij}$，计算局部能量</p>
+\begin{aligned} &\max_\mathbf{w} \mathbf{w}^TS_b\mathbf{w}\\\\
+&s.t.\mathbf{w}^TS_w\mathbf{w}=1 \end{aligned}</script><p>这是一个很典型的约束优化问题，可以用拉格朗日乘子法求解。</p>
+<h4 id="求解优化问题"><a href="#求解优化问题" class="headerlink" title="求解优化问题"></a>求解优化问题</h4><script type="math/tex; mode=display">
+L(w,\lambda)=-\mathbf{w}^TS_b\mathbf{w}+\lambda(\mathbf{w}^TS_w\mathbf{w}-1)</script><p>其中$\lambda$即为拉格朗日乘子。对$\mathbf{w}$求偏导数得</p>
 <script type="math/tex; mode=display">
-\varepsilon_{ij}=v_iw_{ij}h_j</script><p>则这一部分的总的能量为</p>
+\frac{\partial L(\mathbf{w},\lambda)}{\partial \mathbf{w}}=-2S_b\mathbf{w}+2\lambda S_w\mathbf{w}</script><p>令上式等于零，得到</p>
 <script type="math/tex; mode=display">
-\sum\limits_{i=1}^D\sum\limits_{j=1}^P\varepsilon_{ij}=\sum\limits_{i=1}^D\sum\limits_{j=1}^Pv_iw_{ij}h_j=\mathbf{v}^TW\mathbf{h}\in \mathbb{R}</script></blockquote>
-<h2 id="基于对数极大似然估计的梯度上升"><a href="#基于对数极大似然估计的梯度上升" class="headerlink" title="基于对数极大似然估计的梯度上升"></a>基于对数极大似然估计的梯度上升</h2><p>这一部分，我们从极大似然估计出发，对概率密度$P(v,h)$进行极大值推导，其中</p>
+S_b\mathbf{w}_*=\lambda S_w\mathbf{w}_*</script><p>再结合先前的式子</p>
 <script type="math/tex; mode=display">
-P(\mathbf{v},\mathbf{h})=\frac{e^{-E(\mathbf{v},\mathbf{h})}}{Z}</script><p>假设现在有样本集$V$，极大似然估计要求每一个样本出现的概率达到极大值，即边缘密度$\prod\limits_vP(v)$达到最大，其中</p>
+S_b\mathbf{w}_*=(\mu_0-\mu_1)(\mu_0-\mu_1)^T\mathbf{w}_*</script><p>得到</p>
 <script type="math/tex; mode=display">
-P(\mathbf{v})=\sum\limits_\mathbf{h}P(\mathbf{v},\mathbf{h})</script><p>由对数极大似然估计，将乘积进行转换</p>
+\lambda S_w\mathbf{w}_*=(\mu_0-\mu_1)(\mu_0-\mu_1)^T\mathbf{w}_*</script><p><strong>我们并不关心w的模长，只关心它的方向</strong>，而$(\mu_0-\mu_1)^T\mathbf{w}_*$是一个标量，不妨记作k，因此有</p>
 <script type="math/tex; mode=display">
-S=\log\prod\limits_\mathbf{v}P(\mathbf{v})=\sum\limits_\mathbf{v}\log P(\mathbf{v})</script><p>记参数$\theta=[W,J,L]$，它们的含义上文已经提过；只需求解</p>
+\mathbf{w}_*=\frac{k}{\lambda}S_w^{-1}(\mu_0-\mu_1)</script><p>舍去标量系数，仅保留其中的方向信息，得</p>
 <script type="math/tex; mode=display">
-\frac{\partial S}{\partial \theta}=\sum\limits_\mathbf{v}\frac{\partial \log P(\mathbf{v})}{\partial \theta}</script><p>具体的数学推导见附录，这里直接给出结果</p>
+\mathbf{w}_*=S_w^{-1}(\mu_0-\mu_1)</script><p>这便是<strong>直线的方向向量</strong>。</p>
+<h2 id="类别不平衡问题"><a href="#类别不平衡问题" class="headerlink" title="类别不平衡问题"></a>类别不平衡问题</h2><p>当训练数据集中不同类别的样例数目有差别时，会对学习造成影响。比如正例太少、反例太多。解决类别不平衡学习的基本策略为<strong>再平衡</strong>：</p>
+<p>不妨以线性模型为例</p>
 <script type="math/tex; mode=display">
-\begin{aligned} \frac{\partial S}{\partial \theta}&=\sum\limits_\mathbf{v}\frac{\partial \log P(\mathbf{v})}{\partial \theta}\\\\ &=\sum\limits_\mathbf{v}\sum\limits_\mathbf{h}P(\mathbf{v},\mathbf{h})\frac{\partial E(\mathbf{v},\mathbf{h})}{\partial \theta}-\sum\limits_\mathbf{h}P(\mathbf{h}|\mathbf{v})\frac{\partial E(\mathbf{v},\mathbf{h})}{\partial \theta} \end{aligned}</script><p>$\theta$由三个参数组成，我们以其中一个为例（$W$）进行说明</p>
+y=\mathbf{w}^T\mathbf{x}+b</script><p>假设输出结果$y&gt;0.5$时判别为正例，否则判别为反例，也即分类器的决策规则为</p>
 <script type="math/tex; mode=display">
-\begin{aligned} \frac{\partial S}{\partial W}&=\sum\limits_\mathbf{v}\sum\limits_\mathbf{h}P(\mathbf{v},\mathbf{h})\frac{\partial E(\mathbf{v},\mathbf{h})}{\partial W}-\sum\limits_\mathbf{h}P(\mathbf{h}|\mathbf{v})\frac{\partial E(\mathbf{v},\mathbf{h})}{\partial W}\\\\ &= \sum\limits_\mathbf{v}\sum\limits_\mathbf{h}P(\mathbf{h}|\mathbf{v})\mathbf{v}\mathbf{h}^T-|V|\sum\limits_\mathbf{v}\sum\limits_\mathbf{h}P(\mathbf{v},\mathbf{h})\mathbf{v}\mathbf{h}^T \end{aligned}</script><p>其中$P(h|v)$是真实数据的经验分布，记作$P_{data}$；而$P(v,h)$看作模型的后验分布，记作$P_{model}$。上式用期望表示为</p>
+\frac{y}{1-y}>1，预测为正例</script><p>但是由于数据集类别不平衡学习，<strong>希望分类器执行的决策为</strong></p>
 <script type="math/tex; mode=display">
-\frac{\partial S}{\partial W}=\mathbb{E}_{p_{data}}(\mathbf{v}\mathbf{h}^T)-\mathbb{E}_{p_{model}}(\mathbf{v}\mathbf{h}^T)</script><p>同理有</p>
+\frac{y}{1-y}>\frac{m^+}{m^-}，预测为正例</script><p>其中$\frac{m^+}{m^-}$为观测几率，是数据集中正例数量与反例数量之比；也就是说只要高于该值，就表示为正例。</p>
+<p>所以<strong>再平衡策略</strong>就是对预测值进行调整：</p>
 <script type="math/tex; mode=display">
-\frac{\partial S}{\partial J}=\mathbb{E}_{p_{data}}(hh^T)-\mathbb{E}_{p_{model}}(hh^T)</script><script type="math/tex; mode=display">
-\frac{\partial S}{\partial L}=\mathbb{E}_{p_{data}}(vv^T)-\mathbb{E}_{p_{model}}(vv^T)</script><p><strong>因此，基于对数极大似然估计的梯度上升法，每一步的参数更新表示为</strong></p>
-<script type="math/tex; mode=display">
-\begin{aligned} W\gets W+\eta \frac{\partial S}{\partial W} \\ J \gets J+\eta \frac{\partial S}{\partial J} \\ L \gets L+\eta \frac{\partial S}{\partial L} \end{aligned}</script><p>其中$\eta \in \mathbb{R}$指步长。</p>
-<h2 id="基于MCMC的梯度上升"><a href="#基于MCMC的梯度上升" class="headerlink" title="基于MCMC的梯度上升"></a>基于MCMC的梯度上升</h2><p>我们已经建立了基于极大似然估计求出了梯度上升的数学模型。但是实际上对于普通的玻尔兹曼机（并非受限玻尔兹曼机），后验分布是无法求出的。基于MCMC的方法提供了一条解决思路，转化到受限玻尔兹曼机（简称RBM）中求解。</p>
-<p>相比于普通的玻尔兹曼机，RBM有更多特性，都是基于<strong>它的网络结构是一个偶图</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA-16908187093782.jpg" alt="受限玻尔兹曼机"></p>
-<p>显层$v$，隐层$h$，我们约定</p>
-<script type="math/tex; mode=display">
-v_{-i}=\{ v_1,v_2,\dots, v_D \} - \{v_i\},\quad i\in \{1,2,\dots,D\}</script><p>在<strong>普通的玻尔兹曼机</strong>中有条件概率：</p>
-<script type="math/tex; mode=display">
-P(v_i=1|h,v_{-i})=\sigma(\sum\limits_{j=1}^PW_{ij}h_j+\sum\limits_{k=1,k\ne i}^DL_{ik}v_k) \\ P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i+\sum\limits_{k=1,k\ne j}^PJ_{jk}h_k)</script><p>在RBM中，由于显层内部、隐层内部不再有边相连，因此<strong>不同的隐层之间的状态互不相关</strong>，下式成立</p>
-<script type="math/tex; mode=display">
-P(h|v)=\prod\limits_{j=1}^PP(h_j|v)</script><script type="math/tex; mode=display">
-P(h_j=1|v)=P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i)</script><h2 id="平均场推断"><a href="#平均场推断" class="headerlink" title="平均场推断"></a>平均场推断</h2><p>虽然MCMC可以一定程度上解决上述问题，但是一旦采样规模变大，后验概率仍然无法求出。接下来从变分推断的平均场理论来求出后验概率。</p>
-
+\frac{y'}{1-y'}=\frac{y}{1-y}\times \frac{m^-}{m^+}</script>
                 
             </div>
             <hr/>
@@ -723,7 +758,7 @@ P(h_j=1|v)=P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i)</script><h2 id
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/07/31/%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/07/31/%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/</a>
+                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/01/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/01/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -936,9 +971,10 @@ P(h_j=1|v)=P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i)</script><h2 id
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2023/08/01/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/">
                     <div class="card-image">
@@ -956,9 +992,9 @@ P(h_j=1|v)=P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i)</script><h2 id
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -971,6 +1007,7 @@ P(h_j=1|v)=P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i)</script><h2 id
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -989,13 +1026,13 @@ P(h_j=1|v)=P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i)</script><h2 id
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/07/31/%E5%8D%B7%E7%A7%AF%E4%B8%8E%E9%80%86%E5%8D%B7%E7%A7%AF/">
+                <a href="/mid-lake-pavilion.github.io/2023/07/31/%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="卷积与逆卷积">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="Boltzmann Machine，玻尔兹曼机">
                         
-                        <span class="card-title">卷积与逆卷积</span>
+                        <span class="card-title">Boltzmann Machine，玻尔兹曼机</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1142,13 +1179,6 @@ P(h_j=1|v)=P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i)</script><h2 id
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-    });
-</script>
 
 
 
