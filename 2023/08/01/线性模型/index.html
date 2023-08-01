@@ -622,7 +622,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.9k
                 </div>
                 
 
@@ -681,8 +681,10 @@ g(x)=\frac{1}{1+e^{-(w^Tx+b)}}</script><p>接下来使用极大似然估计法�
 <li>$\mu_i$表示第i类样本点的均值向量</li>
 <li>$\mathbf{w}$表示直线的方向向量</li>
 </ul>
-<p>另外，向量内积可以表示为$<x,w>=w^Tx$，其中$w,x\in R^n$，而向量x在直线w上的投影则可以表示为$\frac{w^Tx}{||w||_2}$，也就是说，如果w模长为1，那么向量x在直线w上的投影就可以表示为$w^Tx$。为此，我们接下来都假设$||w||_2=1$。</p>
-</blockquote>
+<p>另外，向量内积可以表示为$<x,w>=w^Tx$，其中$w,x\in \mathbb{R}^n$，而向量x在直线w上的投影则可以表示为$\frac{w^Tx}{||w||_2}$，也就是说，如果w模长为1，那么向量x在直线w上的投影就可以表示为$w^Tx$。为此，我们接下来都假设$||w||_2=1$。以下图为例进行简单说明。</p>
+<script type="math/tex; mode=display">
+\begin{aligned} &\mathbf{x}·\mathbf{w}=||\mathbf{x}||·||\mathbf{w}||·\cos\theta \\\\ &\Rightarrow \mathrm{Prj}_\mathbf{w}\mathbf{x} = ||\mathbf{x}||·\theta=\frac{\mathbf{x}·\mathbf{w}}{||\mathbf{w}||}  \end{aligned}</script></blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/diagram-1-16908718997321.png" alt="向量投影示意图"></p>
 <p>再回顾上面关于LDA的两条基本原则：</p>
 <ol>
 <li>同类样例的投影点尽可能接近</li>
