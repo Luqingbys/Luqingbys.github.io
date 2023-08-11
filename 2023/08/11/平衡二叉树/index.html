@@ -666,7 +666,7 @@ void updateHeight(Node* root) &#123;
 <h2 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h2><p>平衡二叉树最常见的知识点是插入操作。本文重点记录如何对平衡二叉树进行插入。显然，平衡二叉树其实是特殊的二叉查找树，每插入一个结点，就有可能“打破平衡”。因此关键在于，如何将这种非平衡的二叉树调整为平衡二叉树。</p>
 <h3 id="左旋、右旋"><a href="#左旋、右旋" class="headerlink" title="左旋、右旋"></a>左旋、右旋</h3><p>在正式介绍如何调整之前，我们来看如何调整当前的根结点。以下图为例，现在希望将根结点调整为$R’$，如何做？</p>
 <p>为了有一个形象化的表述将整个调整过程描述出来，我们将$R$称为当前根结点（但是很快他就不是了），将$R’$称为新任根结点（他马上就是了），旧领导离任、新领导上任，是不是得有一套交接手续，才能完成权利的更迭？不妨按照这个路子理解接下来的调整过程。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\平衡二叉树.assets\左旋.png" alt="左旋"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%A6%E6%97%8B.png" alt="左旋"></p>
 <p>图中，云朵形框表示一棵子树结构，圆形框表示一个具体的结点；按照上图从左至右的顺序依次为：</p>
 <ol>
 <li>【旧任领导即将下台，新任领导即将上台】选中当前根结点和它的右结点；</li>
@@ -684,7 +684,7 @@ void updateHeight(Node* root) &#123;
     root &#x3D; temp;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>与之相对地，是<strong>右旋</strong>操作。这是两个对称的操作过程，不再赘述。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\平衡二叉树.assets\右旋.png" alt="右旋"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%8F%B3%E6%97%8B.png" alt="右旋"></p>
 <p>右旋代码如下。</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void rightRotate(Node* &amp;root) &#123;
     Node* temp &#x3D; root-&gt;left;
@@ -696,14 +696,14 @@ void updateHeight(Node* root) &#123;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="四种树型"><a href="#四种树型" class="headerlink" title="四种树型"></a>四种树型</h3><p>有了上面的左旋、右旋基本操作后，接下来我们来看看针对几种不同的非平衡二叉树结构，该如何调整树型。</p>
 <p>我们从根结点平衡因子角度考虑，当插入一个结点而导致树失衡时，一定导致某（几）个结点的平衡因子为2或者-2。不妨考虑平衡因子为2的情况，此时，以该结点为根的子树结构还可能有下面两种情况：</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\平衡二叉树.assets\LL与LR型.png" alt="LL与LR型"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/LL%E4%B8%8ELR%E5%9E%8B.png" alt="LL与LR型"></p>
 <p>方便起见，记根结点为$R_1$，图中标出平衡因子为1或者-1的结点为$R_2$（$R_1$的左孩子）</p>
 <ul>
 <li>对于上图左侧的LL型，处理方式比较简单，直接对$R_1$进行右旋即可，即调用<code>rightRotate(R_1)</code>；</li>
 <li>对于右侧的LR型，则先对$R_1$的左孩子$R_2$进行左旋（此时忽略$R_1$），然后再对$R_1$进行右旋，即先调用<code>leftRotate(R_1-&gt;left)</code>，再调用<code>rightRotate(R_1)</code>。</li>
 </ul>
 <p>根结点平衡因子为-2的情况与上面的情况对称，类似的有RR、RL型：</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\平衡二叉树.assets\RR与RL型.png" alt="RR与RL型"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/RR%E4%B8%8ERL%E5%9E%8B.png" alt="RR与RL型"></p>
 <p>它们的调整方式不难推导出：</p>
 <ul>
 <li>对于RR型，直接对根结点$R_1$进行左旋，即调用<code>leftRotate(R_1)</code>；</li>
