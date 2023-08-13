@@ -619,6 +619,11 @@
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-08-11
+                </div>
+                
 
                 
                 <div class="info-break-policy">
@@ -1042,18 +1047,17 @@ void insertNode(Node* &amp;root, int val) &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/08/11/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                <a href="/mid-lake-pavilion.github.io/2023/08/12/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="平衡二叉树">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="并查集">
                         
-                        <span class="card-title">平衡二叉树</span>
+                        <span class="card-title">并查集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1063,9 +1067,9 @@ void insertNode(Node* &amp;root, int val) &#123;
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1078,7 +1082,6 @@ void insertNode(Node* &amp;root, int val) &#123;
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1086,8 +1089,8 @@ void insertNode(Node* &amp;root, int val) &#123;
                         <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/mid-lake-pavilion.github.io/tags/%E6%A0%91/">
-                        <span class="chip bg-color">树</span>
+                    <a href="/mid-lake-pavilion.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+                        <span class="chip bg-color">并查集</span>
                     </a>
                     
                 </div>
@@ -1153,6 +1156,43 @@ void insertNode(Node* &amp;root, int val) &#123;
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 湖心亭<br />'
+            + '文章作者: 鹿卿<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

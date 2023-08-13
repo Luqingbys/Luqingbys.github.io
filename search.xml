@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>并查集</title>
+      <link href="/mid-lake-pavilion.github.io/2023/08/12/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+      <url>/mid-lake-pavilion.github.io/2023/08/12/%E5%B9%B6%E6%9F%A5%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>并查集是一种特殊的数据结构，用于处理不相交集合的查询问题。实际上包含了三个操作：</p><ul><li>合并：将不相交的两个集合<strong>合并</strong>为同一个集合</li><li>查找：查找元素所在的集合</li></ul><h2 id="算法核心"><a href="#算法核心" class="headerlink" title="算法核心"></a>算法核心</h2><p>本文主要介绍并查集的算法模板。我们从并查集的常见操作入手，看看它的算法思想。</p><h3 id="mathrm-father-数组"><a href="#mathrm-father-数组" class="headerlink" title="$\mathrm{father[]}数组$"></a>$\mathrm{father[]}数组$</h3><p>在并查集中，我们通过维护一个保存当前元素父亲的数组<code>father</code>，来实现将属于不同集合的元素划分开。</p><p>比如，给定6个元素，它们的<code>father</code>数组为：<code>father[6] = &#123;0, 0, 0, 2, 4, 4&#125;</code>，对应的元素分布情况见下图。</p><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/father%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA%E7%9A%84%E9%9B%86%E5%90%88%E5%85%B3%E7%B3%BB-16918177656861.png" alt="father数组表示的集合关系"></p><p>显然，这样表示下的集合总有一个“根结点”，且对于任意根结点$i$，它满足关系$\mathrm{father[i]=i}$。那么接下来我们来实现如何查找当前根结点。</p><h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>查找根结点，其实也就是不断地找父结点的父结点，直到满足了“父结点就是自己”这一终止条件。因此，我们可以使用递归很简单地实现。</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int Find(int x) &#123;    &#x2F;*功能：查找结点x所在集合的根*&#x2F;    if(x &#x3D;&#x3D; father[x])return x; &#x2F;&#x2F; 终止条件：x就是根结点，直接返回    return Find(father[x]); &#x2F;&#x2F; 递归：找父结点的父结点&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="路径压缩"><a href="#路径压缩" class="headerlink" title="路径压缩"></a>路径压缩</h4><p>我们在平衡二叉树的引入中曾经提过，由于普通的二叉查找树可能由于呈现链状而使得查询效率变得很低；事实上，此处的并查集也可能出现类似的问题：</p><p><img src="D:\我的大学\newBlogs\source\_posts\assets\并查集.assets\链式并查集.png" alt="链式形状会降低查询效率"></p><p>比如上图中，我们要查询5号的根结点，就需要调用<code>Find(5)</code>，进而调用<code>Find(4)</code>、<code>Find(3)</code>、<code>Find(2)</code>、<code>Find(1)</code>、<code>Find(0)</code>，才终于找到根结点0并返回。</p><p>而与上图相比，下面的并查集结构要明显好得多！因为我们只需要$\mathcal{O}(1)$的时间就可以轻易查询到任意结点的根结点了。</p><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%8E%8B%E7%BC%A9%E8%B7%AF%E5%BE%84%E5%90%8E%E7%9A%84%E5%B9%B6%E6%9F%A5%E9%9B%86.png" alt="压缩路径后的并查集"></p><p>我们把这种形态上的转变称作<strong>路径压缩</strong>。具体到代码实现方面，只需在查找函数<code>Find(x)</code>中，返回查找到的根结点<code>Find(father[x])</code>之前，将这个结果赋值给当前结点的父结点<code>father[x]</code>即可：</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int Find(int x) &#123;    if(x &#x3D;&#x3D; father[x])return x;    return father[x] &#x3D; Find(father[x]);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>因此需要注意：<strong>我们是通过查找操作来顺便实现路径压缩的，也就意味着，如果进行了合并操作之后，并没有进行任何的查找操作，也就没有进行任何的路径压缩，此时不能直接通过<code>x == father[x]</code>是否成立来判断x是否属于<code>father[x]</code>为根结点的集合；换言之，<code>father[x]</code>有可能并不是x的真正的根结点！</strong>因此，只能通过<code>Find(x)</code>来获取x的根结点。</p><h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>合并操作也就是将两个不同的集合合并到一起。因此，我们只需将两个集合的“根结点”进行连接（令其中一个结点的父结点是另一个即可）。但是要注意，只能对不同的集合进行合并，如果是同一个集合，不能合并。</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void Union(int x, int y) &#123;    int px &#x3D; Find(x);    int py &#x3D; Find(y);    if(px !&#x3D; py)father[px] &#x3D; py;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="寻找并查集中不同集合的个数"><a href="#寻找并查集中不同集合的个数" class="headerlink" title="寻找并查集中不同集合的个数"></a>寻找并查集中不同集合的个数</h3><p>注意，在实现并查集算法前，一定要对<code>father</code>数组进行初始化：初始状态每一个结点都是根结点（全部彼此不连通）。</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void init(int n) &#123;    int i;    for(i&#x3D;1; i&lt;&#x3D;n; i++)father[i] &#x3D; i;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>完成所有的合并操作后，要求共有几个不同的集合，就直接寻找根结点的个数即可：有几个根，就有几个不同的集合。</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int i;int ans &#x3D; 0;for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;    if(father[i] &#x3D;&#x3D; i)ans++;&#125;&#x2F;&#x2F; ans 即为根结点数量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法训练 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 并查集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>平衡二叉树</title>
       <link href="/mid-lake-pavilion.github.io/2023/08/11/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
       <url>/mid-lake-pavilion.github.io/2023/08/11/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/</url>

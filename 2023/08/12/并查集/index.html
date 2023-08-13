@@ -4,15 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java语言中的异常, 湖心亭">
-    <meta name="description" content="异常异常，是正常程序流程所不能处理或者没有处理的异常情况或者异常事件。
-异常的分类按照异常在编译时是否被检测来分，异常可分为
+    <meta name="keywords" content="并查集, 湖心亭">
+    <meta name="description" content="定义并查集是一种特殊的数据结构，用于处理不相交集合的查询问题。实际上包含了三个操作：
 
-受检异常
-非受检异常
+合并：将不相交的两个集合合并为同一个集合
+查找：查找元素所在的集合
 
-异常机制
-异常对象 程序运行时，如果发生异常，就会生成一个异常事件，相应地生成异常对象。">
+算法核心本文主要介绍并查集的算法模板。我们从并查集的常见操作入手，看看它的算法思想">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java语言中的异常 | 湖心亭</title>
+    <title>并查集 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -471,12 +469,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java语言中的异常</h1>
+                    <h1 class="description center-align post-title">并查集</h1>
                 </div>
             </div>
         </div>
@@ -592,8 +590,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
-                                <span class="chip bg-color">大学课程</span>
+                            <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/mid-lake-pavilion.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+                                <span class="chip bg-color">并查集</span>
                             </a>
                         
                     </div>
@@ -604,8 +606,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                Java程序设计
+                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" class="post-category">
+                                算法训练
                             </a>
                         
                     </div>
@@ -617,21 +619,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-10
+                    2023-08-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-23
+                    2023-08-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    282
+                    1k
                 </div>
                 
 
@@ -651,37 +653,51 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>异常，是正常程序流程所不能处理或者没有处理的异常情况或者异常事件。</p>
-<h3 id="异常的分类"><a href="#异常的分类" class="headerlink" title="异常的分类"></a>异常的分类</h3><p>按照异常在编译时是否被检测来分，异常可分为</p>
+                <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>并查集是一种特殊的数据结构，用于处理不相交集合的查询问题。实际上包含了三个操作：</p>
 <ul>
-<li>受检异常</li>
-<li>非受检异常</li>
+<li>合并：将不相交的两个集合<strong>合并</strong>为同一个集合</li>
+<li>查找：查找元素所在的集合</li>
 </ul>
-<h3 id="异常机制"><a href="#异常机制" class="headerlink" title="异常机制"></a>异常机制</h3><ul>
-<li>异常对象 程序运行时，如果发生异常，就会生成一个异常事件，相应地生成异常对象。</li>
-<li>抛出异常 生成异常对象并把它提交给运行时系统的这一过程称为抛出一个异常。</li>
-<li>捕获 Java运行时系统将异常对象交给方法处理的过程。</li>
-</ul>
-<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>方式：捕获异常和转移异常</p>
-<ul>
-<li>捕获异常：通过try-catch-finally结果处理，格式为</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-<span class="token comment">// 此处为抛出具体异常的代码</span>
-<span class="token punctuation">&#125;</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">ExceptionType1</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token comment">// 抛出异常时要执行的代码</span>
-<span class="token punctuation">&#125;</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">ExceptionType2</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token comment">// 抛出异常时要执行的代码</span>
-<span class="token punctuation">&#125;</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">ExceptionTypek</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-<span class="token comment">// ...</span>
-<span class="token punctuation">&#125;</span><span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 必须执行的代码</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>转移异常：不在当前方法中处理异常，而是把异常抛出到调用方法中。</li>
-</ul>
+<h2 id="算法核心"><a href="#算法核心" class="headerlink" title="算法核心"></a>算法核心</h2><p>本文主要介绍并查集的算法模板。我们从并查集的常见操作入手，看看它的算法思想。</p>
+<h3 id="mathrm-father-数组"><a href="#mathrm-father-数组" class="headerlink" title="$\mathrm{father[]}数组$"></a>$\mathrm{father[]}数组$</h3><p>在并查集中，我们通过维护一个保存当前元素父亲的数组<code>father</code>，来实现将属于不同集合的元素划分开。</p>
+<p>比如，给定6个元素，它们的<code>father</code>数组为：<code>father[6] = &#123;0, 0, 0, 2, 4, 4&#125;</code>，对应的元素分布情况见下图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/father%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA%E7%9A%84%E9%9B%86%E5%90%88%E5%85%B3%E7%B3%BB-16918177656861.png" alt="father数组表示的集合关系"></p>
+<p>显然，这样表示下的集合总有一个“根结点”，且对于任意根结点$i$，它满足关系$\mathrm{father[i]=i}$。那么接下来我们来实现如何查找当前根结点。</p>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>查找根结点，其实也就是不断地找父结点的父结点，直到满足了“父结点就是自己”这一终止条件。因此，我们可以使用递归很简单地实现。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int Find(int x) &#123;
+    &#x2F;*功能：查找结点x所在集合的根*&#x2F;
+    if(x &#x3D;&#x3D; father[x])	return x; &#x2F;&#x2F; 终止条件：x就是根结点，直接返回
+    return Find(father[x]); &#x2F;&#x2F; 递归：找父结点的父结点
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="路径压缩"><a href="#路径压缩" class="headerlink" title="路径压缩"></a>路径压缩</h4><p>我们在平衡二叉树的引入中曾经提过，由于普通的二叉查找树可能由于呈现链状而使得查询效率变得很低；事实上，此处的并查集也可能出现类似的问题：</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\并查集.assets\链式并查集.png" alt="链式形状会降低查询效率"></p>
+<p>比如上图中，我们要查询5号的根结点，就需要调用<code>Find(5)</code>，进而调用<code>Find(4)</code>、<code>Find(3)</code>、<code>Find(2)</code>、<code>Find(1)</code>、<code>Find(0)</code>，才终于找到根结点0并返回。</p>
+<p>而与上图相比，下面的并查集结构要明显好得多！因为我们只需要$\mathcal{O}(1)$的时间就可以轻易查询到任意结点的根结点了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%8E%8B%E7%BC%A9%E8%B7%AF%E5%BE%84%E5%90%8E%E7%9A%84%E5%B9%B6%E6%9F%A5%E9%9B%86.png" alt="压缩路径后的并查集"></p>
+<p>我们把这种形态上的转变称作<strong>路径压缩</strong>。具体到代码实现方面，只需在查找函数<code>Find(x)</code>中，返回查找到的根结点<code>Find(father[x])</code>之前，将这个结果赋值给当前结点的父结点<code>father[x]</code>即可：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int Find(int x) &#123;
+    if(x &#x3D;&#x3D; father[x])	return x;
+    return father[x] &#x3D; Find(father[x]);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>因此需要注意：<strong>我们是通过查找操作来顺便实现路径压缩的，也就意味着，如果进行了合并操作之后，并没有进行任何的查找操作，也就没有进行任何的路径压缩，此时不能直接通过<code>x == father[x]</code>是否成立来判断x是否属于<code>father[x]</code>为根结点的集合；换言之，<code>father[x]</code>有可能并不是x的真正的根结点！</strong>因此，只能通过<code>Find(x)</code>来获取x的根结点。</p>
+<h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>合并操作也就是将两个不同的集合合并到一起。因此，我们只需将两个集合的“根结点”进行连接（令其中一个结点的父结点是另一个即可）。但是要注意，只能对不同的集合进行合并，如果是同一个集合，不能合并。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void Union(int x, int y) &#123;
+    int px &#x3D; Find(x);
+    int py &#x3D; Find(y);
+    if(px !&#x3D; py)	father[px] &#x3D; py;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="寻找并查集中不同集合的个数"><a href="#寻找并查集中不同集合的个数" class="headerlink" title="寻找并查集中不同集合的个数"></a>寻找并查集中不同集合的个数</h3><p>注意，在实现并查集算法前，一定要对<code>father</code>数组进行初始化：初始状态每一个结点都是根结点（全部彼此不连通）。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void init(int n) &#123;
+    int i;
+    for(i&#x3D;1; i&lt;&#x3D;n; i++)	father[i] &#x3D; i;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>完成所有的合并操作后，要求共有几个不同的集合，就直接寻找根结点的个数即可：有几个根，就有几个不同的集合。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int i;
+int ans &#x3D; 0;
+for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
+    if(father[i] &#x3D;&#x3D; i)	ans++;
+&#125;
+&#x2F;&#x2F; ans 即为根结点数量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -708,7 +724,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2021/11/10/Java%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2021/11/10/Java%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8/</a>
+                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/12/%E5%B9%B6%E6%9F%A5%E9%9B%86/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/12/%E5%B9%B6%E6%9F%A5%E9%9B%86/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -746,8 +762,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
-                                    <span class="chip bg-color">大学课程</span>
+                                <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/mid-lake-pavilion.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+                                    <span class="chip bg-color">并查集</span>
                                 </a>
                             
                         </div>
@@ -921,17 +941,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2021/11/11/Java%E6%95%B0%E6%8D%AE%E6%B5%81/">
+                <a href="/mid-lake-pavilion.github.io/2023/08/12/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="Java数据流">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="并查集">
                         
-                        <span class="card-title">Java数据流</span>
+                        <span class="card-title">并查集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -941,26 +962,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                    Java程序设计
+                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" class="post-category">
+                                    算法训练
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
-                        <span class="chip bg-color">大学课程</span>
+                    <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/mid-lake-pavilion.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+                        <span class="chip bg-color">并查集</span>
                     </a>
                     
                 </div>
@@ -974,13 +1000,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2021/11/09/%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB-1/">
+                <a href="/mid-lake-pavilion.github.io/2023/08/11/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="进一步讨论对象和类（2）">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="平衡二叉树">
                         
-                        <span class="card-title">进一步讨论对象和类（2）</span>
+                        <span class="card-title">平衡二叉树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -991,14 +1017,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/mid-lake-pavilion.github.io/categories/Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-category">
-                                    Java程序设计
+                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" class="post-category">
+                                    算法训练
                                 </a>
                             
                             
@@ -1008,8 +1034,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/mid-lake-pavilion.github.io/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
-                        <span class="chip bg-color">大学课程</span>
+                    <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/mid-lake-pavilion.github.io/tags/%E6%A0%91/">
+                        <span class="chip bg-color">树</span>
                     </a>
                     
                 </div>
