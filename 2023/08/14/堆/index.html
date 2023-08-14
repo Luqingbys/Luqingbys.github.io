@@ -662,19 +662,19 @@
 <p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%A0%86-%E8%B0%83%E6%95%B4-1.svg" alt="堆-调整(6,8,4)"></p>
 </li>
 <li><p>接下来“25-20-12”满足要求，但是“6-8-4”不满足，同样对其进行调整为“8-6-4”；</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\堆-调整-2.svg" alt="堆-调整(6,7,3)"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%A0%86-%E8%B0%83%E6%95%B4-2.svg" alt="堆-调整(6,7,3)"></p>
 </li>
 <li><p>此时“6-7-3”不满足了，需要再次进行调整，一旦调整完成，以8为根结点的子树就是一个堆了；</p>
 </li>
 <li><p>接下来检查“18-8-25”，发现同样也需要进行调整，调整为“25-8-25”；</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\堆-调整-2 (1" alt="堆-调整(18,8,25)">.svg)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%A0%86-%E8%B0%83%E6%95%B4-2%20(1" alt="堆-调整(18,8,25)">.svg)</p>
 </li>
 <li><p>此时往下检查确保以25为根结点的子树构成堆，因此调整右子树“18-20-12”为“20-18-12”，调整完毕后，堆的建立就完成了。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\堆-调整-2 (2" alt="堆-调整(18,20,12)">.svg)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%A0%86-%E8%B0%83%E6%95%B4-2%20(2" alt="堆-调整(18,20,12)">.svg)</p>
 </li>
 </ol>
 <p>最终建立好的堆结构如下：</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\堆-建立完毕.svg" alt="堆-建立完毕"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%A0%86-%E5%BB%BA%E7%AB%8B%E5%AE%8C%E6%AF%95.svg" alt="堆-建立完毕"></p>
 <h3 id="调整子树为堆"><a href="#调整子树为堆" class="headerlink" title="调整子树为堆"></a>调整子树为堆</h3><p>通过上面的实例分析可以发现：</p>
 <ol>
 <li><strong>根结点的扫描是自底向上、自右向左的</strong>；</li>
@@ -708,36 +708,36 @@
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>回到上面的建堆过程分析中来。显然，每次建立好堆之后，完全二叉树中的最大结点正是根结点，换言之，我们选出了最大结点。<strong>那么我们是不是就可以通过每次将完全二叉树调整为堆，得到最大结点，然后将其与完全二叉树中乱序部分的最后一个元素互换，这样不断地从剩余乱序元素中选出最大值放到后面，从而完成排序呢？</strong></p>
 <h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h3><p>我们以一个具体的例子来说明堆排序的过程。首先初始的乱序序列为[25, 8, 20, 7, 4, 18, 12, 6, 3, 14]，我们需要将其按非递减顺序排序。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\待排序序列 (1" alt="待排序序列">.svg)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%BE%85%E6%8E%92%E5%BA%8F%E5%BA%8F%E5%88%97%20(1" alt="待排序序列">.svg)</p>
 <ol>
 <li><p>第一步需要将完全二叉树建成堆，事实上初始情况正是上一部分建堆的结果，已经是堆结构了，因此可以跳过；</p>
 </li>
 <li><p>此时根结点就是待排序部分的最大元素，于是将其与待排序部分的末位元素互换，最后一个元素位置固定了，待排序序列长度减一，见下图；</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位1个元素.svg" alt="已就位1个元素"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D1%E4%B8%AA%E5%85%83%E7%B4%A0.svg" alt="已就位1个元素"></p>
 </li>
 <li><p>接下来对$[1,n-1]$范围内的结点调整为大顶堆，以选出最大结点，调整后的结构见下图；</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位1个元素-已调整.svg" alt="已就位1个元素，已调整"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D1%E4%B8%AA%E5%85%83%E7%B4%A0-%E5%B7%B2%E8%B0%83%E6%95%B4.svg" alt="已就位1个元素，已调整"></p>
 </li>
 <li><p>同2，将根结点与待排序部分末位元素互换，见下图；</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位2个元素.svg" alt="已就位2个元素"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D2%E4%B8%AA%E5%85%83%E7%B4%A0.svg" alt="已就位2个元素"></p>
 </li>
 <li><p>同3，对$[1,n-2]$范围内的结点调整为大顶堆，以选出最大结点，调整后的结构见下图；</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位2个元素-已调整.svg" alt="已就位2个元素，已调整"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D2%E4%B8%AA%E5%85%83%E7%B4%A0-%E5%B7%B2%E8%B0%83%E6%95%B4.svg" alt="已就位2个元素，已调整"></p>
 </li>
 <li><p>以此类推，接下来每一步给出选出最大结点并重新调整为堆的结果图；</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位3个元素-已调整.svg" alt="已就位3个元素，已调整"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D3%E4%B8%AA%E5%85%83%E7%B4%A0-%E5%B7%B2%E8%B0%83%E6%95%B4.svg" alt="已就位3个元素，已调整"></p>
 </li>
-<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位4个元素-已调整 (1" alt="已就位4个元素，已调整">.svg)</p>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D4%E4%B8%AA%E5%85%83%E7%B4%A0-%E5%B7%B2%E8%B0%83%E6%95%B4%20(1" alt="已就位4个元素，已调整">.svg)</p>
 </li>
-<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位5个元素-已调整.svg" alt="已就位5个元素，已调整"></p>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D5%E4%B8%AA%E5%85%83%E7%B4%A0-%E5%B7%B2%E8%B0%83%E6%95%B4.svg" alt="已就位5个元素，已调整"></p>
 </li>
-<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位6个元素-已调整.svg" alt="已就位6个元素-已调整"></p>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D6%E4%B8%AA%E5%85%83%E7%B4%A0-%E5%B7%B2%E8%B0%83%E6%95%B4.svg" alt="已就位6个元素-已调整"></p>
 </li>
-<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位7个元素-已调整 (1" alt="已就位7个元素，已调整">.svg)</p>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D7%E4%B8%AA%E5%85%83%E7%B4%A0-%E5%B7%B2%E8%B0%83%E6%95%B4%20(1" alt="已就位7个元素，已调整">.svg)</p>
 </li>
-<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位8个元素-已调整.svg" alt="已就位8个元素，已调整"></p>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D8%E4%B8%AA%E5%85%83%E7%B4%A0-%E5%B7%B2%E8%B0%83%E6%95%B4.svg" alt="已就位8个元素，已调整"></p>
 </li>
-<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位9个元素-已调整.svg" alt="已就位9个元素，已调整"></p>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%B7%B2%E5%B0%B1%E4%BD%8D9%E4%B8%AA%E5%85%83%E7%B4%A0-%E5%B7%B2%E8%B0%83%E6%95%B4.svg" alt="已就位9个元素，已调整"></p>
 </li>
 <li><p>此时只剩下一个元素，排序也就完成了。</p>
 </li>
