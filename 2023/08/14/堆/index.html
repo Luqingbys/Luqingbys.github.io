@@ -4,13 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="并查集, 湖心亭">
-    <meta name="description" content="定义并查集是一种特殊的数据结构，用于处理不相交集合的查询问题。实际上包含了三个操作：
-
-合并：将不相交的两个集合合并为同一个集合
-查找：查找元素所在的集合
-
-算法核心本文主要介绍并查集的算法模板。我们从并查集的常见操作入手，看看它的算法思想">
+    <meta name="keywords" content="堆, 湖心亭">
+    <meta name="description" content="定义说白了，堆实际上就是一种数据结构，是一棵特殊的完全二叉树。相对于普通的完全二叉树而言，堆的特殊之处在于，其任意一个结点都比它的孩子结点大（此时称为大顶堆），或者都比孩子结点小（此时称为小顶堆）。
+初始建堆如何构建一个堆？事实上，建立堆的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>并查集 | 湖心亭</title>
+    <title>堆 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -469,12 +465,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">并查集</h1>
+                    <h1 class="description center-align post-title">堆</h1>
                 </div>
             </div>
         </div>
@@ -594,8 +590,8 @@
                                 <span class="chip bg-color">算法</span>
                             </a>
                         
-                            <a href="/mid-lake-pavilion.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
-                                <span class="chip bg-color">并查集</span>
+                            <a href="/mid-lake-pavilion.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
                     </div>
@@ -619,21 +615,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-12
+                    2023-08-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-12
+                    2023-08-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    2.1k
                 </div>
                 
 
@@ -653,51 +649,150 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>并查集是一种特殊的数据结构，用于处理不相交集合的查询问题。实际上包含了三个操作：</p>
-<ul>
-<li>合并：将不相交的两个集合<strong>合并</strong>为同一个集合</li>
-<li>查找：查找元素所在的集合</li>
-</ul>
-<h2 id="算法核心"><a href="#算法核心" class="headerlink" title="算法核心"></a>算法核心</h2><p>本文主要介绍并查集的算法模板。我们从并查集的常见操作入手，看看它的算法思想。</p>
-<h3 id="mathrm-father-数组"><a href="#mathrm-father-数组" class="headerlink" title="$\mathrm{father[]}数组$"></a>$\mathrm{father[]}数组$</h3><p>在并查集中，我们通过维护一个保存当前元素父亲的数组<code>father</code>，来实现将属于不同集合的元素划分开。</p>
-<p>比如，给定6个元素，它们的<code>father</code>数组为：<code>father[6] = &#123;0, 0, 0, 2, 4, 4&#125;</code>，对应的元素分布情况见下图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/father%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA%E7%9A%84%E9%9B%86%E5%90%88%E5%85%B3%E7%B3%BB-16918177656861.png" alt="father数组表示的集合关系"></p>
-<p>显然，这样表示下的集合总有一个“根结点”，且对于任意根结点$i$，它满足关系$\mathrm{father[i]=i}$。那么接下来我们来实现如何查找当前根结点。</p>
-<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>查找根结点，其实也就是不断地找父结点的父结点，直到满足了“父结点就是自己”这一终止条件。因此，我们可以使用递归很简单地实现。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int Find(int x) &#123;
-    &#x2F;*功能：查找结点x所在集合的根*&#x2F;
-    if(x &#x3D;&#x3D; father[x])	return x; &#x2F;&#x2F; 终止条件：x就是根结点，直接返回
-    return Find(father[x]); &#x2F;&#x2F; 递归：找父结点的父结点
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="路径压缩"><a href="#路径压缩" class="headerlink" title="路径压缩"></a>路径压缩</h4><p>我们在平衡二叉树的引入中曾经提过，由于普通的二叉查找树可能由于呈现链状而使得查询效率变得很低；事实上，此处的并查集也可能出现类似的问题：</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\并查集.assets\链式并查集.png" alt="链式形状会降低查询效率"></p>
-<p>比如上图中，我们要查询5号的根结点，就需要调用<code>Find(5)</code>，进而调用<code>Find(4)</code>、<code>Find(3)</code>、<code>Find(2)</code>、<code>Find(1)</code>、<code>Find(0)</code>，才终于找到根结点0并返回。</p>
-<p>而与上图相比，下面的并查集结构要明显好得多！因为我们只需要$\mathcal{O}(1)$的时间就可以轻易查询到任意结点的根结点了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%8E%8B%E7%BC%A9%E8%B7%AF%E5%BE%84%E5%90%8E%E7%9A%84%E5%B9%B6%E6%9F%A5%E9%9B%86.png" alt="压缩路径后的并查集"></p>
-<p>我们把这种形态上的转变称作<strong>路径压缩</strong>。具体到代码实现方面，只需在查找函数<code>Find(x)</code>中，返回查找到的根结点<code>Find(father[x])</code>之前，将这个结果赋值给当前结点的父结点<code>father[x]</code>即可：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int Find(int x) &#123;
-    if(x &#x3D;&#x3D; father[x])	return x;
-    return father[x] &#x3D; Find(father[x]);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>因此需要注意：<strong>我们是通过查找操作来顺便实现路径压缩的，也就意味着，如果进行了合并操作之后，并没有进行任何的查找操作，也就没有进行任何的路径压缩，此时不能直接通过<code>x == father[x]</code>是否成立来判断x是否属于<code>father[x]</code>为根结点的集合；换言之，<code>father[x]</code>有可能并不是x的真正的根结点！</strong>因此，只能通过<code>Find(x)</code>来获取x的根结点。</p>
-<h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>合并操作也就是将两个不同的集合合并到一起。因此，我们只需将两个集合的“根结点”进行连接（令其中一个结点的父结点是另一个即可）。但是要注意，只能对不同的集合进行合并，如果是同一个集合，不能合并。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void Union(int x, int y) &#123;
-    int px &#x3D; Find(x);
-    int py &#x3D; Find(y);
-    if(px !&#x3D; py)	father[px] &#x3D; py;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="寻找并查集中不同集合的个数"><a href="#寻找并查集中不同集合的个数" class="headerlink" title="寻找并查集中不同集合的个数"></a>寻找并查集中不同集合的个数</h3><p>注意，在实现并查集算法前，一定要对<code>father</code>数组进行初始化：初始状态每一个结点都是根结点（全部彼此不连通）。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void init(int n) &#123;
+                <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>说白了，堆实际上就是一种数据结构，<strong>是一棵特殊的完全二叉树</strong>。相对于普通的完全二叉树而言，<strong>堆的特殊之处在于，其任意一个结点都比它的孩子结点大（此时称为大顶堆），或者都比孩子结点小（此时称为小顶堆）</strong>。</p>
+<h2 id="初始建堆"><a href="#初始建堆" class="headerlink" title="初始建堆"></a>初始建堆</h2><p>如何构建一个堆？事实上，建立堆的过程，就是将一棵完全二叉树调整为堆的过程。不失一般性，接下来我们都以大顶堆为例进行说明。</p>
+<p>要想得到这种“任意根结点比孩子结点大”的结构，我们需要<strong>按照根结点自底向上、自右向左的顺序，对该根结点所在的子树进行调整</strong>。比如下图展示的完全二叉树，我们现在将其调整为大顶堆。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%A0%86-%E5%88%9D%E5%A7%8B%E7%8A%B6%E6%80%81.svg" alt="堆-调整之前"></p>
+<ol>
+<li><p>按照自底向上、自右向左的顺序，首先需要检查叶子结点，但是叶子结点没有孩子，因此它们必然满足要求；</p>
+</li>
+<li><p>比较“4-1”子树，根结点4确实大于孩子结点1，满足要求；</p>
+</li>
+<li><p>见上图紫色框部分，显然不满足要求，需要对其进行调整：选取两个孩子结点中较大者8，将其与根结点3进行交换，使其满足要求；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E5%A0%86-%E8%B0%83%E6%95%B4-1.svg" alt="堆-调整(6,8,4)"></p>
+</li>
+<li><p>接下来“25-20-12”满足要求，但是“6-8-4”不满足，同样对其进行调整为“8-6-4”；</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\堆-调整-2.svg" alt="堆-调整(6,7,3)"></p>
+</li>
+<li><p>此时“6-7-3”不满足了，需要再次进行调整，一旦调整完成，以8为根结点的子树就是一个堆了；</p>
+</li>
+<li><p>接下来检查“18-8-25”，发现同样也需要进行调整，调整为“25-8-25”；</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\堆-调整-2 (1" alt="堆-调整(18,8,25)">.svg)</p>
+</li>
+<li><p>此时往下检查确保以25为根结点的子树构成堆，因此调整右子树“18-20-12”为“20-18-12”，调整完毕后，堆的建立就完成了。</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\堆-调整-2 (2" alt="堆-调整(18,20,12)">.svg)</p>
+</li>
+</ol>
+<p>最终建立好的堆结构如下：</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\堆-建立完毕.svg" alt="堆-建立完毕"></p>
+<h3 id="调整子树为堆"><a href="#调整子树为堆" class="headerlink" title="调整子树为堆"></a>调整子树为堆</h3><p>通过上面的实例分析可以发现：</p>
+<ol>
+<li><strong>根结点的扫描是自底向上、自右向左的</strong>；</li>
+<li><strong>获取到根结点之后，对其所在子树的调整是自上而下的</strong>；</li>
+</ol>
+<p>究其原因，是因为每一次对父子结点对进行检查时，<strong>至多交换一次，也就是说，至多会改变左子树、右子树中一棵子树的根，进而改变这棵子树的结构而导致它有可能不再满足堆的特性</strong>。因此需要进一步对这棵子树进行调整，不断地以此类推，就是一个自顶向下的迭代过程。我们把这个过程用代码实现出来，根结点不妨用结点索引from表示。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void downAdjust(int from, int to) &#123;
+    &#x2F;&#x2F; 对[from, to]范围内的结点进行调整，to通常是完全二叉树的最后一个结点索引
+    int i &#x3D; from, j &#x3D; 2 * from; &#x2F;&#x2F; 记录根结点以及其左孩子
+    while(j &lt;&#x3D; to) &#123;
+        &#x2F;&#x2F; 左孩子存在
+        if(j + 1 &lt;&#x3D; to &amp;&amp; heap[j+1] &gt; heap[j]) &#123;
+            &#x2F;&#x2F; 右孩子也存在且右孩子大于左孩子
+            j &#x3D; j + 1;
+        &#125;
+        if(heap[j] &gt; heap[i]) &#123;
+            &#x2F;&#x2F; j记录的是左右孩子中的较大者索引，将其与父亲结点交换
+            swap(heap[i], heap[j]);
+            &#x2F;&#x2F; 接下来需要对与父亲结点进行交换的孩子结点（即索引j）所在子树进行调整
+            i &#x3D; j;
+            j &#x3D; 2 * i;
+        &#125; else	break; &#x2F;&#x2F; 满足堆的性质，无需任何调整
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="建堆"><a href="#建堆" class="headerlink" title="建堆"></a>建堆</h3><p>接下来实现第一条“<strong>根结点的扫描是自底向上、自右向左的</strong>”，即可完成建堆。<strong>在结点数量为$n$的完全二叉树中，叶子结点数量为$\displaystyle \lceil \frac{n}{2} \rceil$</strong>，因此范围在$\displaystyle \left[1, \lfloor \frac{n}{2} \rfloor\right]$的结点均为非叶子结点。我们倒着遍历进行调整即可。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void createHeap(int n) &#123;
     int i;
-    for(i&#x3D;1; i&lt;&#x3D;n; i++)	father[i] &#x3D; i;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>完成所有的合并操作后，要求共有几个不同的集合，就直接寻找根结点的个数即可：有几个根，就有几个不同的集合。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int i;
-int ans &#x3D; 0;
-for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
-    if(father[i] &#x3D;&#x3D; i)	ans++;
+    for(i&#x3D;n&#x2F;2; i; i--) &#123;
+        downAdjust(i, n);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>回到上面的建堆过程分析中来。显然，每次建立好堆之后，完全二叉树中的最大结点正是根结点，换言之，我们选出了最大结点。<strong>那么我们是不是就可以通过每次将完全二叉树调整为堆，得到最大结点，然后将其与完全二叉树中乱序部分的最后一个元素互换，这样不断地从剩余乱序元素中选出最大值放到后面，从而完成排序呢？</strong></p>
+<h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h3><p>我们以一个具体的例子来说明堆排序的过程。首先初始的乱序序列为[25, 8, 20, 7, 4, 18, 12, 6, 3, 14]，我们需要将其按非递减顺序排序。</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\待排序序列 (1" alt="待排序序列">.svg)</p>
+<ol>
+<li><p>第一步需要将完全二叉树建成堆，事实上初始情况正是上一部分建堆的结果，已经是堆结构了，因此可以跳过；</p>
+</li>
+<li><p>此时根结点就是待排序部分的最大元素，于是将其与待排序部分的末位元素互换，最后一个元素位置固定了，待排序序列长度减一，见下图；</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位1个元素.svg" alt="已就位1个元素"></p>
+</li>
+<li><p>接下来对$[1,n-1]$范围内的结点调整为大顶堆，以选出最大结点，调整后的结构见下图；</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位1个元素-已调整.svg" alt="已就位1个元素，已调整"></p>
+</li>
+<li><p>同2，将根结点与待排序部分末位元素互换，见下图；</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位2个元素.svg" alt="已就位2个元素"></p>
+</li>
+<li><p>同3，对$[1,n-2]$范围内的结点调整为大顶堆，以选出最大结点，调整后的结构见下图；</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位2个元素-已调整.svg" alt="已就位2个元素，已调整"></p>
+</li>
+<li><p>以此类推，接下来每一步给出选出最大结点并重新调整为堆的结果图；</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位3个元素-已调整.svg" alt="已就位3个元素，已调整"></p>
+</li>
+<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位4个元素-已调整 (1" alt="已就位4个元素，已调整">.svg)</p>
+</li>
+<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位5个元素-已调整.svg" alt="已就位5个元素，已调整"></p>
+</li>
+<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位6个元素-已调整.svg" alt="已就位6个元素-已调整"></p>
+</li>
+<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位7个元素-已调整 (1" alt="已就位7个元素，已调整">.svg)</p>
+</li>
+<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位8个元素-已调整.svg" alt="已就位8个元素，已调整"></p>
+</li>
+<li><p><img src="D:\我的大学\newBlogs\source\_posts\assets\堆.assets\已就位9个元素-已调整.svg" alt="已就位9个元素，已调整"></p>
+</li>
+<li><p>此时只剩下一个元素，排序也就完成了。</p>
+</li>
+</ol>
+<p>上述过程便是堆排序的完整可视化排序过程。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>在理解并实现了自上而下调整为堆的过程和函数<code>downAdjust()</code>后，堆排序的实现也就迎刃而解了。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void heapSort(int n) &#123;
+    createHeap(n); &#x2F;&#x2F; 初始建堆
+    int i;
+    for(i&#x3D;n; i&gt;1; i--) &#123;
+        &#x2F;&#x2F; 每次选出当前堆顶最大结点与未排序部分末位元素i互换（而导致有序），故未排序末位元素索引变为i-1
+        swap(heap[1], heap[i]);
+        downAdjust(1, i-1);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>分析到这里，我们可以发现，事实上，堆排序的本质是一个<strong>“选择排序”</strong>——只不过相比于朴素的选择排序，堆排序借助了树形结构的堆来选出当前元素的最大者/最小者，以提高效率。由于每次调整的时间复杂度为$\mathcal{O}(\log n)$，而需要进行$n-1$次调整，故堆排序的时间复杂度为$\mathcal{O}(n\log n)$。</p>
+<p>再看看它的空间复杂度，堆排序基本上没有借助额外的存储空间，因此空间复杂度为$\mathcal{O}(1)$。</p>
+<p>最后看看它的稳定性。<strong>堆排序是不稳定的</strong>，因为本质上堆排序属于“选择排序”，且调整堆结构时，父子结点之间会进行换位。正是这种换位，会破坏排序算法的稳定性。</p>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void downAdjust(int from, int to) &#123;
+    &#x2F;&#x2F; 对[from, to]范围内的结点进行调整，to通常是完全二叉树的最后一个结点索引
+    int i &#x3D; from, j &#x3D; 2 * from; &#x2F;&#x2F; 记录根结点以及其左孩子
+    while(j &lt;&#x3D; to) &#123;
+        &#x2F;&#x2F; 左孩子存在
+        if(j + 1 &lt;&#x3D; to &amp;&amp; heap[j+1] &gt; heap[j]) &#123;
+            &#x2F;&#x2F; 右孩子也存在且右孩子大于左孩子
+            j &#x3D; j + 1;
+        &#125;
+        if(heap[j] &gt; heap[i]) &#123;
+            &#x2F;&#x2F; j记录的是左右孩子中的较大者索引，将其与父亲结点交换
+            swap(heap[i], heap[j]);
+            &#x2F;&#x2F; 接下来需要对与父亲结点进行交换的孩子结点（即索引j）所在子树进行调整
+            i &#x3D; j;
+            j &#x3D; 2 * i;
+        &#125; else	break; &#x2F;&#x2F; 满足堆的性质，无需任何调整
+    &#125;
 &#125;
-&#x2F;&#x2F; ans 即为根结点数量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+void createHeap(int n) &#123;
+    &#x2F;&#x2F; 建立堆
+    int i;
+    for(i&#x3D;n&#x2F;2; i; i--) &#123;
+        downAdjust(i, n);
+    &#125;
+&#125;
+
+void heapSort(int n) &#123;
+    &#x2F;&#x2F; 堆排序
+    createHeap(n); &#x2F;&#x2F; 初始建堆
+    int i;
+    for(i&#x3D;n; i&gt;1; i--) &#123;
+        &#x2F;&#x2F; 每次选出当前堆顶最大结点与未排序部分末位元素i互换（而导致有序），故未排序末位元素索引变为i-1
+        swap(heap[1], heap[i]);
+        downAdjust(1, i-1);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -724,7 +819,7 @@ for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/12/%E5%B9%B6%E6%9F%A5%E9%9B%86/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/12/%E5%B9%B6%E6%9F%A5%E9%9B%86/</a>
+                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/14/%E5%A0%86/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/14/%E5%A0%86/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -766,8 +861,8 @@ for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
                                     <span class="chip bg-color">算法</span>
                                 </a>
                             
-                                <a href="/mid-lake-pavilion.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
-                                    <span class="chip bg-color">并查集</span>
+                                <a href="/mid-lake-pavilion.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
                         </div>
@@ -941,9 +1036,10 @@ for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2023/08/14/%E5%A0%86/">
                     <div class="card-image">
@@ -961,9 +1057,9 @@ for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -976,6 +1072,7 @@ for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -998,13 +1095,13 @@ for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/08/11/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                <a href="/mid-lake-pavilion.github.io/2023/08/12/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="平衡二叉树">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="并查集">
                         
-                        <span class="card-title">平衡二叉树</span>
+                        <span class="card-title">并查集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1015,7 +1112,7 @@ for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-12
                             </span>
                         <span class="publish-author">
                             
@@ -1036,8 +1133,8 @@ for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
                         <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/mid-lake-pavilion.github.io/tags/%E6%A0%91/">
-                        <span class="chip bg-color">树</span>
+                    <a href="/mid-lake-pavilion.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+                        <span class="chip bg-color">并查集</span>
                     </a>
                     
                 </div>
@@ -1192,6 +1289,13 @@ for(i&#x3D;1; i&lt;&#x3D;n; i++) &#123;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
