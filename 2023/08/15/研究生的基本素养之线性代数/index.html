@@ -682,7 +682,7 @@
 <ul>
 <li>一范数：$\displaystyle ||\mathbf{v}||_1 = \sum_{i=1}^n |v_i|$</li>
 <li>二范数：$\displaystyle ||\mathbf{v}||_2 = \sqrt{\sum_{i=1}^nv_i^2} $</li>
-<li>$\infin$范数：$||\mathbf{v}||_\infin = \max |v_i|$</li>
+<li>$\infty$范数：$||\mathbf{v}||_\infty = \max |v_i|$</li>
 <li>p范数：$\displaystyle ||\mathbf{v}||_p = \left( \sum_{i=1}^nv_i^2 \right)^{\frac{1}{p}}$</li>
 </ul>
 </li>
@@ -752,14 +752,13 @@ r(A|b) = r(A) < 4</script><p>因此方程组有无穷解。</p>
 <li>$\dots$</li>
 <li>$\displaystyle \beta_n = \alpha_n - \frac{(\alpha_n, \beta_1)}{(\beta_1, \beta_1)}\beta_1 - \frac{(\alpha_n, \beta_2)}{(\beta_2, \beta_2)}\beta_2 - \cdots - \frac{(\alpha_n, \beta_{n-1})}{(\beta_{n-1}, \beta_{n-1})}\beta_{n-1}$</li>
 </ul>
-<p>事实上，$\displaystyle \frac{(\alpha_i, \beta_j)}{(\beta_j, \beta_j)}$表示向量</p>
 <blockquote>
 <p>向量$\mathbf{x}$与$\mathbf{w}$的内积$(\mathbf{x}, \mathbf{w}) = ||\mathbf{x}||_2·||\mathbf{w}||_2·\cos\theta$，而$(\mathbf{x},\mathbf{x})=||\mathbf{x}||_2·||\mathbf{x}||_2$，因此向量$\mathbf{x}$在$\mathbf{w}$上的投影长度为$\displaystyle ||\mathbf{Prj}_{\mathbf{w}}\mathbf{x}||_2 = ||\mathbf{x}||_2·\cos\theta $，而投影则表示为</p>
 <script type="math/tex; mode=display">
 \mathbf{Prj_{\mathbf{w}}x} = \frac{||\mathbf{x}||_2·\cos\theta}{||\mathbf{w}||_2}\mathbf{w} = \frac{(\mathbf{x}, \mathbf{w})}{(\mathbf{w}, \mathbf{w})}\mathbf{w}</script><p>注意，此处的$||\mathbf{x}||_2$表示$\mathbf{x}$的二范数（即模长）。</p>
 <p>因此，$\displaystyle \frac{(\alpha_i, \beta_j)}{(\beta_j, \beta_j)}\beta_j$表示向量$\alpha_i$在$\beta_j$上的投影，进一步地，$\displaystyle \alpha_i - \frac{(\alpha_i, \beta_j)}{(\beta_j, \beta_j)}\beta_j$（比如下图中的虚线部分）则与$\beta_j$正交。</p>
 </blockquote>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\研究生的基本素养之线性代数.assets\diagram-1-16908718997321.png" alt="投影"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E6%8A%95%E5%BD%B1%E5%9B%BE%E7%A4%BA.png" alt="向量投影"></p>
 </li>
 <li><p>奇异值分解。</p>
 <p>对于一般的m×n的矩阵A，无法进行特征值分解，但可以进行奇异值分解：</p>
