@@ -703,12 +703,98 @@ F(x) = P(X\leqslant x) = \begin{cases} \displaystyle \sum_{t\leqslant x} p(t), X
 </blockquote>
 </li>
 <li><p>几种常见的离散型分布</p>
-<p>|                | 0-1分布          | 二项分布              | 泊松分布                                         | 超几何分布                                       |<br>| ——————— | ———————— | ——————————- | ———————————————————————— | ———————————————————————— |<br>| 分布$X$        | $X\sim 0-1(p)$   | $X\sim B(n,p)$        | $X\sim P(\lambda)$                               | $X\sim H(N,M,n)$                                 |<br>| 分布律$P(X=k)$ | $p^k(1-p)^{n-k}$ | $C_n^kp^k(1-p)^{n-k}$ | $\displaystyle \frac{\lambda^ke^{-\lambda}}{k!}$ | $\displaystyle \frac{C_M^kC_{N-M}^{n-l}}{C_N^n}$ |<br>| 数学期望$E(X)$ | $p$              | $np$                  | $\lambda$                                        | $\displaystyle n\frac{M}{N}$                     |<br>| 方差$D(X)$     | $p(1-p)$         | $np(1-p)$             | $\lambda$                                        | $\displaystyle n\frac{M(N-M)(N-n)}{N^2(N-1)}$    |</p>
-</li>
-<li><p>几种常见的连续型分布</p>
-<p>|                | 正态分布                                                     | 指数分布                            |                           均匀分布                           |<br>| ——————— | —————————————————————————————— | —————————————————- | :—————————————————————————————: |<br>| 分布$X$        | $X\sim N(\mu,\sigma^2)$                                      | $X\sim E(\lambda)$                  |                        $X\sim U(a,b)$                        |<br>| 密度函数$f(x)$ | $\displaystyle \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$ | $\lambda e^{-\lambda x}$            |                $\displaystyle \frac{1}{b-a}$                 |<br>| 分布函数$F(x)$ |                                                              | $1-e^{-\lambda x}$                  | $\begin{cases} 0,x\leqslant a \\ \displaystyle \frac{x-a}{b-a}, a&lt;x&lt;b \\ 1, x\geqslant b \end{cases}$ |<br>| 数学期望$E(X)$ | $\mu$                                                        | $\displaystyle \frac{1}{\lambda}$   |                $\displaystyle \frac{a+b}{2}$                 |<br>| 方差$D(X)$     | $\sigma^2$                                                   | $\displaystyle \frac{1}{\lambda^2}$ |              $\displaystyle \frac{(b-a)^2}{12}$              |</p>
 </li>
 </ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>0-1分布</th>
+<th>二项分布</th>
+<th>泊松分布</th>
+<th>超几何分布</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分布$X$</td>
+<td>$X\sim 0-1(p)$</td>
+<td>$X\sim B(n,p)$</td>
+<td>$X\sim P(\lambda)$</td>
+<td>$X\sim H(N,M,n)$</td>
+</tr>
+<tr>
+<td>分布律$P(X=k)$</td>
+<td>$p^k(1-p)^{n-k}$</td>
+<td>$C_n^kp^k(1-p)^{n-k}$</td>
+<td>$\displaystyle \frac{\lambda^ke^{-\lambda}}{k!}$</td>
+<td>$\displaystyle \frac{C_M^kC_{N-M}^{n-l}}{C_N^n}$</td>
+</tr>
+<tr>
+<td>数学期望$E(X)$</td>
+<td>$p$</td>
+<td>$np$</td>
+<td>$\lambda$</td>
+<td>$\displaystyle n\frac{M}{N}$</td>
+</tr>
+<tr>
+<td>方差$D(X)$</td>
+<td>$p(1-p)$</td>
+<td>$np(1-p)$</td>
+<td>$\lambda$</td>
+<td>$\displaystyle n\frac{M(N-M)(N-n)}{N^2(N-1)}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>几种常见的连续型分布</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>正态分布</th>
+<th>指数分布</th>
+<th style="text-align:center">均匀分布</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分布$X$</td>
+<td>$X\sim N(\mu,\sigma^2)$</td>
+<td>$X\sim E(\lambda)$</td>
+<td style="text-align:center">$X\sim U(a,b)$</td>
+</tr>
+<tr>
+<td>密度函数$f(x)$</td>
+<td>$\displaystyle \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$</td>
+<td>$\lambda e^{-\lambda x}$</td>
+<td style="text-align:center">$\displaystyle \frac{1}{b-a}$</td>
+</tr>
+<tr>
+<td>分布函数$F(x)$</td>
+<td></td>
+<td>$1-e^{-\lambda x}$</td>
+<td style="text-align:center">$\begin{cases} 0,x\leqslant a \\ \displaystyle \frac{x-a}{b-a}, a&lt;x&lt;b \\ 1, x\geqslant b \end{cases}$</td>
+</tr>
+<tr>
+<td>数学期望$E(X)$</td>
+<td>$\mu$</td>
+<td>$\displaystyle \frac{1}{\lambda}$</td>
+<td style="text-align:center">$\displaystyle \frac{a+b}{2}$</td>
+</tr>
+<tr>
+<td>方差$D(X)$</td>
+<td>$\sigma^2$</td>
+<td>$\displaystyle \frac{1}{\lambda^2}$</td>
+<td style="text-align:center">$\displaystyle \frac{(b-a)^2}{12}$</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="多元随机变量及其概率分布"><a href="#多元随机变量及其概率分布" class="headerlink" title="多元随机变量及其概率分布"></a>多元随机变量及其概率分布</h3><p>多元随机变量相比于单一随机变量，提高了随机变量维度，情况更加复杂。同样地，也有概率密度、分布函数等定义。这里以常见的二元随机变量为例进行说明。</p>
 <ol>
 <li><p>联合分布律与联合概率密度</p>
