@@ -664,7 +664,7 @@ f(\mathbf{x})=\mathbf{w}^T\mathbf{x}+b\quad w,x\in R^d</script><h2 id="线性回
 <script type="math/tex; mode=display">
 \begin{aligned} \frac{\partial MSE}{\partial \mathbf{w}}&=\frac{\partial\displaystyle \sum_{i=1}^m\left(\mathbf{w}^T\mathbf{x}^{(i)}+b-y^{(i)}\right)^2}{\partial \mathbf{w}}\\\\&=2\left(\mathbf{w}\sum_{i=1}^m(\mathbf{x}^{(i)})^2-\sum_{i=1}^m(y^{(i)}-b)\mathbf{x}^{(i)}\right) \end{aligned}</script><p>类似地，有</p>
 <script type="math/tex; mode=display">
-\frac{\partial MSE}{\partial b}=2\left(mb-\sum_{i=1}^m(y^{(i)}-\mathbf{w}\mathbf{x}^{(i)})\right)</script><p>令梯度等于零，即可求解参数的最优解$w^<em>,b^</em>$。</p>
+\frac{\partial MSE}{\partial b}=2\left(mb-\sum_{i=1}^m(y^{(i)}-\mathbf{w}\mathbf{x}^{(i)})\right)</script><p>令梯度等于零，即可求解参数的最优解$w_<em>,b_</em>$。</p>
 <h2 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h2><p>更一般地，我们把刚才的数据集表示为矩阵</p>
 <script type="math/tex; mode=display">
 X = \begin{bmatrix} x_{11} & x_{12} & ... & x_{1d} & 1 \\ x_{21} & x_{22} & ... & x_{2d} & 1\\ ... & ... & ... & ... & ... \\ x_{m1} & x_{m2} & ... & x_{md} & 1 \end{bmatrix}=\begin{bmatrix} x_1^T & 1  \\ x_2^T & 1 \\ ... & ... \\ x_m^T & 1 \end{bmatrix}</script><p>标签记作</p>
