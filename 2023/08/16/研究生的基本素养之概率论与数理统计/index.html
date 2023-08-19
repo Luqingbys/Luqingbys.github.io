@@ -6,12 +6,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="研究生的基本素养之概率论与数理统计, 湖心亭">
     <meta name="description" content="写在前面
-对于包括计算机专业在内的理工科而言，线性代数是一门非常重要的数学基础课。本文立足于申请研究生笔试、面试等等考核，从本科生角度，将《线性代数》这门课中常见的重要知识点做以简单的记录。
+对于包括计算机专业在内的理工科而言，概率论与数理统计是一门非常重要的数学基础课。本文立足于申请研究生笔试、面试等等考核，从本科生角度，将《概率论与数理统计》这门课中常见的重要知识点做以简单的记录。
 
 正文概率论基本知识点
-条件概率公式
-
-\beg">
+条件概率">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -627,7 +625,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-18
+                    2023-08-19
                 </div>
                 
 
@@ -660,7 +658,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
-<p>对于包括计算机专业在内的理工科而言，线性代数是一门非常重要的数学基础课。本文立足于申请研究生笔试、面试等等考核，从本科生角度，将《线性代数》这门课中常见的重要知识点做以简单的记录。</p>
+<p>对于包括计算机专业在内的理工科而言，概率论与数理统计是一门非常重要的数学基础课。本文立足于申请研究生笔试、面试等等考核，从本科生角度，将《概率论与数理统计》这门课中常见的重要知识点做以简单的记录。</p>
 </blockquote>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="概率论基本知识点"><a href="#概率论基本知识点" class="headerlink" title="概率论基本知识点"></a>概率论基本知识点</h3><ol>
 <li><p>条件概率公式</p>
@@ -965,7 +963,53 @@ E(Y^2) = \int_0^1y^2f_Y(y)dy = \frac{1}{5}</script><p>故</p>
 D(X) = E(X^2) - E^2(X) = \frac{3}{80}\\
 D(Y) = E(Y^2) - E^2(Y) = \frac{19}{320}</script><p>因此得</p>
 <script type="math/tex; mode=display">
-\begin{aligned} \rho_{XY} &= \frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}\\ &= \frac{\displaystyle\frac{3}{160}}{\displaystyle \sqrt{\frac{3}{80}}\sqrt{\frac{19}{320}}} \\ &= \frac{3}{\sqrt{57}} \end{aligned}</script><h3 id="三大统计分布"><a href="#三大统计分布" class="headerlink" title="三大统计分布"></a>三大统计分布</h3><h3 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h3><h3 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h3><p>To be continued…</p>
+\begin{aligned} \rho_{XY} &= \frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}\\ &= \frac{\displaystyle\frac{3}{160}}{\displaystyle \sqrt{\frac{3}{80}}\sqrt{\frac{19}{320}}} \\ &= \frac{3}{\sqrt{57}} \end{aligned}</script><h3 id="三大统计分布"><a href="#三大统计分布" class="headerlink" title="三大统计分布"></a>三大统计分布</h3><ol>
+<li><p>卡方分布</p>
+<p>设$X_1,X_2,\dots,X_n$是来自标准正态分布$\mathcal{N}(0,1)$的样本，令</p>
+<script type="math/tex; mode=display">
+X = \sum_{i=1}^nX_i^2</script><p>则称$X$是自由度为$n$的$\mathcal{X}^2$变量，其分布称为自由度为$n$的$\mathcal{X}^2$分布，记作$X\sim \mathcal{X}^2_n$</p>
+<p><strong>上侧$\alpha$分位数</strong>：若$X\sim \mathcal{X}^2_n$，记$P(X&gt;\mathcal{X}_\alpha^2(n))=\alpha$，则$c=\mathcal{X}_n^2(\alpha)$称为$\mathcal{X}_n^2$分布的上侧$\alpha$分位数。</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\研究生的基本素养之概率论与数理统计.assets\image-20230818213924268.png" alt="卡方分布，上侧α分位数"></p>
+<blockquote>
+<p>关于上侧$\alpha$分位数的，一定要结合其实际含义进行理解。尤其是$\alpha$的含义，结合概率关系进行理解。注意三大统计分布的图线和x轴围成的区域面积始终为1。</p>
+</blockquote>
+</li>
+<li><p>t-分布</p>
+<p>设随机变量$X\sim \mathcal{N}(0,1)$，$Y\sim \mathcal{X}_n^2$，且$X,Y$独立，则称</p>
+<script type="math/tex; mode=display">
+T=\frac{X}{\sqrt{Y/n}}</script><p>为自由度为$n$的$t$变量，其分布称为自由度为$n$的t-分布，记作$T\sim t(n)$。</p>
+<p><strong>上侧$\alpha$分位数</strong>：若$T\sim t(n)$，记$P(T&gt;t_{\frac{\alpha}{2}}(n))=\frac{\alpha}{2}$。根据t-分布图像对称性，有重要性质</p>
+<script type="math/tex; mode=display">
+t_{1-\frac{\alpha}{2}}(n) = -t_{\frac{\alpha}{2}}(n)</script><p><img src="D:\我的大学\newBlogs\source\_posts\assets\研究生的基本素养之概率论与数理统计.assets\image-20230819165854092.png" alt="t分布上侧α分位数" style="zoom:50%;" /></p>
+</li>
+<li><p>F-分布</p>
+<p>设随机变量$U\sim \mathcal{X}^2(n_1), V\sim \mathcal{X}^2(n_2)$，且它们互相独立，则称随机变量</p>
+<script type="math/tex; mode=display">
+F=\frac{U/n_1}{V/n_2}</script><p>为服从自由度为$(n_1,n_2)$的F分布，记作$F\sim F(n_1,n_2)$。</p>
+<p>上侧$\alpha$分位数：若$F\sim F(n_1,n_2)$，记$\displaystyle P(F&gt;F_{\frac{\alpha}{2}}(n_1,n_2))=\frac{\alpha}{2}$。有重要性质：</p>
+<script type="math/tex; mode=display">
+F_{1-\alpha}(n_1,n_2) = \frac{1}{F_\alpha(n_2,n_1)}</script><p><img src="D:\我的大学\newBlogs\source\_posts\assets\研究生的基本素养之概率论与数理统计.assets\image-20230819171441008.png" alt="F-分布上侧α分位数" style="zoom:80%;" /></p>
+</li>
+<li><p>正态分布总体的样本均值与样本方差的分布</p>
+<p>设$X_1,X_2,\dots,X_n$是来自正态分布$\mathcal{N}(\mu,\sigma^2)$的样本，样本均值为$\bar{X}$，样本方差为$S^2$，则有几条重要定理，需要掌握：</p>
+<ul>
+<li><p>样本均值$\bar{X}$满足</p>
+<script type="math/tex; mode=display">
+\bar{X}\sim\mathcal{N}(\mu,\sigma^2/n)</script><p>也即</p>
+<script type="math/tex; mode=display">
+\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \sim \mathcal{N}(0,1)</script></li>
+<li><p>样本均值$\bar{X}$与样本方差$S^2$相互独立，且</p>
+<script type="math/tex; mode=display">
+\frac{(n-1)S^2}{\sigma^2} \sim \mathcal{X}^2(n-1)</script></li>
+<li><p>有统计量满足t分布</p>
+<script type="math/tex; mode=display">
+\frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t(n-1)</script></li>
+</ul>
+<p><strong>上面的三个统计量以及其满足的分布非常重要，在后续的假设检验部分有着非常关键的应用。</strong></p>
+</li>
+</ol>
+<h3 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h3><p>矩估计、极大似然估计都是必须掌握的重要知识点。</p>
+<h3 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h3><p>To be continued…</p>
 
                 
             </div>
