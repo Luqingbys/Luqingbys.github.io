@@ -1056,9 +1056,13 @@ P\left\{ \bar{X}-\frac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}} < \mu < \bar{X}+\fr
 <script type="math/tex; mode=display">
 \left( \bar{X}-\frac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}}, \bar{X}+\frac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}} \right)</script><h5 id="sigma-2-未知，-mu-未知时-mu-的区间估计"><a href="#sigma-2-未知，-mu-未知时-mu-的区间估计" class="headerlink" title="$\sigma^2$未知，$\mu$未知时$\mu$的区间估计"></a>$\sigma^2$未知，$\mu$未知时$\mu$的区间估计</h5><p>这种情况下，就不可以使用枢轴量$\displaystyle \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}$了，因为$\sigma$是未知的。但是，<strong>考虑到$S^2$是$\sigma^2$的无偏估计，因此选用枢轴量$\displaystyle \frac{\bar{X}-\mu}{S/\sqrt{n}}$</strong>：</p>
 <script type="math/tex; mode=display">
-\frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t(n-1)</script><p>因此有</p>
+\frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t(n-1)</script><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/image-20230819165854092.png" alt="t分布上侧α分位数" style="zoom:50%;" /></p>
+<p>因此有</p>
 <script type="math/tex; mode=display">
-P\left\{ \left| \frac{\bar{X}-\mu}{S/\sqrt{n}} \right| < t_{\frac{\alpha}{2}}(n-1) \right \} = 1-\alpha</script><p>整理得到$\mu$的一个置信水平为$1-\alpha$的置信区间</p>
+P\left\{ \left| \frac{\bar{X}-\mu}{S/\sqrt{n}} \right| < t_{\frac{\alpha}{2}}(n-1) \right \} = 1-\alpha</script><blockquote>
+<p>根据上图所示的上$\alpha$分位数，单个黑色区域面积为$\displaystyle \frac{\alpha}{2}$，全部的黑色区域面积加起来就是$\alpha$，白色区域面积为$1-\alpha$，刚好就是上式的通俗描述。其他的区间估计都可以以此类似理解。</p>
+</blockquote>
+<p>整理得到$\mu$的一个置信水平为$1-\alpha$的置信区间</p>
 <script type="math/tex; mode=display">
 \left( \bar{X}-\frac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1), \bar{X}+\frac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1) \right)</script><h5 id="sigma-2-未知，-mu-未知时-sigma-2-的区间估计"><a href="#sigma-2-未知，-mu-未知时-sigma-2-的区间估计" class="headerlink" title="$\sigma^2$未知，$\mu$未知时$\sigma^2$的区间估计"></a>$\sigma^2$未知，$\mu$未知时$\sigma^2$的区间估计</h5><p>这时要选去的枢轴量为</p>
 <script type="math/tex; mode=display">
@@ -1082,10 +1086,41 @@ L(\theta) = \prod_{i=1}^nf(x_i;\theta) = \begin{cases} \displaystyle \prod_{i=1}
 <script type="math/tex; mode=display">
 \frac{\partial \ln L(\theta)}{\partial \theta} = \sum_{i=1}^{\theta}\ln x_i + \frac{n}{\theta+1} = 0</script><p>得</p>
 <script type="math/tex; mode=display">
-\hat{\theta} = -\frac{n}{\displaystyle \sum_{i=1}^n\ln x_i} - 1</script><blockquote>
+\hat{\theta} = -\frac{n}{\displaystyle \sum_{i=1}^n\ln x_i} - 1</script><h5 id="区间估计-1"><a href="#区间估计-1" class="headerlink" title="区间估计"></a>区间估计</h5><p>设一次考试的成绩服从正态分布$\mathcal{N}(\mu,\sigma^2)$，其中$\mu,\sigma^2$均未知，现从中随机抽取256个考生的成绩，测得样本均值$\bar{x}=60$，样本标准差$s=16$，求$\mu$的置信度为0.90的置信区间。</p>
+<p>解析：</p>
+<p>由于需要求出$\mu,\sigma^2$均未知时$\mu$的置信区间，因此选取枢轴量为</p>
+<script type="math/tex; mode=display">
+\frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t(n-1), n=256</script><p>由置信水平$1-\alpha=0.9$得$\alpha=0.1$，同时根据上侧$\alpha$分位数，得</p>
+<script type="math/tex; mode=display">
+P\left\{ \left| \frac{\bar{x}-\mu}{s/\sqrt{n}} \right| < t_{\frac{\alpha}{2}}(n-1) \right \} = 1-\alpha</script><p>将左侧不等式进行整理，即可得到</p>
+<script type="math/tex; mode=display">
+P\left\{ \bar{x}-\frac{s}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1) < \mu < \bar{x}+\frac{s}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1) \right\} = 0.9</script><p>置信区间为</p>
+<script type="math/tex; mode=display">
+\left( \bar{x}-\frac{s}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1), \bar{x}+\frac{s}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1) \right)</script><p>代入$\bar{x}=60,s=16,n=256,\alpha=0.1$得到最终结果</p>
+<script type="math/tex; mode=display">
+(60-t_{0.05}(255),60+t_{0.05}(255))</script><blockquote>
 <p>区间估计是后面假设检验的重要前导知识，必须掌握。</p>
 </blockquote>
-<h3 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h3><p>To be continued…</p>
+<h3 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h3><p>先来看一种假设检验问题的基本表述：</p>
+<p>在显著性水平$\alpha$下，检验假设</p>
+<script type="math/tex; mode=display">
+H_0:\mu=\mu_0, \ H_1:\mu\ne\mu_0.</script><p>也即“在显著性水平$\alpha$下，针对$H_1$检验$H_0$”。其中，<strong>$H_0$称为原假设，$H_1$称为备择假设</strong>。和区间估计中类似地，我们也需要选取一个统计量来帮助我们对假设进行检验，这样的统计量被称为<strong>检验统计量</strong>。而检验统计量的一旦落入某个区域$C$时，就可以拒绝原假设$H_0$，这样的区域$C$称为<strong>拒绝域</strong>。</p>
+<p>另外，注意到，备择假设中的$\mu&gt;0,\mu&lt;0$均可能成立，因此上面这种形式的假设检验被称为<strong>双边假设检验</strong>。我们选取的检验统计量为</p>
+<script type="math/tex; mode=display">
+Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \sim \mathcal{N}(0,1)</script><p>显著性水平为$\alpha$时，拒绝域为</p>
+<script type="math/tex; mode=display">
+|z| = \left| \frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}} \right| \geqslant z_{\frac{\alpha}{2}}</script><p>当然，与之相对地，还有<strong>左边检验</strong>和<strong>右边检验</strong>，分别为</p>
+<script type="math/tex; mode=display">
+H_0:\mu\geqslant \mu_0, \ H_1:\mu<\mu_0</script><p>和</p>
+<script type="math/tex; mode=display">
+H_0:\mu \leqslant \mu_0,\ H_1:\mu>\mu_0</script><p>与区间估计类似</p>
+<ul>
+<li>检验$\mu$，若$\sigma^2$已知，进行Z检验，选取检验统计量$\displaystyle Z=\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}} \stackrel{H_0为真}\sim \mathcal{N}(0,1)$</li>
+<li>检验$\mu$，若$\sigma^2$未知，进行t检验，选取检验统计量$\displaystyle t=\frac{\bar{X}-\mu_0}{S/\sqrt{n}} \stackrel{H_0为真} \sim t(n-1)$</li>
+<li>检验$\sigma^2$，若$\mu$未知，进行$\mathcal{X}$检验，选取检验统计量$\displaystyle \mathcal{X}^2=\frac{(n-1)S^2}{\sigma_0^2} \stackrel{H_0为真}\sim \mathcal{X}^2(n-1)$</li>
+</ul>
+<p>常见的假设检验置信区间以及单侧置信上下限如下图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/image-20230821174524244.png" alt="假设检验，置信区间"></p>
 
                 
             </div>
