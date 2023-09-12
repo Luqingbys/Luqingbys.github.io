@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="正则表达式匹配, 湖心亭">
+    <meta name="keywords" content="Leecode hot 10 正则表达式匹配, 湖心亭">
     <meta name="description" content="问题传送门：https://leetcode.cn/problems/regular-expression-matching/description/
 思路两个字符串进行匹配，一个是主串，一个是模式串，如何匹配？和比较经典的最长递增子序列问">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>正则表达式匹配 | 湖心亭</title>
+    <title>Leecode hot 10 正则表达式匹配 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -465,12 +465,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">正则表达式匹配</h1>
+                    <h1 class="description center-align post-title">Leecode hot 10 正则表达式匹配</h1>
                 </div>
             </div>
         </div>
@@ -602,6 +602,10 @@
                                 算法训练
                             </a>
                         
+                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/leecode-hot-100/" class="post-category">
+                                leecode hot 100
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -618,21 +622,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-09
+                    2023-09-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -734,6 +738,52 @@ public:
         return dp[s.size()][p.size()];
     &#125;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当然，也可以编写自底向上的带备忘录式动态规划代码。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    bool isSingleMatch(char ch1, char ch2) &#123;
+        if(ch1 &#x3D;&#x3D; &#39;.&#39; || ch2 &#x3D;&#x3D; &#39;.&#39;)    return true;
+        return ch1 &#x3D;&#x3D; ch2;
+    &#125;
+    int dp[25][25];
+    string S, P;
+    int DP(int i, int j) &#123;
+        &#x2F;&#x2F; s[0:i), p[0:j)是否匹配，前i、j个字符
+        if(dp[i][j] !&#x3D; -1)  return dp[i][j];
+        if(P[j-1] &#x3D;&#x3D; &#39;*&#39;) &#123;
+            if(!isSingleMatch(S[i-1], P[j-2])) &#123;
+                &#x2F;&#x2F; aaa  ab*
+                return dp[i][j] &#x3D; DP(i, j-2);
+            &#125; else &#123;
+                &#x2F;&#x2F; aaa  aa*
+                return dp[i][j] &#x3D; DP(i, j-2) || DP(i-1, j-2) || DP(i-1, j);
+            &#125;
+        &#125; else &#123;
+            if(isSingleMatch(S[i-1], P[j-1])) &#123;
+                return dp[i][j] &#x3D; DP(i-1, j-1);
+            &#125; else  return dp[i][j] &#x3D; 0;
+        &#125;
+    &#125;
+    bool isMatch(string s, string p) &#123;
+        &#x2F;&#x2F; s &#x3D; &quot;aa&quot;
+        &#x2F;&#x2F; p &#x3D; &quot;a*&quot;
+        int i, j;
+        S &#x3D; s, P &#x3D; p;
+        memset(dp, -1, sizeof(dp));
+        dp[0][0] &#x3D; 1;
+        for(i&#x3D;1; i&lt;&#x3D;s.size(); i++)   dp[i][0] &#x3D; 0;
+        for(i&#x3D;1; i&lt;&#x3D;p.size(); i++) &#123;
+            if(p[i-1] &#x3D;&#x3D; &#39;*&#39;) dp[0][i] &#x3D; dp[0][i-2];
+            else    dp[0][i] &#x3D; 0;
+        &#125;
+        for(i&#x3D;1; i&lt;&#x3D;s.size(); i++) &#123;
+            for(j&#x3D;1; j&lt;&#x3D;p.size(); j++) &#123;
+                dp[i][j] &#x3D; DP(i, j);
+            &#125;
+        &#125;
+        return dp[s.size()][p.size()];
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
