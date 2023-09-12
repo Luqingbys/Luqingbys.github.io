@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Dijkstra算法, 湖心亭">
-    <meta name="description" content="算法简介迪杰斯特拉算法，是一种基于贪心思想的、用于求解单源最短路径的算法。也就是说，给定一张（不含负权的）图以及一个源点，迪杰斯特拉算法可以很方便地求出各个结点到源点的最短路径。
-实例分析我们从一个具体的例子来看看迪杰斯特拉算法的运行过程。">
+    <meta name="keywords" content="238.除自身以外数组的乘积, 湖心亭">
+    <meta name="description" content="问题
+传送门：https://leetcode.cn/problems/product-of-array-except-self/
+
+给你一个整数数组 nums，返回 数组 answer ，其中 answer[i] 等于 nums 中除 n">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Dijkstra算法 | 湖心亭</title>
+    <title>238.除自身以外数组的乘积 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -465,12 +467,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Dijkstra算法</h1>
+                    <h1 class="description center-align post-title">238.除自身以外数组的乘积</h1>
                 </div>
             </div>
         </div>
@@ -586,12 +588,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/">
+                                <span class="chip bg-color">算法训练</span>
                             </a>
                         
-                            <a href="/mid-lake-pavilion.github.io/tags/%E8%B4%AA%E5%BF%83/">
-                                <span class="chip bg-color">贪心</span>
+                            <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
+                                <span class="chip bg-color">Leecode hot 100</span>
+                            </a>
+                        
+                            <a href="/mid-lake-pavilion.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">
+                                <span class="chip bg-color">前缀和</span>
                             </a>
                         
                     </div>
@@ -602,8 +608,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/" class="post-category">
-                                算法训练
+                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -615,28 +621,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-27
+                    2023-09-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-08-27
+                    2023-09-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    481
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 
@@ -654,106 +660,51 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h2><p>迪杰斯特拉算法，是一种<strong>基于贪心思想的、用于求解单源最短路径</strong>的算法。也就是说，给定一张（不含负权的）图以及一个源点，迪杰斯特拉算法可以很方便地求出各个结点到源点的最短路径。</p>
-<h2 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h2><p>我们从一个具体的例子来看看迪杰斯特拉算法的运行过程。注意，我们</p>
-<ul>
-<li>用数组dis来记录每一个结点到源点的最短距离；</li>
-<li>用数组visit来标记结点是否访问过；</li>
-<li>用数组pre来记录每一个结点的前驱结点，以便求出最短路径。</li>
-</ul>
-<p>我们假设源点为①号结点。初始情况下，给dis[1]赋值0，其余均为∞；全部结点均为未访问，visit[]全零。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-初始情况.svg" alt="迪杰斯特拉-初始情况"></p>
-<p>接下来，我们选取源点①（它正好也是当前与源点距离最小的结点），<strong>将其标记为已访问</strong>，进行<strong>松弛</strong>操作。经过松弛操作后，结果变为</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-第一次选择.svg" alt="迪杰斯特拉-第一次选择"></p>
-<p>具体来说，以松弛结点①到结点②的边为例，我们可以发现原来的<code>dis[2]=∞</code>，新的距离<code>dis[1]+G[1][2]&lt;dis[2]</code>，于是将<code>dis[2]</code>更新为<code>dis[1]+G[1][2]</code>的值1，<strong>同时更新前驱结点<code>pre[1]</code>为①号结点</strong>。以此类推，可以更新③、④和⑤号结点的情况。</p>
-<p>接下来进行第二次贪心选择：<strong>在未访问过的结点中，选取与源点距离最近的结点，固定其dis值并标记为已访问</strong>。这里②、④均可，不妨选择②号结点：</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-第二次选择（未松弛）.svg" alt="迪杰斯特拉-第二次选择（未松弛）"></p>
-<p>同样地，以②号结点对与它邻接的边进行松弛。事实上，只有⑤与之邻接（只考虑未访问过的结点，下同），得到</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-第二次选择（已松弛）.svg" alt="迪杰斯特拉-第二次选择（已松弛）"></p>
-<p>接下来进行第三次贪心选择——选取④：</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-第三次选择（未松弛）.svg" alt="迪杰斯特拉-第三次选择（未松弛）"></p>
-<p>以④号结点对与它邻接的边进行松弛。事实上，也只有⑥与之邻接，得到</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-第三次选择（已松弛）.svg" alt="迪杰斯特拉-第三次选择（已松弛）"></p>
-<p>接下来进行第四次贪心选择——选取③：</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-第四次选择（未松弛）.svg" alt="迪杰斯特拉-第四次选择（未松弛）"></p>
-<p>以③号结点对与它邻接的边进行松弛。事实上，只有⑤号结点与之邻接，但是此处新值<code>dis[3]+G[3][5]&gt;dis[5]</code>，于是无需进行优化松弛。</p>
-<p>接下来进行第五次贪心选择——选取⑤：</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-第五次选择（未松弛）.svg" alt="迪杰斯特拉-第五次选择（未松弛）"></p>
-<p>同样地，以⑤号结点对与它邻接的边进行松弛，也即⑤⑥：</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-第五次选择（已松弛）.svg" alt="迪杰斯特拉-第五次选择（已松弛）"></p>
-<p>进行最后一次贪心选择——此时只剩下一个结点未访问了，选取它之后，算法运行结束。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\Dijkstra算法.assets\迪杰斯特拉-算法输出结果.svg" alt="迪杰斯特拉-算法输出结果"></p>
-<h2 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h2><p>下面我们来看看如何编写迪杰斯特拉算法。我们先从最基本的算法考虑起。首先，根据上面的实例分析，我们知道需要维护一个邻接矩阵（邻接表当然也可）以及dis、visit和pre数组：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">const int N &#x3D; 1000; &#x2F;&#x2F; 以1000个结点为例
-int G[N][N];
-int dis[N];
-int visit[N];
-int pre[N];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>接下来进行初始化：</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F; G, visit, pre均为全局变量时，默认值就是0无需额外的初始化
-const int INF &#x3D; 1000000000;
-fill(dis, dis+N, INF);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>基于贪心思想，迪杰斯特拉算法的伪代码如下。</p>
-<pre class="line-numbers language-none"><code class="language-none">初始化；
-for i from 1 to N:
-	1.选取未标记过的所有结点中，与源点距离最近的点idx，同时记下该距离minimum
-	dis[idx] &#x3D; minimum, visit[idx] &#x3D; 1;
-	2.松弛全部与idx结点邻接的、未访问过的边<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>接下来实现上面的1、2两部分代码，就完成了迪杰斯特拉算法的基本实现了。</p>
-<h3 id="选取最小dis值"><a href="#选取最小dis值" class="headerlink" title="选取最小dis值"></a>选取最小dis值</h3><p>这部分很简单，遍历选取最小值即可。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int minimum &#x3D; INF, idx &#x3D; -1;
-int j;
-for(j&#x3D;1; j&lt;&#x3D;N; j++) &#123;
-    if(visit[j] &#x3D;&#x3D; 0 &amp;&amp; dis[j] &lt; minimum) &#123;
-        minimum &#x3D; dis[j];
-        idx &#x3D; j;
-    &#125;
-&#125;
-if(idx &#x3D;&#x3D; -1)	return; &#x2F;&#x2F; 如果idx仍等于-1，表示图不连通<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="松弛"><a href="#松弛" class="headerlink" title="松弛"></a>松弛</h3><p>松弛操作也即遍历每一条与idx邻接的边，更新最小值即可。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(j&#x3D;1; j&lt;&#x3D;N; j++) &#123;
-    if(visit[j] &#x3D;&#x3D; 0 &amp;&amp; G[idx][j]) &#123;
-        &#x2F;&#x2F; visit[j] &#x3D;&#x3D; 0表示未访问；G[idx][j]表示不为零即idx和j之间存在边
-        if(dis[idx] + G[idx][j] &lt; dis[j]) &#123;
-            &#x2F;&#x2F; 可以进行松弛操作
-            dis[j] &#x3D; dis[idx] + G[idx][j];
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">const int N &#x3D; 1000; &#x2F;&#x2F; 以1000个结点为例
-const int INF &#x3D; 1000000000;
-int G[N][N]; &#x2F;&#x2F; 邻接矩阵
-int dis[N]; &#x2F;&#x2F; 记录最短距离
-int visit[N]; &#x2F;&#x2F; 记录是否访问过
-int pre[N]; &#x2F;&#x2F; 记录前驱结点索引
-
-void Dijstra() &#123;
-    &#x2F;&#x2F; 初始化
-	fill(dis, dis+N, INF);
-    &#x2F;&#x2F; 贪心，选取最小dis值
-    int minimum &#x3D; INF, idx &#x3D; -1;
-    int j;
-    for(j&#x3D;1; j&lt;&#x3D;N; j++) &#123;
-        if(visit[j] &#x3D;&#x3D; 0 &amp;&amp; dis[j] &lt; minimum) &#123;
-            minimum &#x3D; dis[j];
-            idx &#x3D; j;
-        &#125;
-    &#125;
-    if(idx &#x3D;&#x3D; -1)	return; &#x2F;&#x2F; 如果idx仍等于-1，表示图不连通
-    dis[idx] &#x3D; minimum, visit[idx] &#x3D; 1;
-    for(j&#x3D;1; j&lt;&#x3D;N; j++) &#123;
-        if(visit[j] &#x3D;&#x3D; 0 &amp;&amp; G[idx][j]) &#123;
-            &#x2F;&#x2F; visit[j] &#x3D;&#x3D; 0表示未访问；G[idx][j]表示不为零即idx和j之间存在边
-            if(dis[idx] + G[idx][j] &lt; dis[j]) &#123;
-                &#x2F;&#x2F; 可以进行松弛操作
-                dis[j] &#x3D; dis[idx] + G[idx][j];
-            &#125;
-        &#125;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="PAT1087"><a href="#PAT1087" class="headerlink" title="PAT1087"></a>PAT1087</h3><blockquote>
-<p>传送门：<a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805342720868352/exam/problems/994805379664297984?type=7&amp;page=0">https://pintia.cn/problem-sets/994805342720868352/exam/problems/994805379664297984?type=7&amp;page=0</a></p>
+                <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
+<p>传送门：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/product-of-array-except-self/">https://leetcode.cn/problems/product-of-array-except-self/</a></p>
 </blockquote>
+<p>给你一个整数数组 <code>nums</code>，返回 <em>数组 <code>answer</code> ，其中 <code>answer[i]</code> 等于 <code>nums</code> 中除 <code>nums[i]</code> 之外其余各元素的乘积</em> 。题目数据 <strong>保证</strong> 数组 <code>nums</code>之中任意元素的全部前缀元素和后缀的乘积都在 <strong>32 位</strong> 整数范围内。</p>
+<p>请<strong>不要使用除法，</strong>且在$\mathcal{O}(n)$时间复杂度内完成此题。</p>
+<p><strong>示例 1:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: nums &#x3D; [1,2,3,4]
+输出: [24,12,8,6]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>示例 2:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: nums &#x3D; [-1,1,0,-3,3]
+输出: [0,0,9,0,0]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 105</code></li>
+<li><code>-30 &lt;= nums[i] &lt;= 30</code></li>
+<li><strong>保证</strong> 数组 <code>nums</code>之中任意元素的全部前缀元素和后缀的乘积都在 <strong>32 位</strong> 整数范围内</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>不妨以一个具体的例子来看看结果是如何得出的。</p>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\238-除自身以外数组的乘积.assets\除自身以外数组乘积.svg" alt="除自身以外数组乘积可以看作由左右两部分组成"></p>
+<p>事实上，可以发现<strong>每一个元素除开自身以外数组的乘积可以由两部分组成：该元素左侧元素和右侧元素</strong>。那么我们可以维护两个前缀积数组，存储到最左侧的元素之积以及最右侧的元素之积即可。具体地，记原数组为$nums[]$，其长度为$n$，则</p>
+<ul>
+<li>维护$left[]$数组，其中$left[i]=nums[0]\times nums[1] \times \cdots\times nums[i-1]$</li>
+<li>维护$right[]$数组，其中$right[i] = nums[i+1]\times nums[i+2]\times \cdots\times nums[n-1]$</li>
+</ul>
+<p>两轮遍历，分别为left数组和right数组赋值即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+public:
+    vector&lt;int&gt; productExceptSelf(vector&lt;int&gt;&amp; nums) &#123;
+        int left[100005];
+        int right[100005];
+        int n &#x3D; nums.size();
+        left[0] &#x3D; right[n-1] &#x3D; 1;
+        int i;
+        for(i&#x3D;1; i&lt;n-1; i++) &#123;
+            left[i] &#x3D; left[i-1] * nums[i-1];
+            right[n-1-i] &#x3D; right[n-i] * nums[n-i]; 
+        &#125;
+        left[n-1] &#x3D; left[n-2] * nums[n-2], right[0] &#x3D; right[1] * nums[1];
+        vector&lt;int&gt; ans;
+        for(i&#x3D;0; i&lt;n; i++) &#123;
+            ans.push_back(left[i] * right[i]);
+        &#125;
+        return ans;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -780,7 +731,7 @@ void Dijstra() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/27/Dijkstra%E7%AE%97%E6%B3%95/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/08/27/Dijkstra%E7%AE%97%E6%B3%95/</a>
+                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/09/12/238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/09/12/238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -818,12 +769,16 @@ void Dijstra() &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/">
+                                    <span class="chip bg-color">算法训练</span>
                                 </a>
                             
-                                <a href="/mid-lake-pavilion.github.io/tags/%E8%B4%AA%E5%BF%83/">
-                                    <span class="chip bg-color">贪心</span>
+                                <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
+                                    <span class="chip bg-color">Leecode hot 100</span>
+                                </a>
+                            
+                                <a href="/mid-lake-pavilion.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">
+                                    <span class="chip bg-color">前缀和</span>
                                 </a>
                             
                         </div>
@@ -997,9 +952,68 @@ void Dijstra() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/mid-lake-pavilion.github.io/2023/09/12/238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="238.除自身以外数组的乘积">
+                        
+                        <span class="card-title">238.除自身以外数组的乘积</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/mid-lake-pavilion.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83/">
+                        <span class="chip bg-color">算法训练</span>
+                    </a>
+                    
+                    <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
+                        <span class="chip bg-color">Leecode hot 100</span>
+                    </a>
+                    
+                    <a href="/mid-lake-pavilion.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">
+                        <span class="chip bg-color">前缀和</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/mid-lake-pavilion.github.io/2023/09/12/309-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F/">
                     <div class="card-image">
@@ -1017,9 +1031,9 @@ void Dijstra() &#123;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1047,43 +1061,6 @@ void Dijstra() &#123;
                         <span class="chip bg-color">Leecode hot 100</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/08/24/PAT1107/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="PAT1107">
-                        
-                        <span class="card-title">PAT1107</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-24
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            鹿卿
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
@@ -1236,6 +1213,13 @@ void Dijstra() &#123;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 

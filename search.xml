@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>238.除自身以外数组的乘积</title>
+      <link href="/mid-lake-pavilion.github.io/2023/09/12/238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/"/>
+      <url>/mid-lake-pavilion.github.io/2023/09/12/238-%E9%99%A4%E8%87%AA%E8%BA%AB%E4%BB%A5%E5%A4%96%E6%95%B0%E7%BB%84%E7%9A%84%E4%B9%98%E7%A7%AF/</url>
+      
+        <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote><p>传送门：<a href="https://leetcode.cn/problems/product-of-array-except-self/">https://leetcode.cn/problems/product-of-array-except-self/</a></p></blockquote><p>给你一个整数数组 <code>nums</code>，返回 <em>数组 <code>answer</code> ，其中 <code>answer[i]</code> 等于 <code>nums</code> 中除 <code>nums[i]</code> 之外其余各元素的乘积</em> 。题目数据 <strong>保证</strong> 数组 <code>nums</code>之中任意元素的全部前缀元素和后缀的乘积都在 <strong>32 位</strong> 整数范围内。</p><p>请<strong>不要使用除法，</strong>且在$\mathcal{O}(n)$时间复杂度内完成此题。</p><p><strong>示例 1:</strong></p><pre class="line-numbers language-none"><code class="language-none">输入: nums &#x3D; [1,2,3,4]输出: [24,12,8,6]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><strong>示例 2:</strong></p><pre class="line-numbers language-none"><code class="language-none">输入: nums &#x3D; [-1,1,0,-3,3]输出: [0,0,9,0,0]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><strong>提示：</strong></p><ul><li><code>2 &lt;= nums.length &lt;= 105</code></li><li><code>-30 &lt;= nums[i] &lt;= 30</code></li><li><strong>保证</strong> 数组 <code>nums</code>之中任意元素的全部前缀元素和后缀的乘积都在 <strong>32 位</strong> 整数范围内</li></ul><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>不妨以一个具体的例子来看看结果是如何得出的。</p><p><img src="D:\我的大学\newBlogs\source\_posts\assets\238-除自身以外数组的乘积.assets\除自身以外数组乘积.svg" alt="除自身以外数组乘积可以看作由左右两部分组成"></p><p>事实上，可以发现<strong>每一个元素除开自身以外数组的乘积可以由两部分组成：该元素左侧元素和右侧元素</strong>。那么我们可以维护两个前缀积数组，存储到最左侧的元素之积以及最右侧的元素之积即可。具体地，记原数组为$nums[]$，其长度为$n$，则</p><ul><li>维护$left[]$数组，其中$left[i]=nums[0]\times nums[1] \times \cdots\times nums[i-1]$</li><li>维护$right[]$数组，其中$right[i] = nums[i+1]\times nums[i+2]\times \cdots\times nums[n-1]$</li></ul><p>两轮遍历，分别为left数组和right数组赋值即可。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;public:    vector&lt;int&gt; productExceptSelf(vector&lt;int&gt;&amp; nums) &#123;        int left[100005];        int right[100005];        int n &#x3D; nums.size();        left[0] &#x3D; right[n-1] &#x3D; 1;        int i;        for(i&#x3D;1; i&lt;n-1; i++) &#123;            left[i] &#x3D; left[i-1] * nums[i-1];            right[n-1-i] &#x3D; right[n-i] * nums[n-i];         &#125;        left[n-1] &#x3D; left[n-2] * nums[n-2], right[0] &#x3D; right[1] * nums[1];        vector&lt;int&gt; ans;        for(i&#x3D;0; i&lt;n; i++) &#123;            ans.push_back(left[i] * right[i]);        &#125;        return ans;    &#125;&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法训练 </tag>
+            
+            <tag> Leecode hot 100 </tag>
+            
+            <tag> 前缀和 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>309.买卖股票的最佳时机含冷冻期</title>
       <link href="/mid-lake-pavilion.github.io/2023/09/12/309-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F/"/>
       <url>/mid-lake-pavilion.github.io/2023/09/12/309-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%E5%90%AB%E5%86%B7%E5%86%BB%E6%9C%9F/</url>
@@ -19,6 +48,8 @@
       
       
         <tags>
+            
+            <tag> 动态规划 </tag>
             
             <tag> 算法训练 </tag>
             
