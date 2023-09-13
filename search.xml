@@ -38,6 +38,20 @@
         <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote><p>传送门：<a href="https://leetcode.cn/problems/container-with-most-water/">https://leetcode.cn/problems/container-with-most-water/</a></p></blockquote><p>给定一个长度为 <code>n</code> 的整数数组 <code>height</code> 。有 <code>n</code> 条垂线，第 <code>i</code> 条线的两个端点是 <code>(i, 0)</code> 和 <code>(i, height[i])</code>。找出其中的两条线，使得它们与 <code>x</code> 轴共同构成的容器可以容纳最多的水。返回容器可以储存的最大水量。</p><p><strong>说明：</strong>你不能倾斜容器。</p><p><strong>示例 1：</strong></p><p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/question_11.jpg" alt="盛水最多的容器示意图"></p><pre class="line-numbers language-none"><code class="language-none">输入：[1,8,6,2,5,4,8,3,7]输出：49 解释：图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><strong>示例 2：</strong></p><pre class="line-numbers language-none"><code class="language-none">输入：height &#x3D; [1,1]输出：1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>要取到最大量的水，显然需要考虑两个因素：高度和垂线间隔。而高度就是两条垂线的较小值。因此我们设置双指针：头指针指向首部，尾指针指向尾部。那么如何移动指针呢？或者说，该移动哪一个指针？<strong>我们当然希望指针指向的垂线高度尽可能地高</strong>，因此我们将两个指针中所指向垂线高度较底者往右移动一位即可，这样才可能增大垂线高度。</p><p>比如上面的例子<code>[1,8,6,2,5,4,8,3,7]</code>中，头指针l=0，尾指针r=8，计算水量$V=\min\{ height[l],height[r] \}\times (r-l)=8$</p><ul><li>此时$height[l]&lt;height[r]$，因此右移头指针l=1，r=8，水量$V=\min\{ height[l],height[r] \}\times (r-l)=49$</li><li>此时$height[l]&gt;height[r]$，因此左移尾指针r=7，l=1，水量$V=\min\{ height[l],height[r] \}\times (r-l)=18$</li><li>此时$height[l]&gt;height[r]$，因此左移尾指针r=6，l=1，水量$V=\min\{ height[l],height[r] \}\times (r-l)=40$</li><li>此时$height[l]=height[r]$，不妨右移头指针l=2，r=6，水量$V=\min\{ height[l],height[r] \}\times (r-l)=24$</li><li>此时$height[l]&lt;height[r]$，因此右移头指针l=3，r=6，水量$V=\min\{ height[l],height[r] \}\times (r-l)=6$</li><li>此时$height[l]&lt;height[r]$，因此右移头指针l=4，r=6，水量$V=\min\{ height[l],height[r] \}\times (r-l)=10$</li><li>此时$height[l]&lt;height[r]$，因此右移头指针l=5，r=6，水量$V=\min\{ height[l],height[r] \}\times (r-l)=4$</li><li>此时$height[l]&lt;height[r]$，因此右移头指针l=6，r=6，两指针相遇，算法运行结束。</li></ul><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;public:    int maxArea(vector&lt;int&gt;&amp; height) &#123;        int i &#x3D; 0, j &#x3D; height.size()-1;        int ans &#x3D; 0;        while(i !&#x3D; j) &#123;            ans &#x3D; max(ans, min(height[i], height[j]) * (j - i));            if(height[i] &lt; height[j])   i++;            else    j--;        &#125;        return ans;    &#125;&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>由于只使用了单层循环，且每一次都会选取数组中的一个数，因此时间复杂度为$\mathcal{O}(n)$，空间复杂度为$\mathcal{O}(1)$。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Leecode hot 100 </tag>
+            
+            <tag> 双指针 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -87,9 +101,9 @@
       
         <tags>
             
-            <tag> 动态规划 </tag>
-            
             <tag> Leecode hot 100 </tag>
+            
+            <tag> 动态规划 </tag>
             
         </tags>
       
@@ -114,9 +128,9 @@
       
         <tags>
             
-            <tag> 动态规划 </tag>
-            
             <tag> Leecode hot 100 </tag>
+            
+            <tag> 动态规划 </tag>
             
             <tag> 滑动窗口 </tag>
             
@@ -170,9 +184,9 @@
       
         <tags>
             
-            <tag> 动态规划 </tag>
-            
             <tag> Leecode hot 100 </tag>
+            
+            <tag> 动态规划 </tag>
             
         </tags>
       
