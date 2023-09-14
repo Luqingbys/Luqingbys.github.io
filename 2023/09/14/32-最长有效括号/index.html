@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="17.电话号码的字母组合, 湖心亭">
+    <meta name="keywords" content="32.最长有效括号, 湖心亭">
     <meta name="description" content="问题
-传送门：https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/
+传送门：https://leetcode.cn/problems/longest-valid-parentheses/
 
-给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合">
+给你一个只包含 &amp;#39;(&amp;#39; 和 &amp;#39;)&amp;#39; 的字符串，找出最长有效（格式正确且连续）括号">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>17.电话号码的字母组合 | 湖心亭</title>
+    <title>32.最长有效括号 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -467,12 +467,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">17.电话号码的字母组合</h1>
+                    <h1 class="description center-align post-title">32.最长有效括号</h1>
                 </div>
             </div>
         </div>
@@ -586,29 +586,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
-                                <span class="chip bg-color">Leecode hot 100</span>
-                            </a>
-                        
-                            <a href="/mid-lake-pavilion.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
-                                <span class="chip bg-color">深度优先遍历</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -617,21 +600,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-13
+                    2023-09-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-13
+                    2023-09-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    736
+                    687
                 </div>
                 
 
@@ -657,57 +640,66 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
-<p>传送门：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/">https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/</a></p>
+<p>传送门：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-valid-parentheses/">https://leetcode.cn/problems/longest-valid-parentheses/</a></p>
 </blockquote>
-<p>给定一个仅包含数字 <code>2-9</code> 的字符串，返回所有它能表示的字母组合。答案可以按 <strong>任意顺序</strong> 返回。</p>
-<p>给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/200px-telephone-keypad2svg.png" alt="电话按键示意图"></p>
+<p>给你一个只包含 <code>&#39;(&#39;</code> 和 <code>&#39;)&#39;</code> 的字符串，找出最长有效（格式正确且连续）括号子串的长度。</p>
 <p><strong>示例 1：</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：digits &#x3D; &quot;23&quot;
-输出：[&quot;ad&quot;,&quot;ae&quot;,&quot;af&quot;,&quot;bd&quot;,&quot;be&quot;,&quot;bf&quot;,&quot;cd&quot;,&quot;ce&quot;,&quot;cf&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">输入：s &#x3D; &quot;(()&quot;
+输出：2
+解释：最长有效括号子串是 &quot;()&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>示例 2：</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：digits &#x3D; &quot;&quot;
-输出：[]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">输入：s &#x3D; &quot;)()())&quot;
+输出：4
+解释：最长有效括号子串是 &quot;()()&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>示例 3：</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：digits &#x3D; &quot;2&quot;
-输出：[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>提示：</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入：s &#x3D; &quot;&quot;
+输出：0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="思路：动态规划"><a href="#思路：动态规划" class="headerlink" title="思路：动态规划"></a>思路：动态规划</h2><p>由于同样是字符串处理问题，我们先考虑动态规划：设置$dp$数组，其中$dp[i]$表示以$s[i]$结尾的最长有效子串长度。显然，当$s[i]=’(‘$时，$dp[i]=0$。接下来考虑$s[i]=’)’$的情况。为了方便后续讨论，记$dp[i-1]=l_{i-1}$。</p>
 <ul>
-<li><code>0 &lt;= digits.length &lt;= 4</code></li>
-<li><code>digits[i]</code> 是范围 <code>[&#39;2&#39;, &#39;9&#39;]</code> 的一个数字。</li>
+<li>若$s[i-1]=’(‘$，则$s[i-1:i]=()$，它们已经有效，因此只需考虑以$s[i-2]$结尾的最长有效子串，拼接起来即可，即$dp[i]=dp[i-2]+2$；</li>
+<li>若$s[i-1]=’)’$，则子串$s[i-l_{i-1}:i-1]$一定就是以$s[i-1]$结尾的最长有效子串，那么加上$s[i]=’)’$会怎么样呢？此时需要考虑$s[i-l_{i-1}-1]$了。<ul>
+<li><strong>若$s[i-l_{i-1}-1]=’(‘$，那么子串$s[i-l_{i-1}-1:i]$仍然有效</strong>，则只需考虑以$s[i-l_{i-1}-2]$结尾的最长有效子串，即$dp[i]=dp[i-l_{i-1}-2]+l_{i-1}+2$；</li>
+<li>若$s[i-l_{i-1}-1]=’)’$，那么必然不存在以$s[i]$结尾的非空子串，否则与“子串$s[i-l_{i-1}:i-1]$一定就是以$s[i-1]$结尾的最长有效子串”矛盾，故$dp[i]=0$。</li>
 </ul>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>如何找到全部的字母组合呢？其实很明显此题可以使用深度优先遍历（DFS）。我们可以将字母组合看做不同的状态，<strong>用当前选取到的数字在字符串digits中的索引todo和已经组合出来的字符串done来表示一个状态</strong>；接下来考虑如何进行状态的搜索<code>DFS(string done, int todo, string digits)</code>。</p>
-<p>为了方便编程，建立数字字符到字母字符的哈希映射表mps，对于当前需要考虑的数字$digits[todo]$，它对应的字符集为$mps[digits[todo]]$；遍历其中的每一个字符ch，将其加入已经组合出来的字符串done中，且将todo加一，即可得到新的状态：<code>DFS(done+ch, todo+1, digits)</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E6%90%9C%E7%B4%A2%E6%A0%91.svg" alt="深度优先遍历搜索树"></p>
-<h2 id="边界条件"><a href="#边界条件" class="headerlink" title="边界条件"></a>边界条件</h2><p>进行深度优先搜索时，必须给出明确的边界条件，它正是搜索到的终止状态。搜索到这个状态时，便可以结束当前的搜索路径，而在程序运行中表现为递归结束，返回上一层函数。</p>
-<p>显然，</p>
-<ul>
-<li>当索引todo=n（n为digits长度）时，搜索到终止状态，搜索结束，将当前组合出来的字符串done加入向量保存下来。</li>
+</li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
+<h3 id="状态转移"><a href="#状态转移" class="headerlink" title="状态转移"></a>状态转移</h3><p>综上所述，状态转移方程表述为</p>
+<script type="math/tex; mode=display">
+dp[i] = \begin{cases} dp[i-2]+2, \ & \mathrm{if} \ s[i]=')' \ \mathrm{and}\ s[i-1]='(' \\ dp[i-dp[i-1]-2]+dp[i-1]+2, & \mathrm{if} \ s[i]=')'\ \mathrm{and} \ s[i-1]=')' \ \mathrm{and} \ s[i-dp[i-1]-1]='(' \\ 0, & \mathrm{otherwise} \end{cases}</script><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
 public:
-    map&lt;char, string&gt; mps &#x3D; &#123;
-        &#123;&#39;2&#39;, &quot;abc&quot;&#125;, &#123;&#39;3&#39;, &quot;def&quot;&#125;, &#123;&#39;4&#39;, &quot;ghi&quot;&#125;, &#123;&#39;5&#39;, &quot;jkl&quot;&#125;, &#123;&#39;6&#39;, &quot;mno&quot;&#125;, &#123;&#39;7&#39;, &quot;pqrs&quot;&#125;, &#123;&#39;8&#39;, &quot;tuv&quot;&#125;, &#123;&#39;9&#39;, &quot;wxyz&quot;&#125;
-    &#125;;
-    vector&lt;string&gt; res;
-    void DFS(string done, int todo, string digits) &#123;
-        if(todo &#x3D;&#x3D; digits.size()) &#123;
-            res.push_back(done);
-            return;
-        &#125;
-        string str &#x3D; mps[digits[todo]];
-        for(char ch:str) &#123;
-            DFS(done+ch, todo+1, digits);
+    int dp[30005];
+    string S;
+    int DP(int i) &#123;
+        if(i &lt; 0)   return 0;
+        if(dp[i] !&#x3D; -1) return dp[i];
+        if(S[i] &#x3D;&#x3D; &#39;(&#39;) return dp[i] &#x3D; 0;
+        &#x2F;&#x2F; S[i] &#x3D;&#x3D; &#39;)&#39;
+        if(S[i-1] &#x3D;&#x3D; &#39;(&#39;) &#123;
+            return dp[i] &#x3D; DP(i-2) + 2;
+        &#125; else &#123;
+            &#x2F;&#x2F; ((()()))
+            int k &#x3D; DP(i-1);
+            if(dp[i] &#x3D; i-k-1 &gt;&#x3D; 0 &amp;&amp; S[i-k-1] &#x3D;&#x3D; &#39;(&#39;) &#123;
+                return dp[i] &#x3D; k + 2 + DP(i-k-2);
+            &#125; else  return dp[i] &#x3D; 0;
         &#125;
     &#125;
-    vector&lt;string&gt; letterCombinations(string digits) &#123;
-        if(digits &#x3D;&#x3D; &quot;&quot;)    return res;
-        string temp &#x3D; &quot;&quot;;
-        DFS(temp, 0, digits);
-        return res;
+    int longestValidParentheses(string s) &#123;
+        if(s.size() &#x3D;&#x3D; 0 || s.size() &#x3D;&#x3D; 1) return 0;
+        memset(dp, -1 ,sizeof(dp));
+        S &#x3D; s;
+        int i;
+        dp[0] &#x3D; 0;
+        if(s[0] &#x3D;&#x3D; &#39;(&#39; &amp;&amp; s[1] &#x3D;&#x3D; &#39;)&#39;)  dp[1] &#x3D; 2;
+        else    dp[1] &#x3D; 0;
+        int ans &#x3D; max(dp[0], dp[1]);
+        for(i&#x3D;2; i&lt;s.size(); i++) &#123;
+            dp[i] &#x3D; DP(i);
+            ans &#x3D; max(ans, dp[i]);
+        &#125;
+        return ans;
     &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>设对应三个字母的数字字符个数为$m$，对应四个字母的数字字符个数为$n$，因为要穷举并存储搜索全部的状态（即字母组合），所以根据排列组合知识，时间复杂度和空间复杂度均为为$\mathcal{O}(3^m\times 4^n)$。</p>
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -734,7 +726,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/09/13/17-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/09/13/17-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/</a>
+                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/09/14/32-%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/09/14/32-%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -771,15 +763,7 @@ public:
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
-                                    <span class="chip bg-color">Leecode hot 100</span>
-                                </a>
-                            
-                                <a href="/mid-lake-pavilion.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
-                                    <span class="chip bg-color">深度优先遍历</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -951,17 +935,18 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/09/13/22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">
+                <a href="/mid-lake-pavilion.github.io/2023/09/14/32-%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="22.括号生成">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="32.最长有效括号">
                         
-                        <span class="card-title">22.括号生成</span>
+                        <span class="card-title">32.最长有效括号</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -971,37 +956,18 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-14
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            鹿卿
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/mid-lake-pavilion.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
-                    </a>
-                    
-                    <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
-                        <span class="chip bg-color">Leecode hot 100</span>
-                    </a>
-                    
-                    <a href="/mid-lake-pavilion.github.io/tags/%E5%9B%9E%E6%BA%AF/">
-                        <span class="chip bg-color">回溯</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1012,13 +978,13 @@ public:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/09/13/11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">
+                <a href="/mid-lake-pavilion.github.io/2023/09/13/22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="11.盛最多水的容器">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="22.括号生成">
                         
-                        <span class="card-title">11.盛最多水的容器</span>
+                        <span class="card-title">22.括号生成</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1046,12 +1012,16 @@ public:
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/mid-lake-pavilion.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
+                    </a>
+                    
                     <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
                         <span class="chip bg-color">Leecode hot 100</span>
                     </a>
                     
-                    <a href="/mid-lake-pavilion.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        <span class="chip bg-color">双指针</span>
+                    <a href="/mid-lake-pavilion.github.io/tags/%E5%9B%9E%E6%BA%AF/">
+                        <span class="chip bg-color">回溯</span>
                     </a>
                     
                 </div>
@@ -1206,13 +1176,6 @@ public:
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-    });
-</script>
 
 
 
