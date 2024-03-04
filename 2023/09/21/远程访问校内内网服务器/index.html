@@ -618,7 +618,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-21
+                    2024-02-26
                 </div>
                 
 
@@ -657,7 +657,8 @@
 <li>内网服务器视作客户端（client）</li>
 </ul>
 <h3 id="租赁中转服务器"><a href="#租赁中转服务器" class="headerlink" title="租赁中转服务器"></a>租赁中转服务器</h3><p>第一步，我们需要租一台中转服务器。这台服务器只需要运行一个后台程序即可，配置无所谓。这里推荐阿里云飞天计划免费租赁服务器三个月的活动（只有新账户才能试用一次）。</p>
-<h3 id="下载反向代理应用frp"><a href="#下载反向代理应用frp" class="headerlink" title="下载反向代理应用frp"></a>下载反向代理应用frp</h3><p>frp是用于内网穿透的反向代理应用，非常有效、方便。下载地址为<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases，我这里下载的是frp_0.49.0_linux_amd64版本。下载到本地后解压缩，得到一系列配置文件。">https://github.com/fatedier/frp/releases，我这里下载的是frp_0.49.0_linux_amd64版本。下载到本地后解压缩，得到一系列配置文件。</a></p>
+<h3 id="下载反向代理应用frp"><a href="#下载反向代理应用frp" class="headerlink" title="下载反向代理应用frp"></a>下载反向代理应用frp</h3><p>frp是用于内网穿透的反向代理应用，非常有效、方便。下载地址为<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases。">https://github.com/fatedier/frp/releases。</a></p>
+<p>我这里下载的是frp_0.49.0_linux_amd64版本。下载到本地后解压缩，得到一系列配置文件。</p>
 <h3 id="配置中转服务器"><a href="#配置中转服务器" class="headerlink" title="配置中转服务器"></a>配置中转服务器</h3><p><strong>将frps以及frps.ini放到该中转服务器上，运行<code>nohup ./frps -c ./frps.ini &amp;</code></strong>。frps.ini文件内容如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">[common]
 bind_port &#x3D; 7000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>

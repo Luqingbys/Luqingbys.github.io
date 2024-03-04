@@ -623,7 +623,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-25
+                    2024-03-01
                 </div>
                 
 
@@ -673,7 +673,7 @@ e_{ij} = a(\mathbf{W}\vec{h}_i, \mathbf{W}\vec{h}_j)</script><p><strong>在图�
 <script type="math/tex; mode=display">
 \vec{h}_i' = \sigma\left( \sum_{j\in\mathcal{N}_i}\alpha_{ij}\mathbf{W}\vec{h}_j \right)</script></li>
 </ol>
-<p>论文中接下来指出了$a$具体是什么：<strong>实验中$a$其实就是一个简单的前馈神经网络层，并接上激活函数LeakyReLu</strong>。具体描述如下</p>
+<p>论文中接下来指出了$a$具体是什么：<strong>实验中$a$其实就是一个简单的前馈神经网络层，并接上激活函数LeakyReLU</strong>。具体描述如下</p>
 <script type="math/tex; mode=display">
 \begin{aligned} e_{ij} &= a(\mathbf{W}\vec{h}_i, \mathbf{W}\vec{h}_j) \\ &= \mathrm{LeakyReLU}\left( \mathbf{a}^T\left[ \begin{matrix} \mathbf{W}\vec{h}_i \\ \mathbf{W}\vec{h}_j \end{matrix} \right] \right) \end{aligned}</script><p>其中$\mathbf{a}\in \mathbb{R}^{2F’}$；由上文可知，$\mathbf{W}\vec{h}_i, \mathbf{W}\vec{h}_j \in \mathbb{R}^{F’}$，而我们将它们竖向拼接起来（以下用||简记）。</p>
 <p>至此，将注意力系数的完整计算过程表示为</p>
