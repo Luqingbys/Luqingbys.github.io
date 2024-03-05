@@ -1,7 +1,7 @@
 /* Here is your custom css styles. */
 @font-face{
     font-family: 'LXGWWenKaiMono-Light';
-    src: url('../font/LXGWWenKaiMono-Light.ttf');
+    src: url('../font/LXGWWenKaiMono/LXGWWenKaiMono-Light.ttf');
 }
 
 body{

@@ -617,21 +617,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-04
+                    2024-03-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    11 分
                 </div>
                 
 
@@ -899,6 +899,52 @@ d <span class="token operator">=</span> np<span class="token punctuation">.</spa
 [[0 2 3 0 2 3]
  [8 2 0 8 2 0]] (2, 6)
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="采样"><a href="#采样" class="headerlink" title="采样"></a>采样</h2><p>有时候需要对数组中的元素进行随机采样，numpy包就可以派上用场了。</p>
+<h3 id="随机采样：np-random-choice"><a href="#随机采样：np-random-choice" class="headerlink" title="随机采样：np.random.choice()"></a>随机采样：np.random.choice()</h3><ul>
+<li><code>np.random.choice(a: int | 1-D array, size: int, replace: boolean=True)</code></li>
+</ul>
+<p>这个方法可以从序列a中随机采样，采样数量为size，而replace指定了是否重复采样：</p>
+<ol>
+<li>（默认）如果replace为True，则进行放回采样，得到的样本可能有重复；</li>
+<li>如果replace为False，则进行不放回采样，得到的样本不会有重复。</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span>
+choice_data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>data<span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> replace<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>choice_data<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">(</span>choice_data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+[5 1 4 9 8] &lt;class 'numpy.ndarray'>
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="乱序排列：np-random-permutation"><a href="#乱序排列：np-random-permutation" class="headerlink" title="乱序排列：np.random.permutation()"></a>乱序排列：np.random.permutation()</h3><ul>
+<li><code>np.random.permutation(x: int | array)</code></li>
+</ul>
+<p>它将随机打乱数组x，如果x为整数，则随机打乱一维数组$[0,1,\dots,x-1]$；而如果x为高维数组，则只会随机打乱第一维。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">out_of_order_data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>permutation<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>out_of_order_data<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----------------------'</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'(before shuffle)'</span><span class="token punctuation">)</span>
+out_of_order_data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>permutation<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>out_of_order_data<span class="token punctuation">,</span> <span class="token string">'after shuffle'</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+[0 5 1 9 7 3 4 6 2 8]
+----------------------
+[[4 5 4]
+ [0 8 6]
+ [6 2 7]
+ [2 9 6]
+ [2 9 9]] (before shuffle)
+[[0 8 6]
+ [2 9 6]
+ [2 9 9]
+ [4 5 4]
+ [6 2 7]] after shuffle
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h2><h3 id="np-linalg-norm"><a href="#np-linalg-norm" class="headerlink" title="np.linalg.norm()"></a>np.linalg.norm()</h3><p>numpy.linalg是范数常用的库，包括计算二范数、无穷范数等等。</p>
+<ul>
+<li><code>np.linalg.norm(x: ArrayLike, ord: int)</code></li>
+</ul>
+<p>这个方法通过参数ord指定要计算的范数，而参数x必须为一维或者二维数组。</p>
 
                 
             </div>
@@ -1383,6 +1429,13 @@ d <span class="token operator">=</span> np<span class="token punctuation">.</spa
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
