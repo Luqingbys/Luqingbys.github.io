@@ -252,6 +252,7 @@ mark {
 .bg-color {
     /* background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); */
     background-image: linear-gradient(to right, #5a33f7 0%, #10b4f5 100%); /*咖啡色*/
+    opacity: 0.8  /* 透明效果 */
 }
 
 .text-color {
