@@ -4,11 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="17.电话号码的字母组合, 湖心亭">
-    <meta name="description" content="问题
-传送门：https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/
-
-给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合">
+    <meta name="keywords" content="常用技巧-pytorch包, 湖心亭">
+    <meta name="description" content="pytorchpytorch是深度学习的常用开源工具库，基于pytorch的python代码可读性较强，在目前主流的深度学习论文中逐渐占据主导地位。pytorch中最核心的概念是张量（tensor），它是一种高效的数据结构，可以简单理解为高">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>17.电话号码的字母组合 | 湖心亭</title>
+    <title>常用技巧-pytorch包 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/mid-lake-pavilion.github.io/orange.png">
 
     <link rel="stylesheet" type="text/css" href="/mid-lake-pavilion.github.io/libs/awesome/css/all.min.css">
@@ -467,12 +464,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/mid-lake-pavilion.github.io/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">17.电话号码的字母组合</h1>
+                    <h1 class="description center-align post-title">常用技巧-pytorch包</h1>
                 </div>
             </div>
         </div>
@@ -588,12 +585,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
-                                <span class="chip bg-color">Leecode hot 100</span>
-                            </a>
-                        
-                            <a href="/mid-lake-pavilion.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
-                                <span class="chip bg-color">深度优先遍历</span>
+                            <a href="/mid-lake-pavilion.github.io/tags/pytorch/">
+                                <span class="chip bg-color">pytorch</span>
                             </a>
                         
                     </div>
@@ -604,8 +597,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
+                            <a href="/mid-lake-pavilion.github.io/categories/python%E7%BC%96%E7%A8%8B/" class="post-category">
+                                python编程
                             </a>
                         
                     </div>
@@ -617,28 +610,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-13
+                    2024-03-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-13
+                    2024-03-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    736
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 
@@ -656,58 +649,251 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote>
-<p>传送门：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/">https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/</a></p>
+                <h1 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h1><p>pytorch是深度学习的常用开源工具库，基于pytorch的python代码可读性较强，在目前主流的深度学习论文中逐渐占据主导地位。pytorch中最核心的概念是张量（tensor），它是一种高效的数据结构，可以简单理解为高维数组，在深度学习中应用非常广泛；事实上，pytorch的诸多方法的处理对象，大多都是张量。</p>
+<p>本文结合笔者目前较为浅薄的编程、实验经历，对一些实用的、经常接触的以及比较经典的库方法进行记录与总结。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="张量的创建"><a href="#张量的创建" class="headerlink" title="张量的创建"></a>张量的创建</h2><h3 id="最朴素的创建方法：torch-tensor"><a href="#最朴素的创建方法：torch-tensor" class="headerlink" title="最朴素的创建方法：torch.tensor()"></a>最朴素的创建方法：torch.tensor()</h3><blockquote>
+<ul>
+<li>torch.tensor(data: Any, dtype: _dtype | <em>None</em> = None, device: <em>Device</em> = None, requires_grad: <em>_bool</em> = False)</li>
+<li>torch.LongTensor(*args: List)</li>
+</ul>
 </blockquote>
-<p>给定一个仅包含数字 <code>2-9</code> 的字符串，返回所有它能表示的字母组合。答案可以按 <strong>任意顺序</strong> 返回。</p>
-<p>给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/200px-telephone-keypad2svg.png" alt="电话按键示意图"></p>
-<p><strong>示例 1：</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：digits &#x3D; &quot;23&quot;
-输出：[&quot;ad&quot;,&quot;ae&quot;,&quot;af&quot;,&quot;bd&quot;,&quot;be&quot;,&quot;bf&quot;,&quot;cd&quot;,&quot;ce&quot;,&quot;cf&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>示例 2：</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：digits &#x3D; &quot;&quot;
-输出：[]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>示例 3：</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">输入：digits &#x3D; &quot;2&quot;
-输出：[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>提示：</strong></p>
+<p>这个方法的功能和用法非常显然，我之前也经常使用，可以将指定的列表数据转换为指定的张量类型。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>torch<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>LongTensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+tensor([1., 5., 3.])
+tensor([2, 9, 1])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="最常用的创建方法：torch-rand"><a href="#最常用的创建方法：torch-rand" class="headerlink" title="最常用的创建方法：torch.rand()"></a>最常用的创建方法：torch.rand()</h3><blockquote>
 <ul>
-<li><code>0 &lt;= digits.length &lt;= 4</code></li>
-<li><code>digits[i]</code> 是范围 <code>[&#39;2&#39;, &#39;9&#39;]</code> 的一个数字。</li>
+<li>torch.rand(size: Tuple)</li>
+<li>torch.rand(*size: int)</li>
+<li>torch.rand_like(input: Tensor)</li>
 </ul>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>如何找到全部的字母组合呢？其实很明显此题可以使用深度优先遍历（DFS）。我们可以将字母组合看做不同的状态，<strong>用当前选取到的数字在字符串digits中的索引todo和已经组合出来的字符串done来表示一个状态</strong>；接下来考虑如何进行状态的搜索<code>DFS(string done, int todo, string digits)</code>。</p>
-<p>为了方便编程，建立数字字符到字母字符的哈希映射表mps，对于当前需要考虑的数字$digits[todo]$，它对应的字符集为$mps[digits[todo]]$；遍历其中的每一个字符ch，将其加入已经组合出来的字符串done中，且将todo加一，即可得到新的状态：<code>DFS(done+ch, todo+1, digits)</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E6%90%9C%E7%B4%A2%E6%A0%91.svg" alt="深度优先遍历搜索树"></p>
-<h2 id="边界条件"><a href="#边界条件" class="headerlink" title="边界条件"></a>边界条件</h2><p>进行深度优先搜索时，必须给出明确的边界条件，它正是搜索到的终止状态。搜索到这个状态时，便可以结束当前的搜索路径，而在程序运行中表现为递归结束，返回上一层函数。</p>
-<p>显然，</p>
+</blockquote>
+<p>之所以常用，是因为这个方法是随机创建，接收的参数是一个元组，当然也可直接传入多个整型数字作为要创建的张量维度信息。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+c <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand_like<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+tensor([[0.4019, 0.6014, 0.1614],
+        [0.5914, 0.9730, 0.2322]])
+tensor([[0.9385, 0.0407, 0.6528],
+        [0.8274, 0.8461, 0.6536]])
+tensor([[0.2846, 0.3948, 0.3780],
+        [0.1335, 0.9324, 0.5800]])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="最初始的创建方法：torch-zeros-torch-ones"><a href="#最初始的创建方法：torch-zeros-torch-ones" class="headerlink" title="最初始的创建方法：torch.zeros()/torch.ones()"></a>最初始的创建方法：torch.zeros()/torch.ones()</h3><blockquote>
 <ul>
-<li>当索引todo=n（n为digits长度）时，搜索到终止状态，搜索结束，将当前组合出来的字符串done加入向量保存下来。</li>
+<li>torch.zeros(size: Tuple) 或 torch.zeros(*size: int)</li>
+<li>torch.ones(size: Tuple) 或 torch.ones(*size: int)</li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
-public:
-    map&lt;char, string&gt; mps &#x3D; &#123;
-        &#123;&#39;2&#39;, &quot;abc&quot;&#125;, &#123;&#39;3&#39;, &quot;def&quot;&#125;, &#123;&#39;4&#39;, &quot;ghi&quot;&#125;, &#123;&#39;5&#39;, &quot;jkl&quot;&#125;, &#123;&#39;6&#39;, &quot;mno&quot;&#125;, &#123;&#39;7&#39;, &quot;pqrs&quot;&#125;, &#123;&#39;8&#39;, &quot;tuv&quot;&#125;, &#123;&#39;9&#39;, &quot;wxyz&quot;&#125;
-    &#125;;
-    vector&lt;string&gt; res;
-    void DFS(string done, int todo, string digits) &#123;
-        if(todo &#x3D;&#x3D; digits.size()) &#123;
-            res.push_back(done);
-            return;
-        &#125;
-        string str &#x3D; mps[digits[todo]];
-        for(char ch:str) &#123;
-            DFS(done+ch, todo+1, digits);
-        &#125;
-    &#125;
-    vector&lt;string&gt; letterCombinations(string digits) &#123;
-        if(digits &#x3D;&#x3D; &quot;&quot;)    return res;
-        string temp &#x3D; &quot;&quot;;
-        DFS(temp, 0, digits);
-        return res;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>设对应三个字母的数字字符个数为$m$，对应四个字母的数字字符个数为$n$，因为要穷举并存储搜索全部的状态（即字母组合），所以根据排列组合知识，时间复杂度和空间复杂度均为为$\mathcal{O}(3^m\times 4^n)$。</p>
+</blockquote>
+<p>这两个方法分别用于创建全零张量和全一张量，当然也是接收多个整形数据参数，作为要创建的张量维度信息。这种方法多用于后续初始化或者创建掩码矩阵。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>ones<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+tensor([[0., 0., 0.],
+        [0., 0., 0.]])
+tensor([[1., 1.],
+        [1., 1.],
+        [1., 1.]])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="最单位化的创建方法：torch-eye"><a href="#最单位化的创建方法：torch-eye" class="headerlink" title="最单位化的创建方法：torch.eye()"></a>最单位化的创建方法：torch.eye()</h3><blockquote>
+<ul>
+<li>torch.eye(n: int)</li>
+</ul>
+</blockquote>
+<p>这个方法可以用于创建单位矩阵。其中参数n即为方阵维度。常用于创建独热向量。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+tensor([[1., 0., 0., 0., 0.],
+        [0., 1., 0., 0., 0.],
+        [0., 0., 1., 0., 0.],
+        [0., 0., 0., 1., 0.],
+        [0., 0., 0., 0., 1.]])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="基于ndarray创建tensor：torch-from-numpy"><a href="#基于ndarray创建tensor：torch-from-numpy" class="headerlink" title="基于ndarray创建tensor：torch.from_numpy()"></a>基于ndarray创建tensor：torch.from_numpy()</h3><blockquote>
+<ul>
+<li>torch.from_numpy(ndarray: np.ndarray)</li>
+</ul>
+</blockquote>
+<p>接收np.ndarray类型的数据，将其转换为tensor并返回。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>from_numpy<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+[[0.34550967 0.61193832 0.97132549]
+ [0.33592651 0.08636327 0.62067825]]
+tensor([[0.3455, 0.6119, 0.9713],
+        [0.3359, 0.0864, 0.6207]], dtype=torch.float64)
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="张量的变形"><a href="#张量的变形" class="headerlink" title="张量的变形"></a>张量的变形</h2><p>在深度学习中，张量的形变非常普遍，常用的方法如下。</p>
+<h3 id="最朴素的变形方法：reshape"><a href="#最朴素的变形方法：reshape" class="headerlink" title="最朴素的变形方法：reshape()"></a>最朴素的变形方法：reshape()</h3><blockquote>
+<ul>
+<li>torch.reshape(input: Tensor, shape: Sequence)</li>
+<li>tensor.reshape(shape: Sequence) 或 tensor.reshape(*size: int)</li>
+</ul>
+</blockquote>
+<p>顾名思义，这个方法将指定的张量进行变形；值得注意的是，参数中各个维度允许出现-1，表示该维度长度将由其他维度推导得来。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>a<span class="token punctuation">,</span> shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+c <span class="token operator">=</span> a<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># 第二维度长度可以由2*4/1=8计算得来</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+torch.Size([4, 2])
+torch.Size([1, 8])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="展平方法：flatten"><a href="#展平方法：flatten" class="headerlink" title="展平方法：flatten()"></a>展平方法：flatten()</h3><blockquote>
+<ul>
+<li>torch.flatten(input: Tensor, start_dim: int=0, end_dim: int=-1)</li>
+<li>tensor.flatten(start_dim: int=0, end_dim: int=-1)</li>
+</ul>
+</blockquote>
+<p>将张量的指定两个维度之间的形状展平。换言之，如果张量形状为$(d_0, d_1, \dots,d_{N-1})$，调用方法flatten(n, m)后，张量形状将变为$(d_0,d_1,\dots,d_{n-1},d_n\times d_{n+1}\times \cdots\times d_{N-m},d_{N-m+1},\dots, d_{N-1})$。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span>start_dim<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> end_dim<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+c <span class="token operator">=</span> a<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+torch.Size([2, 8, 3])
+torch.Size([48])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="删除维度：squeeze"><a href="#删除维度：squeeze" class="headerlink" title="删除维度：squeeze()"></a>删除维度：squeeze()</h3><blockquote>
+<ul>
+<li>torch.squeeze(input: Tensor, dim: int)</li>
+<li>tensor.squeeze(dim: int)</li>
+</ul>
+</blockquote>
+<p>将张量指定维度删除；该维度长度必须为1，否则会报错。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+torch.Size([2, 4])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="增加维度：unsqueeze"><a href="#增加维度：unsqueeze" class="headerlink" title="增加维度：unsqueeze()"></a>增加维度：unsqueeze()</h3><blockquote>
+<ul>
+<li>torch.unsqueeze(input: Tensor, dim: int)</li>
+<li>tensor.unsqueeze(dim: int)</li>
+</ul>
+</blockquote>
+<p>在张量指定位置新增一个维度，且该新增的维度长度为1。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+torch.Size([2, 3, 1])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="另一种变形方法：view"><a href="#另一种变形方法：view" class="headerlink" title="另一种变形方法：view()"></a>另一种变形方法：view()</h3><blockquote>
+<ul>
+<li>tensor.view(*size: int)</li>
+</ul>
+</blockquote>
+<p>这个方法同样可以对张量进行变形，它的用法和reshape几乎一致。</p>
+<h2 id="张量的拼接"><a href="#张量的拼接" class="headerlink" title="张量的拼接"></a>张量的拼接</h2><h3 id="最通用的拼接方法：torch-concat"><a href="#最通用的拼接方法：torch-concat" class="headerlink" title="最通用的拼接方法：torch.concat()"></a>最通用的拼接方法：torch.concat()</h3><blockquote>
+<ul>
+<li>torch.concat(tensors: Tuple[Tensor, …] | List[Tensor], dim: <em>_int</em> = 0)</li>
+<li>torch.concatenate(tensors: Tuple[Tensor, …] | List[Tensor], dim: <em>_int</em> = 0)</li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">tensor_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tensor_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 列表中包含5个形状为(2, 3)的张量</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>concat<span class="token punctuation">(</span>tensor_list<span class="token punctuation">,</span> dim<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+torch.Size([10, 3])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="特殊的拼接方法：torch-vstack-torch-hstack"><a href="#特殊的拼接方法：torch-vstack-torch-hstack" class="headerlink" title="特殊的拼接方法：torch.vstack()/torch.hstack()"></a>特殊的拼接方法：torch.vstack()/torch.hstack()</h3><blockquote>
+<ul>
+<li>torch.vstack(tensors: Sequence[Tensor, …])</li>
+<li>torch.hstack(tensors: Sequence[Tensor, …])</li>
+</ul>
+</blockquote>
+<p>这两个方法是torch.concat()的特殊情况：前者等价于参数dim=0，后者等价于参数dim=1。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">tensor_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tensor_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 列表中包含5个形状为(2, 1, 3)的张量</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>vstack<span class="token punctuation">(</span>tensor_list<span class="token punctuation">)</span> <span class="token comment"># 等价于torch.concat(tensor_list, dim=0)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>hstack<span class="token punctuation">(</span>tensor_list<span class="token punctuation">)</span> <span class="token comment"># 等价于torch.concat(tensor_list, dim=1)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+torch.Size([10, 1, 3])
+torch.Size([2, 5, 3])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="张量的梯度去除与转换"><a href="#张量的梯度去除与转换" class="headerlink" title="张量的梯度去除与转换"></a>张量的梯度去除与转换</h2><h3 id="张量从计算图脱离：tensor-detach"><a href="#张量从计算图脱离：tensor-detach" class="headerlink" title="张量从计算图脱离：tensor.detach()"></a>张量从计算图脱离：tensor.detach()</h3><blockquote>
+<ul>
+<li>tensor.detach()</li>
+</ul>
+</blockquote>
+<p>这个方法将张量从计算图中脱离开来，在此后的计算中无需梯度回传。</p>
+<h3 id="张量的位置变换：tensor-to-tensor-cpu"><a href="#张量的位置变换：tensor-to-tensor-cpu" class="headerlink" title="张量的位置变换：tensor.to()/tensor.cpu()"></a>张量的位置变换：tensor.to()/tensor.cpu()</h3><blockquote>
+<ul>
+<li>tensor.to(device)</li>
+<li>tensor.cpu()</li>
+</ul>
+</blockquote>
+<p>将张量转移到指定位置（cpu内存或者cuda显存），而tensor.cpu()直接将张量移动到内存。</p>
+<h3 id="张量转换为ndarray：tensor-numpy"><a href="#张量转换为ndarray：tensor-numpy" class="headerlink" title="张量转换为ndarray：tensor.numpy()"></a>张量转换为ndarray：tensor.numpy()</h3><blockquote>
+<ul>
+<li>tensor.numpy()</li>
+</ul>
+</blockquote>
+<p>将张量转换为np.ndarray类型数组。由于numpy与matplotlib等库有非常方便的接口，因此该方法常用于后续的文件存储、图表绘制等等。不过，要注意该张量必须<strong>脱离计算图、位于内存</strong>，因此常用以下语句：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># tensor_data为张量</span>
+ndarray_data <span class="token operator">=</span> tensor_data<span class="token punctuation">.</span>detach<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>cpu<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>numpy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="模型的保存与加载"><a href="#模型的保存与加载" class="headerlink" title="模型的保存与加载"></a>模型的保存与加载</h2><p>通常有两种方案对模型进行保存与加载。在下面的方案介绍中，Model为torch内置的模型类，model为该类的实例，path为模型存储路径。</p>
+<p>方案一：仅保存模型参数（状态字典）</p>
+<blockquote>
+<ul>
+<li>模型保存：torch.save(model.state_dict(), path)</li>
+<li>模型加载：<ul>
+<li>model = Model(*params)</li>
+<li>model.load_state_dict(torch.load(path))</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>方案二：保存整个模型</p>
+<blockquote>
+<ul>
+<li>模型保存：torch.save(model, path)</li>
+<li>模型加载：<ul>
+<li>import Model(一定要先导入模型类)</li>
+<li>model = torch.load(path)</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>加载模型后，建议立即调用model.eval()，将模型设置为测试模式。</p>
 
                 
             </div>
@@ -734,7 +920,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/09/13/17-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2023/09/13/17-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/</a>
+                    <a href="https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2024/03/06/%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7-pytorch%E5%8C%85/">https://luqingbys.github.io/mid-lake-pavilion.github.io/mid-lake-pavilion.github.io/2024/03/06/%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7-pytorch%E5%8C%85/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -772,12 +958,8 @@ public:
                     
                         <div class="article-tag">
                             
-                                <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
-                                    <span class="chip bg-color">Leecode hot 100</span>
-                                </a>
-                            
-                                <a href="/mid-lake-pavilion.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
-                                    <span class="chip bg-color">深度优先遍历</span>
+                                <a href="/mid-lake-pavilion.github.io/tags/pytorch/">
+                                    <span class="chip bg-color">pytorch</span>
                                 </a>
                             
                         </div>
@@ -1274,17 +1456,18 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/09/13/22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">
+                <a href="/mid-lake-pavilion.github.io/2024/03/06/%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7-pytorch%E5%8C%85/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="22.括号生成">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="常用技巧-pytorch包">
                         
-                        <span class="card-title">22.括号生成</span>
+                        <span class="card-title">常用技巧-pytorch包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1294,34 +1477,27 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/mid-lake-pavilion.github.io/categories/python%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    python编程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
-                        <span class="chip bg-color">Leecode hot 100</span>
-                    </a>
-                    
-                    <a href="/mid-lake-pavilion.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
-                    </a>
-                    
-                    <a href="/mid-lake-pavilion.github.io/tags/%E5%9B%9E%E6%BA%AF/">
-                        <span class="chip bg-color">回溯</span>
+                    <a href="/mid-lake-pavilion.github.io/tags/pytorch/">
+                        <span class="chip bg-color">pytorch</span>
                     </a>
                     
                 </div>
@@ -1335,13 +1511,13 @@ public:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/mid-lake-pavilion.github.io/2023/09/13/11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">
+                <a href="/mid-lake-pavilion.github.io/2024/03/04/%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7-numpy%E5%8C%85/">
                     <div class="card-image">
                         
                         
-                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="11.盛最多水的容器">
+                        <img src="/mid-lake-pavilion.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="常用技巧-numpy包">
                         
-                        <span class="card-title">11.盛最多水的容器</span>
+                        <span class="card-title">常用技巧-numpy包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1352,14 +1528,14 @@ public:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/mid-lake-pavilion.github.io/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/mid-lake-pavilion.github.io/categories/python%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    python编程
                                 </a>
                             
                             
@@ -1369,12 +1545,8 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/mid-lake-pavilion.github.io/tags/Leecode-hot-100/">
-                        <span class="chip bg-color">Leecode hot 100</span>
-                    </a>
-                    
-                    <a href="/mid-lake-pavilion.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                        <span class="chip bg-color">双指针</span>
+                    <a href="/mid-lake-pavilion.github.io/tags/numpy/">
+                        <span class="chip bg-color">numpy</span>
                     </a>
                     
                 </div>
