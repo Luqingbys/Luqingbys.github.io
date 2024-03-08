@@ -617,21 +617,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-07
+                    2024-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    9 分
                 </div>
                 
 
@@ -652,7 +652,7 @@
                 <h1 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h1><p>pytorch是深度学习的常用开源工具库，基于pytorch的python代码可读性较强，在目前主流的深度学习论文中逐渐占据主导地位。pytorch中最核心的概念是张量（tensor），它是一种高效的数据结构，可以简单理解为高维数组，在深度学习中应用非常广泛；事实上，pytorch的诸多方法的处理对象，大多都是张量。</p>
 <p>本文结合笔者目前较为浅薄的编程、实验经历，对一些实用的、经常接触的以及比较经典的库方法进行记录与总结。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
-<span class="token keyword">import</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="张量的创建"><a href="#张量的创建" class="headerlink" title="张量的创建"></a>张量的创建</h2><h3 id="最朴素的创建方法：torch-tensor"><a href="#最朴素的创建方法：torch-tensor" class="headerlink" title="最朴素的创建方法：torch.tensor()"></a>最朴素的创建方法：torch.tensor()</h3><blockquote>
 <ul>
 <li>torch.tensor(data: Any, dtype: _dtype | <em>None</em> = None, device: <em>Device</em> = None, requires_grad: <em>_bool</em> = False)</li>
@@ -813,6 +813,36 @@ torch.Size([2, 3, 1])
 </ul>
 </blockquote>
 <p>这个方法同样可以对张量进行变形，它的用法和reshape几乎一致。</p>
+<h3 id="张量的翻转：permute"><a href="#张量的翻转：permute" class="headerlink" title="张量的翻转：permute()"></a>张量的翻转：permute()</h3><blockquote>
+<ul>
+<li>torch.permute(input: Tensor, dims: _size)</li>
+<li>tensor.permute(dims: _size) 或 tensor.permute(*dim: int)</li>
+</ul>
+</blockquote>
+<p>对张量的各个维度进行调整。假设张量$\mathbf{Z}$形状为$(d_0,d_1,\dots,d_{N-1})$，调用permute($c_0,c_1,\dots,c_{N-1}$)，则调整后的张量维度为$(d_{c_0},d_{c_1},\dots,d_{c_{N-1}})$，其中$c_0,c_1,\dots,c_{N-1}$为$0,1,\dots,N-1$的一个排列。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>permute<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+c <span class="token operator">=</span> torch<span class="token punctuation">.</span>permute<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+torch.Size([2, 8, 6, 4])
+torch.Size([8, 6, 4, 2])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="张量的转置：transpose"><a href="#张量的转置：transpose" class="headerlink" title="张量的转置：transpose()"></a>张量的转置：transpose()</h3><blockquote>
+<ul>
+<li>torch.transpose(input: Tensor, dim0: int, dim1: int)</li>
+<li>tensor.transpose(dim0: int, dim1: int)</li>
+</ul>
+</blockquote>
+<p>将张量的两个指定维度进行转置。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> a<span class="token punctuation">.</span>transpose<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+torch.Size([2, 8, 4])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="张量的拼接"><a href="#张量的拼接" class="headerlink" title="张量的拼接"></a>张量的拼接</h2><h3 id="最通用的拼接方法：torch-concat"><a href="#最通用的拼接方法：torch-concat" class="headerlink" title="最通用的拼接方法：torch.concat()"></a>最通用的拼接方法：torch.concat()</h3><blockquote>
 <ul>
 <li>torch.concat(tensors: Tuple[Tensor, …] | List[Tensor], dim: <em>_int</em> = 0)</li>
@@ -870,6 +900,25 @@ torch.Size([2, 5, 3])
 <p>将张量转换为np.ndarray类型数组。由于numpy与matplotlib等库有非常方便的接口，因此该方法常用于后续的文件存储、图表绘制等等。不过，要注意该张量必须<strong>脱离计算图、位于内存</strong>，因此常用以下语句：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># tensor_data为张量</span>
 ndarray_data <span class="token operator">=</span> tensor_data<span class="token punctuation">.</span>detach<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>cpu<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>numpy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="张量的条件语句"><a href="#张量的条件语句" class="headerlink" title="张量的条件语句"></a>张量的条件语句</h2><h3 id="条件选取：torch-where"><a href="#条件选取：torch-where" class="headerlink" title="条件选取：torch.where()"></a>条件选取：torch.where()</h3><blockquote>
+<ul>
+<li>torch.where(condition: Tensor, input: Tensor, other: Tensor) -&gt; Tensor</li>
+<li>torch.where(condition: Tensor) -&gt; List[Tensor]</li>
+</ul>
+</blockquote>
+<p>这个函数类似C语言中的条件语句<code>xxx ? xxx : xxx</code>：对于满足condition的部分，取input中的对应元素，否则取other中的对应元素。</p>
+<p>举个实际例子，比如要编程实现下式</p>
+<script type="math/tex; mode=display">
+\max(0, x)</script><p>而往往在深度学习中以一个批量（张量）而不是单标量作为输入，记为$\mathbf{X}\in \mathbb{R}^{B}$，故下面的代码可以实现批量运算。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">part <span class="token operator">=</span> torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0.5</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>part<span class="token punctuation">)</span>
+result <span class="token operator">=</span> torch<span class="token punctuation">.</span>where<span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">></span> part<span class="token punctuation">,</span> torch<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>part<span class="token punctuation">)</span><span class="token punctuation">,</span> part<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+输出：
+tensor([-0.4765, -0.0570,  0.3925,  0.2088,  0.1372, -0.4504, -0.4224, -0.3690])
+tensor([0.0000, 0.0000, 0.3925, 0.2088, 0.1372, 0.0000, 0.0000, 0.0000])
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="模型的保存与加载"><a href="#模型的保存与加载" class="headerlink" title="模型的保存与加载"></a>模型的保存与加载</h2><p>通常有两种方案对模型进行保存与加载。在下面的方案介绍中，Model为torch内置的模型类，model为该类的实例，path为模型存储路径。</p>
 <p>方案一：仅保存模型参数（状态字典）</p>
 <blockquote>
