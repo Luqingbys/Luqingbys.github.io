@@ -1610,8 +1610,8 @@ P(h_j=1|v)=P(h_j=1|v,h_{-j})=\sigma(\sum\limits_{i=1}^DW_{ij}v_i)</script><h2 id
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
-
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
+//                     calcSiteTime();
                 </script>
             
             <br>

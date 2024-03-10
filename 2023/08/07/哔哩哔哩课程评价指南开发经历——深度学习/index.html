@@ -1644,8 +1644,8 @@ embeddings <span class="token operator">=</span> torch<span class="token punctua
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
-
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
+//                     calcSiteTime();
                 </script>
             
             <br>

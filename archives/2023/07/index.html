@@ -1254,8 +1254,8 @@ int。记住一点：int存储数据绝对值数量级不超过$10^9$，而long 
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
-
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
+//                     calcSiteTime();
                 </script>
             
             <br>

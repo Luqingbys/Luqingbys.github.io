@@ -1586,8 +1586,8 @@ remote_port &#x3D; 6000 # 这里设置为6000<span aria-hidden="true" class="lin
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
-
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
+//                     calcSiteTime();
                 </script>
             
             <br>

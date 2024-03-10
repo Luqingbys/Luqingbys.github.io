@@ -1839,8 +1839,8 @@ inputDom.setAttribute(&#39;style&#39;, &#39;vm.innerStyle运行后的值&#39;)
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
-
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
+//                     calcSiteTime();
                 </script>
             
             <br>

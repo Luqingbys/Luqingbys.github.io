@@ -1695,8 +1695,8 @@ $<span class="token punctuation">.</span><span class="token function">get</span>
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
-
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
+//                     calcSiteTime();
                 </script>
             
             <br>

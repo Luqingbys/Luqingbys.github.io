@@ -1519,8 +1519,8 @@ void Preorder(BiTree T, void (*visit)(TElemType&amp; e))
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
-
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
+//                     calcSiteTime();
                 </script>
             
             <br>

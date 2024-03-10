@@ -1801,8 +1801,8 @@ Vue.prototype._l &#x3D; renderList<span aria-hidden="true" class="line-numbers-r
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
-
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
+//                     calcSiteTime();
                 </script>
             
             <br>

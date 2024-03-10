@@ -2382,8 +2382,8 @@ content-type: text&#x2F;html; charset&#x3D;UTF-8	&#x2F;&#x2F; 服务器返回htm
                             document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
                         }
                     }
-
-                    calcSiteTime();
+                    setInterval(calcSiteTime, 1000);
+//                     calcSiteTime();
                 </script>
             
             <br>
