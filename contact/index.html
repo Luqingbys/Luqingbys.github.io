@@ -515,6 +515,15 @@
     p{
         text-align: center;
     }
+    span {
+        font-weight: bold;
+    }
+    #profile_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
 <main class="content">
     <div id="contact" class="container chip-container">
@@ -527,15 +536,22 @@
             </div>
             <!--valine评论弹幕-->
             
-                <p>
-                    <b>畅所欲言</b><br>
-                    <b>在这里可以留下你的足迹，欢迎在下方留言，欢迎交换友链</b><br>
-                    <b>友链信息</b><br>
-                    <b>博客名称: 湖心亭</b><br>
-                    <b>博客网址: https://luqingbys.github.io</b><br>
-                    <b>博客头像: https://luqingbys.github.io/medias/logo.png</b><br>
-                    <b>博客介绍: 犹豫就会败北</b><br>
-                </p>
+                <div id="profile_container">
+                    <div class="avatar">
+                                <img src="/medias/QQ%20avatar.jpg" alt="鹿卿"
+                                     class="circle responsive-img avatar-img">
+                    </div>
+                    <p>
+<!--                         <b>友链信息</b><br> -->
+                        <b><span>博客名称</span>: 湖心亭</b><br>
+                        <b><span>作   者</span>: 鹿卿</b><br>
+    <!--                     <b>博客网址: https://luqingbys.github.io</b><br> -->
+    <!--                     <b>博客头像: https://luqingbys.github.io/medias/logo.png</b><br> -->
+                        <b><span>博客签名</span>: 躺卷随心，主打优雅</b><br>
+                        <b>畅所欲言!</b><br>
+                        <b>在这里可以留下你的足迹，欢迎在下方留言，欢迎交换友链</b><br>
+                    </p>
+                </div>
                 <div class="container">
                     <section id="custom" class="bb-section">
                         <div class="row">
