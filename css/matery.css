@@ -38,11 +38,11 @@
 }
 
 body {
-    /*background-image: url('../medias/banner/body.jpg');*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
-    /*background-attachment: fixed;*/
-    /*background-color: #eaeaea;*/
+    background-image: url('https://aadcdn.msauth.net/shared/1.0/content/images/backgrounds/2_bc3d32a696895f78c19df6c717586a5d.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #eaeaea;
     margin: 0;
     color: #34495e;
     overflow-x: hidden;
@@ -239,12 +239,13 @@ mark {
 }
 
 .card {
-    border-radius: 5px; /* 文章卡牌 */
+    /* 文章卡牌 */
+    border-radius: 0; /* 10px */
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
 
 .card .card-image img {
-    border-radius: 8px 8px 0 0;
+    border-radius: 0; /* 8px 8px 0 0; */
     /* 修改文章列表图片填充样式为 cover 以覆盖整个区域而不会被缩放 */
     object-fit: cover;
 }
