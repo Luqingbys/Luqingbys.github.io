@@ -487,7 +487,8 @@
                     <input name="wd" id="kw-2" maxlength="100" autocomplete="off" type="text">
                 </div>
                 <div class="qingkong" id="qingkong" title="清 · 空" style="display: none;">x</div>
-                <input value="搜 · 索" id="su-2" type="submit">
+<!--                <input value="搜 · 索" id="su-2" type="submit">-->
+                <a href="#" id="search" style="--clr: #00ccff; --i: 1;"> <span>搜索</span> </a>
                 <ul class="keylist"></ul>
             </form>
         </div>
@@ -846,7 +847,7 @@
         height: 46px;
         position: absolute;
         left: 0px;
-        top: 1px;
+        top: 0px;
         z-index: 9999;
         background: rgba(255, 255, 255, 0.9);
         border: 1px solid #ccc;
@@ -888,29 +889,103 @@
     }
 
     /* 修改搜索框样式 */
-    #su-2 {
+    /*#su-2 {*/
+    /*    width: 90px;*/
+    /*    background: blue;*/
+    /*    border: none;*/
+    /*    border-top: #3385ff 1px solid;*/
+    /*    border-bottom: 1px solid #2d78f4;*/
+    /*    color: #FFF;*/
+    /*    cursor: pointer;*/
+    /*    !* 去轮廓阴影 *!*/
+    /*    outline: none;*/
+
+    /*}*/
+
+    /*!* 光标移动到搜索框颜色 *!*/
+    /*#su-2:hover {*/
+    /*    background: blue;*/
+    /*    border-bottom: 1px solid blue;*/
+    /*}*/
+
+    /*#su-2:active {*/
+    /*    background: blue;*/
+    /*    box-shadow: inset 1px 1px 3px blue;*/
+    /*    -webkit-box-shadow: inset 1px 1px 3px blue;*/
+    /*}*/
+
+    #search {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 40px; */
         width: 90px;
-        background: blue;
-        border: none;
-        border-top: #3385ff 1px solid;
-        border-bottom: 1px solid #2d78f4;
-        color: #FFF;
-        cursor: pointer;
-        /* 去轮廓阴影 */
-        outline: none;
-
+        padding: 20px 60px;
+        background: rgba(0, 0, 0, 0.5);
+        transition: 1s;
+        text-decoration: none;
+        overflow: hidden;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
     }
 
-    /* 光标移动到搜索框颜色 */
-    #su-2:hover {
-        background: blue;
-        border-bottom: 1px solid blue;
+    #search:hover {
+        background: var(--clr);
+        box-shadow: 0 0 10px var(--clr),
+        0 0 30px var(--clr),
+        0 0 60px var(--clr),
+        0 0 100px var(--clr);
     }
 
-    #su-2:active {
-        background: blue;
-        box-shadow: inset 1px 1px 3px blue;
-        -webkit-box-shadow: inset 1px 1px 3px blue;
+    #search::before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 400%;
+        background: var(--clr);
+        transition: 1s;
+        animation: animate 2s linear infinite;
+        animation-delay: calc(0.33s * var(--i));
+    }
+
+    #search:hover::before {
+        width: 120%;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    #search::after {
+        content: '';
+        position: absolute;
+        inset: 4px;
+        background: #0e1538;
+        transition: 0.5s;
+    }
+
+    #search:hover::after {
+        background: var(--clr);
+    }
+
+    #search span {
+        position: relative;
+        z-index: 1;
+        font-size: 2em;
+        color: #fff;
+        opacity: 0.5;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        transition: 0.5s;
+    }
+
+    #search:hover span {
+        opacity: 1;
     }
 
     .jj-list-tit {
