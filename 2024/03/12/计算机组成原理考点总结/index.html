@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="22.括号生成, 计算机科学 python 人工智能 前端">
-    <meta name="description" content="问题思路Ⅰ ：动态规划动态规划本质上就需要找到递推的规律。如果已经知道$i-1$对括号的有效括号式集，如何再添加一对括号得到$i$对括号的有效括号式集呢？
-我们来看一个具体的例子。假设$i=2$，故有效括号式集为
+    <meta name="keywords" content="计算机组成原理考点总结, 计算机科学 python 人工智能 前端">
+    <meta name="description" content="
+《计算机组成原理》课程考点总结整理，内容较长，迁移至本博客。参考教材为唐朔飞《计算机组成原理》（第三版）。
 
-(()),()()现在考">
+在线阅读地址：https://weread.qq.com/web/bookDetail/acd32ce0811e4e902g01">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>22.括号生成 | 湖心亭</title>
+    <title>计算机组成原理考点总结 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/orange.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -490,12 +490,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogcovers/laptop-5673901_1280.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://ooo.0x0.ooo/2024/03/13/OywT7a.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">22.括号生成</h1>
+                    <h1 class="description center-align post-title">计算机组成原理考点总结</h1>
                 </div>
             </div>
         </div>
@@ -611,16 +611,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                                <span class="chip bg-color">动态规划</span>
-                            </a>
-                        
-                            <a href="/tags/Leecode-hot-100/">
-                                <span class="chip bg-color">Leecode hot 100</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9B%9E%E6%BA%AF/">
-                                <span class="chip bg-color">回溯</span>
+                            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                                <span class="chip bg-color">大学课程</span>
                             </a>
                         
                     </div>
@@ -631,8 +623,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="post-category">
+                                计算机组成原理
                             </a>
                         
                     </div>
@@ -644,28 +636,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-13
+                    2024-03-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-12
+                    2024-03-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    246
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 
@@ -683,75 +675,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h2 id="思路Ⅰ-：动态规划"><a href="#思路Ⅰ-：动态规划" class="headerlink" title="思路Ⅰ ：动态规划"></a>思路Ⅰ ：动态规划</h2><p>动态规划本质上就需要找到递推的规律。如果已经知道$i-1$对括号的有效括号式集，如何再添加一对括号得到$i$对括号的有效括号式集呢？</p>
-<p>我们来看一个具体的例子。假设$i=2$，故有效括号式集为</p>
-<script type="math/tex; mode=display">
-(()),()()</script><p>现在考虑在何处添加新的括号对，可以使得得到的括号式仍然有效。为了方便思考，字符串最左侧的字符一定是”(“，于是<strong>我们将该字符和与之对应的右括号”)”视为新增的括号对</strong>。那么<strong>两个括号之间的部分，以及右括号右部的部分必然也是有效的，且它们加起来的括号对数即为$i-1$</strong>。为了方便后续的讨论，我们把前者包含的括号对数记作$p$，后者包含的括号对数记作$q$，而由$x$个括号对组成的有效括号式集合记作$S(x)$，个数记作$|S(x)|$。</p>
-<h3 id="状态转移"><a href="#状态转移" class="headerlink" title="状态转移"></a>状态转移</h3><p>给定$i$个括号对，根据上面的分析，</p>
-<script type="math/tex; mode=display">
-S(i)=\{ '('+\mathrm{x}+')'+\mathrm{y}|\mathrm{x}\in S(p),\mathrm{y}\in S(q),p+q=i-1,\forall p \in [0,i-1] \}</script><p>由$p+q=i$，则有效括号式数量满足</p>
-<script type="math/tex; mode=display">
-|S(i)|=\sum_{p=0}^{i-1}\left(|S(p)|\times|S(i-1-p)|\right)</script><p>下面举一个具体的例子，仍然以上面的2对括号对为例，求解$S(3)$。注意，此时$S(0),S(1),S(2)$均已知。</p>
-<script type="math/tex; mode=display">
-\begin{aligned} S(0)&=\{\} \\ S(1)&=\{ () \} \\ S(2)&=\{ (()),()() \} \end{aligned}</script><p>下面求解$S(3)$。我们用$[]$来表示、强调新增的括号对。</p>
-<script type="math/tex; mode=display">
-\begin{aligned} & p=0,q=2,S(3)_{02} = \{ '('+\mathrm{x}+')'+\mathrm{y}|\mathrm{x}\in S(0),\mathrm{y}\in S(2) \} = \{ [](()),[]()() \} \\ &p=1,q=1,S(3)_{11} = \{ '('+\mathrm{x}+')'+\mathrm{y}|\mathrm{x}\in S(1),\mathrm{y}\in S(1) \} = \{ [()]() \} \\ & p=2,q=0,S(3)_{20} = \{ '('+\mathrm{x}+')'+\mathrm{y}|\mathrm{x}\in S(2),\mathrm{y}\in S(0) \} = \{ [(())], [()()] \} \end{aligned}</script><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
-public:
-    vector&lt;string&gt; generateParenthesis(int n) &#123;
-        vector&lt;string&gt; dp[10];
-        dp[0] &#x3D; &#123;&quot;&quot;&#125;, dp[1] &#x3D; &#123;&quot;()&quot;&#125;;
-        int i, j;
-        for(i&#x3D;2; i&lt;&#x3D;n; i++) &#123;
-            for(j&#x3D;0; j&lt;i; j++) &#123;
-                &#x2F;&#x2F; dp[j], dp[i-1-j]
-                for(string x:dp[j]) &#123;
-                    for(string y:dp[i-1-j]) &#123;
-                        dp[i].push_back(&quot;(&quot;+x+&quot;)&quot;+y);
-                    &#125;
-                &#125;
-            &#125;
-        &#125;
-        return dp[n];
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="思路Ⅱ：回溯"><a href="#思路Ⅱ：回溯" class="headerlink" title="思路Ⅱ：回溯"></a>思路Ⅱ：回溯</h2><p>回溯算法和深度优先遍历很类似，都需要沿着某一个方向一直搜索。<strong>和深度优先遍历不同的是，回溯算法在搜索到某个不可能出现的状态时，就会立即终止当前搜索，即剪枝操作</strong>。</p>
-<p>此题中，我们用<strong>已经拼接出的字符串done、还剩下的左括号数量left和右括号数量right来表示一个状态</strong>；凡是不合法的括号式均为不可能出现的状态（即当left&gt;right），一旦搜索到该状态，便可以立即返回（剪枝）。但是我们可以调整一下搜索方式，便可以避免出现不合法状态：</p>
+                <blockquote>
+<p>《计算机组成原理》课程考点总结整理，内容较长，迁移至本博客。参考教材为唐朔飞《计算机组成原理》（第三版）。</p>
 <ul>
-<li>当left=right且不为零时，此时只能选择左括号”(“，于是还剩余的左括号left数量减一、右括号数量right不变，<code>DFS(done+&quot;(&quot;, left-1, right)</code>；</li>
-<li>当left=0时，此时只能选择右括号”)”，于是还剩余的右括号right数量减一，左括号数量left不变，<code>DFS(done+&quot;)&quot;, left, right-1)</code>；</li>
-<li>其余情况下，既可以选择左括号，也可以选择右括号<ul>
-<li><code>DFS(done+&quot;(&quot;, left-1, right)</code></li>
-<li><code>DFS(done+&quot;)&quot;, left, right-1)</code></li>
+<li>在线阅读地址：<a target="_blank" rel="noopener" href="https://weread.qq.com/web/bookDetail/acd32ce0811e4e902g019a39">https://weread.qq.com/web/bookDetail/acd32ce0811e4e902g019a39</a></li>
+<li>离线下载地址：<a target="_blank" rel="noopener" href="http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/pjz8pBqGzzzz3wi8AXlR5g1NgdDpM6gxJt6e540loBvHj1FxehSYULYM5FClyVwveOli329RQShodxOTn06PUa7e0m6FreOSTaIWuojZ448yS5pgL6e0f4twqbhGfyI8lkDA0Y/E/Q4IUUHCNbnh8O0e4F5BQvy/OQTEILP1QZFXnPwGfiBcHEMDxm7iZ2BjQ=">https://pan.baidu.com/s/1HoULLYxx-WC8kuWg5EHVtg?pwd=rmlp</a></li>
 </ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90-%E6%90%9C%E7%B4%A2%E6%A0%91.svg" alt="括号生成-搜索树"></p>
-<h3 id="边界条件"><a href="#边界条件" class="headerlink" title="边界条件"></a>边界条件</h3><p>很显然，当left=right=0时，此时搜索到终止状态，将字符串done添加到集合之中即可。</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution &#123;
-public:
-    set&lt;string&gt; S;
-    void DFS(string done, int left, int right) &#123;
-        if(left &#x3D;&#x3D; 0 &amp;&amp; right &#x3D;&#x3D; 0) &#123;
-            S.insert(done);
-            return;
-        &#125;
-        if(left &#x3D;&#x3D; 0)   DFS(done+&quot;)&quot;, left, right-1);
-        else if(left &#x3D;&#x3D; right) &#123;
-            DFS(done+&quot;(&quot;, left-1, right);
-        &#125; else &#123;
-            DFS(done+&quot;(&quot;, left-1, right);
-            DFS(done+&quot;)&quot;, left, right-1);
-        &#125;
-    &#125;
-    vector&lt;string&gt; generateParenthesis(int n) &#123;
-        DFS(&quot;&quot;, n, n);
-        vector&lt;string&gt; vs;
-        for(set&lt;string&gt;::iterator iter &#x3D; S.begin(); iter !&#x3D; S.end(); iter++) &#123;
-            vs.push_back(*iter);
-        &#125;
-        return vs;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p>[TOC]</p>
+<h2 id="芯片设计与连线题"><a href="#芯片设计与连线题" class="headerlink" title="芯片设计与连线题"></a>芯片设计与连线题</h2><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><p>该考点涉及的基本知识包括存储器容量构成、存储器容量的扩展等等。</p>
+<h4 id="存储器容量"><a href="#存储器容量" class="headerlink" title="存储器容量"></a>存储器容量</h4><p>通常（若以位为单位）<strong>存储器的容量=存储单元个数×存储字长</strong>，存储字长就是单个存储单元的位数，前者和地址线相关，后者和数据线相关。</p>
+<p>对于一个存储容量为$m\times n位$（<strong>其中$m$表示存储单元个数，$n$表示存储字长</strong>）的存储芯片，则该芯片的地址线数量为$\log_2m$（通常$m$是2的整数次幂），数据线数量为$n$，逻辑示意图见图<a href="#fig:apnea">1</a>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130854443.png" alt="存储容量"></p>
 
                 
             </div>
@@ -778,7 +713,7 @@ public:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/2023/09/13/22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">https://luqingbys.github.io/2023/09/13/22-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/</a>
+                    <a href="https://luqingbys.github.io/2024/03/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93/">https://luqingbys.github.io/2024/03/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -816,16 +751,8 @@ public:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                                    <span class="chip bg-color">动态规划</span>
-                                </a>
-                            
-                                <a href="/tags/Leecode-hot-100/">
-                                    <span class="chip bg-color">Leecode hot 100</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9B%9E%E6%BA%AF/">
-                                    <span class="chip bg-color">回溯</span>
+                                <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                                    <span class="chip bg-color">大学课程</span>
                                 </a>
                             
                         </div>
@@ -1322,17 +1249,17 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/09/14/32-%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/">
+                <a href="/2024/03/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93/">
                     <div class="card-image">
                         
+                        <img src="https://ooo.0x0.ooo/2024/03/13/OywT7a.jpg" class="responsive-img" alt="计算机组成原理考点总结">
                         
-                        <img src="/medias/blogcovers/geometry-1023846_640.jpg" class="responsive-img" alt="32.最长有效括号">
-                        
-                        <span class="card-title">32.最长有效括号</span>
+                        <span class="card-title">计算机组成原理考点总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1342,30 +1269,27 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="post-category">
+                                    计算机组成原理
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
-                    </a>
-                    
-                    <a href="/tags/Leecode-hot-100/">
-                        <span class="chip bg-color">Leecode hot 100</span>
+                    <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
+                        <span class="chip bg-color">大学课程</span>
                     </a>
                     
                 </div>
@@ -1379,13 +1303,12 @@ public:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/13/17-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/">
+                <a href="/2024/03/06/%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7-pytorch%E5%8C%85/">
                     <div class="card-image">
                         
+                        <img src="https://pic.ziyuan.wang/user/luqing2882/2024/03/ai-8530787_640_2f7834301b387.jpg" class="responsive-img" alt="常用技巧-pytorch包">
                         
-                        <img src="/medias/blogcovers/technology-8280864_640.jpg" class="responsive-img" alt="17.电话号码的字母组合">
-                        
-                        <span class="card-title">17.电话号码的字母组合</span>
+                        <span class="card-title">常用技巧-pytorch包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1396,14 +1319,14 @@ public:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/python%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    python编程
                                 </a>
                             
                             
@@ -1413,12 +1336,8 @@ public:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Leecode-hot-100/">
-                        <span class="chip bg-color">Leecode hot 100</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
-                        <span class="chip bg-color">深度优先遍历</span>
+                    <a href="/tags/pytorch/">
+                        <span class="chip bg-color">pytorch</span>
                     </a>
                     
                 </div>
