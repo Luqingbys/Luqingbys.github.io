@@ -281,7 +281,7 @@
       
       <i class="fas fa-list" style="zoom: 0.6;"></i>
       
-      <span>Douban</span>
+      <span>我的豆瓣</span>
       <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
     <ul class="sub-nav menus_item_child ">
@@ -323,7 +323,7 @@
       
       <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
       
-      <span>Navigate</span>
+      <span>导航</span>
     </a>
     
   </li>
@@ -436,7 +436,7 @@
 			
 				<i class="fa-fw fas fa-list"></i>
 			
-			Douban
+			我的豆瓣
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
             <ul  style="background:  ;" >
@@ -481,7 +481,7 @@
 			
 			    <i class="fa-fw fas fa-location-arrow"></i>
 			
-			Navigate
+			导航
 		</a>
           
         </li>
@@ -731,14 +731,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-13
+                    2024-03-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12.5k
+                    12.4k
                 </div>
                 
 
@@ -779,17 +779,17 @@
 <p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130855057.png" alt="位扩展"></p>
 <p>上图表示两片2114（1K×4位）组成1K×8位的存储系统。可以看出，两个芯片的数据引脚（每个4个，一共8个）与处理器的8条数据线$D_7,D_6,\dots,D_0$相连，而不涉及片选信号（$\overline{CS_0}$），表示两个芯片总是同时被选中一起工作，只是存储字长翻倍了。</p>
 <p>字扩展，则只扩展存储单元数量。表现为被选中的芯片分时工作。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130855289.png" alt="字扩展">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130855289.png" alt="字扩展"></p>
 <p>上图表示两片1K×8位芯片组成2K×8位的存储系统。可以看出，存储字长并没有变化，始终为8（都是芯片的8根数据线与处理器的8根数据线相连），而处理器的低位地址线$A_9,A_8,\dots,A_0$与芯片的地址线相连，$A_{10}$则作为片选信号，当$A_{10}=1$为高电平时，$\overline{CS_1}$低电平导通，该芯片被选中工作，反之$\overline{CS_0}$被选中工作。</p>
 <p>字、位同时扩展，指存储单元和存储字长同时扩展。图中的片选译码通常为74LS138。请尝试自行理解。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130855328.png" alt="字、位同时扩展">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130855328.png" alt="字、位同时扩展"></p>
 <h4 id="74LS138译码器"><a href="#74LS138译码器" class="headerlink" title="74LS138译码器"></a>74LS138译码器</h4><p>常见的片选译码器，知道什么功能即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130856616.png" alt="74LS138译码器">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130856616.png" alt="74LS138译码器"></p>
 <p>其中$A_2,A_1,A_0$为变量输入端，$S_1,\bar{S}_2,\bar{S}_3$为使能端。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130856473.png" alt="74LS138译码器功能表">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130856473.png" alt="74LS138译码器功能表"></p>
 <p>简言之，<strong>变量输入端$A_2A_1A_0$表示的十进制数为$i$，则输出端$\bar{Y}_0,\bar{Y}_1,\dots,\bar{Y}_7$中只有$\bar{Y}_i$为低电平0，其余均为高电平1</strong>。</p>
 <h3 id="考点概述"><a href="#考点概述" class="headerlink" title="考点概述"></a>考点概述</h3><p>通常地，题目会给出一个处理器的规格（$x$条地址线、$y$条数据线），以及控制信号（读写控制信号、访存控制信号等），给出若干RAM、ROM，以及需要分配的地址范围要求（三大区：系统程序区、系统程序工作区和用户程序区），<strong>考察如何选取芯片并连接芯片与处理器，完成设计</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130856592.jpg" alt="芯片设计题解题思考流程参考">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130856592.jpg" alt="芯片设计题解题思考流程参考"></p>
 <p>首先是确定系统程序区、用户程序区和系统程序工作区三者的地址范围。题目可以给出各种各样的条件（直接给出十进制范围，比如0 32767；最大16K；与xxx相邻的16K等等），只需要用二进制表示出三个区的地址范围以及范围大小，这一步就完成了。</p>
 <p>接下来，得到三个区的地址范围后，开始选取芯片。RAM、ROM芯片的选取原则如下为<strong>系统程序区：ROM系统程序工作区、用户程序区：RAM</strong>。</p>
 <p>另外，需要保证选取的ROM、RAM数据线不少于处理器的数据线（否则将造成浪费———处理器剩余未连接的引脚全部浪费）。当前者多于后者时，这种情况就是所谓的<strong>位扩展</strong>。</p>
@@ -803,7 +803,7 @@
 <p>控制线，这里指的是处理器的控制引脚，比如常见的访存控制信号（$\overline{MREQ}$，表示低电平导通），读写信号（$\overline{WR}$，低电平导通）等。</p>
 <p>再次强调，<strong>处理器的所有引脚（地址引脚、数据引脚、控制引脚）不允许悬空！</strong></p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>这个示例题之前出现在知识点总结里面过。以此为例大致说明怎么做这种题目。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130856193.png" alt="例题">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130856193.png" alt="例题"></p>
 <p><strong>步骤1</strong>：写出题目给定的地址空间范围，用二进制表示：<br>系统程序区：$00\ 0000\ 0000\ 0000\ 0000B-00\ 0111\ 1111\ 1111\ 1111B$，$0 \sim 32767$，32K；<br>用户程序区：$00\ 1000\ 0000\ 0000\ 0000B-01\ 0111\ 1111\ 1111\ 1111B$，$32768\sim98303$，64K；<br>系统程序工作区：$11\ 1100\ 0000\ 0000\ 0000B-11\ 1111\ 1111\ 1111\ 1111B$，最大的16K。</p>
 <p><strong>步骤2</strong>：选择存储芯片类型与数量</p>
 <p>根据第一步已经分析出来的结果，得</p>
@@ -819,7 +819,7 @@
 <li>8条数据线直接相连。</li>
 </ul>
 <p><strong>步骤4</strong>：片选信号的形成</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857335.png" alt="地址范围">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857335.png" alt="地址范围"></p>
 <p>(注意，$A_{17},A_{16},\dots,A_0$均表示CPU的地址线)</p>
 <p>借助74LS138地址译码器，高三位作为译码器的输入端。</p>
 <p>对于32K的ROM、32K的RAM，CPU的高三位$A_{17},A_{16},A_{15}$参与片选信号的形成：由于32K的ROM有效地址范围前三位均为0，因此，将输出端$\bar{Y_0}$与32K的ROM片选信号端（<strong>芯片片选信号端低电平有效</strong>）相连，表示当$A_{17}=A_{16}=A_{15}=0$时，32K的ROM有效，被选中。</p>
@@ -828,19 +828,19 @@
 <p>为此，我们将地址译码器的$\bar{Y_7}$先经过一个非门，然后再和$A_{14}$一起经过与非门，结果再和16K的RAM的片选信号端相连。</p>
 <p><strong>步骤5</strong>：控制线的连接</p>
 <p>很简单，清楚控制线的含义和导通规则（高电平有效还是低电平有效），直接相连即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857284.png" alt="例题参考答案">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857284.png" alt="例题参考答案"></p>
 <h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><h4 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h4><p>设CPU有16根地址线、8根数据线，并用$\overline{MREQ}$作为访存控制信号（低电平有效）、${\overline{WR}}$作为读写控制信号（高电平为读，低电平为写）。现有73LS138译码器、各种门电路以及如下存储芯片：</p>
 <p>RAM：1K×4位、4K×8位、8K×8位 ROM：2K×8位、4K×8位、8K×8位</p>
 <p>请画出CPU和存储器的连接图，并指出存储芯片的种类及数量。其中要求主存的地址空间满足如下条件：</p>
 <p>最小8K地址为系统程序区，与其相邻的16K地址为用户程序区，最大的4K地址空间为系统程序工作区。</p>
 <h4 id="习题2"><a href="#习题2" class="headerlink" title="习题2"></a>习题2</h4><p>CPU以及其他芯片假设同习题1，主存地址空间分配为：6000H ~ 67FFH为系统程序区；6800H ~ 6BFFH为用户程序区；请画出CPU和存储的连接图，并指出存储芯片的种类及数量。</p>
 <h4 id="习题3"><a href="#习题3" class="headerlink" title="习题3"></a>习题3</h4><p>某CPU有20根地址线，8根数据线，并用$\overline{MEMR}$和$\overline{MEMW}$<br>作为访存控制信号。由两片27256EPROM和两片62256SRAM构成一个8位存储器系统如下图所示。已知27256和62256均为32K×8位的存储芯片，问：<br>(1)图中采用何种译码方式形成存储器的片选信号；<br>(2)图中各存储芯片的地址范围为多少；<br>(3)图中还有多大的地址空间可以用于存储器扩展。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857992.png" alt="习题三">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857992.png" alt="习题三"></p>
 <h4 id="习题4"><a href="#习题4" class="headerlink" title="习题4"></a>习题4</h4><p>设某计算机CPU有16根地址线（$A_{15},A_{14},\dots,A_0$，$A_0$为低位），16根数据线（$D_{15},D_{14},\dots,D_0$），并用$\overline{MREQ}$作为访存控制信号（低电平有效），$\overline{WR}$作为读/写控制信号（高电平为读命令，低电平为写命令）。现有下列存储芯片及各种门电路（门电路可自定）如图2所示，请画出CPU与存储芯片的连接图示，要求：<br>(1)存储芯片的地址空间分配为：最大32K为系统程序区；相邻16K为用户程序区；<br>(2)合理选用存储芯片，指出选用的存储芯片类型以及数量；<br>(3)详细画出存储芯片的片选逻辑。</p>
 <h3 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h3><h4 id="习题1-1"><a href="#习题1-1" class="headerlink" title="习题1"></a>习题1</h4><p>见教材例题。</p>
 <h4 id="习题2-1"><a href="#习题2-1" class="headerlink" title="习题2"></a>习题2</h4><p>见教材例题。</p>
 <h4 id="习题3-1"><a href="#习题3-1" class="headerlink" title="习题3"></a>习题3</h4><p>(3)事实上，$A_{18},A_{19}$都已经与译码器的使能端相连，固定为01时，译码器才可以正常工作。因此，剩余的地址空间还有$2^{18}-4\times 32K  = 2^{18} - 2^{17} = 2^{17}$。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857695.png" alt="习题三参考答案">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857695.png" alt="习题三参考答案"></p>
 <h4 id="习题4-1"><a href="#习题4-1" class="headerlink" title="习题4"></a>习题4</h4><p>地址分配情况如下。<br>用户程序区： <script type="math/tex">\begin{aligned}
             \mathbf{010}0\ 0000\ 0000\ 0000\\
             \cdots\\
@@ -863,21 +863,21 @@
 </ul>
 <p>关于高位地址，已经标粗，一种比较简单的做法是，将高位地址线$A_{15},A_{14},A_{13}$作为译码器变量输入端，参与形成两片RAM的片选信号（用户程序区的地址空间刚好除开直接与处理器地址线相连的低位地址线，还剩下3条高位地址线）；而对于ROM的片选信号，可以直接使用$A_{15},A_{14}$两条地址线，为10时选通第一片ROM，为11时选通第二片ROM。</p>
 <p>如果将最高三位的地址线参与ROM的片选信号也可以。$A_{15},A_{14},A_{13}$为100、101时，选通第一片ROM；为110、111时，选通第二片ROM。而前者译码器的$\bar{Y}_4,\bar{Y}_5$输出为01或者10，后者译码器的$\bar{Y}_6,\bar{Y}_7$输出为01或者10。根据这个特点，可以用异或结果，通过非门得到低电平，选通ROM即可。具体的逻辑图不妨自行尝试。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857856.jpg" alt="习题四连接图示">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857856.jpg" alt="习题四连接图示"></p>
 <h2 id="Cache与主存的编址题"><a href="#Cache与主存的编址题" class="headerlink" title="Cache与主存的编址题"></a>Cache与主存的编址题</h2><h3 id="基础知识-1"><a href="#基础知识-1" class="headerlink" title="基础知识"></a>基础知识</h3><p>该考点涉及Cache出现原因、设计结构、工作原理等知识点。</p>
 <h4 id="高速缓存存储器Cache"><a href="#高速缓存存储器Cache" class="headerlink" title="高速缓存存储器Cache"></a>高速缓存存储器Cache</h4><p>为了解决”<strong>主存储器的速度始终赶不上处理器的速度</strong>“这一问题，在<strong>主存和处理器之间增加一级高速缓冲存储器Cache</strong>是一种非常有效的办法。 Cache一般采用SRAM实现，虽然容量小于主存容量，但是速度大大高于基于动态RAM的大容量主存。</p>
 <h4 id="Cache的工作原理"><a href="#Cache的工作原理" class="headerlink" title="Cache的工作原理"></a>Cache的工作原理</h4><p>由于Cache是对主存中块的”暂存”以提高访存速度，因此，Cache中需要记录下来究竟记录到了主存的哪一块内容、主存中也需要记录它到Cache的映射情况。</p>
 <p>在正式介绍主存和Cache的编址之前，你也许注意到上面的描述中经常出现”块”而不是字节、字等其他单位。是的，<strong>若干存储单元组成了一个数据块，而内存与Cache之间进行数据交换时，正是以块为单位。</strong></p>
 <p>所谓主存和Cache的编址，实际上就是对主存中的块映射到Cache中的记录，根据映射方式的不同，编址方式也不尽相同。常见的映射方式有三种：<strong>直接映射、全相联映射和组相联映射</strong>。</p>
 <p>直接映射，按照公式$i=j\ mod\ 2^c$进行映射，其中j表示主存中的字块号，i表示Cache中的字块号。示意图如下。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857791.png" alt="直接映射">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857791.png" alt="直接映射"></p>
 <p>为了更清楚地展示映射过程，此处标明了不同的组，这些组按照主存中的块号与$2^c$作整除运算所得到的整数商进行分类，而$2^c$正是Cache的字块总数。换言之，同组内部的每一个字块整除以$2^c$得到的商都相同。另外，正如图中连线所示，所有模$2^c$所得的余数相同的字块映射到Cache中的同一个字块。那如何准确地表示出Cache中的某一个字块到底来自主存中的哪一个？故需要保存主存块号（共$2^m$块）除以$2^c$所得到的商和余数，前者决定它来自哪一个组（$2^{m-c}=2^t$）、后者决定它映射到Cache中的位置（共$2^c$块）。</p>
 <p>最后再解释字块内地址b。之前提过，Cache与主存进行数据交换均以字块为基本单位，一个数据块包含多个存储单元。而这b位的地址正是用于单个块内部寻址：找到具体是哪个存储单元。</p>
 <p>全相联映射，相比于直接映射，取消了按模公式进行映射所具有的”固定性”，采取了更加随机的映射方式：对于主存中的任意一个字块，它可以映射到Cache中的任意位置。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857735.png" alt="全相联映射">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857735.png" alt="全相联映射"></p>
 <p>主存地址格式解释起来比较简单，因为字块总数就是$2^m$，自然主存字块标记（主存字块地址）有m位。而对于Cache的编址，可以发现较之于直接映射，Cache标记位不再是t，而是m，因为Cache中的任意一个字块可以对应着主存$2^m$个字块中的任意一个。</p>
 <p>组相联映射实际上是直接映射和全相联映射的结合。将Cache划分为若干组，每组内有若干字块。对于所有的组，按照直接映射；而每一个组内，按照全相联映射。另外请注意，这里的”组”与上文”直接映射”中的”组”含义不同，后者只是笔者方便描述而临时起意。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857007.png" alt="组相联映射">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130857007.png" alt="组相联映射"></p>
 <p>组相联下的主存地址格式由三部分组成。由于Cache中的组数为$\frac{2^c}{2^r}=2^{c-r}$，则组地址有$q=c-r$位；而每一个组内由于是全相联映射，可以对应主存中的$\frac{2^m}{2^{c-r}}=2^{m-c+r}$个块，因此Cache中的字块标记位有s=m-c+r位，主存地址中同样有此s=m-c+r位地址。对于Cache地址，由于总共的字块数量为$2^c$，字块地址用c位表示。另外的字块内地址上文提过，不再赘述。<sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
 <h3 id="考点概述-1"><a href="#考点概述-1" class="headerlink" title="考点概述"></a>考点概述</h3><p>这种类型的题目往往会给出主存容量和Cache的容量，以及每一个字块的大小。同时需要明确访存地址到底是字地址还是字节地址，这个直接影响到字块内地址的位数。一般地，需要根据给出的主存容量、Cache容量计算出主存中的字块总数和Cache中的字块总数，这样也可以得到两者的字块地址位数。然后根据题目指定的映射方式，给出各个段的位数。下面以具体的例子进行描述。</p>
 <h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><p>假设主存容量为512K×16位，Cache容量为4096×16位，块长为4个16位的字，访存地址为字地址。请回答： (1)在直接映射方式下，设计主存的地址格式。 </p>
@@ -912,7 +912,7 @@
 <p>一种是用一位符号位判断溢出。这种情况可以参考教材第239页表6.7。</p>
 <p>另一种是用两位符号位判断溢出。这种情况下，需要将参与运算的真值全部转换为带2位符号位的变形补码，然后将其相加。2位符号位连同数值部分一起参与运算，且高位符号位产生的进位自动丢失。<strong>当2位符号位不同时，结果溢出，否则无溢出。</strong>这种情况的示例可以参考教材第240页例6.14、6.15、6.16。</p>
 <h4 id="浮点数的加减运算"><a href="#浮点数的加减运算" class="headerlink" title="浮点数的加减运算"></a>浮点数的加减运算</h4><p>浮点数相比于定点数形式上有差异。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130905660.png" alt="浮点数的格式">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130905660.png" alt="浮点数的格式"></p>
 <p>通常地，浮点数被表示为$N=M\times R^E$，其中M为尾数，用一个定点小数表示，通常需要规格化，<strong>即尾数的真值绝对值在0到1之间；若为原码则数值部分第一位必须为1；若为补码则符号位和数值部分第一位不同</strong>；R为基值，一般取2；E为阶码，表示基值的幂。尾数和阶码都是有符号位的，分别用尾符和阶符指代。</p>
 <div class="table-container">
 <table>
@@ -983,7 +983,7 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 <h2 id="计算机中数据的乘除运算"><a href="#计算机中数据的乘除运算" class="headerlink" title="计算机中数据的乘除运算"></a>计算机中数据的乘除运算</h2><h3 id="基础知识-3"><a href="#基础知识-3" class="headerlink" title="基础知识"></a>基础知识</h3><p>紧承考点”计算机中数据的加减运算”，乘除运算相对而言更加复杂。这一部分会尽量从考点角度出发，介绍数据乘除法的运算过程。当然为了简单起见，只介绍定点数的乘除运算，浮点数的乘除运算可以类比完成。</p>
 <h4 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a>乘法</h4><p>首先来分析一下二进制下的竖式计算乘法过程。</p>
 <p>假设两二进制乘数M=-0.1101，N=0.1011，我们列竖式计算它们的乘积，过程如图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130906491.png" alt="二进制下的竖式乘法">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130906491.png" alt="二进制下的竖式乘法"></p>
 <p>可见，先忽略符号位，单独计算数值的乘法，然后再给结果加上符号。然而，计算机却很难如此实现乘法运算。为了探求计算机作乘法运算的原理，我们先做如下推导。</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -1010,7 +1010,7 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 <li>部分积和乘数均采取逻辑右移位；</li>
 <li>属于机器数乘法中最简单、最基础的一种</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130908466.png" alt="原码一位乘法示例">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130908466.png" alt="原码一位乘法示例"></p>
 <h4 id="原码二位乘法"><a href="#原码二位乘法" class="headerlink" title="原码二位乘法"></a>原码二位乘法</h4><p>和一位乘法类似地，原码的二位乘法即每次用被乘数和乘数的最末两位作乘法，然后与部分积相加得到新的部分积。四种两位二进制数的情况见表1。</p>
 <div class="table-container">
 <table>
@@ -1100,7 +1100,7 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 </table>
 </div>
 <p>可见，原码二位乘法相比于一位乘法有几处细微的差异：首先，出现了减法，而之前在数据加减法中提过，<strong>将减法转化为补码加法</strong>，因此，<strong>参与原码二位乘法运算的操作数应该是绝对值的补码</strong>；而运算中的右移两位操作均遵循<strong>补码右移</strong><sup><a href="#fn_5" id="reffn_5">5</a></sup>规则。另外，部分积加上两倍的被乘数时，其绝对值可能大于2，因此采用<strong>三位符号位</strong>，才能保证运算结果无误（以最高位作为真正的符号位）。再者，对于乘数的符号位，如果乘数小数点后位数为奇数，则采用单符号位，且运算时最后部分积作加法运算后需要移位；反之则采用双符号位，最后一步部分积不移位。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130909980.png" alt="原码二位乘法示例">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130909980.png" alt="原码二位乘法示例"></p>
 <p>因此，原码二位乘法特点总结如下：</p>
 <ol>
 <li>采取原操作数的绝对值的补码运算；</li>
@@ -1117,7 +1117,7 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 <p>$[M\times N] = [M] \times [N] = [M] \times N,  \mathbf{N&gt;0}.$</p>
 <p>$[M\times N] = [M] \times (0.n_1n_2\dots n_k) + [-M], \mathbf{N&lt;0}$</p>
 <p>我们以补码1.0101和0.1101作乘法运算进行演示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130910514.png" alt="补码一位乘法">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130910514.png" alt="补码一位乘法"></p>
 <h4 id="Booth乘法"><a href="#Booth乘法" class="headerlink" title="Booth乘法"></a>Booth乘法</h4><p>Booth乘法将补码一位乘法统一了起来。对于（二进制下补码）被乘数$M=m_0.m_1m_2\dots m_{k}$，乘数$N=n_0.n_1n_2\dots n_{k}$，对其补码乘法运算进行如下数学推导。注意，为了统一形式，我们给乘数N添加一位附加位$n_{k+1}=0$。</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -1171,17 +1171,17 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 </table>
 </div>
 <p>最后以补码乘法x=+0.0011、y=-0.1011为例进行演示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130911417.png" alt="Booth乘法">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130911417.png" alt="Booth乘法"></p>
 <p>最后，关于补码二位乘法，此处不再赘述，各位不妨一试。</p>
 <h3 id="除法"><a href="#除法" class="headerlink" title="除法"></a>除法</h3><p>再来看看除法。同样地，先从除法的竖式计算开始。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130914587.png" alt="二进制下的竖式除法">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130914587.png" alt="二进制下的竖式除法"></p>
 <p>和乘法类似地，做竖式除法时，符号位单独考虑，具体的数值部分运算时，上商之后，余数不动，低位补0，且当上商为1时，需要减去右移一位的除数；而做机器除法时，余数左移一位，低位补0，然后减去除数。由于余数和除数参与减法操作，因此这两种处理实际上是等价的。</p>
 <h4 id="原码除法"><a href="#原码除法" class="headerlink" title="原码除法"></a>原码除法</h4><p>给定原码形式下的被除数$[M]_{true}=m_0.m_1m_2\dots m_{k}$，除数$[N]_{true}=n_0.n_1n_2\dots n_{k}$，则原码做除法也是符号位单独计算、数值部分单独计算：</p>
 <script type="math/tex; mode=display">
 \displaystyle\left[\frac{M}{N}\right]_{true} = (m_0 \oplus n_0).\frac{|M|}{|N|}</script><p>而原码除法中，根据对余数处理方式的不同，又可以分为<strong>恢复余数法</strong>和<strong>不恢复余数法</strong>（<strong>加减交替法</strong>）。</p>
 <p>关于<strong>恢复余数法</strong>，由于计算机无法如同人类直接看出每一位上商为0还是1，因此计算机总是预先上商为1，然后自然就是当前余数和除数（的一倍）做减法<sup><a href="#fn_6" id="reffn_6">6</a></sup>。<strong>如果减法的结果为负，那么当前应该上商为0，并且给当前结果加上$|N|$以便恢复余数为正数，否则上商为1</strong>。上商结束后，余数需要作逻辑左移运算。</p>
 <p>给出一个示例。x=-0.1011，y=0.1101，用恢复余数法给出运算$\displaystyle\left[\frac{x}{y}\right]_{true}$的详细过程。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130915754.png" alt="恢复余数法示例">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130915754.png" alt="恢复余数法示例"></p>
 <p>关于<strong>不恢复余数法</strong>（也称”加减交替法”），实际上是对恢复余数法的一种改良。因为恢复余数法中每当余数为负时，都需要进行恢复，严重延长了机器运算时间，且在除法运算中显得操作不规则，容易造成线路复杂。为了方便推导不恢复余数法的数学原理，约定用$R$表示当前余数。恢复余数法中的运算规则总结见表。</p>
 <div class="table-container">
 <table>
@@ -1196,19 +1196,18 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 <tr>
 <td>R&gt;0</td>
 <td>上商为1，对R左移一位，然后减去除数</td>
-<td>R$\gets$2R-\</td>
-<td>N\</td>
-<td></td>
+<td>$R\gets 2R-</td>
+<td>N</td>
+<td>$</td>
 </tr>
 <tr>
 <td>R&lt;0</td>
 <td>上商为0，先加上除数以恢复余数，然后左移一位，减去除数</td>
-<td>R$\gets$2(R+</td>
+<td>$R\gets2(R+</td>
 <td>N</td>
 <td>)-</td>
 <td>N</td>
-<td>即R$\gets$2R+\</td>
-<td>N\</td>
+<td>$</td>
 </tr>
 </tbody>
 </table>
@@ -1227,21 +1226,22 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 <tr>
 <td>R>0</td>
 <td>上商为1，对R左移一位，然后减去除数</td>
-<td>R$\gets$2R-\</td>
-<td>N\</td>
-<td></td>
+<td>$R\gets2R-</td>
+<td>N</td>
+<td>$</td>
 </tr>
 <tr>
 <td>R\&lt;0</td>
 <td>上商为0，对R左移一位，然后加上除数</td>
-<td>R$\gets$2R+\</td>
-<td>N\</td>
+<td>$R\gets2R+</td>
+<td>N</td>
+<td>$</td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>也给出一个示例。x=-0.1011，y=-0.1101，用不恢复余数法给出运算$\displaystyle \left[\frac{x}{y}\right]_{true}$的详细过程。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130924795.png" alt="不恢复余数法示例">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130924795.png" alt="不恢复余数法示例"></p>
 <h4 id="补码除法"><a href="#补码除法" class="headerlink" title="补码除法"></a>补码除法</h4><p>补码除法相对而言不如原码除法那般直观，同样也分为恢复余数法和加减交替法。这里只介绍加减交替法。这一运算方法的关键有三处：<strong>确定商值</strong>、<strong>形成商符</strong>、<strong>获得新的余数</strong>。</p>
 <p>第一，确定商值。这需要先比较被除数和除数的大小。但是补码形式的比较并不能直接使用$[M]_{com}-[N]_{com}$来判断，而是需要比较它们绝对值的大小。我们将比较算法总结如下。</p>
 <div class="table-container">
@@ -1346,7 +1346,7 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 <p>具体的算法过程总结如下。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130935276.png" alt="补码除法算法"></p>
 <p>给出一个示例。x=-0.1011，y=0.1101，用补码除法给出运算$\displaystyle\left[\frac{x}{y}\right]_{com}$的详细过程。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130929817.png" alt="补码除法示例">{width=”0.6\\linewidth”}</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130929817.png" alt="补码除法示例"></p>
 <p>因此，$\displaystyle \left[\frac{x}{y}\right]_{com} = 1.0011$，$\displaystyle\frac{x}{y} = -0.1101$。</p>
 <blockquote id="fn_1">
 <sup>1</sup>. 片选信号的形成有三方法。全译码：余下的高位地址线全部参与译码形成片选信号；部分译码：余下的高位地址线部分参与译码；线选法：余下的高位地址线，每一根选通一块芯片，直接形成该芯片的选通信号，思路很简单（不再需要译码器了），但是前提是处理器的地址线数量较多，不然根本不够用。<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
