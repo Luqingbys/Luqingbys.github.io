@@ -794,7 +794,7 @@
 <li>轴（axis）。即坐标轴对象。</li>
 <li>刻度（tick）。坐标轴上的刻度，包括主刻度、次刻度。</li>
 </ul>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\matplotlib绘图包.assets\image-20230822103155646.png" alt="Matplotlib绘图的主要元素" style="zoom:80%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192036079.png" alt="Figure与图层"></p>
 <h2 id="设置画布大小：plt-figure"><a href="#设置画布大小：plt-figure" class="headerlink" title="设置画布大小：plt.figure()"></a>设置画布大小：plt.figure()</h2><p>画布，即我们将要绘制内容的区域。常用如下方法设置画布大小：</p>
 <blockquote>
 <ul>
@@ -823,7 +823,7 @@ plt<span class="token punctuation">.</span>plot<span class="token punctuation">(
 plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'only given y'</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319004342380.png" alt="image-20240319004342380"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192036940.png" alt="plt.plot()方法基本用法"></p>
 <blockquote>
 <p>在深度学习训练完成后，往往存储了每一轮的平均训练损失loss_list，此时可以直接调用plt.plot(loss_list)便可直接绘制训练损失曲线，查看训练情况。</p>
 </blockquote>
@@ -840,7 +840,7 @@ plt<span class="token punctuation">.</span>close<span class="token punctuation">
 <li>y——yellow，黄</li>
 </ul>
 <p>更加详细的颜色字符串见下图。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\matplotlib-color-1024x1008.png" alt="《matplotlib颜色表》"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192037889.png" alt="matplotlib颜色表"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">color_styles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'r'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">,</span> <span class="token string">'k'</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span>
 color_labels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'yellow'</span><span class="token punctuation">,</span> <span class="token string">'black'</span><span class="token punctuation">,</span> <span class="token string">'magenta'</span><span class="token punctuation">,</span> <span class="token string">'cyan'</span><span class="token punctuation">]</span>
 <span class="token keyword">for</span> idx<span class="token punctuation">,</span> <span class="token punctuation">(</span>color<span class="token punctuation">,</span> label<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>color_styles<span class="token punctuation">,</span> color_labels<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -848,7 +848,7 @@ color_labels <span class="token operator">=</span> <span class="token punctuatio
 plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319092548635.png" alt="不同颜色的线条"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192037425.png" alt="不同颜色的线条"></p>
 <h4 id="线条样式参数linestyle"><a href="#线条样式参数linestyle" class="headerlink" title="线条样式参数linestyle"></a>线条样式参数linestyle</h4><p>参数lienstyle用于指示线条样式，其值可以用英文字符串指定，也可以用标点字符串指定。常见的有四种样式：</p>
 <ul>
 <li>solid（-），实线，</li>
@@ -864,7 +864,7 @@ plt<span class="token punctuation">.</span>legend<span class="token punctuation"
 plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Plots of different linestyles'</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319093614643.png" alt="不同样式的线条"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192037635.png" alt="不同形状样式的线条"></p>
 <h4 id="标记点样式参数marker"><a href="#标记点样式参数marker" class="headerlink" title="标记点样式参数marker"></a>标记点样式参数marker</h4><p>参数marker用于指示标记样式，常见的参数值见表。</p>
 <div class="table-container">
 <table>
@@ -959,7 +959,7 @@ plt<span class="token punctuation">.</span>legend<span class="token punctuation"
 plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Plots of different markers'</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319094910516.png" alt="不同标记样式的线条"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192037385.png" alt="不同标记样式的线条"></p>
 <h4 id="格式参数format-string"><a href="#格式参数format-string" class="headerlink" title="格式参数format_string"></a>格式参数format_string</h4><p>此处的格式包括上面解释的三部分：</p>
 <ul>
 <li>颜色样式color</li>
@@ -980,7 +980,7 @@ plt<span class="token punctuation">.</span>legend<span class="token punctuation"
 plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'Plots of different format'</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319100121297.png" alt="不同格式的线条"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192038864.png" alt="不同格式的线条"></p>
 <h4 id="标签参数label"><a href="#标签参数label" class="headerlink" title="标签参数label"></a>标签参数label</h4><p>label用于指示线条的标签意义。它的用法之前的例子已经给出。但是要注意，需要<strong>再次调用plt.legend()显示标签到图片中。</strong></p>
 <h2 id="设置轴标签：plt-xlabel-plt-ylabel"><a href="#设置轴标签：plt-xlabel-plt-ylabel" class="headerlink" title="设置轴标签：plt.xlabel()/plt.ylabel()"></a>设置轴标签：plt.xlabel()/plt.ylabel()</h2><blockquote>
 <ul>
@@ -1003,7 +1003,7 @@ labels <span class="token operator">=</span> <span class="token punctuation">[</
 plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>a<span class="token punctuation">,</span> labels<span class="token punctuation">,</span> rotation<span class="token operator">=</span><span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token comment"># 顺时针旋转20°</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319154407515.png" alt="plt.xticks()方法自定义轴"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192038503.png" alt="plt.xticks()方法自定义轴"></p>
 <p>另外，可以设置ticks参数为空列表，从而将该轴省去：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> x<span class="token operator">*</span>x<span class="token punctuation">)</span>
@@ -1011,7 +1011,7 @@ plt<span class="token punctuation">.</span>xticks<span class="token punctuation"
 plt<span class="token punctuation">.</span>yticks<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319154620506.png" alt="省略坐标轴"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192038793.png" alt="省略坐标轴的图像"></p>
 <h2 id="设置轴范围：plt-xlim-plt-ylim"><a href="#设置轴范围：plt-xlim-plt-ylim" class="headerlink" title="设置轴范围：plt.xlim()/plt.ylim()"></a>设置轴范围：plt.xlim()/plt.ylim()</h2><blockquote>
 <ul>
 <li>plt.xlim(bottom: float, top: float)</li>
@@ -1042,7 +1042,7 @@ plt<span class="token punctuation">.</span>subplot<span class="token punctuation
 plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
  
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\matplotlib绘图包.assets\image-20230822110953520.png" alt="subplot()绘图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192038179.png" alt="plt.subplot()绘图"></p>
 <p>同时，每一个子图都可以单独设置标题，同样也是使用plt.title()方法：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 准备数据</span>
 x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span>
@@ -1062,7 +1062,7 @@ nrows<span class="token punctuation">,</span> ncols <span class="token operator"
     plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span>title_list<span class="token punctuation">[</span>idx<span class="token punctuation">]</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319161017718.png" alt="绘制最基本的子图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192038123.png" alt="绘制最基本的子图"></p>
 <p>可见，在绘制饱满的多子图时，如果不加布局调整，整个图像观感将会很差。下面再介绍几个布局调整方法。</p>
 <h3 id="紧凑布局：plt-tight-layout"><a href="#紧凑布局：plt-tight-layout" class="headerlink" title="紧凑布局：plt.tight_layout()"></a>紧凑布局：plt.tight_layout()</h3><blockquote>
 <ul>
@@ -1089,9 +1089,9 @@ nrows<span class="token punctuation">,</span> ncols <span class="token operator"
 plt<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 紧凑布局</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319161740362.png" alt="紧凑布局下的多子图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192039347.png" alt="紧凑布局下的多子图"></p>
 <h3 id="另一种方法：subplots"><a href="#另一种方法：subplots" class="headerlink" title="另一种方法：subplots()"></a>另一种方法：subplots()</h3><p>在正式介绍这个方法之前，有必要引入matplotlib中的一个重要概念：Axes。</p>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NTEwMjQ1,size_16,color_FFFFFF,t_70#pic_center.png" alt="Figure和Axes"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192040659.png" alt="Figure和Axes对象说明"></p>
 <p>也就是说，当我们调用plt方法时，</p>
 <ol>
 <li>将生成一个Figure对象(以绿色显示)；</li>
@@ -1122,7 +1122,7 @@ fig<span class="token punctuation">.</span>suptitle<span class="token punctuatio
 fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 紧凑布局</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319201538996.png" alt="plt.subplots()方法绘制子图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192040278.png" alt="plt.subplots()方法绘制子图"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 准备数据</span>
 x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span>
 y_1 <span class="token operator">=</span> np<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
@@ -1140,7 +1140,7 @@ fig<span class="token punctuation">.</span>suptitle<span class="token punctuatio
 fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 紧凑布局</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-matplotlib包.assets\image-20240319202649022.png" alt="设置子图共享y轴"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403192040104.png" alt="设置子图共享y轴"></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/TeFuirnever/article/details/99672296">plt.plot()函数解析（最清晰的解释）</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/deephub/article/details/108440506">Figure、Axes对象是什么</a></li>
