@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>指数族分布</title>
+      <link href="/posts/bd57.html"/>
+      <url>/posts/bd57.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="指数族分布"><a href="#指数族分布" class="headerlink" title="指数族分布"></a>指数族分布</h1><p> 指数族分布指的是可以写作如下形式的分布：</p><script type="math/tex; mode=display">p(\mathbf{x}|\pmb{\eta}) = h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb{\eta}))</script><p>其中，</p><ul><li>样本$\mathbf{x}\in \mathbb{R}^p$，参数$\pmb{\eta}\in \mathbb{R}^p$；</li><li>$A(\pmb{\eta})$是一个关于$\pmb{\eta}$的函数，称为对数配分函数；</li><li>$h(\mathbf{x})、\phi(\mathbf{x})$为关于$\mathbf{x}$的函数，且$\phi(\mathbf{x})$称为完全统计量。</li></ul><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>上式中还有一些不曾解释的组成部分，比如对数配分函数、完全统计量等等。</p><h3 id="概率配分函数"><a href="#概率配分函数" class="headerlink" title="概率配分函数"></a>概率配分函数</h3><p>所谓配分函数，可以简单理解为“归一化因子”。比如如下条件概率计算式</p><script type="math/tex; mode=display">p(x|\theta) = \frac{1}{Z}\hat{p}(x|\theta)</script><p>其中$Z$就是配分函数（归一化因子）。两边同时对$x$积分，得</p><script type="math/tex; mode=display">\int p(x|\theta)dx = \int \frac{1}{Z}\hat{p}(x|\theta)dx</script><p>于是有</p><script type="math/tex; mode=display">Z=\int \hat{p}(x|\theta)dx</script><p>回到指数族分布的基本形式</p><script type="math/tex; mode=display">p(\mathbf{x}|\pmb{\eta}) = h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb{\eta}))</script><p>做如下变形</p><script type="math/tex; mode=display">p(\mathbf{x}|\pmb{\eta}) = \frac{h(\mathbf{x})}{\exp(A(\pmb{\eta}))} \exp(\pmb{\eta}^T\phi(\mathbf{x}))</script><p>将“系数”$\displaystyle\frac{1}{\exp(A(\pmb{\eta}))}$看做$\displaystyle \frac{1}{Z}$，于是$A(\pmb{\eta}) = \log Z$，故称之为对数配分函数。</p><h3 id="完全统计量"><a href="#完全统计量" class="headerlink" title="完全统计量"></a>完全统计量</h3><p>在概率论与数理统计中学过，统计量指的是样本的函数，比如均值、方差等等；而完全统计量的定义稍微有些复杂，通俗地说，可以通过这个“特殊的统计量”来观测到关于分布族的参数的所有独立信息。此处$\phi(\mathbf{x})$即为完全统计量。</p><h2 id="高斯分布的指数族形式"><a href="#高斯分布的指数族形式" class="headerlink" title="高斯分布的指数族形式"></a>高斯分布的指数族形式</h2><p>这一部分，通过一个非常经典的分布——高斯分布，来感受一下指数族分布。接下来，我们考虑一个单变量的高斯分布，它的概率分布形式为</p><script type="math/tex; mode=display">\mathcal{N}(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)</script><p>接下来我们对该概率函数进行变形，写成指数族分布形式。</p><script type="math/tex; mode=display">\begin{aligned}\mathcal{N}(x;\mu,\sigma) &= \frac{1}{\sqrt{2\pi \sigma^2}}\exp\left( -\frac{1}{2\sigma^2}(x^2-2\mu x+\mu^2) \right) \\&= \exp\left( \log(2\pi \sigma^2)^{-\frac{1}{2}} - \frac{1}{2\sigma^2}(x^2-2\mu x)-\frac{\mu^2}{2\sigma^2} \right) \\ &=  \exp\left( \begin{bmatrix} \displaystyle \frac{\mu}{\sigma^2} & \displaystyle -\frac{1}{2\sigma^2}  \end{bmatrix} \begin{bmatrix} x \\ x^2 \end{bmatrix} - \left( \frac{\mu^2}{2\sigma^2} + \frac{1}{2}\log2\pi \sigma^2 \right) \right)\end{aligned}</script><p>于是有</p><script type="math/tex; mode=display">\begin{cases}\pmb{\eta}^T  = \begin{bmatrix} \displaystyle \frac{\mu}{\sigma^2} & \displaystyle -\frac{1}{2\sigma^2}  \end{bmatrix} \\\phi(\mathbf{x}) = \begin{bmatrix}  x \\ x^2  \end{bmatrix} \\A(\pmb{\eta}) = \displaystyle \frac{\mu^2}{2\sigma^2} + \frac{1}{2}\log2\pi \sigma^2\end{cases}</script><p>此处，$\pmb{\eta}$是参数向量，不妨设</p><script type="math/tex; mode=display">\begin{cases}\eta_1 = \displaystyle \frac{\mu}{\sigma^2} \\\eta_2 = \displaystyle -\frac{1}{2\sigma^2}\end{cases}</script><p>得到</p><script type="math/tex; mode=display">\begin{cases}\mu = \displaystyle -\frac{\eta_1}{2\eta_2} \\\sigma^2 = \displaystyle -\frac{1}{2\eta_2}\end{cases}</script><p>代入得到高斯分布的指数族分布形式</p><script type="math/tex; mode=display">\mathcal{N}(x;\mu,\sigma) = \exp\left( \begin{bmatrix} \eta_1 & \eta_2 \end{bmatrix} · \begin{bmatrix} x \\x^2 \end{bmatrix} - \left( -\frac{\eta_1^2}{4\eta_2} - \frac{1}{2}\log\frac{\pi}{\eta_2} \right) \right)</script><p>其中</p><script type="math/tex; mode=display">\begin{cases}\pmb{\eta}^T  = \begin{bmatrix} \displaystyle \eta_1 & \eta_2 \end{bmatrix} \\\phi(\mathbf{x}) = \begin{bmatrix}  x \\ x^2  \end{bmatrix} \\A(\pmb{\eta}) = \displaystyle -\frac{\eta_1^2}{4\eta_2} - \frac{1}{2}\log\frac{\pi}{\eta_2}\end{cases}</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机组成原理考点总结</title>
       <link href="/posts/5df1.html"/>
       <url>/posts/5df1.html</url>

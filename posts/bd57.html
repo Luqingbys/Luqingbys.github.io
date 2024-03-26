@@ -4,12 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="汇编指令, 计算机科学 python 人工智能 前端">
-    <meta name="description" content="这一部分主要记录一下课程中学习到的基本指令。
-数据传送类指令功能：把数据、地址或者立即数传送到寄存器或者存储单元中。
-MOV指令语法：MOV    reg/mem/seg（目的操作数）, reg/mem/seg/imm（源操作数）
+    <meta name="keywords" content="指数族分布, 计算机科学 python 人工智能 前端">
+    <meta name="description" content="指数族分布 指数族分布指的是可以写作如下形式的分布：
 
-reg">
+p(\mathbf{x}|\pmb{\eta}) = h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb{\eta}))其中，
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +20,7 @@ reg">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>汇编指令 | 湖心亭</title>
+    <title>指数族分布 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/medias/logo_lu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -601,12 +600,12 @@ reg">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogcovers/computer-4795762_1280.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogcovers/board-game-1846400_1280.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">汇编指令</h1>
+                    <h1 class="description center-align post-title">指数族分布</h1>
                 </div>
             </div>
         </div>
@@ -722,8 +721,8 @@ reg">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
-                                <span class="chip bg-color">大学课程</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -734,8 +733,8 @@ reg">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" class="post-category">
-                                汇编语言
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
                             </a>
                         
                     </div>
@@ -747,21 +746,21 @@ reg">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2024-03-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-13
+                    2024-03-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    879
+                    818
                 </div>
                 
 
@@ -786,85 +785,60 @@ reg">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这一部分主要记录一下课程中学习到的基本指令。</p>
-<h2 id="数据传送类指令"><a href="#数据传送类指令" class="headerlink" title="数据传送类指令"></a>数据传送类指令</h2><p>功能：把数据、地址或者立即数传送到寄存器或者存储单元中。</p>
-<h3 id="MOV指令"><a href="#MOV指令" class="headerlink" title="MOV指令"></a>MOV指令</h3><p>语法：MOV    reg/mem/seg（目的操作数）, reg/mem/seg/imm（源操作数）</p>
+                <h1 id="指数族分布"><a href="#指数族分布" class="headerlink" title="指数族分布"></a>指数族分布</h1><p> 指数族分布指的是可以写作如下形式的分布：</p>
+<script type="math/tex; mode=display">
+p(\mathbf{x}|\pmb{\eta}) = h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb{\eta}))</script><p>其中，</p>
 <ul>
-<li>reg：通用寄存器</li>
-<li>mem：内存单元，形如[EA] （EA为有效地址，即偏移地址）</li>
-<li>seg：段寄存器</li>
-<li>imm：立即数</li>
+<li>样本$\mathbf{x}\in \mathbb{R}^p$，参数$\pmb{\eta}\in \mathbb{R}^p$；</li>
+<li>$A(\pmb{\eta})$是一个关于$\pmb{\eta}$的函数，称为对数配分函数；</li>
+<li>$h(\mathbf{x})、\phi(\mathbf{x})$为关于$\mathbf{x}$的函数，且$\phi(\mathbf{x})$称为完全统计量。</li>
 </ul>
-<p>将源操作数src复制到目的操作数dst中，结果是<strong>目的操作数的内容等于源操作数的内容</strong>，源操作数的内容不变。</p>
-<p>重要说明：</p>
-<ul>
-<li>双操作数不能同时为段寄存器或者内存</li>
-<li>代码段寄存器CS和立即数不能作为目的操作数，立即数不能直接传送到段寄存器中</li>
-<li>dest与src必须类型匹配（位数一致）</li>
-</ul>
-<h3 id="XCHG指令"><a href="#XCHG指令" class="headerlink" title="XCHG指令"></a>XCHG指令</h3><p>语法：XCHG    reg/mem（dest）, reg/mem（src）</p>
-<p>交换dest和src中的内容。</p>
-<h3 id="栈操作"><a href="#栈操作" class="headerlink" title="栈操作"></a>栈操作</h3><ol>
-<li><p>进栈指令</p>
-<p>格式：PUSH    reg/mem/seg（src）</p>
-<p>将把src中的内容存入SP指向的内存（地址对应）</p>
-<p>隐藏了目的操作数SP+1与SP（双字）。</p>
-</li>
-<li><p>出栈指令</p>
-<p>格式：POP    reg/mem/seg（src）</p>
-<p>与上面的进栈指令相逆。</p>
-</li>
-</ol>
-<h3 id="标志处理指令"><a href="#标志处理指令" class="headerlink" title="标志处理指令"></a>标志处理指令</h3><p>除了有一些指令影响标志位外，80x86还提供了一组设置或清除标志位指令，它们只影响本指令指定的标志，而不影响其他标志位。如</p>
-<ul>
-<li>CLD    方向标志置0指令</li>
-<li>CLI     中断标志置0指令</li>
-</ul>
-<h3 id="地址传送指令"><a href="#地址传送指令" class="headerlink" title="地址传送指令"></a>地址传送指令</h3><p>LEA    reg16，mem</p>
-<p>主存按源地址的寻址方式计算偏移地址，将偏移地址送入指定的寄存器。</p>
-<p>注意：<strong>LEA与MOV指令相比，最大的区别在于LEA是将偏移地址送入寄存器，而MOV是将存储单元中的内容送入寄存器（或其他）</strong>。</p>
-<h3 id="段寄存器装入指令"><a href="#段寄存器装入指令" class="headerlink" title="段寄存器装入指令"></a>段寄存器装入指令</h3><p>LDS/LES    REG, SRC</p>
-<p>LDS指定的段寄存器是DS，LES指定的段寄存器是ES；其中的SRC只能使用存储器寻址方式，目的寄存器不允许使用段寄存器。</p>
-<h3 id="累加器专用传送指令"><a href="#累加器专用传送指令" class="headerlink" title="累加器专用传送指令"></a>累加器专用传送指令</h3><p>IN    AL, PORT(字节)</p>
-<p>IN    AX, PORT(字)</p>
-<p>OUT    PORT, AL</p>
-<p>OUT    PORT, AX</p>
-<h2 id="算术指令"><a href="#算术指令" class="headerlink" title="算术指令"></a>算术指令</h2><h3 id="加法指令"><a href="#加法指令" class="headerlink" title="加法指令"></a>加法指令</h3><ul>
-<li><p>ADD    dest，src</p>
-<p>将dest和src相加，并将和保留在目的操作数中。</p>
-<p>会改变标志位。</p>
-</li>
-<li><p>ADC     dest，src</p>
-<p>带进位的加法指令，会加上进位CF。</p>
-</li>
-<li><p>INC     opr</p>
-</li>
-</ul>
-<h3 id="类型转换指令"><a href="#类型转换指令" class="headerlink" title="类型转换指令"></a>类型转换指令</h3><p>CBW    字节转换为字指令：AL的内容符号扩展到AH，形成AX中的字。</p>
-<p>CWD    字转换为双字指令：AX的内容符号扩展到DX，形成DX，AX中的双字。</p>
-<h2 id="位操作指令"><a href="#位操作指令" class="headerlink" title="位操作指令"></a>位操作指令</h2><h3 id="逻辑与、逻辑或、逻辑异或"><a href="#逻辑与、逻辑或、逻辑异或" class="headerlink" title="逻辑与、逻辑或、逻辑异或"></a>逻辑与、逻辑或、逻辑异或</h3><h3 id="逻辑非指令：操作数按位取反"><a href="#逻辑非指令：操作数按位取反" class="headerlink" title="逻辑非指令：操作数按位取反"></a>逻辑非指令：操作数按位取反</h3><p>NOT    reg/mem</p>
-<h3 id="移位指令"><a href="#移位指令" class="headerlink" title="移位指令"></a>移位指令</h3><p>分为逻辑左移（SHL）、逻辑右移，算术左移（SAL）、算术右移，循环左移（ROL）、循环右移，带CF位的循环左移（RCL）和循环右移。</p>
-<p>语法格式：移位指令    dest, Count</p>
-<p><strong>当移位次数大于1时，必须将移位次数提前送至CL寄存器，再执行移位指令</strong>。</p>
-<ul>
-<li>逻辑移位：不考虑符号位（每次移位后补零）</li>
-<li>算术移位：考虑符号位（左移补零，右移补符号位）</li>
-</ul>
-<h2 id="控制转移指令"><a href="#控制转移指令" class="headerlink" title="控制转移指令"></a>控制转移指令</h2><h3 id="无条件转移指令：JMP"><a href="#无条件转移指令：JMP" class="headerlink" title="无条件转移指令：JMP"></a>无条件转移指令：JMP</h3><ul>
-<li><p>段内直接转移</p>
-<p>JMP    SHORT    OPR</p>
-</li>
-<li><p>段内间接近转移</p>
-<p>JMP    WORD    PTR    OPR</p>
-</li>
-<li><p>段间直接远转移</p>
-</li>
-<li><p>段间间接远转移</p>
-<p>JMP    DWORD    PTR    OPR</p>
-<p>EA内容送入IP，EA+2内容送入CS。</p>
-</li>
-</ul>
-
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>上式中还有一些不曾解释的组成部分，比如对数配分函数、完全统计量等等。</p>
+<h3 id="概率配分函数"><a href="#概率配分函数" class="headerlink" title="概率配分函数"></a>概率配分函数</h3><p>所谓配分函数，可以简单理解为“归一化因子”。比如如下条件概率计算式</p>
+<script type="math/tex; mode=display">
+p(x|\theta) = \frac{1}{Z}\hat{p}(x|\theta)</script><p>其中$Z$就是配分函数（归一化因子）。两边同时对$x$积分，得</p>
+<script type="math/tex; mode=display">
+\int p(x|\theta)dx = \int \frac{1}{Z}\hat{p}(x|\theta)dx</script><p>于是有</p>
+<script type="math/tex; mode=display">
+Z=\int \hat{p}(x|\theta)dx</script><p>回到指数族分布的基本形式</p>
+<script type="math/tex; mode=display">
+p(\mathbf{x}|\pmb{\eta}) = h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb{\eta}))</script><p>做如下变形</p>
+<script type="math/tex; mode=display">
+p(\mathbf{x}|\pmb{\eta}) = \frac{h(\mathbf{x})}{\exp(A(\pmb{\eta}))} \exp(\pmb{\eta}^T\phi(\mathbf{x}))</script><p>将“系数”$\displaystyle\frac{1}{\exp(A(\pmb{\eta}))}$看做$\displaystyle \frac{1}{Z}$，于是$A(\pmb{\eta}) = \log Z$，故称之为对数配分函数。</p>
+<h3 id="完全统计量"><a href="#完全统计量" class="headerlink" title="完全统计量"></a>完全统计量</h3><p>在概率论与数理统计中学过，统计量指的是样本的函数，比如均值、方差等等；而完全统计量的定义稍微有些复杂，通俗地说，可以通过这个“特殊的统计量”来观测到关于分布族的参数的所有独立信息。此处$\phi(\mathbf{x})$即为完全统计量。</p>
+<h2 id="高斯分布的指数族形式"><a href="#高斯分布的指数族形式" class="headerlink" title="高斯分布的指数族形式"></a>高斯分布的指数族形式</h2><p>这一部分，通过一个非常经典的分布——高斯分布，来感受一下指数族分布。接下来，我们考虑一个单变量的高斯分布，它的概率分布形式为</p>
+<script type="math/tex; mode=display">
+\mathcal{N}(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\sigma}\exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)</script><p>接下来我们对该概率函数进行变形，写成指数族分布形式。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathcal{N}(x;\mu,\sigma) &= \frac{1}{\sqrt{2\pi \sigma^2}}\exp\left( -\frac{1}{2\sigma^2}(x^2-2\mu x+\mu^2) \right) \\
+&= \exp\left( \log(2\pi \sigma^2)^{-\frac{1}{2}} - \frac{1}{2\sigma^2}(x^2-2\mu x)-\frac{\mu^2}{2\sigma^2} \right) \\ 
+&=  \exp\left( \begin{bmatrix} \displaystyle \frac{\mu}{\sigma^2} & \displaystyle -\frac{1}{2\sigma^2}  \end{bmatrix} \begin{bmatrix} x \\ x^2 \end{bmatrix} - \left( \frac{\mu^2}{2\sigma^2} + \frac{1}{2}\log2\pi \sigma^2 \right) \right)
+\end{aligned}</script><p>于是有</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\pmb{\eta}^T  = \begin{bmatrix} \displaystyle \frac{\mu}{\sigma^2} & \displaystyle -\frac{1}{2\sigma^2}  \end{bmatrix} \\
+\phi(\mathbf{x}) = \begin{bmatrix}  x \\ x^2  \end{bmatrix} \\
+A(\pmb{\eta}) = \displaystyle \frac{\mu^2}{2\sigma^2} + \frac{1}{2}\log2\pi \sigma^2
+\end{cases}</script><p>此处，$\pmb{\eta}$是参数向量，不妨设</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\eta_1 = \displaystyle \frac{\mu}{\sigma^2} \\
+\eta_2 = \displaystyle -\frac{1}{2\sigma^2}
+\end{cases}</script><p>得到</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\mu = \displaystyle -\frac{\eta_1}{2\eta_2} \\
+\sigma^2 = \displaystyle -\frac{1}{2\eta_2}
+\end{cases}</script><p>代入得到高斯分布的指数族分布形式</p>
+<script type="math/tex; mode=display">
+\mathcal{N}(x;\mu,\sigma) = \exp\left( \begin{bmatrix} \eta_1 & \eta_2 \end{bmatrix} · \begin{bmatrix} x \\x^2 \end{bmatrix} - \left( -\frac{\eta_1^2}{4\eta_2} - \frac{1}{2}\log\frac{\pi}{\eta_2} \right) \right)</script><p>其中</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\pmb{\eta}^T  = \begin{bmatrix} \displaystyle \eta_1 & \eta_2 \end{bmatrix} \\
+\phi(\mathbf{x}) = \begin{bmatrix}  x \\ x^2  \end{bmatrix} \\
+A(\pmb{\eta}) = \displaystyle -\frac{\eta_1^2}{4\eta_2} - \frac{1}{2}\log\frac{\pi}{\eta_2}
+\end{cases}</script>
                 
             </div>
             <hr/>
@@ -890,7 +864,7 @@ reg">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/posts/3760.html">https://luqingbys.github.io/posts/3760.html</a>
+                    <a href="https://luqingbys.github.io/posts/bd57.html">https://luqingbys.github.io/posts/bd57.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -928,8 +902,8 @@ reg">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
-                                    <span class="chip bg-color">大学课程</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -1426,17 +1400,18 @@ reg">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/a30b.html">
+                <a href="/posts/bd57.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/blogcovers/code-1839406_1280.jpg" class="responsive-img" alt="数据库设计">
+                        <img src="/medias/blogcovers/board-game-1846400_1280.jpg" class="responsive-img" alt="指数族分布">
                         
-                        <span class="card-title">数据库设计</span>
+                        <span class="card-title">指数族分布</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1446,26 +1421,27 @@ reg">
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">
-                        <span class="chip bg-color">大学课程</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -1479,13 +1455,12 @@ reg">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/8077.html">
+                <a href="/posts/5df1.html">
                     <div class="card-image">
                         
+                        <img src="https://ooo.0x0.ooo/2024/03/13/OywT7a.jpg" class="responsive-img" alt="计算机组成原理考点总结">
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="数据库的安全性和完整性">
-                        
-                        <span class="card-title">数据库的安全性和完整性</span>
+                        <span class="card-title">计算机组成原理考点总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1496,14 +1471,14 @@ reg">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                    数据库系统
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="post-category">
+                                    计算机组成原理
                                 </a>
                             
                             
@@ -1669,6 +1644,13 @@ reg">
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
