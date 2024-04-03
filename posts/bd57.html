@@ -165,7 +165,7 @@ p(\mathbf{x}|\pmb{\eta}) = h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb
     };
     loaded();
 })()
- </script></head>
+ </script><meta name="generator" content="Hexo 6.1.0"></head>
 
 
 
@@ -753,21 +753,21 @@ p(\mathbf{x}|\pmb{\eta}) = h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-26
+                    2024-04-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    818
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    9 分
                 </div>
                 
 
@@ -838,7 +838,102 @@ A(\pmb{\eta}) = \displaystyle \frac{\mu^2}{2\sigma^2} + \frac{1}{2}\log2\pi \sig
 \pmb{\eta}^T  = \begin{bmatrix} \displaystyle \eta_1 & \eta_2 \end{bmatrix} \\
 \phi(\mathbf{x}) = \begin{bmatrix}  x \\ x^2  \end{bmatrix} \\
 A(\pmb{\eta}) = \displaystyle -\frac{\eta_1^2}{4\eta_2} - \frac{1}{2}\log\frac{\pi}{\eta_2}
-\end{cases}</script>
+\end{cases}</script><h2 id="对数配分函数与完全统计量"><a href="#对数配分函数与完全统计量" class="headerlink" title="对数配分函数与完全统计量"></a>对数配分函数与完全统计量</h2><p>接下来介绍一下完全统计量和对数配分函数之间的关系。为此，我们先回到指数族分布的一般形式</p>
+<script type="math/tex; mode=display">
+p(\mathbf{x}|\pmb{\eta}) = h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb{\eta}))</script><p>两边同时对$\mathbf{x}$求导，有</p>
+<script type="math/tex; mode=display">
+\int p(\mathbf{x}|\pmb{\eta})\mathrm{d}\mathbf{x} = \int \frac{h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x}))}{\exp A(\pmb{\eta})}\mathrm{d}\mathbf{x}</script><p>由$\displaystyle \int p(\mathbf{x}|\pmb{\eta})\mathrm{d}\mathbf{x}=1$，得</p>
+<script type="math/tex; mode=display">
+\exp A(\pmb{\eta}) = \int h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x}))\mathrm{d}\mathbf{x}</script><p>再同时对$\pmb{\eta}$求导，得</p>
+<script type="math/tex; mode=display">
+\exp A(\pmb{\eta})·\frac{\mathrm{d}A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}} = \int h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x}))\phi(\mathbf{x})\mathrm{d}\mathbf{x}</script><p>所以得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\mathrm{d}A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}} &= \int h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb{\eta}))\phi(\mathbf{x})\mathrm{d}\mathbf{x} \\
+&= \int p(\mathbf{x}|\pmb{\eta})\phi(\mathbf{x})\mathrm{d}\mathbf{x} \\
+\end{aligned}</script><p>上式实际上就是期望。所以得到最终的关系式</p>
+<script type="math/tex; mode=display">
+\frac{\mathrm{d}A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}} = \mathbb{E}_{p(\mathbf{x}|\pmb{\eta})}[\phi(\mathbf{x})]</script><p>进一步地，对对数配分函数的一阶导数再次求导，有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\mathrm{d}^2 A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}^2} &= \frac{\mathrm{d}}{\mathrm{d}\pmb{\eta}}\left( \frac{\mathrm{d}A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}} \right) \\
+&= \int h(\mathbf{x})\exp(\pmb{\eta}^T\phi(\mathbf{x})-A(\pmb{\eta}))\left(\phi(\mathbf{x})-\frac{\mathrm{d}A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}}\right)\phi(\mathbf{x})\mathrm{d}\mathbf{x} \\
+&= \int p(\mathbf{x}|\pmb{\eta})\left( \phi(\mathbf{x})-\mathbb{E}_{p(\mathbf{x}|\pmb{\eta})}[\phi(\mathbf{x})] \right) \phi(\mathbf{x})\mathrm{d}\mathbf{x} \\
+&= \int p(\mathbf{x}|\pmb{\eta})\phi^2(\mathbf{x})\mathrm{d}\mathbf{x} - \mathbb{E}_{p(\mathbf{x}|\pmb{\eta})}[\phi(\mathbf{x})] · \int p(\mathbf{x}|\pmb{\eta})\phi(\mathbf{x})\mathrm{d}\mathbf{x} \\
+&= \mathbb{E}_{p(\mathbf{x}|\pmb{\eta})}[\phi^2(\mathbf{x})] - \mathbb{E}_{p(\mathbf{x}|\pmb{\eta})}^2[\phi(\mathbf{x})] \\
+&= \mathbf{Var}[\phi(\mathbf{x})]
+\end{aligned}</script><p>注意上面的推导需要用到数学期望的定义和方差之间的关系。</p>
+<p>综上所述，有</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\displaystyle \frac{\mathrm{d}A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}} &= \mathbb{E}_{p(\mathbf{x}|\pmb{\eta})}[\phi(\mathbf{x})] \\
+\displaystyle \frac{\mathrm{d}^2A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}^2} &= \mathbf{Var}[\phi(\mathbf{x})]
+\end{cases}</script><h2 id="极大似然角度与充分统计量"><a href="#极大似然角度与充分统计量" class="headerlink" title="极大似然角度与充分统计量"></a>极大似然角度与充分统计量</h2><p>极大似然估计基本上都有一套板子了。先记数据集合</p>
+<script type="math/tex; mode=display">
+\mathcal{D} = \{ \mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \cdots, \mathbf{x}^{(N)} \}</script><p>下面计算最优参数$\pmb{\eta}_*$。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\pmb{\eta}_* &= \arg\max_{\pmb{\eta}}\log p(\mathcal{D}|\pmb{\eta}) \\
+&= \arg\max_{\pmb{\eta}} \log \prod_{i=1}^N p(\mathbf{x}^{(i)}|\pmb{\eta}) \\
+&= \arg\max_{\pmb{\eta}} \sum_{i=1}^N\log p(\mathbf{x}^{(i)}|\pmb{\eta}) \\
+&= \arg\max_{\pmb{\eta}}\sum_{i=1}^N \log \left(h(\mathbf{x}^{(i)})\exp\left( \pmb{\eta}^T\phi(\mathbf{x}^{(i)})-A(\pmb{\eta}) \right)\right) \\
+&= \arg\max_{\pmb{\eta}}\sum_{i=1}^N \left( \log h(\mathbf{x}^{(i)}) + \pmb{\eta}^T\phi(\mathbf{x}^{(i)})-A(\pmb{\eta}) \right)
+\end{aligned}</script><p>令</p>
+<script type="math/tex; mode=display">
+S = \sum_{i=1}^N \left( \log h(\mathbf{x}^{(i)}) + \pmb{\eta}^T\phi(\mathbf{x}^{(i)})-A(\pmb{\eta}) \right)</script><p>则</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\mathrm{d}S}{\mathrm{d}\pmb{\eta}} &= \sum_{i=1}^N\left( \phi(\mathbf{x}^{(i)})-\frac{\mathrm{d}A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}} \right) \\
+&= \sum_{i=1}^N \phi(\mathbf{x}^{(i)}) - N\frac{\mathrm{d}A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}}
+\end{aligned}</script><p>令上式等于零，得到</p>
+<script type="math/tex; mode=display">
+\frac{\mathrm{d}A(\pmb{\eta})}{\mathrm{d}\pmb{\eta}} = \frac{1}{N}\sum_{i=1}^N\phi(\mathbf{x}^{(i)})</script><h2 id="最大熵角度"><a href="#最大熵角度" class="headerlink" title="最大熵角度"></a>最大熵角度</h2><h3 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h3><p>对于随机事件$x$，其发生的概率为$p(x)$，则该事件包含的信息量为</p>
+<script type="math/tex; mode=display">
+I(x) = -\log p(x)</script><p>而接下来要讨论的信息熵，则是信息量的数学期望，即</p>
+<script type="math/tex; mode=display">
+H(X) = \mathbb{E}_{p(x)}[I(x)] = -\sum_i p(x_i)\log p(x_i)</script><p>下面以离散型随机变量为例，探究何时随机变量的信息熵最大。给出随机变量$X$的分布律</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$X$</th>
+<th>$x_1$</th>
+<th>$x_2$</th>
+<th>$\cdots$</th>
+<th>$x_k$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$p$</td>
+<td>$p_1$</td>
+<td>$p_2$</td>
+<td>$\cdots$</td>
+<td>$p_k$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>求解如下优化问题</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\max H(X) \\
+s.t. \displaystyle \sum_{i=1}^k p_i = 1
+\end{cases}</script><p>而通常我们求解最小化优化问题，故转化为如下优化问题</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\min \displaystyle \sum_{i=1}^k p_i\log p_i \\
+s.t. \displaystyle \sum_{i=1}^k p_i = 1
+\end{cases}</script><p>由拉格朗日乘子法，有</p>
+<script type="math/tex; mode=display">
+\mathcal{L}(\mathbf{p},\lambda) = \sum_{i=1}^k p_i\log p_i + \lambda\left(1-\sum_{i=1}^kp_i\right)</script><p>于是</p>
+<script type="math/tex; mode=display">
+\frac{\mathrm{d}\mathcal{L}}{\mathrm{d}p_i} = \log p_i + 1 - \lambda</script><p>令上式等于零，最终得到最优参数</p>
+<script type="math/tex; mode=display">
+\hat{p}_i = \exp(\lambda-1)</script><p>显然，最优解$\hat{p}_i$是常数（$i=1,2,\cdots,k$），故</p>
+<script type="math/tex; mode=display">
+\hat{p}_1 = \hat{p}_2 = \cdots = \hat{p}_k = \frac{1}{k}</script><p>故满足信息熵最大的分布为均匀分布。</p>
+
                 
             </div>
             <hr/>
