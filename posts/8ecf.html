@@ -4,12 +4,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="朴素贝叶斯算法, 计算机科学 python 人工智能 前端">
+    <meta name="keywords" content="贝叶斯分类器, 计算机科学 python 人工智能 前端">
     <meta name="description" content="
-最近学习了《统计学习方法》第4章：朴素贝叶斯法，些许心得与数学推导，浅浅记录一下。
+参考文献：
+
+《统计学习方法》第4章 朴素贝叶斯法
+《机器学习》第7章 贝叶斯分类器
+
 
 贝叶斯理论系列在统计学中占用极其重要的地位。本节主要记录的是朴素贝叶斯法。它是一种基于贝叶斯定理和条件独立性假设的分类方法。
-和感知机算法中类似，我们作">
+和感知机算法中类似，我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +25,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>朴素贝叶斯算法 | 湖心亭</title>
+    <title>贝叶斯分类器 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/medias/logo_lu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -166,7 +170,7 @@
     };
     loaded();
 })()
- </script><meta name="generator" content="Hexo 6.1.0"></head>
+ </script></head>
 
 
 
@@ -601,12 +605,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogcovers/rain-1599790_640.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogcovers/technology-7111799_1280.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">朴素贝叶斯算法</h1>
+                    <h1 class="description center-align post-title">贝叶斯分类器</h1>
                 </div>
             </div>
         </div>
@@ -754,21 +758,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-13
+                    2024-06-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    17 分
                 </div>
                 
 
@@ -787,7 +791,11 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>最近学习了《统计学习方法》第4章：朴素贝叶斯法，些许心得与数学推导，浅浅记录一下。</p>
+<p>参考文献：</p>
+<ul>
+<li>《统计学习方法》第4章 朴素贝叶斯法</li>
+<li>《机器学习》第7章 贝叶斯分类器</li>
+</ul>
 </blockquote>
 <p>贝叶斯理论系列在统计学中占用极其重要的地位。本节主要记录的是<strong>朴素贝叶斯法</strong>。它是一种基于<strong>贝叶斯定理</strong>和<strong>条件独立性假设</strong>的分类方法。</p>
 <p>和感知机算法中类似，我们作出如下假设：</p>
@@ -797,15 +805,34 @@
 <li>基于条件独立性假设，学习输入输出的联合概率分布$P(X,Y)$</li>
 <li>基于贝叶斯定理，求出后验概率的最大输出$P(Y|X)$</li>
 </ul>
-<h2 id="两个基本知识点"><a href="#两个基本知识点" class="headerlink" title="两个基本知识点"></a>两个基本知识点</h2><p>学习朴素贝叶斯法，离不开最基本的两个知识点：贝叶斯定理和条件独立性。下面分别记录一下这两者。</p>
+<h2 id="贝叶斯决策论"><a href="#贝叶斯决策论" class="headerlink" title="贝叶斯决策论"></a>贝叶斯决策论</h2><p>对于上述假设，记$\lambda_{ij}$是将一个真实标记为$c_j$的样本误分类为$c_i$所产生的损失，而基于<strong>后验概率</strong>$P(c_i|\mathbf{x})$，可以计算将样本$\mathbf{x}$分类为$c_i$所产生的期望损失，即“条件风险”</p>
+<script type="math/tex; mode=display">
+R(c_i|\mathbf{x}) = \sum_{j=1}^k \lambda_{ij}P(c_j|\mathbf{x})</script><p>优化目标表示为</p>
+<script type="math/tex; mode=display">
+h^{*}(\mathbf{x}) = \arg\min_{c\in \mathcal{Y}}R(c|\mathbf{x})</script><p>常见地，若目标是最小化分类错误率，则误判损失$\lambda_{ij}$可以表示为</p>
+<script type="math/tex; mode=display">
+\lambda_{ij}=\begin{cases}
+0, \ if \quad i=j \\
+1, \ otherwise
+\end{cases}</script><p>故此时条件风险可以表示为</p>
+<script type="math/tex; mode=display">
+R(c_i|\mathbf{x}) = 1 - P(c_i|\mathbf{x})</script><p>而最小化分类错误率的优化目标表示为</p>
+<script type="math/tex; mode=display">
+h^{*}(\mathbf{x}) = \arg\max_{c\in\mathcal{Y}}P(c|\mathbf{x})</script><p><strong>可以看出，后验概率$P(c|\mathbf{x})$在贝叶斯判定准则中非常关键</strong>。</p>
+<h2 id="两个基本知识点"><a href="#两个基本知识点" class="headerlink" title="两个基本知识点"></a>两个基本知识点</h2><p>学习朴素贝叶斯法，离不开最基本的两个知识点：<strong>贝叶斯定理</strong>和<strong>条件独立性</strong>。下面分别记录一下这两者。</p>
 <h3 id="贝叶斯定理"><a href="#贝叶斯定理" class="headerlink" title="贝叶斯定理"></a>贝叶斯定理</h3><p>概率论与数理统计中已经学过贝叶斯定理，它的基本形式如下</p>
 <script type="math/tex; mode=display">
 P(Y|X) = \frac{P(X|Y)P(Y)}{P(X)}</script><p>其中，可以作出如下理解：$X$是我们观测的变量，$Y$是我们需要估计的变量；而$P(Y)$则是<strong>先验概率</strong>，因为它实际上是在没有采样之前根据经验得到的一个概率值；$P(Y|X)$则是<strong>后验概率</strong>，因为此时已经进行了采样（给定$X$）。</p>
+<p>具体地，在贝叶斯决策中，我们需要计算</p>
+<script type="math/tex; mode=display">
+P(c|\mathbf{x}) = \frac{P(c)P(\mathbf{x}|c)}{P(\mathbf{x})}</script><p>其中，$c$为类别标签，$\mathbf{x}$为样本。</p>
 <h3 id="条件独立性"><a href="#条件独立性" class="headerlink" title="条件独立性"></a>条件独立性</h3><p>直接给出数学定义：假设三个随机变量（事件）$X,Y,Z$，若满足下式</p>
 <script type="math/tex; mode=display">
 P(X,Y|Z) = P(X|Z)P(Y|Z)</script><p>则称$X,Y$条件独立。</p>
 <p>注意<strong>条件独立性不等同于独立性</strong>。事实上，这两者并不能互推。</p>
-<h2 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h2><h3 id="用极大似然法作参数估计"><a href="#用极大似然法作参数估计" class="headerlink" title="用极大似然法作参数估计"></a>用极大似然法作参数估计</h3><p>这一部分主要是使用极大似然法估计参数。这一部分由于和课后习题关联甚密，因此在课后习题部分作详细描述。此处仅给出两个公式。</p>
+<p>而<strong>朴素贝叶斯分类器采用了“属性条件独立性假设”</strong>，即假设样本所有的属性相互独立，故</p>
+<script type="math/tex; mode=display">
+P(c|\mathbf{x}) = \frac{P(c)P(\mathbf{x}|c)}{P(\mathbf{x})} = \frac{P(c)}{P(\mathbf{x})}\prod_{i=1}^dP(x_i|c)</script><h2 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h2><h3 id="用极大似然法作参数估计"><a href="#用极大似然法作参数估计" class="headerlink" title="用极大似然法作参数估计"></a>用极大似然法作参数估计</h3><p>这一部分主要是使用极大似然法估计参数。这一部分由于和课后习题关联甚密，因此在课后习题部分作详细描述。此处仅给出两个公式。</p>
 <p>首先给出先验概率的估计</p>
 <script type="math/tex; mode=display">
 P(Y=c_i)=\frac{\displaystyle \sum_{t=1}^n\left[ y^{(t)}=c_i \right]}{n} \tag{2}</script><p>其次，设$X_j$的取值有$S_j$种可能，记为$\{a_{j1}, a_{j2},\dots,a_{jS_j} \}$，因此条件概率的估计</p>
@@ -826,7 +853,21 @@ c_*=\arg\max_{c_i} = P(Y=c_i)\prod\limits_j P(X_j=x_j|Y=c_i)</script><h3 id="贝
 <script type="math/tex; mode=display">
 \displaystyle P_\lambda(Y=c_i) = \frac{\displaystyle \sum_{t=1}^n \left[ y^{(t)}=c_i \right] + \lambda}{n+k \lambda}, \quad i= 1,2,\ldots,k \tag{6}</script><p>式$3$变为下式</p>
 <script type="math/tex; mode=display">
-\displaystyle P_{\lambda}(X_j=a_{jl} | Y = c_i) = \frac{\displaystyle \sum_{t=1}^n \left[ x_j^{(t)}=a_{jl},y^{(t)}=c_i \right] + \lambda}{\displaystyle \sum_{t=1}^n \left[y^{(t)}=c_i\right] + S_j \lambda} \tag{7}</script><h2 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h2><h3 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h3><p>使用极大似然估计法推导出朴素贝叶斯法中的概率估计公式。为了和上文相匹配，此处摘录的证明公式符号和原书略有出入。</p>
+\displaystyle P_{\lambda}(X_j=a_{jl} | Y = c_i) = \frac{\displaystyle \sum_{t=1}^n \left[ x_j^{(t)}=a_{jl},y^{(t)}=c_i \right] + \lambda}{\displaystyle \sum_{t=1}^n \left[y^{(t)}=c_i\right] + S_j \lambda} \tag{7}</script><h2 id="半朴素贝叶斯分类器"><a href="#半朴素贝叶斯分类器" class="headerlink" title="半朴素贝叶斯分类器"></a>半朴素贝叶斯分类器</h2><p>对于概率$P(\mathbf{x}|c)$，朴素贝叶斯分类器采取了“属性条件独立”的假设，而这个假设在现实中往往很难成立。<strong>半朴素分类器适当考虑一些属性之间的相互依赖关系</strong>。其中“独依赖估计”是最常用的策略，即假设每个属性最多依赖一个其他属性。我们可以用一张有向图表示属性间的依赖关系。</p>
+<h2 id="贝叶斯网络"><a href="#贝叶斯网络" class="headerlink" title="贝叶斯网络"></a>贝叶斯网络</h2><p>贝叶斯网络，也称信念网络，记作$B$，通常由结构$G$和参数$\Theta$两部分构成，即$B=(G,\Theta)$。具体地，</p>
+<ul>
+<li>结构$G$描述属性间的依赖关系；</li>
+<li>参数$\Theta$包含了每个属性的条件概率表，描述属性间的联合概率分布</li>
+</ul>
+<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><p>网络结构用<strong>有向无环图</strong>描述属性间的依赖关系，表达了属性之间的条件独立性。对于结点$x_i$，记其父结点集合为$\pi_i$，网络假设<strong>每个属性结点与其非后裔结点独立</strong>，故贝叶斯网络中，属性$x_1,x_2,\cdots,x_d$的联合概率分布表示为</p>
+<script type="math/tex; mode=display">
+P_B(x_1,x_2,\cdots,x_d) = \prod_{i=1}^dP_B(x_i|\pi_i) = \prod_{i=1}^d\theta_{x_i|\pi_i}</script><h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><p>鉴于贝叶斯网络的两个关键部分：结构和参数，后者的学习过程相对简单——只需统计样本数量，估计各个属性结点的条件概率表即可。故最首要的任务，便是学习贝叶斯网络的结构：根据给定的训练数据集，找出最合适的网络结构。常见的做法是，<strong>定义一个评分函数，用以衡量训练数据集和贝叶斯网络结构的“契合度”，基于该评分函数，寻找结构最优的贝叶斯网络</strong>。</p>
+<p>评分函数记作</p>
+<script type="math/tex; mode=display">
+s(B|D) = f(\theta)|B| - LL(B|D)</script><p>其中，$f(\theta)$为每个参数$\theta$的编码长度，$|B|$为贝叶斯网络参数数量，$LL(B|D)$为对数似然。于是，贝叶斯网络的学习便可描述为如下优化问题</p>
+<script type="math/tex; mode=display">
+\min_B s(B|D) = f(\theta)|B| - LL(B|D)</script><h3 id="推断"><a href="#推断" class="headerlink" title="推断"></a>推断</h3><p>基于训练好的贝叶斯网络，可以进行推断，即<strong>根据已知变量的观测值来推测待查询变量</strong>。具体地，令$\mathbf{Q}=\{ Q_1,Q_2,\dots,Q_n \}$表示待查询变量，$\mathbf{q}=\{q_1,q_2,\dots,q_n\}$为待查询变量的一组取值，$\mathbf{E}=\{ E_1,E_2,\dots,E_k \}$表示已知变量（也称证据变量），$\mathbf{e}=\{e_1,e_2,\dots,e_k\}$为证据变量的一组取值，贝叶斯推断的目标是计算后验概率$P(\mathbf{Q}=\mathbf{q}|\mathbf{E}=\mathbf{e})$。现实应用中，该后验概率无法精确计算得到的（即无法进行精确推断），<strong>因此只能进行近似推断，而贝叶斯推断中常用的近似推断为吉布斯采样</strong>。</p>
+<h2 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h2><h3 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h3><p>使用极大似然估计法推导出朴素贝叶斯法中的概率估计公式。为了和上文相匹配，此处摘录的证明公式符号和原书略有出入。</p>
 <blockquote>
 <ol>
 <li>公式$2$，这里再次给出<script type="math/tex; mode=display">

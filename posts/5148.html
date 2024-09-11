@@ -163,7 +163,7 @@
     };
     loaded();
 })()
- </script><meta name="generator" content="Hexo 6.1.0"></head>
+ </script></head>
 
 
 
@@ -751,21 +751,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-13
+                    2024-08-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    939
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    12 分
                 </div>
                 
 
@@ -787,8 +787,8 @@
 <p>通常导入<code>pandas</code>包简写为<code>pd</code>，且pandas包经常和科学计算包numpy连用：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="处理-csv文件"><a href="#处理-csv文件" class="headerlink" title="处理.csv文件"></a>处理.csv文件</h2><p>.csv文件是非常常见的表格文件，它其实就是以’,’为分隔的文本文件。很多数据处理的任务中，要处理的数据对象就是.csv文件类型。</p>
-<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><ul>
+<p>.csv文件是非常常见的表格文件，它其实就是以’,’为分隔的文本文件。很多数据处理的任务中，要处理的数据对象就是.csv文件类型。</p>
+<h2 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h2><ul>
 <li><code>pd.read_csv(filename: str, header: int |list | None, encoding, index_col: int | str | list)</code></li>
 </ul>
 <p>一般来说，在读取数据时只需要简单调用<code>df = pd.read_csv(filename)</code>即可将文件中的数据读入了。这里的<code>d</code>类型是pandas内置的数据结构<code>DataFrame</code>。</p>
@@ -840,7 +840,7 @@ ID      Name
 2020005 Ellis       90           92       81
 2020008 Louis       94           85       89
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h3><ul>
+<h2 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h2><ul>
 <li><code>DataFrame.values</code></li>
 </ul>
 <p>通常和<code>pd.read_csv(filename)</code>连用：<code>pd.read_csv(filename).values</code>，用于将读入文件的<code>DataFrame</code>对象转换为<code>np.ndarray</code>类型，接下来就可以利用numpy包中的各种接口处理数据了，非常实用。</p>
@@ -853,7 +853,7 @@ data <span class="token operator">=</span> pd<span class="token punctuation">.</
  [2020005 'Ellis' 90 92 81]
  [2020008 'Louis' 94 85 89]]
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h3><p>这一部分介绍一下常用的<code>DataFrame</code>属性和方法。</p>
+<h2 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h2><p>这一部分介绍一下常用的<code>DataFrame</code>属性和方法。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">csv_file <span class="token operator">=</span> <span class="token string">'./data.csv'</span>
 df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>csv_file<span class="token punctuation">,</span> usecols<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
@@ -876,7 +876,232 @@ df<span class="token punctuation">.</span>var<span class="token punctuation">(</
 1       90           92       81
 2       94           85       89
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h3><ul>
+<p>从这里开始，我们借助一个具体的实例，来展示各种API的使用方法和功能。我们读入一张新表，它简单记录了3台风力涡轮机的实时观测数据。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">csv_file <span class="token operator">=</span> <span class="token string">'turbines.csv'</span>
+df_raw <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>csv_file<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_raw<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+    ID            Date  Wspd  Prtv  Pab_max    Patv
+0    0   2022/1/1 0:00  6.17  0.25     1.00  494.66
+1    0   2022/1/1 6:00  6.17  0.25     1.00  494.66
+2    0  2022/1/1 12:00  6.27  0.24     1.00  509.76
+3    0  2022/1/1 18:00   NaN  0.26     1.00  542.53
+4    1   2022/1/1 0:00  6.25  0.23     0.99  509.36
+5    1   2022/1/1 6:00  6.10  0.27     0.99  482.21
+6    1  2022/1/1 12:00  6.77  0.23     0.99  584.75
+7    1  2022/1/1 18:00  6.70   NaN     0.99  557.98
+8    2   2022/1/1 0:00  6.44  0.21     1.00  503.94
+9    2   2022/1/1 6:00  6.25  0.26     1.00  463.37
+10   2  2022/1/1 12:00  6.87  0.25     1.00  577.47
+11   2  2022/1/1 18:00  6.60  0.25     1.00  538.85
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="取出表中指定部分"><a href="#取出表中指定部分" class="headerlink" title="取出表中指定部分"></a>取出表中指定部分</h2><ul>
+<li><code>DataFrame.loc[inputs]</code></li>
+</ul>
+<p>这个方法可以取出指定数据。</p>
+<h3 id="参数基本形式"><a href="#参数基本形式" class="headerlink" title="参数基本形式"></a>参数基本形式</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数形式</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单标签</td>
+<td>0</td>
+</tr>
+<tr>
+<td>标签列表</td>
+<td>[‘a’, ‘b’, ‘c’]</td>
+</tr>
+<tr>
+<td>标签切片</td>
+<td>‘a’:’d’, 0:5</td>
+</tr>
+<tr>
+<td>布尔值列表（列表元素必须和轴方向元素数量一致）</td>
+<td>[True, False, True, …, False]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>先来看一下这四种基本形式的参数下，对应的返回结果。</p>
+<ol>
+<li><p>单标签</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 取指定行数据</span>
+df_sub <span class="token operator">=</span> df_raw<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_sub<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">''' 
+ID                     0
+Date       2022/1/1 0:00
+Wspd                6.17
+Prtv                0.25
+Pab_max              1.0
+Patv              494.66
+Name: 0, dtype: object
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>标签列表</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 取指定行数据</span>
+df_sub <span class="token operator">=</span> df_raw<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_sub<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+   ID           Date  Wspd  Prtv  Pab_max    Patv
+0   0  2022/1/1 0:00  6.17  0.25     1.00  494.66
+4   1  2022/1/1 0:00  6.25  0.23     0.99  509.36
+9   2  2022/1/1 6:00  6.25  0.26     1.00  463.37
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>标签切片</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 取指定行数据</span>
+df_sub <span class="token operator">=</span> df_raw<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_sub<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+   ID            Date  Wspd  Prtv  Pab_max    Patv
+0   0   2022/1/1 0:00  6.17  0.25     1.00  494.66
+1   0   2022/1/1 6:00  6.17  0.25     1.00  494.66
+2   0  2022/1/1 12:00  6.27  0.24     1.00  509.76
+3   0  2022/1/1 18:00   NaN  0.26     1.00  542.53
+4   1   2022/1/1 0:00  6.25  0.23     0.99  509.36
+5   1   2022/1/1 6:00  6.10  0.27     0.99  482.21
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>布尔值列表</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 取指定行数据</span>
+df_sub <span class="token operator">=</span> df_raw<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment"># 由于共12行数据，故布尔值数组必须有12个布尔值</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_sub<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+    ID            Date  Wspd  Prtv  Pab_max    Patv
+1    0   2022/1/1 6:00  6.17  0.25     1.00  494.66
+3    0  2022/1/1 18:00   NaN  0.26     1.00  542.53
+4    1   2022/1/1 0:00  6.25  0.23     0.99  509.36
+5    1   2022/1/1 6:00  6.10  0.27     0.99  482.21
+7    1  2022/1/1 18:00  6.70   NaN     0.99  557.98
+8    2   2022/1/1 0:00  6.44  0.21     1.00  503.94
+10   2  2022/1/1 12:00  6.87  0.25     1.00  577.47
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h2 id="填充缺失值"><a href="#填充缺失值" class="headerlink" title="填充缺失值"></a>填充缺失值</h2><p>可以用如下方法快速对表中的缺失值进行填充。注意，这个方法过于简单，有时候可能无法满足实际需求。</p>
+<ul>
+<li><code>DataFrame.fillna(value: Scalar | dict, method, axis: AxisType, inplace: boolean)</code></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>此项参数表示用固定值填充，指定用于填充的固定值。还支持平均值中位数值填充。</td>
+</tr>
+<tr>
+<td>method</td>
+<td>‘ffill’ 用前一个非空缺值填充；‘bfill’ 用后一个非空缺值填充</td>
+</tr>
+<tr>
+<td>axis</td>
+<td>‘index’：按行方向（参考同列数据）填充；’columns’按列方向（参考同行数据）填充</td>
+</tr>
+<tr>
+<td>inplace</td>
+<td>是否用新生成的表替换原表，如果为’True’则原表被修改，’False’则返回一个新表</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>参数value的几种特别用法：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DataFrame.mean()</td>
+<td>用平均数填充</td>
+</tr>
+<tr>
+<td>DataFrame.median()</td>
+<td>用中位数填充</td>
+</tr>
+<tr>
+<td>DataFrame.max()</td>
+<td>用最大值填充</td>
+</tr>
+<tr>
+<td>DataFrame.min()</td>
+<td>用最小值填充</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>我们先用零值填充全部的缺失值：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 填充缺失值</span>
+df_zero <span class="token operator">=</span> df_raw<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token comment"># inplace为False，不修改原表，故返回新表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_zero<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+    ID            Date  Wspd  Prtv  Pab_max    Patv
+0    0   2022/1/1 0:00  6.17  0.25     1.00  494.66
+1    0   2022/1/1 6:00  6.17  0.25     1.00  494.66
+2    0  2022/1/1 12:00  6.27  0.24     1.00  509.76
+3    0  2022/1/1 18:00  0.00  0.26     1.00  542.53
+4    1   2022/1/1 0:00  6.25  0.23     0.99  509.36
+5    1   2022/1/1 6:00  6.10  0.27     0.99  482.21
+6    1  2022/1/1 12:00  6.77  0.23     0.99  584.75
+7    1  2022/1/1 18:00  6.70  0.00     0.99  557.98
+8    2   2022/1/1 0:00  6.44  0.21     1.00  503.94
+9    2   2022/1/1 6:00  6.25  0.26     1.00  463.37
+10   2  2022/1/1 12:00  6.87  0.25     1.00  577.47
+11   2  2022/1/1 18:00  6.60  0.25     1.00  538.85
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后尝试用前一个非缺失值，按行方向，参考同列进行填充：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df_ffill <span class="token operator">=</span> df_raw<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>method<span class="token operator">=</span><span class="token string">'ffill'</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment"># 这里修改原表，下面打印原表数据，发现确实已经改变</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_raw<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+    ID            Date  Wspd  Prtv  Pab_max    Patv
+0    0   2022/1/1 0:00  6.17  0.25     1.00  494.66
+1    0   2022/1/1 6:00  6.17  0.25     1.00  494.66
+2    0  2022/1/1 12:00  6.27  0.24     1.00  509.76
+3    0  2022/1/1 18:00  6.27  0.26     1.00  542.53
+4    1   2022/1/1 0:00  6.25  0.23     0.99  509.36
+5    1   2022/1/1 6:00  6.10  0.27     0.99  482.21
+6    1  2022/1/1 12:00  6.77  0.23     0.99  584.75
+7    1  2022/1/1 18:00  6.70  0.23     0.99  557.98
+8    2   2022/1/1 0:00  6.44  0.21     1.00  503.94
+9    2   2022/1/1 6:00  6.25  0.26     1.00  463.37
+10   2  2022/1/1 12:00  6.87  0.25     1.00  577.47
+11   2  2022/1/1 18:00  6.60  0.25     1.00  538.85
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>同时，尝试用平均值填充缺失值：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 仅使用‘Wspd’列数据平均值填充该列缺失值，并修改原表</span>
+df_raw<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token string">'Wspd'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>value<span class="token operator">=</span>df_raw<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token string">'Wspd'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df_raw<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+    ID            Date      Wspd  Prtv  Pab_max    Patv
+0    0   2022/1/1 0:00  6.170000  0.25     1.00  494.66
+1    0   2022/1/1 6:00  6.170000  0.25     1.00  494.66
+2    0  2022/1/1 12:00  6.270000  0.24     1.00  509.76
+3    0  2022/1/1 18:00  6.417273  0.26     1.00  542.53
+4    1   2022/1/1 0:00  6.250000  0.23     0.99  509.36
+5    1   2022/1/1 6:00  6.100000  0.27     0.99  482.21
+6    1  2022/1/1 12:00  6.770000  0.23     0.99  584.75
+7    1  2022/1/1 18:00  6.700000   NaN     0.99  557.98
+8    2   2022/1/1 0:00  6.440000  0.21     1.00  503.94
+9    2   2022/1/1 6:00  6.250000  0.26     1.00  463.37
+10   2  2022/1/1 12:00  6.870000  0.25     1.00  577.47
+11   2  2022/1/1 18:00  6.600000  0.25     1.00  538.85
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h2><ul>
 <li><code>DataFrame.to_csv(filename: str, decimal: str, index: boolean)</code></li>
 </ul>
 <p>通常用上述方法将<code>DataFrame</code>对象保存为文件；所以在此之前我们需要先创建一个<code>DataFrame</code>对象：</p>

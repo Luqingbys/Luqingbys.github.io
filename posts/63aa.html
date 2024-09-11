@@ -162,7 +162,7 @@
     };
     loaded();
 })()
- </script><meta name="generator" content="Hexo 6.1.0"></head>
+ </script></head>
 
 
 
@@ -750,21 +750,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-13
+                    2024-07-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -843,7 +843,21 @@ data_zero <span class="token operator">=</span> np<span class="token punctuation
 <h3 id="创建有序数组：np-arange"><a href="#创建有序数组：np-arange" class="headerlink" title="创建有序数组：np.arange()"></a>创建有序数组：np.arange()</h3><ul>
 <li><code>np.arange(start: int, stop: int, step: int)</code></li>
 </ul>
-<p>创建一个数组，首位元素为start，然后以step为步长取数组成数组。</p>
+<p>创建一个数组，首位元素为start，然后以step为步长取数组成数组。但是注意，<strong>这个方法只能生成整型元素组成的数组</strong>；换言之，start、stop和step均为整型。</p>
+<h3 id="创建指定元素数量的数组：np-linspace"><a href="#创建指定元素数量的数组：np-linspace" class="headerlink" title="创建指定元素数量的数组：np.linspace()"></a>创建指定元素数量的数组：np.linspace()</h3><ul>
+<li><code>np.linspace(start: float, stop:float, num: int, endpoint: bool)</code></li>
+</ul>
+<p>创建一个数组，首位元素为start，末位元素为stop，取共num个浮点数组成数组；endpoint指示末位元素stop是否计入数组。</p>
+<ul>
+<li>若endpoint为True，则在$[start, stop]$上，以$\displaystyle \frac{stop - start}{num-1}$为步长，取num个浮点数组成数组；</li>
+<li>若endpoint为False，则在$[start, stop)$上，以$\displaystyle \frac{stop - start}{num}$为步长，取num个浮点数组成数组。</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token number">3.0</span><span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2.</span>  <span class="token punctuation">,</span> <span class="token number">2.25</span><span class="token punctuation">,</span> <span class="token number">2.5</span> <span class="token punctuation">,</span> <span class="token number">2.75</span><span class="token punctuation">,</span> <span class="token number">3.</span>  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token number">3.0</span><span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> endpoint<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2.</span> <span class="token punctuation">,</span>  <span class="token number">2.2</span><span class="token punctuation">,</span>  <span class="token number">2.4</span><span class="token punctuation">,</span>  <span class="token number">2.6</span><span class="token punctuation">,</span>  <span class="token number">2.8</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token number">3.0</span><span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> retstep<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2.</span>  <span class="token punctuation">,</span>  <span class="token number">2.25</span><span class="token punctuation">,</span>  <span class="token number">2.5</span> <span class="token punctuation">,</span>  <span class="token number">2.75</span><span class="token punctuation">,</span>  <span class="token number">3.</span>  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="创建单位矩阵（数组）：np-eye"><a href="#创建单位矩阵（数组）：np-eye" class="headerlink" title="创建单位矩阵（数组）：np.eye()"></a>创建单位矩阵（数组）：np.eye()</h3><ul>
 <li><code>np.eye(N: int, M: int, k: int)</code></li>
 </ul>
