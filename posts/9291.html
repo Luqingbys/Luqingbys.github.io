@@ -164,7 +164,7 @@
     };
     loaded();
 })()
- </script></head>
+ </script><meta name="generator" content="Hexo 6.1.0"></head>
 
 
 
@@ -944,13 +944,13 @@ H&=\nabla^2f(\boldsymbol{x}) = \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\fr
 \vdots & \vdots & \vdots & \vdots \\
 \displaystyle\frac{1}{x_1x_n} & \displaystyle\frac{1}{x_2x_n} & \displaystyle\cdots & \displaystyle(1-n)\frac{1}{x_n^2}
 \end{bmatrix} \\
-&= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\left[ \boldsymbol{p}\boldsymbol{p}^T - n\bold{diag}\left( \frac{1}{x_1^2},\frac{1}{x_2^2},\cdots,\frac{1}{x_n^2} \right) \right]
+&= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\left[ \boldsymbol{p}\boldsymbol{p}^T - n\mathbf{diag}\left( \frac{1}{x_1^2},\frac{1}{x_2^2},\cdots,\frac{1}{x_n^2} \right) \right]
 \end{aligned}</script><p>其中，</p>
 <script type="math/tex; mode=display">
 \boldsymbol{p} = \left[\frac{1}{x_1},\frac{1}{x_2},\cdots,\frac{1}{x_n}\right]^T</script><p>故$\forall \boldsymbol{y}=[y_1,y_2,\cdots,y_n]^T\in\mathbb{R}^n$，</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-\boldsymbol{y}^TH\boldsymbol{y} &= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\left[ \boldsymbol{y}^T\boldsymbol{p}\boldsymbol{p}^T\boldsymbol{y} - n\boldsymbol{y}^T\bold{diag}\left( \frac{1}{x_1^2},\frac{1}{x_2^2},\cdots,\frac{1}{x_n^2} \right)\boldsymbol{y} \right] \\
+\boldsymbol{y}^TH\boldsymbol{y} &= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\left[ \boldsymbol{y}^T\boldsymbol{p}\boldsymbol{p}^T\boldsymbol{y} - n\boldsymbol{y}^T\{diag}\left( \frac{1}{x_1^2},\frac{1}{x_2^2},\cdots,\frac{1}{x_n^2} \right)\boldsymbol{y} \right] \\
 &= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}} \left[ \left( \sum_{k=1}^n\frac{y_k}{x_k} \right)^2-n\left( \sum_{k=1}^n\frac{y_k^2}{x_k^2} \right) \right]
 \end{aligned}</script><p>由Cauchy-Schwartz不等式$(\boldsymbol{a}^T\boldsymbol{b})^2\leqslant (\boldsymbol{a}^T\boldsymbol{a})(\boldsymbol{b}^T\boldsymbol{b})$，令$\displaystyle \boldsymbol{a} = \left[ \frac{y_1}{x_1}, \frac{y_2}{x_2}, \cdots, \frac{y_n}{x_n} \right]^T$，$\boldsymbol{b}=\boldsymbol{1}$，得</p>
 <script type="math/tex; mode=display">
