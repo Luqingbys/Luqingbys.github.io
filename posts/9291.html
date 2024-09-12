@@ -760,21 +760,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-09-11
+                    2024-09-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    3.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    17 分
                 </div>
                 
 
@@ -924,6 +924,37 @@ f(\theta x+(1-\theta)y) &= \max\{ f_1(\theta x+(1-\theta)y),f_2(\theta x+(1-\the
 \Leftrightarrow \lambda &= \frac{\boldsymbol{y}^TX\boldsymbol{y}}{\parallel \boldsymbol{y} \parallel_2^2}
 \end{aligned}</script><p>不妨有$\parallel \boldsymbol{y} \parallel_2^2=1$，则$\lambda = \boldsymbol{y}^TX\boldsymbol{y}$，于是</p>
 <p>$\displaystyle f(X) = \sup\{ \boldsymbol{y}^TX\boldsymbol{y}|\boldsymbol{y}为X的特征向量且\parallel \boldsymbol{y} \parallel_2^2=1 \}$</p>
+<p><strong>几何平均</strong>    函数$\displaystyle f(\boldsymbol{x})=(x_1x_2\dots x_n)^{\frac{1}{n}},\boldsymbol{x}\in\mathbb{R}^n$在定义域$\mathbb{R}_{++}^n$上是凹函数。</p>
+<p>【证明】</p>
+<p>首先需要强调$\mathbb{R}_{++}^n$为凸集。由$f(\boldsymbol{x})$在$\mathbb{R}_{++}^n$上二阶可微，得</p>
+<script type="math/tex; mode=display">
+\nabla f(\boldsymbol{x}) = \frac{1}{n}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}-1}\left[ \prod_{k\ne 1}x_k, \prod_{k\ne 2}x_k,\dots, \prod_{k\ne n}x_k \right]^T</script><p>当$i\ne j$时，</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\frac{\partial^2f}{\partial x_i \partial x_j} &= \frac{\partial }{\partial x_j}\left[ \frac{1}{n}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}-1} \prod_{k\ne i}x_k \right] \\
+&= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\cdot \frac{1}{x_ix_j}
+\end{aligned}</script><p>当$i=j$时，</p>
+<script type="math/tex; mode=display">
+\frac{\partial^2f}{\partial x_i^2} = \frac{1-n}{n}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\cdot \frac{1}{x_i^2}</script><p>故而二阶海塞矩阵</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H&=\nabla^2f(\boldsymbol{x}) = \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}} \begin{bmatrix}\displaystyle
+(1-n)\frac{1}{x_1^2} & \displaystyle\frac{1}{x_1x_2} & \displaystyle\cdots & \displaystyle\frac{1}{x_1x_n} \\
+\displaystyle\frac{1}{x_1x_2} & \displaystyle(1-n)\frac{1}{x_2^2} & \cdots & \displaystyle\frac{1}{x_2x_n} \\
+\vdots & \vdots & \vdots & \vdots \\
+\displaystyle\frac{1}{x_1x_n} & \displaystyle\frac{1}{x_2x_n} & \displaystyle\cdots & \displaystyle(1-n)\frac{1}{x_n^2}
+\end{bmatrix} \\
+&= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\left[ \boldsymbol{p}\boldsymbol{p}^T - n\bold{diag}\left( \frac{1}{x_1^2},\frac{1}{x_2^2},\cdots,\frac{1}{x_n^2} \right) \right]
+\end{aligned}</script><p>其中，</p>
+<script type="math/tex; mode=display">
+\boldsymbol{p} = \left[\frac{1}{x_1},\frac{1}{x_2},\cdots,\frac{1}{x_n}\right]^T</script><p>故$\forall \boldsymbol{y}=[y_1,y_2,\cdots,y_n]^T\in\mathbb{R}^n$，</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol{y}^TH\boldsymbol{y} &= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\left[ \boldsymbol{y}^T\boldsymbol{p}\boldsymbol{p}^T\boldsymbol{y} - n\boldsymbol{y}^T\bold{diag}\left( \frac{1}{x_1^2},\frac{1}{x_2^2},\cdots,\frac{1}{x_n^2} \right)\boldsymbol{y} \right] \\
+&= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}} \left[ \left( \sum_{k=1}^n\frac{y_k}{x_k} \right)^2-n\left( \sum_{k=1}^n\frac{y_k^2}{x_k^2} \right) \right]
+\end{aligned}</script><p>由Cauchy-Schwartz不等式$(\boldsymbol{a}^T\boldsymbol{b})^2\leqslant (\boldsymbol{a}^T\boldsymbol{a})(\boldsymbol{b}^T\boldsymbol{b})$，令$\displaystyle \boldsymbol{a} = \left[ \frac{y_1}{x_1}, \frac{y_2}{x_2}, \cdots, \frac{y_n}{x_n} \right]^T$，$\boldsymbol{b}=\boldsymbol{1}$，得</p>
+<script type="math/tex; mode=display">
+\left( \sum_{k=1}^n\frac{y_k}{x_k} \right)^2 \leqslant n\left( \sum_{k=1}^n\frac{y_k^2}{x_k^2} \right)</script><p>故有$\forall \boldsymbol{y} \in \mathbb{R}^n$，$\boldsymbol{y}^TH\boldsymbol{y} \leqslant 0$，即$H\preceq 0$，因此$f(\boldsymbol{x})$在$\mathbb{R}_{++}^n$上为凹函数。</p>
 <h3 id="复合函数的凸性"><a href="#复合函数的凸性" class="headerlink" title="复合函数的凸性"></a>复合函数的凸性</h3><p>给定函数$h:\mathbb{R}^k\to\mathbb{R},g:\mathbb{R}^n\to\mathbb{R}^k$，定义复合函数$f=h\circ g:\mathbb{R}^n\to\mathbb{R},f(\boldsymbol{x})=h(g(\boldsymbol{x})),\mathrm{dom}(f)=\{ \boldsymbol{x}\in\mathrm{dom}(g)|g(\boldsymbol{x})\in \mathrm{dom}(h) \}$，接下来给出复合函数之间的凹凸性质。</p>
 <p>我们从简单情况考虑，即一维情况$k=n=1$、$\mathrm{dom}(f)=\mathrm{dom}(h)=\mathrm{dom}(g)=\mathbb{R}$以及$h,g$均二阶可微，根据凸函数的定义4，对$f$求二阶导数，得</p>
 <script type="math/tex; mode=display">
