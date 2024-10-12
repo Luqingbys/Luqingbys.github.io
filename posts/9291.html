@@ -164,7 +164,7 @@
     };
     loaded();
 })()
- </script></head>
+ </script><meta name="generator" content="Hexo 6.1.0"></head>
 
 
 
@@ -760,21 +760,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-09-12
+                    2024-09-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    4.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    23 分
                 </div>
                 
 
@@ -892,7 +892,12 @@
 \begin{aligned}
 \forall \theta\in[0,1],&\parallel \theta\boldsymbol{x}_1+(1-\theta)\boldsymbol{x}_2-\boldsymbol{x}_c \parallel_2 \\ &=\parallel \theta\boldsymbol{x}_1-\theta\boldsymbol{x}_c+(1-\theta)\boldsymbol{x}_2-(1-\theta)\boldsymbol{x}_c \parallel_2 \\ &= \parallel \theta(\boldsymbol{x}_1-\boldsymbol{x}_c) + (1-\theta)(\boldsymbol{x}_2-\boldsymbol{x}_c)  \parallel_2 \\ &\leqslant \theta\parallel \boldsymbol{x}_1-\boldsymbol{x}_c \parallel_2 + (1-\theta)\parallel \boldsymbol{x}_2-\boldsymbol{x}_c \parallel_2 \\ &\leqslant \theta r+(1-\theta)r \\ &= r
 \end{aligned}</script><p>因此，$\theta \boldsymbol{x}_1+(1-\theta)\boldsymbol{x}_2\in\mathcal{B}$，$\mathcal{B}$为凸集。</p>
-<h2 id="凸函数"><a href="#凸函数" class="headerlink" title="凸函数"></a>凸函数</h2><h3 id="保凸运算"><a href="#保凸运算" class="headerlink" title="保凸运算"></a>保凸运算</h3><p><strong>非负加权和</strong>    $f_1,f_2,\dots,f_m$为凸函数，则对于$w_i\geqslant 0,i=1,2,\dots,n$，函数$\displaystyle f=\sum_{i=1}^mw_if_i$仍为凸函数。</p>
+<h2 id="凸函数"><a href="#凸函数" class="headerlink" title="凸函数"></a>凸函数</h2><p>这里给出凸函数的4个常用定义。</p>
+<p><strong>凸函数定义一</strong>    定义在凸集$\mathcal{C}$上的函数$f$是凸的，倘若$\forall 0&lt;\lambda&lt;1$，均有$f(\lambda \boldsymbol{x}+(1-\lambda)\boldsymbol{y})\leqslant \lambda f(\boldsymbol{x})+(1-\lambda)f(\boldsymbol{y})$成立。当不等式严格成立时，称$f$为严格凸函数。相反地，若$-f$为凸函数，则$f$为凸集$\mathcal{C}$上的凹函数，不等式严格成立时，称$f$为严格凹函数。</p>
+<p><strong>凸函数定义二</strong>    定义在凸集$\mathcal{C}$上的函数$f$是凸的，倘若$\forall \boldsymbol{x} \in \mathrm{dom}(f), \forall \boldsymbol{v}$，函数$g(t) = f(\boldsymbol{x} + t\boldsymbol{v})$是凸函数，其中$t\in \{ t|\boldsymbol{x}+t\boldsymbol{v}\in\mathrm{dom}(f) \}$.</p>
+<p><strong>凸函数定义三</strong>    定义在凸集$\mathcal{C}$上的<strong>可微</strong>函数$f$是凸的，倘若$\forall \boldsymbol{x},\boldsymbol{y}\in\mathrm{dom}(f)$，均有$f(\boldsymbol{y})\geqslant f(\boldsymbol{x})+\nabla^Tf(\boldsymbol{x})(\boldsymbol{y}-\boldsymbol{x})$成立；当不等式严格成立时，称$f$为严格凸函数.</p>
+<p><strong>凸函数定义四</strong>    定义在凸集$\mathcal{C}$上的<strong>二阶可微</strong>函数$f$是凸的，倘若其Hessian矩阵$\displaystyle H=\left( \frac{\partial^2f}{\partial \boldsymbol{x}_i \partial \boldsymbol{x}_j} \right)$半正定，也即$\forall \boldsymbol{x}\in\mathrm{dom}(f),\nabla^2f(\boldsymbol{x})\succeq 0$；此处注意，若$H$为正定的，$f$不一定严格凸.</p>
+<h3 id="保凸运算"><a href="#保凸运算" class="headerlink" title="保凸运算"></a>保凸运算</h3><p><strong>非负加权和</strong>    $f_1,f_2,\dots,f_m$为凸函数，则对于$w_i\geqslant 0,i=1,2,\dots,n$，函数$\displaystyle f=\sum_{i=1}^mw_if_i$仍为凸函数。</p>
 <p><strong>非负加权和扩展到无穷形式的积分</strong>    若$f(x,y)$对于任意$y\in \mathcal{A}$，$f(x,y)$均为凸函数，当$w(y)\geqslant 0$，$\displaystyle\forall y\in\mathcal{A},g(x)=\int_{y\in\mathcal{A}}w(y)f(x,y)dy$为凸函数。</p>
 <p><strong>仿射映射</strong>    映射$f:\mathbb{R}^n\to \mathbb{R},A\in\mathbb{R}^{n\times m},\boldsymbol{b}\in\mathbb{R}^m$，定义映射$g:\mathbb{R}^m\to\mathbb{R},g(x)=f(Ax+\boldsymbol{b})$，其中$\mathrm{dom}(g)=\{ \boldsymbol{x}|A\boldsymbol{x}+\boldsymbol{b}\in \mathrm{dom}(f) \}$，若$f$为凸函数，则$g$也为凸函数。</p>
 <blockquote>
@@ -935,7 +940,7 @@ f(\theta x+(1-\theta)y) &= \max\{ f_1(\theta x+(1-\theta)y),f_2(\theta x+(1-\the
 &= \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\cdot \frac{1}{x_ix_j}
 \end{aligned}</script><p>当$i=j$时，</p>
 <script type="math/tex; mode=display">
-\frac{\partial^2f}{\partial x_i^2} = \frac{1-n}{n}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\cdot \frac{1}{x_i^2}</script><p>故而二阶海塞矩阵</p>
+\frac{\partial^2f}{\partial x_i^2} = \frac{1-n}{n}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}}\cdot \frac{1}{x_i^2}</script><p>故而二阶Hessian矩阵</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 H&=\nabla^2f(\boldsymbol{x}) = \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\frac{1}{n}} \begin{bmatrix}\displaystyle
@@ -978,6 +983,49 @@ f''(x) = h''(g(x))[g'(x)]^2 + h'(g(x))g''(x)</script><p>因此我们有如下结
 h(\boldsymbol{x}),\ \boldsymbol{x}\in \mathrm{dom}(h) \\
 +\infin, \boldsymbol{x} \notin \mathrm{dom}(h)
 \end{cases}</script><p>反之，若$h$为凹函数，只需将上述$\boldsymbol{x}\notin \mathrm{dom}(h)$时取值$+\infin$改为$-\infin$即可。</p>
+<h3 id="共轭函数"><a href="#共轭函数" class="headerlink" title="共轭函数"></a>共轭函数</h3><p><strong>函数的共轭</strong>    函数$f:\mathbb{R}^n\to \mathbb{R}$，其共轭函数$f^*:\mathbb{R}^n\to\mathbb{R}$定义为</p>
+<script type="math/tex; mode=display">
+f^*(\boldsymbol{y}) = \sup_{\boldsymbol{x}\in\mathrm{dom}(f)}\{ \boldsymbol{y}^T\boldsymbol{x}-f(\boldsymbol{x}) \}</script><p>之所以提出函数共轭的概念，因为其有如下良好性质：</p>
+<ol>
+<li><p>若函数$f$可微，则$f^<em>(\boldsymbol{y})$对应的$\displaystyle\boldsymbol{x}^</em>=\arg\sup_{\boldsymbol{x}\in\mathrm{dom}(f)}\{ \boldsymbol{y}^T\boldsymbol{x}-f(\boldsymbol{x}) \}$必是使得$\nabla f(\boldsymbol{x})=y$的一点；</p>
+<p>此处令$\displaystyle \nabla_\boldsymbol{x}(\boldsymbol{y}^T\boldsymbol{x}-f(\boldsymbol{x}))=0$，也即$\boldsymbol{y}-\nabla f(\boldsymbol{x})=0$.</p>
+</li>
+<li><p>函数的共轭一定是凸函数。</p>
+</li>
+</ol>
+<p>_例    二次型_    求函数$\displaystyle f(\boldsymbol{x})=\frac{1}{2}\boldsymbol{x}^TQ\boldsymbol{x},Q\in S_{++}^n,\mathrm{dom}(f)=\mathbb{R}^n$的共轭。</p>
+<p>令$\nabla f(\boldsymbol{x})=\boldsymbol{y}$，即$Q\boldsymbol{x}^<em>=\boldsymbol{y}$，得$\boldsymbol{x}^</em>=Q^{-1}\boldsymbol{y}$，注意到$Q\in S_{++}^n,Q^{-1}\in S_{++}^n$，故</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f^*(\boldsymbol{y}) &= \boldsymbol{y}^TQ^{-1}\boldsymbol{y}-\frac{1}{2}\boldsymbol{y}^T(Q^{-1})^TQQ^{-1}\boldsymbol{y} \\
+&= \frac{1}{2}\boldsymbol{y}^TQ^{-1}\boldsymbol{y}
+\end{aligned}</script><h3 id="alpha-下水平集"><a href="#alpha-下水平集" class="headerlink" title="$\alpha$-下水平集"></a>$\alpha$-下水平集</h3><p>对于$f:\mathbb{R}^n\to \mathbb{R}$，其$\alpha$-下水平集为</p>
+<script type="math/tex; mode=display">
+\mathcal{C}_\alpha = \{\boldsymbol{x}\in\mathrm{dom}(f)|f(\boldsymbol{x})\leqslant \alpha\}</script><p>注意，<strong>凸函数的任意下水平集均为凸集；但是反之，若函数$f$的任意$\alpha$-下水平集均为凸集，则$f$不一定为凸函数</strong>。例如$f(x)=-e^x,x\in\mathbb{R}$为凹函数，但其$\alpha$-下水平集（$\alpha\in\mathbb{R}$）为凸集。</p>
+<h3 id="拟凸函数"><a href="#拟凸函数" class="headerlink" title="拟凸函数"></a>拟凸函数</h3><p>虽然上面的性质“函数$f$的任意$\alpha$-下水平集均为凸集”并不一定能够推导出其一定为凸函数，但是该性质非常良好。因此，给出拟凸函数的定义：</p>
+<p><strong>拟凸函数</strong>    称函数$f:\mathbb{R}^n\to\mathbb{R}$为拟凸函数，倘若其定义域为凸集，且任意的$\alpha$-下水平集也为凸集。</p>
+<p><strong>拟凹函数</strong>    称函数$f:\mathbb{R}^n\to\mathbb{R}$为拟凹函数，倘若其定义域为凸集，且任意的$\alpha$-上水平集也为凸集。</p>
+<p><strong>拟线性函数</strong>    称函数$f:\mathbb{R}^n\to\mathbb{R}$为拟凸函数，倘若其定义域为凸集，且任意的$\alpha$-水平集也为凸集。</p>
+<p>此外，我们给出另一个拟凸函数的定义。</p>
+<p><strong>拟凸函数</strong>（定义2）    函数$f$是拟凸函数，倘若$\mathrm{dom}(f)$为凸函数，且$\forall \boldsymbol{x},\boldsymbol{y}\in\mathrm{dom}(f),0\leqslant \lambda \leqslant 1$，均有</p>
+<script type="math/tex; mode=display">
+f(\lambda\boldsymbol{x}+(1-\lambda)\boldsymbol{y}) \leqslant \max\{ f(\boldsymbol{x}),f(\boldsymbol{y}) \}</script><h2 id="凸优化问题"><a href="#凸优化问题" class="headerlink" title="凸优化问题"></a>凸优化问题</h2><h3 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h3><p><strong>一般优化问题</strong>    一个优化问题通常被形式地定义为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\min\ f_0(\boldsymbol{x})& \\
+s.t.\ f_i(\boldsymbol{x})&\leqslant 0,i=1,2,\dots,m \\
+h_j(\boldsymbol{x})&=0,j=1,2,\dots,p
+\end{aligned}</script><p>其中，前$m$个不等式称为不等式约束，后$p$个等式称为等式约束。</p>
+<p>接下来借助上述定义说明几个概念。</p>
+<p><strong>优化变量</strong>    问题中的$\boldsymbol{x}\in\mathbb{R}^n$称为优化变量。</p>
+<p><strong>目标函数/损失函数</strong>    函数$f_0:\mathbb{R}^n\to\mathbb{R}$称为目标函数/损失函数。若为最大化问题，则称之为效用函数。</p>
+<p><strong>优化问题的域</strong>    称$D = \displaystyle \bigcap_{i=0}^m\mathrm{dom}(f_i)\cap \bigcap_{j=1}^p\mathrm{dom}(h_j)$为优化问题的域。</p>
+<p><strong>可行解</strong>    $\boldsymbol{x}\in D$为可行解，若$f_i(\boldsymbol{x})\leqslant 0,i=1,2,\dots,m;h_j(\boldsymbol{x})=0,j=1,2,\dots,p$.</p>
+<p><strong>可行解集</strong>    全部可行解组成的集合$X_f = \{ \boldsymbol{x}| f_i(\boldsymbol{x})\leqslant 0,i=1,2,\dots,m;h_j(\boldsymbol{x})=0,j=1,2,\dots,p \}$称为可行解集.</p>
+<p><strong>问题的最优值</strong>    问题的最优值为该最小化问题能取得的最小值$\displaystyle p^*=\inf_{\boldsymbol{x}\in X_f}\{f_0(\boldsymbol{x})\}$.</p>
+<p><strong>问题的最优解</strong>    问题的最优解为取得最优值时，所对应的优化变量的取值，即$\displaystyle\boldsymbol{x}^<em>=\arg\min_{\boldsymbol{x}\in D} f_0(\boldsymbol{x}),f(\boldsymbol{x}^</em>)=p^*$.</p>
+<p><strong>最优解集</strong>    称最优解构成的集合为最优解集$X_{opt}=\{ \boldsymbol{x}|\boldsymbol{x}\in X_f, f_0(\boldsymbol{x})=p^* \}$</p>
+<p><strong>$\varepsilon-$次优解集</strong>    称次优解集为$X_\varepsilon = \{ \boldsymbol{x}|\boldsymbol{x}\in X_f, f_0(\boldsymbol{x})\leqslant p^*+\varepsilon \}$</p>
 
                 
             </div>

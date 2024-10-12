@@ -165,7 +165,7 @@
     };
     loaded();
 })()
- </script></head>
+ </script><meta name="generator" content="Hexo 6.1.0"></head>
 
 
 
@@ -753,7 +753,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-14
+                    2024-09-29
                 </div>
                 
 
@@ -1202,7 +1202,7 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 <script type="math/tex; mode=display">
 \displaystyle\left[\frac{M}{N}\right]_{true} = (m_0 \oplus n_0).\frac{|M|}{|N|}</script><p>而原码除法中，根据对余数处理方式的不同，又可以分为<strong>恢复余数法</strong>和<strong>不恢复余数法</strong>（<strong>加减交替法</strong>）。</p>
 <p>关于<strong>恢复余数法</strong>，由于计算机无法如同人类直接看出每一位上商为0还是1，因此计算机总是预先上商为1，然后自然就是当前余数和除数（的一倍）做减法<sup><a href="#fn_6" id="reffn_6">6</a></sup>。<strong>如果减法的结果为负，那么当前应该上商为0，并且给当前结果加上$|N|$以便恢复余数为正数，否则上商为1</strong>。上商结束后，余数需要作逻辑左移运算。</p>
-<p>给出一个示例。x=-0.1011，y=0.1101，用恢复余数法给出运算$\displaystyle\left[\frac{x}{y}\right]_{true}$的详细过程。</p>
+<p>给出一个示例。$x=-0.1011$，$y=0.1101$，用恢复余数法给出运算$\displaystyle\left[\frac{x}{y}\right]_{true}$的详细过程。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/202403130915754.png" alt="恢复余数法示例"></p>
 <p>关于<strong>不恢复余数法</strong>（也称”加减交替法”），实际上是对恢复余数法的一种改良。因为恢复余数法中每当余数为负时，都需要进行恢复，严重延长了机器运算时间，且在除法运算中显得操作不规则，容易造成线路复杂。为了方便推导不恢复余数法的数学原理，约定用$R$表示当前余数。恢复余数法中的运算规则总结见表。</p>
 <div class="table-container">
@@ -1216,14 +1216,14 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 </thead>
 <tbody>
 <tr>
-<td>R&gt;0</td>
+<td>$R&gt;0$</td>
 <td>上商为1，对R左移一位，然后减去除数</td>
 <td>$R\gets 2R-</td>
 <td>N</td>
 <td>$</td>
 </tr>
 <tr>
-<td>R&lt;0</td>
+<td>$R&lt;0$</td>
 <td>上商为0，先加上除数以恢复余数，然后左移一位，减去除数</td>
 <td>$R\gets2(R+</td>
 <td>N</td>
@@ -1246,14 +1246,14 @@ $$[x+y]_{\mbox{补}} = [x]_{\mbox{补}}+[y]_{\mbox{补}} = 11.1010</script><scri
 </thead>
 <tbody>
 <tr>
-<td>R>0</td>
+<td>$R &gt;0$</td>
 <td>上商为1，对R左移一位，然后减去除数</td>
 <td>$R\gets2R-</td>
 <td>N</td>
 <td>$</td>
 </tr>
 <tr>
-<td>R\&lt;0</td>
+<td>$R&lt;0$</td>
 <td>上商为0，对R左移一位，然后加上除数</td>
 <td>$R\gets2R+</td>
 <td>N</td>
