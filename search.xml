@@ -11,6 +11,20 @@
         <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>拟合优度，通常也称判定系数，记作$R^2$，是用于评估<strong>线性模型</strong>拟合优劣的指标。具体地，我们有$n$个$d$维样本组成的数据集$X\in\mathbb{R}^{n\times (d+1)}, \boldsymbol{y}\in\mathbb{R}^n$，由线性模型</p><script type="math/tex; mode=display">\hat{\boldsymbol{y}} = X\boldsymbol{w}</script><p>其中，$\boldsymbol{w}\in\mathbb{R}^{d+1}$，$\displaystyle X = \begin{bmatrix} 1 &amp; x_{11} &amp; x_{12} &amp;\cdots&amp; x_{1d} \\ 1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2d} \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 1 &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{nd} \end{bmatrix} \in \mathbb{R}^{n\times (d+1)} , \boldsymbol{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} $.</p><h2 id="R-2-与SST、SSE和SSR"><a href="#R-2-与SST、SSE和SSR" class="headerlink" title="$R^2$与SST、SSE和SSR"></a>$R^2$与SST、SSE和SSR</h2><p>记标签向量的均值组成新的向量$\bar{\boldsymbol{y}}$，该向量的每一个分量均为$\bar{y} = \displaystyle \frac{1}{n}\sum_{i=1}^n y_i$.</p><p>接下来介绍三个重要概念。</p><ul><li><p>SST（Sum of Squares Total，总离差平方和）</p><script type="math/tex; mode=display">SST=(\boldsymbol{y} - \bar{\boldsymbol{y}})^T(\boldsymbol{y} - \bar{\boldsymbol{y}})</script></li><li><p>SSE（Sum of Squared Errors，残差平方和）</p><script type="math/tex; mode=display">SSE = (\hat{\boldsymbol{y}}-\bar{\boldsymbol{y}})^T(\hat{\boldsymbol{y}}-\bar{\boldsymbol{y}})</script></li><li><p>SSR（Sum of Squares Regression，回归平方和）</p><script type="math/tex; mode=display">SSR = (\boldsymbol{y} - \hat{\boldsymbol{y}})^T(\boldsymbol{y} - \hat{\boldsymbol{y}})</script></li></ul><p>于是，拟合优度定义为</p><script type="math/tex; mode=display">R^2 = 1-\frac{SSR}{SST}</script><p>注意到在线性回归模型中，如下等式成立</p><script type="math/tex; mode=display">SST = SSE + SSR</script><p>于是拟合优度也可以定义为</p><script type="math/tex; mode=display">R^2 = \frac{SSE}{SST}</script><p>由此可见，线性模型下，拟合优度$R^2$取值范围为$[0,1]$.</p><h2 id="证明SST-SSE-SSR"><a href="#证明SST-SSE-SSR" class="headerlink" title="证明SST=SSE+SSR"></a>证明SST=SSE+SSR</h2><p>先整理SST：</p><script type="math/tex; mode=display">SST = \boldsymbol{y}^T\boldsymbol{y} - 2\boldsymbol{y}^T\bar{\boldsymbol{y}} + \bar{\boldsymbol{y}}^T\bar{\boldsymbol{y}}</script><p>再整理SSE+SSR：</p><script type="math/tex; mode=display">SSE + SSR = 2\hat{\boldsymbol{y}}^T\hat{\boldsymbol{y}} - 2\hat{\boldsymbol{y}}^T\bar{\boldsymbol{y}} - 2\hat{\boldsymbol{y}}^T\boldsymbol{y} + \boldsymbol{y}^T\boldsymbol{y} + \bar{\boldsymbol{y}}^T\bar{\boldsymbol{y}}</script><p>故有</p><script type="math/tex; mode=display">SST - SSE - SSR = 2(\hat{\boldsymbol{y}} - \bar{\boldsymbol{y}})^T(\boldsymbol{y} - \hat{\boldsymbol{y}})</script><p>下面证明$(\hat{\boldsymbol{y}} - \bar{\boldsymbol{y}})^T(\boldsymbol{y} - \hat{\boldsymbol{y}})=0$.</p><p>要证明上式，我们需要回到线性回归模型求解最优参数的问题中：</p><script type="math/tex; mode=display">\min_{\boldsymbol{w}} \mathcal{L} = \parallel \boldsymbol{y} - X\boldsymbol{w} \parallel_2^2 \\</script><p>对目标函数求导数得</p><script type="math/tex; mode=display">\nabla_\boldsymbol{w}\mathcal{L} = 2X^T(X\boldsymbol{w}-\boldsymbol{y})</script><p>为求得最优参数$\boldsymbol{w}_*$，令上式为0，得</p><script type="math/tex; mode=display">X^T(X\boldsymbol{w}_*-\boldsymbol{y}) = 0</script><p>由$\hat{\boldsymbol{y}} = X\boldsymbol{w}_*$，重写为</p><script type="math/tex; mode=display">X^T(\hat{\boldsymbol{y}} - \boldsymbol{y}) = 0</script><p><strong>上述等式非常关键</strong>。首先，等式两边同时乘以$\boldsymbol{w}^T$得</p><script type="math/tex; mode=display">\begin{aligned}\boldsymbol{w}^TX^T(\hat{\boldsymbol{y}} - \boldsymbol{y}) &= 0 \\\Leftrightarrow \quad \hat{\boldsymbol{y}}^T(\hat{\boldsymbol{y}}-\boldsymbol{y}) &= 0\end{aligned}</script><p>其次，对于$X^T$中的首行$X^T_{1,:}=[1,1,\dots,1] = \boldsymbol{1}^T$，有</p><script type="math/tex; mode=display">\begin{aligned}\boldsymbol{1}^T(\hat{\boldsymbol{y}} - \boldsymbol{y}) &= 0\\\Leftrightarrow \quad \bar{\boldsymbol{y}}^T(\hat{\boldsymbol{y}} - \boldsymbol{y}) &= 0\end{aligned}</script><p>于是我们得到：</p><script type="math/tex; mode=display">\begin{aligned}(\hat{\boldsymbol{y}}^T - \bar{\boldsymbol{y}}^T)(\hat{\boldsymbol{y}} - \boldsymbol{y}) &= 0 \\\Leftrightarrow \quad (\hat{\boldsymbol{y}} - \bar{\boldsymbol{y}})^T(\boldsymbol{y} - \hat{\boldsymbol{y}}) &= 0\end{aligned}</script><p>证毕.</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>有时候跑实验会发现，拟合优度$R^2$为负值，这和上面的理论推导矛盾了。注意，等式$SST=SSE+SSR$成立的<strong>重要前提是模型为线性的（线性回归模型）</strong>，此时，$R^2$的两个定义才都成立，其取值范围才是$[0,1]$；否则，<strong>该等式不成立，其取值范围也不再是$[0, 1]$</strong>。若模型为非线性模型（如高度非线性的神经网络），使用$R^2$作为评估指标很有可能出现负值，也失去了评估意义。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li>[$R^2$为负值的解释][<a href="https://zhuanlan.zhihu.com/p/395001802">https://zhuanlan.zhihu.com/p/395001802</a>]</li><li>[对等式SST=SSE+SSR的证明][<a href="https://blog.csdn.net/weixin_43145361/article/details/103546382">https://blog.csdn.net/weixin_43145361/article/details/103546382</a>]</li><li><a href="https://blog.csdn.net/Mr_Lowbee/article/details/104376845">二范数求导</a></li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 回归分析 </tag>
+            
+            <tag> 优化 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -24,6 +38,18 @@
         <content type="html"><![CDATA[<h2 id="红黑树基本性质"><a href="#红黑树基本性质" class="headerlink" title="红黑树基本性质"></a>红黑树基本性质</h2><p>红黑树具有朴素的二叉查找树不具备的平衡性，通过如下5条关键性质：</p><ol><li>树中每个结点要么是红的，要么是黑的；</li><li>根结点是黑的；</li><li>所有的叶子结点都是黑的（叶子结点为扩展NULL）；</li><li>每个红结点的两个子结点都是黑的；</li><li>从任意结点到其每个叶子结点的所有路径都包含相同数量的黑色结点（黑高相等）。</li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 树 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -75,9 +101,9 @@
             
             <tag> 机器学习 </tag>
             
-            <tag> 数学 </tag>
-            
             <tag> 优化 </tag>
+            
+            <tag> 数学 </tag>
             
         </tags>
       
