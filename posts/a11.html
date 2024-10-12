@@ -761,7 +761,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    882
+                    870
                 </div>
                 
 
@@ -822,9 +822,9 @@ SST - SSE - SSR = 2(\hat{\boldsymbol{y}} - \bar{\boldsymbol{y}})^T(\boldsymbol{y
 <script type="math/tex; mode=display">
 \nabla_\boldsymbol{w}\mathcal{L} = 2X^T(X\boldsymbol{w}-\boldsymbol{y})</script><p>为求得最优参数$\boldsymbol{w}_*$，令上式为0，得</p>
 <script type="math/tex; mode=display">
-X^T(X\boldsymbol{w}_*-\boldsymbol{y}) = 0</script><p>由$\hat{\boldsymbol{y}} = X\boldsymbol{w}_*$，重写为</p>
+X^T(X\boldsymbol{w}_*-\boldsymbol{y}) = \boldsymbol{0}</script><p>由$\hat{\boldsymbol{y}} = X\boldsymbol{w}_*$，重写为</p>
 <script type="math/tex; mode=display">
-X^T(\hat{\boldsymbol{y}} - \boldsymbol{y}) = 0</script><p><strong>上述等式非常关键</strong>。首先，等式两边同时乘以$\boldsymbol{w}^T$得</p>
+X^T(\hat{\boldsymbol{y}} - \boldsymbol{y}) = \boldsymbol{0}</script><p><strong>上述等式非常关键</strong>。首先，等式两边同时乘以$\boldsymbol{w}^T$得</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \boldsymbol{w}^TX^T(\hat{\boldsymbol{y}} - \boldsymbol{y}) &= 0 \\
@@ -842,8 +842,8 @@ X^T(\hat{\boldsymbol{y}} - \boldsymbol{y}) = 0</script><p><strong>上述等式�
 \end{aligned}</script><p>证毕.</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>有时候跑实验会发现，拟合优度$R^2$为负值，这和上面的理论推导矛盾了。注意，等式$SST=SSE+SSR$成立的<strong>重要前提是模型为线性的（线性回归模型）</strong>，此时，$R^2$的两个定义才都成立，其取值范围才是$[0,1]$；否则，<strong>该等式不成立，其取值范围也不再是$[0, 1]$</strong>。若模型为非线性模型（如高度非线性的神经网络），使用$R^2$作为评估指标很有可能出现负值，也失去了评估意义。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li>[$R^2$为负值的解释][<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/395001802">https://zhuanlan.zhihu.com/p/395001802</a>]</li>
-<li>[对等式SST=SSE+SSR的证明][<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43145361/article/details/103546382">https://blog.csdn.net/weixin_43145361/article/details/103546382</a>]</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/395001802">$R^2$为负值的解释</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43145361/article/details/103546382">对等式SST=SSE+SSR的证明</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_Lowbee/article/details/104376845">二范数求导</a></li>
 </ol>
 
