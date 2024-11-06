@@ -164,7 +164,7 @@
     };
     loaded();
 })()
- </script></head>
+ </script><meta name="generator" content="Hexo 6.1.0"></head>
 
 
 
@@ -760,21 +760,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-09-27
+                    2024-11-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    5.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    26 分
                 </div>
                 
 
@@ -852,7 +852,7 @@
 <blockquote>
 <p><strong>仿射包</strong>    对于集合$\mathcal{C}$，其仿射包为$\displaystyle aff(\mathcal{C})=\left\{ \sum_{i=1}^k\theta_i\boldsymbol{x}_i | \forall \boldsymbol{x}_1,\boldsymbol{x}_2,\dots,\boldsymbol{x}_k\in \mathcal{C},\sum_{i=1}^k \theta_i=1 \right\}$.</p>
 </blockquote>
-<p>显然，<strong>凸集的仿射包就是他本身</strong>。</p>
+<p>显然，<strong>仿射集的仿射包就是他本身</strong>。</p>
 <h3 id="凸组合，凸集与凸包"><a href="#凸组合，凸集与凸包" class="headerlink" title="凸组合，凸集与凸包"></a>凸组合，凸集与凸包</h3><p>和仿射集类似地，凸集有如下定义：</p>
 <blockquote>
 <p><strong>凸集</strong>    集合$\mathcal{C}$为凸集，当且仅当$\forall \boldsymbol{x}_1,\boldsymbol{x}_2 \in \mathcal{C}, \theta\in [0,1], \theta\boldsymbol{x}_1+(1-\theta)\boldsymbol{x}_2 \in \mathcal{C}$.</p>
@@ -1026,7 +1026,55 @@ h_j(\boldsymbol{x})&=0,j=1,2,\dots,p
 <p><strong>问题的最优解</strong>    问题的最优解为取得最优值时，所对应的优化变量的取值，即$\displaystyle\boldsymbol{x}^<em>=\arg\min_{\boldsymbol{x}\in D} f_0(\boldsymbol{x}),f(\boldsymbol{x}^</em>)=p^*$.</p>
 <p><strong>最优解集</strong>    称最优解构成的集合为最优解集$X_{opt}=\{ \boldsymbol{x}|\boldsymbol{x}\in X_f, f_0(\boldsymbol{x})=p^* \}$</p>
 <p><strong>$\varepsilon-$次优解集</strong>    称次优解集为$X_\varepsilon = \{ \boldsymbol{x}|\boldsymbol{x}\in X_f, f_0(\boldsymbol{x})\leqslant p^*+\varepsilon \}$</p>
-
+<h3 id="线性规划与单纯形法"><a href="#线性规划与单纯形法" class="headerlink" title="线性规划与单纯形法"></a>线性规划与单纯形法</h3><p>这一部分，我们通过一个具体的实例，来展现单纯形法的执行步骤。</p>
+<p>例如如下的标准型线性规划问题</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\max\ 3x_1 + x_2 + 2x_3 & \\
+s.t.\ x_1 + x_2 + 3x_3 &\leqslant 30 \\
+2x_1 + 2x_2 + 5x_3 &\leqslant 24 \\
+4x_1 + x_2 + 2x_3 &\leqslant 36 \\
+x_1,x_2,x_3 &\geqslant 0
+\end{aligned}</script><p>首先，为了方便后续单纯形法的执行，我们<strong>将标准型重写为松弛型</strong>，即引入新的变量$x_4,x_5,x_6\geqslant 0$，并忽略显而易见的单变量不等式约束$x_i\geqslant 0$，写为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z &= 3x_1 + x_2 + 2x_3 \\
+x_4 &= 30 - x_1 - x_2 - 3x_3 \\
+x_5 &= 24 - 2x_1 - 2x_2 - 5x_3 \\
+x_6 &= 36 - 4x_1 - x_2 - 2x_3
+\end{aligned}</script><p>单纯形法开始执行。等式左侧的$x_4,x_5,x_6$被称为<strong>基变量</strong>，而右侧的$x_1,x_2,x_3$被称为<strong>非基变量</strong>。初始解为</p>
+<script type="math/tex; mode=display">
+(\bar{x}_1,\bar{x}_2,\bar{x}_3,\bar{x}_4,\bar{x}_5,\bar{x}_6) = (0,0,0,30,24,36);Z=0</script><p>这个初始解是符合条件（$\boldsymbol{x}\geqslant 0$）的，下面继续执行单纯形法，也即<strong>迭代地将基变量换出称为非基变量，而非基变量转为基变量，以提高$Z$</strong>。</p>
+<p>第一次迭代：我们发现$Z=3x_1+x_2+2x_3$这个式子中，$x_1$的系数最大，因此将$x_1$换入基变量；而下面的三个等式约束中，$x_6=36-4x_1-x_2-2x_3\geqslant0$对$x_1$是最紧的，因此将$x_6$换出成为非基变量，即对第三个等式进行变形为左侧只有$x_1$：</p>
+<script type="math/tex; mode=display">
+x_1 = 9 - \frac{x_2}{4} - \frac{x_3}{2} - \frac{x_6}{4}</script><p>根据上式得到新的松弛型</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z &= 27 + \frac{x_2}{4} + \frac{x_3}{2} - \frac{3x_6}{4} \\
+x_1 &= 9 - \frac{x_2}{4} - \frac{x_3}{2} - \frac{x_6}{4} \\
+x_4 &= 21 - \frac{3x_2}{4} - \frac{5x_3}{2} + \frac{x_6}{4} \\
+x_5 &= 6 - \frac{3x_2}{2} - 4x_3 + \frac{x_6}{2}
+\end{aligned}</script><p>得到新的解</p>
+<script type="math/tex; mode=display">
+(9,0,0,21,6,0);Z=27</script><p>第二次迭代：和第一次类似，注意$Z$的表达式中$x_6$的系数已经为负，因此不再考虑优化$x_6$，故而选择$x_3$，将其换入基变量，将$x_5$换出成为非基变量，因为其所在的等式对$x_3$的约束最紧：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z &= \frac{111}{4} + \frac{x_2}{16} - \frac{x_5}{8} - \frac{11x_6}{16}\\
+x_1 &= \frac{33}{4} - \frac{x_2}{16} + \frac{x_5}{8} - \frac{16x_6}{5} \\
+x_3 &= \frac{3}{2} - \frac{3x_2}{8} - \frac{x_5}{4} + \frac{x_6}{8}\\
+x_4 &= \frac{69}{4} + \frac{3x_2}{16} + \frac{5x_5}{8} - \frac{x_6}{16}
+\end{aligned}</script><p>得到新的解</p>
+<script type="math/tex; mode=display">
+\left(\frac{33}{4},0,\frac{3}{2},\frac{69}{4},0,0\right);Z=\frac{111}{4}</script><p>第三次迭代：只能选择$x_2$换入基变量，选择$x_3$换出成为非基变量。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+Z &= 28 - \frac{x_3}{6} - \frac{x_5}{6} - \frac{2x_6}{3}\\
+x_1 &= 8 + \frac{x_3}{6} + \frac{x_5}{6} - \frac{x_6}{3}\\
+x_2 &= 4 - \frac{8x_3}{3} - \frac{2x_5}{3} + \frac{x_6}{3}\\
+x_4 &= 18 - \frac{x_3}{2} + \frac{x_5}{2}
+\end{aligned}</script><p>此时，再无非基变量可以继续优化（换入非基变量），因此算法执行结束，得到最终解为</p>
+<script type="math/tex; mode=display">
+(\bar{x}_1,\bar{x}_2,\bar{x}_3,\bar{x}_4,\bar{x}_5,\bar{x}_6) = (8,4,0,18,0,0);Z=28</script>
                 
             </div>
             <hr/>

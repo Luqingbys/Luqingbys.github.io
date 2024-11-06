@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="常用技巧-numpy包, 计算机科学 python 人工智能 前端">
-    <meta name="description" content="NumpyNumPy（Numerical Python）是Python中用于科学计算的一个重要库，它提供了一个强大的多维数组对象（称为ndarray），以及针对这些数组对象进行操作的各种函数。NumPy 是许多其他科学计算库的基础，如 Sc">
+    <meta name="keywords" content="算法分析与设计常见理论证明, 计算机科学 python 人工智能 前端">
+    <meta name="description" content="Hash TablesExpected number of probes for Open-addressed hash tableGiven an open-addressed hash table with load factor $\">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>常用技巧-numpy包 | 湖心亭</title>
+    <title>算法分析与设计常见理论证明 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/medias/logo_lu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -597,12 +597,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogcovers/design-1210160_1280.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">常用技巧-numpy包</h1>
+                    <h1 class="description center-align post-title">算法分析与设计常见理论证明</h1>
                 </div>
             </div>
         </div>
@@ -716,25 +716,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/numpy/">
-                                <span class="chip bg-color">numpy</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/python%E7%BC%96%E7%A8%8B/" class="post-category">
-                                python编程
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -743,28 +730,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-03-04
+                    2024-10-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-07-17
+                    2024-11-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    7 分
                 </div>
                 
 
@@ -782,316 +769,98 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h1><p>NumPy（Numerical Python）是Python中用于科学计算的一个重要库，它提供了一个强大的多维数组对象（称为ndarray），以及针对这些数组对象进行操作的各种函数。NumPy 是许多其他科学计算库的基础，如 SciPy、Pandas 和 Matplotlib。</p>
-<p>通常导入numpy包简写为np：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>本文仅记录一些本人在实践中常用的包方法。</p>
-<h2 id="数组创建"><a href="#数组创建" class="headerlink" title="数组创建"></a>数组创建</h2><h3 id="创建随机数组：np-random-rand"><a href="#创建随机数组：np-random-rand" class="headerlink" title="创建随机数组：np.random.rand()"></a>创建随机数组：np.random.rand()</h3><ul>
-<li><code>np.random.rand(d0: int, d1: int, d2: int, ...)</code></li>
-</ul>
-<p>这是一个非常常用的创建随机数组的方法；它将创建一个形状为$(d_0, d_1, d_2, \dots)$的随机数组。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-[[[0.12344769 0.62765118 0.01542036]
-  [0.64811143 0.34687265 0.97168938]
-  [0.5908757  0.57925054 0.1721152 ]
-  [0.89463742 0.74941611 0.66578358]]
-
- [[0.73119619 0.67648234 0.6159516 ]
-  [0.71659169 0.73652607 0.5434614 ]
-  [0.64428965 0.46184996 0.33439822]
-  [0.01748738 0.23332551 0.57695121]]]
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>当然，也可以创建整数随机数组，方法为</p>
+                <h2 id="Hash-Tables"><a href="#Hash-Tables" class="headerlink" title="Hash Tables"></a>Hash Tables</h2><h3 id="Expected-number-of-probes-for-Open-addressed-hash-table"><a href="#Expected-number-of-probes-for-Open-addressed-hash-table" class="headerlink" title="Expected number of probes for Open-addressed hash table"></a><strong>Expected number of probes for Open-addressed hash table</strong></h3><p>Given an open-addressed hash table with load factor $\alpha=n/m&lt;1$, the expected number of probes in an unsuccessful search is at most $\displaystyle\frac{1}{1-\alpha}$.</p>
+<p><strong>Prove</strong>    Consider that $n$ keys have been mapped into $m$ slots in a hash table, then the load factor $\alpha$ is $\displaystyle\frac{n}{m}$.</p>
 <ul>
-<li><code>np.random.randint(low: int, high: int, size: Tuple)</code></li>
+<li>For the first probe, the conflict occurs with probability $\frac{n}{m}$, then the second probe is needed;</li>
+<li>For the second probe, the conflict occurs with probability $\displaystyle\frac{n-1}{m-1}$ since the key in the occupied slot in the first probe is excluded, then the third probe is needed;</li>
+<li>Similarly, for the i-th probe, the conflict occurs with probability $\displaystyle\frac{n-(i-1)}{m-(i-1)}$, then the (i+1)-th probe is needed.</li>
 </ul>
-<p>它创建一个形状为<code>size</code>的整数数组，其中的整数范围均为$[low, high]$。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">int_data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>low<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> high<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>int_data<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-[[4 7 4]
- [1 1 9]]
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="创建全零-全一数组：np-zeros-np-ones"><a href="#创建全零-全一数组：np-zeros-np-ones" class="headerlink" title="创建全零/全一数组：np.zeros()/np.ones()"></a>创建全零/全一数组：np.zeros()/np.ones()</h3><ul>
-<li><code>np.zeros(shape: Tuple, dtype)</code></li>
-<li><code>np.ones(shape: Tuple, dtype)</code></li>
-</ul>
-<p>创建指定形状、指定数据类型的全零/全一数组。</p>
+<p>Thus, the expected number of probes could be calculated as follow:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+N &= 1 + \frac{n}{m}\cdot1 + \frac{n}{m}\cdot\frac{n-1}{m-1}+\dots+\frac{n}{m}\cdot\frac{n-1}{m-1}\cdot\cdots\cdot \frac{n-(i-1)}{m-(i-1)}\cdots \\
+&\leqslant 1+\alpha+\alpha^2+\dots+\alpha^i+\cdots \\
+&=\sum_{i=0}^{\infin}\alpha^i \\
+&=\frac{1}{1-\alpha}
+\end{aligned}</script><h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><h3 id="HEIGHT-OF-A-RANDOMLY-BUILT-BINARY-SEARCH-TREE"><a href="#HEIGHT-OF-A-RANDOMLY-BUILT-BINARY-SEARCH-TREE" class="headerlink" title="HEIGHT OF A RANDOMLY BUILT BINARY SEARCH TREE"></a><strong>HEIGHT OF A RANDOMLY BUILT BINARY SEARCH TREE</strong></h3><p><strong>Prove</strong>    Let $X_n$ be the height of a randomly built binary search tree on $n$ nodes, then $Y_n$ be the exponential height of the tree. Specifically, $Y_n=2^{X_n}$. If the root node has rank $k$, then we get</p>
+<script type="math/tex; mode=display">
+X_n = 1 + \max\{X_{k-1}, X_{n-k}\}</script><p>since the height of the root is always one larger than the maximum height of its children. Hence we get</p>
+<script type="math/tex; mode=display">
+Y_n = 2^{X_n} = 2^{1+\max\{ X_{k-1},X_{n-k} \}} = 2\max\{2^{X_{k-1}},2^{X_{n-k}}\} = 2\max\{ Y_{k-1}, Y_{n-k} \}</script><p>Let indicator variable $Z_{nk}$ indicate whether $X_k$ is the root. Thus,</p>
+<script type="math/tex; mode=display">
+Z_{nk} = \begin{cases}
+1, \ if\ X_k\ is\ the\ root\\
+0, \ otherwise
+\end{cases}</script><p>So the exponential height $Y_n$ could be written as</p>
+<script type="math/tex; mode=display">
+Y_n = \sum_{k=1}^nZ_{nk}\cdot2\max\{ Y_{k-1},Y_{n-k} \}</script><p>Then the expected value of $Y_n$ is expressed as follow</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathbb{E}[Y_n] &= \mathbb{E}\left[ \sum_{k=1}^nZ_{nk}\cdot2\max\{ Y_{k-1},Y_{n-k} \} \right]\\
+&= 2\sum_{k=1}^n\mathbb{E}(Z_{nk})\cdot\mathbb{E}\left(\max\{ Y_{k-1},Y_{n-k} \} \right)\\
+&= \frac{2}{n}\sum_{k=1}^n\mathbb{E}\left(\max\{ Y_{k-1},Y_{n-k} \} \right)\\
+&\leqslant \frac{2}{n}\sum_{k=1}^n\mathbb{E}\left( Y_{k-1}+Y_{n-k} \right)\\
+&= \frac{4}{n}\sum_{k=0}^{n-1}\mathbb{E}(Y_k)
+\end{aligned}</script><p>We can prove that $\mathbb{E}[Y_n]\leqslant cn^3$. According to $f(\mathbb{E}[X])\leqslant \mathbb{E}(f(X))$, since $Y_n=f(X_n)=2^{X_n}$, we get</p>
+<script type="math/tex; mode=display">
+2^{\mathbb{E}[X_n]} = f(\mathbb{E}[X_n]) \leqslant \mathbb{E}[f(X_n)] = \mathbb{E}[Y_n] \leqslant cn^3</script><p>Thus, we could conclude that</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[X_n] \leqslant \log_2(cn^3) = 3\log_2n + \log_2c = \mathcal{O}(\log n)</script><h3 id="HEIGHT-BOUND"><a href="#HEIGHT-BOUND" class="headerlink" title="HEIGHT BOUND"></a>HEIGHT BOUND</h3><p><strong>Theorem</strong>    $n$-nodes RB tree has a height $h&lt;2\log_2(n+1)$.</p>
+<p><strong>Prove</strong>    We claim that a subtree rooted at $x$ contains at least $2^{bh(x)}-1$ internal nodes. Here $bh(x)$ denotes the black height of subtree rooted at $x$.</p>
+<p>Base step: If $x$ is root, then $bh(x)=1$, the tree has $2^{bh(x)}-1=1$ nodes.</p>
+<p>Inductive step: If $x$ is not root, then consider the number of internal nodes of the tree rooted as $x$. Apparently, we have</p>
+<script type="math/tex; mode=display">
+bh(x) = bh(x.left) +1\ \mathrm{or}\ bh(x.left)</script><p>That is to say, $bh(x) \geqslant bh(x.left)$</p>
+<p>Thus, the number of internal nodes rooted at $x$ (marked as $N_x$) is</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+N_x &= N_{x.left} + N_{x.right} + 1\\
+&\geqslant 2^{bh(x.left)}-1+2^{bh(x.right)}-1 + 1\\
+&= 2^{bh(x.left)+1} - 1\\
+&\geqslant 2^{bh(x)} - 1
+\end{aligned}</script><p>Moreover, the height $h$ of the subtree rooted at $x$ satisfies that</p>
+<script type="math/tex; mode=display">
+bh(x)\geqslant \frac{h}{2}</script><p>Since the claim”$n \geqslant 2^{bh(x)}-1$”, we get $bh(x) \leqslant \log_2(n+1)$, hence</p>
+<script type="math/tex; mode=display">
+\frac{h}{2} \leqslant \log_2(n+1)</script><p>Ultimately we get $h\leqslant 2\log_2(n+1)$.</p>
+<h2 id="Skip-List"><a href="#Skip-List" class="headerlink" title="Skip List"></a>Skip List</h2><h3 id="The-optimal-height-of-a-skip-list"><a href="#The-optimal-height-of-a-skip-list" class="headerlink" title="The optimal height of a skip list"></a>The optimal height of a skip list</h3><p><strong>Theorem</strong>    The optimal height of a $n$-elements skip list is $\log_2n$.</p>
+<p><strong>Prove</strong>    For the worst case, searching an element cost times:</p>
+<script type="math/tex; mode=display">
+T = |L_1| + \frac{|L_2|}{|L_1|} + \dots + \frac{|L_k|}{|L_{k-1}|}</script><p>Thus, </p>
+<script type="math/tex; mode=display">
+T \geqslant k|L_k|^{\frac{1}{k}} = k\cdot n^{\frac{1}{k}}</script><p>The equation holds when $\displaystyle|L_1|=\frac{|L_2|}{|L_1|}=\cdots=\frac{|L_k|}{|L_{k-1}|} = n^{\frac{1}{k}}$. Moreover,</p>
+<script type="math/tex; mode=display">
+f(k) = kn^{\frac{1}{k}}</script><p>The ideal value of $k$ is $\log_2n$, so that $T=2\log_2n$.</p>
+<h3 id="The-height-of-a-skip-list"><a href="#The-height-of-a-skip-list" class="headerlink" title="The height of a skip list"></a>The height of a skip list</h3><p><strong>Theorem</strong>    With high probability, an n-elements skip list has $\mathcal{O}(\log_2n)$ levels.</p>
+<p><strong>Prove</strong>    We denote an n-elements skip list has at most $c\log_2n$ levels as Event $A$. Then we get</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P(\bar{A}) &= P(Skip\ list\ has\ at\ least\ c\log_2n\ levels) \\
+&= P(at\ least\ one\ element\ has\ been\ promoted\ for\ c\log_2n\ times) \\
+&\leqslant \sum_x P(x\ has\ been\ promoted\ for\ c\log_2n\ times) \\
+&=n\cdot \left( \frac{1}{2}\right)^{c\log_2n}\\
+&=\frac{1}{n^{c-1}}
+\end{aligned}</script><p>Then we get that A occurs with high probability at least $\displaystyle1-\frac{1}{n^{c-1}}$.</p>
+<h3 id="The-time-cost-of-search-in-skip-list"><a href="#The-time-cost-of-search-in-skip-list" class="headerlink" title="The time cost of search in skip list"></a>The time cost of search in skip list</h3><p><strong>Theorem</strong>    With high probability, each search in a n-elements skip list cost $\mathcal{O}(\log_2n)$.</p>
+<p><strong>Prove</strong>    We prove this by “search backward”. Specifically, we search the element $x$ by starting at $x$ and stopping at $-\infin$. When travelling through $y$ in the searching path</p>
 <ul>
-<li><code>np.zeros_like(a: np.ndarray, dtype)</code></li>
-<li><code>np.ones_like(a: np.ndarray, dtype)</code></li>
+<li>if $y$ is promoted (HEAD), we then go up;</li>
+<li>if $y$ is not promoted (TAIL), we then go left.</li>
 </ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">data <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-data <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-data_zero <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data_zero<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-[[0. 0. 0. 0.]
- [0. 0. 0. 0.]]
-[[1. 1. 1. 1.]
- [1. 1. 1. 1.]]
-[[0. 0. 0. 0.]
- [0. 0. 0. 0.]]
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="创建有序数组：np-arange"><a href="#创建有序数组：np-arange" class="headerlink" title="创建有序数组：np.arange()"></a>创建有序数组：np.arange()</h3><ul>
-<li><code>np.arange(start: int, stop: int, step: int)</code></li>
-</ul>
-<p>创建一个数组，首位元素为start，然后以step为步长取数组成数组。但是注意，<strong>这个方法只能生成整型元素组成的数组</strong>；换言之，start、stop和step均为整型。</p>
-<h3 id="创建指定元素数量的数组：np-linspace"><a href="#创建指定元素数量的数组：np-linspace" class="headerlink" title="创建指定元素数量的数组：np.linspace()"></a>创建指定元素数量的数组：np.linspace()</h3><ul>
-<li><code>np.linspace(start: float, stop:float, num: int, endpoint: bool)</code></li>
-</ul>
-<p>创建一个数组，首位元素为start，末位元素为stop，取共num个浮点数组成数组；endpoint指示末位元素stop是否计入数组。</p>
-<ul>
-<li>若endpoint为True，则在$[start, stop]$上，以$\displaystyle \frac{stop - start}{num-1}$为步长，取num个浮点数组成数组；</li>
-<li>若endpoint为False，则在$[start, stop)$上，以$\displaystyle \frac{stop - start}{num}$为步长，取num个浮点数组成数组。</li>
-</ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token number">3.0</span><span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
-array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2.</span>  <span class="token punctuation">,</span> <span class="token number">2.25</span><span class="token punctuation">,</span> <span class="token number">2.5</span> <span class="token punctuation">,</span> <span class="token number">2.75</span><span class="token punctuation">,</span> <span class="token number">3.</span>  <span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token number">3.0</span><span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> endpoint<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2.</span> <span class="token punctuation">,</span>  <span class="token number">2.2</span><span class="token punctuation">,</span>  <span class="token number">2.4</span><span class="token punctuation">,</span>  <span class="token number">2.6</span><span class="token punctuation">,</span>  <span class="token number">2.8</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token number">3.0</span><span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> retstep<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-<span class="token punctuation">(</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2.</span>  <span class="token punctuation">,</span>  <span class="token number">2.25</span><span class="token punctuation">,</span>  <span class="token number">2.5</span> <span class="token punctuation">,</span>  <span class="token number">2.75</span><span class="token punctuation">,</span>  <span class="token number">3.</span>  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.25</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="创建单位矩阵（数组）：np-eye"><a href="#创建单位矩阵（数组）：np-eye" class="headerlink" title="创建单位矩阵（数组）：np.eye()"></a>创建单位矩阵（数组）：np.eye()</h3><ul>
-<li><code>np.eye(N: int, M: int, k: int)</code></li>
-</ul>
-<p>创建一个形状为（N, M）的矩阵，当参数<code>k</code>缺省时，其主对角线上元素均为1；否则全1的对角线会发生偏移。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-b <span class="token operator">=</span> np<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-c <span class="token operator">=</span> np<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> k<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-[[1. 0. 0.]
- [0. 1. 0.]
- [0. 0. 1.]]
-[[1. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0.]
- [0. 0. 1. 0. 0.]]
-[[0. 0. 1. 0. 0.]
- [0. 0. 0. 1. 0.]
- [0. 0. 0. 0. 1.]]
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="数组转换"><a href="#数组转换" class="headerlink" title="数组转换"></a>数组转换</h2><p>即将其他数据类型转换为numpy的内置数据类型ndarray。</p>
-<h3 id="list转数组：np-array"><a href="#list转数组：np-array" class="headerlink" title="list转数组：np.array()"></a>list转数组：np.array()</h3><ul>
-<li><code>np.array(obj: Sequence)</code></li>
-</ul>
-<p>非常常用的方法，其中Sequence常为List，即将该对象转换为数组。</p>
-<h3 id="读取文件为数组：np-loadtxt"><a href="#读取文件为数组：np-loadtxt" class="headerlink" title="读取文件为数组：np.loadtxt()"></a>读取文件为数组：np.loadtxt()</h3><ul>
-<li><code>np.loadtxt(fname, dtype, delimiter)</code></li>
-</ul>
-<p>将文件内容读入数组类型，并可指定数据类型和文件分隔符。</p>
-<h2 id="数组拼接"><a href="#数组拼接" class="headerlink" title="数组拼接"></a>数组拼接</h2><h3 id="最通用拼接方法：np-concatenate"><a href="#最通用拼接方法：np-concatenate" class="headerlink" title="最通用拼接方法：np.concatenate()"></a>最通用拼接方法：np.concatenate()</h3><ul>
-<li><code>np.concatenate(arrays: List[np.ndarray], axis: int)</code></li>
-</ul>
-<p>将arrays中的数组，沿着axis维度进行拼接，得到新的数组。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">array_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    array_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 每一个元素都是形状为(2, 1, 3)的三维数组</span>
-<span class="token comment"># array_list是一个包含5个(2, 1, 3)形状的数组的列表</span>
-data <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span>array_list<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-(2, 5, 3)
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="按行、按列拼接：np-hstack-np-vstack"><a href="#按行、按列拼接：np-hstack-np-vstack" class="headerlink" title="按行、按列拼接：np.hstack()/np.vstack()"></a>按行、按列拼接：np.hstack()/np.vstack()</h3><ul>
-<li><code>np.hstack(tup: List)</code>等价于<code>np.concatenate(arrays, axis=1)</code></li>
-<li><code>np.vstack(tup: List)</code>等价于<code>np.concatenate(arrays, axis=0)</code></li>
-</ul>
-<p>上述两个方法的使用均是数组拼接的特殊情况：<code>np.hstack()</code>将数组水平拼接，也即沿着第二个维度拼接；<code>np.vstack()</code>将数组垂直拼接，也即沿着第一个维度拼接。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">array_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    array_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 每一个元素都是形状为(2, 1, 3)的三维数组</span>
-<span class="token comment"># array_list是一个包含5个(2, 1, 3)形状的数组的列表</span>
-data_h <span class="token operator">=</span> np<span class="token punctuation">.</span>hstack<span class="token punctuation">(</span>array_list<span class="token punctuation">)</span>
-data_v <span class="token operator">=</span> np<span class="token punctuation">.</span>vstack<span class="token punctuation">(</span>array_list<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data_h<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data_v<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-(2, 5, 3)
-(10, 1, 3)
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="数组变形"><a href="#数组变形" class="headerlink" title="数组变形"></a>数组变形</h2><h3 id="最朴素的变形方法：reshape"><a href="#最朴素的变形方法：reshape" class="headerlink" title="最朴素的变形方法：reshape()"></a>最朴素的变形方法：reshape()</h3><ul>
-<li><code>np.reshape(a: np.ndarray, shape: int | Tuple[int])</code></li>
-<li><code>np.ndarray.reshape(shape: Tuple[int])</code>或<code>np.ndarray.reshape(d_0, d_1, d_2, ...)</code></li>
-</ul>
-<p>这个方法非常简单实用，它可以将数组形状调整为指定形状$(d_0, d_1, d_2, \dots)$。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">B<span class="token punctuation">,</span> N<span class="token punctuation">,</span> T<span class="token punctuation">,</span> D <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span>
-a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>B<span class="token operator">*</span>N<span class="token punctuation">,</span> T<span class="token punctuation">,</span> D<span class="token punctuation">)</span>
-a_new <span class="token operator">=</span> np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token punctuation">(</span>B<span class="token punctuation">,</span> N<span class="token punctuation">,</span> T<span class="token punctuation">,</span> D<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a_new<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-b_new <span class="token operator">=</span> a<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>B<span class="token punctuation">,</span> N<span class="token punctuation">,</span> T<span class="token punctuation">,</span> D<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b_new<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-(2, 5, 10, 8)
-(2, 5, 10, 8)
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="展平：np-ndarray-flatten"><a href="#展平：np-ndarray-flatten" class="headerlink" title="展平：np.ndarray.flatten()"></a>展平：np.ndarray.flatten()</h3><ul>
-<li><code>np.ndarray.flatten(order)</code></li>
-</ul>
-<p>这个方法可以将（高维）数组展平为一维数组，order参数可以指定展平顺序，默认不改变顺序。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">B<span class="token punctuation">,</span> N<span class="token punctuation">,</span> T<span class="token punctuation">,</span> D <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span>
-a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>B<span class="token operator">*</span>N<span class="token punctuation">,</span> T<span class="token punctuation">,</span> D<span class="token punctuation">)</span>
-b <span class="token operator">=</span> a<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-(800,)
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="删除维度：squeeze"><a href="#删除维度：squeeze" class="headerlink" title="删除维度：squeeze()"></a>删除维度：squeeze()</h3><ul>
-<li><code>np.ndarray.squeeze(axis: int)</code></li>
-<li><code>np.squeeze(a: np.ndarray, axis: int)</code></li>
-</ul>
-<p>这个方法可以删除指定维度，但是注意必须是单维度才可以删除。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> a<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># 删除第二维，该维度上的长度是1才可以删除</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-c <span class="token operator">=</span> np<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-(2, 3)
-(2, 3)
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="增加维度：np-expand-dims"><a href="#增加维度：np-expand-dims" class="headerlink" title="增加维度：np.expand_dims()"></a>增加维度：np.expand_dims()</h3><ul>
-<li><code>np.expand_dims(a: np.ndarray, axis: int)</code></li>
-</ul>
-<p>在指定维上新增一个维度，且新增的维度长度为1。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> np<span class="token punctuation">.</span>expand_dims<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-c <span class="token operator">=</span> np<span class="token punctuation">.</span>expand_dims<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-d <span class="token operator">=</span> np<span class="token punctuation">.</span>expand_dims<span class="token punctuation">(</span>a<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> c<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> d<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-(1, 2, 3) (2, 1, 3) (2, 3, 1)
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="数组重复"><a href="#数组重复" class="headerlink" title="数组重复"></a>数组重复</h2><h3 id="同维度重复：repeat"><a href="#同维度重复：repeat" class="headerlink" title="同维度重复：repeat()"></a>同维度重复：repeat()</h3><p>由于某些特定的需求，可能需要对数组中的某些元素进行重复，以得到新的数组。</p>
-<ul>
-<li><code>np.repeat(a: np.ndarray, repeats: int | List, axis: int)</code></li>
-<li><code>np.ndarray.repeat(repeats: int | List, axis: int)</code></li>
-</ul>
-<p>这个方法将在数组的指定维度上，将数组元素重复若干次（repeats参数既可以是单个整数，也可以是整数列表），具体效果见例子。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> a<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-b <span class="token operator">=</span> np<span class="token punctuation">.</span>repeat<span class="token punctuation">(</span>a<span class="token punctuation">,</span> repeats<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-c <span class="token operator">=</span> a<span class="token punctuation">.</span>repeat<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> c<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-d <span class="token operator">=</span> a<span class="token punctuation">.</span>repeat<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> d<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-[[2 5 2]
- [5 7 5]] (2, 3)
-[[2 5 2]
- [2 5 2]
- [5 7 5]
- [5 7 5]] (4, 3)
-[[2 2 5 5 2 2]
- [5 5 7 7 5 5]] (2, 6)
-[[2 5 2]
- [5 7 5]
- [5 7 5]] (3, 3)
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="支持维度扩展：tile"><a href="#支持维度扩展：tile" class="headerlink" title="支持维度扩展：tile()"></a>支持维度扩展：tile()</h3><ul>
-<li><code>np.tile(A: np.ndarray, reps: int | Sequence[int])</code></li>
-</ul>
-<p>这个方法和上面的<code>np.repeat()</code>方法很像，差别主要有两点。首先，这个方法重复排列数组元素的方式不同；其次，这个方法支持维度扩展，即<strong>允许np.ndarray.ndim和len(reps)不一致</strong>，最后的新数组形状将取两者最大值。具体地，假设数组A形状为$(d_1, d_2,\dots,d_n)$，参数reps为$(r_1,r_2,\dots,r_m)$，则</p>
-<ol>
-<li>如果$n = m$即<code>A.ndim == len(reps)</code>，那么无需进行任何维度扩展，新数组形状即为$(d_1\times r_1, d_2\times r_2, \dots,d_n\times r_m)$；</li>
-<li>如果$n &lt; m$即<code>A.ndim &lt; len(reps)</code>，那么将默认先对数组A进行维度扩展（前置添单维度）至形状$(c_1,c_2,\dots,c_{m-n},d_1,d_2,\dots,d_n)$，其中$c_1=c_2=\dots=c_{m-n}=1$；</li>
-<li>如果$n&gt;m$即<code>A.ndim &gt; len(reps)</code>，那么将默认先对reps进行维度扩展（前置添单维度）至$(c_1,c_2,\dots,c_{n-m},r_1,r_2,\dots,r_m)$，其中$c_1=c_2=\dots=c_{n-m}=1$。</li>
-</ol>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> a<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment"># a.ndim == 2</span>
-b <span class="token operator">=</span> np<span class="token punctuation">.</span>tile<span class="token punctuation">(</span>a<span class="token punctuation">,</span> reps<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># a.ndim == len(reps)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> b<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-c <span class="token operator">=</span> np<span class="token punctuation">.</span>tile<span class="token punctuation">(</span>a<span class="token punctuation">,</span> reps<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># a.ndim &lt; len(reps), a默认被升维到(1, 2, 3)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> c<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-d <span class="token operator">=</span> np<span class="token punctuation">.</span>tile<span class="token punctuation">(</span>a<span class="token punctuation">,</span> reps<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># a.ndim > len(reps), reps虽然为2, 但是会被当作(1, 2)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> d<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-[[0 2 3]
- [8 2 0]] (2, 3)
-[[0 2 3 0 2 3 0 2 3]
- [8 2 0 8 2 0 8 2 0]
- [0 2 3 0 2 3 0 2 3]
- [8 2 0 8 2 0 8 2 0]] (4, 9)
-[[[0 2 3 0 2 3]
-  [8 2 0 8 2 0]
-  [0 2 3 0 2 3]
-  [8 2 0 8 2 0]
-  [0 2 3 0 2 3]
-  [8 2 0 8 2 0]]
-
- [[0 2 3 0 2 3]
-  [8 2 0 8 2 0]
-  [0 2 3 0 2 3]
-  [8 2 0 8 2 0]
-  [0 2 3 0 2 3]
-  [8 2 0 8 2 0]]] (2, 6, 6)
-[[0 2 3 0 2 3]
- [8 2 0 8 2 0]] (2, 6)
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="采样"><a href="#采样" class="headerlink" title="采样"></a>采样</h2><p>有时候需要对数组中的元素进行随机采样，numpy包就可以派上用场了。</p>
-<h3 id="随机采样：np-random-choice"><a href="#随机采样：np-random-choice" class="headerlink" title="随机采样：np.random.choice()"></a>随机采样：np.random.choice()</h3><ul>
-<li><code>np.random.choice(a: int | 1-D array, size: int, replace: boolean=True)</code></li>
-</ul>
-<p>这个方法可以从序列a中随机采样，采样数量为size，而replace指定了是否重复采样：</p>
-<ol>
-<li>（默认）如果replace为True，则进行放回采样，得到的样本可能有重复；</li>
-<li>如果replace为False，则进行不放回采样，得到的样本不会有重复。</li>
-</ol>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span>
-choice_data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>data<span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> replace<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>choice_data<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">(</span>choice_data<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-输出：
-[5 1 4 9 8] &lt;class 'numpy.ndarray'>
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="乱序排列：np-random-permutation"><a href="#乱序排列：np-random-permutation" class="headerlink" title="乱序排列：np.random.permutation()"></a>乱序排列：np.random.permutation()</h3><ul>
-<li><code>np.random.permutation(x: int | array)</code></li>
-</ul>
-<p>它将随机打乱数组x，如果x为整数，则随机打乱一维数组$[0,1,\dots,x-1]$；而如果x为高维数组，则只会随机打乱第一维。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">out_of_order_data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>permutation<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>out_of_order_data<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'----------------------'</span><span class="token punctuation">)</span>
-data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'(before shuffle)'</span><span class="token punctuation">)</span>
-out_of_order_data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>permutation<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>out_of_order_data<span class="token punctuation">,</span> <span class="token string">'after shuffle'</span><span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">'''
-[0 5 1 9 7 3 4 6 2 8]
-----------------------
-[[4 5 4]
- [0 8 6]
- [6 2 7]
- [2 9 6]
- [2 9 9]] (before shuffle)
-[[0 8 6]
- [2 9 6]
- [2 9 9]
- [4 5 4]
- [6 2 7]] after shuffle
-'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h2><h3 id="np-linalg-norm"><a href="#np-linalg-norm" class="headerlink" title="np.linalg.norm()"></a>np.linalg.norm()</h3><p>numpy.linalg是范数常用的库，包括计算二范数、无穷范数等等。</p>
-<ul>
-<li><code>np.linalg.norm(x: ArrayLike, ord: int)</code></li>
-</ul>
-<p>这个方法通过参数ord指定要计算的范数，而参数x必须为一维或者二维数组。</p>
+<p>Since an n-elements skip list has $\mathcal{O}(\log_2n)$ levels with high probability, we go up for at most $c\log_2n$ times. Next we demonstrate that the flipping times is $\Theta(\log_2n)$ util $c\log_2n$ HEADs.</p>
+<p>Specifically, we make $10c\log_2n$ times of flipping coin. Thus, </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P(at\ most\ c\log_2n\ HEADs) &= \begin{pmatrix} 10c\log_2n \\ c\log_2n \end{pmatrix} \frac{1}{2}^{9c\log_2n} \\
+&\leqslant \left(e\frac{10c\log_2n}{c\log_2n}\right)^{c\log_2n}\cdot2^{-9c\log_2n} \\
+&= (10e)^{c\log_2n}\cdot 2^{-9c\log_2n}\\
+&= 2^{(c\log_2n) \cdot \log_2(10e)}\cdot 2^{-9c\log_2n} \\
+&= 2^{[\log_2(10e)-9]\cdot c\log_2n} \\
+&= n^{c\cdot(\log_2(10e)-9)}
+\end{aligned}</script><p>That is to say, $10c\log_2n$ times of flipping coin results in at most $c\log_2n$ HEADs with high probability at least $\displaystyle\frac{1}{n^{c(9-\log_2(10e))}}$. Generally, we get the flipping times is $\mathcal{O}(\log_2n)$.</p>
+<p>Moreover, getting $c\log_2n$ HEADs needs at least $c\log_2n$ times of flipping, i.e. the flipping times is $\mathcal{\Omega}(\log_2n)$.</p>
+<p>In brief, the times of flipping coin is $\Theta(\log_2n)$.</p>
 
                 
             </div>
@@ -1118,7 +887,7 @@ out_of_order_data <span class="token operator">=</span> np<span class="token pun
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/posts/63aa.html">https://luqingbys.github.io/posts/63aa.html</a>
+                    <a href="https://luqingbys.github.io/posts/9251.html">https://luqingbys.github.io/posts/9251.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1155,11 +924,7 @@ out_of_order_data <span class="token operator">=</span> np<span class="token pun
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/numpy/">
-                                    <span class="chip bg-color">numpy</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1654,65 +1419,18 @@ out_of_order_data <span class="token operator">=</span> np<span class="token pun
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/posts/663f.html">
-                    <div class="card-image">
-                        
-                        <img src="https://pic.ziyuan.wang/user/luqing2882/2024/03/ai-8530787_640_2f7834301b387.jpg" class="responsive-img" alt="常用技巧-pytorch包">
-                        
-                        <span class="card-title">常用技巧-pytorch包</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-06
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    python编程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/pytorch/">
-                        <span class="chip bg-color">pytorch</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/posts/5148.html">
+                <a href="/posts/9251.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/blogcovers/moon-2245743_1280.jpg" class="responsive-img" alt="常用技巧-pandas包">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="算法分析与设计常见理论证明">
                         
-                        <span class="card-title">常用技巧-pandas包</span>
+                        <span class="card-title">算法分析与设计常见理论证明</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1723,14 +1441,52 @@ out_of_order_data <span class="token operator">=</span> np<span class="token pun
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-10-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            鹿卿
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/a11.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/blogcovers/design-1210160_1280.jpg" class="responsive-img" alt="关于拟合优度R方的思考">
+                        
+                        <span class="card-title">关于拟合优度R方的思考</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-10-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    python编程
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
                                 </a>
                             
                             
@@ -1740,8 +1496,12 @@ out_of_order_data <span class="token operator">=</span> np<span class="token pun
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/pandas/">
-                        <span class="chip bg-color">pandas</span>
+                    <a href="/tags/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">回归分析</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">优化</span>
                     </a>
                     
                 </div>
@@ -1896,13 +1656,6 @@ out_of_order_data <span class="token operator">=</span> np<span class="token pun
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-    });
-</script>
 
 
 
