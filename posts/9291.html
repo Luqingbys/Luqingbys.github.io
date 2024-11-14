@@ -5,9 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="组合优化与凸优化, 计算机科学 python 人工智能 前端">
-    <meta name="description" content="基本概念仿射组合与仿射集
-定义一
-对于集合$\mathcal{C}$，若$\forall \boldsymbol{x}_1,\boldsymbol{x}_2 \in \mathcal{C}$，$\theta \in \mathbb{R}$，">
+    <meta name="description" content="基础知识：向量求导在优化方法、机器学习领域，向量求导非常常见。作为凸优化的前导知识，我们在这一节重点记录一些常用的向量求导公式。注意，这里仅记录标量函数$f:\mathbb{R}^n\to\mathbb{R}$对向量的导数（梯度）。在下面的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -760,21 +758,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-11-05
+                    2024-11-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.5k
+                    7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    26 分
+                    34 分
                 </div>
                 
 
@@ -792,7 +790,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="仿射组合与仿射集"><a href="#仿射组合与仿射集" class="headerlink" title="仿射组合与仿射集"></a>仿射组合与仿射集</h3><ul>
+                <h2 id="基础知识：向量求导"><a href="#基础知识：向量求导" class="headerlink" title="基础知识：向量求导"></a>基础知识：向量求导</h2><p>在优化方法、机器学习领域，向量求导非常常见。作为凸优化的前导知识，我们在这一节重点记录一些常用的向量求导公式。注意，这里仅记录标量函数$f:\mathbb{R}^n\to\mathbb{R}$对向量的导数（梯度）。在下面的公式中，$\boldsymbol{x}, \boldsymbol{b}, \boldsymbol{c}\in\mathbb{R}^n, A\in\mathbb{R}^{n\times n}$.</p>
+<ol>
+<li><p>多元线性函数求导。</p>
+<script type="math/tex; mode=display">
+\frac{d\boldsymbol{c}^T\boldsymbol{x}}{d\boldsymbol{x}} = \boldsymbol{c}</script></li>
+<li><p>仿射函数求导。</p>
+<script type="math/tex; mode=display">
+\frac{dA\boldsymbol{x}}{d\boldsymbol{x}} = \frac{d\boldsymbol{x}A}{d\boldsymbol{x}} = A^T,A\in\mathbb{R}^{n\times n}</script></li>
+<li><p>二次型求导。</p>
+<script type="math/tex; mode=display">
+\frac{d\boldsymbol{x}^TA\boldsymbol{x}}{d\boldsymbol{x}} = (A+A^T)\boldsymbol{x}</script></li>
+<li><p>特别地，上式中，如果$A$为对称矩阵，则有</p>
+<script type="math/tex; mode=display">
+\frac{d\boldsymbol{x}^TA\boldsymbol{x}}{d\boldsymbol{x}} = 2A\boldsymbol{x}</script><p>用标准二次型写法，等价地有</p>
+<script type="math/tex; mode=display">
+\frac{d}{d\boldsymbol{x}}\left( \frac{1}{2}\boldsymbol{x}^TA\boldsymbol{x} \right) = A\boldsymbol{x}</script></li>
+<li><p>向量二范数求导。</p>
+<script type="math/tex; mode=display">
+\frac{d\parallel A\boldsymbol{x}+\boldsymbol{b} \parallel_2^2}{d\boldsymbol{x}} = \frac{d(A\boldsymbol{x}+\boldsymbol{b})^T(A\boldsymbol{x}+\boldsymbol{b})}{d\boldsymbol{x}} = 2A^T(A\boldsymbol{x}+\boldsymbol{b}) \\
+\frac{d\parallel \boldsymbol{x}A+\boldsymbol{b} \parallel_2^2}{d\boldsymbol{x}} = \frac{d(\boldsymbol{x}A+\boldsymbol{b})^T(\boldsymbol{x}A+\boldsymbol{b})}{d\boldsymbol{x}} = 2(A\boldsymbol{x}+\boldsymbol{b})A^T</script></li>
+<li><script type="math/tex; mode=display">
+\frac{d\boldsymbol{b}^T\boldsymbol{x}\boldsymbol{x}^T\boldsymbol{c}}{d\boldsymbol{x}} = (\boldsymbol{b}\boldsymbol{c}^T+\boldsymbol{c}\boldsymbol{b}^T)\boldsymbol{x}</script></li>
+<li></li>
+</ol>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="仿射组合与仿射集"><a href="#仿射组合与仿射集" class="headerlink" title="仿射组合与仿射集"></a>仿射组合与仿射集</h3><ul>
 <li><p>定义一</p>
 <p>对于集合$\mathcal{C}$，若$\forall \boldsymbol{x}_1,\boldsymbol{x}_2 \in \mathcal{C}$，$\theta \in \mathbb{R}$，$s.t. \theta \boldsymbol{x}_1+(1-\theta)\boldsymbol{x}_2\in \mathcal{C}$，则称$\mathcal{C}$为仿射集。</p>
 </li>
@@ -960,6 +982,19 @@ H&=\nabla^2f(\boldsymbol{x}) = \frac{1}{n^2}\left( \prod_{k=1}^nx_k \right)^{\fr
 \end{aligned}</script><p>由Cauchy-Schwartz不等式$(\boldsymbol{a}^T\boldsymbol{b})^2\leqslant (\boldsymbol{a}^T\boldsymbol{a})(\boldsymbol{b}^T\boldsymbol{b})$，令$\displaystyle \boldsymbol{a} = \left[ \frac{y_1}{x_1}, \frac{y_2}{x_2}, \cdots, \frac{y_n}{x_n} \right]^T$，$\boldsymbol{b}=\boldsymbol{1}$，得</p>
 <script type="math/tex; mode=display">
 \left( \sum_{k=1}^n\frac{y_k}{x_k} \right)^2 \leqslant n\left( \sum_{k=1}^n\frac{y_k^2}{x_k^2} \right)</script><p>故有$\forall \boldsymbol{y} \in \mathbb{R}^n$，$\boldsymbol{y}^TH\boldsymbol{y} \leqslant 0$，即$H\preceq 0$，因此$f(\boldsymbol{x})$在$\mathbb{R}_{++}^n$上为凹函数。</p>
+<p><strong>行列式的对数</strong>    函数$f:S_{++}^n\to \mathbb{R},f(X)=\log\det X,X\in\mathbb{R}^{n\times n}$是凸函数。</p>
+<p>考虑</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+g(t) &= f(X+tV) \\
+&= \log\det(X+tV) \\
+&= \log\det\left(X^{\frac{1}{2}} (I+tX^{-\frac{1}{2}}VX^{-\frac{1}{2}})X^{\frac{1}{2}} \right) \\
+&= \log\left( \det X^{\frac{1}{2}}\cdot \det X^{\frac{1}{2}} \cdot \det\left( I+tX^{-\frac{1}{2}}VX^{-\frac{1}{2}} \right) \right) \\
+&= \log \det X + \sum_{i=1}^n\log(1+t\lambda_i)
+\end{aligned}</script><p>其中，$\lambda_1,\cdots,\lambda_n$为$I+tX^{-\frac{1}{2}}VX^{-\frac{1}{2}}$的$n$个特征值。故</p>
+<script type="math/tex; mode=display">
+g'(t)=\sum_{i=1}^n\frac{\lambda_i}{1+t\lambda_i}</script><script type="math/tex; mode=display">
+g''(t) = -\sum_{i=1}^n\frac{\lambda_i^2}{(1+t\lambda_i)^2} \leqslant 0</script><p>因而$g(t)$是凹函数，$f(X)$也为凹函数。</p>
 <h3 id="复合函数的凸性"><a href="#复合函数的凸性" class="headerlink" title="复合函数的凸性"></a>复合函数的凸性</h3><p>给定函数$h:\mathbb{R}^k\to\mathbb{R},g:\mathbb{R}^n\to\mathbb{R}^k$，定义复合函数$f=h\circ g:\mathbb{R}^n\to\mathbb{R},f(\boldsymbol{x})=h(g(\boldsymbol{x})),\mathrm{dom}(f)=\{ \boldsymbol{x}\in\mathrm{dom}(g)|g(\boldsymbol{x})\in \mathrm{dom}(h) \}$，接下来给出复合函数之间的凹凸性质。</p>
 <p>我们从简单情况考虑，即一维情况$k=n=1$、$\mathrm{dom}(f)=\mathrm{dom}(h)=\mathrm{dom}(g)=\mathbb{R}$以及$h,g$均二阶可微，根据凸函数的定义4，对$f$求二阶导数，得</p>
 <script type="math/tex; mode=display">
@@ -1074,7 +1109,71 @@ x_2 &= 4 - \frac{8x_3}{3} - \frac{2x_5}{3} + \frac{x_6}{3}\\
 x_4 &= 18 - \frac{x_3}{2} + \frac{x_5}{2}
 \end{aligned}</script><p>此时，再无非基变量可以继续优化（换入非基变量），因此算法执行结束，得到最终解为</p>
 <script type="math/tex; mode=display">
-(\bar{x}_1,\bar{x}_2,\bar{x}_3,\bar{x}_4,\bar{x}_5,\bar{x}_6) = (8,4,0,18,0,0);Z=28</script>
+(\bar{x}_1,\bar{x}_2,\bar{x}_3,\bar{x}_4,\bar{x}_5,\bar{x}_6) = (8,4,0,18,0,0);Z=28</script><h3 id="良好性质"><a href="#良好性质" class="headerlink" title="良好性质"></a>良好性质</h3><h4 id="局部最优也是全局最优"><a href="#局部最优也是全局最优" class="headerlink" title="局部最优也是全局最优"></a>局部最优也是全局最优</h4><p>不妨设$f(z)$为$f(x)$的局部最优，即下式成立</p>
+<script type="math/tex; mode=display">
+\exist r>0, s.t. f(z) = \inf_{x}\{ f(x)|x,z可行,\parallel x-z \parallel_2\leqslant r \}</script><p>往证$f(z)$也为全局最优。不然，则存在$z’$使得$f(z’)&lt;f(z)$，且$\parallel z’-z \parallel_2 &gt; r$.</p>
+<p>取$\displaystyle\tilde{z} = (1-\theta)z+\theta z’, \theta = \frac{r}{2\parallel x-z \parallel_2}$,</p>
+<p>则$\displaystyle\parallel \tilde{z} - z \parallel_2 = \parallel \theta(z’-z) \parallel_2 = \theta\parallel z’-z\parallel_2 = \frac{r}{2} &lt; r$,由$z$为局部最优点得$f(\tilde{z}) &gt; f(z)$.</p>
+<p>另一方面，由$f$凸性得$f(\tilde{z}) = f((1-\theta)z+\theta z’) \leqslant (1-\theta)f(z) + \theta f(z’) \leqslant (1-\theta)f(z) + \theta f(z) = f(z)$,</p>
+<p>矛盾。故假设不成立，得到$z$就是全局最优点.</p>
+<h4 id="（可微）最优性条件"><a href="#（可微）最优性条件" class="headerlink" title="（可微）最优性条件"></a>（可微）最优性条件</h4><p>对于凸优化问题，则$\boldsymbol{x}^<em>$为最优解，当且仅当$\forall \boldsymbol{y} \in X_f, \nabla f_0^T(\boldsymbol{x}^</em>)(\boldsymbol{y}-\boldsymbol{x}^*)\geqslant 0$</p>
+<h3 id="拉格朗日对偶"><a href="#拉格朗日对偶" class="headerlink" title="拉格朗日对偶"></a>拉格朗日对偶</h3><h4 id="对偶函数性质"><a href="#对偶函数性质" class="headerlink" title="对偶函数性质"></a>对偶函数性质</h4><ul>
+<li><strong>对偶函数</strong>是凹函数</li>
+<li>$\forall \lambda\geqslant 0,v, g(\lambda, v) \leqslant p^*$</li>
+</ul>
+<p>证明第二条。首先根据对偶函数定义，有</p>
+<script type="math/tex; mode=display">
+g(\lambda, v) = \inf_xL(x,\lambda,v)</script><p>而</p>
+<script type="math/tex; mode=display">
+\forall \lambda_i>0,\ \inf_xL(x,\lambda,v) \leqslant L(x^*,\lambda,v) = f_0(x^*)+\sum_{i=1}^n\lambda_if_i(x^*)+\sum_{i=1}^pv_ih_i(x^*) \leqslant f_0(x^*) = p^*</script><p>故得到$g(\lambda,v) \leqslant p^*$.</p>
+<h4 id="鞍点解释"><a href="#鞍点解释" class="headerlink" title="鞍点解释"></a>鞍点解释</h4><p>考虑仅含有不等式约束的凸优化问题</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\min &f_0(\boldsymbol{x}) \\
+s.t. &f_i(\boldsymbol{x}) \leqslant 0, i=1,2,\cdots,n
+\end{aligned}</script><p>拉格朗日函数为</p>
+<script type="math/tex; mode=display">
+L(\boldsymbol{x}, \boldsymbol{\lambda})=f_0(\boldsymbol{x}) + \sum_{i=1}^n\lambda_if_i(\boldsymbol{x})</script><p>有如下<strong>鞍点定理</strong>：</p>
+<p><strong>$\boldsymbol{x}^<em>,\boldsymbol{\lambda}^</em>$为$L(\boldsymbol{x},\boldsymbol{\lambda})$的鞍点，当且仅当强对偶成立，且$\boldsymbol{x}^<em>,\boldsymbol{\lambda}^</em>$为原问题和对偶问题的最优解</strong>。</p>
+<p>证明：先证明必要性。若$\boldsymbol{x}^<em>,\boldsymbol{\lambda}^</em>$为$L(\boldsymbol{x},\boldsymbol{\lambda})$的鞍点，根据鞍点定义，有</p>
+<script type="math/tex; mode=display">
+\sup_{\boldsymbol{\lambda}\geqslant0}\inf_{\boldsymbol{x}}L(\boldsymbol{x},\boldsymbol{\lambda}) = \inf_{\boldsymbol{x}}\sup_{\boldsymbol{\lambda}\geqslant0}L(\boldsymbol{x},\boldsymbol{\lambda})</script><p>且</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol{x}^* &= \arg\inf_{\boldsymbol{x}}\sup_{\boldsymbol{\lambda}\geqslant0}L(\boldsymbol{x},\boldsymbol{\lambda}) \\
+\boldsymbol{\lambda}^* &= \arg\sup_{\boldsymbol{\lambda}\geqslant0}\inf_{\boldsymbol{x}}L(\boldsymbol{x},\boldsymbol{\lambda})
+\end{aligned}</script><p>即$p^<em>=d^</em>$.且$\boldsymbol{x}^<em>,\boldsymbol{\lambda}^</em>$为原问题和对偶问题的最优解.</p>
+<p>再证明充分性。首先由$\boldsymbol{x}^<em>,\boldsymbol{\lambda}^</em>$为原问题和对偶问题的最优解，则其必然可行，即有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f_i(\boldsymbol{x}^*) \leqslant 0, i=1,2,\dots,n \\
+\lambda_i^* \geqslant 0,i=1,2,\dots,n
+\end{aligned}</script><p>由强对偶成立，即</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f_0(\boldsymbol{x^*}) = d^* = p^* &= \inf_{\boldsymbol{x}}L(\boldsymbol{x},\boldsymbol{\lambda}^*) \\
+&=\inf_{\boldsymbol{x}}\left(f_0(\boldsymbol{x})+\sum_{i=1}^n\lambda_i^*f_i(\boldsymbol{x})\right) \\
+&\leqslant f_0(\boldsymbol{x^*}) + \sum_{i=1}^n\lambda_i^*f_i(\boldsymbol{x}^*) \\
+&\leqslant f_0(\boldsymbol{x}^*)
+\end{aligned}</script><p>因此，上面不等关系全部为等式关系，其中有</p>
+<script type="math/tex; mode=display">
+f_0(\boldsymbol{x}^*) = \inf_{\boldsymbol{x}}L(\boldsymbol{x},\boldsymbol{\lambda}^*) = L(\boldsymbol{x}^*,\boldsymbol{\lambda}^*)</script><p>故</p>
+<script type="math/tex; mode=display">
+L(\boldsymbol{x}^*,\boldsymbol{\lambda}^*) \leqslant L(\boldsymbol{x},\boldsymbol{\lambda}^*)</script><p>另一方面，由</p>
+<script type="math/tex; mode=display">
+\sup_{\boldsymbol{\lambda}\geqslant0}L(\boldsymbol{x}^*,\boldsymbol{\lambda}) = \sup_{\boldsymbol{\lambda}\geqslant}\left( f_0(\boldsymbol{x^*})+\sum_{i=1}^n\lambda_if_i(\boldsymbol{x}^*) \right) \leqslant f_0(\boldsymbol{x}^*) = L(\boldsymbol{x}^*,\boldsymbol{\lambda}^*)</script><p>综上有</p>
+<script type="math/tex; mode=display">
+L(\boldsymbol{x}^*,\boldsymbol{\lambda}) \leqslant L(\boldsymbol{x}^*,\boldsymbol{\lambda}^*) \leqslant L(\boldsymbol{x},\boldsymbol{\lambda}^*)</script><h3 id="优化算法与收敛速率"><a href="#优化算法与收敛速率" class="headerlink" title="优化算法与收敛速率"></a>优化算法与收敛速率</h3><h4 id="函数的强凸性与海塞矩阵上界"><a href="#函数的强凸性与海塞矩阵上界" class="headerlink" title="函数的强凸性与海塞矩阵上界"></a>函数的强凸性与海塞矩阵上界</h4><p><strong>强凸性</strong>    函数$f$是强凸的，倘若$\exist m&gt;0,s.t.\forall \boldsymbol{x},\nabla^2f(\boldsymbol{x})-mI \succeq 0$。也可以等价地表述为$\displaystyle\forall \boldsymbol{x}, \boldsymbol{y}, f(\boldsymbol{y})\geqslant f(\boldsymbol{x})+\nabla^Tf(\boldsymbol{x})(\boldsymbol{y}-\boldsymbol{x})+\frac{m}{2}\parallel \boldsymbol{y}-\boldsymbol{x} \parallel_2^2$.</p>
+<p>我们进一步分析上式。对右侧式子关于$\boldsymbol{y}$求导得$\displaystyle \nabla f(\boldsymbol{x})+m(\boldsymbol{y}-\boldsymbol{x})$，令其等于零，有</p>
+<script type="math/tex; mode=display">
+\boldsymbol{y}^* = \boldsymbol{x} - \frac{\nabla f(\boldsymbol{x})}{m}</script><p>代回，有</p>
+<script type="math/tex; mode=display">
+\forall \boldsymbol{y},f(\boldsymbol{y}) \geqslant f(\boldsymbol{x}) - \frac{1}{2m}\parallel \nabla f(\boldsymbol{x}) \parallel_2^2</script><p>记最优解为$\boldsymbol{x}^*$，得到</p>
+<script type="math/tex; mode=display">
+p^* = f(\boldsymbol{x}^*) \geqslant f(\boldsymbol{x}) - \frac{1}{2m}\parallel \nabla f(\boldsymbol{x}) \parallel_2^2</script><p>整理得到</p>
+<script type="math/tex; mode=display">
+f(\boldsymbol{x}) - f(\boldsymbol{x}^*) \leqslant \frac{1}{2m}\parallel \nabla f(\boldsymbol{x}) \parallel_2^2</script><p><strong>Hessian矩阵上界</strong>    $\exist M&gt;0,s.t.\forall \boldsymbol{x}\in \mathrm{dom}f,\nabla^2f(\boldsymbol{x})-MI \preceq 0$.等价地表述为$\displaystyle\forall \boldsymbol{x},\boldsymbol{y}\in \mathrm{dom}f, f(\boldsymbol{y})\leqslant f(\boldsymbol{x}) + \nabla^Tf(\boldsymbol{x})(\boldsymbol{y} - \boldsymbol{x}) + \frac{M}{2}\parallel \boldsymbol{y}-\boldsymbol{x} \parallel_2^2$.</p>
+<h4 id="梯度下降法的收敛速率"><a href="#梯度下降法的收敛速率" class="headerlink" title="梯度下降法的收敛速率"></a>梯度下降法的收敛速率</h4>
                 
             </div>
             <hr/>
