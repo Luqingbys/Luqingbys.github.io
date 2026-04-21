@@ -4,10 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="深度学习基础知识汇总, 计算机科学 python 人工智能 前端">
-    <meta name="description" content="常见距离指标（Distance Metrics）在机器学习、数据挖掘和统计分析中，距离（Distance）或相似度（Similarity）用于衡量两个对象之间的差异程度。根据比较对象的不同，常见距离指标通常可以分为两类：
+    <meta name="keywords" content="常用技巧-GluonTS包, 计算机科学 python 人工智能 前端">
+    <meta name="description" content="快速入门教程GluonTS 包含
 
-点之间的距离（P">
+许多预构建模型
+用于构建新模型的组件（似然函数、特征处理管道、日历特征等）
+数据加载和处理
+绘图和评估工具
+人工和真实数据集（仅限具有许可的外部数据集）
+
+%matplotlib inline
+impor">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +26,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>深度学习基础知识汇总 | 湖心亭</title>
+    <title>常用技巧-GluonTS包 | 湖心亭</title>
     <link rel="icon" type="image/png" href="/medias/logo_lu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -599,12 +606,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogcovers/moon-2245743_1280.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogcovers/big-895567_640.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">深度学习基础知识汇总</h1>
+                    <h1 class="description center-align post-title">常用技巧-GluonTS包</h1>
                 </div>
             </div>
         </div>
@@ -718,12 +725,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%A6%82%E7%8E%87%E6%97%B6%E5%BA%8F%E9%A2%84%E6%B5%8B/">
+                                <span class="chip bg-color">概率时序预测</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python%E7%BC%96%E7%A8%8B/" class="post-category">
+                                python编程
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -732,28 +760,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-03-11
+                    2026-04-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2026-04-20
+                    2026-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    922
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    13 分
                 </div>
                 
 
@@ -771,189 +799,360 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="常见距离指标（Distance-Metrics）"><a href="#常见距离指标（Distance-Metrics）" class="headerlink" title="常见距离指标（Distance Metrics）"></a>常见距离指标（Distance Metrics）</h1><p>在机器学习、数据挖掘和统计分析中，<strong>距离（Distance）或相似度（Similarity）</strong>用于衡量两个对象之间的差异程度。根据比较对象的不同，常见距离指标通常可以分为两类：</p>
-<ol>
-<li><strong>点之间的距离（Point-to-Point Distance）</strong></li>
-<li><strong>分布之间的距离（Distribution Distance）</strong></li>
-</ol>
-<hr>
-<h1 id="一、点之间的距离（Point-Distance）"><a href="#一、点之间的距离（Point-Distance）" class="headerlink" title="一、点之间的距离（Point Distance）"></a>一、点之间的距离（Point Distance）</h1><p>设两个向量：</p>
-<script type="math/tex; mode=display">
-x = (x_1, x_2, ..., x_n), \quad y = (y_1, y_2, ..., y_n)</script><p>表示两个样本在 $n$ 维空间中的位置。</p>
-<hr>
-<h2 id="1-闵可夫斯基距离（Minkowski-Distance）"><a href="#1-闵可夫斯基距离（Minkowski-Distance）" class="headerlink" title="1 闵可夫斯基距离（Minkowski Distance）"></a>1 闵可夫斯基距离（Minkowski Distance）</h2><p>闵可夫斯基距离是一类<strong>广义距离度量</strong>，很多常见距离都是它的特殊情况。</p>
-<script type="math/tex; mode=display">
-d(x,y) = \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{\frac{1}{p}}</script><p>其中：</p>
+                <h1 id="快速入门教程"><a href="#快速入门教程" class="headerlink" title="快速入门教程"></a>快速入门教程</h1><p>GluonTS 包含</p>
 <ul>
-<li>$p$ 为距离阶数</li>
-<li>$x_i, y_i$ 为向量在第 $i$ 维的值</li>
+<li>许多预构建模型</li>
+<li>用于构建新模型的组件（似然函数、特征处理管道、日历特征等）</li>
+<li>数据加载和处理</li>
+<li>绘图和评估工具</li>
+<li>人工和真实数据集（仅限具有许可的外部数据集）</li>
 </ul>
-<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><h4 id="曼哈顿距离（Manhattan-Distance）"><a href="#曼哈顿距离（Manhattan-Distance）" class="headerlink" title="曼哈顿距离（Manhattan Distance）"></a>曼哈顿距离（Manhattan Distance）</h4><p>当 $p=1$ 时：</p>
-<script type="math/tex; mode=display">
-d(x,y) = \sum_{i=1}^{n} |x_i - y_i|</script><p>表示在网格路径中的最短距离。</p>
-<hr>
-<h4 id="欧氏距离（Euclidean-Distance）"><a href="#欧氏距离（Euclidean-Distance）" class="headerlink" title="欧氏距离（Euclidean Distance）"></a>欧氏距离（Euclidean Distance）</h4><p>当 $p=2$ 时：</p>
-<script type="math/tex; mode=display">
-d(x,y) = \sqrt{\sum_{i=1}^{n}(x_i - y_i)^2}</script><p>这是最常见的距离度量。</p>
-<hr>
-<h4 id="切比雪夫距离（Chebyshev-Distance）"><a href="#切比雪夫距离（Chebyshev-Distance）" class="headerlink" title="切比雪夫距离（Chebyshev Distance）"></a>切比雪夫距离（Chebyshev Distance）</h4><p>当 $p \to \infty$ 时：</p>
-<script type="math/tex; mode=display">
-d(x,y) = \max_i |x_i - y_i|</script><p>表示各维度差值的最大值。</p>
-<hr>
-<h2 id="2-余弦距离（Cosine-Distance）"><a href="#2-余弦距离（Cosine-Distance）" class="headerlink" title="2 余弦距离（Cosine Distance）"></a>2 余弦距离（Cosine Distance）</h2><p>余弦距离用于衡量两个向量之间的<strong>方向差异</strong>。</p>
-<h3 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h3><script type="math/tex; mode=display">
-\text{cos}(x,y) =
-\frac{x \cdot y}{\|x\|\|y\|}
-=
-\frac{\sum_{i=1}^{n} x_i y_i}
-{\sqrt{\sum_{i=1}^{n} x_i^2}\sqrt{\sum_{i=1}^{n} y_i^2}}</script><p>取值范围：</p>
-<script type="math/tex; mode=display">
-[-1,1]</script><ul>
-<li>$1$：方向完全相同  </li>
-<li>$0$：正交  </li>
-<li>$-1$：方向完全相反  </li>
-</ul>
-<h3 id="余弦距离"><a href="#余弦距离" class="headerlink" title="余弦距离"></a>余弦距离</h3><script type="math/tex; mode=display">
-d(x,y) = 1 - \text{cos}(x,y)</script><p>常用于：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">%</span>matplotlib inline
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> json
+<span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><p>注意我们采取新版的GluonTS。安装其之前，确保安装好如下版本的torch系列包，防止后续出现版本不兼容问题：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> <span class="token assign-left variable">torch</span><span class="token operator">==</span><span class="token number">2.1</span>.0 <span class="token assign-left variable">torchvision</span><span class="token operator">==</span><span class="token number">0.16</span>.0 <span class="token assign-left variable">torchaudio</span><span class="token operator">==</span><span class="token number">2.1</span>.0 --index-url https://download.pytorch.org/whl/cu118<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装GluonTS torch版本：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> <span class="token string">"gluonts[torch]==0.14.4"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><h3 id="提供的预设数据集"><a href="#提供的预设数据集" class="headerlink" title="提供的预设数据集"></a>提供的预设数据集</h3><p>GluonTS 附带了许多公开可用的数据集。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gluonts<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>repository<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> get_dataset<span class="token punctuation">,</span> dataset_names
+<span class="token keyword">from</span> gluonts<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>util <span class="token keyword">import</span> to_pandas<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>注意旧版写法为<code>from gluonts.dataset.repository import get_dataset, dataset_names</code>，新版中已不再适用。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Available datasets: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>dataset_names<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+output:
+Available datasets: ['constant', 'exchange_rate', 'solar-energy', 'electricity', 'traffic', 'exchange_rate_nips', 'electricity_nips', 'traffic_nips', 'solar_nips', 'wiki2000_nips', 'wiki-rolling_nips', 'taxi_30min', 'kaggle_web_traffic_with_missing', 'kaggle_web_traffic_without_missing', 'kaggle_web_traffic_weekly', 'm1_yearly', 'm1_quarterly', 'm1_monthly', 'nn5_daily_with_missing', 'nn5_daily_without_missing', 'nn5_weekly', 'tourism_monthly', 'tourism_quarterly', 'tourism_yearly', 'cif_2016', 'london_smart_meters_without_missing', 'wind_farms_without_missing', 'car_parts_without_missing', 'dominick', 'fred_md', 'pedestrian_counts', 'hospital', 'covid_deaths', 'kdd_cup_2018_without_missing', 'weather', 'm3_monthly', 'm3_quarterly', 'm3_yearly', 'm3_other', 'm4_hourly', 'm4_daily', 'm4_weekly', 'm4_monthly', 'm4_quarterly', 'm4_yearly', 'm5', 'uber_tlc_daily', 'uber_tlc_hourly', 'airpassengers', 'australian_electricity_demand', 'electricity_hourly', 'electricity_weekly', 'rideshare_without_missing', 'saugeenday', 'solar_10_minutes', 'solar_weekly', 'sunspot_without_missing', 'temperature_rain_without_missing', 'vehicle_trips_without_missing']
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>要下载内置数据集之一，只需使用上述名称之一调用 <code>get_dataset</code>。GluonTS 可以重新使用已保存的数据集，这样下次就不需要再次下载。</p>
+<p>有时候，在linux服务器上调用<code>get_dataset</code>时，可能会遇到http连接超时的报错，这是因为访问外网受限。建议在本地挂梯子调用这句话，然后将下载好的完整数据集文件夹上传至服务器中。注意下面我们额外强调了<code>path</code>参数，显式指定了数据集下载保存路径，否则它会默认下载到<code>/home/你的用户名/.mxnet/</code>下。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">dataset <span class="token operator">=</span> get_dataset<span class="token punctuation">(</span><span class="token string">"m4_hourly"</span><span class="token punctuation">,</span> path<span class="token operator">=</span>Path<span class="token punctuation">(</span><span class="token string">"./datasets"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>通常，GluonTS 提供的数据集是由三个主要成员组成的对象：</p>
 <ul>
-<li>文本相似度</li>
-<li>向量检索</li>
-<li>embedding 相似度计算</li>
+<li><code>dataset.train</code> 是一个可迭代的数据项集合，用于训练。每个数据项对应一个时间序列。</li>
+<li><code>dataset.test</code> 是一个可迭代的数据项集合，用于推理。测试数据集是训练数据集的扩展版本，其中包含每个时间序列末尾在训练期间未见的窗口。此窗口的长度等于推荐的预测长度。</li>
+<li><code>dataset.metadata</code> 包含数据集的元数据，例如时间序列的频率、推荐的预测范围、相关特征等。</li>
 </ul>
-<hr>
-<h2 id="3-马氏距离（Mahalanobis-Distance）"><a href="#3-马氏距离（Mahalanobis-Distance）" class="headerlink" title="3 马氏距离（Mahalanobis Distance）"></a>3 马氏距离（Mahalanobis Distance）</h2><p>马氏距离考虑了<strong>数据特征之间的协方差关系</strong>。</p>
-<script type="math/tex; mode=display">
-d(x,y) =
-\sqrt{(x-y)^T S^{-1} (x-y)}</script><p>其中：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">entry <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span><span class="token builtin">iter</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>train<span class="token punctuation">)</span><span class="token punctuation">)</span>
+train_series <span class="token operator">=</span> to_pandas<span class="token punctuation">(</span>entry<span class="token punctuation">)</span>
+train_series<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span>which<span class="token operator">=</span><span class="token string">"both"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"train series"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token string">"upper left"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-GluonTS包.assets\image-20260421191628447.png" alt="image-20260421191628447"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">entry <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span><span class="token builtin">iter</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>test<span class="token punctuation">)</span><span class="token punctuation">)</span>
+test_series <span class="token operator">=</span> to_pandas<span class="token punctuation">(</span>entry<span class="token punctuation">)</span>
+test_series<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>train_series<span class="token punctuation">.</span>index<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"r"</span><span class="token punctuation">)</span>  <span class="token comment"># end of train dataset</span>
+plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span>which<span class="token operator">=</span><span class="token string">"both"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"test series"</span><span class="token punctuation">,</span> <span class="token string">"end of train series"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token string">"upper left"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-GluonTS包.assets\image-20260421191646961.png" alt="image-20260421191646961"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>
+    <span class="token string-interpolation"><span class="token string">f"Length of forecasting window in test dataset: </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">len</span><span class="token punctuation">(</span>test_series<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">len</span><span class="token punctuation">(</span>train_series<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">"</span></span>
+<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Recommended prediction horizon: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>dataset<span class="token punctuation">.</span>metadata<span class="token punctuation">.</span>prediction_length<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Frequency of the time series: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>dataset<span class="token punctuation">.</span>metadata<span class="token punctuation">.</span>freq<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">'''
+output:
+Length of forecasting window in test dataset: 48
+Recommended prediction horizon: 48
+Frequency of the time series: H
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="自定义数据集"><a href="#自定义数据集" class="headerlink" title="自定义数据集"></a>自定义数据集</h3><p>在此需要强调，GluonTS 对用户自定义数据集的格式没有严格要求。自定义数据集唯一的要求是可迭代，并包含“target”和“start”字段。为了更清楚地说明这一点，假设常见的情况是数据集采用 <code>numpy.array</code> 的形式，并且时间序列的索引采用 <code>pandas.Period</code>（每个时间序列可能不同）。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">N <span class="token operator">=</span> <span class="token number">10</span>  <span class="token comment"># number of time series</span>
+T <span class="token operator">=</span> <span class="token number">100</span>  <span class="token comment"># number of timesteps</span>
+prediction_length <span class="token operator">=</span> <span class="token number">24</span>
+freq <span class="token operator">=</span> <span class="token string">"1H"</span>
+custom_dataset <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span> T<span class="token punctuation">)</span><span class="token punctuation">)</span>
+start <span class="token operator">=</span> pd<span class="token punctuation">.</span>Period<span class="token punctuation">(</span><span class="token string">"01-01-2019"</span><span class="token punctuation">,</span> freq<span class="token operator">=</span>freq<span class="token punctuation">)</span>  <span class="token comment"># can be different for each time series</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>现在，您只需两行代码即可分割数据集并将其转换为适合 GluonTS 的格式</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gluonts<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>common <span class="token keyword">import</span> ListDataset
+
+<span class="token comment"># train dataset: cut the last window of length "prediction_length", add "target" and "start" fields</span>
+train_ds <span class="token operator">=</span> ListDataset<span class="token punctuation">(</span>
+    <span class="token punctuation">[</span><span class="token punctuation">&#123;</span><span class="token string">"target"</span><span class="token punctuation">:</span> x<span class="token punctuation">,</span> <span class="token string">"start"</span><span class="token punctuation">:</span> start<span class="token punctuation">&#125;</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> custom_dataset<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token operator">-</span>prediction_length<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    freq<span class="token operator">=</span>freq<span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token comment"># test dataset: use the whole dataset, add "target" and "start" fields</span>
+test_ds <span class="token operator">=</span> ListDataset<span class="token punctuation">(</span>
+    <span class="token punctuation">[</span><span class="token punctuation">&#123;</span><span class="token string">"target"</span><span class="token punctuation">:</span> x<span class="token punctuation">,</span> <span class="token string">"start"</span><span class="token punctuation">:</span> start<span class="token punctuation">&#125;</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> custom_dataset<span class="token punctuation">]</span><span class="token punctuation">,</span> freq<span class="token operator">=</span>freq
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="训练现有模型（Estimator）"><a href="#训练现有模型（Estimator）" class="headerlink" title="训练现有模型（Estimator）"></a>训练现有模型（<code>Estimator</code>）</h2><p>GluonTS 附带了许多预构建模型。用户只需配置一些超参数。现有模型主要侧重于（但不限于）概率预测。概率预测是以概率分布形式进行的预测，而不仅仅是单一的点估计。</p>
+<p>我们将从 GluonTS 预构建的前馈神经网络估计器开始，这是一个简单但功能强大的预测模型。我们将使用该模型来演示模型训练、生成预测和评估结果的过程。</p>
+<p>GluonTS 内置的前馈神经网络（<code>SimpleFeedForwardEstimator</code>）接受长度为 <code>context_length</code> 的输入窗口，并预测后续 <code>prediction_length</code> 个值的分布。在 GluonTS 的术语中，前馈神经网络模型是 <code>Estimator</code> 的一个示例。在 GluonTS 中，<code>Estimator</code> 对象代表一个预测模型以及其系数、权重等详细信息。</p>
+<p>通常，每个估计器（预构建或自定义）都通过许多超参数进行配置，这些超参数可以是所有估计器通用的（但不强制要求），例如 <code>prediction_length</code>，也可以是特定于该估计器的，例如神经网络的层数或 CNN 的步长。下面我们导入torch版本的估计器。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gluonts<span class="token punctuation">.</span>torch <span class="token keyword">import</span> SimpleFeedForwardEstimator<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在<strong>旧版本</strong>中，每个估计器都由一个 <code>Trainer</code> 进行配置，<code>Trainer</code> 定义了模型如何训练，例如 epoch 数量、学习率等，要额外注意，<strong>在当前的新版本中此写法已不受支持</strong>。我们直接在<code>Estimator</code>对象的字典型参数<code>trainer_kwargs</code>中配置训练参数。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">estimator <span class="token operator">=</span> SimpleFeedForwardEstimator<span class="token punctuation">(</span>
+    hidden_dimensions<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    prediction_length<span class="token operator">=</span>dataset<span class="token punctuation">.</span>metadata<span class="token punctuation">.</span>prediction_length<span class="token punctuation">,</span>
+    context_length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>
+    trainer_kwargs<span class="token operator">=</span><span class="token punctuation">&#123;</span>
+        <span class="token string">"max_epochs"</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+        <span class="token string">"accelerator"</span><span class="token punctuation">:</span> <span class="token string">"gpu"</span><span class="token punctuation">,</span>
+        <span class="token string">"devices"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在指定了所有必需的超参数来配置我们的估计器后，我们可以使用训练数据集 <code>dataset.train</code> 调用估计器的 <code>train</code> 方法来训练它。训练算法返回一个拟合好的模型（在 GluonTS 术语中称为 <code>Predictor</code>），该模型可用于生成预测。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">predictor <span class="token operator">=</span> estimator<span class="token punctuation">.</span>train<span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>train<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="可视化和评估预测"><a href="#可视化和评估预测" class="headerlink" title="可视化和评估预测"></a>可视化和评估预测</h2><p>有了预测器后，我们现在可以预测 <code>dataset.test</code> 的最后一个窗口并评估模型的性能。</p>
+<p>GluonTS 附带了 <code>make_evaluation_predictions</code> 函数，该函数可以自动化预测和模型评估过程。大致来说，此函数执行以下步骤：</p>
 <ul>
-<li>$S$ 为数据协方差矩阵</li>
-<li>$S^{-1}$ 为协方差矩阵的逆</li>
-<li>$(x-y)^T$ 为转置</li>
+<li>移除我们想要预测的 <code>dataset.test</code> 中长度为 <code>prediction_length</code> 的最后一个窗口</li>
+<li>估计器使用剩余数据来预测刚刚移除的“未来”窗口（以样本路径的形式）</li>
+<li>该模块输出预测样本路径和 <code>dataset.test</code>（作为 Python 生成器对象）</li>
 </ul>
-<p>特点：</p>
-<ul>
-<li>能够消除不同特征尺度影响</li>
-<li>考虑特征相关性</li>
-<li>常用于异常检测</li>
-</ul>
-<hr>
-<h1 id="二、分布之间的距离（Distribution-Distance）"><a href="#二、分布之间的距离（Distribution-Distance）" class="headerlink" title="二、分布之间的距离（Distribution Distance）"></a>二、分布之间的距离（Distribution Distance）</h1><p>当比较对象为<strong>概率分布</strong>时，需要使用分布距离。</p>
-<p>设两个离散概率分布：</p>
-<script type="math/tex; mode=display">
-P(x), \quad Q(x)</script><hr>
-<h2 id="1-KL-散度（Kullback-Leibler-Divergence）"><a href="#1-KL-散度（Kullback-Leibler-Divergence）" class="headerlink" title="1 KL 散度（Kullback-Leibler Divergence）"></a>1 KL 散度（Kullback-Leibler Divergence）</h2><p>KL 散度用于衡量一个概率分布相对于另一个分布的信息损失。</p>
-<script type="math/tex; mode=display">
-D_{KL}(P||Q) =
-\sum_x P(x)\log\frac{P(x)}{Q(x)}</script><p>连续形式：</p>
-<script type="math/tex; mode=display">
-D_{KL}(P||Q) =
-\int P(x)\log\frac{P(x)}{Q(x)}dx</script><p>性质：</p>
-<ul>
-<li>非对称</li>
-</ul>
-<script type="math/tex; mode=display">
-D_{KL}(P||Q) \neq D_{KL}(Q||P)</script><ul>
-<li>取值范围</li>
-</ul>
-<script type="math/tex; mode=display">
-[0,\infty)</script><p>常见应用：</p>
-<ul>
-<li>变分推断</li>
-<li>VAE</li>
-<li>分布匹配</li>
-</ul>
-<hr>
-<h2 id="2-JS-散度（Jensen-Shannon-Divergence）"><a href="#2-JS-散度（Jensen-Shannon-Divergence）" class="headerlink" title="2 JS 散度（Jensen-Shannon Divergence）"></a>2 JS 散度（Jensen-Shannon Divergence）</h2><p>JS 散度是 KL 散度的<strong>对称版本</strong>。</p>
-<p>定义：</p>
-<script type="math/tex; mode=display">
-JS(P||Q) =
-\frac{1}{2}D_{KL}(P||M)
-+
-\frac{1}{2}D_{KL}(Q||M)</script><p>其中：</p>
-<script type="math/tex; mode=display">
-M = \frac{1}{2}(P+Q)</script><p>性质：</p>
-<ul>
-<li>对称</li>
-</ul>
-<script type="math/tex; mode=display">
-JS(P||Q) = JS(Q||P)</script><ul>
-<li>有界</li>
-</ul>
-<script type="math/tex; mode=display">
-0 \le JS(P||Q) \le \log 2</script><p>应用：</p>
-<ul>
-<li>GAN</li>
-<li>分布相似度度量</li>
-</ul>
-<hr>
-<h2 id="3-Wasserstein-距离（Earth-Mover-Distance）"><a href="#3-Wasserstein-距离（Earth-Mover-Distance）" class="headerlink" title="3 Wasserstein 距离（Earth Mover Distance）"></a>3 Wasserstein 距离（Earth Mover Distance）</h2><p>Wasserstein 距离衡量将一个分布变换为另一个分布所需的最小代价。</p>
-<p>直观理解：</p>
-<p>将概率分布看作一堆“土”，<br>Wasserstein 距离表示把这堆土搬运为另一堆所需的最小工作量。</p>
-<p>数学定义：</p>
-<script type="math/tex; mode=display">
-W(P,Q) =
-\inf_{\gamma \in \Pi(P,Q)}
-\mathbb{E}_{(x,y)\sim\gamma}[||x-y||]</script><p>其中：</p>
-<ul>
-<li>$\Pi(P,Q)$ 为所有联合分布集合</li>
-<li>$\gamma(x,y)$ 为运输方案</li>
-</ul>
-<p>应用：</p>
-<ul>
-<li>WGAN</li>
-<li>分布学习</li>
-<li>生成模型训练</li>
-</ul>
-<hr>
-<h1 id="三、常见距离总结"><a href="#三、常见距离总结" class="headerlink" title="三、常见距离总结"></a>三、常见距离总结</h1><div class="table-container">
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gluonts<span class="token punctuation">.</span>evaluation <span class="token keyword">import</span> make_evaluation_predictions
+
+forecast_it<span class="token punctuation">,</span> ts_it <span class="token operator">=</span> make_evaluation_predictions<span class="token punctuation">(</span>
+    dataset<span class="token operator">=</span>dataset<span class="token punctuation">.</span>test<span class="token punctuation">,</span>  <span class="token comment"># test dataset</span>
+    predictor<span class="token operator">=</span>predictor<span class="token punctuation">,</span>  <span class="token comment"># predictor</span>
+    num_samples<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>  <span class="token comment"># number of sample paths we want for evaluation</span>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>首先，我们可以将这些生成器转换为列表，以便后续计算。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">forecasts <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>forecast_it<span class="token punctuation">)</span>
+tss <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ts_it<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>我们可以检查这些列表的第一个元素（对应于数据集的第一个时间序列）。让我们从包含时间序列的列表 <code>tss</code> 开始。我们期望 <code>tss</code> 的第一个条目包含 <code>dataset.test</code> 的第一个时间序列的（目标值）。如下代码可以验证这两者是相同的。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># first entry of the time series list</span>
+ts_entry <span class="token operator">=</span> tss<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token comment"># first 5 values of the time series (convert from pandas to numpy)</span>
+np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>ts_entry<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>
+    <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token comment"># output: array([605., 586., 586., 559., 511.], dtype=float32)</span>
+<span class="token comment"># first entry of dataset.test</span>
+dataset_test_entry <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span><span class="token builtin">iter</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>test<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># first 5 values</span>
+dataset_test_entry<span class="token punctuation">[</span><span class="token string">"target"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token comment"># output: array([605., 586., 586., 559., 511.], dtype=float32)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>forecast</code> 列表中的条目稍微复杂一些。它们是包含所有样本路径的对象，样本路径的形式是维度为 <code>(num_samples, prediction_length)</code> 的 <code>numpy.ndarray</code>，还包含预测的开始日期、时间序列的频率等。只需调用预测对象的相应属性即可访问所有这些信息。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># first entry of the forecast list</span>
+forecast_entry <span class="token operator">=</span> forecasts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>注意如下新版本的predictor输出结果的代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Distribution of the forecast samples: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>forecast_entry<span class="token punctuation">.</span>distribution<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+samples <span class="token operator">=</span> forecast_entry<span class="token punctuation">.</span>distribution<span class="token punctuation">.</span>sample<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 新版本写法：从预测的分布中采样100条路径</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Dimension of samples: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>samples<span class="token punctuation">.</span>shape<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Start date of the forecast window: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>forecast_entry<span class="token punctuation">.</span>start_date<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Frequency of the time series: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>forecast_entry<span class="token punctuation">.</span>freq<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们还可以进行计算来汇总样本路径，例如计算预测窗口中每个 48 个时间步长的均值或分位数。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Mean of the future window:\n </span><span class="token interpolation"><span class="token punctuation">&#123;</span>forecast_entry<span class="token punctuation">.</span>mean<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"0.5-quantile (median) of the future window:\n </span><span class="token interpolation"><span class="token punctuation">&#123;</span>forecast_entry<span class="token punctuation">.</span>quantile<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''
+output:
+Mean of the future window:
+ [601.62616 571.62506 478.83017 449.07114 442.25357 475.66016 458.40277
+ 487.0524  489.93985 560.6161  593.5261  617.5017  680.78204 703.5066
+ 776.2343  805.18195 818.439   801.3591  823.86285 824.93445 773.12427
+ 771.9947  752.93134 674.657   580.7824  584.4749  546.70294 501.74213
+ 437.55557 466.95404 461.45004 500.73813 505.69696 575.597   588.41644
+ 611.2112  716.33136 778.6789  787.3356  855.0106  842.9774  841.0472
+ 851.654   842.5805  836.80914 788.31415 771.4369  697.8607 ]
+0.5-quantile (median) of the future window:
+ [601.62616 571.62506 478.83017 449.07114 442.25357 475.66016 458.40277
+ 487.0524  489.93985 560.6161  593.5261  617.5017  680.78204 703.5066
+ 776.2343  805.18195 818.439   801.3591  823.86285 824.93445 773.12427
+ 771.9947  752.93134 674.657   580.7824  584.4749  546.70294 501.74213
+ 437.55557 466.95404 461.45004 500.73813 505.69696 575.597   588.41644
+ 611.2112  716.33136 778.6789  787.3356  855.0106  842.9774  841.0472
+ 851.654   842.5805  836.80914 788.31415 771.4369  697.8607 ]
+'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>Forecast</code> 对象有一个 <code>plot</code> 方法，可以将预测路径汇总为均值、预测区间等。预测区间以不同的颜色阴影表示，形成“扇形图”。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>ts_entry<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">150</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_timestamp<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+forecast_entry<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>show_label<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-GluonTS包.assets\image-20260421192616910.png" alt="image-20260421192616910"></p>
+<p>我们还可以从数值上评估预测的质量。在 GluonTS 中，<code>Evaluator</code> 类可以计算聚合性能指标，以及每个时间序列的指标（这对于分析跨异构时间序列的性能非常有用）。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gluonts<span class="token punctuation">.</span>evaluation <span class="token keyword">import</span> Evaluator
+evaluator <span class="token operator">=</span> Evaluator<span class="token punctuation">(</span>quantiles<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+agg_metrics<span class="token punctuation">,</span> item_metrics <span class="token operator">=</span> evaluator<span class="token punctuation">(</span>tss<span class="token punctuation">,</span> forecasts<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>聚合指标 <code>agg_metrics</code> 聚合了跨时间步长和跨时间序列的性能。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>agg_metrics<span class="token punctuation">,</span> indent<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"MSE"</span><span class="token operator">:</span> <span class="token number">10330287.941363767</span><span class="token punctuation">,</span>
+    <span class="token property">"abs_error"</span><span class="token operator">:</span> <span class="token number">9888776.191505432</span><span class="token punctuation">,</span>
+    <span class="token property">"abs_target_sum"</span><span class="token operator">:</span> <span class="token number">145558863.59960938</span><span class="token punctuation">,</span>
+    <span class="token property">"abs_target_mean"</span><span class="token operator">:</span> <span class="token number">7324.822041043146</span><span class="token punctuation">,</span>
+    <span class="token property">"seasonal_error"</span><span class="token operator">:</span> <span class="token number">336.9046924038305</span><span class="token punctuation">,</span>
+    <span class="token property">"MASE"</span><span class="token operator">:</span> <span class="token number">3.298529737437924</span><span class="token punctuation">,</span>
+    <span class="token property">"MAPE"</span><span class="token operator">:</span> <span class="token number">0.24230639967653486</span><span class="token punctuation">,</span>
+    <span class="token property">"sMAPE"</span><span class="token operator">:</span> <span class="token number">0.1844004778050474</span><span class="token punctuation">,</span>
+    <span class="token property">"MSIS"</span><span class="token operator">:</span> <span class="token number">64.15294911907903</span><span class="token punctuation">,</span>
+    <span class="token property">"num_masked_target_values"</span><span class="token operator">:</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+    <span class="token property">"QuantileLoss[0.1]"</span><span class="token operator">:</span> <span class="token number">4685229.677179908</span><span class="token punctuation">,</span>
+    <span class="token property">"Coverage[0.1]"</span><span class="token operator">:</span> <span class="token number">0.10487117552334944</span><span class="token punctuation">,</span>
+    <span class="token property">"QuantileLoss[0.5]"</span><span class="token operator">:</span> <span class="token number">9888776.174993515</span><span class="token punctuation">,</span>
+    <span class="token property">"Coverage[0.5]"</span><span class="token operator">:</span> <span class="token number">0.5401066827697263</span><span class="token punctuation">,</span>
+    <span class="token property">"QuantileLoss[0.9]"</span><span class="token operator">:</span> <span class="token number">7182032.328086851</span><span class="token punctuation">,</span>
+    <span class="token property">"Coverage[0.9]"</span><span class="token operator">:</span> <span class="token number">0.8878824476650563</span><span class="token punctuation">,</span>
+    <span class="token property">"RMSE"</span><span class="token operator">:</span> <span class="token number">3214.076530103751</span><span class="token punctuation">,</span>
+    <span class="token property">"NRMSE"</span><span class="token operator">:</span> <span class="token number">0.4387924392011613</span><span class="token punctuation">,</span>
+    <span class="token property">"ND"</span><span class="token operator">:</span> <span class="token number">0.06793661304409888</span><span class="token punctuation">,</span>
+    <span class="token property">"wQuantileLoss[0.1]"</span><span class="token operator">:</span> <span class="token number">0.032187869301230805</span><span class="token punctuation">,</span>
+    <span class="token property">"wQuantileLoss[0.5]"</span><span class="token operator">:</span> <span class="token number">0.0679366129306608</span><span class="token punctuation">,</span>
+    <span class="token property">"wQuantileLoss[0.9]"</span><span class="token operator">:</span> <span class="token number">0.04934108545833773</span><span class="token punctuation">,</span>
+    <span class="token property">"mean_absolute_QuantileLoss"</span><span class="token operator">:</span> <span class="token number">7252012.726753425</span><span class="token punctuation">,</span>
+    <span class="token property">"mean_wQuantileLoss"</span><span class="token operator">:</span> <span class="token number">0.049821855896743115</span><span class="token punctuation">,</span> 
+    <span class="token property">"MAE_Coverage"</span><span class="token operator">:</span> <span class="token number">0.39596081588835214</span><span class="token punctuation">,</span>
+    <span class="token property">"OWA"</span><span class="token operator">:</span> NaN
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>需要额外注意这里的<code>mean_wQuantileLoss</code>指标，它实际上是论文中常用指标CRPS的近似替代</strong>。当然为了使其更加近似、精确，可以在<code>Evaluator</code>的参数<code>quantiles</code>多设置一些分位数：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">evaluator <span class="token operator">=</span> Evaluator<span class="token punctuation">(</span>
+    quantiles<span class="token operator">=</span><span class="token punctuation">[</span>i <span class="token operator">/</span> <span class="token number">100.0</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+
+agg_metrics<span class="token punctuation">,</span> item_metrics <span class="token operator">=</span> evaluator<span class="token punctuation">(</span>tss<span class="token punctuation">,</span> forecasts<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>个别指标仅聚合跨时间步长的性能。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">item_metrics<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>输出表格：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th>类型</th>
-<th>距离</th>
-<th>特点</th>
+<th style="text-align:right"></th>
+<th style="text-align:right">item_id</th>
+<th style="text-align:right">forecast_start</th>
+<th style="text-align:right">MSE</th>
+<th style="text-align:right">abs_error</th>
+<th style="text-align:right">abs_target_sum</th>
+<th style="text-align:right">abs_target_mean</th>
+<th style="text-align:right">seasonal_error</th>
+<th style="text-align:right">MASE</th>
+<th style="text-align:right">MAPE</th>
+<th style="text-align:right">sMAPE</th>
+<th style="text-align:right">num_masked_target_values</th>
+<th style="text-align:right">ND</th>
+<th style="text-align:right">MSIS</th>
+<th style="text-align:right">QuantileLoss[0.1]</th>
+<th style="text-align:right">Coverage[0.1]</th>
+<th style="text-align:right">QuantileLoss[0.5]</th>
+<th style="text-align:right">Coverage[0.5]</th>
+<th style="text-align:right">QuantileLoss[0.9]</th>
+<th style="text-align:right">Coverage[0.9]</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>点距离</td>
-<td>Minkowski</td>
-<td>广义距离</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1750-01-30 04:00</td>
+<td style="text-align:right">3309.237305</td>
+<td style="text-align:right">2154.689453</td>
+<td style="text-align:right">31644.0</td>
+<td style="text-align:right">659.250000</td>
+<td style="text-align:right">42.371302</td>
+<td style="text-align:right">1.059428</td>
+<td style="text-align:right">0.067252</td>
+<td style="text-align:right">0.064834</td>
+<td style="text-align:right">0.0</td>
+<td style="text-align:right">0.068092</td>
+<td style="text-align:right">13.231213</td>
+<td style="text-align:right">935.300177</td>
+<td style="text-align:right">0.041667</td>
+<td style="text-align:right">2154.689484</td>
+<td style="text-align:right">0.708333</td>
+<td style="text-align:right">1459.305225</td>
+<td style="text-align:right">1.000000</td>
 </tr>
 <tr>
-<td>点距离</td>
-<td>Euclidean</td>
-<td>最常用</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1750-01-30 04:00</td>
+<td style="text-align:right">182585.895833</td>
+<td style="text-align:right">18652.218750</td>
+<td style="text-align:right">124149.0</td>
+<td style="text-align:right">2586.437500</td>
+<td style="text-align:right">165.107988</td>
+<td style="text-align:right">2.353538</td>
+<td style="text-align:right">0.159426</td>
+<td style="text-align:right">0.146121</td>
+<td style="text-align:right">0.0</td>
+<td style="text-align:right">0.150241</td>
+<td style="text-align:right">14.012219</td>
+<td style="text-align:right">4414.383215</td>
+<td style="text-align:right">0.270833</td>
+<td style="text-align:right">18652.218994</td>
+<td style="text-align:right">0.979167</td>
+<td style="text-align:right">8807.242969</td>
+<td style="text-align:right">1.000000</td>
 </tr>
 <tr>
-<td>点距离</td>
-<td>Cosine</td>
-<td>衡量方向</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1750-01-30 04:00</td>
+<td style="text-align:right">31560.596354</td>
+<td style="text-align:right">6341.560547</td>
+<td style="text-align:right">65030.0</td>
+<td style="text-align:right">1354.791667</td>
+<td style="text-align:right">78.889053</td>
+<td style="text-align:right">1.674704</td>
+<td style="text-align:right">0.087524</td>
+<td style="text-align:right">0.093271</td>
+<td style="text-align:right">0.0</td>
+<td style="text-align:right">0.097517</td>
+<td style="text-align:right">13.391114</td>
+<td style="text-align:right">3399.184241</td>
+<td style="text-align:right">0.000000</td>
+<td style="text-align:right">6341.560669</td>
+<td style="text-align:right">0.208333</td>
+<td style="text-align:right">2718.548511</td>
+<td style="text-align:right">0.729167</td>
 </tr>
 <tr>
-<td>点距离</td>
-<td>Mahalanobis</td>
-<td>考虑协方差</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">1750-01-30 04:00</td>
+<td style="text-align:right">161919.552083</td>
+<td style="text-align:right">15676.248047</td>
+<td style="text-align:right">235783.0</td>
+<td style="text-align:right">4912.145833</td>
+<td style="text-align:right">258.982249</td>
+<td style="text-align:right">1.261046</td>
+<td style="text-align:right">0.065586</td>
+<td style="text-align:right">0.064962</td>
+<td style="text-align:right">0.0</td>
+<td style="text-align:right">0.066486</td>
+<td style="text-align:right">14.689635</td>
+<td style="text-align:right">8973.606250</td>
+<td style="text-align:right">0.062500</td>
+<td style="text-align:right">15676.248291</td>
+<td style="text-align:right">0.437500</td>
+<td style="text-align:right">8183.246777</td>
+<td style="text-align:right">1.000000</td>
 </tr>
 <tr>
-<td>分布距离</td>
-<td>KL Divergence</td>
-<td>信息差异</td>
-</tr>
-<tr>
-<td>分布距离</td>
-<td>JS Divergence</td>
-<td>对称KL</td>
-</tr>
-<tr>
-<td>分布距离</td>
-<td>Wasserstein</td>
-<td>分布运输距离</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">1750-01-30 04:00</td>
+<td style="text-align:right">104537.510417</td>
+<td style="text-align:right">11086.554688</td>
+<td style="text-align:right">131088.0</td>
+<td style="text-align:right">2731.000000</td>
+<td style="text-align:right">200.494083</td>
+<td style="text-align:right">1.152004</td>
+<td style="text-align:right">0.085404</td>
+<td style="text-align:right">0.079762</td>
+<td style="text-align:right">0.0</td>
+<td style="text-align:right">0.084573</td>
+<td style="text-align:right">12.690474</td>
+<td style="text-align:right">4597.160254</td>
+<td style="text-align:right">0.083333</td>
+<td style="text-align:right">11086.554077</td>
+<td style="text-align:right">0.791667</td>
+<td style="text-align:right">7307.160693</td>
+<td style="text-align:right">1.000000</td>
 </tr>
 </tbody>
 </table>
 </div>
-<hr>
+<p>绘制一份MASE-MSIS散点图像：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">item_metrics<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">"MSIS"</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">"MASE"</span><span class="token punctuation">,</span> kind<span class="token operator">=</span><span class="token string">"scatter"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span>which<span class="token operator">=</span><span class="token string">"both"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-GluonTS包.assets\image-20260421193044465-17767710459201.png" alt="image-20260421193044465"></p>
 
                 
             </div>
@@ -980,7 +1179,7 @@ W(P,Q) =
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://luqingbys.github.io/posts/d5c1.html">https://luqingbys.github.io/posts/d5c1.html</a>
+                    <a href="https://luqingbys.github.io/posts/a347.html">https://luqingbys.github.io/posts/a347.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1017,7 +1216,19 @@ W(P,Q) =
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%A6%82%E7%8E%87%E6%97%B6%E5%BA%8F%E9%A2%84%E6%B5%8B/">
+                                    <span class="chip bg-color">概率时序预测</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1512,17 +1723,18 @@ W(P,Q) =
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/cc27.html">
+                <a href="/posts/a347.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/blogcovers/technology-4816658_640.jpg" class="responsive-img" alt="Leecode hot 100">
+                        <img src="/medias/blogcovers/big-895567_640.jpg" class="responsive-img" alt="常用技巧-GluonTS包">
                         
-                        <span class="card-title">Leecode hot 100</span>
+                        <span class="card-title">常用技巧-GluonTS包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1532,16 +1744,37 @@ W(P,Q) =
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2026-04-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-21
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            鹿卿
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    python编程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A6%82%E7%8E%87%E6%97%B6%E5%BA%8F%E9%A2%84%E6%B5%8B/">
+                        <span class="chip bg-color">概率时序预测</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1553,13 +1786,13 @@ W(P,Q) =
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/9251.html">
+                <a href="/posts/0.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="算法分析与设计常见理论证明">
+                        <img src="/medias/blogcovers/ai-8530787_640.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">算法分析与设计常见理论证明</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1570,7 +1803,7 @@ W(P,Q) =
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-10-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-20
                             </span>
                         <span class="publish-author">
                             
@@ -1579,14 +1812,6 @@ W(P,Q) =
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
                 </div>
                 
             </div>
