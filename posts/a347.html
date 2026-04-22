@@ -767,7 +767,7 @@ impor">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2026-04-21
+                    2026-04-22
                 </div>
                 
 
@@ -841,7 +841,7 @@ train_series<span class="token punctuation">.</span>plot<span class="token punct
 plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span>which<span class="token operator">=</span><span class="token string">"both"</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"train series"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token string">"upper left"</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-GluonTS包.assets\image-20260421191628447.png" alt="image-20260421191628447"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/image-20260421191628447.png" alt="image-20260421191628447"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">entry <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span><span class="token builtin">iter</span><span class="token punctuation">(</span>dataset<span class="token punctuation">.</span>test<span class="token punctuation">)</span><span class="token punctuation">)</span>
 test_series <span class="token operator">=</span> to_pandas<span class="token punctuation">(</span>entry<span class="token punctuation">)</span>
 test_series<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -849,7 +849,7 @@ plt<span class="token punctuation">.</span>axvline<span class="token punctuation
 plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span>which<span class="token operator">=</span><span class="token string">"both"</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"test series"</span><span class="token punctuation">,</span> <span class="token string">"end of train series"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token string">"upper left"</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-GluonTS包.assets\image-20260421191646961.png" alt="image-20260421191646961"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/image-20260421191646961.png" alt="image-20260421191646961"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>
     <span class="token string-interpolation"><span class="token string">f"Length of forecasting window in test dataset: </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">len</span><span class="token punctuation">(</span>test_series<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">len</span><span class="token punctuation">(</span>train_series<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">"</span></span>
 <span class="token punctuation">)</span>
@@ -964,7 +964,7 @@ Mean of the future window:
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>ts_entry<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">150</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_timestamp<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 forecast_entry<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>show_label<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-GluonTS包.assets\image-20260421192616910.png" alt="image-20260421192616910"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/image-20260421192616910.png" alt="image-20260421192616910"></p>
 <p>我们还可以从数值上评估预测的质量。在 GluonTS 中，<code>Evaluator</code> 类可以计算聚合性能指标，以及每个时间序列的指标（这对于分析跨异构时间序列的性能非常有用）。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> gluonts<span class="token punctuation">.</span>evaluation <span class="token keyword">import</span> Evaluator
 evaluator <span class="token operator">=</span> Evaluator<span class="token punctuation">(</span>quantiles<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
@@ -1152,7 +1152,7 @@ agg_metrics<span class="token punctuation">,</span> item_metrics <span class="to
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">item_metrics<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token string">"MSIS"</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token string">"MASE"</span><span class="token punctuation">,</span> kind<span class="token operator">=</span><span class="token string">"scatter"</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span>which<span class="token operator">=</span><span class="token string">"both"</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="D:\我的大学\newBlogs\source\_posts\assets\常用技巧-GluonTS包.assets\image-20260421193044465-17767710459201.png" alt="image-20260421193044465"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Luqingbys/blogs_images@main/images/image-20260421193044465-17767710459201.png" alt="image-20260421193044465"></p>
 
                 
             </div>
@@ -1786,13 +1786,13 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/0.html">
+                <a href="/posts/cc27.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/blogcovers/ai-8530787_640.jpg" class="responsive-img" alt="">
+                        <img src="/medias/blogcovers/technology-4816658_640.jpg" class="responsive-img" alt="Leecode hot 100">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Leecode hot 100</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1803,15 +1803,27 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-16
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            鹿卿
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
                 </div>
                 
             </div>
